@@ -40,10 +40,6 @@
 
 @section('scripts')
 	<script>
-		// initialize with defaults
-		$("#input-id").rating();
-
-		// with plugin options
-		$("#input-id").rating({min:1, max:10, step:2, size:'lg'});
+		$('#input-id').rating({'showCaption':false, 'starCaptions': {0:'status:nix', 1:'status:wackelt', 2:'status:geht', 3:'status:laeuft'}});
 	</script>
 @endsection
