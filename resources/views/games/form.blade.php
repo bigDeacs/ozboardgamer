@@ -13,30 +13,30 @@
 
 <div class="form-group row">
       <div class="col-sm-4 col-xs-12">
-            <label for="input-7-sm" class="control-label"></label>
+            <label for="luck-rating">Luck</label>
             <input id="luck-rating" value="0" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
-            <label for="name">Name</label>
+            <label for="strategy-rating">Strategy</label>
             <input id="strategy-rating" value="0" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
-            <label for="name">Name</label>
+            <label for="complexity-rating">Complexity</label>
             <input id="complexity-rating" value="0" class="rating-loading">
       </div>
 </div>
 
 <div class="form-group row">
       <div class="col-sm-4 col-xs-12">
-            <label for="input-7-sm" class="control-label"></label>
+            <label for="replay-rating">Replay</label>
             <input id="replay-rating" value="0" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
-            <label for="name">Name</label>
+            <label for="components-rating">Components</label>
             <input id="components-rating" value="0" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
-            <label for="name">Name</label>
+            <label for="learning-rating">Learning</label>
             <input id="learning-rating" value="0" class="rating-loading">
       </div>
 </div>
@@ -51,14 +51,14 @@
 <div class="form-group row">
       <div class="col-xs-12">
             <label for="mechanic_list">Mechanics</label>
-            {!! Form::select('mechanic_list[]', $mechanics, null, ['id' => 'mechanic_list', 'class' => 'form-control', 'multiple']) !!}
+            {!! Form::select('mechanic_list[]', $mechanics, null, ['id' => 'mechanic_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
       </div>
 </div>
 
 <div class="form-group row">
 	<div class="col-xs-12">
             <label for="type_list">Types</label>
-            {!! Form::select('type_list[]', $types, null, ['id' => 'type_list', 'class' => 'form-control', 'multiple']) !!}
+            {!! Form::select('type_list[]', $types, null, ['id' => 'type_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
       </div>
 </div>
 
