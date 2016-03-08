@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-class HomeController extends Controller {
+class AdminController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ class HomeController extends Controller {
 	{
 		$this->middleware('auth');
 	}
-
+	
 	/**
 	 * Show the application dashboard to the user.
 	 *

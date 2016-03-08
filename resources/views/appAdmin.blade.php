@@ -34,6 +34,22 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('/') }}">Home</a></li>
+					@if (Auth::auth())
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Games <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="{{ url('/games') }}">Games</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Posts <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="{{ url('/posts') }}">Posts</a></li>
+								<li><a href="{{ url('/categories') }}">Categories</a></li>
+							</ul>
+						</li>
+						<li><a href="{{ url('/') }}">Users</a></li>
+					@endif
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
