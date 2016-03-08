@@ -17,8 +17,17 @@
 			  <div class="panel-body">
 			  	<div class="pull-right"><a href="/{{ (Auth::check()) ? 'games' : '' }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>			  	
 			  	<div style="clear:both;"></div>
-				
-				<hr />
+				@unless($game->themes->isEmpty())
+					<!-- FONTS -->
+					<div class="row">
+						<div class="col-sm-12">
+					    	@foreach($game->themes as $theme)
+					    		{!! $theme->name !!}
+					    	@endforeach
+						</div>
+					</div>
+					<hr />
+				@endunless
 			  </div>
 			</div>
 		</div>
