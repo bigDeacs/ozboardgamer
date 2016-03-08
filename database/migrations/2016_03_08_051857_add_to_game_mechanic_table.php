@@ -14,7 +14,7 @@ class AddToGameMechanicTable extends Migration {
 	{
 		Schema::drop('game_mechanic');
 
-		Schema::table('game_mechanic', function(Blueprint $table)
+		Schema::create('game_mechanic', function(Blueprint $table)
 		{
 			$table->increments('id');
 
