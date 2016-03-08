@@ -14,15 +14,15 @@
 <div class="form-group row">
       <div class="col-sm-4 col-xs-12">
             <label for="name">Name</label>
-            <input id="input-id" type="number" class="rating" min=1 max=10 step=2 data-size="lg" data-rtl="true">
+            <input id="input-id" type="number" class="rating" min=1 max=10 step=2 data-size="md" data-rtl="true">
       </div>
       <div class="col-sm-4 col-xs-12">
             <label for="name">Name</label>
-            <input id="input-id" type="number" class="rating" min=1 max=10 step=2 data-size="lg" data-rtl="true">
+            <input id="i" type="number" class="rating" min=1 max=10 step=2 data-size="md" data-rtl="true">
       </div>
       <div class="col-sm-4 col-xs-12">
             <label for="name">Name</label>
-            <input id="input-id" type="number" class="rating" min=1 max=10 step=2 data-size="lg" data-rtl="true">
+            <input id="d" type="number" class="rating" min=1 max=10 step=2 data-size="md" data-rtl="true">
       </div>
 </div>
 
