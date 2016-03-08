@@ -13,16 +13,31 @@
 
 <div class="form-group row">
       <div class="col-sm-4 col-xs-12">
-            <label for="input-7-sm" class="control-label">Small Rating</label>
-            <input id="input-3" value="0" class="rating-loading">
+            <label for="input-7-sm" class="control-label"></label>
+            <input id="luck-rating" value="0" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
             <label for="name">Name</label>
-            
+            <input id="strategy-rating" value="0" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
             <label for="name">Name</label>
-            
+            <input id="complexity-rating" value="0" class="rating-loading">
+      </div>
+</div>
+
+<div class="form-group row">
+      <div class="col-sm-4 col-xs-12">
+            <label for="input-7-sm" class="control-label"></label>
+            <input id="replay-rating" value="0" class="rating-loading">
+      </div>
+      <div class="col-sm-4 col-xs-12">
+            <label for="name">Name</label>
+            <input id="components-rating" value="0" class="rating-loading">
+      </div>
+      <div class="col-sm-4 col-xs-12">
+            <label for="name">Name</label>
+            <input id="learning-rating" value="0" class="rating-loading">
       </div>
 </div>
 
