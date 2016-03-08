@@ -44,7 +44,7 @@ class GameController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BrandRequest $request)
+    public function store(GameRequest $request)
     {
         $game = Game::create($request->all());
         if(is_array($request->input('theme_list'))) {
@@ -129,7 +129,7 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(BrandRequest $request, $id)
+    public function update(GameRequest $request, $id)
     {
         $game = Game::where('id', '=', $id)->firstOrFail();
         $game->update($request->all());
