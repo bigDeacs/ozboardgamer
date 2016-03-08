@@ -67,7 +67,7 @@ class GameController extends Controller
             $newMechanics = array_diff($request->input('mechanic_list'), $currentMechanics);   
             foreach($newMechanics as $newMechanic)
             {
-                if($mechanic = Mechanic::create(['name' => $newColour]))
+                if($mechanic = Mechanic::create(['name' => $newMechanic]))
                 {
                     $currentMechanics[] = $mechanic->id;
                 }
