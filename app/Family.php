@@ -16,6 +16,17 @@ class Family extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name'];
+	protected $fillable = [
+		'name', 
+		'description', 
+		'meta', 
+		'head', 
+		'scripts'
+	];
+
+	public function games()
+    {
+        return $this->hasMany('App\Game');
+    }
 
 }

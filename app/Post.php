@@ -16,6 +16,31 @@ class Post extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name'];
+	protected $fillable = [
+		'name', 
+		'video', 
+		'description', 
+		'published_at', 
+		'user_id', 
+		'category_id', 
+		'meta', 
+		'head', 
+		'scripts'
+	];
+
+	public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
+
+    public function games()
+    {
+        return $this->belongsToMany('App\Game');
+    }
 
 }

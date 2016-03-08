@@ -16,6 +16,17 @@ class Category extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name'];
+	protected $fillable = [
+		'name', 
+		'description', 
+		'meta', 
+		'head', 
+		'scripts'
+	];
+
+	public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
 
 }

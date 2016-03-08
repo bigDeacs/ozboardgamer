@@ -6,8 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateCategoriesTable' => $baseDir . '/database/migrations/2016_03_07_082835_create_categories_table.php',
+    'CreateCategoriesTable' => $baseDir . '/database/migrations/2016_03_07_083329_create_categories_table.php',
+    'CreateExpansionsTable' => $baseDir . '/database/migrations/2016_03_08_000949_create_expansions_table.php',
     'CreateFamiliesTable' => $baseDir . '/database/migrations/2016_03_07_083318_create_families_table.php',
+    'CreateGameMechanicTable' => $baseDir . '/database/migrations/2016_03_07_231526_create_game_mechanic_table.php',
+    'CreateGamePostTable' => $baseDir . '/database/migrations/2016_03_07_231549_create_game_post_table.php',
+    'CreateGameThemeTable' => $baseDir . '/database/migrations/2016_03_07_231314_create_game_theme_table.php',
+    'CreateGameTypeTable' => $baseDir . '/database/migrations/2016_03_07_231538_create_game_type_table.php',
     'CreateGamesTable' => $baseDir . '/database/migrations/2016_03_07_083148_create_games_table.php',
     'CreateMechanicsTable' => $baseDir . '/database/migrations/2016_03_07_083257_create_mechanics_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
@@ -16,7 +21,6 @@ return array(
     'CreateThemesTable' => $baseDir . '/database/migrations/2016_03_07_083248_create_themes_table.php',
     'CreateTypesTable' => $baseDir . '/database/migrations/2016_03_07_083241_create_types_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
-    'CreateVideosTable' => $baseDir . '/database/migrations/2016_03_07_083231_create_videos_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/File/Iterator/Facade.php',

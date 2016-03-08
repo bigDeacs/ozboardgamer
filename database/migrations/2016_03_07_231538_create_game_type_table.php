@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoriesTable extends Migration {
+class CreateGameTypeTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,11 @@ class CreateCategoriesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('categories', function(Blueprint $table)
+		Schema::create('game_type', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name');
-			$table->longText('description');
-			$table->string('meta')->nullable();
-			$table->string('head')->nullable();
-			$table->string('scripts')->nullable();
+			$table->integer('game_id');
+    		$table->integer('type_id');
 			$table->timestamps();
 		});
 	}
@@ -31,7 +28,7 @@ class CreateCategoriesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('categories');
+		Schema::drop('game_type');
 	}
 
 }
