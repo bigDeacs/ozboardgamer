@@ -12,19 +12,19 @@ class AddToGameTypeTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('game_type', function(Blueprint $table)
-		{
-			$table->dropIndex('game_id');
-			$table->dropIndex('type_id');
-		});
+		Schema::drop('game_type');
 
-		Schema::table('game_type', function(Blueprint $table)
+		Schema::create('game_type', function(Blueprint $table)
 		{
+			$table->increments('id');
+
 			$table->integer('game_id')->unsigned()->index();
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
 
             $table->integer('type_id')->unsigned()->index();
             $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
+
+            $table->timestamps();
 		});
 	}
 
@@ -35,11 +35,7 @@ class AddToGameTypeTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('game_type', function(Blueprint $table)
-		{
-			$table->dropIndex('game_id');
-			$table->dropIndex('type_id');
-		});
+		//
 	}
 
 }

@@ -12,19 +12,19 @@ class AddToGameThemeTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('game_theme', function(Blueprint $table)
-		{
-			$table->dropIndex('game_id');
-			$table->dropIndex('theme_id');
-		});
+		Schema::drop('game_theme');
 
-		Schema::table('game_theme', function(Blueprint $table)
+		Schema::create('game_theme', function(Blueprint $table)
 		{
+			$table->increments('id');
+
 			$table->integer('game_id')->unsigned()->index();
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
 
             $table->integer('theme_id')->unsigned()->index();
             $table->foreign('theme_id')->references('id')->on('themes')->onDelete('cascade');
+
+            $table->timestamps();
 		});
 	}
 
@@ -35,11 +35,7 @@ class AddToGameThemeTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('game_theme', function(Blueprint $table)
-		{
-			$table->dropIndex('game_id');
-			$table->dropIndex('theme_id');
-		});
+		//
 	}
 
 }

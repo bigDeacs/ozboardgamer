@@ -12,19 +12,19 @@ class AddToGamePostTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('game_post', function(Blueprint $table)
-		{
-			$table->dropIndex('game_id');
-			$table->dropIndex('post_id');
-		});
+		Schema::drop('game_post');
 
-		Schema::table('game_post', function(Blueprint $table)
+		Schema::create('game_post', function(Blueprint $table)
 		{
+			$table->increments('id');
+
 			$table->integer('game_id')->unsigned()->index();
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
 
             $table->integer('post_id')->unsigned()->index();
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
+
+            $table->timestamps();
 		});
 	}
 
@@ -35,11 +35,7 @@ class AddToGamePostTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('game_post', function(Blueprint $table)
-		{
-			$table->dropIndex('game_id');
-			$table->dropIndex('post_id');
-		});
+		//
 	}
 
 }
