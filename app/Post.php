@@ -25,7 +25,8 @@ class Post extends Model {
 		'category_id', 
 		'meta', 
 		'head', 
-		'scripts'
+		'scripts',
+		'status'
 	];
 
 	public function user()
