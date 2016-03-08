@@ -44,7 +44,7 @@
 <div class="form-group row">
 	<div class="col-xs-12">
             <label for="theme_list">Themes</label>
-	      {!! Form::select('theme_list[]', $themes, null, ['id' => 'theme_list', 'class' => 'form-control', 'multiple']) !!}
+	      {!! Form::select('theme_list[]', $themes, null, ['id' => 'theme_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
       </div>
 </div>
 
