@@ -14,10 +14,16 @@ class AddToGameTypeTable extends Migration {
 	{
 		Schema::table('game_type', function(Blueprint $table)
 		{
-			$table->integer('game_id')->unsigned()->index()->change();
+			$table->dropIndex('game_id');
+			$table->dropIndex('type_id');
+		});
+
+		Schema::table('game_type', function(Blueprint $table)
+		{
+			$table->integer('game_id')->unsigned()->index();
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
 
-            $table->integer('type_id')->unsigned()->index()->change();
+            $table->integer('type_id')->unsigned()->index();
             $table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
 		});
 	}
