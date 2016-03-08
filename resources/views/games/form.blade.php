@@ -14,7 +14,7 @@
 <div class="form-group row">
       <div class="col-sm-4 col-xs-12">
             <label for="input-7-sm" class="control-label">Small Rating</label>
-            <input id="input-id" type="number" class="rating rating-loading" min=1 max=5 step=0.5 data-size="sm" data-rtl="false">
+            <input id="input-3" value="0" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
             <label for="name">Name</label>
@@ -49,17 +49,22 @@
 
 @section('scripts')
 	<script>
-      $('#theme_list').select2({
-      	placeholder: 'Choose a theme',
-      	tags: true
-      });
-      $('#mechanic_list').select2({
-      	placeholder: 'Choose a mechanic',
-      	tags: true
-      });
-      $('#type_list').select2({
-      	placeholder: 'Choose a type',
-      	tags: true
-      });
-    </script>
+            $('#theme_list').select2({
+            	placeholder: 'Choose a theme',
+            	tags: true
+            });
+            $('#mechanic_list').select2({
+            	placeholder: 'Choose a mechanic',
+            	tags: true
+            });
+            $('#type_list').select2({
+            	placeholder: 'Choose a type',
+            	tags: true
+            });
+      </script>
+      <script>
+            $(document).on('ready', function(){
+                  $('#input-3').rating({});
+            });
+      </script>
 @endsection
