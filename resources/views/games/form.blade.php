@@ -13,16 +13,16 @@
 
 <div class="form-group row">
       <div class="col-sm-4 col-xs-12">
-            <label for="name">Name</label>
-            <input id="input-id" type="number" class="rating" min=1 max=10 step=2 data-size="md" data-rtl="true">
+            <label for="input-7-sm" class="control-label">Small Rating</label>
+            <input id="input-id" type="number" class="rating rating-loading" min=1 max=5 step=0.5 data-size="sm" data-rtl="false">
       </div>
       <div class="col-sm-4 col-xs-12">
             <label for="name">Name</label>
-            <input id="i" type="number" class="rating" min=1 max=10 step=2 data-size="md" data-rtl="true">
+            
       </div>
       <div class="col-sm-4 col-xs-12">
             <label for="name">Name</label>
-            <input id="d" type="number" class="rating" min=1 max=10 step=2 data-size="md" data-rtl="true">
+            
       </div>
 </div>
 
