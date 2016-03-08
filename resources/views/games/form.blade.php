@@ -79,7 +79,12 @@
       </script>
       <script>
             $(document).on('ready', function(){
-                  $('#input-3').rating({});
+                  $('#luck-rating').rating({});
+                  $('#strategy-rating').rating({});
+                  $('#complexity-rating').rating({});
+                  $('#replay-rating').rating({});
+                  $('#components-rating').rating({});
+                  $('#learning-rating').rating({});
             });
       </script>
 @endsection
