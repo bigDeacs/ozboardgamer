@@ -14,12 +14,10 @@ class AddToGameMechanicTable extends Migration {
 	{
 		Schema::table('game_mechanic', function(Blueprint $table)
 		{
-			$table->dropIndex('game_id');
-			$table->dropIndex('mechanic_id');
-			$table->integer('game_id')->unsigned()->index();
+			$table->integer('game_id')->unsigned()->index()->change();
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
 
-            $table->integer('mechanic_id')->unsigned()->index();
+            $table->integer('mechanic_id')->unsigned()->index()->change();
             $table->foreign('mechanic_id')->references('id')->on('mechanics')->onDelete('cascade');
 		});
 	}

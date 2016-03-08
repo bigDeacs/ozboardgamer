@@ -14,12 +14,10 @@ class AddToGameThemeTable extends Migration {
 	{
 		Schema::table('game_theme', function(Blueprint $table)
 		{
-			$table->dropIndex('game_id');
-			$table->dropIndex('theme_id');
-			$table->integer('game_id')->unsigned()->index();
+			$table->integer('game_id')->unsigned()->index()->change();
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
 
-            $table->integer('theme_id')->unsigned()->index();
+            $table->integer('theme_id')->unsigned()->index()->change();
             $table->foreign('theme_id')->references('id')->on('themes')->onDelete('cascade');
 		});
 	}

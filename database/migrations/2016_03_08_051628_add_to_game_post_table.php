@@ -14,12 +14,10 @@ class AddToGamePostTable extends Migration {
 	{
 		Schema::table('game_post', function(Blueprint $table)
 		{
-			$table->dropIndex('game_id');
-			$table->dropIndex('post_id');
-			$table->integer('game_id')->unsigned()->index();
+			$table->integer('game_id')->unsigned()->index()->change();
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
 
-            $table->integer('post_id')->unsigned()->index();
+            $table->integer('post_id')->unsigned()->index()->change();
             $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
 		});
 	}
