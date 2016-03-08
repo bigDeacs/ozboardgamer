@@ -28,6 +28,28 @@
 					</div>
 					<hr />
 				@endunless
+				@unless($game->mechanics->isEmpty())
+					<!-- FONTS -->
+					<div class="row">
+						<div class="col-sm-12">
+					    	@foreach($game->mechanics as $mechanic)
+					    		{!! $mechanic->name !!}
+					    	@endforeach
+						</div>
+					</div>
+					<hr />
+				@endunless
+				@unless($game->types->isEmpty())
+					<!-- FONTS -->
+					<div class="row">
+						<div class="col-sm-12">
+					    	@foreach($game->types as $type)
+					    		{!! $type->name !!}
+					    	@endforeach
+						</div>
+					</div>
+					<hr />
+				@endunless
 			  </div>
 			</div>
 		</div>
