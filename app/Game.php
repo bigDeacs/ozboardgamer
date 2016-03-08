@@ -63,7 +63,12 @@ class Game extends Model {
 
     public function posts()
     {
-        return $this->belongsToMany('App\Post');
+        return $this->belongsToMany('App\Post')->withTimestamps();
+    }
+
+    public function getPostListAttribute()
+    {
+        return $this->posts->lists('id');
     }
 
     public function mechanics()
@@ -71,14 +76,29 @@ class Game extends Model {
         return $this->belongsToMany('App\Mechanic');
     }
 
+    public function getMechanicListAttribute()
+    {
+        return $this->mechanics->lists('id');
+    }
+
     public function themes()
     {
         return $this->belongsToMany('App\Theme');
     }
 
+    public function getThemeListAttribute()
+    {
+        return $this->themes->lists('id');
+    }
+
     public function types()
     {
         return $this->belongsToMany('App\Type');
+    }
+
+    public function getTypeListAttribute()
+    {
+        return $this->types->lists('id');
     }
 
 }
