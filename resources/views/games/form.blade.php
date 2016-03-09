@@ -8,7 +8,7 @@
       <div class="col-sm-6 col-xs-12">
             <label for="image">Featured Image</label>
             @if(isset($game))
-                  {!! HTML::image($game->image, $game->name, array('class' => 'img-responsive', 'id' => 'imageUpload', 'style' => 'margin-bottom:10px;')) !!}
+                  <img src="{!! $game->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
             @else
                   <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
             @endif
