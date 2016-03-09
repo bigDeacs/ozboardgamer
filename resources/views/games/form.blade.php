@@ -7,15 +7,14 @@
       </div>
       <div class="col-sm-6 col-xs-12">
             <label for="image">Featured Image</label>
-            @if(isset($cruiseship))
-                  {!! HTML::image($cruiseship->image, $cruiseship->name, array('class' => 'img-responsive', 'id' => 'imageUpload', 'style' => 'margin-bottom:10px;')) !!}
+            @if(isset($game))
+                  {!! HTML::image($game->image, $game->name, array('class' => 'img-responsive', 'id' => 'imageUpload', 'style' => 'margin-bottom:10px;')) !!}
             @else
                   <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
             @endif
             <span class="file-input btn btn-block btn-success btn-file">
                 Browse&hellip; <input type="file" name="image" accept="image/*" onchange="loadImage(event)">
             </span>
-            {!! errors_for('image', $errors) !!}
             <small>600px X 350px</small>
       </div>
 </div>
