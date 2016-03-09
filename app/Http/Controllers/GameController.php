@@ -53,6 +53,9 @@ class GameController extends Controller
     public function store(GameRequest $request)
     {
         $game = Game::create($request->all());
+        $rating = ($game->luck + $game->strategy + $game->complexity + $game->replay + $game->components + $game->learning)/3;
+        $game->rating($rating);
+        $game->save();
         if($request->hasFile('image'))
         {
             $file = $request->file('image');
@@ -152,6 +155,8 @@ class GameController extends Controller
     {
         $game = Game::where('id', '=', $id)->firstOrFail();
         $game->update($request->all());
+        $rating = ($game->luck + $game->strategy + $game->complexity + $game->replay + $game->components + $game->learning)/3;
+        $game->rating($rating);
         $game->save();
 
         if($request->hasFile('image'))

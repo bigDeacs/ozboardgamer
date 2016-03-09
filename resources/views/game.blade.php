@@ -25,7 +25,7 @@
 			      	<h1>{{ $game->name }}</h1>
 			      </div>
 			      <div class="col-sm-2 col-xs-12">
-					<?= ($game->luck + $game->strategy + $game->complexity + $game->replay + $game->components + $game->learning)/3 ?>/10
+					{{ $game->rating }}/10
 			      </div>
 			    </div>
 				<div class="row">
