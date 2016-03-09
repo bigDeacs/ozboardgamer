@@ -24,7 +24,6 @@ class GameController extends Controller
      */
     public function index()
     {
-        dd($files = Storage::files('/img'));
         $games = Game::all();
         return view('games.index', compact('games'));
     }
@@ -58,7 +57,7 @@ class GameController extends Controller
             $file = $request->file('image');
             if ($file->isValid())
             {
-                $file->move(storage_path() . '/img/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $file->move(public_path() . '/img/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $game->image = ('http://ozboardgamer.com/img/' . $filename);
                 $game->save();
             }
@@ -158,7 +157,7 @@ class GameController extends Controller
             $file = $request->file('image');
             if ($file->isValid())
             {
-                $file->move(storage_path() . '/img/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $file->move(public_path() . '/img/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $game->image = ('http://ozboardgamer.com/img/' . $filename);
                 $game->save();
             }
