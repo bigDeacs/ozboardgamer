@@ -14,11 +14,7 @@ class AddSlugFixToGamesTable extends Migration {
 	{
 		Schema::table('games', function(Blueprint $table)
 		{
-			$table->dropIndex('slug');
-		});
-		Schema::table('games', function(Blueprint $table)
-		{
-			$table->string('slug');
+			$table->string('slug')->change();
 		});
 	}
 
@@ -31,7 +27,7 @@ class AddSlugFixToGamesTable extends Migration {
 	{
 		Schema::table('games', function(Blueprint $table)
 		{
-			$table->integer('slug');
+			$table->dropIndex('slug');
 		});
 	}
 
