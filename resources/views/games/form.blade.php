@@ -36,42 +36,42 @@
 
 <div class="form-group row">
       <div class="col-sm-4 col-xs-12">
-            <label for="luck-rating">Luck</label>
-            <input id="luck-rating" value="0" class="rating-loading">
+            <label for="luck">Luck</label>
+            <input id="luck" value="{{ isset($game) ? $game->luck : old('luck') }}" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
-            <label for="strategy-rating">Strategy</label>
-            <input id="strategy-rating" value="0" class="rating-loading">
+            <label for="strategy">Strategy</label>
+            <input id="strategy" value="0" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
-            <label for="complexity-rating">Complexity</label>
-            <input id="complexity-rating" value="0" class="rating-loading">
+            <label for="complexity">Complexity</label>
+            <input id="complexity" value="0" class="rating-loading">
       </div>
 </div>
 
 <div class="form-group row">
       <div class="col-sm-4 col-xs-12">
-            <label for="replay-rating">Replay</label>
-            <input id="replay-rating" value="0" class="rating-loading">
+            <label for="replay">Replay</label>
+            <input id="replay" value="0" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
-            <label for="components-rating">Components</label>
-            <input id="components-rating" value="0" class="rating-loading">
+            <label for="components">Components</label>
+            <input id="components" value="0" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
-            <label for="learning-rating">Learning</label>
-            <input id="learning-rating" value="0" class="rating-loading">
+            <label for="learning">Learning</label>
+            <input id="learning" value="0" class="rating-loading">
       </div>
 </div>
 
 <div class="form-group row">
-      <div class="col-sm-6 col-xs-12">
-            <label for="contents">Contents</label>
-            {!! Form::textarea('contents', null, ['class' => 'form-control', 'id' => 'contents']) !!}
-      </div>
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-8 col-xs-12">
             <label for="description">Description</label>
             {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'description']) !!}
+      </div>
+      <div class="col-sm-4 col-xs-12">
+            <label for="contents">Contents</label>
+            {!! Form::textarea('contents', null, ['class' => 'form-control', 'id' => 'contents']) !!}
       </div>
 </div>
 
@@ -139,12 +139,12 @@
       </script>
       <script>
             $(document).on('ready', function(){
-                  $('#luck-rating').rating({});
-                  $('#strategy-rating').rating({});
-                  $('#complexity-rating').rating({});
-                  $('#replay-rating').rating({});
-                  $('#components-rating').rating({});
-                  $('#learning-rating').rating({});
+                  $('#luck').rating({});
+                  $('#strategy').rating({});
+                  $('#complexity').rating({});
+                  $('#replay').rating({});
+                  $('#components').rating({});
+                  $('#learning').rating({});
             });
       </script>
       <script>
