@@ -14,7 +14,7 @@ class AddSlugToGamesTable extends Migration {
 	{
 		Schema::table('games', function(Blueprint $table)
 		{
-			$table->integer('slug');
+			$table->string('slug');
 		});
 	}
 
