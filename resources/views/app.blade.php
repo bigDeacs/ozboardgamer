@@ -31,30 +31,34 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">OzBoardGamer</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
+	         <ul class="nav navbar-nav">
+				<li><a href="{{ url('/') }}">Home</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Games <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="{{ url('/games') }}">Games</a></li>
+						<li><a href="{{ url('/families') }}">Game Families</a></li>
+						<li><a href="{{ url('/publishers') }}">Game Publishers</a></li>
+						<li><a href="{{ url('/mechanics') }}">Game Mechanics</a></li>
+						<li><a href="{{ url('/themes') }}">Game Themes</a></li>
+						<li><a href="{{ url('/types') }}">Game Types</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Posts <span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="{{ url('/posts') }}">Posts</a></li>
+						<li><a href="{{ url('/categories') }}">Categories</a></li>
+					</ul>
+				</li>
+				<li><a href="{{ url('/users') }}">Users</a></li>
+			</ul>
         </div><!--/.navbar-collapse -->
       </div>
     </nav>
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
 
     <div class="container">
       
