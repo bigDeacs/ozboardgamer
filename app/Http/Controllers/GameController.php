@@ -23,6 +23,7 @@ class GameController extends Controller
      */
     public function index()
     {
+        dd($files = Storage::files('/img'));
         $games = Game::all();
         return view('games.index', compact('games'));
     }
