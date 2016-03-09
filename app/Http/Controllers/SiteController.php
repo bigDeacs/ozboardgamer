@@ -35,8 +35,8 @@ class SiteController extends Controller {
 	 */
 	public function game($slug)
 	{
-		dd($game = Game::where('slug', '=', $slug)->firstOrFail());
-		return view('game');
+		$game = Game::where('slug', '=', $slug)->firstOrFail();
+		return view('game', compact('game'));
 	}
 
 }
