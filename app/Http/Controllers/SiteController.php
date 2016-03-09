@@ -19,16 +19,6 @@ class SiteController extends Controller {
 	*/
 
 	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('guest');
-	}
-
-	/**
 	 * Show the application welcome screen to the user.
 	 *
 	 * @return Response
@@ -45,7 +35,7 @@ class SiteController extends Controller {
 	 */
 	public function game($slug)
 	{
-		dd($game = Game::where('sluig', '=', $slug)->firstOrFail());
+		dd($game = Game::where('slug', '=', $slug)->firstOrFail());
 		return view('game');
 	}
 
