@@ -1,20 +1,23 @@
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 <div class="form-group row">
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-4 col-xs-12">
             <label for="name">Name</label>
 	      <input type="text" name="name" id="name" class="form-control" value="{{ isset($game) ? $game->name : old('name') }}" placeholder="" required>
       </div>
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-4 col-xs-12">
+            <label for="slug">Slug</label>
+            <input type="text" name="slug" id="slug" class="form-control" value="{{ isset($game) ? $game->slug : old('slug') }}" placeholder="" required>
+      </div>
+      <div class="col-sm-4 col-xs-12">
             <label for="image">Featured Image</label>
             @if(isset($game))
                   <img src="{!! $game->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
             @else
                   <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
             @endif
-            <span class="file-input btn btn-block btn-success btn-file">
-                Browse&hellip; <input type="file" name="image" accept="image/*" onchange="loadImage(event)">
-            </span>
+            Browse:
+            <input type="file" name="image" accept="image/*" onchange="loadImage(event)">
             <small>600px X 350px</small>
       </div>
 </div>

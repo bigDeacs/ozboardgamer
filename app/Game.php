@@ -18,6 +18,7 @@ class Game extends Model {
 	 */
 	protected $fillable = [
 		'name', 
+        'slug',
 		'image',
 		'time', 
 		'players', 

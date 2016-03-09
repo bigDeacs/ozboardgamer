@@ -14,6 +14,8 @@
 // Front Facing Routes
 Route::get('/', 'SiteController@index');
 
+Route::get('/game/{slug}', 'SiteController@game');
+
 // Admin Routes
 Route::get('home', 'AdminController@index');
 

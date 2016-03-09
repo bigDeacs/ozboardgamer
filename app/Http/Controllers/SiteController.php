@@ -1,4 +1,9 @@
-<?php namespace App\Http\Controllers;
+<?php 
+
+namespace App\Http\Controllers;
+
+use App\Game;
+use Storage;
 
 class SiteController extends Controller {
 
@@ -31,6 +36,17 @@ class SiteController extends Controller {
 	public function index()
 	{
 		return view('welcome');
+	}
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function game($slug)
+	{
+		dd($game = Game::where('sluig', '=', $slug)->firstOrFail());
+		return view('game');
 	}
 
 }
