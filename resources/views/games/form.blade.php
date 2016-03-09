@@ -37,30 +37,30 @@
 <div class="form-group row">
       <div class="col-sm-4 col-xs-12">
             <label for="luck">Luck</label>
-            <input id="luck" value="{{ isset($game) ? $game->luck : old('luck') }}" class="rating-loading">
+            <input id="luck" name="luck" value="{{ isset($game) ? $game->luck : old('luck') }}" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
             <label for="strategy">Strategy</label>
-            <input id="strategy" value="0" class="rating-loading">
+            <input id="strategy" name="strategy" value="0" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
             <label for="complexity">Complexity</label>
-            <input id="complexity" value="0" class="rating-loading">
+            <input id="complexity" name="complexity" value="0" class="rating-loading">
       </div>
 </div>
 
 <div class="form-group row">
       <div class="col-sm-4 col-xs-12">
             <label for="replay">Replay</label>
-            <input id="replay" value="0" class="rating-loading">
+            <input id="replay" name="replay" value="0" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
             <label for="components">Components</label>
-            <input id="components" value="0" class="rating-loading">
+            <input id="components" name="components" value="0" class="rating-loading">
       </div>
       <div class="col-sm-4 col-xs-12">
             <label for="learning">Learning</label>
-            <input id="learning" value="0" class="rating-loading">
+            <input id="learning" name="learning" value="0" class="rating-loading">
       </div>
 </div>
 
