@@ -40,7 +40,8 @@ class GameController extends Controller
         $types = Type::lists('name', 'id');
         $publishers = Publisher::lists('name', 'id');
         $families = Family::lists('name', 'id');
-        return view('games.create', compact('themes', 'mechanics', 'types', 'families', 'publishers'));
+        $games = Game::lists('name', 'id');
+        return view('games.create', compact('themes', 'mechanics', 'types', 'families', 'publishers', 'games'));
     }
 
     /**
@@ -135,8 +136,9 @@ class GameController extends Controller
         $types = Type::lists('name', 'id');
         $publishers = Publisher::lists('name', 'id');
         $families = Family::lists('name', 'id');
+        $games = Game::lists('name', 'id');
         $game = Game::where('id', '=', $id)->firstOrFail();
-        return view('games.edit', compact('game', 'themes', 'mechanics', 'types', 'families', 'publishers'));
+        return view('games.edit', compact('game', 'themes', 'mechanics', 'types', 'families', 'publishers', 'games'));
     }
 
     /**

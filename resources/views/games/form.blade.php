@@ -102,8 +102,19 @@
             {!! Form::select('publisher_id', $publishers, Input::old('publisher'), ['class' => 'form-control']) !!}
       </div>
       <div class="col-sm-6 col-xs-12">
+            <label for="published_at">Publishing Year</label>
+            <input type="text" name="published_at" id="published_at" class="form-control" value="{{ isset($game) ? $game->published_at : old('published_at') }}" placeholder="">
+      </div>
+</div>
+
+<div class="form-group row">
+      <div class="col-sm-6 col-xs-12">
             <label for="family_id">Game Family</label>
             {!! Form::select('family_id', $families, Input::old('family'), ['class' => 'form-control']) !!}
+      </div>
+      <div class="col-sm-6 col-xs-12">
+            <label for="parent_id">Expansion</label>
+            {!! Form::select('parent_id', $games, Input::old('parent_id'), ['class' => 'form-control']) !!}
       </div>
 </div>
 

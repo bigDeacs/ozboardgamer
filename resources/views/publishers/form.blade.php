@@ -1,9 +1,13 @@
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 <div class="form-group row">
-      <div class="col-sm-12 col-xs-12">
+      <div class="col-sm-6 col-xs-12">
             <label for="name">Name</label>
 	      <input type="text" name="name" id="name" class="form-control" value="{{ isset($publisher) ? $publisher->name : old('name') }}" placeholder="" required>
+      </div>
+      <div class="col-sm-6 col-xs-12">
+            <label for="website">Website</label>
+            <input type="text" name="website" id="website" class="form-control" value="{{ isset($publisher) ? $publisher->website : old('website') }}" placeholder="">
       </div>
 </div>
 
