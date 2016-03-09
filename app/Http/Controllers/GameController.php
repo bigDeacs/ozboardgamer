@@ -58,7 +58,7 @@ class GameController extends Controller
             if ($file->isValid())
             {
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $game->image = ('http://ozboardgamer.com/' . $filename);
+                $game->image = ('http://ozboardgamer.com/uploads/' . $filename);
                 $game->save();
             }
         }
@@ -158,7 +158,7 @@ class GameController extends Controller
             if ($file->isValid())
             {
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $game->image = ('http://ozboardgamer.com/' . $filename);
+                $game->image = ('http://ozboardgamer.com/uploads/' . $filename);
                 $game->save();
             }
         }
