@@ -35,7 +35,9 @@ class GameController extends Controller
         $themes = Theme::lists('name', 'id');
         $mechanics = Mechanic::lists('name', 'id');
         $types = Type::lists('name', 'id');
-        return view('games.create', compact('themes', 'mechanics', 'types'));
+        $publishers = Publisher::lists('name', 'id');
+        $families = Family::lists('name', 'id');
+        return view('games.create', compact('themes', 'mechanics', 'types', 'families', 'publishers'));
     }
 
     /**
@@ -48,6 +50,16 @@ class GameController extends Controller
     {
         dd($request);
         $game = Game::create($request->all());
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            if ($file->isValid())
+            {
+                $file->move(storage_path() . '/img/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $game->image = ('http://ozboardgamer.com/img/' . $filename);
+                $game->save();
+            }
+        }
         if(is_array($request->input('theme_list'))) {
             $currentThemes = array_filter($request->input('theme_list'), 'is_numeric');
             $newThemes = array_diff($request->input('theme_list'), $currentThemes);   
@@ -119,8 +131,10 @@ class GameController extends Controller
         $themes = Theme::lists('name', 'id');
         $mechanics = Mechanic::lists('name', 'id');
         $types = Type::lists('name', 'id');
+        $publishers = Publisher::lists('name', 'id');
+        $families = Family::lists('name', 'id');
         $game = Game::where('id', '=', $id)->firstOrFail();
-        return view('games.edit', compact('game', 'themes', 'mechanics', 'types'));
+        return view('games.edit', compact('game', 'themes', 'mechanics', 'types', 'families', 'publishers'));
     }
 
     /**
