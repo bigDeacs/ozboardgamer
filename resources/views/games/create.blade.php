@@ -26,7 +26,7 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::open(['url' => 'games']) !!}
+				{!! Form::open(['files'=> true, 'url' => 'games']) !!}
 					@include('games.form')
 					<div class="form-group">
 						<button type="submit" class="btn btn-success btn-block">Create</button>

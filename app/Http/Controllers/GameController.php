@@ -46,6 +46,7 @@ class GameController extends Controller
      */
     public function store(GameRequest $request)
     {
+        dd($request);
         $game = Game::create($request->all());
         if(is_array($request->input('theme_list'))) {
             $currentThemes = array_filter($request->input('theme_list'), 'is_numeric');

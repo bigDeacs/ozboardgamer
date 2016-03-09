@@ -26,7 +26,7 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::model($game, ['method' => 'PATCH', 'action' => ['GameController@update', $game->id]]) !!}
+				{!! Form::model($game, ['files'=> true, 'method' => 'PATCH', 'action' => ['GameController@update', $game->id]]) !!}
 					@include('games.form')
 					<div class="form-group">
 						<button type="submit" class="btn btn-success btn-block">Update</button>

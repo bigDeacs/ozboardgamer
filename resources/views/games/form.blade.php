@@ -6,8 +6,17 @@
 	      <input type="text" name="name" id="name" class="form-control" value="{{ isset($game) ? $game->name : old('name') }}" placeholder="" required>
       </div>
       <div class="col-sm-6 col-xs-12">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" class="form-control" value="{{ isset($game) ? $game->name : old('name') }}" placeholder="" required>
+            <label for="image">Featured Image</label>
+            @if(isset($cruiseship))
+                  {!! HTML::image($cruiseship->image, $cruiseship->name, array('class' => 'img-responsive', 'id' => 'imageUpload', 'style' => 'margin-bottom:10px;')) !!}
+            @else
+                  <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
+            @endif
+            <span class="file-input btn btn-block btn-success btn-file">
+                Browse&hellip; <input type="file" name="image" accept="image/*" onchange="loadImage(event)">
+            </span>
+            {!! errors_for('image', $errors) !!}
+            <small>600px X 350px</small>
       </div>
 </div>
 
@@ -86,5 +95,11 @@
                   $('#components-rating').rating({});
                   $('#learning-rating').rating({});
             });
+      </script>
+      <script>
+        var loadImage = function(event) {
+          var imageUpload = document.getElementById('imageUpload');
+          imageUpload.src = URL.createObjectURL(event.target.files[0]);
+        };
       </script>
 @endsection
