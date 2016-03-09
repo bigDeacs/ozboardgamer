@@ -152,6 +152,17 @@ class GameController extends Controller
         $game->update($request->all());
         $game->save();
 
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            if ($file->isValid())
+            {
+                $file->move(storage_path() . '/img/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $game->image = ('http://ozboardgamer.com/img/' . $filename);
+                $game->save();
+            }
+        }
+
         if(is_array($request->input('theme_list'))) {
             $currentThemes = array_filter($request->input('theme_list'), 'is_numeric');
             $newThemes = array_diff($request->input('theme_list'), $currentThemes);   

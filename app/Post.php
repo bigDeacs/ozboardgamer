@@ -44,4 +44,9 @@ class Post extends Model {
         return $this->belongsToMany('App\Game');
     }
 
+    public function getGameListAttribute()
+    {
+        return $this->games->lists('id');
+    }
+
 }

@@ -1,7 +1,7 @@
 @extends('appAdmin')
 
 @section('meta')
-    <title>Families</title>
+    <title>Categories</title>
 @endsection
 
 @section('head')
@@ -12,14 +12,14 @@
 		<div class="col-sm-10 col-sm-offset-1">
 			<div class="panel panel-default panel-shadow">
 			  <div class="panel-heading">
-			    <h1 class="panel-title"><strong>Families</strong></h1>
+			    <h1 class="panel-title"><strong>Categories</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right"><a href="/families/create" class="btn btn-primary">Create Family <i class="fa fa-plus-square"></i></a></div>
+			  	<div class="pull-right"><a href="/categories/create" class="btn btn-primary">Create Category <i class="fa fa-plus-square"></i></a></div>
 			  	<div style="clear:both;"></div>
 			  	<div class="row">
 					<div class="col-sm-12">
-						<p><strong>Families:</strong></p>
+						<p><strong>Categories:</strong></p>
 						<div class="table-responsive">
 						  <table class="table dataTable table-striped table-hover">
 						  	<col width="20%">
@@ -33,12 +33,12 @@
 						    	</tr>
 						    </thead>
 						    <tbody>
-						    	@foreach($families as $family)
+						    	@foreach($categories as $category)
 						    	<tr>
-						    		<td scope="row">{{ $family->name }}</td>
+						    		<td scope="row">{{ $category->name }}</td>
 						    		<td>
-						    			<a href="/families/{{ $family->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
-						    			<a href="/families/{{ $family->id }}" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
+						    			<a href="/categories/{{ $category->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
+						    			<a href="/categories/{{ $category->id }}" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
 						    		</td>
 						    	</tr>
 						    	@endforeach
