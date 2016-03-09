@@ -18,6 +18,7 @@ class Mechanic extends Model {
 	 */
 	protected $fillable = [
 		'name', 
+        'slug', 
 		'description', 
 		'meta', 
 		'head', 

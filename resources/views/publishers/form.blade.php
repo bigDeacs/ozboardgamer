@@ -6,6 +6,13 @@
 	      <input type="text" name="name" id="name" class="form-control" value="{{ isset($publisher) ? $publisher->name : old('name') }}" placeholder="" required>
       </div>
       <div class="col-sm-6 col-xs-12">
+            <label for="slug">Slug</label>
+            <input type="text" name="slug" id="slug" class="form-control" value="{{ isset($publisher) ? $publisher->slug : old('slug') }}" placeholder="" required>
+      </div>
+</div>
+
+<div class="form-group row">
+      <div class="col-xs-12">
             <label for="website">Website</label>
             <input type="text" name="website" id="website" class="form-control" value="{{ isset($publisher) ? $publisher->website : old('website') }}" placeholder="">
       </div>

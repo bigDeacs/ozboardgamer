@@ -18,6 +18,7 @@ class Post extends Model {
 	 */
 	protected $fillable = [
 		'name', 
+        'slug', 
 		'video', 
 		'description', 
 		'published_at', 

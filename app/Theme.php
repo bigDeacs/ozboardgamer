@@ -18,6 +18,7 @@ class Theme extends Model {
 	 */
 	protected $fillable = [
 		'name', 
+        'slug', 
 		'description', 
 		'meta', 
 		'head', 
