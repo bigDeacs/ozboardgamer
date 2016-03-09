@@ -12,12 +12,22 @@
 		<div class="col-sm-10 col-sm-offset-1">
 			<div class="panel panel-default panel-shadow">
 			  <div class="panel-heading">
-			    <h1 class="panel-title"><strong>{{ $game->name }}</strong></h1>
+			    <h1 class="panel-title"><strong>View {{ $game->name }}</strong></h1>
 			  </div>
 			  <div class="panel-body">
 			  	<div class="pull-right"><a href="/{{ (Auth::check()) ? 'games' : '' }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>			  	
 			  	<div style="clear:both;"></div>
-				<img src="{{ $game->image }}" class="img-responsive" />
+				<div class="row">
+			      <div class="col-sm-4 col-xs-12">
+			      	<img src="{{ $game->image }}" class="img-responsive" />
+			      </div>
+			      <div class="col-sm-6 col-xs-12">
+			      	<h1>{{ $game->name }}</h1>
+			      </div>
+			      <div class="col-sm-2 col-xs-12">
+					<?= ($game->luck + $game->strategy + $game->complexity + $game->replay + $game->components + $game->learning) ?>
+			      </div>
+			    </div>
 				<div class="row">
 			      <div class="col-sm-4 col-xs-12">
 			      	{{ $game->time }}
