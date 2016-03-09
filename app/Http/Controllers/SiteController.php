@@ -39,4 +39,81 @@ class SiteController extends Controller {
 		return view('game', compact('game'));
 	}
 
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function family($slug)
+	{
+		$family = Family::where('slug', '=', $slug)->firstOrFail();
+		return view('family', compact('family'));
+	}
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function publisher($slug)
+	{
+		$publisher = Publisher::where('slug', '=', $slug)->firstOrFail();
+		return view('publisher', compact('publisher'));
+	}
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function mechanic($slug)
+	{
+		$mechanic = Mechanic::where('slug', '=', $slug)->firstOrFail();
+		return view('mechanic', compact('mechanic'));
+	}
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function theme($slug)
+	{
+		$theme = Theme::where('slug', '=', $slug)->firstOrFail();
+		return view('theme', compact('theme'));
+	}
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function type($slug)
+	{
+		$type = Type::where('slug', '=', $slug)->firstOrFail();
+		return view('type', compact('type'));
+	}
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function post($slug)
+	{
+		$post = Post::where('slug', '=', $slug)->firstOrFail();
+		return view('post', compact('post'));
+	}
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function category($slug)
+	{
+		$category = Category::where('slug', '=', $slug)->firstOrFail();
+		return view('category', compact('category'));
+	}
+
 }
