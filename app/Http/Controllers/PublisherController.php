@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests\MechanicRequest;
-use App\Mechanic;
+use App\Http\Requests\PublisherRequest;
+use App\Publisher;
 use App\Http\Controllers\Controller;
 
-class MechanicController extends Controller
+class PublisherController extends Controller
 {
 
     /**
@@ -18,8 +18,8 @@ class MechanicController extends Controller
      */
     public function index()
     {
-        $mechanics = Mechanic::all();
-        return view('mechanics.index', compact('mechanics'));
+        $publishers = Publisher::all();
+        return view('publishers.index', compact('publishers'));
     }
 
     /**
@@ -29,7 +29,7 @@ class MechanicController extends Controller
      */
     public function create()
     {
-        return view('mechanics.create');
+        return view('publishers.create');
     }
 
     /**
@@ -38,11 +38,11 @@ class MechanicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(MechanicRequest $request)
+    public function store(PublisherRequest $request)
     {
-        $mechanic = Mechanic::create($request->all());
+        $publisher = Publisher::create($request->all());
 
-        return redirect('/mechanics');
+        return redirect('/publishers');
     }
 
     /**
@@ -53,8 +53,8 @@ class MechanicController extends Controller
      */
     public function show($id)
     {
-        $mechanic = Mechanic::where('id', '=', $id)->firstOrFail();
-        return view('mechanics.show', compact('mechanic'));
+        $publisher = Publisher::where('id', '=', $id)->firstOrFail();
+        return view('publishers.show', compact('publisher'));
     }
 
     /**
@@ -65,8 +65,8 @@ class MechanicController extends Controller
      */
     public function edit($id)
     {
-        $mechanic = Mechanic::where('id', '=', $id)->firstOrFail();
-        return view('mechanics.edit', compact('mechanic'));
+        $publisher = Publisher::where('id', '=', $id)->firstOrFail();
+        return view('publishers.edit', compact('publisher'));
     }
 
     /**
@@ -76,13 +76,13 @@ class MechanicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(MechanicRequest $request, $id)
+    public function update(PublisherRequest $request, $id)
     {
-        $mechanic = Mechanic::where('id', '=', $id)->firstOrFail();
-        $mechanic->update($request->all());
-        $mechanic->save();
+        $publisher = Publisher::where('id', '=', $id)->firstOrFail();
+        $publisher->update($request->all());
+        $publisher->save();
 
-        return redirect('/mechanics');
+        return redirect('/publishers');
     }
 
     /**
@@ -93,7 +93,7 @@ class MechanicController extends Controller
      */
     public function destroy($id)
     {
-        Mechanic::findOrFail($id)->delete();
+        Publisher::findOrFail($id)->delete();
 
         return back();
     }

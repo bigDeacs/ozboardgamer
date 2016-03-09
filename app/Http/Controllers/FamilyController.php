@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests\MechanicRequest;
-use App\Mechanic;
+use App\Http\Requests\FamilyRequest;
+use App\Family;
 use App\Http\Controllers\Controller;
 
-class MechanicController extends Controller
+class FamilyController extends Controller
 {
 
     /**
@@ -18,8 +18,8 @@ class MechanicController extends Controller
      */
     public function index()
     {
-        $mechanics = Mechanic::all();
-        return view('mechanics.index', compact('mechanics'));
+        $families = Family::all();
+        return view('families.index', compact('families'));
     }
 
     /**
@@ -29,7 +29,7 @@ class MechanicController extends Controller
      */
     public function create()
     {
-        return view('mechanics.create');
+        return view('families.create');
     }
 
     /**
@@ -38,11 +38,11 @@ class MechanicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(MechanicRequest $request)
+    public function store(FamilyRequest $request)
     {
-        $mechanic = Mechanic::create($request->all());
+        $family = Family::create($request->all());
 
-        return redirect('/mechanics');
+        return redirect('/families');
     }
 
     /**
@@ -53,8 +53,8 @@ class MechanicController extends Controller
      */
     public function show($id)
     {
-        $mechanic = Mechanic::where('id', '=', $id)->firstOrFail();
-        return view('mechanics.show', compact('mechanic'));
+        $family = Family::where('id', '=', $id)->firstOrFail();
+        return view('families.show', compact('family'));
     }
 
     /**
@@ -65,8 +65,8 @@ class MechanicController extends Controller
      */
     public function edit($id)
     {
-        $mechanic = Mechanic::where('id', '=', $id)->firstOrFail();
-        return view('mechanics.edit', compact('mechanic'));
+        $family = Family::where('id', '=', $id)->firstOrFail();
+        return view('families.edit', compact('family'));
     }
 
     /**
@@ -76,13 +76,13 @@ class MechanicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(MechanicRequest $request, $id)
+    public function update(FamilyRequest $request, $id)
     {
-        $mechanic = Mechanic::where('id', '=', $id)->firstOrFail();
-        $mechanic->update($request->all());
-        $mechanic->save();
+        $family = Family::where('id', '=', $id)->firstOrFail();
+        $family->update($request->all());
+        $family->save();
 
-        return redirect('/mechanics');
+        return redirect('/families');
     }
 
     /**
@@ -93,7 +93,7 @@ class MechanicController extends Controller
      */
     public function destroy($id)
     {
-        Mechanic::findOrFail($id)->delete();
+        Family::findOrFail($id)->delete();
 
         return back();
     }

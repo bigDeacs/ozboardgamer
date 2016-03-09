@@ -43,6 +43,11 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Games <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ url('/games') }}">Games</a></li>
+								<li><a href="{{ url('/families') }}">Game Families</a></li>
+								<li><a href="{{ url('/publishers') }}">Game Publishers</a></li>
+								<li><a href="{{ url('/mechanics') }}">Game Mechanics</a></li>
+								<li><a href="{{ url('/themes') }}">Game Themes</a></li>
+								<li><a href="{{ url('/types') }}">Game Types</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -52,7 +57,7 @@
 								<li><a href="{{ url('/categories') }}">Categories</a></li>
 							</ul>
 						</li>
-						<li><a href="{{ url('/') }}">Users</a></li>
+						<li><a href="{{ url('/users') }}">Users</a></li>
 					@endif
 				</ul>
 

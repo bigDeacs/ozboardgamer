@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests\MechanicRequest;
-use App\Mechanic;
+use App\Http\Requests\UserRequest;
+use App\User;
 use App\Http\Controllers\Controller;
 
-class MechanicController extends Controller
+class UserController extends Controller
 {
 
     /**
@@ -18,8 +18,8 @@ class MechanicController extends Controller
      */
     public function index()
     {
-        $mechanics = Mechanic::all();
-        return view('mechanics.index', compact('mechanics'));
+        $users = User::all();
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -29,7 +29,7 @@ class MechanicController extends Controller
      */
     public function create()
     {
-        return view('mechanics.create');
+        return view('users.create');
     }
 
     /**
@@ -38,11 +38,11 @@ class MechanicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(MechanicRequest $request)
+    public function store(UserRequest $request)
     {
-        $mechanic = Mechanic::create($request->all());
+        $user = User::create($request->all());
 
-        return redirect('/mechanics');
+        return redirect('/users');
     }
 
     /**
@@ -53,8 +53,8 @@ class MechanicController extends Controller
      */
     public function show($id)
     {
-        $mechanic = Mechanic::where('id', '=', $id)->firstOrFail();
-        return view('mechanics.show', compact('mechanic'));
+        $user = User::where('id', '=', $id)->firstOrFail();
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -65,8 +65,8 @@ class MechanicController extends Controller
      */
     public function edit($id)
     {
-        $mechanic = Mechanic::where('id', '=', $id)->firstOrFail();
-        return view('mechanics.edit', compact('mechanic'));
+        $user = User::where('id', '=', $id)->firstOrFail();
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -76,25 +76,30 @@ class MechanicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(MechanicRequest $request, $id)
+    public function update(UserRequest $request, $id)
     {
-        $mechanic = Mechanic::where('id', '=', $id)->firstOrFail();
-        $mechanic->update($request->all());
-        $mechanic->save();
+        $user = User::where('id', '=', $id)->firstOrFail();
+        $user->update($request->all());
+        $user->save();
 
-        return redirect('/mechanics');
+        return redirect('/users');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function activate($id)
     {
-        Mechanic::findOrFail($id)->delete();
+        $user = User::find($id);
+        $user->status = 1;
+        $user->save();
 
-        return back();
+        return redirect('users');
+    }
+
+    public function deactivate($id)
+    {
+        $user = User::find($id);
+        $user->status = 0;
+        $user->save();
+
+        return redirect('users');
     }
 }
