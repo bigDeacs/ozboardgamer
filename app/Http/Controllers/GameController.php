@@ -50,7 +50,6 @@ class GameController extends Controller
      */
     public function store(GameRequest $request)
     {
-        dd($request);
         $game = Game::create($request->all());
         if($request->hasFile('image'))
         {

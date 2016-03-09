@@ -29,7 +29,7 @@
 <div class="form-group row">
       <div class="col-sm-6 col-xs-12">
             <label for="publisher_id">Category</label>
-            {!! Form::select('category_id', $category, Input::old('category'), ['class' => 'form-control']) !!}
+            {!! Form::select('category_id', $categories, Input::old('category'), ['class' => 'form-control']) !!}
       </div>
       <div class="col-sm-6 col-xs-12">
             <label for="published_at">Publish Date</label>
