@@ -17,6 +17,48 @@
 			  <div class="panel-body">
 			  	<div class="pull-right"><a href="/{{ (Auth::check()) ? 'games' : '' }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>			  	
 			  	<div style="clear:both;"></div>
+				<img src="{{ $game->image }}" class="img-responsive" />
+				<div class="row">
+			      <div class="col-sm-4 col-xs-12">
+			      	{{ $game->time }}
+			      </div>
+			      <div class="col-sm-4 col-xs-12">
+			      	{{ $game->players }}
+			      </div>
+			      <div class="col-sm-4 col-xs-12">
+			      	{{ $game->age }}
+			      </div>
+			    </div>
+			
+				<div class="row">
+			      <div class="col-sm-4 col-xs-12">
+			            <label for="luck">Luck</label>
+			            <input id="luck" name="luck" value="{{ $game->luck }}" class="rating-loading">
+			      </div>
+			      <div class="col-sm-4 col-xs-12">
+			            <label for="strategy">Strategy</label>
+			            <input id="strategy" name="strategy" value="{{ $game->strategy }}" class="rating-loading">
+			      </div>
+			      <div class="col-sm-4 col-xs-12">
+			            <label for="complexity">Complexity</label>
+			            <input id="complexity" name="complexity" value="{{ $game->complexity }}" class="rating-loading">
+			      </div>
+			</div>
+
+			<div class="row">
+			      <div class="col-sm-4 col-xs-12">
+			            <label for="replay">Replay</label>
+			            <input id="replay" name="replay" value="{{ $game->replay }}" class="rating-loading">
+			      </div>
+			      <div class="col-sm-4 col-xs-12">
+			            <label for="components">Components</label>
+			            <input id="components" name="components" value="{{ $game->components }}" class="rating-loading">
+			      </div>
+			      <div class="col-sm-4 col-xs-12">
+			            <label for="learning">Learning</label>
+			            <input id="learning" name="learning" value="{{ $game->learning }}" class="rating-loading">
+			      </div>
+			</div>
 				@unless($game->themes->isEmpty())
 					<!-- FONTS -->
 					<div class="row">
@@ -57,4 +99,14 @@
 @endsection
 
 @section('scripts')
+	<script>
+        $(document).on('ready', function(){
+              $('#luck').rating({displayOnly: true});
+              $('#strategy').rating({displayOnly: true});
+              $('#complexity').rating({displayOnly: true});
+              $('#replay').rating({displayOnly: true});
+              $('#components').rating({displayOnly: true});
+              $('#learning').rating({displayOnly: true});
+        });
+  	</script>
 @endsection
