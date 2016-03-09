@@ -1,7 +1,7 @@
 @extends('appAdmin')
 
 @section('meta')
-    <title>Edit {{ $game->name }}</title>
+    <title>Edit {{ $user->name }}</title>
 @endsection
 
 @section('head')
@@ -12,10 +12,10 @@
 		<div class="col-sm-10 col-sm-offset-1">
 			<div class="panel panel-default panel-shadow">
 			  <div class="panel-heading">
-			    <h1 class="panel-title"><strong>Edit {{ $game->name }}</strong></h1>
+			    <h1 class="panel-title"><strong>Edit {{ $user->name }}</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right"><a href="/games" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>			  	
+			  	<div class="pull-right"><a href="/users" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>			  	
 			  	<div style="clear:both;"></div>
 				@if(count($errors) > 0)
 					<div class="alert alert-danger">
@@ -26,8 +26,8 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::model($game, ['files'=> true, 'method' => 'PATCH', 'action' => ['GameController@update', $game->id]]) !!}
-					@include('games.form')
+				{!! Form::model($user, ['method' => 'PATCH', 'action' => ['UserController@update', $user->id]]) !!}
+					@include('users.form')
 					<div class="form-group">
 						<button type="submit" class="btn btn-success btn-block">Update</button>
 					</div>

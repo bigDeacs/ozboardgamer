@@ -3,7 +3,7 @@
 <div class="form-group row">
       <div class="col-sm-12 col-xs-12">
             <label for="name">Name</label>
-	      <input type="text" name="name" id="name" class="form-control" value="{{ isset($family) ? $family->name : old('name') }}" placeholder="" required>
+	      <input type="text" name="name" id="name" class="form-control" value="{{ isset($mechanic) ? $mechanic->name : old('name') }}" placeholder="" required>
       </div>
 </div>
 

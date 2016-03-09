@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Post;
 use App\Category;
+use App\Game;
 use App\Http\Controllers\Controller;
 
 class PostController extends Controller
