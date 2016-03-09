@@ -57,7 +57,7 @@ class GameController extends Controller
             $file = $request->file('image');
             if ($file->isValid())
             {
-                $file->move(public_path() . '/img/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $file->move(storage_path() . '/img/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $game->image = ('http://ozboardgamer.com/img/' . $filename);
                 $game->save();
             }
@@ -157,7 +157,7 @@ class GameController extends Controller
             $file = $request->file('image');
             if ($file->isValid())
             {
-                $file->move(public_path() . '/img/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $file->move(storage_path() . '/img/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $game->image = ('http://ozboardgamer.com/img/' . $filename);
                 $game->save();
             }
