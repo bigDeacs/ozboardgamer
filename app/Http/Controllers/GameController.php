@@ -9,6 +9,8 @@ use App\Game;
 use App\Theme;
 use App\Mechanic;
 use App\Type;
+use App\Publisher;
+use App\Family;
 use App\Http\Controllers\Controller;
 
 class GameController extends Controller
