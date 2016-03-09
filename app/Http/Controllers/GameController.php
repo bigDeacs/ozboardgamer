@@ -54,7 +54,7 @@ class GameController extends Controller
     {
         $game = Game::create($request->all());
         $rating = ($game->luck + $game->strategy + $game->complexity + $game->replay + $game->components + $game->learning)/3;
-        $game->rating($rating);
+        $game->rating = $rating;
         $game->save();
         if($request->hasFile('image'))
         {
@@ -156,7 +156,7 @@ class GameController extends Controller
         $game = Game::where('id', '=', $id)->firstOrFail();
         $game->update($request->all());
         $rating = ($game->luck + $game->strategy + $game->complexity + $game->replay + $game->components + $game->learning)/3;
-        $game->rating($rating);
+        $game->rating = $rating;
         $game->save();
 
         if($request->hasFile('image'))
