@@ -13,14 +13,12 @@
 
 // Front Facing Routes
 Route::get('/', 'SiteController@index');
-Route::get('/games/{slug}', 'SiteController@game');
-Route::get('/gamefamilies/{slug}', 'SiteController@family');
-Route::get('/publishers/{slug}', 'SiteController@publisher');
-Route::get('/mechanics/{slug}', 'SiteController@mechanic');
-Route::get('/themes/{slug}', 'SiteController@theme');
-Route::get('/gametypes/{slug}', 'SiteController@type');
-Route::get('/{category}/{slug}', 'SiteController@post');
-Route::get('/{category}', 'SiteController@category');
+Route::get('/games/{slug?}', 'SiteController@game');
+Route::get('/gamefamilies/{slug?}', 'SiteController@family');
+Route::get('/publishers/{slug?}', 'SiteController@publisher');
+Route::get('/mechanics/{slug?}', 'SiteController@mechanic');
+Route::get('/themes/{slug?}', 'SiteController@theme');
+Route::get('/gametypes/{slug?}', 'SiteController@type');
 
 // Admin Routes
 Route::get('home', 'AdminController@index');
@@ -38,6 +36,8 @@ Route::resource('users', 'UserController');
 Route::get('users/{users}/activate', ['as' => 'users.activate', 'uses' => 'UserController@activate']);
 Route::get('users/{users}/deactivate', ['as' => 'users.deactivate', 'uses' => 'UserController@deactivate']);
 
+// Dynamic Routes
+Route::get('/{category}/{slug?}', 'SiteController@post');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
