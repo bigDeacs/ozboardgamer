@@ -42,15 +42,14 @@ class Game extends Model {
         'parent_id'
 	];
 
-	public function childGame()
+    public function parent()
     {
-        return $this->hasMany('App\Game', 'parent_id', 'id');
+        return $this->belongsTo('App\Game', 'parent_id');
     }
 
-    public function parentGame()
+    public function children()
     {
-        return $this->belongsTo('App\Game', 'id', 'parent_id');
-
+        return $this->hasMany('App\Game', 'parent_id');
     }
 
 	public function publisher()

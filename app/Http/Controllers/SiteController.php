@@ -59,7 +59,8 @@ class SiteController extends Controller {
 			$type = Type::where('slug', '=', $type)->firstOrFail();	
 			return view('type', compact('type','games'));
 		} else {
-			$game = Game::where('slug', '=', $slug)->firstOrFail();	
+			$game = Game::with('children', 'parent')->where('slug', '=', $slug)->firstOrFail();
+			
 			return view('game', compact('game'));
 		}
 	}

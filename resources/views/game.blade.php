@@ -27,6 +27,16 @@
 					{{ number_format((float)$game->rating, 1, '.', '') }}/10
 			      </div>
 			    </div>
+			    @unless($game->children->isEmpty())
+			    	Parent of: 
+			    	@foreach($game->children as $child)
+			    		{{ $child->name }}
+			    	@endforeach
+			    @endunless
+			    @unless($game->parent == null)
+			    	Parent is: {{ $game->parent->name }}
+			    @endunless
+			    
 				<div class="row">
 			      <div class="col-sm-4 col-xs-12">
 			      	{{ $game->time }}
