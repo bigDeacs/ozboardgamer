@@ -105,8 +105,8 @@
             {!! Form::select('publisher_id', ['' => 'Select publisher'] + $publishers, Input::old('publisher'), ['class' => 'form-control']) !!}
       </div>
       <div class="col-sm-6 col-xs-12">
-            <label for="published_at">Publishing Year</label>
-            <input type="text" name="published_at" id="published_at" class="form-control" value="{{ isset($game) ? $game->published_at : old('published_at') }}" placeholder="">
+            <label for="published">Publishing Year</label>
+            <input type="text" name="published" id="published" class="form-control" value="{{ isset($game) ? $game->published_at : old('published_at') }}" placeholder="">
       </div>
 </div>
 

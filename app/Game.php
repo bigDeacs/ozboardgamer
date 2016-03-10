@@ -37,7 +37,7 @@ class Game extends Model {
 		'meta', 
 		'head', 
 		'scripts', 
-		'publisher_id', 
+		'published', 
 		'family_id',
         'parent_id'
 	];
