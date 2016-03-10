@@ -15,7 +15,7 @@
 			    <h1 class="panel-title"><strong>{{ $type->name }}</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right"><a href="/{{ (Auth::check()) ? 'types' : '' }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>			  	
+			  	<div class="pull-right"><a href="/admin/{{ (Auth::check()) ? 'types' : '' }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>			  	
 			  	<div style="clear:both;"></div>
 			
 			  </div>

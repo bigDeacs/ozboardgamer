@@ -15,7 +15,7 @@
 			    <h1 class="panel-title"><strong>Create a new Game</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right"><a href="/games" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>			  	
+			  	<div class="pull-right"><a href="/admin/games" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>			  	
 			  	<div style="clear:both;"></div>
 				@if(count($errors) > 0)
 					<div class="alert alert-danger">
@@ -26,7 +26,7 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::open(['files'=> true, 'url' => 'games']) !!}
+				{!! Form::open(['files'=> true, 'url' => '/admin/games']) !!}
 					@include('games.form')
 					<div class="form-group">
 						<button type="submit" class="btn btn-success btn-block">Create</button>

@@ -16,6 +16,10 @@ use App\Http\Controllers\Controller;
 
 class GameController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -111,7 +115,7 @@ class GameController extends Controller
         }
         $game->types()->sync($currentTypes);
 
-        return redirect('/games');
+        return redirect('/admin/games');
     }
 
     /**
@@ -215,7 +219,7 @@ class GameController extends Controller
         }
         $game->types()->sync($currentTypes);
 
-        return redirect('/games');
+        return redirect('/admin/games');
     }
 
 

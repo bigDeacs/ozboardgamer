@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Family;
+use App\Publisher;
+use App\Mechanic;
+use App\Theme;
+use App\Type;
+use App\Post;
+use App\Category;
 use Storage;
 
 class SiteController extends Controller {
@@ -38,10 +45,23 @@ class SiteController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function game($slug)
+	public function game($type = null, $slug = null)
 	{
-		$game = Game::where('slug', '=', $slug)->firstOrFail();
-		return view('game', compact('game'));
+		if($type == null) {
+			$types = Type::get();	
+			$games = Game::with('types')->get();
+			return view('types', compact('types', 'games'));
+		} elseif($slug == null) {
+			$games = Game::whereHas('types', function($q) use($type)
+			{
+			    $q->where('slug', '=', $type);
+			})->get();
+			$type = Type::where('slug', '=', $type)->firstOrFail();	
+			return view('type', compact('type','games'));
+		} else {
+			$game = Game::where('slug', '=', $slug)->firstOrFail();	
+			return view('game', compact('game'));
+		}
 	}
 
 	/**

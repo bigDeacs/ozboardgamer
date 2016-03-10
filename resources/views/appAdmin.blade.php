@@ -32,22 +32,22 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">OzBoardGamer</a>
+				<a class="navbar-brand" href="#">OzBoardGamer - Back</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Home</a></li>
+					<li><a href="{{ url('/admin') }}">Home</a></li>
 					@if (Auth::check())
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Games <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/games') }}">Games</a></li>
-								<li><a href="{{ url('/families') }}">Game Families</a></li>
-								<li><a href="{{ url('/publishers') }}">Game Publishers</a></li>
-								<li><a href="{{ url('/mechanics') }}">Game Mechanics</a></li>
-								<li><a href="{{ url('/themes') }}">Game Themes</a></li>
-								<li><a href="{{ url('/types') }}">Game Types</a></li>
+								<li><a href="{{ url('/admin/games') }}">Games</a></li>
+								<li><a href="{{ url('/admin/families') }}">Game Families</a></li>
+								<li><a href="{{ url('/admin/publishers') }}">Game Publishers</a></li>
+								<li><a href="{{ url('/admin/mechanics') }}">Game Mechanics</a></li>
+								<li><a href="{{ url('/admin/themes') }}">Game Themes</a></li>
+								<li><a href="{{ url('/admin/types') }}">Game Types</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
