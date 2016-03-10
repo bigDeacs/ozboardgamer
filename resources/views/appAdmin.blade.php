@@ -32,7 +32,9 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">OzBoardGamer - Back</a>
+				<a class="navbar-brand topnav" href="/">
+                	<img src="/img/logo.png" class="img-responsive" height="75" width="auto" />
+                </a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
