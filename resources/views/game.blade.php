@@ -15,7 +15,6 @@
 			    <h1 class="panel-title"><strong>View {{ $game->name }}</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right"><a href="/{{ (Auth::check()) ? 'games' : '' }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>			  	
 			  	<div style="clear:both;"></div>
 				<div class="row">
 			      <div class="col-sm-4 col-xs-12">
@@ -25,7 +24,7 @@
 			      	<h1>{{ $game->name }}</h1>
 			      </div>
 			      <div class="col-sm-2 col-xs-12">
-					{{ $game->rating }}/10
+					{{ number_format((float)$game->rating, 1, '.', '') }}/10
 			      </div>
 			    </div>
 				<div class="row">

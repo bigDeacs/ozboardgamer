@@ -13,14 +13,14 @@
 
 // Front Facing Routes
 Route::get('/', 'SiteController@index');
-Route::get('/game/{slug}', 'SiteController@game');
-Route::get('/family/{slug}', 'SiteController@family');
-Route::get('/publisher/{slug}', 'SiteController@publisher');
-Route::get('/mechanic/{slug}', 'SiteController@mechanic');
-Route::get('/theme/{slug}', 'SiteController@theme');
-Route::get('/type/{slug}', 'SiteController@type');
-Route::get('/post/{slug}', 'SiteController@post');
-Route::get('/category/{slug}', 'SiteController@category');
+Route::get('/games/{slug}', 'SiteController@game');
+Route::get('/gamefamilies/{slug}', 'SiteController@family');
+Route::get('/publishers/{slug}', 'SiteController@publisher');
+Route::get('/mechanics/{slug}', 'SiteController@mechanic');
+Route::get('/themes/{slug}', 'SiteController@theme');
+Route::get('/gametypes/{slug}', 'SiteController@type');
+Route::get('/{category}/{slug}', 'SiteController@post');
+Route::get('/{category}', 'SiteController@category');
 
 // Admin Routes
 Route::get('home', 'AdminController@index');
