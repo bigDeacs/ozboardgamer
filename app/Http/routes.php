@@ -21,6 +21,11 @@ Route::get('/themes/{slug?}', 'SiteController@theme');
 Route::get('/gametypes/{slug?}', 'SiteController@type');
 
 // Admin Routes
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
+
 Route::get('home', 'AdminController@index');
 Route::resource('games', 'GameController');
 Route::resource('publishers', 'PublisherController');
@@ -38,8 +43,3 @@ Route::get('users/{users}/deactivate', ['as' => 'users.deactivate', 'uses' => 'U
 
 // Dynamic Routes
 Route::get('/{category}/{slug?}', 'SiteController@post');
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
