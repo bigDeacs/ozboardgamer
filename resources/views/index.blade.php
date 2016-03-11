@@ -13,24 +13,14 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url('/img/intro-bg.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 1</h2>
+            @foreach($featured as $key => $post)
+                <div class="item {{ ($key == 0) ? 'active' : "" }}">
+                    <div class="fill" style="background-image:url('{{ $post->image }}');"></div>
+                    <div class="carousel-caption">
+                        <h2>{{ $post->name }}</h2>
+                    </div>
                 </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('/img/intro-bg.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 2</h2>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('/img/intro-bg.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>Caption 3</h2>
-                </div>
-            </div>
+            @endforeach
         </div>
 
         <!-- Controls -->
@@ -43,71 +33,48 @@
     </header>
 
     <!-- Page Content -->
-
-    <div class="content-section-a">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Death to the Stock Photo:<br>Special Thanks</h2>
-                    <p class="lead">A special thanks to <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a> for providing the photographs that you see in this template. Visit their website to become a member.</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Reviews</h3>
+                        @foreach($reviews as $review)
+                            <a href="/reviews/{{ $review->slug }}">{!! $review->name !!}</a><br />
+                            <hr />
+                        @endforeach
+                    </div>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/ipad.png" alt="">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>News</h3>
+                        @foreach($news as $entry)
+                            <a href="/news/{{ $entry->slug }}">{!! $entry->name !!}</a><br />
+                            <hr />
+                        @endforeach
+                    </div>
                 </div>
-            </div>
 
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-a -->
-
-    <div class="content-section-b">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/dog.png" alt="">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>How To's</h3>
+                        @foreach($howtos as $howto)
+                            <a href="/howtos/{{ $howto->slug }}">{!! $howto->name !!}</a><br />
+                            <hr />
+                        @endforeach
+                    </div>
                 </div>
             </div>
-
-        </div>
-        <!-- /.container -->
-
-    </div>
-    <!-- /.content-section-b -->
-
-    <div class="content-section-a">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/phones.png" alt="">
-                </div>
+            <div class="col-sm-3 col-xs-12">
+                <h3>Games</h3>
+                @foreach($games as $game)
+                    <a href="/games/{{ $game->types()->first()->slug }}/{!! $game->slug !!}">{!! $game->name !!}</a><br />
+                    <hr />
+                @endforeach
             </div>
-
         </div>
-        <!-- /.container -->
-
     </div>
-    <!-- /.content-section-a -->
 
     <!--<div class="banner">
 

@@ -26,7 +26,7 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+    <nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -97,28 +97,58 @@
   	<hr>
 
   	<!-- Footer -->
-    <footer>
+    <footer class="navbar-inverse navbar-footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    <ul class="list-inline intro-social-buttons pull-right">
+                        <li>
+                            <a href="https://www.facebook.com/ozboardgamer/" class="btn btn-primary btn-lg" target="_blank" title="Like us on Facebook">
+                                <i class="fa fa-facebook-official fa-fw"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/OzBoardGamer" class="btn btn-info btn-lg" target="_blank" title="Follow us on Twitter">
+                                <i class="fa fa-twitter fa-fw"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" class="btn btn-danger btn-lg" target="_blank" title="Subscribe to our Youtube channel">
+                                <i class="fa fa-youtube fa-fw"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/ozboardgamer/" class="btn btn-warning btn-lg" target="_blank" title="Follow us on Instagram">
+                                <i class="fa fa-instagram fa-fw"></i>
+                            </a>
+                        </li>
+                    </ul>
                     <ul class="list-inline">
                         <li>
                             <a href="#">Home</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#about">About</a>
+                            <a href="/games">Games</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#services">Services</a>
+                            <a href="/news">News</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="#contact">Contact</a>
+                            <a href="/reviews">Reviews</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="/howtos">How To's</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="/top10s">Top 10's</a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. All Rights Reserved</p>
                 </div>
             </div>
         </div>
