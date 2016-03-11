@@ -26,7 +26,7 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::model($category, [method' => 'PATCH', 'action' => ['CategoryController@update', $category->id]]) !!}
+				{!! Form::model($category, ['method' => 'PATCH', 'action' => ['CategoryController@update', $category->id]]) !!}
 					@include('categories.form')
 					<div class="form-group">
 						<button type="submit" class="btn btn-success btn-block">Update</button>
