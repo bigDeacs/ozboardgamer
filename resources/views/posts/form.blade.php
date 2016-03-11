@@ -15,7 +15,7 @@
 <div class="form-group row">
       <div class="col-sm-6 col-xs-12">
             <label for="video">Video Link</label>
-            <input type="text" name="video" id="video" class="form-control" value="{{ isset($post) ? $post->video : old('video') }}" placeholder="" required>
+            <input type="text" name="video" id="video" class="form-control" value="{{ isset($post) ? $post->video : old('video') }}" placeholder="">
       </div>
       <div class="col-sm-6 col-xs-12">
             <label for="image">Featured Image</label>

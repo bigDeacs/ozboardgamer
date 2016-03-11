@@ -15,7 +15,7 @@
 			    <h1 class="panel-title"><strong>Categories</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right"><a href="/categories/create" class="btn btn-primary">Create Category <i class="fa fa-plus-square"></i></a></div>
+			  	<div class="pull-right"><a href="/admin/categories/create" class="btn btn-primary">Create Category <i class="fa fa-plus-square"></i></a></div>
 			  	<div style="clear:both;"></div>
 			  	<div class="row">
 					<div class="col-sm-12">
@@ -37,8 +37,8 @@
 						    	<tr>
 						    		<td scope="row">{{ $category->name }}</td>
 						    		<td>
-						    			<a href="/categories/{{ $category->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
-						    			<a href="/categories/{{ $category->id }}" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
+						    			<a href="/admin/categories/{{ $category->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
+						    			<a href="/admin/categories/{{ $category->id }}" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
 						    		</td>
 						    	</tr>
 						    	@endforeach

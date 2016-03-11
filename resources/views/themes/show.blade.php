@@ -15,7 +15,7 @@
 			    <h1 class="panel-title"><strong>{{ $theme->name }}</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right"><a href="/{{ (Auth::check()) ? 'themes' : '' }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>			  	
+			  	<div class="pull-right"><a href="/admin/{{ (Auth::check()) ? 'themes' : '' }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>			  	
 			  	<div style="clear:both;"></div>
 				
 			  </div>

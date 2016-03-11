@@ -32,8 +32,8 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand topnav" href="/">
-                	<img src="/img/logo.png" class="img-responsive" height="75" width="auto" />
+				<a class="navbar-brand topnav" href="/" style="padding: 15px;">
+                	OzBoardGamer - Admin Panel
                 </a>
 			</div>
 
@@ -55,11 +55,11 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Posts <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/posts') }}">Posts</a></li>
-								<li><a href="{{ url('/categories') }}">Categories</a></li>
+								<li><a href="{{ url('/admin/posts') }}">Posts</a></li>
+								<li><a href="{{ url('/admin/categories') }}">Categories</a></li>
 							</ul>
 						</li>
-						<li><a href="{{ url('/users') }}">Users</a></li>
+						<li><a href="{{ url('/admin/users') }}">Users</a></li>
 					@endif
 				</ul>
 

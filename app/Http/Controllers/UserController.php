@@ -42,7 +42,7 @@ class UserController extends Controller
     {
         $user = User::create($request->all());
 
-        return redirect('/users');
+        return redirect('/admin/users');
     }
 
     /**
@@ -82,7 +82,7 @@ class UserController extends Controller
         $user->update($request->all());
         $user->save();
 
-        return redirect('/users');
+        return redirect('/admin/users');
     }
 
     public function activate($id)
@@ -91,7 +91,7 @@ class UserController extends Controller
         $user->status = 1;
         $user->save();
 
-        return redirect('users');
+        return redirect('/admin/users');
     }
 
     public function deactivate($id)
@@ -100,6 +100,6 @@ class UserController extends Controller
         $user->status = 0;
         $user->save();
 
-        return redirect('users');
+        return redirect('/admin/users');
     }
 }

@@ -15,7 +15,7 @@
 			    <h1 class="panel-title"><strong>Mechanics</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right"><a href="/mechanics/create" class="btn btn-primary">Create Mechanic <i class="fa fa-plus-square"></i></a></div>
+			  	<div class="pull-right"><a href="/admin/mechanics/create" class="btn btn-primary">Create Mechanic <i class="fa fa-plus-square"></i></a></div>
 			  	<div style="clear:both;"></div>
 			  	<div class="row">
 					<div class="col-sm-12">
@@ -37,8 +37,8 @@
 						    	<tr>
 						    		<td scope="row">{{ $mechanic->name }}</td>
 						    		<td>
-						    			<a href="/mechanics/{{ $mechanic->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
-						    			<a href="/mechanics/{{ $mechanic->id }}" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
+						    			<a href="/admin/mechanics/{{ $mechanic->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
+						    			<a href="/admin/mechanics/{{ $mechanic->id }}" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
 						    		</td>
 						    	</tr>
 						    	@endforeach

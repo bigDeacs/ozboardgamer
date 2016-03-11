@@ -138,7 +138,7 @@ class PostController extends Controller
         }
         $post->games()->sync($currentGames);
 
-        return redirect('/posts');
+        return redirect('/admin/posts');
     }
 
     public function activate($id)
@@ -147,7 +147,7 @@ class PostController extends Controller
         $post->status = 1;
         $post->save();
 
-        return redirect('posts');
+        return redirect('/admin/posts');
     }
 
     public function deactivate($id)
@@ -156,7 +156,7 @@ class PostController extends Controller
         $post->status = 0;
         $post->save();
 
-        return redirect('posts');
+        return redirect('/admin/posts');
     }
 
 
