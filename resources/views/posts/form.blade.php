@@ -13,9 +13,20 @@
 </div>
 
 <div class="form-group row">
-      <div class="col-xs-12">
+      <div class="col-sm-6 col-xs-12">
             <label for="video">Video Link</label>
             <input type="text" name="video" id="video" class="form-control" value="{{ isset($post) ? $post->video : old('video') }}" placeholder="" required>
+      </div>
+      <div class="col-sm-6 col-xs-12">
+            <label for="image">Featured Image</label>
+            @if(isset($post))
+                  <img src="{!! $post->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
+            @else
+                  <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
+            @endif
+            Browse:
+            <input type="file" name="image" accept="image/*" onchange="loadImage(event)">
+            <small>600px X 350px</small>
       </div>
 </div>
 
@@ -66,5 +77,11 @@
                   placeholder: 'Choose a game',
                   tags: true
             });
+      </script>
+      <script>
+        var loadImage = function(event) {
+          var imageUpload = document.getElementById('imageUpload');
+          imageUpload.src = URL.createObjectURL(event.target.files[0]);
+        };
       </script>
 @endsection

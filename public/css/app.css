@@ -6,6 +6,7 @@ html {
 }
 body {
   margin: 0;
+  padding-top: 103px;
 }
 article,
 aside,
@@ -1214,6 +1215,7 @@ ol ol {
   padding-left: 0;
   list-style: none;
   margin-left: -5px;
+  margin-bottom: 0!important;
 }
 .list-inline > li {
   display: inline-block;
@@ -3781,7 +3783,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  min-height: 85px;
+  min-height: 70px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
@@ -3889,9 +3891,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   font-size: 18px;
-  padding: 5px 0;
+  padding: 20px 0;
   line-height: 20px;
-  height: 50px;
+  height: 100px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -3899,7 +3901,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-brand > img {
   display: block;
-  height: 75px;
+  height: 60px;
 }
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand,
@@ -3931,6 +3933,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 4px;
 }
+.navbar-toggle {
+    margin-right: 10px!important;
+    margin-top: 25px!important;
+}
 @media (min-width: 768px) {
   .navbar-toggle {
     display: none;
@@ -3942,9 +3948,22 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-nav > li > a {
   padding-top: 10px;
   padding-bottom: 10px;
-  line-height: 20px;
+  line-height: 10px;
+}
+.navbar-social {
+  padding: 10px 0;
 }
 @media (max-width: 767px) {
+  body {
+    padding-top: 81px!important;
+  }
+  .navbar-brand > img {
+    height: 40px!important;
+  }
+  .navbar-brand {
+    padding: 20px 0!important;
+    height: 80px!important;
+  }
   .navbar-nav .open .dropdown-menu {
     position: static;
     float: none;
@@ -3964,6 +3983,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-nav .open .dropdown-menu > li > a:focus {
     background-image: none;
+  }
+  .navbar-nav, .navbar-social {
+    text-align: center;
   }
 }
 @media (min-width: 768px) {

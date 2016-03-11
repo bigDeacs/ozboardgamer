@@ -2,51 +2,48 @@
 
 @section('content')
 <!-- Header -->
-    <a name="about"></a>
-    <div class="intro-header">
-        <div class="container">
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
-                        <h1>OzBoardGamer</h1>
-                        <h3>News, Reviews and More</h3>
-                        <hr class="intro-divider">
-                        <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg">
-                                	<i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg">
-                                	<i class="fa fa-youtube fa-fw"></i> <span class="network-name">Youtube</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default btn-lg">
-                                	<i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default btn-lg">
-                                	<i class="fa fa-facebook-official fa-fw"></i> <span class="network-name">Facebook</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('/img/intro-bg.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 1</h2>
                 </div>
             </div>
-
+            <div class="item">
+                <div class="fill" style="background-image:url('/img/intro-bg.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 2</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('/img/intro-bg.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 3</h2>
+                </div>
+            </div>
         </div>
-        <!-- /.container -->
 
-    </div>
-    <!-- /.intro-header -->
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
 
     <!-- Page Content -->
 
-	<a  name="services"></a>
     <div class="content-section-a">
 
         <div class="container">
@@ -112,15 +109,12 @@
     </div>
     <!-- /.content-section-a -->
 
-	<a  name="contact"></a>
-    <div class="banner">
+    <!--<div class="banner">
 
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-6">
-                    <h2>Connect to Start Bootstrap:</h2>
-                </div>
+                
                 <div class="col-lg-6">
                     <ul class="list-inline banner-social-buttons">
                         <li>
@@ -136,9 +130,16 @@
                 </div>
             </div>
 
-        </div>
-        <!-- /.container -->
+        </div>-->
 
     </div>
     <!-- /.banner -->
+@endsection
+
+@section('scripts')
+    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+    </script>
 @endsection

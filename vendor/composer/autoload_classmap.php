@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddImageToGamesTable' => $baseDir . '/database/migrations/2016_03_08_011149_add_image_to_games_table.php',
+    'AddImageToPostsTable' => $baseDir . '/database/migrations/2016_03_11_005312_add_image_to_posts_table.php',
     'AddSlugFixToGamesTable' => $baseDir . '/database/migrations/2016_03_09_082311_add_slug_fix_to_games_table.php',
     'AddSlugToCategoriesTable' => $baseDir . '/database/migrations/2016_03_09_083946_add_slug_to_categories_table.php',
     'AddSlugToFamiliesTable' => $baseDir . '/database/migrations/2016_03_09_084015_add_slug_to_families_table.php',

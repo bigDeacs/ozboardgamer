@@ -8,6 +8,7 @@
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/landing-page.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/modern-business.css') }}" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{{ asset('/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
 	<!-- Fonts -->
@@ -41,23 +42,51 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/games">Games</a>
-                    </li>
-                    <li>
-                        <a href="/news">News</a>
-                    </li>
-                    <li>
-                        <a href="/reviews">Reviews</a>
-                    </li>
-                    <li>
-                        <a href="/howtos">How To's</a>
-                    </li>
-                    <li>
-                        <a href="/top10s">Top 10's</a>
-                    </li>
-                </ul>
+                <div class="navbar-right">
+                    <div class="row navbar-social text-right">
+                        <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <a href="https://www.facebook.com/ozboardgamer/" class="btn btn-primary btn-lg" target="_blank" title="Like us on Facebook">
+                                    <i class="fa fa-facebook-official fa-fw"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/OzBoardGamer" class="btn btn-info btn-lg" target="_blank" title="Follow us on Twitter">
+                                    <i class="fa fa-twitter fa-fw"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" class="btn btn-danger btn-lg" target="_blank" title="Subscribe to our Youtube channel">
+                                    <i class="fa fa-youtube fa-fw"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/ozboardgamer/" class="btn btn-warning btn-lg" target="_blank" title="Follow us on Instagram">
+                                    <i class="fa fa-instagram fa-fw"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar-right">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a href="/games">Games</a>
+                            </li>
+                            <li>
+                                <a href="/news">News</a>
+                            </li>
+                            <li>
+                                <a href="/reviews">Reviews</a>
+                            </li>
+                            <li>
+                                <a href="/howtos">How To's</a>
+                            </li>
+                            <li>
+                                <a href="/top10s">Top 10's</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
             <!-- /.navbar-collapse -->
         </div>

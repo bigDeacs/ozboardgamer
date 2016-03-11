@@ -45,7 +45,16 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $post = Post::create($request->all());
-
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            if ($file->isValid())
+            {
+                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $post->image = ('http://ozboardgamer.com/uploads/' . $filename);
+                $post->save();
+            }
+        }
         if(is_array($request->input('game_list'))) {
             $currentGames = array_filter($request->input('game_list'), 'is_numeric');
             $newGames = array_diff($request->input('game_list'), $currentGames);   
@@ -102,6 +111,17 @@ class PostController extends Controller
         $post = Post::where('id', '=', $id)->firstOrFail();
         $post->update($request->all());
         $post->save();
+
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            if ($file->isValid())
+            {
+                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $post->image = ('http://ozboardgamer.com/uploads/' . $filename);
+                $post->save();
+            }
+        }
 
         if(is_array($request->input('game_list'))) {
             $currentGames = array_filter($request->input('game_list'), 'is_numeric');

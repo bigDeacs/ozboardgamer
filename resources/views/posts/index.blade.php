@@ -15,7 +15,7 @@
 			    <h1 class="panel-title"><strong>Posts</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right"><a href="/posts/create" class="btn btn-primary">Create Post <i class="fa fa-plus-square"></i></a></div>
+			  	<div class="pull-right"><a href="/admin/posts/create" class="btn btn-primary">Create Post <i class="fa fa-plus-square"></i></a></div>
 			  	<div style="clear:both;"></div>
 			  	<div class="row">
 					<div class="col-sm-12">
@@ -37,8 +37,8 @@
 						    	<tr>
 						    		<td scope="row">{{ $post->name }}</td>
 						    		<td>
-						    			<a href="/posts/{{ $post->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
-						    			<a href="/posts/{{ $post->id }}" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
+						    			<a href="/admin/posts/{{ $post->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
+						    			<a href="/admin/posts/{{ $post->id }}" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
 						    		</td>
 						    	</tr>
 						    	@endforeach
