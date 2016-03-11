@@ -70,7 +70,7 @@ class PostController extends Controller
         }
         $post->games()->sync($currentGames);
 
-        return redirect('/posts');
+        return redirect('/admin/posts');
     }
 
     /**
