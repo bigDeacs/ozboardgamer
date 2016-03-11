@@ -42,7 +42,7 @@ class CategoryController extends Controller
     {
         $category = Category::create($request->all());
 
-        return redirect('/categories');
+        return redirect('/admin/categories');
     }
 
     /**
@@ -82,7 +82,7 @@ class CategoryController extends Controller
         $category->update($request->all());
         $category->save();
 
-        return redirect('/categories');
+        return redirect('/admin/categories');
     }
 
     /**

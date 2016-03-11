@@ -26,7 +26,7 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::open(['files'=> true, 'url' => 'categories']) !!}
+				{!! Form::open(['files'=> true, 'url' => '/admin/categories']) !!}
 					@include('categories.form')
 					<div class="form-group">
 						<button type="submit" class="btn btn-success btn-block">Create</button>

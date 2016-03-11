@@ -26,7 +26,7 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::open(['url' => 'users']) !!}
+				{!! Form::open(['url' => '/admin/users']) !!}
 					@include('users.form')
 					<div class="form-group">
 						<button type="submit" class="btn btn-success btn-block">Create</button>

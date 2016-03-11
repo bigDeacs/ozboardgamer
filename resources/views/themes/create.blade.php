@@ -26,7 +26,7 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::open(['url' => 'themes']) !!}
+				{!! Form::open(['url' => '/admin/themes']) !!}
 					@include('themes.form')
 					<div class="form-group">
 						<button type="submit" class="btn btn-success btn-block">Create</button>
