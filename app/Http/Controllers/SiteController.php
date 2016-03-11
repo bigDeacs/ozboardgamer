@@ -125,10 +125,23 @@ class SiteController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function post($slug)
+	public function post($category, $slug = null)
 	{
-		$post = Post::where('slug', '=', $slug)->firstOrFail();
-		return view('post', compact('post'));
+		if($slug == null) {
+			$posts = Post::whereHas('category', function($q) use($category)
+			{
+			    $q->where('slug', '=', $category);
+			})->get();
+			$category = Category::where('slug', '=', $category)->firstOrFail();	
+			return view('posts', compact('category','posts'));
+		} else {
+			$post = Post::whereHas('category', function($q) use($category)
+			{
+			    $q->where('slug', '=', $category);
+			})->where('slug', '=', $slug)->get();
+			return view('post', compact('post'));
+		}
+
 	}
 
 	/**
