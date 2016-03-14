@@ -89,6 +89,7 @@
 	<script src="/js/select2.min.js"></script>
 	<script src="/js/star-rating.min.js" type="text/javascript"></script>
 	<script src="/js/bootstrap-datepicker.js"></script>
+	<script src="//cdn.ckeditor.com/4.5.7/full/ckeditor.js"></script>
     <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 	<script>
       $(document).ready(function() {

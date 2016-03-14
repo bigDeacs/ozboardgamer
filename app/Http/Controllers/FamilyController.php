@@ -46,7 +46,7 @@ class FamilyController extends Controller
     {
         $family = Family::create($request->all());
 
-        return redirect('/families');
+        return redirect('/admin/families');
     }
 
     /**
@@ -86,7 +86,7 @@ class FamilyController extends Controller
         $family->update($request->all());
         $family->save();
 
-        return redirect('/families');
+        return redirect('/admin/families');
     }
 
     public function activate($id)
