@@ -24,12 +24,7 @@ class SiteController extends Controller {
 	| controller as you wish. It is just here to get your app started!
 	|
 	*/
-
-	public function __construct()
-	{
-		$this->middleware('guest');
-	}
-
+	
 	/**
 	 * Show the application welcome screen to the user.
 	 *
@@ -50,7 +45,7 @@ class SiteController extends Controller {
 		{
 		    $q->where('slug', '=', 'howtos');
 		})->take(5)->get();
-		$games = Game::orderBy('rating', 'desc')->take(10)->get();
+		$games = Game::where('status', '=', '1')->orderBy('rating', 'desc')->take(10)->get();
 		return view('index', compact('featured', 'reviews', 'news', 'howtos', 'games'));
 	}
 
@@ -62,19 +57,18 @@ class SiteController extends Controller {
 	public function game($type = null, $slug = null)
 	{
 		if($type == null) {
-			$types = Type::get();	
-			$games = Game::with('types')->get();
+			$types = Type::where('status', '=', '1')->get();	
+			$games = Game::where('status', '=', '1')->with('types')->get();
 			return view('types', compact('types', 'games'));
 		} elseif($slug == null) {
-			$games = Game::whereHas('types', function($q) use($type)
+			$games = Game::where('status', '=', '1')->whereHas('types', function($q) use($type)
 			{
 			    $q->where('slug', '=', $type);
 			})->get();
-			$type = Type::where('slug', '=', $type)->firstOrFail();	
+			$type = Type::where('status', '=', '1')->where('slug', '=', $type)->firstOrFail();	
 			return view('type', compact('type','games'));
 		} else {
-			$game = Game::with('children', 'parent')->where('slug', '=', $slug)->firstOrFail();
-			
+			$game = Game::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 			return view('game', compact('game'));
 		}
 	}
@@ -86,7 +80,7 @@ class SiteController extends Controller {
 	 */
 	public function family($slug)
 	{
-		$family = Family::where('slug', '=', $slug)->firstOrFail();
+		$family = Family::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 		return view('family', compact('family'));
 	}
 
@@ -97,7 +91,7 @@ class SiteController extends Controller {
 	 */
 	public function publisher($slug)
 	{
-		$publisher = Publisher::where('slug', '=', $slug)->firstOrFail();
+		$publisher = Publisher::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 		return view('publisher', compact('publisher'));
 	}
 
@@ -108,7 +102,7 @@ class SiteController extends Controller {
 	 */
 	public function mechanic($slug)
 	{
-		$mechanic = Mechanic::where('slug', '=', $slug)->firstOrFail();
+		$mechanic = Mechanic::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 		return view('mechanic', compact('mechanic'));
 	}
 
@@ -119,7 +113,7 @@ class SiteController extends Controller {
 	 */
 	public function theme($slug)
 	{
-		$theme = Theme::where('slug', '=', $slug)->firstOrFail();
+		$theme = Theme::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 		return view('theme', compact('theme'));
 	}
 
@@ -130,7 +124,7 @@ class SiteController extends Controller {
 	 */
 	public function type($slug)
 	{
-		$type = Type::where('slug', '=', $slug)->firstOrFail();
+		$type = Type::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 		return view('type', compact('type'));
 	}
 
@@ -142,14 +136,14 @@ class SiteController extends Controller {
 	public function post($category, $slug = null)
 	{
 		if($slug == null) {
-			$posts = Post::whereHas('category', function($q) use($category)
+			$posts = Post::where('status', '=', '1')->whereHas('category', function($q) use($category)
 			{
 			    $q->where('slug', '=', $category);
 			})->get();
-			$category = Category::where('slug', '=', $category)->firstOrFail();	
+			$category = Category::where('status', '=', '1')->where('slug', '=', $category)->firstOrFail();	
 			return view('posts', compact('category','posts'));
 		} else {
-			$post = Post::whereHas('category', function($q) use($category)
+			$post = Post::where('status', '=', '1')->whereHas('category', function($q) use($category)
 			{
 			    $q->where('slug', '=', $category);
 			})->where('slug', '=', $slug)->with('games')->firstOrFail();
@@ -165,7 +159,7 @@ class SiteController extends Controller {
 	 */
 	public function category($slug)
 	{
-		$category = Category::where('slug', '=', $slug)->firstOrFail();
+		$category = Category::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 		return view('category', compact('category'));
 	}
 

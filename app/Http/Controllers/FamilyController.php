@@ -10,6 +10,10 @@ use App\Http\Controllers\Controller;
 
 class FamilyController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -85,16 +89,21 @@ class FamilyController extends Controller
         return redirect('/families');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function activate($id)
     {
-        Family::findOrFail($id)->delete();
+        $family = Family::find($id);
+        $family->status = 1;
+        $family->save();
 
-        return back();
+        return redirect('/admin/families');
+    }
+
+    public function deactivate($id)
+    {
+        $family = Family::find($id);
+        $family->status = 0;
+        $family->save();
+
+        return redirect('/admin/families');
     }
 }

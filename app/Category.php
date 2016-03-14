@@ -22,7 +22,8 @@ class Category extends Model {
 		'description', 
 		'meta', 
 		'head', 
-		'scripts'
+		'scripts',
+		'status'
 	];
 
 	public function posts()

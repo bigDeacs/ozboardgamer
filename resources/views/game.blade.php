@@ -17,14 +17,71 @@
 			  <div class="panel-body">
 			  	<div style="clear:both;"></div>
 				<div class="row">
-			      <div class="col-sm-4 col-xs-12">
+			      <div class="col-sm-3 col-xs-12">
 			      	<img src="{{ $game->image }}" class="img-responsive" />
 			      </div>
 			      <div class="col-sm-6 col-xs-12">
 			      	<h1>{{ $game->name }}</h1>
+					@unless($game->publisher == null)			      	
+			      		<small><a href="">{{ $game->publisher->name }}</a> | Published: {{ $game->published }}</small>
+			      	@endunless
+			      	<div class="row">
+				      <div class="col-sm-4 col-xs-12">
+				      	<div class="well">
+							<img src="/img/players.png" class="img-responsive" />
+							<div class="text-center lead">
+								{{ $game->players }}
+							</div>
+						</div>
+				      </div>
+				      <div class="col-sm-4 col-xs-12">
+				      	<div class="well">
+							<img src="/img/ages.png" class="img-responsive" />
+							<div class="text-center lead">
+								{{ $game->age }}
+							</div>
+						</div>
+				      </div>
+				      <div class="col-sm-4 col-xs-12">
+				      	<div class="well">
+							<img src="/img/time.png" class="img-responsive" />
+							<div class="text-center lead">
+								{{ $game->time }}
+							</div>
+						</div>
+				      </div>
+				    </div>
+			      	
+					
+					
 			      </div>
-			      <div class="col-sm-2 col-xs-12">
-					{{ number_format((float)$game->rating, 1, '.', '') }}/10
+			      <div class="col-sm-3 col-xs-12">
+			      	<div class="well">
+						@if($game->rating < 1)
+							<img src="/img/1.png" class="img-responsive" />
+						@elseif($game->rating < 2)
+							<img src="/img/2.png" class="img-responsive" />
+						@elseif($game->rating < 3)
+							<img src="/img/3.png" class="img-responsive" />
+						@elseif($game->rating < 4)
+							<img src="/img/4.png" class="img-responsive" />
+						@elseif($game->rating < 5)
+							<img src="/img/5.png" class="img-responsive" />
+						@elseif($game->rating < 6)
+							<img src="/img/6.png" class="img-responsive" />
+						@elseif($game->rating < 7)
+							<img src="/img/7.png" class="img-responsive" />
+						@elseif($game->rating < 8)
+							<img src="/img/8.png" class="img-responsive" />
+						@elseif($game->rating < 9)
+							<img src="/img/9.png" class="img-responsive" />
+						@else
+							<img src="/img/10.png" class="img-responsive" />
+						@endif
+						<div class="text-center lead">
+							{{ number_format((float)$game->rating, 1, '.', '') }}/10
+						</div>
+					</div>
 			      </div>
 			    </div>
 			    @unless($game->children->isEmpty())
@@ -37,17 +94,7 @@
 			    	Parent is: {{ $game->parent->name }}
 			    @endunless
 			    
-				<div class="row">
-			      <div class="col-sm-4 col-xs-12">
-			      	{{ $game->time }}
-			      </div>
-			      <div class="col-sm-4 col-xs-12">
-			      	{{ $game->players }}
-			      </div>
-			      <div class="col-sm-4 col-xs-12">
-			      	{{ $game->age }}
-			      </div>
-			    </div>
+				
 			
 				<div class="row">
 			      <div class="col-sm-4 col-xs-12">

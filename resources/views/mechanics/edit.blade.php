@@ -26,7 +26,7 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::model($mechanic, [method' => 'PATCH', 'action' => ['MechanicController@update', $mechanic->id]]) !!}
+				{!! Form::model($mechanic, ['method' => 'PATCH', 'action' => ['MechanicController@update', $mechanic->id]]) !!}
 					@include('mechanics.form')
 					<div class="form-group">
 						<button type="submit" class="btn btn-success btn-block">Update</button>

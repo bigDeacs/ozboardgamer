@@ -34,11 +34,20 @@
 						    </thead>
 						    <tbody>
 						    	@foreach($themes as $theme)
-						    	<tr>
+						    	@if($theme->status == 0)
+							    	<tr class="danger">
+							    @else
+									<tr class="success">
+								@endif
 						    		<td scope="row">{{ $theme->name }}</td>
 						    		<td>
 						    			<a href="/admin/themes/{{ $theme->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
 						    			<a href="/admin/themes/{{ $theme->id }}" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
+						    			@if($theme->status == 0)
+											<a href="/admin/themes/{{ $theme->id }}/activate" class="btn btn-success">Activate <i class="fa fa-check"></i></a>
+										@else
+											<a href="/admin/themes/{{ $theme->id }}/deactivate" class="btn btn-danger">Deactivate <i class="fa fa-times"></i></a>
+										@endif
 						    		</td>
 						    	</tr>
 						    	@endforeach

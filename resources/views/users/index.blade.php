@@ -34,7 +34,11 @@
 						    </thead>
 						    <tbody>
 						    	@foreach($users as $user)
-						    	<tr>
+						    	@if($user->status == 0)
+							    	<tr class="danger">
+							    @else
+									<tr class="success">
+								@endif
 						    		<td scope="row">{{ $user->name }}</td>
 						    		<td>
 						    			<a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>

@@ -39,12 +39,12 @@ class GameController extends Controller
      */
     public function create()
     {
-        $themes = Theme::lists('name', 'id');
-        $mechanics = Mechanic::lists('name', 'id');
-        $types = Type::lists('name', 'id');
-        $publishers = Publisher::lists('name', 'id');
-        $families = Family::lists('name', 'id');
-        $games = Game::lists('name', 'id');
+        $themes = Theme::where('status', '=', '1')->lists('name', 'id');
+        $mechanics = Mechanic::where('status', '=', '1')->lists('name', 'id');
+        $types = Type::where('status', '=', '1')->lists('name', 'id');
+        $publishers = Publisher::where('status', '=', '1')->lists('name', 'id');
+        $families = Family::where('status', '=', '1')->lists('name', 'id');
+        $games = Game::where('status', '=', '1')->lists('name', 'id');
         return view('games.create', compact('themes', 'mechanics', 'types', 'families', 'publishers', 'games'));
     }
 
@@ -138,12 +138,12 @@ class GameController extends Controller
      */
     public function edit($id)
     {
-        $themes = Theme::lists('name', 'id');
-        $mechanics = Mechanic::lists('name', 'id');
-        $types = Type::lists('name', 'id');
-        $publishers = Publisher::lists('name', 'id');
-        $families = Family::lists('name', 'id');
-        $games = Game::lists('name', 'id');
+        $themes = Theme::where('status', '=', '1')->lists('name', 'id');
+        $mechanics = Mechanic::where('status', '=', '1')->lists('name', 'id');
+        $types = Type::where('status', '=', '1')->lists('name', 'id');
+        $publishers = Publisher::where('status', '=', '1')->lists('name', 'id');
+        $families = Family::where('status', '=', '1')->lists('name', 'id');
+        $games = Game::where('status', '=', '1')->lists('name', 'id');
         $game = Game::where('id', '=', $id)->firstOrFail();
         return view('games.edit', compact('game', 'themes', 'mechanics', 'types', 'families', 'publishers', 'games'));
     }
@@ -218,6 +218,24 @@ class GameController extends Controller
             $currentTypes = [];
         }
         $game->types()->sync($currentTypes);
+
+        return redirect('/admin/games');
+    }
+
+    public function activate($id)
+    {
+        $game = Game::find($id);
+        $game->status = 1;
+        $game->save();
+
+        return redirect('/admin/games');
+    }
+
+    public function deactivate($id)
+    {
+        $game = Game::find($id);
+        $game->status = 0;
+        $game->save();
 
         return redirect('/admin/games');
     }

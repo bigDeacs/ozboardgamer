@@ -10,6 +10,10 @@ use App\Http\Controllers\Controller;
 
 class PublisherController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -42,7 +46,7 @@ class PublisherController extends Controller
     {
         $publisher = Publisher::create($request->all());
 
-        return redirect('/publishers');
+        return redirect('/admin/publishers');
     }
 
     /**
@@ -82,19 +86,24 @@ class PublisherController extends Controller
         $publisher->update($request->all());
         $publisher->save();
 
-        return redirect('/publishers');
+        return redirect('/admin/publishers');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function activate($id)
     {
-        Publisher::findOrFail($id)->delete();
+        $publisher = Publisher::find($id);
+        $publisher->status = 1;
+        $publisher->save();
 
-        return back();
+        return redirect('/admin/publishers');
+    }
+
+    public function deactivate($id)
+    {
+        $publisher = Publisher::find($id);
+        $publisher->status = 0;
+        $publisher->save();
+
+        return redirect('/admin/publishers');
     }
 }

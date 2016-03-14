@@ -34,11 +34,20 @@
 						    </thead>
 						    <tbody>
 						    	@foreach($types as $type)
-						    	<tr>
+						    	@if($type->status == 0)
+							    	<tr class="danger">
+							    @else
+									<tr class="success">
+								@endif
 						    		<td scope="row">{{ $type->name }}</td>
 						    		<td>
 						    			<a href="/admin/types/{{ $type->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
 						    			<a href="/admin/types/{{ $type->id }}" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
+						    			@if($type->status == 0)
+											<a href="/admin/types/{{ $type->id }}/activate" class="btn btn-success">Activate <i class="fa fa-check"></i></a>
+										@else
+											<a href="/admin/types/{{ $type->id }}/deactivate" class="btn btn-danger">Deactivate <i class="fa fa-times"></i></a>
+										@endif
 						    		</td>
 						    	</tr>
 						    	@endforeach

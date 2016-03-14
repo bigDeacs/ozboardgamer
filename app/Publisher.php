@@ -23,7 +23,8 @@ class Publisher extends Model {
 		'website',
 		'meta', 
 		'head', 
-		'scripts'
+		'scripts',
+		'status'
 	];
 
 	public function games()

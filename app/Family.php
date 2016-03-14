@@ -22,7 +22,8 @@ class Family extends Model {
 		'description', 
 		'meta', 
 		'head', 
-		'scripts'
+		'scripts',
+		'status'
 	];
 
 	public function games()

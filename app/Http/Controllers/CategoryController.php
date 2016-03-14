@@ -10,6 +10,10 @@ use App\Http\Controllers\Controller;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -85,16 +89,21 @@ class CategoryController extends Controller
         return redirect('/admin/categories');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function activate($id)
     {
-        Category::findOrFail($id)->delete();
+        $category = Category::find($id);
+        $category->status = 1;
+        $category->save();
 
-        return back();
+        return redirect('/admin/categories');
+    }
+
+    public function deactivate($id)
+    {
+        $category = Category::find($id);
+        $category->status = 0;
+        $category->save();
+
+        return redirect('/admin/categories');
     }
 }

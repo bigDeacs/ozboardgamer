@@ -12,6 +12,10 @@ use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -31,8 +35,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        $games = Game::lists('name', 'id');
-        $categories = Category::lists('name', 'id');
+        $games = Game::where('status', '=', '1')->lists('name', 'id');
+        $categories = Category::where('status', '=', '1')->lists('name', 'id');
         return view('posts.create', compact('categories', 'games'));
     }
 
@@ -93,8 +97,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $games = Game::lists('name', 'id');
-        $categories = Category::lists('name', 'id');
+        $games = Game::where('status', '=', '1')->lists('name', 'id');
+        $categories = Category::where('status', '=', '1')->lists('name', 'id');
         $post = Post::where('id', '=', $id)->firstOrFail();
         return view('posts.edit', compact('post', 'categories', 'games'));
     }

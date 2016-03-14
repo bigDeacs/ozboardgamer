@@ -10,6 +10,10 @@ use App\Http\Controllers\Controller;
 
 class TypeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -42,7 +46,7 @@ class TypeController extends Controller
     {
         $type = Type::create($request->all());
 
-        return redirect('/types');
+        return redirect('/admin/types');
     }
 
     /**
@@ -82,19 +86,24 @@ class TypeController extends Controller
         $type->update($request->all());
         $type->save();
 
-        return redirect('/types');
+        return redirect('/admin/types');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function activate($id)
     {
-        Type::findOrFail($id)->delete();
+        $type = Type::find($id);
+        $type->status = 1;
+        $type->save();
 
-        return back();
+        return redirect('/admin/types');
+    }
+
+    public function deactivate($id)
+    {
+        $type = Type::find($id);
+        $type->status = 0;
+        $type->save();
+
+        return redirect('/admin/types');
     }
 }

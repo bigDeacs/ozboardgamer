@@ -106,7 +106,12 @@
       </div>
       <div class="col-sm-6 col-xs-12">
             <label for="published">Publishing Year</label>
-            <input type="text" name="published" id="published" class="form-control" value="{{ isset($game) ? $game->published : old('published') }}" placeholder="">
+            <div class='input-group date'>
+                  <input type="text" autocomplete="off" name="published" id="published" data-date-format="dd-mm-yyyy" class="form-control" value="{{ isset($game) ? $game->published : old('published') }}" required />
+                  <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+            </div>
       </div>
 </div>
 
@@ -138,6 +143,11 @@
 
 @section('scripts')
 	<script>
+            $(".input-group.date").datepicker({ 
+                  autoclose: true, format: "yyyy", viewMode: "years", minViewMode: "years"
+            });
+      </script>
+      <script>
             $('#theme_list').select2({
             	placeholder: 'Choose a theme',
             	tags: true

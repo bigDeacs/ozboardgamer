@@ -10,6 +10,10 @@ use App\Http\Controllers\Controller;
 
 class ThemeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -42,7 +46,7 @@ class ThemeController extends Controller
     {
         $theme = Theme::create($request->all());
 
-        return redirect('/themes');
+        return redirect('/admin/themes');
     }
 
     /**
@@ -82,19 +86,24 @@ class ThemeController extends Controller
         $theme->update($request->all());
         $theme->save();
 
-        return redirect('/themes');
+        return redirect('/admin/themes');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function activate($id)
     {
-        Theme::findOrFail($id)->delete();
+        $theme = Theme::find($id);
+        $theme->status = 1;
+        $theme->save();
 
-        return back();
+        return redirect('/admin/themes');
+    }
+
+    public function deactivate($id)
+    {
+        $theme = Theme::find($id);
+        $theme->status = 0;
+        $theme->save();
+
+        return redirect('/admin/themes');
     }
 }

@@ -46,7 +46,7 @@ class MechanicController extends Controller
     {
         $mechanic = Mechanic::create($request->all());
 
-        return redirect('/mechanics');
+        return redirect('/admin/mechanics');
     }
 
     /**
@@ -86,19 +86,24 @@ class MechanicController extends Controller
         $mechanic->update($request->all());
         $mechanic->save();
 
-        return redirect('/mechanics');
+        return redirect('/admin/mechanics');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function activate($id)
     {
-        Mechanic::findOrFail($id)->delete();
+        $mechanic = Mechanic::find($id);
+        $mechanic->status = 1;
+        $mechanic->save();
 
-        return back();
+        return redirect('/admin/mechanics');
+    }
+
+    public function deactivate($id)
+    {
+        $mechanic = Mechanic::find($id);
+        $mechanic->status = 0;
+        $mechanic->save();
+
+        return redirect('/admin/mechanics');
     }
 }

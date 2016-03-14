@@ -51,7 +51,12 @@
       </div>
       <div class="col-sm-6 col-xs-12">
             <label for="published_at">Publish Date</label>
-            <input type="text" name="published_at" id="published_at" class="form-control" value="{{ isset($post) ? $post->published_at : old('published_at') }}" placeholder="" required>
+            <div class='input-group date'>
+                  <input type="text" autocomplete="off" name="published_at" id="published_at" data-date-format="dd-mm-yyyy" class="form-control" value="{{ isset($post) ? $post->published_at : old('published_at') }}" required />
+                  <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+            </div>
       </div>
 </div>
 
@@ -72,6 +77,11 @@
 
 
 @section('scripts')
+      <script>
+            $(".input-group.date").datepicker({ 
+                  autoclose: true, todayHighlight: true, format: "dd-mm-yyyy"
+            });
+      </script>
       <script>
             $('#game_list').select2({
                   placeholder: 'Choose a game',
