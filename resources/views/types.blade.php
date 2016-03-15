@@ -17,6 +17,7 @@
 			      </div>
 			    </div>
 			    <div class="row">
+
 			    	@foreach($types as $type)
 						<div class="col-sm-3 col-xs-12">
 					    	<a href="/games/{{ $type->slug }}">
