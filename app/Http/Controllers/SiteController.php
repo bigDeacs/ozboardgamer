@@ -33,10 +33,10 @@ class SiteController extends Controller {
 	public function index()
 	{
 		$featured = Post::where('status', '=', '1')->where('image', '!=', '')->take(3)->get();
-		dd($reviews = Post::where('status', '=', '1')->whereHas('category', function($q)
+		$reviews = Post::where('status', '=', '1')->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'reviews');
-		})->take(5)->get());
+		})->take(5)->get();
 		$news = Post::where('status', '=', '1')->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'news');
