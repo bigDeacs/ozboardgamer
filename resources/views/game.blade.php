@@ -23,7 +23,7 @@
 					      		<small><a href="">{{ $game->publisher->name }}</a> | Published: {{ $game->published }}</small>
 					      	@endunless
 					      	<div class="row">
-						      <div class="col-sm-6 col-xs-12">
+						      <div class="col-xs-12">
 							      	@unless($game->children->isEmpty())
 								    	<div class="label label-warning">HAS EXPANSIONS</div>
 								    	@foreach($game->children as $key => $child)

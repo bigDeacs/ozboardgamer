@@ -27,16 +27,7 @@
 				  @unless($post->games->isEmpty())
 				  	<div class="col-sm-3 col-xs-12 text-center lead">
 				  		<p><strong>Games mentioned:</strong></p>
-				    	@foreach($post->games as $game)
-							<div class="row">
-								<div class="col-xs-12">
-						    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-						    			<img src="{{ $game->image }}" class="img-responsive" />
-						    		</a>
-						    		<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a></p>
-						    	</div>
-						    </div>
-				    	@endforeach
+				    	
 				    </div> 
 				  @endunless
 				</div>
