@@ -61,15 +61,19 @@
 </div>
 
 <div class="form-group row">
-      <div class="col-sm-4 col-xs-12">
+      <div class="col-xs-12">
             <label for="meta">Meta Tags</label>
             {!! Form::textarea('meta', null, ['class' => 'form-control', 'id' => 'meta']) !!}
       </div>
-      <div class="col-sm-4 col-xs-12">
+</div>
+<div class="form-group row">
+      <div class="col-xs-12">
             <label for="head">Head Tags</label>
             {!! Form::textarea('head', null, ['class' => 'form-control', 'id' => 'head']) !!}
       </div>
-      <div class="col-sm-4 col-xs-12">
+</div>
+<div class="form-group row">
+      <div class="col-xs-12">
             <label for="scripts">Script Tags</label>
             {!! Form::textarea('scripts', null, ['class' => 'form-control', 'id' => 'scripts']) !!}
       </div>
@@ -93,5 +97,13 @@
           var imageUpload = document.getElementById('imageUpload');
           imageUpload.src = URL.createObjectURL(event.target.files[0]);
         };
+      </script>
+      <script>
+          // Replace the <textarea id="editor1"> with a CKEditor
+          // instance, using default configuration.
+          CKEDITOR.replace('description');
+          CKEDITOR.replace('meta');
+          CKEDITOR.replace('head');
+          CKEDITOR.replace('scripts');
       </script>
 @endsection

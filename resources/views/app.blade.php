@@ -102,7 +102,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <ul class="list-inline intro-social-buttons pull-right">
+                    <ul class="list-inline intro-social-buttons pull-right hidden-xs">
                         <li>
                             <a href="https://www.facebook.com/ozboardgamer/" class="btn btn-primary btn-lg" target="_blank" title="Like us on Facebook">
                                 <i class="fa fa-facebook-official fa-fw"></i>
