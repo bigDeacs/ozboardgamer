@@ -30,14 +30,16 @@
                 @endforeach
             @endif
         </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
+        
+        @unless($featured->isEmpty())
+            <!-- Controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
+        @endunless
     </header>
 
     <!-- Page Content -->
@@ -48,48 +50,19 @@
             @else
                 <div class="col-sm-9 col-xs-12">
             @endif
+                
                 @unless($reviews->isEmpty())
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h3>Reviews</h3>
-                            @foreach($reviews as $review)
-                                <a href="/reviews/{{ $review->slug }}">{!! $review->name !!}</a><br />
-                                <hr />
-                            @endforeach
-                        </div>
-                    </div>
+                    reviews
                 @endunless
                 @unless($news->isEmpty())
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h3>News</h3>
-                            @foreach($news as $entry)
-                                <a href="/news/{{ $entry->slug }}">{!! $entry->name !!}</a><br />
-                                <hr />
-                            @endforeach
-                        </div>
-                    </div>
+                    news
                 @endunless
                 @unless($howtos->isEmpty())
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h3>How To's</h3>
-                            @foreach($howtos as $howto)
-                                <a href="/howtos/{{ $howto->slug }}">{!! $howto->name !!}</a><br />
-                                <hr />
-                            @endforeach
-                        </div>
-                    </div>
+                    howtos
                 @endunless
             </div>
             @unless($games->isEmpty())
-                <div class="col-sm-3 col-xs-12">
-                    <h3>Games</h3>
-                    @foreach($games as $game)
-                        <a href="/games/{{ $game->types()->first()->slug }}/{!! $game->slug !!}">{!! $game->name !!}</a><br />
-                        <hr />
-                    @endforeach
-                </div>
+                games
             @endunless
         </div>
     </div>

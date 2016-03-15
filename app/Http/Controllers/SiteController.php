@@ -32,20 +32,20 @@ class SiteController extends Controller {
 	 */
 	public function index()
 	{
-		$featured = collect(Post::where('status', '=', '1')->where('image', '!=', '')->take(3)->get());
-		$reviews = collect(Post::where('status', '=', '1')->whereHas('category', function($q)
+		$featured = Post::where('status', '=', '1')->where('image', '!=', '')->take(3)->get();
+		dd($reviews = Post::where('status', '=', '1')->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'reviews');
 		})->take(5)->get());
-		$news = collect(Post::where('status', '=', '1')->whereHas('category', function($q)
+		$news = Post::where('status', '=', '1')->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'news');
-		})->take(5)->get());
-		$howtos = collect(Post::where('status', '=', '1')->whereHas('category', function($q)
+		})->take(5)->get();
+		$howtos = Post::where('status', '=', '1')->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'howtos');
-		})->take(5)->get());
-		$games = collect(Game::where('status', '=', '1')->orderBy('rating', 'desc')->take(10)->get());
+		})->take(5)->get();
+		$games = Game::where('status', '=', '1')->orderBy('rating', 'desc')->take(10)->get();
 		return view('index', compact('featured', 'reviews', 'news', 'howtos', 'games'));
 	}
 
