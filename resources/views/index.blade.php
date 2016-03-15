@@ -85,15 +85,7 @@
                     </div>
                 @endunless
             </div>
-            @unless($games->isEmpty())
-                <div class="col-sm-3 col-xs-12">
-                    <h3>Games</h3>
-                    @foreach($games as $game)
-                        <a href="/games/{{ $game->types()->first()->slug }}/{!! $game->slug !!}">{!! $game->name !!}</a><br />
-                        <hr />
-                    @endforeach
-                </div>
-            @endunless
+            
         </div>
     </div>
 
