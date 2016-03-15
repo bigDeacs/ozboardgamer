@@ -37,7 +37,9 @@
 					<!-- FONTS -->
 					<div class="row">
 						<div class="col-sm-12">
-					    	<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{!! $game->name !!}</a>
+							@if(!empty($game->types))
+					    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{!! $game->name !!}</a>
+					    	@endif
 						</div>
 					</div>
 					<hr />
