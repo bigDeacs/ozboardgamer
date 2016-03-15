@@ -52,17 +52,47 @@
             @endif
                 
                 @unless($reviews->isEmpty())
-                    reviews
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Reviews</h3>
+                            @foreach($reviews as $review)
+                                <a href="/reviews/{{ $review->slug }}">{!! $review->name !!}</a><br />
+                                <hr />
+                            @endforeach
+                        </div>
+                    </div>
                 @endunless
                 @unless($news->isEmpty())
-                    news
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>News</h3>
+                            @foreach($news as $entry)
+                                <a href="/news/{{ $entry->slug }}">{!! $entry->name !!}</a><br />
+                                <hr />
+                            @endforeach
+                        </div>
+                    </div>
                 @endunless
                 @unless($howtos->isEmpty())
-                    howtos
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>How To's</h3>
+                            @foreach($howtos as $howto)
+                                <a href="/howtos/{{ $howto->slug }}">{!! $howto->name !!}</a><br />
+                                <hr />
+                            @endforeach
+                        </div>
+                    </div>
                 @endunless
             </div>
             @unless($games->isEmpty())
-                games
+                <div class="col-sm-3 col-xs-12">
+                    <h3>Games</h3>
+                    @foreach($games as $game)
+                        <a href="/games/{{ $game->types()->first()->slug }}/{!! $game->slug !!}">{!! $game->name !!}</a><br />
+                        <hr />
+                    @endforeach
+                </div>
             @endunless
         </div>
     </div>
