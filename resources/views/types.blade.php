@@ -19,6 +19,7 @@
 			    <div class="row">
 
 			    	@foreach($types as $type)
+			    	<?php dd($type->games()->first()->image); ?>
 						<div class="col-sm-3 col-xs-12">
 					    	<a href="/games/{{ $type->slug }}">
 				    			<img src="{{ $type->games->first()->image }}" class="img-responsive" />
