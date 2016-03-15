@@ -25,15 +25,15 @@
 			      	<p>{{ $post->description }}</p>
 			      </div>
 				  @unless($post->games->isEmpty())
-				  	<div class="col-sm-3 col-xs-12">
-				  		<p>Games in this video</p>
+				  	<div class="col-sm-3 col-xs-12 text-center lead">
+				  		<p><strong>Games mentioned:</strong></p>
 				    	@foreach($post->games as $game)
 							<div class="row">
-								<div class="col-md-6 col-sm-12">
+								<div class="col-xs-12">
 						    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
 						    			<img src="{{ $game->image }}" class="img-responsive" />
 						    		</a>
-						    		<p><a href="/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a></p>
+						    		<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a></p>
 						    	</div>
 						    </div>
 				    	@endforeach

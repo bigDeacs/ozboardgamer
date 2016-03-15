@@ -45,7 +45,7 @@ class SiteController extends Controller {
 		{
 		    $q->where('slug', '=', 'howtos');
 		})->take(5)->get();
-		$games = Game::where('status', '=', '1')->orderBy('rating', 'desc')->take(10)->get();
+		$games = Game::where('status', '=', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
 		return view('index', compact('featured', 'reviews', 'news', 'howtos', 'games'));
 	}
 
@@ -58,7 +58,7 @@ class SiteController extends Controller {
 	{
 		if($type == null) {
 			$types = Type::where('status', '=', '1')->get();	
-			$games = Game::where('status', '=', '1')->with('types')->get();
+			$games = Game::where('status', '=', '1')->has('types')->with('types')->get();
 			return view('types', compact('types', 'games'));
 		} elseif($slug == null) {
 			$games = Game::where('status', '=', '1')->whereHas('types', function($q) use($type)
