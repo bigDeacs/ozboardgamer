@@ -4,23 +4,31 @@
 <!-- Header -->
     <!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+        @unless($featured->isEmpty())
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                @foreach($featured as $key => $post)
+                    <li data-target="#myCarousel" data-slide-to="{{ $key }}" {{ ($key == 0) ? 'class="active"' : "" }}></li>
+                @endforeach
+            </ol>
+        @endunless
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            @foreach($featured as $key => $post)
-                <div class="item {{ ($key == 0) ? 'active' : "" }}">
-                    <div class="fill" style="background-image:url('{{ $post->image }}');"></div>
-                    <div class="carousel-caption">
-                        <h2>{{ $post->name }}</h2>
-                    </div>
+            @if($featured->isEmpty())
+                <div class="item active">
+                    <div class="fill" style="background-image:url('/img/cover.jpg');"></div>
                 </div>
-            @endforeach
+            @else
+                @foreach($featured as $key => $post)
+                    <div class="item {{ ($key == 0) ? 'active' : "" }}">
+                        <div class="fill" style="background-image:url('{{ $post->image }}');"></div>
+                        <div class="carousel-caption">
+                            <h2>{{ $post->name }}</h2>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
         </div>
 
         <!-- Controls -->
@@ -35,44 +43,54 @@
     <!-- Page Content -->
     <div class="container">
         <div class="row">
-            <div class="col-sm-9 col-xs-12">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h3>Reviews</h3>
-                        @foreach($reviews as $review)
-                            <a href="/reviews/{{ $review->slug }}">{!! $review->name !!}</a><br />
-                            <hr />
-                        @endforeach
+            @if($games->isEmpty())
+                <div class="col-xs-12">
+            @else
+                <div class="col-sm-9 col-xs-12">
+            @endif
+                @unless($reviews->isEmpty())
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Reviews</h3>
+                            @foreach($reviews as $review)
+                                <a href="/reviews/{{ $review->slug }}">{!! $review->name !!}</a><br />
+                                <hr />
+                            @endforeach
+                        </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h3>News</h3>
-                        @foreach($news as $entry)
-                            <a href="/news/{{ $entry->slug }}">{!! $entry->name !!}</a><br />
-                            <hr />
-                        @endforeach
+                @endunless
+                @unless($news->isEmpty())
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>News</h3>
+                            @foreach($news as $entry)
+                                <a href="/news/{{ $entry->slug }}">{!! $entry->name !!}</a><br />
+                                <hr />
+                            @endforeach
+                        </div>
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h3>How To's</h3>
-                        @foreach($howtos as $howto)
-                            <a href="/howtos/{{ $howto->slug }}">{!! $howto->name !!}</a><br />
-                            <hr />
-                        @endforeach
+                @endunless
+                @unless($howtos->isEmpty())
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>How To's</h3>
+                            @foreach($howtos as $howto)
+                                <a href="/howtos/{{ $howto->slug }}">{!! $howto->name !!}</a><br />
+                                <hr />
+                            @endforeach
+                        </div>
                     </div>
-                </div>
+                @endunless
             </div>
-            <div class="col-sm-3 col-xs-12">
-                <h3>Games</h3>
-                @foreach($games as $game)
-                    <a href="/games/{{ $game->types()->first()->slug }}/{!! $game->slug !!}">{!! $game->name !!}</a><br />
-                    <hr />
-                @endforeach
-            </div>
+            @unless($games->isEmpty())
+                <div class="col-sm-3 col-xs-12">
+                    <h3>Games</h3>
+                    @foreach($games as $game)
+                        <a href="/games/{{ $game->types()->first()->slug }}/{!! $game->slug !!}">{!! $game->name !!}</a><br />
+                        <hr />
+                    @endforeach
+                </div>
+            @endunless
         </div>
     </div>
 
