@@ -57,7 +57,7 @@ class SiteController extends Controller {
 	public function game($type = null, $slug = null)
 	{
 		if($type == null) {
-			$types = Type::where('status', '=', '1')->with('games')->get();	
+			$types = Type::where('status', '=', '1')->has('games')->with('games')->get();	
 			$games = Game::where('status', '=', '1')->has('types')->with('types')->get();
 			return view('types', compact('types', 'games'));
 		} elseif($slug == null) {
