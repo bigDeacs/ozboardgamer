@@ -75,7 +75,7 @@ class GameController extends Controller
             $newThemes = array_diff($request->input('theme_list'), $currentThemes);   
             foreach($newThemes as $newTheme)
             {
-                if($theme = Theme::create(['name' => $newTheme]))
+                if($theme = Theme::create(['name' => $newTheme, 'status' => 1]))
                 {
                     $newThemes[] = $theme->id;
                 }
@@ -90,7 +90,7 @@ class GameController extends Controller
             $newMechanics = array_diff($request->input('mechanic_list'), $currentMechanics);   
             foreach($newMechanics as $newMechanic)
             {
-                if($mechanic = Mechanic::create(['name' => $newMechanic]))
+                if($mechanic = Mechanic::create(['name' => $newMechanic, 'status' => 1]))
                 {
                     $currentMechanics[] = $mechanic->id;
                 }
@@ -105,7 +105,7 @@ class GameController extends Controller
             $newTypes = array_diff($request->input('type_list'), $currentTypes);   
             foreach($newTypes as $newType)
             {
-                if($type = Type::create(['name' => $newType]))
+                if($type = Type::create(['name' => $newType, 'status' => 1]))
                 {
                     $currentTypes[] = $type->id;
                 }
@@ -179,7 +179,7 @@ class GameController extends Controller
             $newThemes = array_diff($request->input('theme_list'), $currentThemes);   
             foreach($newThemes as $newTheme)
             {
-                if($theme = Theme::create(['name' => $newTheme]))
+                if($theme = Theme::create(['name' => $newTheme, 'status' => 1]))
                 {
                     $currentThemes[] = $theme->id;
                 }
@@ -194,7 +194,7 @@ class GameController extends Controller
             $newMechanics = array_diff($request->input('mechanic_list'), $currentMechanics);   
             foreach($newMechanics as $newMechanic)
             {
-                if($mechanic = Mechanic::create(['name' => $newMechanic]))
+                if($mechanic = Mechanic::create(['name' => $newMechanic, 'status' => 1]))
                 {
                     $currentMechanics[] = $mechanic->id;
                 }
@@ -209,7 +209,7 @@ class GameController extends Controller
             $newTypes = array_diff($request->input('type_list'), $currentTypes);   
             foreach($newTypes as $newType)
             {
-                if($type = Type::create(['name' => $newType]))
+                if($type = Type::create(['name' => $newType, 'status' => 1]))
                 {
                     $currentTypes[] = $type->id;
                 }
