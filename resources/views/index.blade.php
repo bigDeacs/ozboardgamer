@@ -14,7 +14,7 @@
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 @foreach($featured as $key => $post)
-                    <li data-target="#myCarousel" data-slide-to="{{ $key }}" {{ ($key == 0) ? 'active' : "" }}></li>
+                    <li data-target="#myCarousel" data-slide-to="{{ $key }}" class="{{ ($key == 0) ? 'active' : "" }}"></li>
                 @endforeach
             </ol>
         @endunless
