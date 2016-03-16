@@ -2,9 +2,11 @@
 
 @section('meta')
     <title>{{ $game->name }}</title>
+    {!! $game->meta !!}
 @endsection
 
 @section('head')
+	{!! $game->head !!}
 @endsection
 
 @section('content')
@@ -20,7 +22,7 @@
 					      <div class="col-sm-9 col-xs-12">
 					      	<h1>{{ $game->name }}</h1>
 							@unless($game->publisher == null)			      	
-					      		<small><a href="">{{ $game->publisher->name }}</a> | Published: {{ $game->published }}</small>
+					      		<small><a href="/publishers/{{ $game->publisher->slug }}">{{ $game->publisher->name }}</a> | Published: {{ $game->published }}</small>
 					      	@endunless
 					      	<div class="row">
 						      <div class="col-xs-12">
@@ -28,15 +30,15 @@
 								    	<div class="label label-warning">HAS EXPANSIONS</div>
 								    	@foreach($game->children as $key => $child)
 								    		@if($key == (count($game->children) -1))
-								    			<a href="">{{ $child->name }}</a>
+								    			<a href="/games/{{ $game->types()->first()->slug }}/{{ $child->slug }}">{{ $child->name }}</a>
 								    		@else
-								    			<a href="">{{ $child->name }}</a>, 
+								    			<a href="/games/{{ $game->types()->first()->slug }}/{{ $child->slug }}">{{ $child->name }}</a>, 
 								    		@endif
 								    	@endforeach
 								    @endunless
 								    @unless($game->parent == null)
 								    	<div class="label label-warning">EXPANSION</div>
-								    	for <a href="">{{ $game->parent->name }}</a>
+								    	for <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->parent->slug }}">{{ $game->parent->name }}</a>
 								    @endunless
 						      	</div>
 						    </div>
@@ -75,10 +77,10 @@
 							<!-- Tab panes -->
 							<div class="tab-content">
 								<div role="tabpanel" class="tab-pane active" id="description">
-									<p>{{ $game->description }}</p>
+									<p>{!! $game->description !!}</p>
 								</div>
 								<div role="tabpanel" class="tab-pane" id="contents">
-									<p>{{ $game->contents }}</p>
+									<p>{!! $game->contents !!}</p>
 								</div>
 								@unless($game->posts->isEmpty())
 									<div role="tabpanel" class="tab-pane" id="videos">
@@ -151,15 +153,23 @@
 						    <input id="learning" name="learning" value="{{ $game->learning }}" class="rating-loading">
 						</div>
 						<hr />
+						@unless($game->family == null)			      	
+				      		<strong>Family</strong>
+				      		<div class="row">
+								<div class="col-sm-12">
+							    	<a href="/families/{{ $game->family->slug }}">{{ $game->family->name }}</a>
+								</div>
+							</div>
+				      	@endunless
 						@unless($game->themes->isEmpty())
 							<strong>Themes</strong>
 							<div class="row">
 								<div class="col-sm-12">
 							    	@foreach($game->themes as $key => $theme)
 							    		@if($key == (count($game->themes) -1))
-							    			<a href="">{{ $theme->name }}</a>
+							    			<a href="/themes/{{ $theme->slug }}">{{ $theme->name }}</a>
 							    		@else
-							    			<a href="">{{ $theme->name }}</a>, 
+							    			<a href="/themes/{{ $theme->slug }}">{{ $theme->name }}</a>, 
 							    		@endif
 							    	@endforeach
 								</div>
@@ -171,9 +181,9 @@
 								<div class="col-sm-12">
 							    	@foreach($game->mechanics as $key => $mechanic)
 							    		@if($key == (count($game->mechanics) -1))
-							    			<a href="">{{ $mechanic->name }}</a>
+							    			<a href="/mechanics/{{ $mechanic->slug }}">{{ $mechanic->name }}</a>
 							    		@else
-							    			<a href="">{{ $mechanic->name }}</a>, 
+							    			<a href="/mechanics/{{ $mechanic->slug }}">{{ $mechanic->name }}</a>, 
 							    		@endif
 							    	@endforeach
 								</div>
@@ -185,9 +195,9 @@
 								<div class="col-sm-12">
 							    	@foreach($game->types as $key => $type)
 							    		@if($key == (count($game->types) -1))
-							    			<a href="">{{ $type->name }}</a>
+							    			<a href="/games/{{ $type->slug }}">{{ $type->name }}</a>
 							    		@else
-							    			<a href="">{{ $type->name }}</a>, 
+							    			<a href="/games/{{ $type->slug }}">{{ $type->name }}</a>, 
 							    		@endif
 							    	@endforeach
 								</div>
@@ -237,4 +247,5 @@
 		})();
 	</script>
 	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	{!! $game->scripts !!}
 @endsection

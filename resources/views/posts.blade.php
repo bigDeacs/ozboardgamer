@@ -2,9 +2,11 @@
 
 @section('meta')
     <title>{{ $category->name }}</title>
+	{!! $category->meta !!}
 @endsection
 
 @section('head')
+	{!! $category->head !!}
 @endsection
 
 @section('content')
@@ -44,4 +46,5 @@
 @endsection
 
 @section('scripts')
+	{!! $category->scripts !!}
 @endsection

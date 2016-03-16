@@ -191,8 +191,5 @@
           // instance, using default configuration.
           CKEDITOR.replace('description');
           CKEDITOR.replace('contents');
-          CKEDITOR.replace('meta');
-          CKEDITOR.replace('head');
-          CKEDITOR.replace('scripts');
       </script>
 @endsection

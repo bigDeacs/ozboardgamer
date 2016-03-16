@@ -52,7 +52,7 @@
       <div class="col-sm-6 col-xs-12">
             <label for="published_at">Publish Date</label>
             <div class='input-group date'>
-                  <input type="text" autocomplete="off" name="published_at" id="published_at" data-date-format="dd-mm-yyyy" class="form-control" value="{{ isset($post) ? $post->published_at : old('published_at') }}" required />
+                  <input type="text" autocomplete="off" name="published_at" id="published_at" data-date-format="yyyy-mm-dd" class="form-control" value="{{ isset($post) ? $post->published_at : old('published_at') }}" required />
                   <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                   </span>
@@ -83,7 +83,7 @@
 @section('scripts')
       <script>
             $(".input-group.date").datepicker({ 
-                  autoclose: true, todayHighlight: true, format: "dd-mm-yyyy"
+                  autoclose: true, todayHighlight: true, format: "yyyy-mm-dd"
             });
       </script>
       <script>
@@ -102,8 +102,5 @@
           // Replace the <textarea id="editor1"> with a CKEditor
           // instance, using default configuration.
           CKEDITOR.replace('description');
-          CKEDITOR.replace('meta');
-          CKEDITOR.replace('head');
-          CKEDITOR.replace('scripts');
       </script>
 @endsection

@@ -32,7 +32,7 @@ class SiteController extends Controller {
 	 */
 	public function index()
 	{
-		$featured = Post::where('status', '=', '1')->where('image', '!=', '')->take(3)->get();
+		$featured = Post::where('status', '=', '1')->where('image', '!=', '')->orderBy('published_at', 'desc')->take(5)->get();
 		$reviews = Post::where('status', '=', '1')->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'reviews');
@@ -58,8 +58,7 @@ class SiteController extends Controller {
 	{
 		if($type == null) {
 			$types = Type::where('status', '=', '1')->has('games')->with('games')->get();	
-			$games = Game::where('status', '=', '1')->has('types')->with('types')->get();
-			return view('types', compact('types', 'games'));
+			return view('types', compact('types'));
 		} elseif($slug == null) {
 			$games = Game::where('status', '=', '1')->whereHas('types', function($q) use($type)
 			{
@@ -78,10 +77,19 @@ class SiteController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function family($slug)
+	public function family($slug = null)
 	{
-		$family = Family::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-		return view('family', compact('family'));
+		if($slug == null) {
+			$families = Family::where('status', '=', '1')->has('games')->with('games')->get();
+			return view('families', compact('families'));
+		} else {
+			$family = Family::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$games = Game::where('status', '=', '1')->whereHas('family', function($q) use($slug)
+			{
+			    $q->where('slug', '=', $slug);
+			})->get();
+			return view('family', compact('family', 'games'));
+		}
 	}
 
 	/**
@@ -89,10 +97,19 @@ class SiteController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function publisher($slug)
+	public function publisher($slug = null)
 	{
-		$publisher = Publisher::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-		return view('publisher', compact('publisher'));
+		if($slug == null) {
+			$publishers = Publisher::where('status', '=', '1')->has('games')->with('games')->get();
+			return view('publishers', compact('publishers'));
+		} else {
+			$publisher = Publisher::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$games = Game::where('status', '=', '1')->whereHas('publisher', function($q) use($slug)
+			{
+			    $q->where('slug', '=', $slug);
+			})->get();
+			return view('publisher', compact('publisher', 'games'));
+		}
 	}
 
 	/**
@@ -100,10 +117,19 @@ class SiteController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function mechanic($slug)
+	public function mechanic($slug = null)
 	{
-		$mechanic = Mechanic::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-		return view('mechanic', compact('mechanic'));
+		if($slug == null) {
+			$mechanics = Mechanic::where('status', '=', '1')->has('games')->with('games')->get();
+			return view('mechanics', compact('mechanics'));
+		} else {
+			$mechanic = Mechanic::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$games = Game::where('status', '=', '1')->whereHas('mechanics', function($q) use($slug)
+			{
+			    $q->where('slug', '=', $slug);
+			})->get();
+			return view('mechanic', compact('mechanic', 'games'));
+		}
 	}
 
 	/**
@@ -111,21 +137,19 @@ class SiteController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function theme($slug)
+	public function theme($slug = null)
 	{
-		$theme = Theme::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-		return view('theme', compact('theme'));
-	}
-
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
-	public function type($slug)
-	{
-		$type = Type::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-		return view('type', compact('type'));
+		if($slug == null) {
+			$themes = Theme::where('status', '=', '1')->has('games')->with('games')->get();
+			return view('themes', compact('themes'));
+		} else {
+			$theme = Theme::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$games = Game::where('status', '=', '1')->whereHas('themes', function($q) use($slug)
+			{
+			    $q->where('slug', '=', $slug);
+			})->get();
+			return view('theme', compact('theme', 'games'));
+		}
 	}
 
 	/**

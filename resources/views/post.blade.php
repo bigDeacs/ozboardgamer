@@ -2,9 +2,11 @@
 
 @section('meta')
     <title>{{ $post->name }}</title>
+    {!! $post->meta !!}
 @endsection
 
 @section('head')
+	{!! $post->head !!}
 @endsection
 
 @section('content')
@@ -22,7 +24,7 @@
 	      					<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen></iframe>
 	      				</div>
 			      	@endunless
-			      	<p>{{ $post->description }}</p>
+			      	<p>{!! $post->description !!}</p>
 			      </div>
 				  @unless($post->games->isEmpty())
 				  	<div class="col-sm-3 col-xs-12 text-center lead">
@@ -71,4 +73,5 @@
 		})();
 	</script>
 	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+	{!! $post->scripts !!}
 @endsection

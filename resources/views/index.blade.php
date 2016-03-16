@@ -1,5 +1,11 @@
 @extends('app')
 
+@section('meta')
+@endsection
+
+@section('head')
+@endsection
+
 @section('content')
 <!-- Header -->
     <!-- Header Carousel -->
@@ -24,7 +30,9 @@
                     <div class="item {{ ($key == 0) ? 'active' : "" }}">
                         <div class="fill" style="background-image:url('{{ $post->image }}');"></div>
                         <div class="carousel-caption">
-                            <h2>{{ $post->name }}</h2>
+                            <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
+                                <h2>{{ $post->name }}</h2>
+                            </a>
                         </div>
                     </div>
                 @endforeach
@@ -54,9 +62,26 @@
                 @unless($reviews->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
-                            <h3>Reviews</h3>
+                            <h3>Latest Game Reviews</h3>
                             @foreach($reviews as $review)
-                                <a href="/reviews/{{ $review->slug }}">{!! $review->name !!}</a><br />
+                                <div class="row">
+                                    <div class="col-sm-2 col-xs-12">
+                                        <a href="/reviews/{{ $review->slug }}">
+                                            <img src="{{ $review->image }}" class="img-responsive" />
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-7 col-xs-12">
+                                        <a href="/reviews/{{ $review->slug }}">
+                                            {!! $review->name !!}
+                                        </a>
+                                        <p>{!! str_limit(strip_tags($review->description), $limit = 100, $end = '...') !!}</p>
+                                    </div>
+                                    <div class="col-sm-2 col-xs-12 text-center">
+                                        <a href="/reviews/{{ $review->slug }}" class="btn btn-warning">
+                                            Find Out More
+                                        </a>
+                                    </div>
+                                </div>
                                 <hr />
                             @endforeach
                         </div>
@@ -65,9 +90,26 @@
                 @unless($news->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
-                            <h3>News</h3>
+                            <h3>Latest News</h3>
                             @foreach($news as $entry)
-                                <a href="/news/{{ $entry->slug }}">{!! $entry->name !!}</a><br />
+                                <div class="row">
+                                    <div class="col-sm-2 col-xs-12">
+                                        <a href="/news/{{ $entry->slug }}">
+                                            <img src="{{ $entry->image }}" class="img-responsive" />
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-7 col-xs-12">
+                                        <a href="/news/{{ $entry->slug }}">
+                                            {!! $entry->name !!}
+                                        </a>
+                                        <p>{!! str_limit(strip_tags($entry->description), $limit = 100, $end = '...') !!}</p>
+                                    </div>
+                                    <div class="col-sm-2 col-xs-12 text-center">
+                                        <a href="/news/{{ $entry->slug }}" class="btn btn-warning">
+                                            Find Out More
+                                        </a>
+                                    </div>
+                                </div>
                                 <hr />
                             @endforeach
                         </div>
@@ -76,9 +118,26 @@
                 @unless($howtos->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
-                            <h3>How To's</h3>
+                            <h3>Latest How To's</h3>
                             @foreach($howtos as $howto)
-                                <a href="/howtos/{{ $howto->slug }}">{!! $howto->name !!}</a><br />
+                                <div class="row">
+                                    <div class="col-sm-2 col-xs-12">
+                                        <a href="/howtos/{{ $howto->slug }}">
+                                            <img src="{{ $howto->image }}" class="img-responsive" />
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-7 col-xs-12">
+                                        <a href="/howtos/{{ $howto->slug }}">
+                                            {!! $howto->name !!}
+                                        </a>
+                                        <p>{!! str_limit(strip_tags($howto->description), $limit = 100, $end = '...') !!}</p>
+                                    </div>
+                                    <div class="col-sm-2 col-xs-12 text-center">
+                                        <a href="/howtos/{{ $howto->slug }}" class="btn btn-warning">
+                                            Find Out More
+                                        </a>
+                                    </div>
+                                </div>
                                 <hr />
                             @endforeach
                         </div>
@@ -86,11 +145,17 @@
                 @endunless
             </div>
             @unless($games->isEmpty())
-                <div class="col-sm-3 col-xs-12">
-                    <h3>Games</h3>
+                <div class="col-sm-3 col-xs-12 text-center lead">
+                    <h3>Top Rated Games</h3>
                     @foreach($games as $game)
-                        <a href="/games/{{ $game->types()->first()->slug }}/{!! $game->slug !!}">{!! $game->name !!}</a><br />
-                        <hr />
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
+                                    <img src="{{ $game->image }}" class="img-responsive" />
+                                </a>
+                                <p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a></p>
+                            </div>
+                        </div>
                     @endforeach
                 </div>
             @endunless
