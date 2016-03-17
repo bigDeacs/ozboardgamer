@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ChangeContentsOnGamesTable extends Migration {
+class AddNewContentsOnGamesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -14,7 +14,7 @@ class ChangeContentsOnGamesTable extends Migration {
 	{
 		Schema::table('games', function(Blueprint $table)
 		{
-			$table->dropColumn('contents');
+			$table->longText('contents');
 		});
 	}
 
