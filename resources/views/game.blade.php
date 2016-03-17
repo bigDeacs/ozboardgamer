@@ -82,10 +82,10 @@
 								<div role="tabpanel" class="tab-pane" id="contents">
 									<p>{!! $game->contents !!}</p>
 								</div>
-								@unless($game->posts->isEmpty())
+								@unless($posts->isEmpty())
 									<div role="tabpanel" class="tab-pane" id="videos">
 										<div class="row">
-									    	@foreach($game->posts as $post)
+									    	@foreach($posts as $post)
 									    		<div class="col-md-6 col-sm-12">
 										    		<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
 										    			<img src="{{ $post->image }}" class="img-responsive" />

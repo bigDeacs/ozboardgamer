@@ -68,7 +68,11 @@ class SiteController extends Controller {
 			return view('type', compact('type','games'));
 		} else {
 			$game = Game::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-			return view('game', compact('game'));
+			$posts = Post::where('status', '=', '1')->whereHas('games', function($q) use($slug)
+			{
+			    $q->where('slug', '=', $slug);
+			})->get();
+			return view('game', compact('game', 'posts'));
 		}
 	}
 
