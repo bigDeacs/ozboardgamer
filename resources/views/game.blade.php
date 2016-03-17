@@ -67,10 +67,10 @@
 					    <div class="row">
 							<!-- Nav tabs -->
 							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation" class="active"><a href="#description" aria-controls="home" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Description</a></li>
-								<li role="presentation"><a href="#contents" aria-controls="profile" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Contents</a></li>
-								@unless($game->posts->isEmpty())
-									<li role="presentation"><a href="#videos" aria-controls="messages" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Videos</a></li>
+								<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Description</a></li>
+								<li role="presentation"><a href="#contents" aria-controls="contents" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Contents</a></li>
+								@unless($posts->isEmpty())
+									<li role="presentation"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Videos</a></li>
 								@endunless
 							</ul>
 
