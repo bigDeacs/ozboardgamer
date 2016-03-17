@@ -14,7 +14,7 @@ class ChangeContentsOnGamesTable extends Migration {
 	{
 		Schema::table('games', function(Blueprint $table)
 		{
-			$table->dropColumn('votes');
+			$table->dropColumn('contents');
 			$table->longText('contents');
 		});
 	}
