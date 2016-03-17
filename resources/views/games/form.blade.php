@@ -186,37 +186,4 @@
           imageUpload.src = URL.createObjectURL(event.target.files[0]);
         };
       </script>
-      
-      <script type="text/javascript">
- 
-            tinymce.init({
-              selector: ".textarea",
-              
-              // ===========================================
-              // INCLUDE THE PLUGIN
-              // ===========================================
-                  
-               plugins: [
-                     "advlist autolink link image lists charmap print preview hr anchor pagebreak",
-                     "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
-                     "table contextmenu directionality emoticons paste textcolor responsivefilemanager code"
-               ],
-                  
-               toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
-               toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | print preview code ",
-               image_advtab: true ,
-               
-               external_filemanager_path:"/filemanager/",
-               filemanager_title:"Responsive Filemanager" ,
-               external_plugins: { "filemanager" : "/filemanager/plugin.min.js"}
-                  
-              // ===========================================
-              // SET RELATIVE_URLS to FALSE (This is required for images to display properly)
-              // ===========================================
-                  
-
-                  
-            });
-             
-      </script>
 @endsection

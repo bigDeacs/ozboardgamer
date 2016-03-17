@@ -33,7 +33,7 @@
 <div class="form-group row">
       <div class="col-xs-12">
             <label for="description">Description</label>
-            {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'description']) !!}
+            {!! Form::textarea('description', null, ['class' => 'form-control textarea', 'id' => 'description']) !!}
       </div>
 </div>
 
@@ -97,10 +97,5 @@
           var imageUpload = document.getElementById('imageUpload');
           imageUpload.src = URL.createObjectURL(event.target.files[0]);
         };
-      </script>
-      <script>
-          // Replace the <textarea id="editor1"> with a CKEditor
-          // instance, using default configuration.
-          CKEDITOR.replace('description');
       </script>
 @endsection

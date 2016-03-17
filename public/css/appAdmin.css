@@ -37,6 +37,18 @@ audio:not([controls]) {
 template {
   display: none;
 }
+.btn-submit-top {
+    position: fixed !important;
+    top: 126px !important;
+    right: 185px !important;
+    z-index: 100;
+  }
+  .btn-back-top {
+    top: 126px !important;
+    right: 105px !important;
+    position: fixed;
+    z-index: 100;
+  }
 a {
   background-color: transparent;
 }
@@ -231,6 +243,7 @@ th {
   .navbar {
     display: none;
   }
+  
   .btn > .caret,
   .dropup > .btn > .caret {
     border-top-color: #000 !important;
