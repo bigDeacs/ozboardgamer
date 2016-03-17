@@ -70,14 +70,14 @@
 <div class="form-group row">
       <div class="col-xs-12">
             <label for="description">Description</label>
-            {!! Form::textarea('description', null, ['class' => 'form-control', 'id' => 'description']) !!}
+            {!! Form::textarea('description', null, ['class' => 'form-control textarea', 'id' => 'description']) !!}
       </div>
 </div>
 
 <div class="form-group row">
       <div class="col-xs-12">
             <label for="contents">Contents</label>
-            {!! Form::textarea('contents', null, ['class' => 'form-control', 'id' => 'contents']) !!}
+            {!! Form::textarea('contents', null, ['class' => 'form-control textarea', 'id' => 'contents']) !!}
       </div>
 </div>
 
@@ -186,10 +186,35 @@
           imageUpload.src = URL.createObjectURL(event.target.files[0]);
         };
       </script>
-      <script>
-          // Replace the <textarea id="editor1"> with a CKEditor
-          // instance, using default configuration.
-          CKEDITOR.replace('description');
-          CKEDITOR.replace('contents');
+      
+      <script type="text/javascript">
+ 
+            tinymce.init({
+              selector: ".textarea",
+              
+              // ===========================================
+              // INCLUDE THE PLUGIN
+              // ===========================================
+                  
+              plugins: [
+                "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste jbimages"
+              ],
+                  
+              // ===========================================
+              // PUT PLUGIN'S BUTTON on the toolbar
+              // ===========================================
+                  
+              toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image jbimages",
+                  
+              // ===========================================
+              // SET RELATIVE_URLS to FALSE (This is required for images to display properly)
+              // ===========================================
+                  
+              relative_urls: false
+                  
+            });
+             
       </script>
 @endsection
