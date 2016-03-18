@@ -8,6 +8,14 @@
 @endsection
 
 @section('content')
+	<div class="breadcrumb-holder">
+		<div class="container">	
+			<ol class="breadcrumb breadcrumb-arrow">
+				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+				<li class="active"><span>Games</span></li>
+			</ol>
+		</div>
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
