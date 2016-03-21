@@ -167,7 +167,7 @@ class SiteController extends Controller {
 			$posts = Post::where('status', '=', '1')->whereHas('category', function($q) use($category)
 			{
 			    $q->where('slug', '=', $category);
-			})->get();
+			})->orderBy('published_at', 'desc')->get();
 			$category = Category::where('status', '=', '1')->where('slug', '=', $category)->firstOrFail();	
 			return view('posts', compact('category','posts'));
 		} else {
