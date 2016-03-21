@@ -33,10 +33,14 @@
 			<div class="col-sm-12">
 				<div class="row">
 			      <div class="col-xs-12">
-			      	<img src="{{ $post->image }}" class="img-responsive" />
+			      	<div class="img-container">
+			      		<div class="img-caption">
+                            <h1 class="text-uppercase">{{ $post->name }}</h1>
+                        </div>
+				      	<img src="{{ $post->image }}" class="img-responsive cropped-img" />
+				    </div>
 			      </div>
 			      <div class="col-sm-9 col-xs-12">
-			      	<h1>{{ $post->name }}</h1>
 					@unless($post->video == null)			      	
 			      		<div class="embed-responsive embed-responsive-16by9">
 	      					<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen></iframe>

@@ -31,7 +31,7 @@
                         <div class="fill" style="background-image:url('{{ $post->image }}');"></div>
                         <div class="carousel-caption">
                             <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-                                <h2>{{ $post->name }}</h2>
+                                <h2 class="text-uppercase">{{ $post->name }}</h2>
                             </a>
                         </div>
                     </div>

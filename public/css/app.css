@@ -1,6 +1,6 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -978,7 +978,7 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: bold;
   line-height: 1.1;
   color: inherit;
 }
@@ -5922,13 +5922,16 @@ button.close {
   position: absolute;
   left: 15%;
   right: 15%;
-  bottom: 20px;
+  top: 35%;
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
   color: #ffffff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.carousel-caption a {
+  color: #222!important;
 }
 .carousel-caption .btn {
   text-shadow: none;
@@ -6345,4 +6348,26 @@ label,
 }
 .breadcrumb-arrow li span {
     color: #434a54
+}
+
+.img-container {
+  overflow: hidden;
+  height: 150px;
+}
+
+.cropped-img {
+  width: 100%;
+  margin-top: -150px;
+}
+
+.img-caption {
+    position: absolute;
+    left: 15%;
+    right: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #222;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
