@@ -10,6 +10,16 @@
 @endsection
 
 @section('content')
+	<div class="breadcrumb-holder">
+		<div class="container">	
+			<ol class="breadcrumb breadcrumb-arrow">
+				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+				<li><a href="/games">Games</a></li>
+				<li><a href="/games/{{ $game->types()->first()->slug }}">{{ $game->types()->first()->name }}</a></li>
+				<li class="active"><span>{{ $game->name }}</span></li>
+			</ol>
+		</div>
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9 col-sm-8 col-xs-12">
