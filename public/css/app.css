@@ -7,6 +7,8 @@ html {
 body {
   margin: 0;
   padding-top: 103px;
+  background: #eee;
+
 }
 article,
 aside,
@@ -880,11 +882,9 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333333;
-  background-color: #ffffff;
+  color: #222;
 }
 input,
 button,
@@ -895,12 +895,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #008751;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #23527c;
+  color: #195A3A;
   text-decoration: underline;
 }
 a:focus {
@@ -3036,6 +3036,51 @@ fieldset[disabled] .btn-danger.active {
 }
 .btn-danger .badge {
   color: #d9534f;
+  background-color: #ffffff;
+}
+.btn-dark {
+  color: #ffffff;
+  background-color: #404040;
+  border-color: #5A5A5A;
+}
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark.focus,
+.btn-dark:active,
+.btn-dark.active,
+.open > .dropdown-toggle.btn-dark {
+  color: #ffffff;
+  background-color: #222222;
+  border-color: #5A5A5A;
+}
+.btn-dark:active,
+.btn-dark.active,
+.open > .dropdown-toggle.btn-dark {
+  background-image: none;
+}
+.btn-dark.disabled,
+.btn-dark[disabled],
+fieldset[disabled] .btn-dark,
+.btn-dark.disabled:hover,
+.btn-dark[disabled]:hover,
+fieldset[disabled] .btn-dark:hover,
+.btn-dark.disabled:focus,
+.btn-dark[disabled]:focus,
+fieldset[disabled] .btn-dark:focus,
+.btn-dark.disabled.focus,
+.btn-dark[disabled].focus,
+fieldset[disabled] .btn-dark.focus,
+.btn-dark.disabled:active,
+.btn-dark[disabled]:active,
+fieldset[disabled] .btn-dark:active,
+.btn-dark.disabled.active,
+.btn-dark[disabled].active,
+fieldset[disabled] .btn-dark.active {
+  background-color: #404040;
+  border-color: #5A5A5A;
+}
+.btn-dark .badge {
+  color: #222222;
   background-color: #ffffff;
 }
 .btn-link {
@@ -6274,7 +6319,7 @@ label,
     padding: 0;
     line-height: 36px;
     list-style: none;
-    background-color: #e6e9ed
+    background-color: #777
 }
 .breadcrumb-arrow li, .breadcrumb-arrow li a, .breadcrumb-arrow li span {
     display: inline-block;
@@ -6344,7 +6389,7 @@ label,
     border-left-color: #00673E;
 }
 .breadcrumb-arrow li span {
-    color: #434a54
+    color: #fff
 }
 
 .img-container {

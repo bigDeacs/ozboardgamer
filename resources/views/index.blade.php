@@ -30,7 +30,7 @@
                     <div class="item {{ ($key == 0) ? 'active' : "" }}">
                         <div class="fill" style="background-image:url('{{ $post->image }}');"></div>
                         <div class="carousel-caption">
-                            <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-warning">
+                            <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-dark">
                                 Find Out More
                             </a>
                         </div>

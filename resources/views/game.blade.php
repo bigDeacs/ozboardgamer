@@ -120,31 +120,29 @@
 			    </div>
 	      </div>
 	      <div class="col-md-3 col-sm-4 col-xs-12">
-      		<div class="well">
-				@if($game->rating < 1)
-					<img src="/img/1.png" class="img-responsive" />
-				@elseif($game->rating < 2)
-					<img src="/img/2.png" class="img-responsive" />
-				@elseif($game->rating < 3)
-					<img src="/img/3.png" class="img-responsive" />
-				@elseif($game->rating < 4)
-					<img src="/img/4.png" class="img-responsive" />
-				@elseif($game->rating < 5)
-					<img src="/img/5.png" class="img-responsive" />
-				@elseif($game->rating < 6)
-					<img src="/img/6.png" class="img-responsive" />
-				@elseif($game->rating < 7)
-					<img src="/img/7.png" class="img-responsive" />
-				@elseif($game->rating < 8)
-					<img src="/img/8.png" class="img-responsive" />
-				@elseif($game->rating < 9)
-					<img src="/img/9.png" class="img-responsive" />
-				@else
-					<img src="/img/10.png" class="img-responsive" />
-				@endif
-				<div class="text-center lead">
-					<strong>{{ number_format((float)$game->rating, 1, '.', '') }}/10</strong>
-				</div>
+			@if($game->rating < 1)
+				<img src="/img/1.png" class="img-responsive" />
+			@elseif($game->rating < 2)
+				<img src="/img/2.png" class="img-responsive" />
+			@elseif($game->rating < 3)
+				<img src="/img/3.png" class="img-responsive" />
+			@elseif($game->rating < 4)
+				<img src="/img/4.png" class="img-responsive" />
+			@elseif($game->rating < 5)
+				<img src="/img/5.png" class="img-responsive" />
+			@elseif($game->rating < 6)
+				<img src="/img/6.png" class="img-responsive" />
+			@elseif($game->rating < 7)
+				<img src="/img/7.png" class="img-responsive" />
+			@elseif($game->rating < 8)
+				<img src="/img/8.png" class="img-responsive" />
+			@elseif($game->rating < 9)
+				<img src="/img/9.png" class="img-responsive" />
+			@else
+				<img src="/img/10.png" class="img-responsive" />
+			@endif
+			<div class="text-center lead">
+				<strong>{{ number_format((float)$game->rating, 1, '.', '') }}/10</strong>
 			</div>
 			<div class="text-center">
 			    <strong>Luck</strong>

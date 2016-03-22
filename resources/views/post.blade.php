@@ -34,10 +34,7 @@
 				<div class="row">
 			      <div class="col-xs-12">
 			      	<div class="img-container">
-			      		<div class="img-caption">
-                            <h1 class="text-uppercase">{{ $post->name }}</h1>
-                        </div>
-				      	<img src="{{ $post->image }}" class="img-responsive cropped-img" />
+				      	<div class="fill" style="background-image:url('{{ $post->image }}');"></div>
 				    </div>
 			      </div>
 			      <div class="col-sm-9 col-xs-12">
