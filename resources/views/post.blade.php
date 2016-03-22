@@ -37,6 +37,7 @@
 				      	<div class="fill" style="background-image:url('{{ $post->image }}');"></div>
 				    </div>
 			      </div>
+			      <br />
 			      <div class="col-sm-9 col-xs-12">
 					@unless($post->video == null)			      	
 			      		<div class="embed-responsive embed-responsive-16by9">
