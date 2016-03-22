@@ -32,7 +32,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-			      <div class="col-xs-12">
+			      <div class="col-sm-12 hidden-xs">
 			      	<div class="img-container">
 				      	<div class="fill" style="background-image:url('{{ $post->image }}');"></div>
 				    </div>
@@ -43,6 +43,7 @@
 	      					<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen></iframe>
 	      				</div>
 			      	@endunless
+			      	<h1>{{ $post->name }}</h1>
 			      	<p>{!! $post->description !!}</p>
 			      </div>
 				  @unless($post->games->isEmpty())
