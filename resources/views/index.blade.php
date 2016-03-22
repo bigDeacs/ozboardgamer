@@ -30,8 +30,8 @@
                     <div class="item {{ ($key == 0) ? 'active' : "" }}">
                         <div class="fill" style="background-image:url('{{ $post->image }}');"></div>
                         <div class="carousel-caption">
-                            <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-                                <h2 class="text-uppercase">{{ $post->name }}</h2>
+                            <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-warning">
+                                Find Out More
                             </a>
                         </div>
                     </div>
