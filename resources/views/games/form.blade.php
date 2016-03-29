@@ -1,15 +1,62 @@
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 <div class="form-group row">
-      <div class="col-sm-4 col-xs-12">
-            <label for="name">Name</label>
-	      <input type="text" name="name" id="name" class="form-control" value="{{ isset($game) ? $game->name : old('name') }}" placeholder="" required>
+      <div class="col-sm-9 col-xs-12">
+            <div class="row">
+                  <div class="col-sm-6 col-xs-12">
+                       <label for="name">Name</label>
+	                 <input type="text" name="name" id="name" class="form-control" value="{{ isset($game) ? $game->name : old('name') }}" placeholder="" required>
+                  </div>
+                  <div class="col-sm-6 col-xs-12">
+                        <label for="slug">Slug</label>
+                        <input type="text" name="slug" id="slug" class="form-control" value="{{ isset($game) ? $game->slug : old('slug') }}" placeholder="" required>
+                  </div>
+            </div>
+            <div class="row">
+                  <div class="col-sm-4 col-xs-12">
+                        <label for="time">Play Time</label>
+                        <input type="text" name="time" id="time" class="form-control" value="{{ isset($game) ? $game->time : old('time') }}" placeholder="" required>
+                  </div>
+                  <div class="col-sm-4 col-xs-12">
+                        <label for="players">Amount of Players</label>
+                        <input type="text" name="players" id="players" class="form-control" value="{{ isset($game) ? $game->players : old('players') }}" placeholder="" required>
+                  </div>
+                  <div class="col-sm-4 col-xs-12">
+                        <label for="age">Age of Players</label>
+                        <input type="text" name="age" id="age" class="form-control" value="{{ isset($game) ? $game->age : old('age') }}" placeholder="" required>
+                  </div>
+            </div>
+            <div class="row">
+                  <div class="col-sm-4 col-xs-12">
+                        <label for="luck">Luck</label>
+                        <input id="luck" name="luck" value="{{ isset($game) ? $game->luck : old('luck') }}" class="rating-loading">
+                  </div>
+                  <div class="col-sm-4 col-xs-12">
+                        <label for="strategy">Strategy</label>
+                        <input id="strategy" name="strategy" value="{{ isset($game) ? $game->strategy : old('strategy') }}" class="rating-loading">
+                  </div>
+                  <div class="col-sm-4 col-xs-12">
+                        <label for="complexity">Complexity</label>
+                        <input id="complexity" name="complexity" value="{{ isset($game) ? $game->complexity : old('complexity') }}" class="rating-loading">
+                  </div>
+            </div>
+
+            <div class="row">
+                  <div class="col-sm-4 col-xs-12">
+                        <label for="replay">Replay</label>
+                        <input id="replay" name="replay" value="{{ isset($game) ? $game->replay : old('replay') }}" class="rating-loading">
+                  </div>
+                  <div class="col-sm-4 col-xs-12">
+                        <label for="components">Components</label>
+                        <input id="components" name="components" value="{{ isset($game) ? $game->components : old('components') }}" class="rating-loading">
+                  </div>
+                  <div class="col-sm-4 col-xs-12">
+                        <label for="learning">Learning</label>
+                        <input id="learning" name="learning" value="{{ isset($game) ? $game->learning : old('learning') }}" class="rating-loading">
+                  </div>
+            </div>
       </div>
-      <div class="col-sm-4 col-xs-12">
-            <label for="slug">Slug</label>
-            <input type="text" name="slug" id="slug" class="form-control" value="{{ isset($game) ? $game->slug : old('slug') }}" placeholder="" required>
-      </div>
-      <div class="col-sm-4 col-xs-12">
+      <div class="col-sm-3 col-xs-12">
             <label for="image">Featured Image</label>
             @if(isset($game))
                   <img src="{!! $game->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
@@ -23,61 +70,16 @@
 </div>
 
 <div class="form-group row">
-      <div class="col-sm-4 col-xs-12">
-            <label for="time">Play Time</label>
-            <input type="text" name="time" id="time" class="form-control" value="{{ isset($game) ? $game->time : old('time') }}" placeholder="" required>
-      </div>
-      <div class="col-sm-4 col-xs-12">
-            <label for="players">Amount of Players</label>
-            <input type="text" name="players" id="players" class="form-control" value="{{ isset($game) ? $game->players : old('players') }}" placeholder="" required>
-      </div>
-      <div class="col-sm-4 col-xs-12">
-            <label for="age">Age of Players</label>
-            <input type="text" name="age" id="age" class="form-control" value="{{ isset($game) ? $game->age : old('age') }}" placeholder="" required>
-      </div>
-</div>
-
-<div class="form-group row">
-      <div class="col-sm-4 col-xs-12">
-            <label for="luck">Luck</label>
-            <input id="luck" name="luck" value="{{ isset($game) ? $game->luck : old('luck') }}" class="rating-loading">
-      </div>
-      <div class="col-sm-4 col-xs-12">
-            <label for="strategy">Strategy</label>
-            <input id="strategy" name="strategy" value="{{ isset($game) ? $game->strategy : old('strategy') }}" class="rating-loading">
-      </div>
-      <div class="col-sm-4 col-xs-12">
-            <label for="complexity">Complexity</label>
-            <input id="complexity" name="complexity" value="{{ isset($game) ? $game->complexity : old('complexity') }}" class="rating-loading">
-      </div>
-</div>
-
-<div class="form-group row">
-      <div class="col-sm-4 col-xs-12">
-            <label for="replay">Replay</label>
-            <input id="replay" name="replay" value="{{ isset($game) ? $game->replay : old('replay') }}" class="rating-loading">
-      </div>
-      <div class="col-sm-4 col-xs-12">
-            <label for="components">Components</label>
-            <input id="components" name="components" value="{{ isset($game) ? $game->components : old('components') }}" class="rating-loading">
-      </div>
-      <div class="col-sm-4 col-xs-12">
-            <label for="learning">Learning</label>
-            <input id="learning" name="learning" value="{{ isset($game) ? $game->learning : old('learning') }}" class="rating-loading">
-      </div>
-</div>
-
-<div class="form-group row">
       <div class="col-xs-12">
             <label for="description">Description</label>
-            {!! Form::textarea('description', null, ['class' => 'form-control textarea', 'id' => 'description']) !!}
+            {!! Form::textarea('description', null, ['class' => 'form-control textarea', 'id' => 'description', 'rows' => '25']) !!}
       </div>
 </div>
 
 <div class="form-group row">
       <div class="col-xs-12">
             <label for="contents">Contents</label>
-            {!! Form::textarea('contents', null, ['class' => 'form-control textarea', 'id' => 'contents']) !!}
+            {!! Form::textarea('contents', null, ['class' => 'form-control textarea', 'id' => 'contents', 'rows' => '25']) !!}
       </div>
 </div>
 
@@ -172,12 +174,12 @@
       </script>
       <script>
             $(document).on('ready', function(){
-                  $('#luck').rating({});
-                  $('#strategy').rating({});
-                  $('#complexity').rating({});
-                  $('#replay').rating({});
-                  $('#components').rating({});
-                  $('#learning').rating({});
+                  $('#luck').rating({size: 'xs'});
+                  $('#strategy').rating({size: 'xs'});
+                  $('#complexity').rating({size: 'xs'});
+                  $('#replay').rating({size: 'xs'});
+                  $('#components').rating({size: 'xs'});
+                  $('#learning').rating({size: 'xs'});
             });
       </script>
       <script>

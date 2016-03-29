@@ -39,13 +39,13 @@ template {
 }
 .btn-submit-top {
     position: fixed !important;
-    top: 126px !important;
-    right: 185px !important;
+    top: 75px !important;
+    right: 200px !important;
     z-index: 100;
   }
   .btn-back-top {
-    top: 126px !important;
-    right: 105px !important;
+    top: 75px !important;
+    right: 125px !important;
     position: fixed;
     z-index: 100;
   }
