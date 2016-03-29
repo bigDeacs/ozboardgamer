@@ -8,6 +8,7 @@ use App\Http\Requests\PostRequest;
 use App\Post;
 use App\Category;
 use App\Game;
+use App\User;
 use App\Http\Controllers\Controller;
 
 class PostController extends Controller
@@ -37,7 +38,8 @@ class PostController extends Controller
     {
         $games = Game::where('status', '=', '1')->lists('name', 'id');
         $categories = Category::where('status', '=', '1')->lists('name', 'id');
-        return view('posts.create', compact('categories', 'games'));
+        $users = User::where('status', '=', '1')->lists('name', 'id');
+        return view('posts.create', compact('categories', 'games', 'users'));
     }
 
     /**
@@ -99,8 +101,9 @@ class PostController extends Controller
     {
         $games = Game::where('status', '=', '1')->lists('name', 'id');
         $categories = Category::where('status', '=', '1')->lists('name', 'id');
+        $users = User::where('status', '=', '1')->lists('name', 'id');
         $post = Post::where('id', '=', $id)->firstOrFail();
-        return view('posts.edit', compact('post', 'categories', 'games'));
+        return view('posts.edit', compact('post', 'categories', 'games', 'users'));
     }
 
     /**

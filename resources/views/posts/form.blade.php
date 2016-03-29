@@ -13,27 +13,9 @@
 </div>
 
 <div class="form-group row">
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-xs-12">
             <label for="video">Video Link</label>
             <input type="text" name="video" id="video" class="form-control" value="{{ isset($post) ? $post->video : old('video') }}" placeholder="">
-      </div>
-      <div class="col-sm-6 col-xs-12">
-            <label for="image">Featured Image</label>
-            @if(isset($post))
-                  <img src="{!! $post->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
-            @else
-                  <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
-            @endif
-            Browse:
-            <input type="file" name="image" accept="image/*" onchange="loadImage(event)">
-            <small>600px X 350px</small>
-      </div>
-</div>
-
-<div class="form-group row">
-      <div class="col-xs-12">
-            <label for="description">Description</label>
-            {!! Form::textarea('description', null, ['class' => 'form-control textarea', 'id' => 'description']) !!}
       </div>
 </div>
 
@@ -45,11 +27,17 @@
 </div>
 
 <div class="form-group row">
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-9 col-xs-12">
+            <label for="description">Description</label>
+            {!! Form::textarea('description', null, ['class' => 'form-control textarea', 'id' => 'description', 'rows' => '25']) !!}
+      </div>
+      <div class="col-sm-3 col-xs-12">
+            <label for="user_id">Author</label>
+            {!! Form::select('user_id', $users, Input::old('user'), ['class' => 'form-control']) !!}
+            <br />
             <label for="publisher_id">Category</label>
             {!! Form::select('category_id', $categories, Input::old('category'), ['class' => 'form-control']) !!}
-      </div>
-      <div class="col-sm-6 col-xs-12">
+            <br />
             <label for="published_at">Publish Date</label>
             <div class='input-group date'>
                   <input type="text" autocomplete="off" name="published_at" id="published_at" data-date-format="yyyy-mm-dd" class="form-control" value="{{ isset($post) ? $post->published_at : old('published_at') }}" required />
@@ -57,6 +45,16 @@
                         <span class="glyphicon glyphicon-calendar"></span>
                   </span>
             </div>
+            <br />
+            <label for="image">Featured Image</label>
+            @if(isset($post))
+                  <img src="{!! $post->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
+            @else
+                  <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
+            @endif
+            Browse:
+            <input type="file" name="image" accept="image/*" onchange="loadImage(event)">
+            <small>851px X 315px</small>
       </div>
 </div>
 
