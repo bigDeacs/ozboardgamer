@@ -72,9 +72,8 @@
                                     </div>
                                     <div class="col-md-6 col-sm-7 col-xs-12">
                                         <a href="/reviews/{{ $review->slug }}">
-                                            {!! $review->name !!}
+                                            <h4>{!! $review->name !!}</h4>
                                         </a>
-                                        <p>{!! str_limit(strip_tags($review->description), $limit = 100, $end = '...') !!}</p>
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-12 text-center">
                                         <a href="/reviews/{{ $review->slug }}" class="btn btn-warning">
@@ -93,16 +92,15 @@
                             <h3>Latest News</h3>
                             @foreach($news as $entry)
                                 <div class="row">
-                                    <div class="col-sm-2 col-xs-12">
+                                    <div class="col-md-3 col-sm-2 col-xs-12">
                                         <a href="/news/{{ $entry->slug }}">
                                             <img src="{{ $entry->image }}" class="img-responsive" />
                                         </a>
                                     </div>
-                                    <div class="col-sm-7 col-xs-12">
+                                    <div class="col-md-6 col-sm-7 col-xs-12">
                                         <a href="/news/{{ $entry->slug }}">
-                                            {!! $entry->name !!}
+                                            <h4>{!! $entry->name !!}</h4>
                                         </a>
-                                        <p>{!! str_limit(strip_tags($entry->description), $limit = 100, $end = '...') !!}</p>
                                     </div>
                                     <div class="col-sm-2 col-xs-12 text-center">
                                         <a href="/news/{{ $entry->slug }}" class="btn btn-warning">
@@ -121,16 +119,15 @@
                             <h3>Latest How To's</h3>
                             @foreach($howtos as $howto)
                                 <div class="row">
-                                    <div class="col-sm-2 col-xs-12">
+                                    <div class="col-md-3 col-sm-2 col-xs-12">
                                         <a href="/howtos/{{ $howto->slug }}">
                                             <img src="{{ $howto->image }}" class="img-responsive" />
                                         </a>
                                     </div>
-                                    <div class="col-sm-7 col-xs-12">
+                                    <div class="col-md-6 col-sm-7 col-xs-12">
                                         <a href="/howtos/{{ $howto->slug }}">
-                                            {!! $howto->name !!}
+                                            <h4>{!! $howto->name !!}</h4>
                                         </a>
-                                        <p>{!! str_limit(strip_tags($howto->description), $limit = 100, $end = '...') !!}</p>
                                     </div>
                                     <div class="col-sm-2 col-xs-12 text-center">
                                         <a href="/howtos/{{ $howto->slug }}" class="btn btn-warning">
