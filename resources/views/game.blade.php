@@ -95,25 +95,29 @@
 					<!-- Tab panes -->
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane active" id="description">
-							<div class="col-xs-12">
+							<div class="col-xs-12 panel panel-success">
 								{!! $game->description !!}
 							</div>
 						</div>
 						<div role="tabpanel" class="tab-pane" id="contents">
-							<div class="col-xs-12">
+							<div class="col-xs-12 panel panel-success">
 								{!! $game->contents !!}
 							</div>
 						</div>
 						@unless($posts->isEmpty())
 							<div role="tabpanel" class="tab-pane" id="videos">
-						    	@foreach($posts as $post)
-						    		<div class="col-md-6 col-sm-12">
-							    		<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-							    			<img src="{{ $post->image }}" class="img-responsive" />
-							    		</a>
-							    		<p><a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">{{ $post->name }}</a></p>
-							    	</div>
-						    	@endforeach
+								<div class="col-xs-12 panel panel-success">
+									<div class="row">
+								    	@foreach($posts as $post)
+								    		<div class="col-md-6 col-sm-12">
+									    		<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
+									    			<img src="{{ $post->image }}" class="img-responsive" />
+									    		</a>
+									    		<p><a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">{{ $post->name }}</a></p>
+									    	</div>
+								    	@endforeach
+								    </div>
+							    </div>
 							</div>
 						@endunless
 					</div>

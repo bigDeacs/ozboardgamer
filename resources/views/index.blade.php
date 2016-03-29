@@ -65,18 +65,18 @@
                             <h3>Latest Game Reviews</h3>
                             @foreach($reviews as $review)
                                 <div class="row">
-                                    <div class="col-sm-2 col-xs-12">
+                                    <div class="col-md-3 col-sm-2 col-xs-12">
                                         <a href="/reviews/{{ $review->slug }}">
                                             <img src="{{ $review->image }}" class="img-responsive" />
                                         </a>
                                     </div>
-                                    <div class="col-sm-7 col-xs-12">
+                                    <div class="col-md-6 col-sm-7 col-xs-12">
                                         <a href="/reviews/{{ $review->slug }}">
                                             {!! $review->name !!}
                                         </a>
                                         <p>{!! str_limit(strip_tags($review->description), $limit = 100, $end = '...') !!}</p>
                                     </div>
-                                    <div class="col-sm-2 col-xs-12 text-center">
+                                    <div class="col-md-2 col-sm-2 col-xs-12 text-center">
                                         <a href="/reviews/{{ $review->slug }}" class="btn btn-warning">
                                             Find Out More
                                         </a>
