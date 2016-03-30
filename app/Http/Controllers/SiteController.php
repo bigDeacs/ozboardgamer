@@ -109,7 +109,7 @@ class SiteController extends Controller {
 			return view('designers', compact('designers'));
 		} else {
 			$designer = Designer::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-			$games = Game::where('status', '=', '1')->whereHas('designer', function($q) use($slug)
+			$games = Game::where('status', '=', '1')->whereHas('designers', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
 			})->get();
