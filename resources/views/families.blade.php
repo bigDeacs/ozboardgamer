@@ -1,13 +1,23 @@
 @extends('app')
 
 @section('meta')
-    <title>Families</title>
+    <title>Board Game Families</title>
+    <meta name="description" content="Many games are designed with a universe in mind, sometimes this universe is shared!">
 @endsection
 
 @section('head')
 @endsection
 
 @section('content')
+	<div class="breadcrumb-holder">
+		<div class="container">	
+			<ol class="breadcrumb breadcrumb-arrow">
+				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+				<li class="hidden-xs"><a href="/games">Games</a></li>
+				<li class="active"><span>Families</span></li>
+			</ol>
+		</div>
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">

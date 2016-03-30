@@ -14,7 +14,7 @@
 		<div class="container">	
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
-				<li><a href="/games">Games</a></li>
+				<li class="hidden-xs"><a href="/games">Games</a></li>
 				<li class="active"><span>{{ $type->name }}</span></li>
 			</ol>
 		</div>

@@ -1,13 +1,23 @@
 @extends('app')
 
 @section('meta')
-    <title>Mechanics</title>
+    <title>Board Game Mechanics</title>
+    <meta name="description" content="Dice Rolling, Bluffing, Deduction. There are so many different mechanics that make games great!">
 @endsection
 
 @section('head')
 @endsection
 
 @section('content')
+	<div class="breadcrumb-holder">
+		<div class="container">	
+			<ol class="breadcrumb breadcrumb-arrow">
+				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+				<li class="hidden-xs"><a href="/games">Games</a></li>
+				<li class="active"><span>Mechanics</span></li>
+			</ol>
+		</div>
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">

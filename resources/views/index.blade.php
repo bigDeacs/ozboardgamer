@@ -1,6 +1,8 @@
 @extends('app')
 
 @section('meta')
+    <title>Find the latest News, Reviews and More with Oz Board Gamer</title>
+    <meta name="description" content="Want to know all the latest and greatest about Board Games? We have News, Reviews and much more!">
 @endsection
 
 @section('head')
@@ -9,7 +11,7 @@
 @section('content')
 <!-- Header -->
     <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide">
+    <header id="myCarousel" class="carousel slide hidden-xs">
         @unless($featured->isEmpty())
             <!-- Indicators -->
             <ol class="carousel-indicators">

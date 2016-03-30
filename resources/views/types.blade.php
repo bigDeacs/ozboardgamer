@@ -1,7 +1,8 @@
 @extends('app')
 
 @section('meta')
-    <title>Games</title>
+    <title>Types</title>
+    <meta name="description" content="Card games, Board games, Party Games, Dice Games, there are so many different categories.">
 @endsection
 
 @section('head')
