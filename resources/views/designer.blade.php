@@ -80,6 +80,13 @@
 		                </div>
 		            </div>
 				@endforeach
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="text-center">
+							{!! $games->render() !!}
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

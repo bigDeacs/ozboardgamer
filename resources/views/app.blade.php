@@ -56,7 +56,7 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-THQLSV');</script>
     <!-- End Google Tag Manager -->
-    
+
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
@@ -126,7 +126,6 @@
     </nav>
       
   	@yield('content')
-  	<hr>
 
   	<!-- Footer -->
     <footer class="navbar-inverse navbar-footer">

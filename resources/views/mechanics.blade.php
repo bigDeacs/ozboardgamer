@@ -34,9 +34,16 @@
 				    		</a>
 					    	<p><a href="/mechanics/{{ $mechanic->slug }}">{!! $mechanic->name !!}</a></p>
 						</div>
-					@endforeach
+					@endforeach				
 				</div>
 				<hr />
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="text-center">
+							{!! $mechanics->render() !!}
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

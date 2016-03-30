@@ -37,6 +37,13 @@
 					@endforeach
 				</div>
 				<hr />
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="text-center">
+							{!! $publishers->render() !!}
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

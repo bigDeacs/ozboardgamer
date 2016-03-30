@@ -60,6 +60,14 @@
 		                </div>
 		            </div>
 				@endforeach
+				<hr />
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="text-center">
+							{!! $posts->render() !!}
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

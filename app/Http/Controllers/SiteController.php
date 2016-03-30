@@ -58,13 +58,13 @@ class SiteController extends Controller {
 	public function game($type = null, $slug = null)
 	{
 		if($type == null) {
-			$types = Type::where('status', '=', '1')->has('games')->with('games')->get();	
+			$types = Type::where('status', '=', '1')->has('games')->with('games')->paginate(12);	
 			return view('types', compact('types'));
 		} elseif($slug == null) {
 			$games = Game::where('status', '=', '1')->whereHas('types', function($q) use($type)
 			{
 			    $q->where('slug', '=', $type);
-			})->get();
+			})->paginate(10);
 			$type = Type::where('status', '=', '1')->where('slug', '=', $type)->firstOrFail();	
 			return view('type', compact('type','games'));
 		} else {
@@ -85,14 +85,14 @@ class SiteController extends Controller {
 	public function family($slug = null)
 	{
 		if($slug == null) {
-			$families = Family::where('status', '=', '1')->has('games')->with('games')->get();
+			$families = Family::where('status', '=', '1')->has('games')->with('games')->paginate(12);
 			return view('families', compact('families'));
 		} else {
 			$family = Family::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 			$games = Game::where('status', '=', '1')->whereHas('family', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
-			})->get();
+			})->paginate(10);
 			return view('family', compact('family', 'games'));
 		}
 	}
@@ -105,14 +105,14 @@ class SiteController extends Controller {
 	public function designer($slug = null)
 	{
 		if($slug == null) {
-			$designers = Designer::where('status', '=', '1')->has('games')->with('games')->get();
+			$designers = Designer::where('status', '=', '1')->has('games')->with('games')->paginate(12);
 			return view('designers', compact('designers'));
 		} else {
 			$designer = Designer::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 			$games = Game::where('status', '=', '1')->whereHas('designers', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
-			})->get();
+			})->paginate(10);
 			return view('designer', compact('designer', 'games'));
 		}
 	}
@@ -125,14 +125,14 @@ class SiteController extends Controller {
 	public function publisher($slug = null)
 	{
 		if($slug == null) {
-			$publishers = Publisher::where('status', '=', '1')->has('games')->with('games')->get();
+			$publishers = Publisher::where('status', '=', '1')->has('games')->with('games')->paginate(12);
 			return view('publishers', compact('publishers'));
 		} else {
 			$publisher = Publisher::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 			$games = Game::where('status', '=', '1')->whereHas('publisher', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
-			})->get();
+			})->paginate(10);
 			return view('publisher', compact('publisher', 'games'));
 		}
 	}
@@ -145,14 +145,14 @@ class SiteController extends Controller {
 	public function mechanic($slug = null)
 	{
 		if($slug == null) {
-			$mechanics = Mechanic::where('status', '=', '1')->has('games')->with('games')->get();
+			$mechanics = Mechanic::where('status', '=', '1')->has('games')->with('games')->paginate(12);
 			return view('mechanics', compact('mechanics'));
 		} else {
 			$mechanic = Mechanic::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 			$games = Game::where('status', '=', '1')->whereHas('mechanics', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
-			})->get();
+			})->paginate(10);
 			return view('mechanic', compact('mechanic', 'games'));
 		}
 	}
@@ -165,14 +165,14 @@ class SiteController extends Controller {
 	public function theme($slug = null)
 	{
 		if($slug == null) {
-			$themes = Theme::where('status', '=', '1')->has('games')->with('games')->get();
+			$themes = Theme::where('status', '=', '1')->has('games')->with('games')->paginate(12);
 			return view('themes', compact('themes'));
 		} else {
 			$theme = Theme::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 			$games = Game::where('status', '=', '1')->whereHas('themes', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
-			})->get();
+			})->paginate(10);
 			return view('theme', compact('theme', 'games'));
 		}
 	}
@@ -188,7 +188,7 @@ class SiteController extends Controller {
 			$posts = Post::where('status', '=', '1')->whereHas('category', function($q) use($category)
 			{
 			    $q->where('slug', '=', $category);
-			})->orderBy('published_at', 'desc')->get();
+			})->orderBy('published_at', 'desc')->paginate(2);
 			$category = Category::where('status', '=', '1')->where('slug', '=', $category)->firstOrFail();	
 			return view('posts', compact('category','posts'));
 		} else {
