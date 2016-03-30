@@ -78,7 +78,7 @@
                                         </a>
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-12 text-center">
-                                        <a href="/reviews/{{ $review->slug }}" class="btn btn-warning">
+                                        <a href="/reviews/{{ $review->slug }}" class="btn btn-dark">
                                             Find Out More
                                         </a>
                                     </div>
@@ -105,7 +105,7 @@
                                         </a>
                                     </div>
                                     <div class="col-sm-2 col-xs-12 text-center">
-                                        <a href="/news/{{ $entry->slug }}" class="btn btn-warning">
+                                        <a href="/news/{{ $entry->slug }}" class="btn btn-dark">
                                             Find Out More
                                         </a>
                                     </div>
@@ -132,7 +132,7 @@
                                         </a>
                                     </div>
                                     <div class="col-sm-2 col-xs-12 text-center">
-                                        <a href="/howtos/{{ $howto->slug }}" class="btn btn-warning">
+                                        <a href="/howtos/{{ $howto->slug }}" class="btn btn-dark">
                                             Find Out More
                                         </a>
                                     </div>
