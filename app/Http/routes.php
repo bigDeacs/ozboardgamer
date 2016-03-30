@@ -60,6 +60,7 @@ Route::get('/families/{slug?}', 'SiteController@family');
 Route::get('/publishers/{slug?}', 'SiteController@publisher');
 Route::get('/mechanics/{slug?}', 'SiteController@mechanic');
 Route::get('/themes/{slug?}', 'SiteController@theme');
+Route::get('/designers/{slug?}', 'SiteController@designer');
 
 // Dynamic Routes
 Route::get('/{category}/{slug?}', 'SiteController@post');
