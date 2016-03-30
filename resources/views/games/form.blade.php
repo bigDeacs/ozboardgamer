@@ -114,7 +114,7 @@
 <div class="form-group row">
       <div class="col-sm-6 col-xs-12">
             <label for="publisher_id">Publisher</label>
-            {!! Form::select('publisher_id', ['' => 'Select publisher'] + $publishers, Input::old('publisher'), ['class' => 'form-control']) !!}
+            {!! Form::select('publisher_id', ['' => 'Select publisher'] + $publishers, Input::old('publisher'), ['class' => 'form-control searchable-select']) !!}
       </div>
       <div class="col-sm-6 col-xs-12">
             <label for="published">Publishing Year</label>
@@ -130,11 +130,11 @@
 <div class="form-group row">
       <div class="col-sm-6 col-xs-12">
             <label for="family_id">Game Family</label>
-            {!! Form::select('family_id', ['' => 'Select game family'] + $families, Input::old('family'), ['class' => 'form-control']) !!}
+            {!! Form::select('family_id', ['' => 'Select game family'] + $families, Input::old('family'), ['class' => 'form-control searchable-select']) !!}
       </div>
       <div class="col-sm-6 col-xs-12">
             <label for="parent_id">Expansion</label>
-            {!! Form::select('parent_id', ['' => 'Select core game'] + $games, Input::old('parent_id'), ['class' => 'form-control']) !!}
+            {!! Form::select('parent_id', ['' => 'Select core game'] + $games, Input::old('parent_id'), ['class' => 'form-control searchable-select']) !!}
       </div>
 </div>
 
@@ -181,6 +181,9 @@
             $('#designer_list').select2({
                   placeholder: 'Choose a Designer',
                   tags: true
+            });
+            $(document).ready(function() {
+              $(".searchable-select").select2();
             });
       </script>
       <script>
