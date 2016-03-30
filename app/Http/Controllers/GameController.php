@@ -119,7 +119,7 @@ class GameController extends Controller
 
         if(is_array($request->input('designer_list'))) {
             $currentDesigners = array_filter($request->input('designer_list'), 'is_numeric');
-            $newMechanics = array_diff($request->input('designer_list'), $currentDesigners);   
+            $newDesigners = array_diff($request->input('designer_list'), $currentDesigners);   
             foreach($newDesigners as $newDesigner)
             {
                 if($designer = Designer::create(['name' => $newDesigner, 'slug' => str_slug($newDesigner, "-"), 'status' => 1]))
