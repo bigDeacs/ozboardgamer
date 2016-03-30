@@ -217,6 +217,20 @@
 						</div>
 					</div>
 				@endunless
+				@unless($game->designers->isEmpty())
+					<strong>Designers</strong>
+					<div class="row">
+						<div class="col-sm-12">
+					    	@foreach($game->designers as $key => $designer)
+					    		@if($key == (count($game->designers) -1))
+					    			<a href="/designers/{{ $designer->slug }}">{{ $designer->name }}</a>
+					    		@else
+					    			<a href="/designers/{{ $designer->slug }}">{{ $designer->name }}</a>, 
+					    		@endif
+					    	@endforeach
+						</div>
+					</div>
+				@endunless
 			</div>
 	      </div>
 	    </div>
