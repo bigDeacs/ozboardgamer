@@ -8,6 +8,7 @@ use App\Publisher;
 use App\Mechanic;
 use App\Theme;
 use App\Type;
+use App\Designer;
 use App\Post;
 use App\Category;
 use Storage;
@@ -93,6 +94,26 @@ class SiteController extends Controller {
 			    $q->where('slug', '=', $slug);
 			})->get();
 			return view('family', compact('family', 'games'));
+		}
+	}
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function designer($slug = null)
+	{
+		if($slug == null) {
+			$designers = Designer::where('status', '=', '1')->has('games')->with('games')->get();
+			return view('designers', compact('designers'));
+		} else {
+			$designer = Designer::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$games = Game::where('status', '=', '1')->whereHas('designer', function($q) use($slug)
+			{
+			    $q->where('slug', '=', $slug);
+			})->get();
+			return view('designer', compact('designer', 'games'));
 		}
 	}
 
