@@ -250,7 +250,7 @@ class GameController extends Controller
         } else {
             $currentDesigners = [];
         }
-        $game->types()->sync($currentDesigners);
+        $game->designers()->sync($currentDesigners);
 
         return redirect('/admin/games');
     }
