@@ -48,6 +48,7 @@
 								<li><a href="{{ url('/admin/games') }}">Games</a></li>
 								<li><a href="{{ url('/admin/families') }}">Game Families</a></li>
 								<li><a href="{{ url('/admin/publishers') }}">Game Publishers</a></li>
+								<li><a href="{{ url('/admin/designers') }}">Game Designers</a></li>
 								<li><a href="{{ url('/admin/mechanics') }}">Game Mechanics</a></li>
 								<li><a href="{{ url('/admin/themes') }}">Game Themes</a></li>
 								<li><a href="{{ url('/admin/types') }}">Game Types</a></li>

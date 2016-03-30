@@ -9,6 +9,7 @@ use App\Game;
 use App\Theme;
 use App\Mechanic;
 use App\Type;
+use App\Designer;
 use App\Publisher;
 use App\Family;
 use Storage;
@@ -42,10 +43,11 @@ class GameController extends Controller
         $themes = Theme::where('status', '=', '1')->lists('name', 'id');
         $mechanics = Mechanic::where('status', '=', '1')->lists('name', 'id');
         $types = Type::where('status', '=', '1')->lists('name', 'id');
+        $designers = Designer::where('status', '=', '1')->lists('name', 'id');
         $publishers = Publisher::where('status', '=', '1')->lists('name', 'id');
         $families = Family::where('status', '=', '1')->lists('name', 'id');
         $games = Game::where('status', '=', '1')->lists('name', 'id');
-        return view('games.create', compact('themes', 'mechanics', 'types', 'families', 'publishers', 'games'));
+        return view('games.create', compact('themes', 'mechanics', 'types', 'families', 'publishers', 'games', 'designers'));
     }
 
     /**
@@ -115,6 +117,21 @@ class GameController extends Controller
         }
         $game->types()->sync($currentTypes);
 
+        if(is_array($request->input('designer_list'))) {
+            $currentDesigners = array_filter($request->input('designer_list'), 'is_numeric');
+            $newMechanics = array_diff($request->input('designer_list'), $currentDesigners);   
+            foreach($newDesigners as $newDesigner)
+            {
+                if($designer = Designer::create(['name' => $newDesigner, 'slug' => str_slug($newDesigner, "-"), 'status' => 1]))
+                {
+                    $currentDesigners[] = $designer->id;
+                }
+            }
+        } else {
+            $currentDesigners = [];
+        }
+        $game->designers()->sync($currentDesigners);
+
         return redirect('/admin/games');
     }
 
@@ -141,11 +158,12 @@ class GameController extends Controller
         $themes = Theme::where('status', '=', '1')->lists('name', 'id');
         $mechanics = Mechanic::where('status', '=', '1')->lists('name', 'id');
         $types = Type::where('status', '=', '1')->lists('name', 'id');
+        $designers = Designer::where('status', '=', '1')->lists('name', 'id');
         $publishers = Publisher::where('status', '=', '1')->lists('name', 'id');
         $families = Family::where('status', '=', '1')->lists('name', 'id');
         $games = Game::where('status', '=', '1')->lists('name', 'id');
         $game = Game::where('id', '=', $id)->firstOrFail();
-        return view('games.edit', compact('game', 'themes', 'mechanics', 'types', 'families', 'publishers', 'games'));
+        return view('games.edit', compact('game', 'themes', 'mechanics', 'types', 'families', 'publishers', 'games', 'designers'));
     }
 
     /**
@@ -218,6 +236,21 @@ class GameController extends Controller
             $currentTypes = [];
         }
         $game->types()->sync($currentTypes);
+
+        if(is_array($request->input('designer_list'))) {
+            $currentDesigners = array_filter($request->input('designer_list'), 'is_numeric');
+            $newDesigners = array_diff($request->input('designer_list'), $currentDesigners);   
+            foreach($newDesigners as $newDesigner)
+            {
+                if($designer = Designer::create(['name' => $newDesigner, 'slug' => str_slug($newDesigner, "-"), 'status' => 1]))
+                {
+                    $currentDesigners[] = $designer->id;
+                }
+            }
+        } else {
+            $currentDesigners = [];
+        }
+        $game->types()->sync($currentDesigners);
 
         return redirect('/admin/games');
     }

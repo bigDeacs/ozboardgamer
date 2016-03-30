@@ -104,4 +104,14 @@ class Game extends Model {
         return $this->types->lists('id');
     }
 
+    public function designers()
+    {
+        return $this->belongsToMany('App\Designer');
+    }
+
+    public function getDesignerListAttribute()
+    {
+        return $this->designers->lists('id');
+    }
+
 }

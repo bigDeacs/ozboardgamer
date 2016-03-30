@@ -36,6 +36,9 @@ Route::group(['prefix' => 'admin'], function()
 	Route::resource('mechanics', 'MechanicController');
 	Route::get('mechanics/{mechanics}/activate', ['as' => 'mechanics.activate', 'uses' => 'MechanicController@activate']);
 	Route::get('mechanics/{mechanics}/deactivate', ['as' => 'mechanics.deactivate', 'uses' => 'MechanicController@deactivate']);
+	Route::resource('designers', 'DesignerController');
+	Route::get('designers/{designers}/activate', ['as' => 'designers.activate', 'uses' => 'DesignerController@activate']);
+	Route::get('designers/{designers}/deactivate', ['as' => 'designers.deactivate', 'uses' => 'DesignerController@deactivate']);
 	Route::resource('types', 'TypeController');
 	Route::get('types/{types}/activate', ['as' => 'types.activate', 'uses' => 'TypeController@activate']);
 	Route::get('types/{types}/deactivate', ['as' => 'types.deactivate', 'uses' => 'TypeController@deactivate']);

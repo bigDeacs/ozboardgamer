@@ -105,6 +105,13 @@
 </div>
 
 <div class="form-group row">
+      <div class="col-xs-12">
+            <label for="designer_list">Designers</label>
+            {!! Form::select('designer_list[]', $designers, null, ['id' => 'designer_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
+      </div>
+</div>
+
+<div class="form-group row">
       <div class="col-sm-6 col-xs-12">
             <label for="publisher_id">Publisher</label>
             {!! Form::select('publisher_id', ['' => 'Select publisher'] + $publishers, Input::old('publisher'), ['class' => 'form-control']) !!}
@@ -170,6 +177,10 @@
             $('#type_list').select2({
             	placeholder: 'Choose a type',
             	tags: true
+            });
+            $('#designer_list').select2({
+                  placeholder: 'Choose a Designer',
+                  tags: true
             });
       </script>
       <script>
