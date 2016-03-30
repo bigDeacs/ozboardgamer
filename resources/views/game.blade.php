@@ -34,10 +34,10 @@
 		<div class="row">
 			<div class="col-md-9 col-sm-8 col-xs-12">
 				<div class="row">
-			      <div class="col-sm-3 col-xs-12">
+			      <div class="col-sm-4 col-xs-12">
 			      	<img src="{{ $game->image }}" class="img-responsive" />
 			      </div>
-			      <div class="col-sm-9 col-xs-12">
+			      <div class="col-sm-8 col-xs-12">
 			      	<h1>{{ $game->name }}</h1>
 					@unless($game->publisher == null)			      	
 			      		<small><a href="/publishers/{{ $game->publisher->slug }}">{{ $game->publisher->name }}</a> | Published: {{ $game->published }}</small>
@@ -82,6 +82,7 @@
 				    </div>
 			      </div>
 			    </div>
+			    <br />
 			    <div class="row">
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
