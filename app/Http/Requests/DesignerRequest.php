@@ -24,7 +24,7 @@ class DesignerRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required'
+            'name' => 'required|unique:designers,name,'.$this->id
         ];
     }
 }

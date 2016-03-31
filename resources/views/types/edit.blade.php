@@ -27,6 +27,7 @@
 					</div>
 				@endif
 				{!! Form::model($type, ['method' => 'PATCH', 'action' => ['TypeController@update', $type->id]]) !!}
+					<input type="hidden" name="id" value="{{ $type->id }}">
 					@include('types.form')
 					<div class="form-group btn-submit-top">
 						<button type="submit" class="btn btn-success btn-block">Update</button>

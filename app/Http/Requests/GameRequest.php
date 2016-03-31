@@ -24,7 +24,7 @@ class GameRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required|unique:games,id,'.$this->get('id')
+            'name' => 'required|unique:games,name,'.$this->id
         ];
     }
 }

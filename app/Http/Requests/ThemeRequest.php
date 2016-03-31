@@ -24,7 +24,7 @@ class ThemeRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required'
+            'name' => 'required|unique:themes,name,'.$this->id
         ];
     }
 }

@@ -24,7 +24,7 @@ class TypeRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required'
+            'name' => 'required|unique:types,name,'.$this->id
         ];
     }
 }

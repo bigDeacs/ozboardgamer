@@ -24,7 +24,7 @@ class PostRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required|unique:posts,id,'.$this->get('id')
+            'name' => 'required|unique:posts,name,'.$this->id
         ];
     }
 }

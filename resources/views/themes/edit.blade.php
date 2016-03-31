@@ -27,6 +27,7 @@
 					</div>
 				@endif
 				{!! Form::model($theme, ['method' => 'PATCH', 'action' => ['ThemeController@update', $theme->id]]) !!}
+					<input type="hidden" name="id" value="{{ $theme->id }}">
 					@include('themes.form')
 					<div class="form-group btn-submit-top">
 						<button type="submit" class="btn btn-success btn-block">Update</button>

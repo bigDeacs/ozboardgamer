@@ -27,6 +27,7 @@
 					</div>
 				@endif
 				{!! Form::model($game, ['files'=> true, 'method' => 'PATCH', 'action' => ['GameController@update', $game->id]]) !!}
+					<input type="hidden" name="id" value="{{ $game->id }}">
 					@include('games.form')
 					<div class="form-group btn-submit-top">
 						<button type="submit" class="btn btn-success btn-block">Update</button>

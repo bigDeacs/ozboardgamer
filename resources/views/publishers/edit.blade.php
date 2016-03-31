@@ -27,6 +27,7 @@
 					</div>
 				@endif
 				{!! Form::model($publisher, ['method' => 'PATCH', 'action' => ['PublisherController@update', $publisher->id]]) !!}
+					<input type="hidden" name="id" value="{{ $publisher->id }}">
 					@include('publishers.form')
 					<div class="form-group btn-submit-top">
 						<button type="submit" class="btn btn-success btn-block">Update</button>

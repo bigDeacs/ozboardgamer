@@ -27,6 +27,7 @@
 					</div>
 				@endif
 				{!! Form::model($mechanic, ['method' => 'PATCH', 'action' => ['MechanicController@update', $mechanic->id]]) !!}
+					<input type="hidden" name="id" value="{{ $mechanic->id }}">
 					@include('mechanics.form')
 					<div class="form-group btn-submit-top">
 						<button type="submit" class="btn btn-success btn-block">Update</button>

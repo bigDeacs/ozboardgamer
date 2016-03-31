@@ -24,7 +24,7 @@ class PublisherRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required'
+            'name' => 'required|unique:publishers,name,'.$this->id
         ];
     }
 }

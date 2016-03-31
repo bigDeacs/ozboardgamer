@@ -27,6 +27,7 @@
 					</div>
 				@endif
 				{!! Form::model($category, ['method' => 'PATCH', 'action' => ['CategoryController@update', $category->id]]) !!}
+					<input type="hidden" name="id" value="{{ $category->id }}">
 					@include('categories.form')
 					<div class="form-group btn-submit-top">
 						<button type="submit" class="btn btn-success btn-block">Update</button>

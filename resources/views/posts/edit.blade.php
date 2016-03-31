@@ -27,6 +27,7 @@
 					</div>
 				@endif
 				{!! Form::model($post, ['files'=> true, 'method' => 'PATCH', 'action' => ['PostController@update', $post->id]]) !!}
+					<input type="hidden" name="id" value="{{ $post->id }}">
 					@include('posts.form')
 					<div class="form-group btn-submit-top">
 						<button type="submit" class="btn btn-success btn-block">Update</button>

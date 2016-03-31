@@ -24,7 +24,7 @@ class MechanicRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required'
+            'name' => 'required|unique:mechanics,name,'.$this->id
         ];
     }
 }
