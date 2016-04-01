@@ -11,6 +11,7 @@ use App\Type;
 use App\Designer;
 use App\Post;
 use App\Category;
+use App\Http\Requests\SearchRequest;
 use Storage;
 
 class SiteController extends Controller {
@@ -188,7 +189,7 @@ class SiteController extends Controller {
 			$posts = Post::where('status', '=', '1')->whereHas('category', function($q) use($category)
 			{
 			    $q->where('slug', '=', $category);
-			})->orderBy('published_at', 'desc')->paginate(2);
+			})->orderBy('published_at', 'desc')->paginate(12);
 			$category = Category::where('status', '=', '1')->where('slug', '=', $category)->firstOrFail();	
 			return view('posts', compact('category','posts'));
 		} else {
@@ -200,6 +201,7 @@ class SiteController extends Controller {
 		}
 
 	}
+
 
 	/**
 	 * Show the application welcome screen to the user.

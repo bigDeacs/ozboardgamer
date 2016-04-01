@@ -49,8 +49,10 @@
 	      					<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen></iframe>
 	      				</div>
 			      	@endunless
-			      	<h1>{{ $post->name }}</h1>
-			      	<p>{!! $post->description !!}</p>
+			      	<div class="panel panel-success">
+			      		<h1>{{ $post->name }}</h1>
+			      		<p>{!! $post->description !!}</p>
+			      	</div>
 			      </div>
 				  @unless($post->games->isEmpty())
 				  	<div class="col-sm-3 col-xs-12 text-center lead">
