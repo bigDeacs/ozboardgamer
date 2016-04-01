@@ -39,7 +39,11 @@
 			      </div>
 			    </div>
 				<div class="row">
-			      <div class="col-sm-9 col-xs-12">
+				  @if($post->games->isEmpty())
+				  	<div class="col-sm-12 col-xs-12">
+				  @else
+			      	<div class="col-sm-9 col-xs-12">
+			      @endif
 					@unless($post->video == null)			      	
 			      		<div class="embed-responsive embed-responsive-16by9">
 	      					<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen></iframe>
