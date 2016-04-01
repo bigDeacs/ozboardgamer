@@ -49,7 +49,7 @@
 	      					<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen></iframe>
 	      				</div>
 			      	@endunless
-			      	<div class="panel panel-success">
+			      	<div class="panel panel-success" style="padding: 0 10px;">
 			      		<h1>{{ $post->name }}</h1>
 			      		<p>{!! $post->description !!}</p>
 			      	</div>
