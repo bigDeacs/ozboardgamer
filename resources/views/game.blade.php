@@ -39,9 +39,17 @@
 			      </div>
 			      <div class="col-sm-8 col-xs-12">
 			      	<h1>{{ $game->name }}</h1>
-					@unless($game->publisher == null)			      	
-			      		<small><a href="/publishers/{{ $game->publisher->slug }}">{{ $game->publisher->name }}</a> | Published: {{ $game->published }}</small>
-			      	@endunless
+			      	@unless($game->publishers->isEmpty())
+				    	<small>
+				    		@foreach($game->publishers as $key => $publisher)
+					    		@if($key == (count($game->publishers) -1))
+					    			<a href="/publishers/{{ $publisher->slug }}">{{ $publisher->name }}</a>
+					    		@else
+					    			<a href="/publishers/{{ $publisher->slug }}">{{ $publisher->name }}</a>, 
+					    		@endif
+					    	@endforeach
+					     | Published: {{ $game->published }}</small>
+					@endunless
 			      	<div class="row">
 				      <div class="col-xs-12">
 					      	@unless($game->children->isEmpty())
