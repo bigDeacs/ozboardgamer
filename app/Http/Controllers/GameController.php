@@ -117,6 +117,21 @@ class GameController extends Controller
         }
         $game->types()->sync($currentTypes);
 
+        if(is_array($request->input('publisher_list'))) {
+            $currentPublishers = array_filter($request->input('publisher_list'), 'is_numeric');
+            $newPublishers = array_diff($request->input('publisher_list'), $currentPublishers);   
+            foreach($newPublishers as $newPublisher)
+            {
+                if($publisher = Publisher::create(['name' => $newPublisher, 'slug' => str_slug($newPublisher, "-"), 'status' => 1]))
+                {
+                    $currentPublishers[] = $publisher->id;
+                }
+            }
+        } else {
+            $currentPublishers = [];
+        }
+        $game->publishers()->sync($currentPublishers);
+
         if(is_array($request->input('designer_list'))) {
             $currentDesigners = array_filter($request->input('designer_list'), 'is_numeric');
             $newDesigners = array_diff($request->input('designer_list'), $currentDesigners);   
@@ -236,6 +251,21 @@ class GameController extends Controller
             $currentTypes = [];
         }
         $game->types()->sync($currentTypes);
+
+        if(is_array($request->input('publisher_list'))) {
+            $currentPublishers = array_filter($request->input('publisher_list'), 'is_numeric');
+            $newPublishers = array_diff($request->input('publisher_list'), $currentPublishers);   
+            foreach($newPublishers as $newPublisher)
+            {
+                if($publisher = Publisher::create(['name' => $newPublisher, 'slug' => str_slug($newPublisher, "-"), 'status' => 1]))
+                {
+                    $currentPublishers[] = $publisher->id;
+                }
+            }
+        } else {
+            $currentPublishers = [];
+        }
+        $game->publishers()->sync($currentPublishers);
 
         if(is_array($request->input('designer_list'))) {
             $currentDesigners = array_filter($request->input('designer_list'), 'is_numeric');

@@ -112,11 +112,15 @@
 </div>
 
 <div class="form-group row">
-      <div class="col-sm-6 col-xs-12">
-            <label for="publisher_id">Publisher</label>
-            {!! Form::select('publisher_id', ['' => 'Select publisher'] + $publishers, Input::old('publisher'), ['class' => 'form-control searchable-select']) !!}
+      <div class="col-xs-12">
+            <label for="publisher_list">Publisher</label>
+            {!! Form::select('publisher_list[]', $publishers, null, ['id' => 'publisher_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
       </div>
-      <div class="col-sm-6 col-xs-12">
+      
+</div>
+
+<div class="form-group row">
+      <div class="col-sm-4 col-xs-12">
             <label for="published">Publishing Year</label>
             <div class='input-group date'>
                   <input type="text" autocomplete="off" name="published" id="published" data-date-format="dd-mm-yyyy" class="form-control" value="{{ isset($game) ? $game->published : old('published') }}" required />
@@ -125,14 +129,11 @@
                   </span>
             </div>
       </div>
-</div>
-
-<div class="form-group row">
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-4 col-xs-12">
             <label for="family_id">Game Family</label>
             {!! Form::select('family_id', ['' => 'Select game family'] + $families, Input::old('family'), ['class' => 'form-control searchable-select']) !!}
       </div>
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-4 col-xs-12">
             <label for="parent_id">Expansion</label>
             {!! Form::select('parent_id', ['' => 'Select core game'] + $games, Input::old('parent_id'), ['class' => 'form-control searchable-select']) !!}
       </div>
@@ -177,6 +178,10 @@
             $('#type_list').select2({
             	placeholder: 'Choose a type',
             	tags: true
+            });
+            $('#publisher_list').select2({
+                  placeholder: 'Choose a Publisher',
+                  tags: true
             });
             $('#designer_list').select2({
                   placeholder: 'Choose a Designer',

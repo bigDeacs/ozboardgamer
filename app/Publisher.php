@@ -29,7 +29,7 @@ class Publisher extends Model {
 
 	public function games()
     {
-        return $this->hasMany('App\Game');
+        return $this->belongsToMany('App\Game');
     }
 
 }

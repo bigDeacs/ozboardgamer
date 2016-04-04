@@ -54,11 +54,6 @@ class Game extends Model {
         return $this->hasMany('App\Game', 'parent_id');
     }
 
-	public function publisher()
-    {
-        return $this->belongsTo('App\Publisher');
-    }
-
     public function family()
     {
         return $this->belongsTo('App\Family');
@@ -102,6 +97,16 @@ class Game extends Model {
     public function getTypeListAttribute()
     {
         return $this->types->lists('id');
+    }
+
+    public function publishers()
+    {
+        return $this->belongsToMany('App\Publisher');
+    }
+
+    public function getPublisherListAttribute()
+    {
+        return $this->publishers->lists('id');
     }
 
     public function designers()
