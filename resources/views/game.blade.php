@@ -30,25 +30,25 @@
 			</ol>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" itemscope itemtype="http://schema.org/Game">
 		<div class="row">
 			<div class="col-md-9 col-sm-8 col-xs-12">
 				<div class="row">
 			      <div class="col-sm-4 col-xs-12">
-			      	<img src="{{ $game->thumb }}" class="img-responsive" />
+			      	<img src="{{ $game->thumb }}" class="img-responsive" itemprop="image" />
 			      </div>
 			      <div class="col-sm-8 col-xs-12">
-			      	<h1>{{ $game->name }}</h1>
+			      	<h1 itemprop="name">{{ $game->name }}</h1>
 			      	@unless($game->publishers->isEmpty())
 				    	<small>
 				    		@foreach($game->publishers as $key => $publisher)
 					    		@if($key == (count($game->publishers) -1))
-					    			<a href="/publishers/{{ $publisher->slug }}">{{ $publisher->name }}</a>
+					    			<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">{{ $publisher->name }}</a>
 					    		@else
-					    			<a href="/publishers/{{ $publisher->slug }}">{{ $publisher->name }}</a>, 
+					    			<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">{{ $publisher->name }}</a>, 
 					    		@endif
 					    	@endforeach
-					     | Published: {{ $game->published }}</small>
+					     | Published: <span itemprop="datePublished">{{ $game->published }}</span></small>
 					@endunless
 			      	<div class="row">
 				      <div class="col-xs-12">
@@ -72,19 +72,19 @@
 				      <div class="col-md-2 col-sm-3 col-xs-4">
 						<img src="/img/players.png" class="img-responsive" />
 						<div class="text-center lead" style="margin-bottom: 5px;">
-							<strong>{{ $game->players }}</strong>
+							<strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
 						</div>
 				      </div>
 				      <div class="col-md-2 col-sm-3 col-xs-4">
 						<img src="/img/ages.png" class="img-responsive" />
 						<div class="text-center lead" style="margin-bottom: 5px;">
-							<strong>{{ $game->age }}</strong>
+							<strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
 						</div>
 				      </div>
 				      <div class="col-md-2 col-sm-3 col-xs-4">
 						<img src="/img/time.png" class="img-responsive" />
 						<div class="text-center lead" style="margin-bottom: 5px;">
-							<strong>{{ $game->time }}</strong>
+							<strong itemprop="timeRequired">{{ $game->time }}</strong>
 						</div>
 				      </div>
 				    </div>
@@ -104,7 +104,7 @@
 					<!-- Tab panes -->
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane active" id="description">
-							<div class="col-xs-12 panel panel-success">
+							<div class="col-xs-12 panel panel-success" itemprop="description">
 								{!! $game->description !!}
 							</div>
 						</div>
@@ -232,9 +232,9 @@
 						<div class="col-sm-12">
 					    	@foreach($game->designers as $key => $designer)
 					    		@if($key == (count($game->designers) -1))
-					    			<a href="/designers/{{ $designer->slug }}">{{ $designer->name }}</a>
+					    			<a href="/designers/{{ $designer->slug }}" itemprop="creator" itemscope itemtype="http://schema.org/Person">{{ $designer->name }}</a>
 					    		@else
-					    			<a href="/designers/{{ $designer->slug }}">{{ $designer->name }}</a>, 
+					    			<a href="/designers/{{ $designer->slug }}" itemprop="creator" itemscope itemtype="http://schema.org/Person">{{ $designer->name }}</a>, 
 					    		@endif
 					    	@endforeach
 						</div>
