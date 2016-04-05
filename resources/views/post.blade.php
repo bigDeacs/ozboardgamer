@@ -51,6 +51,8 @@
 			      	@endunless
 			      	<div class="panel panel-success" style="padding: 0 10px;">
 			      		<h1>{{ $post->name }}</h1>
+			      		<span class="glyphicon glyphicon-user"></span> {!! $post->user->name !!} | <span class="glyphicon glyphicon-calendar">
+		                            </span>{!! date('F d, Y', strtotime($post->published_at)) !!}
 			      		<p>{!! $post->description !!}</p>
 			      	</div>
 			      </div>

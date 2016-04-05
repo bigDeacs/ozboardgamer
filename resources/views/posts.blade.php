@@ -38,7 +38,7 @@
 		                    </div>
 		                    <div class="row">
 		                        <div class="col-sm-12 post-header-line">
-		                            <span class="glyphicon glyphicon-user"></span>by {!! $post->user->name !!} | <span class="glyphicon glyphicon-calendar">
+		                            <span class="glyphicon glyphicon-user"></span> {!! $post->user->name !!} | <span class="glyphicon glyphicon-calendar">
 		                            </span>{!! date('F d, Y', strtotime($post->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="/{{ $category->slug }}/{{ $post->slug }}#disqus_thread"></a>
 		                        </div>
 		                    </div>
