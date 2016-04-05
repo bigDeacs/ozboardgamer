@@ -43,9 +43,9 @@
 		                        </div>
 		                    </div>
 		                    <div class="row post-content">
-		                        <div class="col-sm-3">
+		                        <div class="col-sm-3 text-center">
 		                            <a href="/{{ $category->slug }}/{{ $post->slug }}">
-		                                <img src="{{ $post->thumb }}" alt="{!! $post->name !!}" class="img-responsive">
+		                                <img src="{{ $post->thumb }}" alt="{!! $post->name !!}" class="img-responsive" width="263" height="auto" />
 		                            </a>
 		                        </div>
 		                        <div class="col-sm-9">

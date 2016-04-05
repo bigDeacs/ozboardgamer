@@ -67,9 +67,9 @@
                             <h3>Latest Game Reviews</h3>
                             @foreach($reviews as $review)
                                 <div class="row">
-                                    <div class="col-md-3 col-sm-2 col-xs-12">
+                                    <div class="col-md-3 col-sm-2 col-xs-12 text-center">
                                         <a href="/reviews/{{ $review->slug }}">
-                                            <img src="{{ $review->thumb }}" class="img-responsive" width="189" height="auto" />
+                                            <img src="{{ $review->thumb }}" class="img-responsive" width="400" height="auto" />
                                         </a>
                                     </div>
                                     <div class="col-md-6 col-sm-7 col-xs-12">
@@ -94,9 +94,9 @@
                             <h3>Latest News</h3>
                             @foreach($news as $entry)
                                 <div class="row">
-                                    <div class="col-md-3 col-sm-2 col-xs-12">
+                                    <div class="col-md-3 col-sm-2 col-xs-12 text-center">
                                         <a href="/news/{{ $entry->slug }}">
-                                            <img src="{{ $entry->thumb }}" class="img-responsive" width="189" height="auto" />
+                                            <img src="{{ $entry->thumb }}" class="img-responsive" width="400" height="auto" />
                                         </a>
                                     </div>
                                     <div class="col-md-6 col-sm-7 col-xs-12">
@@ -121,9 +121,9 @@
                             <h3>Latest How To's</h3>
                             @foreach($howtos as $howto)
                                 <div class="row">
-                                    <div class="col-md-3 col-sm-2 col-xs-12">
+                                    <div class="col-md-3 col-sm-2 col-xs-12 text-center">
                                         <a href="/howtos/{{ $howto->slug }}">
-                                            <img src="{{ $howto->thumb }}" class="img-responsive" width="189" height="auto" />
+                                            <img src="{{ $howto->thumb }}" class="img-responsive" width="400" height="auto" />
                                         </a>
                                     </div>
                                     <div class="col-md-6 col-sm-7 col-xs-12">
@@ -150,7 +150,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-                                    <img src="{{ $game->thumb }}" class="img-responsive" width="263" height="auto" />
+                                    <img src="{{ $game->thumb }}" class="img-responsive" width="400" height="auto" />
                                 </a>
                                 <p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a></p>
                             </div>

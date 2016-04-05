@@ -2230,9 +2230,6 @@ table th[class*="col-"] {
   min-height: 0.01%;
 }
 @media screen and (max-width: 767px) {
-  .img-responsive {
-    width: 100%;
-  }
   .table-responsive {
     width: 100%;
     margin-bottom: 15px;
