@@ -183,6 +183,30 @@ class SiteController extends Controller {
 	 *
 	 * @return Response
 	 */
+	public function review($slug = null)
+	{
+		if($slug == null) {
+			$posts = Post::where('status', '=', '1')->whereHas('category', function($q)
+			{
+			    $q->where('slug', '=', 'reviews');
+			})->orderBy('published_at', 'desc')->paginate(12);
+			$category = Category::where('status', '=', '1')->where('slug', '=', 'reviews')->firstOrFail();	
+			return view('reviews', compact('category','posts'));
+		} else {
+			$post = Post::where('status', '=', '1')->whereHas('category', function($q)
+			{
+			    $q->where('slug', '=', 'reviews');
+			})->where('slug', '=', $slug)->with('games')->firstOrFail();
+			return view('review', compact('post'));
+		}
+
+	}
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
 	public function post($category, $slug = null)
 	{
 		if($slug == null) {

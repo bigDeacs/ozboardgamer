@@ -43,9 +43,9 @@
 				    	<small>
 				    		@foreach($game->publishers as $key => $publisher)
 					    		@if($key == (count($game->publishers) -1))
-					    			<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">{{ $publisher->name }}</a>
+					    			<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>
 					    		@else
-					    			<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">{{ $publisher->name }}</a>, 
+					    			<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>, 
 					    		@endif
 					    	@endforeach
 					     | Published: <span itemprop="datePublished">{{ $game->published }}</span></small>
@@ -232,9 +232,9 @@
 						<div class="col-sm-12">
 					    	@foreach($game->designers as $key => $designer)
 					    		@if($key == (count($game->designers) -1))
-					    			<a href="/designers/{{ $designer->slug }}" itemprop="creator" itemscope itemtype="http://schema.org/Person">{{ $designer->name }}</a>
+					    			<a href="/designers/{{ $designer->slug }}" itemprop="creator" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ $designer->name }}</span></a>
 					    		@else
-					    			<a href="/designers/{{ $designer->slug }}" itemprop="creator" itemscope itemtype="http://schema.org/Person">{{ $designer->name }}</a>, 
+					    			<a href="/designers/{{ $designer->slug }}" itemprop="creator" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ $designer->name }}</span></a>, 
 					    		@endif
 					    	@endforeach
 						</div>
