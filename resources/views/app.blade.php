@@ -28,7 +28,7 @@
     <meta name="theme-color" content="#222222">
     <meta property="og:title"              content="Find the latest News, Reviews and More with Oz Board Gamer" />
     <meta property="og:description"        content="Want to know all the latest and greatest about Board Games? We have News, Reviews and much more!" />
-    <meta property="og:image"              content="/favicon-194x194.png" />
+    <meta property="og:image"              content="http://ozboardgamer.com/img/fblogo.png" />
     @yield('meta')
     @yield('head')
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
