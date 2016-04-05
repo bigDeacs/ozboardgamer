@@ -69,7 +69,7 @@
                                 <div class="row">
                                     <div class="col-md-3 col-sm-2 col-xs-12">
                                         <a href="/reviews/{{ $review->slug }}">
-                                            <img src="{{ $review->thumb }}" class="img-responsive" />
+                                            <img src="{{ $review->thumb }}" class="img-responsive" width="189" height="auto" />
                                         </a>
                                     </div>
                                     <div class="col-md-6 col-sm-7 col-xs-12">
@@ -96,7 +96,7 @@
                                 <div class="row">
                                     <div class="col-md-3 col-sm-2 col-xs-12">
                                         <a href="/news/{{ $entry->slug }}">
-                                            <img src="{{ $entry->thumb }}" class="img-responsive" />
+                                            <img src="{{ $entry->thumb }}" class="img-responsive" width="189" height="auto" />
                                         </a>
                                     </div>
                                     <div class="col-md-6 col-sm-7 col-xs-12">
@@ -123,7 +123,7 @@
                                 <div class="row">
                                     <div class="col-md-3 col-sm-2 col-xs-12">
                                         <a href="/howtos/{{ $howto->slug }}">
-                                            <img src="{{ $howto->thumb }}" class="img-responsive" />
+                                            <img src="{{ $howto->thumb }}" class="img-responsive" width="189" height="auto" />
                                         </a>
                                     </div>
                                     <div class="col-md-6 col-sm-7 col-xs-12">
@@ -150,7 +150,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-                                    <img src="{{ $game->thumb }}" class="img-responsive" />
+                                    <img src="{{ $game->thumb }}" class="img-responsive" width="263" height="auto" />
                                 </a>
                                 <p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a></p>
                             </div>
