@@ -28,6 +28,7 @@ return array(
     'AddStatusToThemesTable' => $baseDir . '/database/migrations/2016_03_14_035656_add_status_to_themes_table.php',
     'AddStatusToTypesTable' => $baseDir . '/database/migrations/2016_03_14_035708_add_status_to_types_table.php',
     'AddStatusToUsersTable' => $baseDir . '/database/migrations/2016_03_08_011836_add_status_to_users_table.php',
+    'AddThumbToGames' => $baseDir . '/database/migrations/2016_04_05_045441_add_thumb_to_games.php',
     'AddThumbToPosts' => $baseDir . '/database/migrations/2016_04_05_040733_add_thumb_to_posts.php',
     'AddToGameMechanicTable' => $baseDir . '/database/migrations/2016_03_08_051857_add_to_game_mechanic_table.php',
     'AddToGamePostTable' => $baseDir . '/database/migrations/2016_03_08_051628_add_to_game_post_table.php',

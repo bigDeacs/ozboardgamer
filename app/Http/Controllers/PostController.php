@@ -55,7 +55,6 @@ class PostController extends Controller
         $post = Post::create($request->all());
         $post->thumb = '-thumb-' . $post->image;
         $post->save();
-        Image::make($request->file('image'))->resize(400, 148)->save($post->thumb);
 
         if($request->hasFile('image'))
         {

@@ -13,6 +13,7 @@ use App\Designer;
 use App\Publisher;
 use App\Family;
 use Storage;
+use Image;
 use App\Http\Controllers\Controller;
 
 class GameController extends Controller
@@ -67,8 +68,13 @@ class GameController extends Controller
             $file = $request->file('image');
             if ($file->isValid())
             {
+                $img = Image::make($file);
+                $img->fit(400, 400);
+                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $game->image = ('http://ozboardgamer.com/uploads/' . $filename);
+                $game->thumb = ('http://ozboardgamer.com/uploads/' . $thumbname);
                 $game->save();
             }
         }
@@ -201,8 +207,13 @@ class GameController extends Controller
             $file = $request->file('image');
             if ($file->isValid())
             {
+                $img = Image::make($file);
+                $img->fit(400, 400);
+                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $game->image = ('http://ozboardgamer.com/uploads/' . $filename);
+                $game->thumb = ('http://ozboardgamer.com/uploads/' . $thumbname);
                 $game->save();
             }
         }

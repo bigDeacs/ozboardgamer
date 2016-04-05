@@ -20,6 +20,7 @@ class Game extends Model {
 		'name', 
         'slug',
 		'image',
+        'thumb',
 		'time', 
 		'players', 
 		'age', 

@@ -29,7 +29,7 @@
 			    	@foreach($types as $type)
 						<div class="col-sm-3 col-xs-12">
 					    	<a href="/games/{{ $type->slug }}">
-				    			<img src="{{ $type->games()->first()->image }}" class="img-responsive" />
+				    			<img src="{{ $type->games()->first()->thumb }}" class="img-responsive" />
 				    		</a>
 					    	<p><a href="/games/{{ $type->slug }}">{!! $type->name !!}</a></p>
 						</div>
