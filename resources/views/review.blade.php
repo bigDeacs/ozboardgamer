@@ -65,7 +65,7 @@
 						    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
 						    			<img src="{{ $game->image }}" class="img-responsive" />
 						    		</a>
-						    		<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></p>
+						    		<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}"><span itemprop="name">{{ $game->name }}</span></a></p>
 						    	</div>
 						    </div>
 				    	@endforeach
