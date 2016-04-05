@@ -69,7 +69,7 @@
                                 <div class="row">
                                     <div class="col-md-3 col-sm-2 col-xs-12">
                                         <a href="/reviews/{{ $review->slug }}">
-                                            <img src="{{ $review->image }}" class="img-responsive" />
+                                            <img src="{{ $review->thumb }}" class="img-responsive" />
                                         </a>
                                     </div>
                                     <div class="col-md-6 col-sm-7 col-xs-12">
@@ -96,7 +96,7 @@
                                 <div class="row">
                                     <div class="col-md-3 col-sm-2 col-xs-12">
                                         <a href="/news/{{ $entry->slug }}">
-                                            <img src="{{ $entry->image }}" class="img-responsive" />
+                                            <img src="{{ $entry->thumb }}" class="img-responsive" />
                                         </a>
                                     </div>
                                     <div class="col-md-6 col-sm-7 col-xs-12">
@@ -123,7 +123,7 @@
                                 <div class="row">
                                     <div class="col-md-3 col-sm-2 col-xs-12">
                                         <a href="/howtos/{{ $howto->slug }}">
-                                            <img src="{{ $howto->image }}" class="img-responsive" />
+                                            <img src="{{ $howto->thumb }}" class="img-responsive" />
                                         </a>
                                     </div>
                                     <div class="col-md-6 col-sm-7 col-xs-12">
