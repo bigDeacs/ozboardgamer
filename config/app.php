@@ -134,7 +134,7 @@ return [
 		'Illuminate\Session\SessionServiceProvider',
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
-		'Illuminate\View\ViewServiceProvider',
+		'Illuminate\View\ViewServiceProvider',		
 
 		/*
 		 * Application Service Providers...
@@ -145,7 +145,9 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
-		'Illuminate\Html\HtmlServiceProvider'
+		'Illuminate\Html\HtmlServiceProvider',
+		'Intervention\Image\ImageServiceProvider'
+
 
 	],
 
@@ -197,6 +199,7 @@ return [
 
 		'Form'      => 'Illuminate\Html\FormFacade',
         'Html'      => 'Illuminate\Html\HtmlFacade',
+        'Image'	 	=> 'Intervention\Image\Facades\Image',
 
 	],
 

@@ -20,6 +20,7 @@ class Post extends Model {
 		'name', 
         'slug', 
 		'image',
+		'thumb',
 		'video', 
 		'description', 
 		'published_at', 

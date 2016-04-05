@@ -9,6 +9,8 @@ use App\Post;
 use App\Category;
 use App\Game;
 use App\User;
+use Image;
+
 use App\Http\Controllers\Controller;
 
 class PostController extends Controller
@@ -51,13 +53,22 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $post = Post::create($request->all());
+        $post->thumb = '-thumb-' . $post->image;
+        $post->save();
+        Image::make($request->file('image'))->resize(400, 148)->save($post->thumb);
+
         if($request->hasFile('image'))
         {
             $file = $request->file('image');
             if ($file->isValid())
             {
+                $img = Image::make($file);
+                $img->fit(400, 148);
+                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $post->image = ('http://ozboardgamer.com/uploads/' . $filename);
+                $post->thumb = ('http://ozboardgamer.com/uploads/' . $thumbname);
                 $post->save();
             }
         }
@@ -124,8 +135,13 @@ class PostController extends Controller
             $file = $request->file('image');
             if ($file->isValid())
             {
+                $img = Image::make($file);
+                $img->fit(400, 148);
+                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $post->image = ('http://ozboardgamer.com/uploads/' . $filename);
+                $post->thumb = ('http://ozboardgamer.com/uploads/' . $thumbname);
                 $post->save();
             }
         }
