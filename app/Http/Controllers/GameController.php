@@ -70,6 +70,7 @@ class GameController extends Controller
             {
                 $img = Image::make($file);
                 $img->fit(400, 400);
+                $img->interlace();
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
@@ -209,6 +210,7 @@ class GameController extends Controller
             {
                 $img = Image::make($file);
                 $img->fit(400, 400);
+                $img->interlace();
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));

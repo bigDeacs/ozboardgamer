@@ -63,6 +63,7 @@ class PostController extends Controller
             {
                 $img = Image::make($file);
                 $img->fit(400, 148);
+                $img->interlace();
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
@@ -136,6 +137,7 @@ class PostController extends Controller
             {
                 $img = Image::make($file);
                 $img->fit(400, 148);
+                $img->interlace();
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
