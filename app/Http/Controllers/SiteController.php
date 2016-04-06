@@ -130,7 +130,7 @@ class SiteController extends Controller {
 			return view('publishers', compact('publishers'));
 		} else {
 			$publisher = Publisher::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-			$games = Game::where('status', '=', '1')->whereHas('publisher', function($q) use($slug)
+			$games = Game::where('status', '=', '1')->whereHas('publishers', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
 			})->paginate(10);
