@@ -119,28 +119,28 @@
                         <div class="col-xs-12">
                             <h3>Latest News</h3>
                             @foreach($news as $entry)
-                                <div class="row" itemscope itemtype="http://schema.org/BlogPosting">
+                                <div class="row">
                                     <div class="col-sm-12 post">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <h4>
-                                                    <strong><a href="/news/{{ $entry->slug }}" class="post-title" itemprop="name">{!! $entry->name !!}</a></strong></h4>
+                                                    <strong><a href="/news/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></h4>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12 post-header-line">
-                                                <span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $entry->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
-                                                </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($entry->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="/news/{{ $entry->slug }}#disqus_thread"></a>
+                                                <span class="glyphicon glyphicon-user"></span> {!! $entry->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
+                                                </span>{!! date('F d, Y', strtotime($entry->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="/news/{{ $entry->slug }}#disqus_thread"></a>
                                             </div>
                                         </div>
                                         <div class="row post-content">
                                             <div class="col-sm-3 text-center">
                                                 <a href="/news/{{ $entry->slug }}">
-                                                    <img src="{{ $entry->thumb }}" alt="{!! $entry->name !!}" class="img-responsive" width="263" height="auto" itemprop="image" />
+                                                    <img src="{{ $entry->thumb }}" alt="{!! $entry->name !!}" class="img-responsive" width="263" height="auto" />
                                                 </a>
                                             </div>
                                             <div class="col-sm-9">
-                                                <p itemprop="description">
+                                                <p>
                                                     {!! str_limit(strip_tags($entry->description), $limit = 100, $end = '...') !!}
                                                 </p>
                                                 <p>
