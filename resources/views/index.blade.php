@@ -74,6 +74,21 @@
                                                     <strong><a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">{!! $review->name !!}</a></strong></h4>
                                             </div>
                                         </div>
+                                        @unless($post->games->isEmpty())
+                                            <div class="hidden-lg hidden-md hidden-sm hidden-xs" itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
+                                                <p><strong>Games mentioned:</strong></p>
+                                                @foreach($post->games as $game)
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
+                                                                <img src="{{ $game->image }}" class="img-responsive" />
+                                                            </a>
+                                                            <p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}"><span itemprop="name">{{ $game->name }}</span></a></p>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div> 
+                                        @endunless
                                         <div class="row">
                                             <div class="col-sm-12 post-header-line">
                                                 <span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $review->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
@@ -107,7 +122,7 @@
                         <div class="col-xs-12">
                             <h3>Latest News</h3>
                             @foreach($news as $entry)
-                                <div class="row" itemscope itemtype="http://schema.org/NewsArticle">
+                                <div class="row" itemscope itemtype="http://schema.org/BlogPosting">
                                     <div class="col-sm-12 post">
                                         <div class="row">
                                             <div class="col-sm-12">
