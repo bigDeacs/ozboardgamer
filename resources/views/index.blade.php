@@ -66,15 +66,15 @@
                         <div class="col-xs-12">
                             <h3>Latest Game Reviews</h3>
                             @foreach($reviews as $review)
-                                <div class="row">
+                                <div class="row" itemscope itemtype="http://schema.org/Review">
                                     <div class="col-md-3 col-sm-2 col-xs-12 text-center">
                                         <a href="/reviews/{{ $review->slug }}">
-                                            <img src="{{ $review->thumb }}" class="img-responsive" width="400" height="auto" />
+                                            <img src="{{ $review->thumb }}" class="img-responsive" width="400" height="auto" itemprop="image" />
                                         </a>
                                     </div>
                                     <div class="col-md-6 col-sm-7 col-xs-12">
                                         <a href="/reviews/{{ $review->slug }}">
-                                            <h4>{!! $review->name !!}</h4>
+                                            <h4 itemprop="name">{!! $review->name !!}</h4>
                                         </a>
                                     </div>
                                     <div class="col-md-2 col-sm-2 col-xs-12 text-center">
@@ -147,12 +147,12 @@
                 <div class="col-sm-3 col-xs-12 text-center lead">
                     <h3>Top Rated Games</h3>
                     @foreach($games as $game)
-                        <div class="row">
+                        <div class="row" itemscope itemtype="http://schema.org/Game">
                             <div class="col-xs-12">
                                 <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-                                    <img src="{{ $game->thumb }}" class="img-responsive" width="400" height="auto" />
+                                    <img src="{{ $game->thumb }}" class="img-responsive" width="400" height="auto" itemprop="image" />
                                 </a>
-                                <p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a></p>
+                                <p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></p>
                             </div>
                         </div>
                     @endforeach

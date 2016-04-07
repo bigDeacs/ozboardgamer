@@ -47,18 +47,18 @@
 			    </div>
 
 				@foreach($games as $game)
-					<div class="row">
+					<div class="row" itemscope itemtype="http://schema.org/Game">
 		                <div class="col-md-12 post">
 		                    <div class="row post-content">
 		                        <div class="col-md-2 col-sm-3">
 		                            <a href="/games/{{ $type->slug }}/{{ $game->slug }}">
-		                                <img src="{{ $game->thumb }}" alt="{!! $game->name !!}" class="img-responsive">
+		                                <img src="{{ $game->thumb }}" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
 		                            </a>
 		                        </div>
 		                        <div class="col-md-8 col-sm-7">
-		                            <h4>
+		                            <h4 itemprop="name">
 		                                <strong><a href="/games/{{ $type->slug }}/{{ $game->slug }}" class="post-title">{!! $game->name !!}</a></strong></h4>
-		                            <p>
+		                            <p itemprop="description">
 		                                {!! str_limit(strip_tags($game->description), $limit = 100, $end = '...') !!}
 		                            </p>
 		                            <p>
