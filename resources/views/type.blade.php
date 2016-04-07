@@ -23,8 +23,26 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-			      <div class="col-xs-12">
+			      <div class="col-sm-9 col-xs-12">
 			      	<h1>{{ $type->name }}</h1>
+			      </div>
+			      <div class="col-sm-3 col-xs-12">
+			      	<span>Sort by: </span>
+			      	<form id="sortForm">
+			      		<select class="form-control" onchange="sortGames()" name="sort" id="sort">
+					  		<option value="name-asc" {{ (Request::input('sort') == 'name-asc') ? 'selected' : "" }}>Name ASC</option>
+					  		<option value="name-desc" {{ (Request::input('sort') == 'name-desc') ? 'selected' : "" }}>Name DESC</option>
+						  	<option value="rating-asc" {{ (Request::input('sort') == 'rating-asc') ? 'selected' : "" }}>Rating ASC</option>
+						  	<option value="rating-desc" {{ (Request::input('sort') == 'rating-desc') ? 'selected' : "" }}>Rating DESC</option>
+							<option value="published-asc" {{ (Request::input('sort') == 'published-asc') ? 'selected' : "" }}>Publish Date ASC</option>
+							<option value="published-desc" {{ (Request::input('sort') == 'published-desc') ? 'selected' : "" }}>Publish Date DESC</option>
+						</select>
+					</form>
+					<script>
+						function sortGames() {
+					        document.getElementById("sortForm").submit();
+					    }
+					</script>
 			      </div>
 			    </div>
 

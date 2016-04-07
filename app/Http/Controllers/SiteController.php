@@ -12,6 +12,7 @@ use App\Designer;
 use App\Post;
 use App\Category;
 use App\Http\Requests\SearchRequest;
+use Request;
 use Storage;
 
 class SiteController extends Controller {
@@ -62,10 +63,19 @@ class SiteController extends Controller {
 			$types = Type::where('status', '=', '1')->has('games')->with('games')->paginate(12);	
 			return view('types', compact('types'));
 		} elseif($slug == null) {
+			if(Request::has('sort'))
+			{
+			    $pieces = explode("-", Request::input('sort'));
+			    $sort = $pieces[0];
+			    $direction = $pieces[1];
+			} else {
+				$sort = 'rating';
+				$direction = 'desc';
+			}
 			$games = Game::where('status', '=', '1')->whereHas('types', function($q) use($type)
 			{
 			    $q->where('slug', '=', $type);
-			})->paginate(10);
+			})->orderBy($sort, $direction)->paginate(10);
 			$type = Type::where('status', '=', '1')->where('slug', '=', $type)->firstOrFail();	
 			return view('type', compact('type','games'));
 		} else {
@@ -186,10 +196,19 @@ class SiteController extends Controller {
 	public function review($slug = null)
 	{
 		if($slug == null) {
+			if(Request::has('sort'))
+			{
+			    $pieces = explode("-", Request::input('sort'));
+			    $sort = $pieces[0];
+			    $direction = $pieces[1];
+			} else {
+				$sort = 'published_at';
+				$direction = 'desc';
+			}
 			$posts = Post::where('status', '=', '1')->whereHas('category', function($q)
 			{
 			    $q->where('slug', '=', 'reviews');
-			})->orderBy('published_at', 'desc')->paginate(12);
+			})->orderBy($sort, $direction)->paginate(12);
 			$category = Category::where('status', '=', '1')->where('slug', '=', 'reviews')->firstOrFail();	
 			return view('reviews', compact('category','posts'));
 		} else {
@@ -210,10 +229,19 @@ class SiteController extends Controller {
 	public function post($category, $slug = null)
 	{
 		if($slug == null) {
+			if(Request::has('sort'))
+			{
+			    $pieces = explode("-", Request::input('sort'));
+			    $sort = $pieces[0];
+			    $direction = $pieces[1];
+			} else {
+				$sort = 'published_at';
+				$direction = 'desc';
+			}
 			$posts = Post::where('status', '=', '1')->whereHas('category', function($q) use($category)
 			{
 			    $q->where('slug', '=', $category);
-			})->orderBy('published_at', 'desc')->paginate(12);
+			})->orderBy($sort, $direction)->paginate(12);
 			$category = Category::where('status', '=', '1')->where('slug', '=', $category)->firstOrFail();	
 			return view('posts', compact('category','posts'));
 		} else {
