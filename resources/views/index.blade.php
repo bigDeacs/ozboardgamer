@@ -152,7 +152,7 @@
                                 <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
                                     <img src="{{ $game->thumb }}" class="img-responsive" width="400" height="auto" itemprop="image" />
                                 </a>
-                                <p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></p>
+                                <h5><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
                             </div>
                         </div>
                     @endforeach
