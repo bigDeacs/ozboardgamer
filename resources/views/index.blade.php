@@ -67,24 +67,38 @@
                             <h3>Latest Game Reviews</h3>
                             @foreach($reviews as $review)
                                 <div class="row" itemscope itemtype="http://schema.org/Review">
-                                    <div class="col-md-3 col-sm-2 col-xs-12 text-center">
-                                        <a href="/reviews/{{ $review->slug }}">
-                                            <img src="{{ $review->thumb }}" class="img-responsive" width="400" height="auto" itemprop="image" />
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6 col-sm-7 col-xs-12">
-                                        <a href="/reviews/{{ $review->slug }}">
-                                            <h4 itemprop="name">{!! $review->name !!}</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-md-2 col-sm-2 col-xs-12 text-center">
-                                        <a href="/reviews/{{ $review->slug }}" class="btn btn-dark">
-                                            Find Out More
-                                        </a>
+                                    <div class="col-sm-12 post">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4>
+                                                    <strong><a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">{!! $review->name !!}</a></strong></h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 post-header-line">
+                                                <span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $review->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
+                                                </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="/reviews/{{ $review->slug }}#disqus_thread"></a>
+                                            </div>
+                                        </div>
+                                        <div class="row post-content">
+                                            <div class="col-sm-3 text-center">
+                                                <a href="/reviews/{{ $review->slug }}">
+                                                    <img src="{{ $review->thumb }}" alt="{!! $review->name !!}" class="img-responsive" width="263" height="auto" itemprop="image" />
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p itemprop="description">
+                                                    {!! str_limit(strip_tags($review->description), $limit = 100, $end = '...') !!}
+                                                </p>
+                                                <p>
+                                                    <a class="btn btn-dark" href="/reviews/{{ $review->slug }}">Read more</a>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <hr />
                             @endforeach
+                            <hr />
                         </div>
                     </div>
                 @endunless
@@ -93,52 +107,39 @@
                         <div class="col-xs-12">
                             <h3>Latest News</h3>
                             @foreach($news as $entry)
-                                <div class="row">
-                                    <div class="col-md-3 col-sm-2 col-xs-12 text-center">
-                                        <a href="/news/{{ $entry->slug }}">
-                                            <img src="{{ $entry->thumb }}" class="img-responsive" width="400" height="auto" />
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6 col-sm-7 col-xs-12">
-                                        <a href="/news/{{ $entry->slug }}">
-                                            <h4>{!! $entry->name !!}</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-2 col-xs-12 text-center">
-                                        <a href="/news/{{ $entry->slug }}" class="btn btn-dark">
-                                            Find Out More
-                                        </a>
-                                    </div>
-                                </div>
-                                <hr />
-                            @endforeach
-                        </div>
-                    </div>
-                @endunless
-                @unless($howtos->isEmpty())
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h3>Latest How To's</h3>
-                            @foreach($howtos as $howto)
-                                <div class="row">
-                                    <div class="col-md-3 col-sm-2 col-xs-12 text-center">
-                                        <a href="/howtos/{{ $howto->slug }}">
-                                            <img src="{{ $howto->thumb }}" class="img-responsive" width="400" height="auto" />
-                                        </a>
-                                    </div>
-                                    <div class="col-md-6 col-sm-7 col-xs-12">
-                                        <a href="/howtos/{{ $howto->slug }}">
-                                            <h4>{!! $howto->name !!}</h4>
-                                        </a>
-                                    </div>
-                                    <div class="col-sm-2 col-xs-12 text-center">
-                                        <a href="/howtos/{{ $howto->slug }}" class="btn btn-dark">
-                                            Find Out More
-                                        </a>
+                                <div class="row" itemscope itemtype="http://schema.org/NewsArticle">
+                                    <div class="col-sm-12 post">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4>
+                                                    <strong><a href="/news/{{ $entry->slug }}" class="post-title" itemprop="name">{!! $entry->name !!}</a></strong></h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 post-header-line">
+                                                <span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $entry->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
+                                                </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($entry->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="/news/{{ $entry->slug }}#disqus_thread"></a>
+                                            </div>
+                                        </div>
+                                        <div class="row post-content">
+                                            <div class="col-sm-3 text-center">
+                                                <a href="/news/{{ $entry->slug }}">
+                                                    <img src="{{ $entry->thumb }}" alt="{!! $entry->name !!}" class="img-responsive" width="263" height="auto" itemprop="image" />
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p itemprop="description">
+                                                    {!! str_limit(strip_tags($entry->description), $limit = 100, $end = '...') !!}
+                                                </p>
+                                                <p>
+                                                    <a class="btn btn-dark" href="/news/{{ $entry->slug }}">Read more</a>
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <hr />
                             @endforeach
+                            <hr />
                         </div>
                     </div>
                 @endunless
