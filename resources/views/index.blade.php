@@ -195,4 +195,5 @@
             interval: 5000 //changes the speed
         })
     </script>
+    <script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>
 @endsection
