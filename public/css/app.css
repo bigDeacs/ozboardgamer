@@ -1084,7 +1084,7 @@ p {
   margin: 0 0 10px;
 }
 .lead {
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   font-size: 16px;
   font-weight: 300;
   line-height: 1.4;
@@ -2236,6 +2236,9 @@ table th[class*="col-"] {
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
     border: 1px solid #dddddd;
+  }
+  .lead {
+    font-size: 15px!important;
   }
   .table-responsive > .table {
     margin-bottom: 0;
@@ -5409,7 +5412,7 @@ a.list-group-item-danger.active:focus {
 }
 .well {
   min-height: 20px;
-  padding: 19px;
+  padding: 10px;
   margin-bottom: 20px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;

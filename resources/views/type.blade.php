@@ -50,12 +50,38 @@
 					<div class="row" itemscope itemtype="http://schema.org/Game">
 		                <div class="col-md-12 post">
 		                    <div class="row post-content">
-		                        <div class="col-md-2 col-sm-3">
+		                        <div class="col-md-2 col-sm-3 col-xs-7">
 		                            <a href="/games/{{ $type->slug }}/{{ $game->slug }}">
 		                                <img src="{{ $game->thumb }}" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
 		                            </a>
 		                        </div>
-		                        <div class="col-md-8 col-sm-7">
+		                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">
+									@if($game->rating < 1)
+										<img src="/img/1.png" class="img-responsive" />
+									@elseif($game->rating < 2)
+										<img src="/img/2.png" class="img-responsive" />
+									@elseif($game->rating < 3)
+										<img src="/img/3.png" class="img-responsive" />
+									@elseif($game->rating < 4)
+										<img src="/img/4.png" class="img-responsive" />
+									@elseif($game->rating < 5)
+										<img src="/img/5.png" class="img-responsive" />
+									@elseif($game->rating < 6)
+										<img src="/img/6.png" class="img-responsive" />
+									@elseif($game->rating < 7)
+										<img src="/img/7.png" class="img-responsive" />
+									@elseif($game->rating < 8)
+										<img src="/img/8.png" class="img-responsive" />
+									@elseif($game->rating < 9)
+										<img src="/img/9.png" class="img-responsive" />
+									@else
+										<img src="/img/10.png" class="img-responsive" />
+									@endif
+									<div class="text-center lead">
+										<strong>{{ number_format((float)$game->rating, 1, '.', '') }}/10</strong>
+									</div>
+		                        </div>
+		                        <div class="col-md-8 col-md-pull-2 col-sm-7 col-sm-pull-2 col-xs-12">
 		                            <h4 itemprop="name">
 		                                <strong><a href="/games/{{ $type->slug }}/{{ $game->slug }}" class="post-title">{!! $game->name !!}</a></strong></h4>
 		                            <p itemprop="description">
@@ -65,34 +91,7 @@
 		                                <a class="btn btn-dark" href="/games/{{ $type->slug }}/{{ $game->slug }}">Read more</a>
 		                            </p>
 		                        </div>
-		                        <div class="col-sm-2 hidden-xs">
-		                            <div class="well">
-										@if($game->rating < 1)
-											<img src="/img/1.png" class="img-responsive" />
-										@elseif($game->rating < 2)
-											<img src="/img/2.png" class="img-responsive" />
-										@elseif($game->rating < 3)
-											<img src="/img/3.png" class="img-responsive" />
-										@elseif($game->rating < 4)
-											<img src="/img/4.png" class="img-responsive" />
-										@elseif($game->rating < 5)
-											<img src="/img/5.png" class="img-responsive" />
-										@elseif($game->rating < 6)
-											<img src="/img/6.png" class="img-responsive" />
-										@elseif($game->rating < 7)
-											<img src="/img/7.png" class="img-responsive" />
-										@elseif($game->rating < 8)
-											<img src="/img/8.png" class="img-responsive" />
-										@elseif($game->rating < 9)
-											<img src="/img/9.png" class="img-responsive" />
-										@else
-											<img src="/img/10.png" class="img-responsive" />
-										@endif
-										<div class="text-center lead">
-											<strong>{{ number_format((float)$game->rating, 1, '.', '') }}/10</strong>
-										</div>
-									</div>
-		                        </div>
+		                        
 		                    </div>
 		                </div>
 		            </div>

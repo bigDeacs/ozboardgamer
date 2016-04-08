@@ -74,7 +74,7 @@
 				</div>
 			    <hr />
 			    <div class="row">
-			    	<div id="disqus_thread"></div>
+			    	<div class="col-xs-12" id="disqus_thread"></div>
 			    </div>
 			</div>
 		</div>
