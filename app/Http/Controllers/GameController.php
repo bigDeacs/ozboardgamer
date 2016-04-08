@@ -23,6 +23,34 @@ class GameController extends Controller
         $this->middleware('auth');
     }
 
+    public function rating($luck, $strategy, $complexity, $replay, $components, $learning)
+    {   
+        $luck = $this->scale($luck);
+        $strategy = $this->scale($strategy);
+        $complexity = $this->scale($complexity);
+        $total = $luck + $strategy + $complexity + $replay + $components + $learning;
+        return $result = $total/3;
+    }
+
+    public function scale($number)
+    {   
+        if($number == 0.5 || $number == 5) {
+            return 1;
+        }
+        if($number == 1 || $number == 4.5) {
+            return 2;
+        }
+        if($number == 1.5 || $number == 4) {
+            return 3;
+        }
+        if($number == 2 || $number == 3.5) {
+            return 4;
+        }
+        if($number == 2.5 || $number == 3) {
+            return 5;
+        }
+        return $number;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -60,8 +88,7 @@ class GameController extends Controller
     public function store(GameRequest $request)
     {
         $game = Game::create($request->all());
-        $rating = ($game->luck + $game->strategy + $game->complexity + $game->replay + $game->components + $game->learning)/3;
-        $game->rating = $rating;
+        $game->rating = $this->rating($game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning);
         $game->save();
         if($request->hasFile('image'))
         {
@@ -199,8 +226,7 @@ class GameController extends Controller
     {
         $game = Game::where('id', '=', $id)->firstOrFail();
         $game->update($request->all());
-        $rating = ($game->luck + $game->strategy + $game->complexity + $game->replay + $game->components + $game->learning)/3;
-        $game->rating = $rating;
+        $game->rating = $this->rating($game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning);
         $game->save();
 
         if($request->hasFile('image'))
