@@ -39,17 +39,13 @@ class SiteController extends Controller {
 		$reviews = Post::where('status', '=', '1')->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'reviews');
-		})->take(5)->get();
+		})->orderBy('published_at', 'desc')->take(5)->get();
 		$news = Post::where('status', '=', '1')->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'news');
-		})->take(5)->get();
-		$howtos = Post::where('status', '=', '1')->whereHas('category', function($q)
-		{
-		    $q->where('slug', '=', 'howtos');
-		})->take(5)->get();
+		})->orderBy('published_at', 'desc')->take(5)->get();
 		$games = Game::where('status', '=', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
-		return view('index', compact('featured', 'reviews', 'news', 'howtos', 'games'));
+		return view('index', compact('featured', 'reviews', 'news', 'games'));
 	}
 
 	/**
