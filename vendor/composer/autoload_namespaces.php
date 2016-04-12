@@ -27,4 +27,6 @@ return array(
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
     'Diff' => array($vendorDir . '/phpspec/php-diff/lib'),
     'Cron' => array($vendorDir . '/mtdowling/cron-expression/src'),
+    'AlgoliaSearch\\Tests' => array($vendorDir . '/algolia/algoliasearch-client-php/tests'),
+    'AlgoliaSearch' => array($vendorDir . '/algolia/algoliasearch-client-php/src'),
 );

@@ -28,7 +28,8 @@
         "App\\Providers\\EventServiceProvider",
         "App\\Providers\\RouteServiceProvider",
         "Illuminate\\Html\\HtmlServiceProvider",
-        "Intervention\\Image\\ImageServiceProvider"
+        "Intervention\\Image\\ImageServiceProvider",
+        "AlgoliaSearch\\Laravel\\AlgoliaServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -47,7 +48,8 @@
         "App\\Providers\\ConfigServiceProvider",
         "App\\Providers\\EventServiceProvider",
         "App\\Providers\\RouteServiceProvider",
-        "Intervention\\Image\\ImageServiceProvider"
+        "Intervention\\Image\\ImageServiceProvider",
+        "AlgoliaSearch\\Laravel\\AlgoliaServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

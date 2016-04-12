@@ -3295,5 +3295,226 @@
             "thumbnail",
             "watermark"
         ]
+    },
+    {
+        "name": "algolia/algoliasearch-client-php",
+        "version": "1.8.1",
+        "version_normalized": "1.8.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/algolia/algoliasearch-client-php.git",
+            "reference": "af0e6109a9cd04365c0a57d5cd6c965945ad3247"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/af0e6109a9cd04365c0a57d5cd6c965945ad3247",
+            "reference": "af0e6109a9cd04365c0a57d5cd6c965945ad3247",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mbstring": "*",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8 || ^5.0",
+            "satooshi/php-coveralls": "0.6.*"
+        },
+        "time": "2016-03-08 10:52:11",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "AlgoliaSearch": "src/",
+                "AlgoliaSearch\\Tests": "tests/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Algolia Team",
+                "email": "contact@algolia.com"
+            },
+            {
+                "name": "Ryan T. Catlin",
+                "email": "ryan.catlin@gmail.com"
+            },
+            {
+                "name": "Jonathan H. Wage",
+                "email": "jonwage@gmail.com"
+            }
+        ],
+        "description": "Algolia Search API Client for PHP",
+        "homepage": "https://github.com/algolia/algoliasearch-client-php"
+    },
+    {
+        "name": "graham-campbell/manager",
+        "version": "v2.2.1",
+        "version_normalized": "2.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/GrahamCampbell/Laravel-Manager.git",
+            "reference": "2fb1898f21107d94a30f4660e5147c5bad04c7b9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Manager/zipball/2fb1898f21107d94a30f4660e5147c5bad04c7b9",
+            "reference": "2fb1898f21107d94a30f4660e5147c5bad04c7b9",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/contracts": "5.0.*|5.1.*",
+            "illuminate/support": "5.0.*|5.1.*",
+            "php": ">=5.5.9"
+        },
+        "require-dev": {
+            "graham-campbell/testbench-core": "~1.0",
+            "mockery/mockery": "^0.9.4",
+            "phpunit/phpunit": "~4.8|~5.0"
+        },
+        "time": "2015-10-06 16:53:10",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GrahamCampbell\\Manager\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Graham Campbell",
+                "email": "graham@alt-three.com"
+            }
+        ],
+        "description": "Manager Provides Some Manager Functionality For Laravel 5",
+        "keywords": [
+            "Graham Campbell",
+            "GrahamCampbell",
+            "Laravel Manager",
+            "Laravel-Manager",
+            "connector",
+            "framework",
+            "interface",
+            "laravel",
+            "manager"
+        ]
+    },
+    {
+        "name": "vinkla/algolia",
+        "version": "2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/vinkla/algolia.git",
+            "reference": "506f8a0bd9dce0fd10bee4ef5991c2cc8ca82681"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/vinkla/algolia/zipball/506f8a0bd9dce0fd10bee4ef5991c2cc8ca82681",
+            "reference": "506f8a0bd9dce0fd10bee4ef5991c2cc8ca82681",
+            "shasum": ""
+        },
+        "require": {
+            "algolia/algoliasearch-client-php": "~1.0",
+            "graham-campbell/manager": "~2.2",
+            "illuminate/contracts": "5.0.*|5.1.*",
+            "illuminate/support": "5.0.*|5.1.*",
+            "php": ">=5.5.9"
+        },
+        "require-dev": {
+            "graham-campbell/testbench": "~3.0",
+            "mockery/mockery": "^0.9.4",
+            "phpunit/phpunit": "^4.8|^5.0"
+        },
+        "time": "2015-10-07 06:22:31",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Vinkla\\Algolia\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Vincent Klaiber",
+                "email": "hello@vinkla.com"
+            }
+        ],
+        "description": "An Algolia bridge for Laravel",
+        "keywords": [
+            "algolia",
+            "api",
+            "laravel",
+            "search"
+        ]
+    },
+    {
+        "name": "algolia/algoliasearch-laravel",
+        "version": "1.0.10",
+        "version_normalized": "1.0.10.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/algolia/algoliasearch-laravel.git",
+            "reference": "5b5465f1e5b50bb21137e5ac02d69fab23c29588"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/algolia/algoliasearch-laravel/zipball/5b5465f1e5b50bb21137e5ac02d69fab23c29588",
+            "reference": "5b5465f1e5b50bb21137e5ac02d69fab23c29588",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9",
+            "vinkla/algolia": "~2.0"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9",
+            "orchestra/testbench": "3.1.*",
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2016-02-11 10:23:38",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "AlgoliaSearch\\Laravel\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Laravel Algolia extension",
+        "keywords": [
+            "algolia",
+            "api",
+            "laravel",
+            "search"
+        ]
     }
 ]

@@ -23,6 +23,35 @@ class GameController extends Controller
         $this->middleware('auth');
     }
 
+    public function addToAlgolia() {
+        // initialize API Client & Index
+        $client = new \AlgoliaSearch\Client("LAC06A9QLK", "9d6a129d0c8ce00eaf4ceb19b6ad1bab");
+        $index = $client->initIndex('games');
+
+        $results = Game::with('types')->get();
+
+        if ($results)
+        {
+            // iterate over results and send them by batch of 10000 elements
+            foreach ($results as $row)
+            {
+                if ($row['status'] == 1) 
+                {
+                    // select the identifier of this row
+                    $index->saveObject(array(
+                         "objectID" => $row['id'],
+                         "name" => $row['name'], 
+                         "slug" => "/games/".$row->types()->firstOrFail()->slug."/".$row['slug'],
+                         "thumb" => $row['thumb'],
+                         "rating" => $row['rating']));        
+                } else {
+                    // delete the record with objectID="myID1"
+                    $index->deleteObject($row['id']);
+                }
+            }
+        }
+    }
+
     public function rating($luck, $strategy, $complexity, $replay, $components, $learning)
     {   
         $luck = $this->scale($luck);
@@ -89,6 +118,7 @@ class GameController extends Controller
     {
         $game = Game::create($request->all());
         $game->rating = $this->rating($game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning);
+        $this->addToAlgolia();
         $game->save();
         if($request->hasFile('image'))
         {
@@ -228,6 +258,7 @@ class GameController extends Controller
         $game->update($request->all());
         $game->rating = $this->rating($game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning);
         $game->save();
+        $this->addToAlgolia();
 
         if($request->hasFile('image'))
         {
@@ -329,6 +360,7 @@ class GameController extends Controller
         $game = Game::find($id);
         $game->status = 1;
         $game->save();
+        $this->addToAlgolia();
 
         return redirect('/admin/games');
     }
@@ -338,6 +370,7 @@ class GameController extends Controller
         $game = Game::find($id);
         $game->status = 0;
         $game->save();
+        $this->addToAlgolia();
 
         return redirect('/admin/games');
     }

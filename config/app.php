@@ -146,7 +146,8 @@ return [
 		'App\Providers\RouteServiceProvider',
 
 		'Illuminate\Html\HtmlServiceProvider',
-		'Intervention\Image\ImageServiceProvider'
+		'Intervention\Image\ImageServiceProvider',
+		'AlgoliaSearch\Laravel\AlgoliaServiceProvider'
 
 
 	],
