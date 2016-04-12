@@ -48,108 +48,6 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
-    <style>
-    .algolia-autocomplete {
-  width: 100%;
-}
-.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-  width: 100%;
-}
-.algolia-autocomplete .aa-hint {
-  color: #999;
-}
-.algolia-autocomplete .aa-dropdown-menu {
-  width: 100%;
-  background-color: #fff;
-  border: 1px solid #999;
-  border-top: none;
-}
-.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
-  cursor: pointer;
-  padding: 5px 4px;
-}
-.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-  background-color: #B2D7FF;
-}
-.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
-  font-weight: bold;
-  font-style: normal;
-}
-.algolia-autocomplete .category {
-  text-align: left;
-  background: #efefef;
-  padding: 10px 5px;
-  font-weight: bold;
-}
-
-
-#search {
-    position: relative;
-    top: 5px;
-    left: 0;
-    width: 30px;
-    height: 30px;
-}
-#label {
-    width: 30px;
-    height: 30px;
-    position: relative;
-    z-index: 20;
-}
-#label label {
-    display: block;
-    width: 30px;
-    height: 30px;
-    background: url("/img/search.png") 0 0;
-    font-size: 0;
-    color: rgba(0, 0, 0, 0);
-    text-indent: -9999px;
-    cursor: pointer;
-}
-#label label:hover {
-    background: url("/img/search.png") -30px 0
-}
-#label.active label {
-    background: url("/img/search.png") -30px 0
-}
-#input {
-    position: absolute;
-    top: 0;
-    right: 30px;
-    width: 450px;
-    height: 30px;
-    z-index: 5;
-    overflow: hidden;
-}
-#input input {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: -450px;
-    width: 100%;
-    height: 30px;
-    margin: 0;
-    padding: 0 10px;
-    border: none;
-    background-color: #008751;
-    color: #fff;
-    font-size: 18px;
-    backface-visibility: none;
-    border-radius: 0;
-    transition: left 0;
-}
-#input input:focus {
-    outline: none
-}
-#input.focus {
-    z-index: 20;
-    overflow: visible;
-}
-#input.focus input {
-    left: 0;
-    transition: left 0.3s;
-}
-</style>
   </head>
 
   <body>
@@ -208,6 +106,14 @@
                     </div>
                     <div class="navbar-right">
                         <ul class="nav navbar-nav">
+                            <li class="hidden-xs">
+                                <form id="search" action="#" method="post">
+                                    <div id="label"><label for="search-terms" id="search-label">search</label></div>
+                                    <div id="input">
+                                        <input type="text" name="search-terms" id="search-terms" placeholder="Enter search terms...">
+                                    </div>
+                                </form>
+                            </li> 
                             <li>
                                 <a href="/games">Games</a>
                             </li>
@@ -222,15 +128,7 @@
                             </li>
                             <li>
                                 <a href="/top10s">Top 10's</a>
-                            </li>   
-                            <li class="hidden-xs">
-                                <form id="search" action="#" method="post">
-                                    <div id="label"><label for="search-terms" id="search-label">search</label></div>
-                                    <div id="input">
-                                        <input type="text" name="search-terms" id="search-terms" placeholder="Enter search terms...">
-                                    </div>
-                                </form>
-                            </li>                         
+                            </li>                           
                         </ul>
                     </div>
                 </div>
