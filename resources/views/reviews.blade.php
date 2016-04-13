@@ -49,7 +49,16 @@
 		                    <div class="row">
 		                        <div class="col-sm-12">
 		                            <h4>
-		                                <strong><a href="/{{ $category->slug }}/{{ $post->slug }}" class="post-title" itemprop="name">{!! $post->name !!}</a></strong></h4>
+		                                <strong><a href="/{{ $category->slug }}/{{ $post->slug }}" class="post-title" itemprop="name">
+		                                	{!! $post->name !!} - 
+                                            @unless($post->games->isEmpty())
+                                                <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
+                                                    @foreach($post->games as $game)
+                                                        <span itemprop="name">{{ $game->name }}</span> Review
+                                                    @endforeach
+                                                </span> 
+                                            @endunless
+		                                </a></strong></h4>
 		                        </div>
 		                    </div>
 		                    <div class="row">

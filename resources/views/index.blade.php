@@ -74,9 +74,9 @@
                                                     <strong>
                                                         <a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
                                                             {!! $review->name !!} - 
-                                                            @unless($post->games->isEmpty())
+                                                            @unless($review->games->isEmpty())
                                                                 <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
-                                                                    @foreach($post->games as $game)
+                                                                    @foreach($review->games as $game)
                                                                         <span itemprop="name">{{ $game->name }}</span> Review
                                                                     @endforeach
                                                                 </span> 
