@@ -50,14 +50,7 @@
 		                        <div class="col-sm-12">
 		                            <h4>
 		                                <strong><a href="/{{ $category->slug }}/{{ $post->slug }}" class="post-title" itemprop="name">
-		                                	{!! $post->name !!} - 
-                                            @unless($post->games->isEmpty())
-                                                <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
-                                                    @foreach($post->games as $game)
-                                                        <span itemprop="name">{{ $game->name }}</span> Review
-                                                    @endforeach
-                                                </span> 
-                                            @endunless
+		                                	{!! $post->name !!}
 		                                </a></strong></h4>
 		                        </div>
 		                    </div>
@@ -65,6 +58,18 @@
 		                        <div class="col-sm-12 post-header-line">
 		                            <span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $post->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
 		                            </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="/{{ $category->slug }}/{{ $post->slug }}#disqus_thread"></a>
+                                    @unless($post->games->isEmpty())
+                                         | <span class="fa fa-trophy"></span>
+                                        <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
+                                            @foreach($post->games as $key => $game)
+                                                @if($key == (count($post->games) -1))
+                                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>
+                                                @else
+                                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>, 
+                                                @endif
+                                            @endforeach
+                                        </span> 
+                                    @endunless
 		                        </div>
 		                    </div>
 		                    <div class="row post-content">

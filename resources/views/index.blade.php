@@ -73,14 +73,7 @@
                                                 <h4>
                                                     <strong>
                                                         <a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
-                                                            {!! $review->name !!} - 
-                                                            @unless($review->games->isEmpty())
-                                                                <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
-                                                                    @foreach($review->games as $game)
-                                                                        <span itemprop="name">{{ $game->name }}</span> Review
-                                                                    @endforeach
-                                                                </span> 
-                                                            @endunless
+                                                            {!! $review->name !!}
                                                         </a>
                                                     </strong>
                                                 </h4>
@@ -90,6 +83,18 @@
                                             <div class="col-sm-12 post-header-line">
                                                 <span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $review->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
                                                 </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="/reviews/{{ $review->slug }}#disqus_thread"></a>
+                                                @unless($review->games->isEmpty())
+                                                     | <span class="fa fa-trophy"></span>
+                                                    <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
+                                                        @foreach($review->games as $key => $game)
+                                                            @if($key == (count($review->games) -1))
+                                                                <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>
+                                                            @else
+                                                                <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>, 
+                                                            @endif
+                                                        @endforeach
+                                                    </span> 
+                                                @endunless
                                             </div>
                                         </div>
                                         <div class="row post-content">
