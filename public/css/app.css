@@ -1093,6 +1093,9 @@ p {
   .lead {
     font-size: 21px;
   }
+  .breadcrumb-holder {
+    margin-top: 10px;
+  }
 }
 small,
 .small {
@@ -6315,8 +6318,7 @@ label,
 .post-content { padding-bottom: 15px;padding-top: 15px;}
 
 .breadcrumb-holder {
-    background: #008751;
-    margin-top: 10px;
+    background: #008751;    
 }
 .breadcrumb-arrow {
     height: 36px;
