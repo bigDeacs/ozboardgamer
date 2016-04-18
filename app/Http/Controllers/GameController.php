@@ -118,7 +118,6 @@ class GameController extends Controller
     {
         $game = Game::create($request->all());
         $game->rating = $this->rating($game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning);
-        $this->addToAlgolia();
         $game->save();
         if($request->hasFile('image'))
         {
@@ -258,7 +257,6 @@ class GameController extends Controller
         $game->update($request->all());
         $game->rating = $this->rating($game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning);
         $game->save();
-        $this->addToAlgolia();
 
         if($request->hasFile('image'))
         {
@@ -360,7 +358,6 @@ class GameController extends Controller
         $game = Game::find($id);
         $game->status = 1;
         $game->save();
-        $this->addToAlgolia();
 
         return redirect('/admin/games');
     }
@@ -370,7 +367,6 @@ class GameController extends Controller
         $game = Game::find($id);
         $game->status = 0;
         $game->save();
-        $this->addToAlgolia();
 
         return redirect('/admin/games');
     }

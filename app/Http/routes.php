@@ -64,5 +64,7 @@ Route::get('/designers/{slug?}', 'SiteController@designer');
 
 Route::get('/reviews/{slug?}', 'SiteController@review');
 
+Route::get('/updateAlgolia', 'GameController@addToAlgolia');
+
 // Dynamic Routes
 Route::get('/{category}/{slug?}', 'SiteController@post');
