@@ -24,6 +24,7 @@ Route::group(['prefix' => 'admin'], function()
 	Route::resource('games', 'GameController');
 	Route::get('games/{games}/activate', ['as' => 'games.activate', 'uses' => 'GameController@activate']);
 	Route::get('games/{games}/deactivate', ['as' => 'games.deactivate', 'uses' => 'GameController@deactivate']);
+	Route::get('pushGames', 'GameController@addToAlgolia');
 	Route::resource('publishers', 'PublisherController');
 	Route::get('publishers/{publishers}/activate', ['as' => 'publishers.activate', 'uses' => 'PublisherController@activate']);
 	Route::get('publishers/{publishers}/deactivate', ['as' => 'publishers.deactivate', 'uses' => 'PublisherController@deactivate']);
@@ -64,7 +65,6 @@ Route::get('/designers/{slug?}', 'SiteController@designer');
 
 Route::get('/reviews/{slug?}', 'SiteController@review');
 
-Route::get('/updateAlgolia', 'GameController@addToAlgolia');
 
 // Dynamic Routes
 Route::get('/{category}/{slug?}', 'SiteController@post');

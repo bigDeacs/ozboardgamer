@@ -50,6 +50,7 @@ class GameController extends Controller
                 }
             }
         }
+        return redirect('/admin/games');
     }
 
     public function rating($luck, $strategy, $complexity, $replay, $components, $learning)
