@@ -30,7 +30,9 @@
             @else
                 @foreach($featured as $key => $post)
                     <div class="item {{ ($key == 0) ? 'active' : "" }}">
-                        <div class="fill" style="background-image:url('{{ $post->image }}');"></div>
+                        <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
+                            <div class="fill" style="background-image:url('{{ $post->image }}');"></div>
+                        </a>
                         <div class="carousel-caption">
                             <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-dark">
                                 Find Out More
@@ -63,9 +65,9 @@
                         @foreach($games as $game)
                             <li itemscope itemtype="http://schema.org/Game">
                                 <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-                                    <img src="{{ $game->thumb }}" class="img-responsive" width="400" height="auto" itemprop="image" />
+                                    <img src="{{ $game->thumb }}" class="img-responsive" width="300" height="auto" itemprop="image" />
                                 </a>
-                                <h5><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
+                                <h5 class="text-center"><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
                             </li>
                         @endforeach
                     </ul>
