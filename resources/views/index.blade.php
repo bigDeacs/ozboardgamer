@@ -13,14 +13,6 @@
 <!-- Header -->
     <!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide">
-        @unless($featured->isEmpty())
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                @foreach($featured as $key => $post)
-                    <li data-target="#myCarousel" data-slide-to="{{ $key }}" class="{{ ($key == 0) ? 'active' : "" }}"></li>
-                @endforeach
-            </ol>
-        @endunless
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
@@ -38,6 +30,16 @@
                 @endforeach
             @endif
         </div>
+
+        @unless($featured->isEmpty())
+            <!-- Controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                 <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
+        @endunless
     </header>
 
     <!-- Page Content -->
@@ -45,14 +47,14 @@
         @unless($games->isEmpty())
         <div class="row">
             <div class="col-xs-12"> 
-                <h3>Top Rated Games</h3>
+                <h2>Top Rated Games</h2>
                 <div class="jcarousel-wrapper">
                     <div class="jcarousel">
                         <ul>
                             @foreach($games as $game)
                                 <li itemscope itemtype="http://schema.org/Game">
                                     <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-                                        <img src="{{ $game->thumb }}" class="img-responsive" width="300" height="auto" itemprop="image" style="margin: auto;" />
+                                        <img src="{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" width="300" height="auto" itemprop="image" style="margin: auto;" />
                                     </a>
                                     <h5 class="text-center"><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
                                 </li>
