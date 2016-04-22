@@ -32,7 +32,7 @@
 					    	<a href="/designers/{{ $designer->slug }}">
 				    			<img src="{{ $designer->games()->first()->image }}" class="img-responsive" />
 				    		</a>
-					    	<p><a href="/designers/{{ $designer->slug }}">{!! $designer->name !!}</a></p>
+					    	<p class="text-center"><strong><a href="/designers/{{ $designer->slug }}">{!! $designer->name !!}</a></strong></p>
 						</div>
 					@endforeach
 				</div>

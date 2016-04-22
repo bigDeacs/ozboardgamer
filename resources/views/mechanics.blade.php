@@ -32,7 +32,7 @@
 					    	<a href="/mechanics/{{ $mechanic->slug }}">
 				    			<img src="{{ $mechanic->games()->first()->image }}" class="img-responsive" />
 				    		</a>
-					    	<p><a href="/mechanics/{{ $mechanic->slug }}">{!! $mechanic->name !!}</a></p>
+					    	<p class="text-center"><strong><a href="/mechanics/{{ $mechanic->slug }}">{!! $mechanic->name !!}</a></strong></p>
 						</div>
 					@endforeach				
 				</div>

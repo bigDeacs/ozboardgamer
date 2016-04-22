@@ -32,7 +32,7 @@
 					    	<a href="/themes/{{ $theme->slug }}">
 				    			<img src="{{ $theme->games()->first()->image }}" class="img-responsive" />
 				    		</a>
-					    	<p><a href="/themes/{{ $theme->slug }}">{!! $theme->name !!}</a></p>
+					    	<p class="text-center"><strong><a href="/themes/{{ $theme->slug }}">{!! $theme->name !!}</a></strong></p>
 						</div>
 					@endforeach
 				</div>

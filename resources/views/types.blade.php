@@ -31,7 +31,7 @@
 					    	<a href="/games/{{ $type->slug }}">
 				    			<img src="{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb }}" class="img-responsive" />
 				    		</a>
-					    	<p><a href="/games/{{ $type->slug }}">{!! $type->name !!}</a></p>
+					    	<p class="text-center"><strong><a href="/games/{{ $type->slug }}">{!! $type->name !!}</a></strong></p>
 						</div>
 					@endforeach
 				</div>

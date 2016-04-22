@@ -32,7 +32,7 @@
 					    	<a href="/publishers/{{ $publisher->slug }}">
 				    			<img src="{{ $publisher->games()->first()->image }}" class="img-responsive" />
 				    		</a>
-					    	<p><a href="/publishers/{{ $publisher->slug }}">{!! $publisher->name !!}</a></p>
+					    	<p class="text-center"><strong><a href="/publishers/{{ $publisher->slug }}">{!! $publisher->name !!}</a></strong></p>
 						</div>
 					@endforeach
 				</div>
