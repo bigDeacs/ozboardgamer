@@ -6,6 +6,7 @@
 @endsection
 
 @section('head')
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/jcarousel.responsive.css') }}">
 @endsection
 
 @section('content')
@@ -200,6 +201,8 @@
 @endsection
 
 @section('scripts')
+    <script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="/js/jcarousel.responsive.js"></script>
     <script>
         $('.carousel').carousel({
             interval: 5000 //changes the speed

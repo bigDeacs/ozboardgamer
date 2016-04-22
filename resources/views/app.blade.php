@@ -35,7 +35,6 @@
 	<link href="{{ asset('/css/landing-page.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/modern-business.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/star-rating.min.css') }}" media="all" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/jcarousel.responsive.css') }}">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{{ asset('/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
 	<!-- Fonts -->
@@ -206,9 +205,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/js/ie10-viewport-bug-workaround.js"></script>
-    <script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
-    <script type="text/javascript" src="/js/jcarousel.responsive.js"></script>
+    <script src="/js/ie10-viewport-bug-workaround.js"></script>    
     <script src="/js/star-rating.min.js" type="text/javascript"></script>
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
