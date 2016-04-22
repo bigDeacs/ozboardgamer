@@ -196,7 +196,7 @@
                 </div>
             </div>
         </div>
-    </footer>    
+    </footer>        
 
 
     <!-- Bootstrap core JavaScript
@@ -212,6 +212,26 @@
     <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
     <script src="/js/classie.js"></script>
     <script src="/js/app.js"></script>
+    <script>
+        $(document).ready(function(){
+             $(window).scroll(function () {
+                    if ($(this).scrollTop() > 50) {
+                        $('#back-to-top').fadeIn();
+                    } else {
+                        $('#back-to-top').fadeOut();
+                    }
+                });
+                // scroll body to 0px on click
+                $('#back-to-top').click(function () {
+                    $('#back-to-top').tooltip('hide');
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 800);
+                    return false;
+                });
+                $('#back-to-top').tooltip('show');
+        });
+    </script>
     @yield('scripts')
   </body>
 </html>
