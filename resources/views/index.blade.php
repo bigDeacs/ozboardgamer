@@ -12,7 +12,7 @@
 @section('content')
 <!-- Header -->
     <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide hidden-xs">
+    <header id="myCarousel" class="carousel slide">
         @unless($featured->isEmpty())
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -59,23 +59,25 @@
     <div class="container">
         @unless($games->isEmpty())
         <div class="row">
-            <h3>Top Rated Games</h3>
-            <div class="jcarousel-wrapper">
-                <div class="jcarousel">
-                    <ul>
-                        @foreach($games as $game)
-                            <li itemscope itemtype="http://schema.org/Game">
-                                <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-                                    <img src="{{ $game->thumb }}" class="img-responsive" width="300" height="auto" itemprop="image" />
-                                </a>
-                                <h5 class="text-center"><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
+            <div class="col-xs-12"> 
+                <h3>Top Rated Games</h3>
+                <div class="jcarousel-wrapper">
+                    <div class="jcarousel">
+                        <ul>
+                            @foreach($games as $game)
+                                <li itemscope itemtype="http://schema.org/Game">
+                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
+                                        <img src="{{ $game->thumb }}" class="img-responsive" width="300" height="auto" itemprop="image" />
+                                    </a>
+                                    <h5 class="text-center"><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
 
-                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                </div>
             </div>
         </div>
         @endunless
@@ -183,7 +185,7 @@
             </div>
             <div class="col-sm-3 col-xs-12">
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- Advertisement 1 -->
+                <!-- Home Page Tower Ad Right -->
                 <ins class="adsbygoogle"
                      style="display:block"
                      data-ad-client="ca-pub-5206537313688631"
