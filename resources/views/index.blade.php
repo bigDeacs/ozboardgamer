@@ -34,25 +34,10 @@
                         <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
                             <div class="fill" style="background-image:url('{{ $post->image }}');"></div>
                         </a>
-                        <div class="carousel-caption">
-                            <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-dark">
-                                Find Out More
-                            </a>
-                        </div>
                     </div>
                 @endforeach
             @endif
         </div>
-        
-        @unless($featured->isEmpty())
-            <!-- Controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="icon-prev"></span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="icon-next"></span>
-            </a>
-        @endunless
     </header>
 
     <!-- Page Content -->
@@ -67,7 +52,7 @@
                             @foreach($games as $game)
                                 <li itemscope itemtype="http://schema.org/Game">
                                     <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-                                        <img src="{{ $game->thumb }}" class="img-responsive" width="300" height="auto" itemprop="image" />
+                                        <img src="{{ $game->thumb }}" class="img-responsive" width="300" height="auto" itemprop="image" style="margin: auto;" />
                                     </a>
                                     <h5 class="text-center"><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
                                 </li>
