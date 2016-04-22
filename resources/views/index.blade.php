@@ -54,13 +54,30 @@
 
     <!-- Page Content -->
     <div class="container">
+        @unless($games->isEmpty())
         <div class="row">
-            @if($games->isEmpty())
-                <div class="col-xs-12">
-            @else
-                <div class="col-sm-9 col-xs-12">
-            @endif
-                
+            <h3>Top Rated Games</h3>
+            <div class="jcarousel-wrapper">
+                <div class="jcarousel">
+                    <ul>
+                        @foreach($games as $game)
+                            <li itemscope itemtype="http://schema.org/Game">
+                                <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
+                                    <img src="{{ $game->thumb }}" class="img-responsive" width="400" height="auto" itemprop="image" />
+                                </a>
+                                <h5><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
+                <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+            </div>
+        </div>
+        @endunless
+        <div class="row">        
+            <div class="col-sm-9 col-xs-12"> 
                 @unless($reviews->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
@@ -161,46 +178,20 @@
                     </div>
                 @endunless
             </div>
-            @unless($games->isEmpty())
-                <div class="col-sm-3 col-xs-12 text-center lead">
-                    <h3>Top Rated Games</h3>
-                    @foreach($games as $game)
-                        <div class="row" itemscope itemtype="http://schema.org/Game">
-                            <div class="col-xs-12">
-                                <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-                                    <img src="{{ $game->thumb }}" class="img-responsive" width="400" height="auto" itemprop="image" />
-                                </a>
-                                <h5><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            @endunless
+            <div class="col-sm-3 col-xs-12">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Advertisement 1 -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-5206537313688631"
+                     data-ad-slot="2828464904"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
         </div>
     </div>
-
-    <!--<div class="banner">
-
-        <div class="container">
-
-            <div class="row">
-                
-                <div class="col-lg-6">
-                    <ul class="list-inline banner-social-buttons">
-                        <li>
-                            <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                        </li>
-                        <li>
-                            <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>-->
 
     </div>
     <!-- /.banner -->
@@ -211,6 +202,11 @@
         $('.carousel').carousel({
             interval: 5000 //changes the speed
         })
+        $(function() {
+            $('.jcarousel').jcarousel({
+                // Configuration goes here
+            });
+        });
     </script>
     <script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>
 @endsection
