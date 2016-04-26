@@ -29,6 +29,7 @@
 			      <div class="col-sm-3 col-xs-12">
 			      	<span>Sort by: </span>
 			      	<form id="sortForm">
+			      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
 			      		<select class="form-control" onchange="sortGames()" name="sort" id="sort">
 					  		<option value="name-asc" {{ (Request::input('sort') == 'name-asc') ? 'selected' : "" }}>Name ASC</option>
 					  		<option value="name-desc" {{ (Request::input('sort') == 'name-desc') ? 'selected' : "" }}>Name DESC</option>

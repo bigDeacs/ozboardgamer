@@ -28,6 +28,7 @@
 			      <div class="col-sm-3 col-xs-12">
 			      	<span>Sort by: </span>
 			      	<form id="sortForm">
+			      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
 			      		<select class="form-control" onchange="sortPosts()" name="sort" id="sort">
 					  		<option value="published_at-desc" {{ (Request::input('sort') == 'published_at-desc') ? 'selected' : "" }}>Publish Date DESC</option>
 							<option value="published_at-asc" {{ (Request::input('sort') == 'published_at-asc') ? 'selected' : "" }}>Publish Date ASC</option>					  		
