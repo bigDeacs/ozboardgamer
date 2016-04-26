@@ -43,7 +43,7 @@ class SiteController extends Controller {
 		$news = Post::where('status', '=', '1')->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'news');
-		})->orderBy('published_at', 'desc')->take(5)->get();
+		})->orderBy('published_at', 'desc')->take(10)->get();
 		$games = Game::where('status', '=', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
 		return view('index', compact('featured', 'reviews', 'news', 'games'));
 	}

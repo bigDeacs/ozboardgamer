@@ -128,49 +128,25 @@
                         </div>
                     </div>
                 @endunless
-                @unless($news->isEmpty())
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h3>Latest News</h3>
-                            @foreach($news as $entry)
-                                <div class="row">
-                                    <div class="col-sm-12 post">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h4>
-                                                    <strong><a href="/news/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></h4>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12 post-header-line">
-                                                <span class="glyphicon glyphicon-user"></span> {!! $entry->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
-                                                </span>{!! date('F d, Y', strtotime($entry->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="/news/{{ $entry->slug }}#disqus_thread"></a>
-                                            </div>
-                                        </div>
-                                        <div class="row post-content">
-                                            <div class="col-sm-3 text-center">
-                                                <a href="/news/{{ $entry->slug }}">
-                                                    <img src="{{ $entry->thumb }}" alt="{!! $entry->name !!}" class="img-responsive" width="263" height="auto" />
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <p>
-                                                    {!! str_limit(strip_tags($entry->description), $limit = 100, $end = '...') !!}
-                                                </p>
-                                                <p>
-                                                    <a class="btn btn-dark" href="/news/{{ $entry->slug }}">Read more</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                            <hr />
-                        </div>
-                    </div>
-                @endunless
             </div>
             <div class="col-sm-3 col-xs-12">
+                @unless($news->isEmpty())
+                    <h3>Latest News</h3>
+                    @foreach($news as $entry)
+                        <div class="row">
+                            <div class="col-sm-12 post">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5>
+                                            <strong><a href="/news/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    <hr />
+                @endunless
+                <div class="fb-page" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Home Page Tower Ad Right -->
                 <ins class="adsbygoogle"
