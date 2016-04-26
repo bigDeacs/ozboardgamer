@@ -128,10 +128,10 @@
                                 <a href="/games">Games</a>
                             </li>
                             <li>
-                                <a href="/news">News</a>
+                                <a href="/news?page=1&sort=published_at-desc">News</a>
                             </li>
                             <li>
-                                <a href="/reviews">Reviews</a>
+                                <a href="/reviews?page=1&sort=published_at-desc">Reviews</a>
                             </li>
                             <li>
                                 <a href="/howtos">How To's</a>
