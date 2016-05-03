@@ -80,7 +80,7 @@ return [
 	|
 	*/
 
-	'username' => env('MAIL_USERNAME', 'reset@ozboardgamer.com'),
+	'username' => env('MAIL_USERNAME', 'postmaster@ozboardgamer.com'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
 	|
 	*/
 
-	'password' => env('MAIL_PASSWORD', 'blade123'),
+	'password' => env('MAIL_PASSWORD', '7ffb60e464ee761ed2a52552816bf204'),
 
 	/*
 	|--------------------------------------------------------------------------
