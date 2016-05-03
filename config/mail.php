@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['address' => 'reset@ozboardgamer.com', 'name' => 'OzBoardGamer'],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
 	|
 	*/
 
-	'username' => env('MAIL_USERNAME', 'postmaster@cruisemegastore.com.au'),
+	'username' => env('MAIL_USERNAME', 'postmaster@ozboardgamer.com'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
 	|
 	*/
 
-	'password' => env('MAIL_PASSWORD', '625acdc0f216357f8d8e11ced3264957'),
+	'password' => env('MAIL_PASSWORD', '7ffb60e464ee761ed2a52552816bf204'),
 
 	/*
 	|--------------------------------------------------------------------------
