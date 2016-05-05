@@ -128,6 +128,118 @@
                         </div>
                     </div>
                 @endunless
+                @unless($howtos->isEmpty())
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Latest How To's</h3>
+                            @foreach($howtos as $howto)
+                                <div class="row">
+                                    <div class="col-sm-12 post">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4>
+                                                    <strong>
+                                                        <a href="/howtos/{{ $howto->slug }}" class="post-title">
+                                                            {!! $howto->name !!}
+                                                        </a>
+                                                    </strong>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 post-header-line">
+                                                <span class="glyphicon glyphicon-user"></span> {!! $howto->user->name !!} | <span class="glyphicon glyphicon-calendar">
+                                                </span>{!! date('F d, Y', strtotime($howto->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="/howtos/{{ $howto->slug }}#disqus_thread"></a>
+                                                @unless($howto->games->isEmpty())
+                                                     | <span class="fa fa-trophy"></span>
+                                                    @foreach($howto->games as $key => $game)
+                                                        @if($key == (count($howto->games) -1))
+                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>
+                                                        @else
+                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>, 
+                                                        @endif
+                                                    @endforeach 
+                                                @endunless
+                                            </div>
+                                        </div>
+                                        <div class="row post-content">
+                                            <div class="col-sm-3 text-center">
+                                                <a href="/howtos/{{ $howto->slug }}">
+                                                    <img src="{{ $howto->thumb }}" alt="{!! $howto->name !!}" class="img-responsive" width="263" height="auto" />
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p>
+                                                    {!! str_limit(strip_tags($howto->description), $limit = 100, $end = '...') !!}
+                                                </p>
+                                                <p>
+                                                    <a class="btn btn-dark" href="/howtos/{{ $howto->slug }}">Read more</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <hr />
+                        </div>
+                    </div>
+                @endunless
+                @unless($top10s->isEmpty())
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>Latest Top 10's</h3>
+                            @foreach($top10s as $top10)
+                                <div class="row">
+                                    <div class="col-sm-12 post">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4>
+                                                    <strong>
+                                                        <a href="/top10s/{{ $top10->slug }}" class="post-title">
+                                                            {!! $top10->name !!}
+                                                        </a>
+                                                    </strong>
+                                                </h4>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 post-header-line">
+                                                <span class="glyphicon glyphicon-user"></span> {!! $top10->user->name !!} | <span class="glyphicon glyphicon-calendar">
+                                                </span>{!! date('F d, Y', strtotime($top10->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="/top10s/{{ $top10->slug }}#disqus_thread"></a>
+                                                @unless($top10->games->isEmpty())
+                                                     | <span class="fa fa-trophy"></span>
+                                                    @foreach($top10->games as $key => $game)
+                                                        @if($key == (count($top10->games) -1))
+                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>
+                                                        @else
+                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>, 
+                                                        @endif
+                                                    @endforeach 
+                                                @endunless
+                                            </div>
+                                        </div>
+                                        <div class="row post-content">
+                                            <div class="col-sm-3 text-center">
+                                                <a href="/top10s/{{ $top10->slug }}">
+                                                    <img src="{{ $top10->thumb }}" alt="{!! $top10->name !!}" class="img-responsive" width="263" height="auto" />
+                                                </a>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <p>
+                                                    {!! str_limit(strip_tags($top10->description), $limit = 100, $end = '...') !!}
+                                                </p>
+                                                <p>
+                                                    <a class="btn btn-dark" href="/top10s/{{ $top10->slug }}">Read more</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <hr />
+                        </div>
+                    </div>
+                @endunless
             </div>
             <div class="col-sm-3 col-xs-12">
                 @unless($news->isEmpty())
@@ -146,10 +258,29 @@
                     @endforeach
                     <hr />
                 @endunless
-                <div class="fb-page" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
+                @unless($blogs->isEmpty())
+                    <h3>Latest Blogs</h3>
+                    @foreach($blogs as $entry)
+                        <div class="row">
+                            <div class="col-sm-12 post">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h5>
+                                            <strong><a href="/blogs/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    <hr />
+                @endunless
+                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
+                <hr />
+                <div id="instafeed" class="row hidden-xs"></div>
+                <hr />
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Home Page Tower Ad Right -->
-                <ins class="adsbygoogle"
+                <ins class="adsbygoogle hidden-xs"
                      style="display:block"
                      data-ad-client="ca-pub-5206537313688631"
                      data-ad-slot="2828464904"
@@ -180,6 +311,17 @@
 @endsection
 
 @section('scripts')
+    <script type="text/javascript" src="/js/instafeed.min.js"></script>
+    <script type="text/javascript">
+        var userFeed  = new Instafeed({
+            get: 'user',
+            userId: '3016144355',
+            accessToken: '3016144355.b43e804.5755f9c7f8f44ad79b68515f74b9c6da',
+            template: '<a href="@{{link}}" target="_blank" class="col-md-4 col-sm-6" style="padding:0;"><img src="@{{image}}" class="img-responsive" style="width:100%;" /></a>',
+            limit: 9
+        });
+        userFeed.run();
+    </script>
     <script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
     <script type="text/javascript" src="/js/jcarousel.responsive.js"></script>
     <script>
