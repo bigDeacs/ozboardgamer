@@ -141,10 +141,13 @@
                                 <a href="/reviews?page=1&sort=published_at-desc">Reviews</a>
                             </li>
                             <li>
-                                <a href="/howtos">How To's</a>
+                                <a href="/howtos?page=1&sort=published_at-desc">How To's</a>
                             </li>
                             <li>
-                                <a href="/top10s">Top 10's</a>
+                                <a href="/top10s?page=1&sort=published_at-desc">Top 10's</a>
+                            </li>
+                            <li>
+                                <a href="/blog?page=1&sort=published_at-desc">Blog</a>
                             </li>                           
                         </ul>
                     </div>
