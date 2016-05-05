@@ -143,10 +143,10 @@
                             <li>
                                 <a href="/howtos?page=1&sort=published_at-desc">How To's</a>
                             </li>
-                            <li>
+                            <li class="hidden-sm">
                                 <a href="/top10s?page=1&sort=published_at-desc">Top 10's</a>
                             </li>
-                            <li>
+                            <li class="hidden-sm">
                                 <a href="/blogs?page=1&sort=published_at-desc">Blogs</a>
                             </li>                           
                         </ul>
