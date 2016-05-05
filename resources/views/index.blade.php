@@ -275,9 +275,9 @@
                     <hr />
                 @endunless
                 <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
-                <hr />
+                <hr class="hidden-xs" />
                 <div id="instafeed" class="row hidden-xs"></div>
-                <hr />
+                <hr class="hidden-xs" />
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Home Page Tower Ad Right -->
                 <ins class="adsbygoogle hidden-xs"
