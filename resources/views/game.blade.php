@@ -175,6 +175,12 @@
 			
 			    <strong>Learning</strong>
 			    <input id="learning" name="learning" value="{{ $game->learning }}" class="rating-loading">
+
+			    <strong>Theme</strong>
+			    <input id="theming" name="theming" value="{{ $game->theming }}" class="rating-loading">
+
+			    <strong>Scaling</strong>
+			    <input id="scaling" name="scaling" value="{{ $game->scaling }}" class="rating-loading">
 				<hr />
 				@unless($game->family == null)			      	
 		      		<strong>Family</strong>
@@ -259,6 +265,8 @@
               $('#replay').rating({displayOnly: true, size: 'xs'});
               $('#components').rating({displayOnly: true, size: 'xs'});
               $('#learning').rating({displayOnly: true, size: 'xs'});
+              $('#theming').rating({displayOnly: true, size: 'xs'});
+              $('#scaling').rating({displayOnly: true, size: 'xs'});
         });
   	</script>
   	<script>

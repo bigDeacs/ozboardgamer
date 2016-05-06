@@ -27,32 +27,46 @@
                   </div>
             </div>
             <div class="row">
-                  <div class="col-sm-4 col-xs-12">
+                  <div class="col-sm-6 col-xs-12">
                         <label for="luck">Luck</label><br /><small>0 = No luck at all, 5 = Too much luck</small>
                         <input id="luck" name="luck" value="{{ isset($game) ? $game->luck : old('luck') }}" class="rating-loading">
                   </div>
-                  <div class="col-sm-4 col-xs-12">
+                  <div class="col-sm-6 col-xs-12">
                         <label for="strategy">Strategy</label><br /><small>0 = No strategy, 5 = Too much strategy</small>
                         <input id="strategy" name="strategy" value="{{ isset($game) ? $game->strategy : old('strategy') }}" class="rating-loading">
-                  </div>
-                  <div class="col-sm-4 col-xs-12">
-                        <label for="complexity">Complexity</label><br /><small>0 = Too simple, 5 = Too complex</small>
-                        <input id="complexity" name="complexity" value="{{ isset($game) ? $game->complexity : old('complexity') }}" class="rating-loading">
                   </div>
             </div>
 
             <div class="row">
-                  <div class="col-sm-4 col-xs-12">
+                  <div class="col-sm-6 col-xs-12">
+                        <label for="complexity">Complexity</label><br /><small>0 = Too simple, 5 = Too complex</small>
+                        <input id="complexity" name="complexity" value="{{ isset($game) ? $game->complexity : old('complexity') }}" class="rating-loading">
+                  </div>
+                  <div class="col-sm-6 col-xs-12">
                         <label for="replay">Replay</label><br /><small>0 = Rarely played, 5 = Played all the time</small>
                         <input id="replay" name="replay" value="{{ isset($game) ? $game->replay : old('replay') }}" class="rating-loading">
                   </div>
-                  <div class="col-sm-4 col-xs-12">
+            </div>
+
+            <div class="row">
+                  <div class="col-sm-6 col-xs-12">
                         <label for="components">Components</label><br /><small>0 = Poor quality, 5 = Fantastic quality</small>
                         <input id="components" name="components" value="{{ isset($game) ? $game->components : old('components') }}" class="rating-loading">
                   </div>
-                  <div class="col-sm-4 col-xs-12">
+                  <div class="col-sm-6 col-xs-12">
                         <label for="learning">Learning</label><br /><small>0 = Hard to learn, 5 = Easy to learn</small>
                         <input id="learning" name="learning" value="{{ isset($game) ? $game->learning : old('learning') }}" class="rating-loading">
+                  </div>
+            </div>
+
+            <div class="row">
+                  <div class="col-sm-6 col-xs-12">
+                        <label for="theming">Theme</label><br /><small>0 = No theme at all, 5 = Great theme</small>
+                        <input id="theming" name="theming" value="{{ isset($game) ? $game->theming : old('theming') }}" class="rating-loading">
+                  </div>
+                  <div class="col-sm-6 col-xs-12">
+                        <label for="scaling">Scaling</label><br /><small>0 = Does not scale well, 5 = Scales perfectly</small>
+                        <input id="scaling" name="scaling" value="{{ isset($game) ? $game->scaling : old('scaling') }}" class="rating-loading">
                   </div>
             </div>
       </div>
@@ -199,6 +213,8 @@
                   $('#replay').rating({size: 'xs'});
                   $('#components').rating({size: 'xs'});
                   $('#learning').rating({size: 'xs'});
+                  $('#scaling').rating({size: 'xs'});
+                  $('#theming').rating({size: 'xs'});
             });
       </script>
       <script>

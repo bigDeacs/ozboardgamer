@@ -53,13 +53,13 @@ class GameController extends Controller
         return redirect('/admin/games');
     }
 
-    public function rating($luck, $strategy, $complexity, $replay, $components, $learning)
+    public function rating($luck, $strategy, $complexity, $replay, $components, $learning, $theming, $scaling)
     {   
         $luck = $this->scale($luck);
         $strategy = $this->scale($strategy);
         $complexity = $this->scale($complexity);
-        $total = $luck + $strategy + $complexity + $replay + $components + $learning;
-        return $result = $total/3;
+        $total = $luck + $strategy + $complexity + $replay + $components + $learning + $theming + $scaling;
+        return $result = $total/4;
     }
 
     public function scale($number)
@@ -118,7 +118,7 @@ class GameController extends Controller
     public function store(GameRequest $request)
     {
         $game = Game::create($request->all());
-        $game->rating = $this->rating($game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning);
+        $game->rating = $this->rating($game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning, $game->theming, $game->scaling);
         $game->save();
         if($request->hasFile('image'))
         {
@@ -256,7 +256,7 @@ class GameController extends Controller
     {
         $game = Game::where('id', '=', $id)->firstOrFail();
         $game->update($request->all());
-        $game->rating = $this->rating($game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning);
+        $game->rating = $this->rating($game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning, $game->theming, $game->scaling);
         $game->save();
 
         if($request->hasFile('image'))
