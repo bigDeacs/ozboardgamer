@@ -158,28 +158,28 @@
 				<strong>{{ number_format((float)$game->rating, 1, '.', '') }}/10</strong>
 			</div>
 			<div class="text-center">
-			    <strong>Luck</strong>
+			    <strong>Luck <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much luck is a part of gameplay"></span></strong>
 			    <input id="luck" name="luck" value="{{ $game->luck }}" class="rating-loading">
-	
-			    <strong>Strategy</strong>
+
+			    <strong>Strategy <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much strategy is a part of gameplay"></span></strong>
 			    <input id="strategy" name="strategy" value="{{ $game->strategy }}" class="rating-loading">
 			
-			    <strong>Complexity</strong>
+			    <strong>Complexity <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How many complex rules there are"></span></strong>
 			    <input id="complexity" name="complexity" value="{{ $game->complexity }}" class="rating-loading">
 			
-			    <strong>Replay</strong>
+			    <strong>Replay <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much replay value the game has"></span></strong>
 			    <input id="replay" name="replay" value="{{ $game->replay }}" class="rating-loading">
 			
-			    <strong>Components</strong>
+			    <strong>Components <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="The quality of what comes in the box"></span></strong>
 			    <input id="components" name="components" value="{{ $game->components }}" class="rating-loading">
 			
-			    <strong>Learning</strong>
+			    <strong>Learning <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How easy the game is to learn"></span></strong>
 			    <input id="learning" name="learning" value="{{ $game->learning }}" class="rating-loading">
 
-			    <strong>Theme</strong>
+			    <strong>Theme <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much story/flavour is in the game"></span></strong>
 			    <input id="theming" name="theming" value="{{ $game->theming }}" class="rating-loading">
 
-			    <strong>Scaling</strong>
+			    <strong>Scaling <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How well the game scales between player counts"></span></strong>
 			    <input id="scaling" name="scaling" value="{{ $game->scaling }}" class="rating-loading">
 				<hr />
 				@unless($game->family == null)			      	
@@ -268,6 +268,9 @@
               $('#theming').rating({displayOnly: true, size: 'xs'});
               $('#scaling').rating({displayOnly: true, size: 'xs'});
         });
+        $(function () {
+		  $('[data-toggle="tooltip"]').tooltip()
+		})
   	</script>
   	<script>
 		/**

@@ -26,6 +26,7 @@
 				<div class="row">
 			      <div class="col-xs-12">
 			      	<h1>{{ $mechanic->name }}</h1>
+			      	<p>{{ $mechanic->description }}</p>
 			      </div>
 			    </div>
 

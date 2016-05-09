@@ -26,6 +26,7 @@
 				<div class="row">
 			      <div class="col-xs-12">
 			      	<h1>{{ $family->name }}</h1>
+			      	<p>{{ $family->description }}</p>
 			      </div>
 			    </div>
 

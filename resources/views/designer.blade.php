@@ -26,6 +26,7 @@
 				<div class="row">
 			      <div class="col-xs-12">
 			      	<h1>{{ $designer->name }}</h1>
+			      	<p>{{ $designer->description }}</p>
 			      </div>
 			    </div>
 
