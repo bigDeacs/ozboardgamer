@@ -38,23 +38,23 @@ class GameController extends Controller
                 if ($row['status'] == 1) 
                 {
                     $mechanics = array();
-                    foreach($row->mechanics() as $mechanic) {
+                    foreach($row->mechanics()->get() as $mechanic) {
                         $mechanics[]["name"] = $mechanic->name;
-                    };
+                    };                    
                     $themes = array();
-                    foreach($row->themes() as $theme) {
+                    foreach($row->themes()->get() as $theme) {
                         $themes[]["name"] = $theme->name;
                     };
                     $types = array();
-                    foreach($row->types() as $type) {
+                    foreach($row->types()->get() as $type) {
                         $types[]["name"] = $type->name;
                     };
                     $designers = array();
-                    foreach($row->designers() as $designer) {
+                    foreach($row->designers()->get() as $designer) {
                         $designers[]["name"] = $designer->name;
                     };
                     $publishers = array();
-                    foreach($row->publishers() as $publisher) {
+                    foreach($row->publishers()->get() as $publisher) {
                         $publishers[]["name"] = $publisher->name;
                     };
 
