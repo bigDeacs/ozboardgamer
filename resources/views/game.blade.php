@@ -104,18 +104,18 @@
 					<!-- Tab panes -->
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane active" id="description">
-							<div class="col-xs-12 panel panel-success" itemprop="description">
+							<div class="col-xs-12 panel panel-success" itemprop="description" style="min-height: 650px;">
 								{!! $game->description !!}
 							</div>
 						</div>
 						<div role="tabpanel" class="tab-pane" id="contents">
-							<div class="col-xs-12 panel panel-success">
+							<div class="col-xs-12 panel panel-success" style="min-height: 650px;">
 								{!! $game->contents !!}
 							</div>
 						</div>
 						@unless($posts->isEmpty())
 							<div role="tabpanel" class="tab-pane" id="videos">
-								<div class="col-xs-12 panel panel-success">
+								<div class="col-xs-12 panel panel-success" style="min-height: 650px;">
 									<div class="row">
 								    	@foreach($posts as $post)
 								    		<div class="col-md-6 col-sm-12">
