@@ -37,38 +37,39 @@ class GameController extends Controller
             {
                 if ($row['status'] == 1) 
                 {
+                    $mechanics = array();
+                    foreach($row->mechanics() as $mechanic) {
+                        $mechanics[]["name"] = $mechanic->name;
+                    };
+                    $themes = array();
+                    foreach($row->themes() as $theme) {
+                        $themes[]["name"] = $theme->name;
+                    };
+                    $types = array();
+                    foreach($row->types() as $type) {
+                        $types[]["name"] = $type->name;
+                    };
+                    $designers = array();
+                    foreach($row->designers() as $designer) {
+                        $designers[]["name"] = $designer->name;
+                    };
+                    $publishers = array();
+                    foreach($row->publishers() as $publisher) {
+                        $publishers[]["name"] = $publisher->name;
+                    };
+
                     // select the identifier of this row
                     $index->saveObject(array(
-                         "objectID" => $row['id'],
-                         "name" => $row['name'], 
-                         "slug" => "/games/".$row->types()->firstOrFail()->slug."/".$row['slug'],
-                         "thumb" => $row['thumb'],
-                         "mechanics" => array(
-                            foreach($row->mechanics() as $mechanic) {
-                                "name" => $mechanic->name
-                            }
-                         ),
-                         "themes" => array(
-                            foreach($row->themes() as $theme) {
-                                "name" => $theme->name
-                            }
-                         ),
-                         "types" => array(
-                            foreach($row->types() as $type) {
-                                "name" => $type->name
-                            }
-                         ),
-                         "designers" => array(
-                            foreach($row->designers() as $designer) {
-                                "name" => $designer->name
-                            }
-                         ),
-                         "publishers" => array(
-                            foreach($row->publishers() as $publisher) {
-                                "name" => $publisher->name
-                            }
-                         ),
-                         "rating" => floatval($row['rating'])
+                        "objectID" => $row['id'],
+                        "name" => $row['name'], 
+                        "slug" => "/games/".$row->types()->firstOrFail()->slug."/".$row['slug'],
+                        "thumb" => $row['thumb'],
+                        "_mechanics" => $mechanics,
+                        "_themes" => $themes,
+                        "_types" => $types,
+                        "_designers" => $designers,
+                        "_publishers" => $publishers,
+                        "rating" => floatval($row['rating'])
                     ));        
                 } else {
                     // delete the record with objectID="myID1"
