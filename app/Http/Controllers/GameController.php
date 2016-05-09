@@ -43,7 +43,33 @@ class GameController extends Controller
                          "name" => $row['name'], 
                          "slug" => "/games/".$row->types()->firstOrFail()->slug."/".$row['slug'],
                          "thumb" => $row['thumb'],
-                         "rating" => $row['rating']));        
+                         "mechanics" => array(
+                            foreach($row->mechanics() as $mechanic) {
+                                "name" => $mechanic->name
+                            }
+                         ),
+                         "themes" => array(
+                            foreach($row->themes() as $theme) {
+                                "name" => $theme->name
+                            }
+                         ),
+                         "types" => array(
+                            foreach($row->types() as $type) {
+                                "name" => $type->name
+                            }
+                         ),
+                         "designers" => array(
+                            foreach($row->designers() as $designer) {
+                                "name" => $designer->name
+                            }
+                         ),
+                         "publishers" => array(
+                            foreach($row->publishers() as $publisher) {
+                                "name" => $publisher->name
+                            }
+                         ),
+                         "rating" => floatval($row['rating'])
+                    ));        
                 } else {
                     // delete the record with objectID="myID1"
                     $index->deleteObject($row['id']);
