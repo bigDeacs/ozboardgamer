@@ -85,7 +85,7 @@
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/select2.min.js"></script>
 	<script src="/js/star-rating.min.js" type="text/javascript"></script>
 	<script src="/js/bootstrap-datepicker.js"></script>
@@ -103,6 +103,8 @@
  
             tinymce.init({
               selector: ".textarea",
+
+              content_css : '/css/bootstrap.min.css',
               
               // ===========================================
               // INCLUDE THE PLUGIN
@@ -115,7 +117,7 @@
                ],
                   
                toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
-               toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | print preview code ",
+               toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | preview code ",
                image_advtab: true ,
                
                external_filemanager_path:"/filemanager/",
@@ -124,8 +126,7 @@
                   
               // ===========================================
               // SET RELATIVE_URLS to FALSE (This is required for images to display properly)
-              // ===========================================
-                  
+              // ===========================================                 
 
                   
             });
