@@ -42,7 +42,7 @@
 						    		<td scope="row">{{ $mechanic->name }}</td>
 						    		<td>
 						    			<a href="/admin/mechanics/{{ $mechanic->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
-						    			<a href="/admin/mechanics/{{ $mechanic->id }}" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
+						    			<a href="/mechanics/{{ $mechanic->slug }}" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
 						    			@if($mechanic->status == 0)
 											<a href="/admin/mechanics/{{ $mechanic->id }}/activate" class="btn btn-success">Activate <i class="fa fa-check"></i></a>
 										@else

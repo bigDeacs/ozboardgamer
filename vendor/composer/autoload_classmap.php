@@ -35,6 +35,8 @@ return array(
     'AddToGamePostTable' => $baseDir . '/database/migrations/2016_03_08_051628_add_to_game_post_table.php',
     'AddToGameThemeTable' => $baseDir . '/database/migrations/2016_03_08_051909_add_to_game_theme_table.php',
     'AddToGameTypeTable' => $baseDir . '/database/migrations/2016_03_08_051811_add_to_game_type_table.php',
+    'AddToMoreUserTable' => $baseDir . '/database/migrations/2016_05_10_064808_add_to_more_user_table.php',
+    'AddToUserTable' => $baseDir . '/database/migrations/2016_05_10_063528_add_to_user_table.php',
     'ChangeContentsOnGamesTable' => $baseDir . '/database/migrations/2016_03_17_064234_change_contents_on_games_table.php',
     'ChangePublishedAtOnGamesTable' => $baseDir . '/database/migrations/2016_03_10_042118_change_published_at_on_games_table.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2016_03_07_083329_create_categories_table.php',

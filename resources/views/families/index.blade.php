@@ -42,7 +42,7 @@
 						    		<td scope="row">{{ $family->name }}</td>
 						    		<td>
 						    			<a href="/admin/families/{{ $family->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
-						    			<a href="/admin/families/{{ $family->id }}" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
+						    			<a href="/families/{{ $family->slug }}" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
 						    			@if($family->status == 0)
 											<a href="/admin/families/{{ $family->id }}/activate" class="btn btn-success">Activate <i class="fa fa-check"></i></a>
 										@else

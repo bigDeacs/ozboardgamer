@@ -9,6 +9,7 @@ use App\Mechanic;
 use App\Theme;
 use App\Type;
 use App\Designer;
+use App\User;
 use App\Post;
 use App\Category;
 use App\Http\Requests\SearchRequest;
@@ -231,6 +232,26 @@ class SiteController extends Controller {
 			return view('review', compact('post'));
 		}
 
+	}
+
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function user($slug = null)
+	{
+		if($slug == null) {
+			$users = User::where('status', '=', '1')->has('posts')->with('posts')->paginate(12);
+			return view('users', compact('users'));
+		} else {
+			$user = User::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$posts = Post::where('status', '=', '1')->whereHas('user', function($q) use($slug)
+			{
+			    $q->where('slug', '=', $slug);
+			})->paginate(10);
+			return view('user', compact('user', 'posts'));
+		}
 	}
 
 	/**

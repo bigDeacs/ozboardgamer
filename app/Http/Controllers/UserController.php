@@ -45,6 +45,25 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         $user = User::create($request->all());
+        $user->thumb = '-thumb-' . $user->image;
+        $user->save();
+
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            if ($file->isValid())
+            {
+                $img = Image::make($file);
+                $img->fit(400, 148);
+                $img->interlace();
+                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+
+                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $user->image = ('http://ozboardgamer.com/uploads/' . $filename);
+                $user->thumb = ('http://ozboardgamer.com/uploads/' . $thumbname);
+                $user->save();
+            }
+        }
 
         return redirect('/admin/users');
     }
@@ -85,6 +104,23 @@ class UserController extends Controller
         $user = User::where('id', '=', $id)->firstOrFail();
         $user->update($request->all());
         $user->save();
+
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            if ($file->isValid())
+            {
+                $img = Image::make($file);
+                $img->fit(400, 148);
+                $img->interlace();
+                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+
+                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $user->image = ('http://ozboardgamer.com/uploads/' . $filename);
+                $user->thumb = ('http://ozboardgamer.com/uploads/' . $thumbname);
+                $user->save();
+            }
+        }
 
         return redirect('/admin/users');
     }

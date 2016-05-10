@@ -62,6 +62,7 @@ Route::get('/publishers/{slug?}', 'SiteController@publisher');
 Route::get('/mechanics/{slug?}', 'SiteController@mechanic');
 Route::get('/themes/{slug?}', 'SiteController@theme');
 Route::get('/designers/{slug?}', 'SiteController@designer');
+Route::get('/users/{slug?}', 'SiteController@user');
 
 Route::get('/reviews/{slug?}', 'SiteController@review');
 

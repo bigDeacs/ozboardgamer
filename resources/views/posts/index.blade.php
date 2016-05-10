@@ -42,7 +42,7 @@
 						    		<td scope="row">{{ $post->name }}</td>
 						    		<td>
 						    			<a href="/admin/posts/{{ $post->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
-						    			<a href="/admin/posts/{{ $post->id }}" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
+						    			<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
 						    			@if($post->status == 0)
 											<a href="/admin/posts/{{ $post->id }}/activate" class="btn btn-success">Activate <i class="fa fa-check"></i></a>
 										@else
