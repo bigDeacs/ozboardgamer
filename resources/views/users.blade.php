@@ -31,7 +31,7 @@
 					    	<a href="/users/{{ $user->slug }}?page=1&sort=name-asc">
 				    			<img src="{{ $user->thumb }}" class="img-responsive" />
 				    		</a>
-					    	<p class="text-center"><strong><a href="/users/{{ $user->slug }}?page=1&sort=name-asc">{!! $user->name !!}</a></strong></p>
+					    	<p class="text-center"><strong><a href="/users/{{ $user->slug }}">{!! $user->name !!}</a></strong></p>
 						</div>
 					@endforeach
 				</div>
