@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>Users</title>
+    <title>Contributors</title>
     <meta name="description" content="Card games, Board games, Party Games, Dice Games, there are so many different categories.">
 @endsection
 
@@ -13,7 +13,7 @@
 		<div class="container">	
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
-				<li class="active"><span>Users</span></li>
+				<li class="active"><span>Contributors</span></li>
 			</ol>
 		</div>
 	</div>
@@ -22,7 +22,7 @@
 			<div class="col-sm-12">
 				<div class="row">
 			      <div class="col-xs-12">
-			      	<h1>Users</h1>
+			      	<h1>Contributors</h1>
 			      </div>
 			    </div>
 			    <div class="row">
