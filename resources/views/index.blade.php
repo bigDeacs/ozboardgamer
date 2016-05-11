@@ -90,7 +90,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12 post-header-line">
-                                                <span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $review->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
+                                                <span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&sort=published_at-desc" itemprop="author">{!! $review->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
                                                 </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="/reviews/{{ $review->slug }}#disqus_thread"></a>
                                                 @unless($review->games->isEmpty())
                                                      | <span class="fa fa-trophy"></span>
