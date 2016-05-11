@@ -55,7 +55,7 @@ class UserController extends Controller
             if ($file->isValid())
             {
                 $img = Image::make($file);
-                $img->fit(400, 148);
+                $img->fit(400, 400);
                 $img->interlace();
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
@@ -112,7 +112,7 @@ class UserController extends Controller
             if ($file->isValid())
             {
                 $img = Image::make($file);
-                $img->fit(400, 148);
+                $img->fit(400, 400);
                 $img->interlace();
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
