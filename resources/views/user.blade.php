@@ -24,7 +24,7 @@
 				<div class="row">
 			      <div class="col-sm-9 col-xs-12">
 			      	<h1>{{ $user->name }}</h1>
-			      	<p>{{ $user->description }}</p>
+			      	<p>{!! $user->description !!}</p>
 			      </div>
 			      <div class="col-sm-3 col-xs-12">
 			      	<span>Sort by: </span>
@@ -62,7 +62,7 @@
 		                    </div>
 		                    <div class="row post-content">
 		                        <div class="col-sm-3 text-center">
-		                            <a href="/{{ $user->slug }}/{{ $post->slug }}">
+		                            <a href="/{{ $post->category->first()->slug }}/{{ $post->slug }}">
 		                                <img src="{{ $post->thumb }}" alt="{!! $post->name !!}" class="img-responsive" width="263" height="auto" />
 		                            </a>
 		                        </div>
@@ -71,7 +71,7 @@
 		                                {!! str_limit(strip_tags($post->description), $limit = 100, $end = '...') !!}
 		                            </p>
 		                            <p>
-		                                <a class="btn btn-dark" href="/{{ $user->slug }}/{{ $post->slug }}">Read more</a>
+		                                <a class="btn btn-dark" href="/{{ $post->category->first()->slug }}/{{ $post->slug }}">Read more</a>
 		                            </p>
 		                        </div>
 		                    </div>
