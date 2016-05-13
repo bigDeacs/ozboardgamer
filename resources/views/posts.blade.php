@@ -55,7 +55,7 @@
 		                    </div>
 		                    <div class="row">
 		                        <div class="col-sm-12 post-header-line">
-		                            <span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&sort=published_at-desc">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
+		                            <span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&sort=published_at-desc" itemprop="author">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
 		                            </span>{!! date('F d, Y', strtotime($post->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="/{{ $category->slug }}/{{ $post->slug }}#disqus_thread"></a>
 		                        </div>
 		                    </div>
