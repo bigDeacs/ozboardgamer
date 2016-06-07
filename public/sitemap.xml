@@ -15,19 +15,19 @@
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://ozboardgamer.com/news</loc>
+  <loc>http://ozboardgamer.com/news?page=1&sort=published_at-desc</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://ozboardgamer.com/reviews</loc>
+  <loc>http://ozboardgamer.com/reviews?page=1&sort=published_at-desc</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://ozboardgamer.com/howtos</loc>
+  <loc>http://ozboardgamer.com/howtos?page=1&sort=published_at-desc</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://ozboardgamer.com/top10s</loc>
+  <loc>http://ozboardgamer.com/top10s?page=1&sort=published_at-desc</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>

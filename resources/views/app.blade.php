@@ -199,7 +199,7 @@
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="/news">News</a>
+                            <a href="/news?page=1&sort=published_at-desc">News</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
