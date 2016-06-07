@@ -19,15 +19,15 @@
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://ozboardgamer.com/reviews?page=1&sort=published_at-desc</loc>
+  <loc>http://ozboardgamer.com/reviews?page=1&amp;sort=published_at-desc</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://ozboardgamer.com/howtos?page=1&sort=published_at-desc</loc>
+  <loc>http://ozboardgamer.com/howtos?page=1&amp;sort=published_at-desc</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://ozboardgamer.com/top10s?page=1&sort=published_at-desc</loc>
+  <loc>http://ozboardgamer.com/top10s?page=1&amp;sort=published_at-desc</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>
@@ -83,19 +83,19 @@
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://ozboardgamer.com/games/dice-games</loc>
+  <loc>http://ozboardgamer.com/games/dice-games?page=1&amp;sort=name-asc</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://ozboardgamer.com/games/card-games</loc>
+  <loc>http://ozboardgamer.com/games/card-games?page=1&amp;sort=name-asc</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://ozboardgamer.com/games/board-games</loc>
+  <loc>http://ozboardgamer.com/games/board-games?page=1&amp;sort=name-asc</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://ozboardgamer.com/games/party-games</loc>
+  <loc>http://ozboardgamer.com/games/party-games?page=1&amp;sort=name-asc</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>
