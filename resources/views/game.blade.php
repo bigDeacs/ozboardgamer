@@ -154,8 +154,9 @@
 			@else
 				<img src="/img/10.png" class="img-responsive" />
 			@endif
-			<div class="text-center lead">
-				<strong>{{ number_format((float)$game->rating, 1, '.', '') }}/10</strong>
+			<div class="text-center lead" itemtype="http://schema.org/Rating">
+				<meta itemprop="worstRating" content = "0">
+				<strong><span itemprop="ratingValue">{{ number_format((float)$game->rating, 1, '.', '') }}</span>/<span itemprop="bestRating">10</span></strong>
 			</div>
 			<div class="text-center">
 			    <strong>Luck <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much luck is a part of gameplay"></span></strong>
