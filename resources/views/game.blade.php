@@ -225,9 +225,9 @@
 						<div class="col-sm-12">
 					    	@foreach($game->types as $key => $type)
 					    		@if($key == (count($game->types) -1))
-					    			<a href="/games/{{ $type->slug }}">{{ $type->name }}</a>
+					    			<a href="/games/{{ $type->slug }}?page=1&sort=name-asc">{{ $type->name }}</a>
 					    		@else
-					    			<a href="/games/{{ $type->slug }}">{{ $type->name }}</a>, 
+					    			<a href="/games/{{ $type->slug }}?page=1&sort=name-asc">{{ $type->name }}</a>, 
 					    		@endif
 					    	@endforeach
 						</div>

@@ -15,7 +15,7 @@
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://ozboardgamer.com/news?page=1&sort=published_at-desc</loc>
+  <loc>http://ozboardgamer.com/news?page=1&amp;sort=published_at-desc</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>
