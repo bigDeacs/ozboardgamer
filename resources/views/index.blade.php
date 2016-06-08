@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>Find the latest News, Reviews and More with Oz Board Gamer</title>
+    <title>Oz Board Gamer - Find the latest Board Game News, Reviews and More</title>
     <meta name="description" content="Want to know all the latest and greatest about Board Games? We have News, Reviews and much more!">
 @endsection
 
@@ -47,7 +47,7 @@
         @unless($games->isEmpty())
         <div class="row">
             <div class="col-xs-12"> 
-                <h2>Top Rated Games</h2>
+                <h1>Top Rated Games</h1>
                 <div class="jcarousel-wrapper">
                     <div class="jcarousel">
                         <ul>
@@ -73,7 +73,7 @@
                 @unless($reviews->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
-                            <h3>Latest Game Reviews</h3>
+                            <h2>Latest Game Reviews</h2>
                             @foreach($reviews as $review)
                                 <div class="row" itemscope itemtype="http://schema.org/Review">
                                     <div class="col-sm-12 post">
@@ -131,7 +131,7 @@
                 @unless($howtos->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
-                            <h3>Latest How To's</h3>
+                            <h2>Latest How To's</h2>
                             @foreach($howtos as $howto)
                                 <div class="row">
                                     <div class="col-sm-12 post">
@@ -187,7 +187,7 @@
                 @unless($top10s->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
-                            <h3>Latest Top 10's</h3>
+                            <h2>Latest Top 10's</h2>
                             @foreach($top10s as $top10)
                                 <div class="row">
                                     <div class="col-sm-12 post">

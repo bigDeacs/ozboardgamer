@@ -31,9 +31,9 @@
     <meta property="og:image"              content="http://ozboardgamer.com/fblogo.png" />
     @yield('meta')
     @yield('head')
-	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/landing-page.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/modern-business.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/app.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/landing-page.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/modern-business.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/star-rating.min.css') }}" media="all" rel="stylesheet" type="text/css" />
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{{ asset('/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
