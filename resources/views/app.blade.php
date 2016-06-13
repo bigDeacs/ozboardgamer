@@ -237,6 +237,7 @@
     <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
     <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
     <script src="/js/classie.js"></script>
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us13.list-manage.com","uuid":"5abff12e1700abedb4f579b46","lid":"7665e21b2b"}) })</script>
     <script src="/js/app.js"></script>
     <script>
         $(document).ready(function(){
