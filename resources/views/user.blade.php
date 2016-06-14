@@ -28,16 +28,34 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-			      <div class="col-xs-12">
+			      <div class="col-sm-9 col-xs-12">
 			      	<h1>{{ $user->name }}</h1>
-			      	<p>{!! $user->description !!}</p>	
+			      	<p>{!! $user->description !!}</p>
 			      </div>
-			    </div>		 
+			      <div class="col-sm-3 col-xs-12">
+			      	<span>Sort by: </span>
+			      	<form id="sortForm">
+			      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
+			      		<select class="form-control" onchange="sortGames()" name="sort" id="sort">
+					  		<option value="name-asc" {{ (Request::input('sort') == 'name-asc') ? 'selected' : "" }}>Name ASC</option>
+					  		<option value="name-desc" {{ (Request::input('sort') == 'name-desc') ? 'selected' : "" }}>Name DESC</option>
+						  	<option value="rating-asc" {{ (Request::input('sort') == 'rating-asc') ? 'selected' : "" }}>Rating ASC</option>
+						  	<option value="rating-desc" {{ (Request::input('sort') == 'rating-desc') ? 'selected' : "" }}>Rating DESC</option>
+							<option value="published-asc" {{ (Request::input('sort') == 'published-asc') ? 'selected' : "" }}>Publish Date ASC</option>
+							<option value="published-desc" {{ (Request::input('sort') == 'published-desc') ? 'selected' : "" }}>Publish Date DESC</option>
+						</select>
+					</form>
+					<script>
+						function sortPosts() {
+					        document.getElementById("sortForm").submit();
+					    }
+					</script>
+			      </div>
+			    </div>	 
 			    <div class="row">
 			      <div class="col-sm-9 col-xs-12">     
 			      	Games {{ $user->name }} Owns <span class="badge">{{ $owned }}</span>
-			      	@foreach($games as $game)
-			      		@if($game->users()->first()->pivot->type == 'owned')
+			      	@foreach($owned as $game)
 							<div class="row" itemscope itemtype="http://schema.org/Game">
 				                <div class="col-md-12 post">
 				                    <div class="row post-content">
@@ -86,7 +104,6 @@
 				                    </div>
 				                </div>
 				            </div>
-				        @endif
 					@endforeach
 					<hr />
 					<div class="row">
@@ -99,8 +116,7 @@
 				</div>
 				<div class="col-sm-3 col-xs-12">     
 			      	Games {{ $user->name }} Wants <span class="badge">{{ $wanted }}</span>
-					@foreach($games as $game)
-			      		@if($game->users()->first()->pivot->type == 'wanted')
+					@foreach($wanted as $game)
 							<div class="row" itemscope itemtype="http://schema.org/Game">
 				                <div class="col-md-12 post">
 				                    <div class="row post-content">
@@ -149,7 +165,6 @@
 				                    </div>
 				                </div>
 				            </div>
-				        @endif
 					@endforeach
 			      </div>
 			    </div>
