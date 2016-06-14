@@ -1094,7 +1094,7 @@ p {
     font-size: 21px;
   }
   .breadcrumb-holder {
-    margin-top: 10px;
+    margin-top: -2px;
   }
 }
 small,
@@ -1384,6 +1384,9 @@ pre code {
 @media (min-width: 992px) {
   .container {
     width: 970px;
+  }
+  .breadcrumb-holder {
+    margin-top: 10px;
   }
 }
 @media (min-width: 1200px) {
