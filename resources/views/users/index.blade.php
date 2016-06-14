@@ -30,6 +30,7 @@
 						    	<tr>
 						    		<th>Name</th>
 						    		<th></th>
+						    		<th></th>
 						    	</tr>
 						    </thead>
 						    <tbody>
@@ -40,6 +41,13 @@
 									<tr class="success">
 								@endif
 						    		<td scope="row">{{ $user->name }}</td>
+						    		<td>
+						    			@if($user->role == 'a')
+						    				<i class="fa fa-lock"></i> Admin
+						    			@else
+						    				<i class="fa fa-user"></i> User
+						    			@endif
+						    		</td>
 						    		<td>
 						    			<a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
 						    			<a href="/users/{{ $user->slug }}?page=1&sort=published_at-desc" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>

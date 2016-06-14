@@ -35,6 +35,7 @@
 	<link href="{{ asset('/css/landing-page.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/modern-business.min.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/star-rating.min.css') }}" media="all" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/css/select2.min.css') }}" rel="stylesheet" />
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{{ asset('/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
 	<!-- Fonts -->
@@ -77,8 +78,9 @@
       js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=1428829950709319";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-    <!-- End Facebook Plugin Manager -->
-    
+    <!-- End Facebook Plugin Manager -->    
+
+
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
@@ -96,9 +98,16 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <div class="navbar-right">
+                <div class="navbar-right">                
                     <div class="row navbar-social text-right">
                         <ul class="list-inline intro-social-buttons">
+                            <li>
+                                @if(Session::has('name'))
+                                    <p style="color: #9d9d9d;"><strong>Welcome, {{ Session::get('name') }}</strong></p>
+                                @else
+                                    <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
+                                @endif
+                            </li>
                             <li>
                                 <a href="https://www.facebook.com/ozboardgamer/" class="btn btn-primary btn-lg" target="_blank" title="Like us on Facebook">
                                     <i class="fa fa-facebook-official fa-fw"></i>
@@ -233,6 +242,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>    
     <script src="/js/star-rating.min.js" type="text/javascript"></script>
+    <script src="/js/select2.min.js"></script>
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
     <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
@@ -259,7 +269,6 @@
         });
     </script>    
     @yield('scripts')
-
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
     <script type="text/javascript">
         require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us13.list-manage.com","uuid":"5abff12e1700abedb4f579b46","lid":"7665e21b2b"}) })

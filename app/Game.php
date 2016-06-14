@@ -122,4 +122,14 @@ class Game extends Model {
         return $this->designers->lists('id');
     }
 
+    public function users()
+    {
+        return $this->belongsToMany('App\User')->withPivot('type');
+    }
+
+    public function getUserListAttribute()
+    {
+        return $this->users->lists('id');
+    }
+
 }

@@ -147,7 +147,8 @@ return [
 
 		'Illuminate\Html\HtmlServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
-		'AlgoliaSearch\Laravel\AlgoliaServiceProvider'
+		'AlgoliaSearch\Laravel\AlgoliaServiceProvider',
+		'Laravel\Socialite\SocialiteServiceProvider',
 
 
 	],
@@ -201,6 +202,7 @@ return [
 		'Form'      => 'Illuminate\Html\FormFacade',
         'Html'      => 'Illuminate\Html\HtmlFacade',
         'Image'	 	=> 'Intervention\Image\Facades\Image',
+        'Socialite' => 'Laravel\Socialite\Facades\Socialite',
 
 	],
 

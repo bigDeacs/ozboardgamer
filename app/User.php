@@ -22,7 +22,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password', 'status', 'slug', 'image', 'description'];
+	protected $fillable = ['name', 'email', 'password', 'status', 'slug', 'image', 'thumb', 'description', 'role'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -34,6 +34,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	public function posts()
     {
         return $this->hasMany('App\Post');
+    }
+
+    public function games()
+    {
+        return $this->belongsToMany('App\Game')->withPivot('type');
+    }
+
+    public function getGameListAttribute()
+    {
+        return $this->games->lists('id');
     }
 
 }

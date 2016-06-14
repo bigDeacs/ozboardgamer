@@ -8,11 +8,11 @@ $baseDir = dirname($vendorDir);
 return array(
     $vendorDir . '/nikic/php-parser/lib/bootstrap.php',
     $vendorDir . '/symfony/var-dumper/Symfony/Component/VarDumper/Resources/functions/dump.php',
-    $vendorDir . '/ircmaxell/password-compat/lib/password.php',
     $vendorDir . '/swiftmailer/swiftmailer/lib/swift_required.php',
+    $vendorDir . '/ircmaxell/password-compat/lib/password.php',
+    $vendorDir . '/react/promise/src/functions_include.php',
     $vendorDir . '/paragonie/random_compat/lib/random.php',
     $vendorDir . '/symfony/polyfill-php56/bootstrap.php',
-    $vendorDir . '/react/promise/src/functions_include.php',
     $vendorDir . '/danielstjules/stringy/src/Create.php',
     $vendorDir . '/psy/psysh/src/Psy/functions.php',
     $vendorDir . '/guzzlehttp/psr7/src/functions_include.php',

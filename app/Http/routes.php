@@ -16,6 +16,12 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('/games/{type?}/{slug?}', 'SiteController@game');
+
+Route::get('/facebook', 'SiteController@redirectToProvider');
+Route::get('/facebook/callback', 'SiteController@handleProviderCallback');
+
 Route::get('home', 'AdminController@index');
 
 Route::group(['prefix' => 'admin'], function()
@@ -63,6 +69,11 @@ Route::get('/mechanics/{slug?}', 'SiteController@mechanic');
 Route::get('/themes/{slug?}', 'SiteController@theme');
 Route::get('/designers/{slug?}', 'SiteController@designer');
 Route::get('/users/{slug?}', 'SiteController@user');
+
+Route::get('users/{users}/addToOwned/{game}', ['as' => 'users.addToOwned', 'uses' => 'SiteController@addToOwned']);
+Route::get('users/{users}/removeFromOwned/{game}', ['as' => 'users.removeFromOwned', 'uses' => 'SiteController@removeFromOwned']);
+Route::get('users/{users}/addToWanted/{game}', ['as' => 'users.addToWanted', 'uses' => 'SiteController@addToWanted']);
+Route::get('users/{users}/removeFromWanted/{game}', ['as' => 'users.removeFromWanted', 'uses' => 'SiteController@removeFromWanted']);
 
 Route::get('/reviews/{slug?}', 'SiteController@review');
 

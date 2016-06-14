@@ -15,6 +15,10 @@ use App\Category;
 use App\Http\Requests\SearchRequest;
 use Request;
 use Storage;
+use Session;
+
+use Socialite;
+use App\Http\Requests\GameUpdateRequest;
 
 class SiteController extends Controller {
 
@@ -28,7 +32,73 @@ class SiteController extends Controller {
 	| controller as you wish. It is just here to get your app started!
 	|
 	*/
-	
+
+
+	/**
+     * Redirect the user to the Facebook authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProvider()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    /**
+     * Obtain the user information from Facebook.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback()
+    {
+    	$user = Socialite::driver('facebook')->user();
+
+		// OAuth Two Providers
+		$token = $user->token;
+		$refreshToken = $user->refreshToken; // not always provided
+		$expiresIn = $user->expiresIn;
+
+        $create = User::firstOrCreate(['name' => $user->getName(), 'slug' => str_slug($user->getName()), 'image' => $user->getAvatar(), 'thumb' => $user->getAvatar(), 'email' => $user->getEmail(), 'password' => 'password', 'role' => 'b', 'status' => 1]);       
+
+		Session::put('id', $user->getId());
+		Session::put('name', $user->getName());
+		Session::put('email', $user->getEmail());
+		Session::put('thumb', $user->getAvatar());		
+
+		return redirect('/users/'.str_slug($user->getName()).'?page=1&sort');
+    }
+
+    public function addToOwned($id, $game)
+    {
+    	$user = User::where('slug', '=', $id)->firstOrFail();
+        $user->games()->attach($game, ['type' => 'owned']);
+		return redirect()->back();
+    }
+
+	public function removeFromOwned($id, $game)
+    {
+    	$user = User::where('slug', '=', $id)->firstOrFail();
+        $user->games()->wherePivot('type', 'owned')->detach($game);
+		return redirect()->back();
+    }
+
+    public function addToWanted($id, $game)
+    {
+    	$user = User::where('slug', '=', $id)->firstOrFail();
+        $user->games()->attach($game, ['type' => 'wanted']);
+		return redirect()->back();
+    }
+
+	public function removeFromWanted($id, $game)
+    {
+    	$user = User::where('slug', '=', $id)->firstOrFail();
+        $user->games()->wherePivot('type', 'wanted')->detach($game);
+		return redirect()->back();
+    }
+
+    
+
+
 	/**
 	 * Show the application welcome screen to the user.
 	 *
@@ -246,11 +316,20 @@ class SiteController extends Controller {
 			return view('users', compact('users'));
 		} else {
 			$user = User::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-			$posts = Post::where('status', '=', '1')->whereHas('user', function($q) use($slug)
-			{
-			    $q->where('slug', '=', $slug);
-			})->paginate(10);
-			return view('user', compact('user', 'posts'));
+			if($user->role == 'a') {
+				$posts = Post::where('status', '=', '1')->whereHas('user', function($q) use($slug)
+				{
+				    $q->where('slug', '=', $slug);
+				})->paginate(10);
+				return view('contributor', compact('user', 'posts'));
+			} else {
+				$games = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
+				{
+				    $q->where('slug', '=', $slug);
+				})->get();
+				return view('user', compact('user', 'games'));
+			}
+			
 		}
 	}
 

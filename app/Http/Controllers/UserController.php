@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\UserRequest;
 use App\User;
+use App\Game;
 use App\Http\Controllers\Controller;
 use Image;
 
@@ -34,7 +35,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        $games = Game::where('status', '=', '1')->lists('name', 'id');
+        return view('users.create', compact('games'));
     }
 
     /**
@@ -66,6 +68,14 @@ class UserController extends Controller
             }
         }
 
+        if(is_array($request->input('game_list'))) {
+            $currentGames = array_filter($request->input('game_list'), 'is_numeric');
+        } else {
+            $currentGames = [];
+        }
+        $user->games()->sync($currentGames);
+
+
         return redirect('/admin/users');
     }
 
@@ -90,7 +100,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::where('id', '=', $id)->firstOrFail();
-        return view('users.edit', compact('user'));
+        $games = Game::where('status', '=', '1')->lists('name', 'id');
+        return view('users.edit', compact('user', 'games'));
     }
 
     /**
@@ -123,6 +134,13 @@ class UserController extends Controller
             }
         }
 
+        if(is_array($request->input('game_list'))) {
+            $currentGames = array_filter($request->input('game_list'), 'is_numeric');
+        } else {
+            $currentGames = [];
+        }
+        $user->games()->sync($currentGames);
+
         return redirect('/admin/users');
     }
 
@@ -143,4 +161,5 @@ class UserController extends Controller
 
         return redirect('/admin/users');
     }
+
 }

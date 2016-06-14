@@ -29,7 +29,8 @@
         "App\\Providers\\RouteServiceProvider",
         "Illuminate\\Html\\HtmlServiceProvider",
         "Intervention\\Image\\ImageServiceProvider",
-        "AlgoliaSearch\\Laravel\\AlgoliaServiceProvider"
+        "AlgoliaSearch\\Laravel\\AlgoliaServiceProvider",
+        "Laravel\\Socialite\\SocialiteServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -129,7 +130,8 @@
         "translator": "Illuminate\\Translation\\TranslationServiceProvider",
         "translation.loader": "Illuminate\\Translation\\TranslationServiceProvider",
         "html": "Illuminate\\Html\\HtmlServiceProvider",
-        "form": "Illuminate\\Html\\HtmlServiceProvider"
+        "form": "Illuminate\\Html\\HtmlServiceProvider",
+        "Laravel\\Socialite\\Contracts\\Factory": "Laravel\\Socialite\\SocialiteServiceProvider"
     },
     "when": {
         "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider": [],
@@ -143,6 +145,7 @@
         "Illuminate\\Redis\\RedisServiceProvider": [],
         "Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider": [],
         "Illuminate\\Translation\\TranslationServiceProvider": [],
-        "Illuminate\\Html\\HtmlServiceProvider": []
+        "Illuminate\\Html\\HtmlServiceProvider": [],
+        "Laravel\\Socialite\\SocialiteServiceProvider": []
     }
 }

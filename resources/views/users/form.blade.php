@@ -1,17 +1,31 @@
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 <div class="form-group row">
-      <div class="col-sm-4 col-xs-12">
+      <div class="col-sm-6 col-xs-12">
             <label for="name">Name</label>
 	      <input type="text" name="name" id="name" class="form-control" value="{{ isset($user) ? $user->name : old('name') }}" placeholder="" required>
       </div>
-      <div class="col-sm-4 col-xs-12">
+      <div class="col-sm-6 col-xs-12">
             <label for="slug">Slug</label>
             <input type="text" name="slug" id="slug" class="form-control" value="{{ isset($user) ? $user->slug : old('slug') }}" placeholder="" required>
       </div>
-      <div class="col-sm-4 col-xs-12">
+</div>
+
+<div class="form-group row">
+      <div class="col-sm-6 col-xs-12">
             <label for="email">Email</label>
             <input type="text" name="email" id="email" class="form-control" value="{{ isset($user) ? $user->email : old('email') }}" placeholder="" required>
+      </div>
+      <div class="col-sm-6 col-xs-12">
+            <label for="role">Role</label><br />
+            <input type="radio" name="role" value="a" @if($user->role == 'a') checked @endif> Admin | <input type="radio" name="role" value="b" @if($user->role == 'b') checked @endif> User
+      </div>
+</div>
+
+<div class="form-group row">
+      <div class="col-xs-12">
+            <label for="game_list">Games</label>
+            {!! Form::select('game_list[]', $games, null, ['id' => 'game_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
       </div>
 </div>
 
