@@ -101,7 +101,7 @@
                 <div class="navbar-right">                
                     <div class="row navbar-social text-right">
                         <ul class="list-inline intro-social-buttons">
-                            <li>
+                            <li id="loginFB">
                                 @if(Session::has('name'))
                                     <a style="color: #9d9d9d;" href="/users/{{ str_slug(Session::get('name')) }}"><strong>Welcome, {{ Session::get('name') }}</strong></a>
                                 @else

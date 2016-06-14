@@ -2233,6 +2233,12 @@ table th[class*="col-"] {
   min-height: 0.01%;
 }
 @media screen and (max-width: 767px) {
+  #loginFB {
+    width: 100%;
+  }
+  .mc-modal {
+    top: 160px!important;
+  }
   .table-responsive {
     width: 100%;
     margin-bottom: 15px;
@@ -6520,3 +6526,4 @@ label,
     right: 20px;
     display:none;
 }
+
