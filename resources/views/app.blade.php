@@ -103,7 +103,7 @@
                         <ul class="list-inline intro-social-buttons">
                             <li>
                                 @if(Session::has('name'))
-                                    <a style="color: #9d9d9d;" href="/users/{!! str_slug(Session::has('name')) !!}"><strong>Welcome, {{ Session::get('name') }}</strong></a>
+                                    <a style="color: #9d9d9d;" href="/users/{{ str_slug(Session::get('name')) }}"><strong>Welcome, {{ Session::get('name') }}</strong></a>
                                 @else
                                     <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
                                 @endif
