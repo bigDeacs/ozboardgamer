@@ -175,10 +175,6 @@
 			</div>
 		</div>
 	</div>
-
-	@foreach($owned as $game)
-		<?php var_dump($game); ?>
-	@endforeach
 @endsection
 
 @section('scripts')
