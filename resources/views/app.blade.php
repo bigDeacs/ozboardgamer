@@ -108,22 +108,22 @@
                                     <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
                                 @endif
                             </li>
-                            <li>
+                            <li class="hidden-sm hidden-xs">
                                 <a href="https://www.facebook.com/ozboardgamer/" class="btn btn-primary btn-lg" target="_blank" title="Like us on Facebook">
                                     <i class="fa fa-facebook-official fa-fw"></i>
                                 </a>
                             </li>
-                            <li>
+                            <li class="hidden-sm hidden-xs">
                                 <a href="https://twitter.com/OzBoardGamer" class="btn btn-info btn-lg" target="_blank" title="Follow us on Twitter">
                                     <i class="fa fa-twitter fa-fw"></i>
                                 </a>
                             </li>
-                            <li>
+                            <li class="hidden-sm hidden-xs">
                                 <a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" class="btn btn-danger btn-lg" target="_blank" title="Subscribe to our Youtube channel">
                                     <i class="fa fa-youtube fa-fw"></i>
                                 </a>
                             </li>
-                            <li>
+                            <li class="hidden-sm hidden-xs">
                                 <a href="https://www.instagram.com/ozboardgamer/" class="btn btn-warning btn-lg" target="_blank" title="Follow us on Instagram">
                                     <i class="fa fa-instagram fa-fw"></i>
                                 </a>
