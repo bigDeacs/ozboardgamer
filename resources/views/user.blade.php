@@ -55,7 +55,8 @@
 			    <div class="row">
 			      <div class="col-sm-9 col-xs-12">     
 			      	Games {{ $user->name }} Owns <span class="badge">{{ $owned }}</span>
-			      	@foreach($owned as $game)
+			      	@foreach($games as $game)
+			      		@if($game->users()->first()->pivot->type == 'owned')
 							<div class="row" itemscope itemtype="http://schema.org/Game">
 				                <div class="col-md-12 post">
 				                    <div class="row post-content">
@@ -104,6 +105,7 @@
 				                    </div>
 				                </div>
 				            </div>
+				        @endif
 					@endforeach
 					<hr />
 					<div class="row">
@@ -116,7 +118,8 @@
 				</div>
 				<div class="col-sm-3 col-xs-12">     
 			      	Games {{ $user->name }} Wants <span class="badge">{{ $wanted }}</span>
-					@foreach($wanted as $game)
+					@foreach($games as $game)
+			      		@if($game->users()->first()->pivot->type == 'wanted')
 							<div class="row" itemscope itemtype="http://schema.org/Game">
 				                <div class="col-md-12 post">
 				                    <div class="row post-content">
@@ -165,12 +168,17 @@
 				                    </div>
 				                </div>
 				            </div>
+				        @endif
 					@endforeach
 			      </div>
 			    </div>
 			</div>
 		</div>
 	</div>
+
+	@foreach($owned as $game)
+		<?php var_dump($game); ?>
+	@endforeach
 @endsection
 
 @section('scripts')

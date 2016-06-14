@@ -328,28 +328,18 @@ class SiteController extends Controller {
 				    $q->where('slug', '=', $slug);
 				})->paginate(10);
 
+				$owned = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
+				{
+				    $q->where('slug', '=', $slug);
+				    $q->wherePivot('type', 'owned');
+				})->paginate(10);
+
 				$total = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
 				})->get();
 
-				$gamesowned = '';
-				foreach($total as $game) {
-			      	if($game->users()->first()->pivot->type == 'owned') {
-			      		$gamesowned[] = $game;
-			      	}
-			    }
-			    $owned = collect($gamesowned)->paginate(10);
-
-			    $gameswanted = '';
-				foreach($total as $game) {
-			      	if($game->users()->first()->pivot->type == 'wanted') {
-			      		$gameswanted[] = $game;
-			      	}
-			    }
-			    $wanted = collect($gameswanted)->paginate(10);
-
-				return view('user', compact('user', 'owned', 'wanted', 'total'));
+				return view('user', compact('user', 'games', 'total', 'owned'));
 			}
 			
 		}
