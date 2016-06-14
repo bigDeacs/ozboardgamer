@@ -46,7 +46,7 @@
 						</select>
 					</form>
 					<script>
-						function sortPosts() {
+						function sortGames() {
 					        document.getElementById("sortForm").submit();
 					    }
 					</script>
