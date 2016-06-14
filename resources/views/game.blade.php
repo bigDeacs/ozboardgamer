@@ -10,22 +10,6 @@
 @endsection
 
 @section('content')
-
-	@if(Session::has('name'))	        
-        @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success">Add to Owned</a>
-        @else
-	        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger">Remove from Owned</a>	    
-    	@endif
-
-    	@if($game->users()->wherePivot('type', 'wanted')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success">Add to Wanted</a>
-        @else
-	        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger">Remove from Wanted</a>	    
-    	@endif
-    @endif
-
-
 	<div class="breadcrumb-holder hidden-lg hidden-md hidden-sm">
 		<div class="container">	
 			<ol class="breadcrumb breadcrumb-arrow">
@@ -104,6 +88,21 @@
 						</div>
 				      </div>
 				    </div>
+				    <div class="row">
+					    @if(Session::has('name'))	        
+					        @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success">I Own It</a>
+					        @else
+						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger">I Don't Own It</a>	    
+					    	@endif
+
+					    	@if($game->users()->wherePivot('type', 'wanted')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success">I Want It</a>
+					        @else
+						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger">I Don't Want It</a>	    
+					    	@endif
+					    @endif
+					</div>
 			      </div>
 			    </div>
 			    <br />
