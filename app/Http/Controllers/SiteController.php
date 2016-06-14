@@ -333,19 +333,21 @@ class SiteController extends Controller {
 				    $q->where('slug', '=', $slug);
 				})->get();
 
-				$owned = '';
+				$gamesowned = '';
 				foreach($total as $game) {
 			      	if($game->users()->first()->pivot->type == 'owned') {
-			      		$owned[] = $game;
+			      		$gamesowned[] = $game;
 			      	}
 			    }
+			    $owned = collect($gamesowned)->paginate(10);
 
-			    $wanted = '';
+			    $gameswanted = '';
 				foreach($total as $game) {
 			      	if($game->users()->first()->pivot->type == 'wanted') {
-			      		$wanted[] = $game;
+			      		$gameswanted[] = $game;
 			      	}
 			    }
+			    $wanted = collect($gameswanted)->paginate(10);
 
 				return view('user', compact('user', 'owned', 'wanted', 'total'));
 			}
