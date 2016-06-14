@@ -11,9 +11,9 @@
 @section('content')
 	<?php 
 		$owned = 0; 
-		foreach($games as $game) { if($game->users()->first()->pivot->type == 'owned') { $owned++; } }
+		foreach($total as $game) { if($game->users()->first()->pivot->type == 'owned') { $owned++; } }
 		$wanted = 0; 
-		foreach($games as $game) { if($game->users()->first()->pivot->type == 'wanted') { $wanted++; } }
+		foreach($total as $game) { if($game->users()->first()->pivot->type == 'wanted') { $wanted++; } }
 	?>
 	<div class="breadcrumb-holder">
 		<div class="container">	
@@ -88,6 +88,14 @@
 				            </div>
 				        @endif
 					@endforeach
+					<hr />
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="text-center">
+								{!! $games->appends(['sort' => $_GET['sort']])->render() !!}
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="col-sm-3 col-xs-12">     
 			      	Games {{ $user->name }} Wants <span class="badge">{{ $wanted }}</span>

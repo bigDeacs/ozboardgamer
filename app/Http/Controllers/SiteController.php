@@ -326,8 +326,12 @@ class SiteController extends Controller {
 				$games = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
+				})->paginate(10);
+				$total = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
+				{
+				    $q->where('slug', '=', $slug);
 				})->get();
-				return view('user', compact('user', 'games'));
+				return view('user', compact('user', 'games', 'total'));
 			}
 			
 		}
