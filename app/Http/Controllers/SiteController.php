@@ -320,33 +320,32 @@ class SiteController extends Controller {
 				$posts = Post::where('status', '=', '1')->whereHas('user', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
-				})->paginate(10);
+				})->paginate(12);
 				return view('contributor', compact('user', 'posts'));
 			} else {
-				$owned = Game::where('status', '=', '1')
-				->with('types')
-				->with('users')
+				if(Request::has('sort'))
+				{
+				    $pieces = explode("-", Request::input('sort'));
+				    $sort = $pieces[0];
+				    $direction = $pieces[1];
+				} else {
+					$sort = 'rating';
+					$direction = 'desc';
+				}
+
+				$owned = Game::where('status', '=', '1')->with('types')->with('users')
 				->whereHas('users', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
 				   	$q->where('type', '=', 'owned');		    
-				})
-				->paginate(10);
+				})->orderBy($sort, $direction)->paginate(12);
 
-				$wanted = Game::where('status', '=', '1')
-				->with('types')
-				->with('users')
+				$wanted = Game::where('status', '=', '1')->with('types')->with('users')
 				->whereHas('users', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
 				   	$q->where('type', '=', 'wanted');		    
-				})
-				->paginate(10);				
-
-				#$games = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
-				#{
-				#    $q->where('slug', '=', $slug);
-				#})->paginate(10);
+				})->orderBy($sort, $direction)->get();				
 
 				$total = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
 				{
