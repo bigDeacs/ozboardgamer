@@ -116,7 +116,7 @@
 				</div>
 				<div class="col-sm-3 hidden-xs"> 
 					<div class="wantedBox">    
-				      	{{ $user->name }}'s Wishlist <span class="badge">{{ $countWanted }}</span>
+				      	{{ $user->name }}'s Watchlist <span class="badge">{{ $countWanted }}</span>
 						@foreach($wanted as $game)
 							<div class="row" itemscope itemtype="http://schema.org/Game">
 				                <div class="col-md-12 post">
@@ -177,17 +177,4 @@
 
 @section('scripts')
 	<script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>
-	<script>
-            $('#owned_list').select2({
-            	placeholder: 'Choose your owned games',
-            	tags: true
-            });
-            $('#wanted_list').select2({
-            	placeholder: 'Choose your wanted games',
-            	tags: true
-            });
-            $(document).ready(function() {
-              $(".searchable-select").select2();
-            });
-      </script>
 @endsection

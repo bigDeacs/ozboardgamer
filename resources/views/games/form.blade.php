@@ -14,16 +14,22 @@
             </div>
             <div class="row">
                   <div class="col-sm-4 col-xs-12">
-                        <label for="time">Play Time</label>
-                        <input type="text" name="time" id="time" class="form-control" value="{{ isset($game) ? $game->time : old('time') }}" placeholder="" required>
-                  </div>
-                  <div class="col-sm-4 col-xs-12">
                         <label for="players">Amount of Players</label>
                         <input type="text" name="players" id="players" class="form-control" value="{{ isset($game) ? $game->players : old('players') }}" placeholder="" required>
                   </div>
                   <div class="col-sm-4 col-xs-12">
                         <label for="age">Age of Players</label>
                         <input type="text" name="age" id="age" class="form-control" value="{{ isset($game) ? $game->age : old('age') }}" placeholder="" required>
+                  </div>
+                  <div class="col-sm-4 col-xs-12">
+                        <label for="time">Play Time</label>
+                        <input type="text" name="time" id="time" class="form-control" value="{{ isset($game) ? $game->time : old('time') }}" placeholder="" required>
+                  </div>
+            </div>
+            <div class="row">
+                  <div class="col-xs-12">
+                        <label for="link">Purchase Link</label>
+                        <input type="text" name="link" id="link" class="form-control" value="{{ isset($game) ? $game->link : old('link') }}" placeholder="" required>
                   </div>
             </div>
             <div class="row">

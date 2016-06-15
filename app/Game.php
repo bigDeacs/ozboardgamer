@@ -44,7 +44,8 @@ class Game extends Model {
 		'family_id',
         'parent_id',
         'publisher_id',
-        'status'
+        'status',
+        'link'
 	];
 
     public function parent()
