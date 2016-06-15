@@ -116,7 +116,7 @@
 				</div>
 				<div class="col-sm-3 hidden-xs"> 
 					<div class="wantedBox">    
-				      	{{ $user->name }} Wishlist <span class="badge">{{ $countWanted }}</span>
+				      	{{ $user->name }}'s Wishlist <span class="badge">{{ $countWanted }}</span>
 						@foreach($wanted as $game)
 							<div class="row" itemscope itemtype="http://schema.org/Game">
 				                <div class="col-md-12 post">
