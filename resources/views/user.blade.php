@@ -10,10 +10,10 @@
 
 @section('content')
 	<?php 
-		$owned = 0; 
-		foreach($total as $game) { if($game->users()->first()->pivot->type == 'owned') { $owned++; } }
-		$wanted = 0; 
-		foreach($total as $game) { if($game->users()->first()->pivot->type == 'wanted') { $wanted++; } }
+		$countOwned = 0; 
+		foreach($total as $game) { if($game->users()->first()->pivot->type == 'owned') { $countOwned++; } }
+		$countWanted = 0; 
+		foreach($total as $game) { if($game->users()->first()->pivot->type == 'wanted') { $countWanted++; } }
 	?>
 	<div class="breadcrumb-holder">
 		<div class="container">	
@@ -54,9 +54,9 @@
 			    </div>	 
 			    <div class="row">
 			      <div class="col-sm-9 col-xs-12">     
-			      	Games {{ $user->name }} Owns <span class="badge">{{ $owned }}</span>
-			      	@foreach($games as $game)
-			      		@if($game->users()->first()->pivot->type == 'owned')
+			      	Games {{ $user->name }} Owns <span class="badge">{{ $countOwned }}</span>
+			      	@foreach($owned as $game)
+			      		
 							<div class="row" itemscope itemtype="http://schema.org/Game">
 				                <div class="col-md-12 post">
 				                    <div class="row post-content">
@@ -105,21 +105,21 @@
 				                    </div>
 				                </div>
 				            </div>
-				        @endif
+				        
 					@endforeach
 					<hr />
 					<div class="row">
 						<div class="col-xs-12">
 							<div class="text-center">
-								{!! $games->appends(['sort' => $_GET['sort']])->render() !!}
+								{!! $owned->appends(['sort' => $_GET['sort']])->render() !!}
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-3 col-xs-12">     
-			      	Games {{ $user->name }} Wants <span class="badge">{{ $wanted }}</span>
-					@foreach($games as $game)
-			      		@if($game->users()->first()->pivot->type == 'wanted')
+			      	Games {{ $user->name }} Wants <span class="badge">{{ $countWanted }}</span>
+					@foreach($wanted as $game)
+			      		
 							<div class="row" itemscope itemtype="http://schema.org/Game">
 				                <div class="col-md-12 post">
 				                    <div class="row post-content">
@@ -168,7 +168,7 @@
 				                    </div>
 				                </div>
 				            </div>
-				        @endif
+				        
 					@endforeach
 			      </div>
 			    </div>

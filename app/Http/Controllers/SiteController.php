@@ -323,17 +323,37 @@ class SiteController extends Controller {
 				})->paginate(10);
 				return view('contributor', compact('user', 'posts'));
 			} else {
-				$games = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
+				$owned = Game::where('status', '=', '1')
+				->with('types')
+				->with('users')
+				->whereHas('users', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
-				})->paginate(10);
+				   	$q->where('type', '=', 'owned');		    
+				})
+				->paginate(10);
+
+				$wanted = Game::where('status', '=', '1')
+				->with('types')
+				->with('users')
+				->whereHas('users', function($q) use($slug)
+				{
+				    $q->where('slug', '=', $slug);
+				   	$q->where('type', '=', 'wanted');		    
+				})
+				->paginate(10);				
+
+				#$games = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
+				#{
+				#    $q->where('slug', '=', $slug);
+				#})->paginate(10);
 
 				$total = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
 				})->get();
 				
-				return view('user', compact('user', 'games', 'total'));
+				return view('user', compact('user', 'owned', 'wanted', 'total'));
 			}
 			
 		}
