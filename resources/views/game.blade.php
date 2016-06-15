@@ -91,19 +91,19 @@
 				    <div class="row">
 					    @if(Session::has('name'))	        
 					        @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Add to My Games</a>
+					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-xs hidden-xs"> to Games</span></a>
 					        @else
-						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger"><i class="fa fa-times" aria-hidden="true"></i> Remove from My Games</a>	    
+						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-times" aria-hidden="true"></i> Remove from Games</a>	    
 					    	@endif
 
 					    	@if($game->users()->wherePivot('type', 'wanted')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success"><i class="fa fa-eye" aria-hidden="true"></i> Add to Watchlist</a>
+					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-eye" aria-hidden="true"></i> Add to Watchlist</a>
 					        @else
-						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger"><i class="fa fa-eye-slash" aria-hidden="true"></i> Remove from Watchlist</a>	    
+						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-eye-slash" aria-hidden="true"></i> Remove from Watchlist</a>	    
 					    	@endif
 					    @endif
 					    @unless($game->link == null)
-					    	<a href="{!! $game->link !!}" target="_blank" class="btn btn-primary"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Online</a>	    
+					    	<a href="{!! $game->link !!}" target="_blank" class="btn btn-primary" style="font-size:13px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Online</a>	    
 					    @endunless
 					</div>
 			      </div>
