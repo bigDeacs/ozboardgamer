@@ -88,7 +88,7 @@
 						</div>
 				      </div>
 				    </div>
-				    <div class="row">
+				    <div class="row text-center">
 					    @if(Session::has('name'))	        
 					        @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
 					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-sm hidden-xs"> to Games</span></a>
