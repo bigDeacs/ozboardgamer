@@ -162,12 +162,18 @@ class SiteController extends Controller {
 			$type = Type::where('status', '=', '1')->where('slug', '=', $type)->firstOrFail();	
 			return view('type', compact('type','games'));
 		} else {
-			$game = Game::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$game = Game::where('status', '=', '1')->with('mechanics')->where('slug', '=', $slug)->firstOrFail();
 			$posts = Post::where('status', '=', '1')->where('video', '!=', '')->whereHas('games', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
 			})->get();
-			return view('game', compact('game', 'posts'));
+			$related = Game::where('status', '=', '1')->where('id', '!=', $game->id)->whereHas('mechanics', function($q) use($game)
+			{
+			    foreach($game->mechanics as $mechanic) {
+					$q->orWhere('name', '=', $mechanic->name);			    	
+			    }
+			})->orderByRaw("RAND()")->take(4)->get();
+			return view('game', compact('game', 'posts', 'related'));
 		}
 	}
 
