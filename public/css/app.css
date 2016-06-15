@@ -1096,6 +1096,11 @@ p {
   .breadcrumb-holder {
     margin-top: -2px;
   }
+  .wantedBox {
+    height: 1880px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 }
 small,
 .small {
@@ -1388,10 +1393,20 @@ pre code {
   .breadcrumb-holder {
     margin-top: 10px;
   }
+  .wantedBox {
+    height: 1690px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 }
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
+  }
+  .wantedBox {
+    height: 1760px;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
 }
 .container-fluid {

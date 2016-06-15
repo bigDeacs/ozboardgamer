@@ -114,8 +114,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-3 col-xs-12"> 
-					<div style="height: 1760px;overflow-y: scroll;overflow-x: hidden;">    
+				<div class="col-sm-3 hidden-xs"> 
+					<div class="wantedBox">    
 				      	Games {{ $user->name }} Wants <span class="badge">{{ $countWanted }}</span>
 						@foreach($wanted as $game)
 							<div class="row" itemscope itemtype="http://schema.org/Game">
