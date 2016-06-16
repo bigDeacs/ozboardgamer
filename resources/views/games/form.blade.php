@@ -29,7 +29,7 @@
             <div class="row">
                   <div class="col-xs-12">
                         <label for="link">Purchase Link</label>
-                        <input type="text" name="link" id="link" class="form-control" value="{{ isset($game) ? $game->link : old('link') }}" placeholder="" required>
+                        <input type="text" name="link" id="link" class="form-control" value="{{ isset($game) ? $game->link : old('link') }}" placeholder="">
                   </div>
             </div>
             <div class="row">
