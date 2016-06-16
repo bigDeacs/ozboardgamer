@@ -65,7 +65,7 @@ class SiteController extends Controller {
 		Session::put('email', $user->getEmail());
 		Session::put('thumb', $user->getAvatar());		
 
-		return redirect('/users/'.str_slug($user->getName()).'?page=1&sort');
+		return redirect('/users/'.str_slug($user->getName()).'?page=1&sort=name-asc');
     }
 
     public function addToOwned($id, $game)
