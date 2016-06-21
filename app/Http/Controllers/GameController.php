@@ -170,7 +170,7 @@ class GameController extends Controller
             {
                 if($theme = Theme::create(['name' => $newTheme, 'slug' => str_slug($newTheme, "-"), 'status' => 1]))
                 {
-                    $newThemes[] = $theme->id;
+                    $currentThemes[] = "$theme->id";
                 }
             }
         } else {
@@ -185,7 +185,7 @@ class GameController extends Controller
             {
                 if($mechanic = Mechanic::create(['name' => $newMechanic, 'slug' => str_slug($newMechanic, "-"), 'status' => 1]))
                 {
-                    $currentMechanics[] = $mechanic->id;
+                    $currentMechanics[] = "$mechanic->id";
                 }
             }
         } else {
@@ -200,7 +200,7 @@ class GameController extends Controller
             {
                 if($type = Type::create(['name' => $newType, 'slug' => str_slug($newType, "-"), 'status' => 1]))
                 {
-                    $currentTypes[] = $type->id;
+                    $currentTypes[] = "$type->id";
                 }
             }
         } else {
@@ -215,7 +215,7 @@ class GameController extends Controller
             {
                 if($publisher = Publisher::create(['name' => $newPublisher, 'slug' => str_slug($newPublisher, "-"), 'status' => 1]))
                 {
-                    $currentPublishers[] = $publisher->id;
+                    $currentPublishers[] = "$publisher->id";
                 }
             }
         } else {
@@ -230,7 +230,7 @@ class GameController extends Controller
             {
                 if($designer = Designer::create(['name' => $newDesigner, 'slug' => str_slug($newDesigner, "-"), 'status' => 1]))
                 {
-                    $currentDesigners[] = $designer->id;
+                    $currentDesigners[] = "$designer->id";
                 }
             }
         } else {
@@ -304,13 +304,14 @@ class GameController extends Controller
         }
 
         if(is_array($request->input('theme_list'))) {
+            $request->input('theme_list');
             $currentThemes = array_filter($request->input('theme_list'), 'is_numeric');
-            $newThemes = array_diff($request->input('theme_list'), $currentThemes);   
+            $newThemes = array_diff($request->input('theme_list'), $currentThemes);
             foreach($newThemes as $newTheme)
             {
                 if($theme = Theme::create(['name' => $newTheme, 'slug' => str_slug($newTheme, "-"), 'status' => 1]))
                 {
-                    $currentThemes[] = $theme->id;
+                    $currentThemes[] = "$theme->id";
                 }
             }
         } else {
@@ -325,7 +326,7 @@ class GameController extends Controller
             {
                 if($mechanic = Mechanic::create(['name' => $newMechanic, 'slug' => str_slug($newMechanic, "-"), 'status' => 1]))
                 {
-                    $currentMechanics[] = $mechanic->id;
+                    $currentMechanics[] = "$mechanic->id";
                 }
             }
         } else {
@@ -340,7 +341,7 @@ class GameController extends Controller
             {
                 if($type = Type::create(['name' => $newType, 'slug' => str_slug($newType, "-"), 'status' => 1]))
                 {
-                    $currentTypes[] = $type->id;
+                    $currentTypes[] = "$type->id";
                 }
             }
         } else {
@@ -355,7 +356,7 @@ class GameController extends Controller
             {
                 if($publisher = Publisher::create(['name' => $newPublisher, 'slug' => str_slug($newPublisher, "-"), 'status' => 1]))
                 {
-                    $currentPublishers[] = $publisher->id;
+                    $currentPublishers[] = "$publisher->id";
                 }
             }
         } else {
@@ -370,7 +371,7 @@ class GameController extends Controller
             {
                 if($designer = Designer::create(['name' => $newDesigner, 'slug' => str_slug($newDesigner, "-"), 'status' => 1]))
                 {
-                    $currentDesigners[] = $designer->id;
+                    $currentDesigners[] = "$designer->id";
                 }
             }
         } else {
