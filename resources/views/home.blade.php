@@ -35,7 +35,16 @@
 			                </div>
 						</div>
 						<div class="col-xs-12 col-sm-4">
-							<h3 class="text-right"><span class="badge">{{ Carbon\Carbon::createFromTimestamp(strtotime($latestpost->published_at))->diff(Carbon\Carbon::now())->days }}</span> Days Since Last Post</h3><br />
+							<h3 class="text-right">
+								@if(Carbon\Carbon::createFromTimestamp(strtotime($latestpost->published_at))->diff(Carbon\Carbon::now())->days > 7)
+									<span class="badge label-danger">
+								@elseif(Carbon\Carbon::createFromTimestamp(strtotime($latestpost->published_at))->diff(Carbon\Carbon::now())->days >= 4)
+									<span class="badge label-warning">
+								@else
+									<span class="badge label-success">
+								@endif
+									{{ Carbon\Carbon::createFromTimestamp(strtotime($latestpost->published_at))->diff(Carbon\Carbon::now())->days }}
+								</span> Days Since Last Post</h3><br />
 							<a href="/admin/posts/create" class="pull-right btn btn-primary">Create Post <i class="fa fa-plus-square"></i></a>
 						</div>
 					</div>
