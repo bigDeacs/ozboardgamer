@@ -92,9 +92,15 @@
 					    @if(Session::has('name'))	        
 					    	<div class="col-xs-4">
 						        @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-						        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-sm hidden-xs"> to Games</span></a>
+						        	<div class="btn-group" role="group">
+									  <a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-check" aria-hidden="true"></i></a>
+									  <a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;">Add To <br />Owned Games</span></a>
+									</div>
 						        @else
-							        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-times" aria-hidden="true"></i> Remove<span class="hidden-sm hidden-xs"> from Games</span></a>	    
+							        <div class="btn-group" role="group">
+									  <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-times" aria-hidden="true"></i></a>	    
+									  <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;">Remove From <br />Owned Games</span></a>	    
+									</div>							        
 						    	@endif
 						    </div>
 							<div class="col-xs-4">
