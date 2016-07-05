@@ -90,18 +90,19 @@
 				    </div>
 			      </div>
 			    </div>
+			    <br />
 			    <div class="row">
 				    @if(Session::has('name'))
 				    	<div class="col-xs-4">
 					        @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())						        
-					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-sm hidden-xs"> to My Games</span></a>
+					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-xs"> to My Games</span></a>
 					        @else
-						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-times" aria-hidden="true"></i> Remove<span class="hidden-sm hidden-xs"> from My Games</span></a>	    
+						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-times" aria-hidden="true"></i> Remove<span class="hidden-xs"> from My Games</span></a>	    
 					    	@endif
 					    </div>
 						<div class="col-xs-4">
 					    	@if($game->users()->wherePivot('type', 'wanted')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-eye" aria-hidden="true"></i> Add<span class="hidden-sm hidden-xs"> to Watchlist</span></a>
+					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-eye" aria-hidden="true"></i> Add<span class="hidden-xs"> to Watchlist</span></a>
 					        @else
 						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-eye-slash" aria-hidden="true"></i> Remove<span class="hidden-sm hidden-xs"> from Watchlist</span></a>	    
 					    	@endif
@@ -109,7 +110,7 @@
 				    @endif
 				    @unless($game->link == null)
 				    	<div class="col-xs-4">
-				    		<a href="{!! $game->link !!}" target="_blank" class="btn btn-primary" style="font-size:13px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order<span class="hidden-sm hidden-xs"> Online</span></a>	    
+				    		<a href="{!! $game->link !!}" target="_blank" class="btn btn-primary" style="font-size:13px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order<span class="hidden-xs"> Online</span></a>	    
 				    	</div>
 				    @endunless
 				</div>
