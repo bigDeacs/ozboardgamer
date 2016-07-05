@@ -5,7 +5,8 @@
 @endsection
 
 @section('head')
-	
+<meta property="og:title"              content="Check out this Collection!" />
+<meta property="og:description"        content="{{ $user->name }} Owns {{ $countOwned }}" />
 @endsection
 
 @section('content')
