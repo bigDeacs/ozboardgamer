@@ -5,17 +5,17 @@
 @endsection
 
 @section('head')
-<meta property="og:title"              content="Check out this Collection!" />
-<meta property="og:description"        content="{{ $user->name }} Owns {{ $countOwned }}" />
-@endsection
-
-@section('content')
 	<?php 
 		$countOwned = 0; 
 		foreach($total as $game) { if($game->users()->first()->pivot->type == 'owned') { $countOwned++; } }
 		$countWanted = 0; 
 		foreach($total as $game) { if($game->users()->first()->pivot->type == 'wanted') { $countWanted++; } }
 	?>
+	<meta property="og:title"              content="Check out this Collection!" />
+	<meta property="og:description"        content="{{ $user->name }} Owns {{ $countOwned }}" />
+@endsection
+
+@section('content')	
 	<div class="breadcrumb-holder">
 		<div class="container">	
 			<ol class="breadcrumb breadcrumb-arrow">
