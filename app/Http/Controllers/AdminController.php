@@ -1,4 +1,9 @@
-<?php namespace App\Http\Controllers;
+<?php 
+
+namespace App\Http\Controllers;
+
+use App\Post;
+use App\Game;
 
 class AdminController extends Controller {
 
@@ -25,7 +30,9 @@ class AdminController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home');
+		$latestpost = Post::orderBy('published_at', 'desc')->where('published_at', '<', date('Y-m-d'))->first();
+		$toptengames = Game::orderBy('rating', 'desc')->take(10)->get();
+        return view('home', compact('latestpost', 'toptengames'));
 	}
 
 }

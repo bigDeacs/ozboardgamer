@@ -12,7 +12,8 @@
     <link href="{{ asset('/css/select2.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('/css/star-rating.min.css') }}" media="all" rel="stylesheet" type="text/css" />
     <link href="{{ asset('/css/datepicker.css') }}" rel="stylesheet">
-
+	
+	@yield('head')
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 
