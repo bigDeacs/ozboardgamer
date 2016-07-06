@@ -30,6 +30,7 @@
 						    	<tr>
 						    		<th>Name</th>
 						    		<th>Category</th>
+						    		<th>Published</th>
 						    		<th></th>
 						    	</tr>
 						    </thead>
@@ -42,6 +43,7 @@
 								@endif
 						    		<td scope="row">{{ $post->name }}</td>
 						    		<td scope="row">{{ $post->category->name }}</td>
+						    		<td scope="row">{{ $post->published_at }}</td>
 						    		<td>
 						    			<a href="/admin/posts/{{ $post->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
 						    			<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
