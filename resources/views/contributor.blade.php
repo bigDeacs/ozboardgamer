@@ -51,7 +51,7 @@
 		                    <div class="row">
 		                        <div class="col-sm-12">
 		                            <h4>
-		                                <strong><a href="/{{ $user->slug }}/{{ $post->slug }}" class="post-title">{!! $post->name !!}</a></strong></h4>
+		                                <strong><a href="/{{ $post->category->first()->slug }}/{{ $post->slug }}" class="post-title">{!! $post->name !!}</a></strong></h4>
 		                        </div>
 		                    </div>
 		                    <div class="row">

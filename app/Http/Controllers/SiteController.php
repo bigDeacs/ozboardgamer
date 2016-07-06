@@ -323,10 +323,19 @@ class SiteController extends Controller {
 		} else {
 			$user = User::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 			if($user->role == 'a') {
+				if(Request::has('sort'))
+				{
+				    $pieces = explode("-", Request::input('sort'));
+				    $sort = $pieces[0];
+				    $direction = $pieces[1];
+				} else {
+					$sort = 'rating';
+					$direction = 'desc';
+				}
 				$posts = Post::where('status', '=', '1')->whereHas('user', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
-				})->paginate(12);
+				})->orderBy($sort, $direction)->paginate(12);
 				return view('contributor', compact('user', 'posts'));
 			} else {
 				if(Request::has('sort'))
