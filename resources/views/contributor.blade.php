@@ -51,18 +51,18 @@
 		                    <div class="row">
 		                        <div class="col-sm-12">
 		                            <h4>
-		                                <strong><a href="/{{ $post->category->first()->slug }}/{{ $post->slug }}" class="post-title">{!! $post->name !!}</a></strong></h4>
+		                                <strong><a href="/{{ $post->category->slug }}/{{ $post->slug }}" class="post-title">{!! $post->name !!}</a></strong></h4>
 		                        </div>
 		                    </div>
 		                    <div class="row">
 		                        <div class="col-sm-12 post-header-line">
 		                            <span class="glyphicon glyphicon-user"></span> {!! $post->user->name !!} | <span class="glyphicon glyphicon-calendar">
-		                            </span>{!! date('F d, Y', strtotime($post->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="/{{ $user->slug }}/{{ $post->slug }}#disqus_thread"></a>
+		                            </span>{!! date('F d, Y', strtotime($post->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="/{{ $post->category->slug }}/{{ $post->slug }}#disqus_thread"></a>
 		                        </div>
 		                    </div>
 		                    <div class="row post-content">
 		                        <div class="col-sm-3 text-center">
-		                            <a href="/{{ $post->category->first()->slug }}/{{ $post->slug }}">
+		                            <a href="/{{ $post->category->slug }}/{{ $post->slug }}">
 		                                <img src="{{ $post->thumb }}" alt="{!! $post->name !!}" class="img-responsive" width="263" height="auto" />
 		                            </a>
 		                        </div>
@@ -71,7 +71,7 @@
 		                                {!! str_limit(strip_tags($post->description), $limit = 100, $end = '...') !!}
 		                            </p>
 		                            <p>
-		                                <a class="btn btn-dark" href="/{{ $post->category->first()->slug }}/{{ $post->slug }}">Read more</a>
+		                                <a class="btn btn-dark" href="/{{ $post->category->slug }}/{{ $post->slug }}">Read more</a>
 		                            </p>
 		                        </div>
 		                    </div>
