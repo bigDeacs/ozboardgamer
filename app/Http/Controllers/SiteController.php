@@ -141,9 +141,12 @@ class SiteController extends Controller {
 
         $ratings = array();
         $users = $game->users()->wherePivot('type', 'rating')->get();
+
         $count = 1;
         foreach($users as $user) {
-            $total = $total + $user->pivot->rating;
+            if($user->pivot->rating !== null) {
+                $total += $user->pivot->rating;
+            }
             $count++;
         }
         
