@@ -126,7 +126,7 @@ class SiteController extends Controller {
     public function updateGameRating($id, $game, $rating)
     {
     	$user = User::where('slug', '=', $id)->with('games')->firstOrFail();
-    	$user->games()->updateExistingPivot($game, ['rating' => $rating]); 
+    	$user->games()->wherePivot('type', 'rating')->updateExistingPivot($game, ['rating' => $rating]); 
     	
     	$this->syncRatings($game);
 
