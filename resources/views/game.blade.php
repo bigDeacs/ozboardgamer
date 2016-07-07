@@ -91,7 +91,7 @@
 			      </div>
 			    </div>
 			    <br />
-			    <div class="row">
+			    <div class="row">			    	
 				    @if(Session::has('name'))
 				    	<div class="col-xs-4">
 					        @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())						        
@@ -114,6 +114,19 @@
 				    	</div>
 				    @endunless
 				</div>
+				<div class="row">
+					@if(Session::has('name'))
+						@for ($i = 1; $i < 11; $i++)				
+							<div class="col-xs-1">
+								@if($game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+									<a href="/users/{{ str_slug(Session::get('name')) }}/addGameRating/{!! $game->id !!}/rating/{{ $i }}"><img src="/img/{{ $i }}.png" class="img-responsive" /></a>
+								@else
+							    	<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}"><img src="/img/{{ $i }}.png" class="img-responsive" /></a>
+							    @endif
+						    </div>
+						@endfor
+				    @endif
+			    </div>
 			    <br />
 			    <div class="row">
 					<!-- Nav tabs -->

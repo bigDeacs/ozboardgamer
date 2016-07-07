@@ -96,6 +96,24 @@ class SiteController extends Controller {
 		return redirect()->back();
     }
 
+    public function addGameRating($id, $game, $rating)
+    {
+    	$user = User::where('slug', '=', $id)->with('games')->firstOrFail();
+
+   		$user->games()->attach($game, ['type' => 'rating', 'rating' => $rating]);
+
+		return redirect()->back();
+    }
+
+    public function updateGameRating($id, $game, $rating)
+    {
+    	$user = User::where('slug', '=', $id)->with('games')->firstOrFail();
+    	
+    	$user->games()->updateExistingPivot($game, ['rating' => $rating]);   
+
+		return redirect()->back();
+    }
+
     
 
 

@@ -75,6 +75,9 @@ Route::get('users/{users}/removeFromOwned/{game}', ['as' => 'users.removeFromOwn
 Route::get('users/{users}/addToWanted/{game}', ['as' => 'users.addToWanted', 'uses' => 'SiteController@addToWanted']);
 Route::get('users/{users}/removeFromWanted/{game}', ['as' => 'users.removeFromWanted', 'uses' => 'SiteController@removeFromWanted']);
 
+Route::get('users/{users}/addGameRating/{game}/rating/{rating}', ['as' => 'users.addGameRating', 'uses' => 'SiteController@addGameRating']);
+Route::get('users/{users}/updateGameRating/{game}/rating/{rating}', ['as' => 'users.updateGameRating', 'uses' => 'SiteController@updateGameRating']);
+
 Route::get('/reviews/{slug?}', 'SiteController@review');
 
 
