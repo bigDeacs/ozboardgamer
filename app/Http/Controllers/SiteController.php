@@ -110,8 +110,8 @@ class SiteController extends Controller {
     {
     	$user = User::where('slug', '=', $id)->with('games')->firstOrFail();
     	$user->games()->updateExistingPivot($game, ['rating' => $rating]); 
-
-    	$this->syncRatings($game);  
+    	
+    	$this->syncRatings($game);
 
 		return redirect()->back();
     }
@@ -130,7 +130,8 @@ class SiteController extends Controller {
             $count++;
         }
         
-        return $result = $total/$count;
+        $game->rating = $total/$count;
+        $game->save();  
     }
 
 
