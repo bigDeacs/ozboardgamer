@@ -147,7 +147,6 @@ class SiteController extends Controller {
             $count++;
         }
         
-        dd($total);
         $game->rating = $total/$count;
         $game->save();  
     }
