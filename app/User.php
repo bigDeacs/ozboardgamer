@@ -38,7 +38,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function games()
     {
-        return $this->belongsToMany('App\Game')->withPivot('type');
+        return $this->belongsToMany('App\Game')->withPivot('type', 'rating');
     }
 
     public function getGameListAttribute()

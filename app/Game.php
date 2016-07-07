@@ -125,7 +125,7 @@ class Game extends Model {
 
     public function users()
     {
-        return $this->belongsToMany('App\User')->withPivot('type');
+        return $this->belongsToMany('App\User')->withPivot('type', 'rating');
     }
 
     public function getUserListAttribute()

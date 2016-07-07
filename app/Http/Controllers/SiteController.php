@@ -99,8 +99,9 @@ class SiteController extends Controller {
     public function addGameRating($id, $game, $rating)
     {
     	$user = User::where('slug', '=', $id)->with('games')->firstOrFail();
-
    		$user->games()->attach($game, ['type' => 'rating', 'rating' => $rating]);
+
+   		$this->syncRatings($game);
 
 		return redirect()->back();
     }
@@ -108,12 +109,52 @@ class SiteController extends Controller {
     public function updateGameRating($id, $game, $rating)
     {
     	$user = User::where('slug', '=', $id)->with('games')->firstOrFail();
-    	
-    	$user->games()->updateExistingPivot($game, ['rating' => $rating]);   
+    	$user->games()->updateExistingPivot($game, ['rating' => $rating]); 
+
+    	$this->syncRatings($game);  
 
 		return redirect()->back();
     }
 
+
+    public function syncRatings($id, $luck, $strategy, $complexity, $replay, $components, $learning, $theming, $scaling)
+    {   
+        $game = Game::where('id', '=', $id)->with('users')->firstOrFail(); 
+        $luck = $this->scale($luck);
+        $strategy = $this->scale($strategy);
+        $complexity = $this->scale($complexity);
+        $total = ($luck + $strategy + $complexity + $replay + $components + $learning + $theming + $scaling)/4;
+
+        $ratings = array();
+        $users = $game->users()->wherePivot('type', 'rating')->get();
+        $count = 1;
+        foreach($users as $user) {
+            $total = $total + $user->pivot->rating;
+            $count++;
+        }
+        
+        return $result = $total/$count;
+    }
+
+    public function scale($number)
+    {   
+        if($number == 0.5 || $number == 5) {
+            return 1;
+        }
+        if($number == 1 || $number == 4.5) {
+            return 2;
+        }
+        if($number == 1.5 || $number == 4) {
+            return 3;
+        }
+        if($number == 2 || $number == 3.5) {
+            return 4;
+        }
+        if($number == 2.5 || $number == 3) {
+            return 5;
+        }
+        return $number;
+    }
     
 
 

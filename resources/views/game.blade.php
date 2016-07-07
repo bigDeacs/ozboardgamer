@@ -119,9 +119,13 @@
 						@for ($i = 1; $i < 11; $i++)				
 							<div class="col-xs-1">
 								@if($game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-									<a href="/users/{{ str_slug(Session::get('name')) }}/addGameRating/{!! $game->id !!}/rating/{{ $i }}"><img src="/img/{{ $i }}.png" class="img-responsive" /></a>
+									<a href="/users/{{ str_slug(Session::get('name')) }}/addGameRating/{!! $game->id !!}/rating/{{ $i }}"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>
 								@else
-							    	<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}"><img src="/img/{{ $i }}.png" class="img-responsive" /></a>
+									@if($game->users()->wherePivot('rating', $i)->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+							    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>
+							    	@else
+							    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}"><img src="/img/{{ $i }}.png" class="img-responsive" /></a>
+							    	@endif
 							    @endif
 						    </div>
 						@endfor

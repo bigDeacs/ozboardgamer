@@ -80,13 +80,23 @@ class GameController extends Controller
         return redirect('/admin/games');
     }
 
-    public function rating($luck, $strategy, $complexity, $replay, $components, $learning, $theming, $scaling)
+    public function rating($id, $luck, $strategy, $complexity, $replay, $components, $learning, $theming, $scaling)
     {   
+        $game = Game::where('id', '=', $id)->with('users')->firstOrFail(); 
         $luck = $this->scale($luck);
         $strategy = $this->scale($strategy);
         $complexity = $this->scale($complexity);
-        $total = $luck + $strategy + $complexity + $replay + $components + $learning + $theming + $scaling;
-        return $result = $total/4;
+        $total = ($luck + $strategy + $complexity + $replay + $components + $learning + $theming + $scaling)/4;
+
+        $ratings = array();
+        $users = $game->users()->wherePivot('type', 'rating')->get();
+        $count = 1;
+        foreach($users as $user) {
+            $total = $total + $user->pivot->rating;
+            $count++;
+        }
+        
+        return $result = $total/$count;
     }
 
     public function scale($number)
@@ -145,7 +155,7 @@ class GameController extends Controller
     public function store(GameRequest $request)
     {
         $game = Game::create($request->all());
-        $game->rating = $this->rating($game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning, $game->theming, $game->scaling);
+        $game->rating = $this->rating($game->id, $game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning, $game->theming, $game->scaling);
         $game->save();
         if($request->hasFile('image'))
         {
@@ -283,7 +293,7 @@ class GameController extends Controller
     {
         $game = Game::where('id', '=', $id)->firstOrFail();
         $game->update($request->all());
-        $game->rating = $this->rating($game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning, $game->theming, $game->scaling);
+        $game->rating = $this->rating($game->id, $game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning, $game->theming, $game->scaling);
         $game->save();
 
         if($request->hasFile('image'))
