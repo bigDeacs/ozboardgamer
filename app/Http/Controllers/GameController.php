@@ -62,7 +62,7 @@ class GameController extends Controller
                     $index->saveObject(array(
                         "objectID" => $row['id'],
                         "name" => $row['name'], 
-                        "published_at" => $row['published_at'], 
+                        "published" => $row['published'], 
                         "slug" => "/games/".$row->types()->firstOrFail()->slug."/".$row['slug'],
                         "thumb" => $row['thumb'],
                         "_mechanics" => $mechanics,

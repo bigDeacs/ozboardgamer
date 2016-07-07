@@ -3,7 +3,7 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
 
       autocomplete('#search-terms', {hint: false}, [
         {
-          source: autocomplete.sources.hits(games, {hitsPerPage: 10}),
+          source: autocomplete.sources.hits(games, {hitsPerPage: 6}),
           displayKey: 'name',
           templates: {
             header: '<div class="category">Games</div>',
@@ -12,7 +12,7 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
               console.log(suggestion);
               return '<a href="'+suggestion.slug+'"><div class="row">'+
                 '<div class="col-xs-3"><img src="'+suggestion.thumb+'" class="img-responsive" /></div>'+
-                '<div class="col-xs-9">'+suggestion._highlightResult.name.value+' ('+suggestion.published_at+')'+'</div>'+              
+                '<div class="col-xs-9">'+suggestion._highlightResult.name.value+' ('+suggestion.published+')'+'</div>'+              
               '</div></a>';              
             }
           }
