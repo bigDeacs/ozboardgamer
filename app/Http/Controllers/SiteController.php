@@ -117,7 +117,7 @@ class SiteController extends Controller {
     }
 
 
-    public function syncRatings($id, $luck, $strategy, $complexity, $replay, $components, $learning, $theming, $scaling)
+    public function syncRatings($id)
     {   
         $game = Game::where('id', '=', $id)->with('users')->firstOrFail(); 
         $total = $game->rating;
