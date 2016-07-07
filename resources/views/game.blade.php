@@ -88,8 +88,13 @@
 						</div>
 				      </div>
 				    </div>
+				    <br />
 				    <div class="row">
 						@if(Session::has('name'))
+							<div class="col-xs-1" style="padding:0;"></div>		
+							<strong>Rate This Game</strong>
+							<div style="clear:both;"></div>
+							<div class="col-xs-1" style="padding:0;"></div>
 							@for ($i = 1; $i < 11; $i++)				
 								<div class="col-xs-1" style="padding:0;">
 									@if($game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
@@ -103,6 +108,16 @@
 								    @endif
 							    </div>
 							@endfor
+						@else						
+							<div class="col-xs-1" style="padding:0;"></div>		
+							<strong>Login To Rate This Game</strong>
+							<div style="clear:both;"></div>
+							<div class="col-xs-1" style="padding:0;"></div>						
+							@for ($i = 1; $i < 11; $i++)				
+								<div class="col-xs-1" style="padding:0;">
+									<img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" />								
+							    </div>
+							@endfor						
 					    @endif
 				    </div>
 			      </div>
