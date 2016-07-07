@@ -89,47 +89,43 @@
 				      </div>
 				    </div>
 				    <div class="row">
-						@unless(Session::has('name'))
+						@if(Session::has('name'))
 							@for ($i = 1; $i < 11; $i++)				
 								<div class="col-xs-1" style="padding:0;">
-									@if($game->users()->wherePivot('type', 'rating')->where('slug', 'margaret-alabdhihdihec-qinberg')->get()->isEmpty())
-										<a href="/users/margaret-alabdhihdihec-qinberg/addGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>										
+									@if($game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+										<a href="/users/{{ str_slug(Session::get('name')) }}/addGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>										
 									@else
-										@if($game->users()->wherePivot('rating', $i)->where('slug', 'margaret-alabdhihdihec-qinberg')->get()->isEmpty())
-								    		<a href="/users/margaret-alabdhihdihec-qinberg/updateGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>
+										@if($game->users()->wherePivot('rating', $i)->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+								    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>
 								    	@else
-								    		<a href="/users/margaret-alabdhihdihec-qinberg/updateGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img src="/img/{{ $i }}.png" class="img-responsive" /></a>
+								    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img src="/img/{{ $i }}.png" class="img-responsive" /></a>
 								    	@endif
 								    @endif
 							    </div>
 							@endfor
-					    @endunless
+					    @endif
 				    </div>
 			      </div>
 			    </div>
 			    <br />
 			    <div class="row">			    	
-				    @if(Session::has('name'))
-				    	<div class="col-xs-4">
+			    	<div class="btn-group btn-group-justified" role="group">
+					    @if(Session::has('name'))
 					        @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())						        
 					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-xs"> to My Games</span></a>
 					        @else
 						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-times" aria-hidden="true"></i> Remove<span class="hidden-xs"> from My Games</span></a>	    
-					    	@endif
-					    </div>
-						<div class="col-xs-4">
+					    	@endif						    
 					    	@if($game->users()->wherePivot('type', 'wanted')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
 					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-eye" aria-hidden="true"></i> Add<span class="hidden-xs"> to Watchlist</span></a>
 					        @else
 						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-eye-slash" aria-hidden="true"></i> Remove<span class="hidden-sm hidden-xs"> from Watchlist</span></a>	    
 					    	@endif
-					    </div>
-				    @endif
-				    @unless($game->link == null)
-				    	<div class="col-xs-4">
+					    @endif
+					    @unless($game->link == null)
 				    		<a href="{!! $game->link !!}" target="_blank" class="btn btn-primary" style="font-size:13px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order<span class="hidden-xs"> Online</span></a>	    
-				    	</div>
-				    @endunless
+					    @endunless
+					</div>
 				</div>				
 			    <br />
 			    <div class="row">
