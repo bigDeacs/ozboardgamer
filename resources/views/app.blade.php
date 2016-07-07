@@ -103,8 +103,10 @@
                         <ul class="list-inline intro-social-buttons">
                             <li id="loginFB">
                                 @if(Session::has('name'))
-                                    <a style="color: #9d9d9d;" href="/users/{{ str_slug(Session::get('name')) }}?page=1&sort=name-asc"><strong>Welcome, {{ Session::get('name') }}</strong></a><br />
-                                    <a style="color: #9d9d9d;" href="/facebook/logout"><small>Logout</small></a>
+                                    <div class="btn-group">
+                                      <a href="/users/{{ str_slug(Session::get('name')) }}?page=1&sort=name-asc" class="btn btn-primary">Welcome, {{ strtok(Session::get('name'), " ") }}</a>
+                                      <a href="/facebook/logout" class="btn btn-danger"><i class="fa fa-sign-out"></i></a>                                    
+                                    </div>                                    
                                 @else
                                     <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
                                 @endif
