@@ -140,7 +140,6 @@ class SiteController extends Controller {
         $total = $game->rating;
 
         $users = $game->users()->wherePivot('type', 'rating')->get();
-        dd($users);
 
         $count = 1;
         foreach($users as $user) {
@@ -148,6 +147,7 @@ class SiteController extends Controller {
             $count++;
         }
         
+        dd($total);
         $game->rating = $total/$count;
         $game->save();  
     }
