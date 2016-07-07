@@ -139,14 +139,12 @@ class SiteController extends Controller {
         $game = Game::where('id', '=', $id)->with('users')->firstOrFail(); 
         $total = $game->rating;
 
-        $ratings = array();
         $users = $game->users()->wherePivot('type', 'rating')->get();
+        dd($users);
 
         $count = 1;
         foreach($users as $user) {
-            if($user->pivot->rating !== null) {
-                $total += $user->pivot->rating;
-            }
+            $total += $user->pivot->rating;
             $count++;
         }
         
