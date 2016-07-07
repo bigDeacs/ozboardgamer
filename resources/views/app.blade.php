@@ -104,8 +104,8 @@
                             <li id="loginFB">
                                 @if(Session::has('name'))
                                     <div class="btn-group">
-                                      <a href="/users/{{ str_slug(Session::get('name')) }}?page=1&sort=name-asc" class="btn btn-primary">Welcome, {{ strtok(Session::get('name'), " ") }}</a>
-                                      <a href="/facebook/logout" class="btn btn-danger"><i class="fa fa-sign-out"></i></a>                                    
+                                      <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1&sort=name-asc" class="btn btn-primary" title="View Profile">Welcome, {{ strtok(Session::get('name'), " ") }}</a>
+                                      <a style="padding: 10px;" href="/facebook/logout" class="btn btn-danger" title="Log Out"><i class="fa fa-sign-out"></i></a>                                    
                                     </div>                                    
                                 @else
                                     <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
