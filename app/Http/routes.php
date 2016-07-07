@@ -21,6 +21,7 @@ Route::get('/games/{type?}/{slug?}', 'SiteController@game');
 
 Route::get('/facebook', 'SiteController@redirectToProvider');
 Route::get('/facebook/callback', 'SiteController@handleProviderCallback');
+Route::get('/facebook/logout', 'SiteController@logoutSocialite');
 
 Route::get('home', 'AdminController@index');
 

@@ -65,8 +65,25 @@ class SiteController extends Controller {
 		Session::put('email', $user->getEmail());
 		Session::put('thumb', $user->getAvatar());		
 
-		return redirect('/users/'.str_slug($user->getName()).'?page=1&sort=name-asc');
+		return redirect()->back();
     }
+
+    /**
+     * Destroy session data.
+     *
+     * @return Response
+     */
+    public function logoutSocialite()
+    {
+        Session::forget('id');
+        Session::forget('name');
+        Session::forget('email');
+        Session::forget('thumb');
+
+		return redirect()->back();
+    }
+
+
 
     public function addToOwned($id, $game)
     {
