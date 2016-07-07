@@ -120,10 +120,7 @@ class SiteController extends Controller {
     public function syncRatings($id, $luck, $strategy, $complexity, $replay, $components, $learning, $theming, $scaling)
     {   
         $game = Game::where('id', '=', $id)->with('users')->firstOrFail(); 
-        $luck = $this->scale($luck);
-        $strategy = $this->scale($strategy);
-        $complexity = $this->scale($complexity);
-        $total = ($luck + $strategy + $complexity + $replay + $components + $learning + $theming + $scaling)/4;
+        $total = $game->rating;
 
         $ratings = array();
         $users = $game->users()->wherePivot('type', 'rating')->get();
@@ -135,27 +132,6 @@ class SiteController extends Controller {
         
         return $result = $total/$count;
     }
-
-    public function scale($number)
-    {   
-        if($number == 0.5 || $number == 5) {
-            return 1;
-        }
-        if($number == 1 || $number == 4.5) {
-            return 2;
-        }
-        if($number == 1.5 || $number == 4) {
-            return 3;
-        }
-        if($number == 2 || $number == 3.5) {
-            return 4;
-        }
-        if($number == 2.5 || $number == 3) {
-            return 5;
-        }
-        return $number;
-    }
-    
 
 
 	/**
