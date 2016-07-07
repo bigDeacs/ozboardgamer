@@ -88,6 +88,23 @@
 						</div>
 				      </div>
 				    </div>
+				    <div class="row">
+						@if(Session::has('name'))
+							@for ($i = 1; $i < 11; $i++)				
+								<div class="col-xs-1" style="padding:0;">
+									@if($game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+										<a href="/users/{{ str_slug(Session::get('name')) }}/addGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="Rate this game a {{ $i }}"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>										
+									@else
+										@if($game->users()->wherePivot('rating', $i)->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+								    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="Rate this game a {{ $i }}"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>
+								    	@else
+								    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="Rate this game a {{ $i }}"><img src="/img/{{ $i }}.png" class="img-responsive" /></a>
+								    	@endif
+								    @endif
+							    </div>
+							@endfor
+					    @endif
+				    </div>
 			      </div>
 			    </div>
 			    <br />
@@ -113,24 +130,7 @@
 				    		<a href="{!! $game->link !!}" target="_blank" class="btn btn-primary" style="font-size:13px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order<span class="hidden-xs"> Online</span></a>	    
 				    	</div>
 				    @endunless
-				</div>
-				<div class="row">
-					@if(Session::has('name'))
-						@for ($i = 1; $i < 11; $i++)				
-							<div class="col-xs-1">
-								@if($game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-									<a href="/users/{{ str_slug(Session::get('name')) }}/addGameRating/{!! $game->id !!}/rating/{{ $i }}"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>
-								@else
-									@if($game->users()->wherePivot('rating', $i)->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-							    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>
-							    	@else
-							    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}"><img src="/img/{{ $i }}.png" class="img-responsive" /></a>
-							    	@endif
-							    @endif
-						    </div>
-						@endfor
-				    @endif
-			    </div>
+				</div>				
 			    <br />
 			    <div class="row">
 					<!-- Nav tabs -->
