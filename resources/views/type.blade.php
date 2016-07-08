@@ -100,7 +100,11 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="text-center">
-							{!! $games->appends(['sort' => $_GET['sort']])->render() !!}
+							@if(isset($_GET['sort']))
+								{!! $games->appends(['sort' => $_GET['sort']])->render() !!}
+							@else
+								{!! $games->render() !!}
+							@endif
 						</div>
 					</div>
 				</div>

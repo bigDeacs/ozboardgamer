@@ -382,7 +382,7 @@ class SiteController extends Controller {
 				    $sort = $pieces[0];
 				    $direction = $pieces[1];
 				} else {
-					$sort = 'rating';
+					$sort = 'published_at';
 					$direction = 'desc';
 				}
 				$posts = Post::where('status', '=', '1')->whereHas('user', function($q) use($slug)

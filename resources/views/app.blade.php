@@ -147,19 +147,19 @@
                                 <a href="/games">Games</a>
                             </li>
                             <li>
-                                <a href="/news?page=1&sort=published_at-desc">News</a>
+                                <a href="/news">News</a>
                             </li>
                             <li>
-                                <a href="/reviews?page=1&sort=published_at-desc">Reviews</a>
+                                <a href="/reviews">Reviews</a>
                             </li>
                             <li>
-                                <a href="/howtos?page=1&sort=published_at-desc">How To's</a>
+                                <a href="/howtos">How To's</a>
                             </li>
                             <li class="hidden-sm">
-                                <a href="/top10s?page=1&sort=published_at-desc">Top 10's</a>
+                                <a href="/top10s">Top 10's</a>
                             </li>
                             <li class="hidden-sm">
-                                <a href="/blogs?page=1&sort=published_at-desc">Blogs</a>
+                                <a href="/blogs">Blogs</a>
                             </li>                           
                         </ul>
                     </div>
@@ -211,23 +211,23 @@
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="/news?page=1&sort=published_at-desc">News</a>
+                            <a href="/news">News</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="/reviews?page=1&sort=published_at-desc">Reviews</a>
+                            <a href="/reviews">Reviews</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="/howtos?page=1&sort=published_at-desc">How To's</a>
+                            <a href="/howtos">How To's</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="/top10s?page=1&sort=published_at-desc">Top 10's</a>
+                            <a href="/top10s">Top 10's</a>
                         </li>
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
-                            <a href="/blogs?page=1&sort=published_at-desc">Blogs</a>
+                            <a href="/blogs">Blogs</a>
                         </li>
                     </ul>
                     <p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. All Rights Reserved</p>

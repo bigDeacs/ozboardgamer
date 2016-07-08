@@ -95,7 +95,11 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="text-center">
-							{!! $posts->appends(['sort' => $_GET['sort']])->render() !!}
+							@if(isset($_GET['sort']))
+								{!! $posts->appends(['sort' => $_GET['sort']])->render() !!}
+							@else
+								{!! $posts->render() !!}
+							@endif
 						</div>
 					</div>
 				</div>

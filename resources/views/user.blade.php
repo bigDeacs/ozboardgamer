@@ -113,7 +113,11 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<div class="text-center">
-								{!! $owned->appends(['sort' => $_GET['sort']])->render() !!}
+								@if(isset($_GET['sort']))
+									{!! $owned->appends(['sort' => $_GET['sort']])->render() !!}
+								@else
+									{!! $owned->render() !!}
+								@endif
 							</div>
 						</div>
 					</div>
