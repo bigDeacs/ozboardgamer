@@ -15,7 +15,7 @@
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
 				<li class="hidden-xs"><a href="/games">Games</a></li>
-				<li><a href="/games/{{ $game->types()->first()->slug }}?page=1&sort=name-asc">{{ str_limit(strip_tags($game->types()->first()->name), $limit = 5, $end = '...') }}</a></li>
+				<li><a href="/games/{{ $game->types()->first()->slug }}">{{ str_limit(strip_tags($game->types()->first()->name), $limit = 5, $end = '...') }}</a></li>
 				<li class="active"><span>{{ str_limit(strip_tags($game->name), $limit = 10, $end = '...') }}</span></li>
 			</ol>
 		</div>
@@ -25,7 +25,7 @@
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
 				<li class="hidden-xs"><a href="/games">Games</a></li>
-				<li><a href="/games/{{ $game->types()->first()->slug }}?page=1&sort=name-asc">{{ $game->types()->first()->name }}</a></li>
+				<li><a href="/games/{{ $game->types()->first()->slug }}">{{ $game->types()->first()->name }}</a></li>
 				<li class="active"><span>{{ $game->name }}</span></li>
 			</ol>
 		</div>

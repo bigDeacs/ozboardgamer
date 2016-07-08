@@ -20,7 +20,7 @@
 		<div class="container">	
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
-				<li><a href="/users">Contributors</a></li>
+				<li><a href="/users">Users</a></li>
 				<li class="active"><span>{{ $user->name }}</span></li>
 			</ol>
 		</div>

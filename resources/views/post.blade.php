@@ -14,7 +14,7 @@
 		<div class="container">	
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
-				<li><a href="/{{ $post->category->slug }}?page=1&sort=published_at-desc">{{ str_limit(strip_tags($post->category->name), $limit = 5, $end = '...') }}</a></li>
+				<li><a href="/{{ $post->category->slug }}">{{ str_limit(strip_tags($post->category->name), $limit = 5, $end = '...') }}</a></li>
 				<li class="active"><span>{{ str_limit(strip_tags($post->name), $limit = 10, $end = '...') }}</span></li>
 			</ol>
 		</div>
@@ -23,7 +23,7 @@
 		<div class="container">	
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
-				<li><a href="/{{ $post->category->slug }}?page=1&sort=published_at-desc">{{ $post->category->name }}</a></li>
+				<li><a href="/{{ $post->category->slug }}">{{ $post->category->name }}</a></li>
 				<li class="active"><span>{{ $post->name }}</span></li>
 			</ol>
 		</div>
