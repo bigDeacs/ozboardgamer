@@ -239,9 +239,9 @@
     <!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
-    <script async src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-    <script async src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
-    <script async src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>    
+    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
+    <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>    
     <script src="/js/scripts.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>            
