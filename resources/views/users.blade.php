@@ -28,10 +28,10 @@
 			    <div class="row">
 			    	@foreach($users as $user)
 						<div class="col-sm-3 col-xs-12">
-					    	<a href="/users/{{ $user->slug }}?page=1&sort=published_at-desc">
+					    	<a href="/users/{{ $user->slug }}?page=1">
 				    			<img src="{{ $user->thumb }}" class="img-responsive" />
 				    		</a>
-					    	<p class="text-center"><strong><a href="/users/{{ $user->slug }}?page=1&sort=published_at-desc">{!! $user->name !!}</a></strong></p>
+					    	<p class="text-center"><strong><a href="/users/{{ $user->slug }}?page=1">{!! $user->name !!}</a></strong></p>
 						</div>
 					@endforeach
 				</div>
