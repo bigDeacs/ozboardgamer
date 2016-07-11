@@ -224,8 +224,7 @@ th {
     orphans: 3;
     widows: 3;
   }
-  h2,
-  h3 {
+  h2,  h3 {
     page-break-after: avoid;
   }
   select {
@@ -6550,3 +6549,7 @@ label,
     display:none;
 }
 
+.jcarousel li {
+  border: none!important;
+  padding: 0 5px!important;
+}
