@@ -37,7 +37,7 @@ return [
 	'facebook' => [
 	    'client_id' => '256969058009917',
 	    'client_secret' => 'cb35765b2e414b7d50d0398dd30679e6',
-	    'redirect' => 'http://ozboardgamer.com/facebook/callback',
+	    'redirect' => 'https://ozboardgamer.com/facebook/callback',
 	],
 
 ];
