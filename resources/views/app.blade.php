@@ -31,11 +31,7 @@
     <meta property="og:image"              content="http://ozboardgamer.com/fblogo.png" />
     @yield('meta')
     @yield('head')
-	<link href="{{ asset('/css/app.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/landing-page.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/modern-business.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('/css/star-rating.min.css') }}" media="all" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/css/select2.min.css') }}" rel="stylesheet" />
+	<link href="{{ asset('/css/style.min.css') }}" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{{ asset('/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
 	<!-- Fonts -->
@@ -242,15 +238,12 @@
     <!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+    <script src="/js/scripts.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/js/ie10-viewport-bug-workaround.js"></script>    
-    <script src="/js/star-rating.min.js" type="text/javascript"></script>
-    <script src="/js/select2.min.js"></script>
+    <script src="/js/ie10-viewport-bug-workaround.js"></script>        
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
-    <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-    <script src="/js/classie.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>    
     <script>
         $(document).ready(function(){
              $(window).scroll(function () {
@@ -272,9 +265,5 @@
         });
     </script>    
     @yield('scripts')
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-    <script type="text/javascript">
-        require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us13.list-manage.com","uuid":"5abff12e1700abedb4f579b46","lid":"7665e21b2b"}) })
-    </script>
   </body>
 </html>
