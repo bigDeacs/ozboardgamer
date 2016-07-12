@@ -160,27 +160,27 @@ class SiteController extends Controller {
 	public function index()
 	{
 		$featured = Post::where('status', '=', '1')->where('image', '!=', '')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->take(5)->get();
-		$reviews = Post::where('status', '=', '1')->whereHas('category', function($q)
+		$reviews = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'reviews');
 		})->orderBy('published_at', 'desc')->take(5)->get();
-		$news = Post::where('status', '=', '1')->whereHas('category', function($q)
+		$news = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'news');
 		})->orderBy('published_at', 'desc')->take(10)->get();
-		$howtos = Post::where('status', '=', '1')->whereHas('category', function($q)
+		$howtos = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'howtos');
 		})->orderBy('published_at', 'desc')->take(5)->get();
-		$top10s = Post::where('status', '=', '1')->whereHas('category', function($q)
+		$top10s = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'top10s');
 		})->orderBy('published_at', 'desc')->take(5)->get();
-		$news = Post::where('status', '=', '1')->whereHas('category', function($q)
+		$news = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'news');
 		})->orderBy('published_at', 'desc')->take(10)->get();
-		$blogs = Post::where('status', '=', '1')->whereHas('category', function($q)
+		$blogs = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'blogs');
 		})->orderBy('published_at', 'desc')->take(10)->get();
@@ -347,7 +347,7 @@ class SiteController extends Controller {
 				$sort = 'published_at';
 				$direction = 'desc';
 			}
-			$posts = Post::where('status', '=', '1')->whereHas('category', function($q)
+			$posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 			{
 			    $q->where('slug', '=', 'reviews');
 			})->orderBy($sort, $direction)->paginate(12);
@@ -385,7 +385,7 @@ class SiteController extends Controller {
 					$sort = 'published_at';
 					$direction = 'desc';
 				}
-				$posts = Post::where('status', '=', '1')->whereHas('user', function($q) use($slug)
+				$posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('user', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
 				})->orderBy($sort, $direction)->paginate(12);
@@ -443,7 +443,7 @@ class SiteController extends Controller {
 				$sort = 'published_at';
 				$direction = 'desc';
 			}
-			$posts = Post::where('status', '=', '1')->whereHas('category', function($q) use($category)
+			$posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q) use($category)
 			{
 			    $q->where('slug', '=', $category);
 			})->orderBy($sort, $direction)->paginate(12);
@@ -467,7 +467,7 @@ class SiteController extends Controller {
 	 */
 	public function category($slug)
 	{
-		$category = Category::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+		$category = Category::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->where('slug', '=', $slug)->firstOrFail();
 		return view('category', compact('category'));
 	}
 
