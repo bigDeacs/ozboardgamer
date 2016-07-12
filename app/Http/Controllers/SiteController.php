@@ -159,7 +159,7 @@ class SiteController extends Controller {
 	 */
 	public function index()
 	{
-		$featured = Post::where('status', '=', '1')->where('image', '!=', '')->orderBy('published_at', 'desc')->take(5)->get();
+		$featured = Post::where('status', '=', '1')->where('image', '!=', '')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->take(5)->get();
 		$reviews = Post::where('status', '=', '1')->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'reviews');
