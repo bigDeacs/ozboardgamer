@@ -68,7 +68,7 @@
         </div>
         @endunless
         <div class="row">        
-            <div class="col-sm-9 col-xs-12"> 
+            <div class="col-md-8 col-sm-7 col-xs-12"> 
                 @unless($reviews->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
@@ -240,7 +240,7 @@
                     </div>
                 @endunless
             </div>
-            <div class="col-sm-3 col-xs-12">
+            <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">
                 @unless($news->isEmpty())
                     <h3>Latest News</h3>
                     @foreach($news as $entry)
