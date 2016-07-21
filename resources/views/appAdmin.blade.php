@@ -104,6 +104,8 @@
  
             tinymce.init({
               selector: ".textarea",
+              
+              cleanup : false,
 
               content_css : '/css/bootstrap.min.css',
               
