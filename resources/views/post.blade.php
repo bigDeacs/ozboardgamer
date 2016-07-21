@@ -56,10 +56,10 @@
 			      		<p>{!! $post->description !!}</p>
 			      	</div>
 			      </div>
-				  @unless($post->games->isEmpty())
+				  @unless($games->isEmpty())
 				  	<div class="col-sm-3 col-xs-12 text-center lead">
 				  		<p><strong>Games mentioned:</strong></p>
-				    	@foreach($post->games as $game)
+				    	@foreach($games as $game)
 							<div class="row">
 								<div class="col-xs-12">
 						    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">

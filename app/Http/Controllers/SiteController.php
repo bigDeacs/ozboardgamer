@@ -357,8 +357,13 @@ class SiteController extends Controller {
 			$post = Post::where('status', '=', '1')->whereHas('category', function($q)
 			{
 			    $q->where('slug', '=', 'reviews');
-			})->where('slug', '=', $slug)->with('games')->firstOrFail();
-			return view('review', compact('post'));
+			})->where('slug', '=', $slug)->firstOrFail();
+
+			$games = Game::where('status', '=', '1')->whereHas('posts', function($q) use($post)
+			{
+				$q->where('name', '=', $post->name);			    	
+			})->orderByRaw("RAND()")->get();
+			return view('review', compact('post', 'games'));
 		}
 
 	}
@@ -453,8 +458,13 @@ class SiteController extends Controller {
 			$post = Post::where('status', '=', '1')->whereHas('category', function($q) use($category)
 			{
 			    $q->where('slug', '=', $category);
-			})->where('slug', '=', $slug)->with('games')->firstOrFail();
-			return view('post', compact('post'));
+			})->where('slug', '=', $slug)->firstOrFail();
+
+			$games = Game::where('status', '=', '1')->whereHas('posts', function($q) use($post)
+			{
+				$q->where('name', '=', $post->name);			    	
+			})->orderByRaw("RAND()")->get();
+			return view('post', compact('post', 'games'));
 		}
 
 	}
