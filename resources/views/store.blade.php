@@ -25,7 +25,6 @@
 				<div class="row">
 			      <div class="col-xs-12">
 			      	<h1>{{ $store->name }}</h1>
-			      	<p>{{ $store->description }}</p>
 			      </div>
 			    </div>
 

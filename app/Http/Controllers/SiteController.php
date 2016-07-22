@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\Store;
 use App\Family;
 use App\Publisher;
 use App\Mechanic;
