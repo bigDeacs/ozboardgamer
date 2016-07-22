@@ -58,6 +58,7 @@ return array(
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreatePostsTable' => $baseDir . '/database/migrations/2016_03_07_083221_create_posts_table.php',
     'CreatePublishersTable' => $baseDir . '/database/migrations/2016_03_07_083308_create_publishers_table.php',
+    'CreateStoresTable' => $baseDir . '/database/migrations/2016_07_22_061629_create_stores_table.php',
     'CreateThemesTable' => $baseDir . '/database/migrations/2016_03_07_083248_create_themes_table.php',
     'CreateTypesTable' => $baseDir . '/database/migrations/2016_03_07_083241_create_types_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',

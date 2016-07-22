@@ -56,6 +56,10 @@ Route::group(['prefix' => 'admin'], function()
 	Route::resource('categories', 'CategoryController');
 	Route::get('categories/{categories}/activate', ['as' => 'categories.activate', 'uses' => 'CategoryController@activate']);
 	Route::get('categories/{categories}/deactivate', ['as' => 'categories.deactivate', 'uses' => 'CategoryController@deactivate']);
+	Route::resource('stores', 'StoreController');
+	Route::get('stores/{stores}/activate', ['as' => 'stores.activate', 'uses' => 'StoreController@activate']);
+	Route::get('stores/{stores}/deactivate', ['as' => 'stores.deactivate', 'uses' => 'StoreController@deactivate']);
+	Route::get('pushStores', 'StoreController@addToAlgolia');
 	Route::resource('users', 'UserController');
 	Route::get('users/{users}/activate', ['as' => 'users.activate', 'uses' => 'UserController@activate']);
 	Route::get('users/{users}/deactivate', ['as' => 'users.deactivate', 'uses' => 'UserController@deactivate']);
@@ -70,6 +74,7 @@ Route::get('/mechanics/{slug?}', 'SiteController@mechanic');
 Route::get('/themes/{slug?}', 'SiteController@theme');
 Route::get('/designers/{slug?}', 'SiteController@designer');
 Route::get('/users/{slug?}', 'SiteController@user');
+Route::get('/stores/{slug?}', 'SiteController@store');
 
 Route::get('users/{users}/addToOwned/{game}', ['as' => 'users.addToOwned', 'uses' => 'SiteController@addToOwned']);
 Route::get('users/{users}/removeFromOwned/{game}', ['as' => 'users.removeFromOwned', 'uses' => 'SiteController@removeFromOwned']);
@@ -78,8 +83,6 @@ Route::get('users/{users}/removeFromWanted/{game}', ['as' => 'users.removeFromWa
 
 Route::get('users/{users}/addGameRating/{game}/rating/{rating}', ['as' => 'users.addGameRating', 'uses' => 'SiteController@addGameRating']);
 Route::get('users/{users}/updateGameRating/{game}/rating/{rating}', ['as' => 'users.updateGameRating', 'uses' => 'SiteController@updateGameRating']);
-
-Route::get('test/ratings', ['as' => 'users.getGameRatings', 'uses' => 'SiteController@getGameRatings']);
 
 Route::get('/reviews/{slug?}', 'SiteController@review');
 

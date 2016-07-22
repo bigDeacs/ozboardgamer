@@ -469,6 +469,22 @@ class SiteController extends Controller {
 
 	}
 
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function store($slug = null)
+	{
+		if($slug == null) {
+			$stores = Store::where('status', '=', '1')->paginate(12);
+			return view('stores', compact('stores'));
+		} else {
+			$store = Store::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();			
+			return view('store', compact('store'));
+		}
+	}
+
 
 	/**
 	 * Show the application welcome screen to the user.
