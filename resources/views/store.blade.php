@@ -43,33 +43,6 @@
 			      		</div>
 			      	</div>
 			      	<div id="map"></div>
-			      	<script>
-						function initMap() {
-						  var map = new google.maps.Map(document.getElementById('map'), {
-						    zoom: 14,
-						    center: {lat: 59.323, lng: 18.010}
-						  });
-
-						  var layer = new google.maps.visualization.DynamicMapsEngineLayer({
-						    layerId: '06673056454046135537-08896501997766553811',
-						    map: map,
-						    suppressInfoWindows: true,
-						    clickable: true
-						  });
-
-						  layer.addListener('mouseover', function(event) {
-						    var style = layer.getFeatureStyle(event.featureId);
-						    style.fillColor = colors[event.featureId - 1];
-						    style.fillOpacity = '0.8';
-						  });
-
-						  layer.addListener('mouseout', function(event) {
-						    layer.getFeatureStyle(event.featureId).resetAll();
-						  });
-						}
-
-						var colors = ['red', 'blue', 'yellow', 'green'];
-				    </script>
 			      </div>
 			    </div>
 
@@ -93,6 +66,15 @@
 @endsection
 
 @section('scripts')
-	{!! $store->scripts !!}	
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC52ck_jrm_AsqBe5CDNXIh7xrW6tmMyMQ&signed_in=true&libraries=visualization&callback=initMap"></script>
+	{!! $store->scripts !!}
+	<script>
+		var map;
+		function initMap() {
+		  map = new google.maps.Map(document.getElementById('map'), {
+		    center: {lat: -34.397, lng: 150.644},
+		    zoom: 8
+		  });
+		}
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC52ck_jrm_AsqBe5CDNXIh7xrW6tmMyMQ&callback=initMap"></script>
 @endsection
