@@ -71,7 +71,7 @@
 		function initMap() {
 		  var map = new google.maps.Map(document.getElementById('map'), {
 		    zoom: 14,
-		    center: {lat: {{ $store->latitude }}, lng: {{ $store->longitude }}}
+		    center: {lat: 59.323, lng: 18.010}
 		  });
 
 		  var layer = new google.maps.visualization.DynamicMapsEngineLayer({
@@ -94,5 +94,5 @@
 
 		var colors = ['red', 'blue', 'yellow', 'green'];
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC52ck_jrm_AsqBe5CDNXIh7xrW6tmMyMQ&signed_in=true&libraries=visualization&callback=initMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC52ck_jrm_AsqBe5CDNXIh7xrW6tmMyMQ&signed_in=true&libraries=visualization&callback=initMap"></script>
 @endsection
