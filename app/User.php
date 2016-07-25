@@ -46,4 +46,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return $this->games->lists('id');
     }
 
+    public function stores()
+    {
+        return $this->belongsToMany('App\Store')->withPivot('type', 'rating');
+    }
+
+    public function getStoreListAttribute()
+    {
+        return $this->stores->lists('id');
+    }
+
 }

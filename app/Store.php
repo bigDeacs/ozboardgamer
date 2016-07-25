@@ -39,4 +39,14 @@ class Store extends Model {
         'link'
 	];
 
+	public function users()
+    {
+        return $this->belongsToMany('App\User')->withPivot('type', 'rating');
+    }
+
+    public function getUserListAttribute()
+    {
+        return $this->users->lists('id');
+    }
+
 }
