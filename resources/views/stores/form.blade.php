@@ -39,7 +39,7 @@
             <label for="state">State</label>
             <select name="state" id="state" class="form-control">
                   <option>Select a State</option>
-                  @if($store)
+                  @if(isset($store))
                         <option {{ ($store->state == 'ACT') ? 'selected' : '' }} value="ACT">ACT</option>
                         <option {{ ($store->state == 'NSW') ? 'selected' : '' }} value="NSW">NSW</option>
                         <option {{ ($store->state == 'NT') ? 'selected' : '' }} value="NT">NT</option>
