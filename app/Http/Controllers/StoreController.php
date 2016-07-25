@@ -36,6 +36,11 @@ class StoreController extends Controller
                         "objectID" => $row['id'],
                         "name" => $row['name'], 
                         "slug" => "/stores/".$row['slug'],
+                        "thumb" => $row['thumb'],
+                        "street" => $row['street'],
+                        "suburb" => $row['suburb'],
+                        "state" => $row['state'],
+                        "postcode" => $row['postcode']
                     ));        
                 } else {
                     // delete the record with objectID="myID1"

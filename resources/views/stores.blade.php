@@ -21,8 +21,16 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-			      <div class="col-xs-12">
+			      <div class="col-sm-9 col-xs-12">
 			      	<h1>Stores</h1>
+			      </div>
+			      <div class="col-sm-3 col-xs-12">
+			      	<form id="search" action="#" method="post">
+                        <div id="label"><label for="search-terms" id="search-label">search</label></div>
+                        <div id="input">
+                            <input type="text" name="search-terms" id="search-terms" placeholder="Enter search terms...">
+                        </div>
+                    </form>
 			      </div>
 			    </div>
 			    <div class="row">
