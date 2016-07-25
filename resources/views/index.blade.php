@@ -289,6 +289,30 @@
                 </script>
             </div>
         </div>
+        @unless($stores->isEmpty())
+            <div class="row">
+                <div class="col-xs-12"> 
+                    <h1>Top Rated Stores</h1>
+                    <div class="jcarousel-wrapper">
+                        <div class="jcarousel">
+                            <ul>
+                                @foreach($stores as $store)
+                                    <li>
+                                        <a href="/stores/{{ $store->slug }}">
+                                            <img src="{{ $store->thumb }}" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
+                                        </a>
+                                        <h5 class="text-center"><a href="/stores/{{ $store->slug }}">{{ $store->name }}</a></h5>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+                    </div>
+                </div>
+            </div>
+        @endunless
         <div class="row"> 
             <div class="col-xs-12">
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

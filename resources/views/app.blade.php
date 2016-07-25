@@ -139,20 +139,29 @@
                             <li>
                                 <a href="/games">Games</a>
                             </li>
-                            <li>
-                                <a href="/news">News</a>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="/games">Games</a></li>
+                                <li><a href="/mechanics">Mechanics</a></li>
+                                <li><a href="/publishers">Publishers</a></li>
+                                <li><a href="/designers">Designers</a></li>
+                                <li><a href="/themes">Themes</a></li>
+                                <li><a href="/families">Families</a></li>
+                              </ul>
+                            </li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="/blogs">Blog</a></li>
+                                <li><a href="/news">News</a></li>
+                                <li><a href="/reviews">Reviews</a></li>
+                                <li><a href="/howtos">How To's</a></li>
+                                <li><a href="/top10s">Top 10's</a></li>
+                              </ul>
                             </li>
                             <li>
-                                <a href="/reviews">Reviews</a>
-                            </li>
-                            <li>
-                                <a href="/howtos">How To's</a>
-                            </li>
-                            <li class="hidden-sm">
-                                <a href="/top10s">Top 10's</a>
-                            </li>
-                            <li class="hidden-sm">
-                                <a href="/blogs">Blogs</a>
+                                <a href="/stores">Stores</a>
                             </li>                           
                         </ul>
                     </div>
