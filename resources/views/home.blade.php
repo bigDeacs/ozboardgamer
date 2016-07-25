@@ -14,7 +14,20 @@
 
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-xs-12 col-sm-8">
+						<div class="col-xs-12 col-sm-4 col-sm-offset-8">
+							<h3 class="text-right">
+								@if(Carbon\Carbon::createFromTimestamp(strtotime($latestpost->published_at))->diff(Carbon\Carbon::now())->days > 7)
+									<span class="badge label-danger">
+								@elseif(Carbon\Carbon::createFromTimestamp(strtotime($latestpost->published_at))->diff(Carbon\Carbon::now())->days >= 4)
+									<span class="badge label-warning">
+								@else
+									<span class="badge label-success">
+								@endif
+									{{ Carbon\Carbon::createFromTimestamp(strtotime($latestpost->published_at))->diff(Carbon\Carbon::now())->days }}
+								</span> Days Since Last Post</h3><br />
+							<a href="/admin/posts/create" class="pull-right btn btn-primary">Create Post <i class="fa fa-plus-square"></i></a>
+						</div>
+						<div class="col-xs-12">
 							<h3>Top 10 Games</h3><br />
 						    <div class="jcarousel-wrapper">
 			                    <div class="jcarousel">
@@ -34,19 +47,26 @@
 			                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
 			                </div>
 						</div>
-						<div class="col-xs-12 col-sm-4">
-							<h3 class="text-right">
-								@if(Carbon\Carbon::createFromTimestamp(strtotime($latestpost->published_at))->diff(Carbon\Carbon::now())->days > 7)
-									<span class="badge label-danger">
-								@elseif(Carbon\Carbon::createFromTimestamp(strtotime($latestpost->published_at))->diff(Carbon\Carbon::now())->days >= 4)
-									<span class="badge label-warning">
-								@else
-									<span class="badge label-success">
-								@endif
-									{{ Carbon\Carbon::createFromTimestamp(strtotime($latestpost->published_at))->diff(Carbon\Carbon::now())->days }}
-								</span> Days Since Last Post</h3><br />
-							<a href="/admin/posts/create" class="pull-right btn btn-primary">Create Post <i class="fa fa-plus-square"></i></a>
-						</div>
+						<div class="col-xs-12">
+							<h3>Top 10 Stores</h3><br />
+						    <div class="jcarousel-wrapper">
+			                    <div class="jcarousel">
+			                        <ul>
+			                            @foreach($toptenstores as $store)
+			                                <li>
+			                                    <a href="/stores/{{ $store->slug }}">
+			                                        <img src="{{ $store->thumb }}" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
+			                                    </a>
+			                                    <h5 class="text-center"><a href="/stores/{{ $store->slug }}">{{ $store->name }}</a></h5>
+			                                </li>
+			                            @endforeach
+			                        </ul>
+			                    </div>
+
+			                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+			                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+			                </div>
+						</div>						
 					</div>
 					<div class="row">
 						<header>
