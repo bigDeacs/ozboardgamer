@@ -42,7 +42,7 @@
 				      	</div>
 				    </div>
 			      	<div class="row">
-			      		<div class="col-sm-4 col-xs-12">
+			      		<div class="col-md-5 col-sm-4 col-xs-12">
 			      			<h3>Store Info</h3>
 			      			<p>{{ $store->street }}</p>
 			      			<p>{{ $store->suburb }}, {{ $store->state }} {{ $store->postcode }}</p>
@@ -50,11 +50,11 @@
 			      			<p><a href="mailto:{{ $store->email }}">{{ $store->email }}</a></p>
 			      			<p><a href="{{ $store->link }}" target="_blank">Go To Site</a></p>
 			      		</div>
-			      		<div class="col-sm-4 col-xs-12">
+			      		<div class="col-md-4 col-sm-4 col-xs-12">
 			      			<h3>Trading Hours</h3>
 			      			<p>{!! $store->hours !!}</p>
 			      		</div>
-			      		<div class="col-sm-4 col-xs-12">
+			      		<div class="col-md-3 col-sm-4 col-xs-12">
 				      		@if($store->rating < 1)
 								<img src="/img/1.png" class="img-responsive" />
 							@elseif($store->rating < 2)
@@ -78,8 +78,12 @@
 							@endif
 							<div class="text-center lead">
 								<strong>{{ number_format((float)$store->rating, 1, '.', '') }}/10</strong>
-							</div>
-							<div class="row">
+							</div>							
+						</div>
+			      	</div>
+			      	<div class="row">
+			      		<div class="col-sm-8">
+			      			<div class="row">
 								@if(Session::has('name'))
 									<div class="col-xs-1" style="padding:0;"></div>		
 									<strong>Rate This Store</strong>
@@ -109,9 +113,9 @@
 									    </div>
 									@endfor						
 							    @endif
-						    </div>
+							</div>
 						</div>
-			      	</div>
+				    </div>
 			      	<div class="row"> 
 		            	<div class="col-xs-12">
 			      			<div id="map"></div>
