@@ -119,7 +119,7 @@ class SiteController extends Controller {
     	$user = User::where('slug', '=', $id)->with('games')->firstOrFail();
    		$user->games()->attach($game, ['type' => 'rating', 'rating' => $rating]);
 
-   		$this->syncRatings($game);
+   		$this->syncGameRatings($game);
 
 		return redirect()->back();
     }
@@ -129,13 +129,13 @@ class SiteController extends Controller {
     	$user = User::where('slug', '=', $id)->with('games')->firstOrFail();
     	$user->games()->wherePivot('type', 'rating')->updateExistingPivot($game, ['rating' => $rating]); 
     	
-    	$this->syncRatings($game);
+    	$this->syncGameRatings($game);
 
 		return redirect()->back();
     }
 
 
-    public function syncRatings($id)
+    public function syncGameRatings($id)
     {   
         $game = Game::where('id', '=', $id)->with('users')->firstOrFail(); 
         $total = $game->rating;
@@ -150,6 +150,44 @@ class SiteController extends Controller {
         
         $game->rating = $total/$count;
         $game->save();  
+    }
+
+    public function addStoreRating($id, $store, $rating)
+    {
+    	$user = User::where('slug', '=', $id)->with('stores')->firstOrFail();
+   		$user->stores()->attach($store, ['type' => 'rating', 'rating' => $rating]);
+
+   		$this->syncStoreRatings($store);
+
+		return redirect()->back();
+    }
+
+    public function updateStoreRating($id, $store, $rating)
+    {
+    	$user = User::where('slug', '=', $id)->with('stores')->firstOrFail();
+    	$user->stores()->wherePivot('type', 'rating')->updateExistingPivot($store, ['rating' => $rating]); 
+    	
+    	$this->syncStoreRatings($store);
+
+		return redirect()->back();
+    }
+
+
+    public function syncStoreRatings($id)
+    {   
+        $store = Store::where('id', '=', $id)->with('users')->firstOrFail(); 
+        $total = $store->rating;
+
+        $users = $store->users()->wherePivot('type', 'rating')->get();
+
+        $count = 1;
+        foreach($users as $user) {
+            $total += $user->pivot->rating;
+            $count++;
+        }
+        
+        $store->rating = $total/$count;
+        $store->save();  
     }
 
 

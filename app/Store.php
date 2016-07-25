@@ -26,6 +26,7 @@ class Store extends Model {
 		'state', 
 		'postcode', 
 		'country', 
+		'rating',
 		'latitude', 
 		'longitude', 
 		'phone', 

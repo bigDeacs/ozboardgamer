@@ -30,7 +30,17 @@
 			<div class="col-sm-12">
 				<div class="row">
 			      <div class="col-xs-12">
-			      	<h1>{{ $store->name }}</h1>
+			      	<div class="row">
+			      		<div class="col-sm-9 col-xs-12">
+				      		<h1>{{ $store->name }}</h1>
+				      	</div>
+				      	<div class="col-sm-3 col-xs-12">
+				      		<span>Search for store: </span>
+					      	<form id="search" action="#" method="post" style="width: 100%;">
+		                        <input type="text" name="search-stores" id="search-stores" class="form-control" placeholder="Enter search terms...">
+		                    </form>
+				      	</div>
+				    </div>
 			      	<div class="row">
 			      		<div class="col-sm-6 col-xs-12">
 			      			<h3>Store Info</h3>
@@ -45,6 +55,37 @@
 			      			<p>{!! $store->hours !!}</p>
 			      		</div>
 			      	</div>
+			      	<div class="row">
+						@if(Session::has('name'))
+							<div class="col-xs-1" style="padding:0;"></div>		
+							<strong>Rate This Store</strong>
+							<div style="clear:both;"></div>
+							<div class="col-xs-1" style="padding:0;"></div>
+							@for ($i = 1; $i < 11; $i++)				
+								<div class="col-xs-1" style="padding:0;">
+									@if($store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+										<a href="/users/{{ str_slug(Session::get('name')) }}/addStoreRating/{!! $store->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>										
+									@else
+										@if($store->users()->wherePivot('rating', $i)->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+								    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateStoreRating/{!! $store->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>
+								    	@else
+								    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateStoreRating/{!! $store->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img src="/img/{{ $i }}.png" class="img-responsive" /></a>
+								    	@endif
+								    @endif
+							    </div>
+							@endfor
+						@else						
+							<div class="col-xs-1" style="padding:0;"></div>		
+							<strong>Login To Rate This Store</strong>
+							<div style="clear:both;"></div>
+							<div class="col-xs-1" style="padding:0;"></div>						
+							@for ($i = 1; $i < 11; $i++)				
+								<div class="col-xs-1" style="padding:0;">
+									<img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" />								
+							    </div>
+							@endfor						
+					    @endif
+				    </div>
 			      	<div class="row"> 
 		            	<div class="col-xs-12">
 			      			<div id="map"></div>
