@@ -39,14 +39,25 @@
             <label for="state">State</label>
             <select name="state" id="state" class="form-control">
                   <option>Select a State</option>
-                  <option {{ ($store->state == 'ACT') ? 'selected' : '' }} value="ACT">ACT</option>
-                  <option {{ ($store->state == 'NSW') ? 'selected' : '' }} value="NSW">NSW</option>
-                  <option {{ ($store->state == 'NT') ? 'selected' : '' }} value="NT">NT</option>
-                  <option {{ ($store->state == 'QLD') ? 'selected' : '' }} value="QLD">QLD</option>
-                  <option {{ ($store->state == 'SA') ? 'selected' : '' }} value="SA">SA</option>
-                  <option {{ ($store->state == 'TAS') ? 'selected' : '' }} value="TAS">TAS</option>
-                  <option {{ ($store->state == 'VIC') ? 'selected' : '' }} value="VIC">VIC</option>
-                  <option {{ ($store->state == 'WA') ? 'selected' : '' }} value="WA">WA</option>
+                  @if($store)
+                        <option {{ ($store->state == 'ACT') ? 'selected' : '' }} value="ACT">ACT</option>
+                        <option {{ ($store->state == 'NSW') ? 'selected' : '' }} value="NSW">NSW</option>
+                        <option {{ ($store->state == 'NT') ? 'selected' : '' }} value="NT">NT</option>
+                        <option {{ ($store->state == 'QLD') ? 'selected' : '' }} value="QLD">QLD</option>
+                        <option {{ ($store->state == 'SA') ? 'selected' : '' }} value="SA">SA</option>
+                        <option {{ ($store->state == 'TAS') ? 'selected' : '' }} value="TAS">TAS</option>
+                        <option {{ ($store->state == 'VIC') ? 'selected' : '' }} value="VIC">VIC</option>
+                        <option {{ ($store->state == 'WA') ? 'selected' : '' }} value="WA">WA</option>
+                  @else
+                        <option value="ACT">ACT</option>
+                        <option value="NSW">NSW</option>
+                        <option value="NT">NT</option>
+                        <option value="QLD">QLD</option>
+                        <option value="SA">SA</option>
+                        <option value="TAS">TAS</option>
+                        <option value="VIC">VIC</option>
+                        <option value="WA">WA</option>
+                  @endif
             </select>
       </div>
       <div class="col-sm-6 col-xs-12">
