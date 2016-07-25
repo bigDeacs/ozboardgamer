@@ -77,6 +77,25 @@ class StoreController extends Controller
     public function store(StoreRequest $request)
     {
         $store = Store::create($request->all());
+        $store->thumb = '-thumb-' . $store->image;
+        $store->save();
+
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            if ($file->isValid())
+            {
+                $img = Image::make($file);
+                $img->fit(400, 400);
+                $img->interlace();
+                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+
+                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $store->image = ('http://ozboardgamer.com/uploads/' . $filename);
+                $store->thumb = ('http://ozboardgamer.com/uploads/' . $thumbname);
+                $store->save();
+            }
+        }
 
         return redirect('/admin/stores');
     }
@@ -117,6 +136,23 @@ class StoreController extends Controller
         $store = Store::where('id', '=', $id)->firstOrFail();
         $store->update($request->all());
         $store->save();
+
+        if($request->hasFile('image'))
+        {
+            $file = $request->file('image');
+            if ($file->isValid())
+            {
+                $img = Image::make($file);
+                $img->fit(400, 400);
+                $img->interlace();
+                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+
+                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $store->image = ('http://ozboardgamer.com/uploads/' . $filename);
+                $store->thumb = ('http://ozboardgamer.com/uploads/' . $thumbname);
+                $store->save();
+            }
+        }
 
         return redirect('/admin/stores');
     }

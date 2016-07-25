@@ -9,8 +9,8 @@
 	{!! $store->head !!}
 	<style>
       #map {
-        min-height: 400px;
-        height: 100%;
+        height: 400px;
+        width: 100%;
       }
     </style>
 @endsection
@@ -46,6 +46,7 @@
 			      	<div class="row"> 
 		            	<div class="col-xs-12">
 			      			<div id="map"></div>
+			      			<br />
 			      		</div>
 			      	</div>
 			      </div>
@@ -74,9 +75,16 @@
 	<script>
 		var map;
 	    function initMap() {
+	    	var myLatLng = { lat: {{ $store->latitude }}, lng: {{ $store->longitude }} };
 	    	map = new google.maps.Map(document.getElementById('map'), {
-	          center: {lat: {{ $store->latitude }}, lng: {{ $store->longitude }}},
-	          zoom: 8
+	          center: myLatLng,
+	          zoom: 20
+	        });
+
+	        var marker = new google.maps.Marker({
+	          position: myLatLng,
+	          map: map,
+	          title: '{{ $store->name }}'
 	        });
 	    }
     </script>  

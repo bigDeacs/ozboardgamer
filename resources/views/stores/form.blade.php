@@ -37,7 +37,17 @@
 <div class="form-group row">
       <div class="col-sm-6 col-xs-12">
             <label for="state">State</label>
-            <input type="text" name="state" id="state" class="form-control" value="{{ isset($store) ? $store->state : old('state') }}" placeholder="" required>
+            <select name="state" id="state" class="form-control">
+                  <option>Select a State</option>
+                  <option {{ ($store->state == 'ACT') ? 'selected' : '' }} value="ACT">ACT</option>
+                  <option {{ ($store->state == 'NSW') ? 'selected' : '' }} value="NSW">NSW</option>
+                  <option {{ ($store->state == 'NT') ? 'selected' : '' }} value="NT">NT</option>
+                  <option {{ ($store->state == 'QLD') ? 'selected' : '' }} value="QLD">QLD</option>
+                  <option {{ ($store->state == 'SA') ? 'selected' : '' }} value="SA">SA</option>
+                  <option {{ ($store->state == 'TAS') ? 'selected' : '' }} value="TAS">TAS</option>
+                  <option {{ ($store->state == 'VIC') ? 'selected' : '' }} value="VIC">VIC</option>
+                  <option {{ ($store->state == 'WA') ? 'selected' : '' }} value="WA">WA</option>
+            </select>
       </div>
       <div class="col-sm-6 col-xs-12">
             <label for="postcode">Post Code</label>
@@ -57,9 +67,20 @@
 </div>
 
 <div class="form-group row">
-      <div class="col-xs-12">
+      <div class="col-sm-9 col-xs-12">
             <label for="hours">Hours of Operation</label>
             {!! Form::textarea('hours', null, ['class' => 'form-control textarea', 'id' => 'hours']) !!}
+      </div>
+      <div class="col-sm-3 col-xs-12">
+            <label for="image">Image</label>
+            @if(isset($store))
+                  <img src="{!! $store->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
+            @else
+                  <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
+            @endif
+            Browse:
+            <input type="file" name="image" accept="image/*" onchange="loadImage(event)">
+            <small>851px X 315px</small>
       </div>
 </div>
 
@@ -85,3 +106,12 @@
             {!! Form::textarea('scripts', null, ['class' => 'form-control', 'id' => 'scripts']) !!}
       </div>
 </div>
+
+@section('scripts')
+      <script>
+        var loadImage = function(event) {
+          var imageUpload = document.getElementById('imageUpload');
+          imageUpload.src = URL.createObjectURL(event.target.files[0]);
+        };
+      </script>
+@endsection

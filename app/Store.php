@@ -18,6 +18,8 @@ class Store extends Model {
 	 */
 	protected $fillable = [
 		'name', 
+		'image', 
+		'thumb',
         'slug',
 		'street',
         'suburb',

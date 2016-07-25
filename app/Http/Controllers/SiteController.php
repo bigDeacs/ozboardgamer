@@ -377,7 +377,7 @@ class SiteController extends Controller {
 	public function user($slug = null)
 	{
 		if($slug == null) {
-			$users = User::where('status', '=', '1')->has('posts')->with('posts')->paginate(12);
+			$users = User::where('status', '=', '1')->orderBy('name', 'asc')->has('posts')->with('posts')->paginate(12);
 			return view('users', compact('users'));
 		} else {
 			$user = User::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
@@ -478,7 +478,7 @@ class SiteController extends Controller {
 	public function store($slug = null)
 	{
 		if($slug == null) {
-			$stores = Store::where('status', '=', '1')->paginate(12);
+			$stores = Store::where('status', '=', '1')->orderBy('name', 'asc')->paginate(12);
 			return view('stores', compact('stores'));
 		} else {
 			$store = Store::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();			
