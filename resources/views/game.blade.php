@@ -3,9 +3,6 @@
 @section('meta')
     <title>{{ $game->name }}</title>
     {!! $game->meta !!}
-    <meta property="og:title"              content="{{ $game->name }}" />
-    <meta property="og:description"        content="{!! $game->description !!}" />
-    <meta property="og:image"              content="{{ $game->thumb }}" />
 @endsection
 
 @section('head')

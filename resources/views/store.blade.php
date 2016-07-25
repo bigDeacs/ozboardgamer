@@ -42,7 +42,7 @@
 				      	</div>
 				    </div>
 			      	<div class="row">
-			      		<div class="col-sm-6 col-xs-12">
+			      		<div class="col-sm-4 col-xs-12">
 			      			<h3>Store Info</h3>
 			      			<p>{{ $store->street }}</p>
 			      			<p>{{ $store->suburb }}, {{ $store->state }} {{ $store->postcode }}</p>
@@ -50,42 +50,68 @@
 			      			<p><a href="mailto:{{ $store->email }}">{{ $store->email }}</a></p>
 			      			<p><a href="{{ $store->link }}" target="_blank">Go To Site</a></p>
 			      		</div>
-			      		<div class="col-sm-6 col-xs-12">
+			      		<div class="col-sm-4 col-xs-12">
 			      			<h3>Trading Hours</h3>
 			      			<p>{!! $store->hours !!}</p>
 			      		</div>
+			      		<div class="col-sm-4 col-xs-12">
+				      		@if($store->rating < 1)
+								<img src="/img/1.png" class="img-responsive" />
+							@elseif($store->rating < 2)
+								<img src="/img/2.png" class="img-responsive" />
+							@elseif($store->rating < 3)
+								<img src="/img/3.png" class="img-responsive" />
+							@elseif($store->rating < 4)
+								<img src="/img/4.png" class="img-responsive" />
+							@elseif($store->rating < 5)
+								<img src="/img/5.png" class="img-responsive" />
+							@elseif($store->rating < 6)
+								<img src="/img/6.png" class="img-responsive" />
+							@elseif($store->rating < 7)
+								<img src="/img/7.png" class="img-responsive" />
+							@elseif($store->rating < 8)
+								<img src="/img/8.png" class="img-responsive" />
+							@elseif($store->rating < 9)
+								<img src="/img/9.png" class="img-responsive" />
+							@else
+								<img src="/img/10.png" class="img-responsive" />
+							@endif
+							<div class="text-center lead">
+								<strong>{{ number_format((float)$store->rating, 1, '.', '') }}/10</strong>
+							</div>
+							<div class="row">
+								@if(Session::has('name'))
+									<div class="col-xs-1" style="padding:0;"></div>		
+									<strong>Rate This Store</strong>
+									<div style="clear:both;"></div>
+									<div class="col-xs-1" style="padding:0;"></div>
+									@for ($i = 1; $i < 11; $i++)				
+										<div class="col-xs-1" style="padding:0;">
+											@if($store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+												<a href="/users/{{ str_slug(Session::get('name')) }}/addStoreRating/{!! $store->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>										
+											@else
+												@if($store->users()->wherePivot('rating', $i)->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+										    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateStoreRating/{!! $store->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>
+										    	@else
+										    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateStoreRating/{!! $store->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img src="/img/{{ $i }}.png" class="img-responsive" /></a>
+										    	@endif
+										    @endif
+									    </div>
+									@endfor
+								@else						
+									<div class="col-xs-1" style="padding:0;"></div>		
+									<strong>Login To Rate This Store</strong>
+									<div style="clear:both;"></div>
+									<div class="col-xs-1" style="padding:0;"></div>						
+									@for ($i = 1; $i < 11; $i++)				
+										<div class="col-xs-1" style="padding:0;">
+											<img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" />								
+									    </div>
+									@endfor						
+							    @endif
+						    </div>
+						</div>
 			      	</div>
-			      	<div class="row">
-						@if(Session::has('name'))
-							<div class="col-xs-1" style="padding:0;"></div>		
-							<strong>Rate This Store</strong>
-							<div style="clear:both;"></div>
-							<div class="col-xs-1" style="padding:0;"></div>
-							@for ($i = 1; $i < 11; $i++)				
-								<div class="col-xs-1" style="padding:0;">
-									@if($store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-										<a href="/users/{{ str_slug(Session::get('name')) }}/addStoreRating/{!! $store->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>										
-									@else
-										@if($store->users()->wherePivot('rating', $i)->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-								    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateStoreRating/{!! $store->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>
-								    	@else
-								    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateStoreRating/{!! $store->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img src="/img/{{ $i }}.png" class="img-responsive" /></a>
-								    	@endif
-								    @endif
-							    </div>
-							@endfor
-						@else						
-							<div class="col-xs-1" style="padding:0;"></div>		
-							<strong>Login To Rate This Store</strong>
-							<div style="clear:both;"></div>
-							<div class="col-xs-1" style="padding:0;"></div>						
-							@for ($i = 1; $i < 11; $i++)				
-								<div class="col-xs-1" style="padding:0;">
-									<img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" />								
-							    </div>
-							@endfor						
-					    @endif
-				    </div>
 			      	<div class="row"> 
 		            	<div class="col-xs-12">
 			      			<div id="map"></div>
