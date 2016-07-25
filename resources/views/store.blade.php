@@ -70,8 +70,6 @@
 @endsection
 
 @section('scripts')
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC52ck_jrm_AsqBe5CDNXIh7xrW6tmMyMQ&callback=initMap"></script>
-	{!! $store->scripts !!}
 	<script>
 		var map;
 	    function initMap() {
@@ -80,5 +78,7 @@
 	          zoom: 8
 	        });
 	    }
-    </script>    
+    </script>  
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC52ck_jrm_AsqBe5CDNXIh7xrW6tmMyMQ&callback=initMap"></script>
+	{!! $store->scripts !!}
 @endsection
