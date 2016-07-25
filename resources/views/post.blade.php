@@ -3,6 +3,9 @@
 @section('meta')
     <title>{{ $post->name }}</title>
     {!! $post->meta !!}
+    <meta property="og:title"              content="{{ $post->name }}" />
+    <meta property="og:description"        content="{!! $post->description !!}" />
+    <meta property="og:image"              content="{{ $post->image }}" />
 @endsection
 
 @section('head')
