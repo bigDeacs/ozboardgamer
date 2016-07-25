@@ -32,28 +32,28 @@ class StoreController extends Controller
                 if ($row['status'] == 1) 
                 {
                     if($row['state'] == 'ACT') {
-                        $state = 'Australian Capital Territory (ACT)';
+                        $state = 'Australian Capital Territory';
                     } 
                     if($row['state'] == 'NSW') {
-                        $state = 'New South Wales (NSW)';
+                        $state = 'New South Wales';
                     } 
                     if($row['state'] == 'NT') {
-                        $state = 'Northern Territory (NT)';
+                        $state = 'Northern Territory';
                     } 
                     if($row['state'] == 'QLD') {
-                        $state = 'Queensland (QLD)';
+                        $state = 'Queensland';
                     } 
                     if($row['state'] == 'SA') {
-                        $state = 'South Australia (SA)';
+                        $state = 'South Australia';
                     } 
                     if($row['state'] == 'TAS') {
-                        $state = 'Tasmania (TAS)';
+                        $state = 'Tasmania';
                     } 
                     if($row['state'] == 'VIC') {
-                        $state = 'Victoria (VIC)';
+                        $state = 'Victoria';
                     } 
                     if($row['state'] == 'WA') {
-                        $state = 'Western Australia (WA)';
+                        $state = 'Western Australia';
                     } 
                     // select the identifier of this row
                     $index->saveObject(array(
@@ -64,6 +64,7 @@ class StoreController extends Controller
                         "street" => $row['street'],
                         "suburb" => $row['suburb'],
                         "state" => $state,
+                        "abr" => $row['state'],
                         "postcode" => $row['postcode']
                     ));        
                 } else {
