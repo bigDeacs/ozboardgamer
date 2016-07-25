@@ -136,6 +136,9 @@
                                     </div>
                                 </form>
                             </li> 
+                            <li>
+                                <a href="/">Home</a>
+                            </li> 
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
                               <ul class="dropdown-menu">
@@ -147,14 +150,16 @@
                                 <li><a href="/families">Families</a></li>
                               </ul>
                             </li>
+                            <li>
+                                <a href="/news">News</a>
+                            </li>  
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                <li><a href="/blogs">Blog</a></li>
-                                <li><a href="/news">News</a></li>
                                 <li><a href="/reviews">Reviews</a></li>
-                                <li><a href="/howtos">How To's</a></li>
                                 <li><a href="/top10s">Top 10's</a></li>
+                                <li><a href="/howtos">How To's</a></li>                                
+                                <li><a href="/blogs">Blog</a></li>
                               </ul>
                             </li>
                             <li>
