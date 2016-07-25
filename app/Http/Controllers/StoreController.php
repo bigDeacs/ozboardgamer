@@ -31,6 +31,30 @@ class StoreController extends Controller
             {
                 if ($row['status'] == 1) 
                 {
+                    if($row['state'] == 'ACT') {
+                        $state = 'Australian Capital Territory (ACT)';
+                    } 
+                    if($row['state'] == 'NSW') {
+                        $state = 'New South Wales (NSW)';
+                    } 
+                    if($row['state'] == 'NT') {
+                        $state = 'Northern Territory (NT)';
+                    } 
+                    if($row['state'] == 'QLD') {
+                        $state = 'Queensland (QLD)';
+                    } 
+                    if($row['state'] == 'SA') {
+                        $state = 'South Australia (SA)';
+                    } 
+                    if($row['state'] == 'TAS') {
+                        $state = 'Tasmania (TAS)';
+                    } 
+                    if($row['state'] == 'VIC') {
+                        $state = 'Victoria (VIC)';
+                    } 
+                    if($row['state'] == 'WA') {
+                        $state = 'Western Australia (WA)';
+                    } 
                     // select the identifier of this row
                     $index->saveObject(array(
                         "objectID" => $row['id'],
@@ -39,7 +63,7 @@ class StoreController extends Controller
                         "thumb" => $row['thumb'],
                         "street" => $row['street'],
                         "suburb" => $row['suburb'],
-                        "state" => $row['state'],
+                        "state" => $state,
                         "postcode" => $row['postcode']
                     ));        
                 } else {
