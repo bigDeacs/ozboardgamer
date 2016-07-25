@@ -9,6 +9,7 @@
 	{!! $store->head !!}
 	<style>
       #map {
+        min-height: 400px;
         height: 100%;
       }
     </style>
@@ -74,7 +75,7 @@
 		var map;
 	    function initMap() {
 	    	map = new google.maps.Map(document.getElementById('map'), {
-	          center: {lat: -34.397, lng: 150.644},
+	          center: {lat: {{ $store->latitude }}, lng: {{ $store->longitude }}},
 	          zoom: 8
 	        });
 	    }
