@@ -136,9 +136,6 @@
                                     </div>
                                 </form>
                             </li> 
-                            <li>
-                                <a href="/games">Games</a>
-                            </li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
                               <ul class="dropdown-menu">
@@ -231,6 +228,10 @@
                         <li>
                             <a href="/blogs">Blogs</a>
                         </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="/stores">Stores</a>
+                        </li>
                     </ul>
                     <p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. All Rights Reserved</p>
                     <br />
@@ -250,8 +251,14 @@
     <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
     <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>    
     <script src="/js/scripts.min.js"></script>
+    <script src="/js/jquery.bootstrap-dropdown-hover.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>            
+    <script>
+        $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
+          // see next for specifications
+        });
+    </script>
     <script>
         $(document).ready(function(){
              $(window).scroll(function () {

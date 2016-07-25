@@ -29,6 +29,8 @@
 						    <thead>
 						    	<tr>
 						    		<th>Name</th>
+						    		<th>Type</th>
+						    		<th>Rating</th>
 						    		<th></th>
 						    	</tr>
 						    </thead>
@@ -40,6 +42,8 @@
 									<tr class="success">
 								@endif
 						    		<td scope="row">{{ $game->name }}</td>
+						    		<td scope="row">{{ $game->types()->first()->name }}</td>
+						    		<td scope="row">{{ number_format((float)$game->rating, 1, '.', '') }}/10</td>
 						    		<td>
 						    			<a href="/admin/games/{{ $game->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
 						    			<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
