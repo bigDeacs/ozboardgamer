@@ -26,8 +26,8 @@
 			      </div>
 			      <div class="col-sm-3 col-xs-12">
 			      	<form id="search" action="#" method="post">
-                        <div id="label"><label for="search-terms" id="search-label">search</label></div>
-                        <input type="text" name="search-terms" id="search-terms" placeholder="Enter search terms...">
+                        <div id="label"><label for="search-stores" id="search-label">search</label></div>
+                        <input type="text" name="search-stores" id="search-stores" placeholder="Enter search terms...">
                     </form>
 			      </div>
 			    </div>
