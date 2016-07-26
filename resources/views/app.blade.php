@@ -256,7 +256,6 @@
     <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
     <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>    
     <script src="/js/scripts.min.js"></script>
-    <script src="/js/jquery.bootstrap-dropdown-hover.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>            
     <script>
@@ -284,12 +283,6 @@
                 $('#back-to-top').tooltip('show');
         });
     </script>    
-    <script>
-    (function(h,e,a,t,m,p) {
-    m=e.createElement(a);m.async=!0;m.src=t;
-    p=e.getElementsByTagName(a)[0];p.parentNode.insertBefore(m,p);
-    })(window,document,'script','https://u.heatmap.it/log.js');
-    </script>
     @yield('scripts')
   </body>
 </html>
