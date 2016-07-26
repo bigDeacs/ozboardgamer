@@ -67,8 +67,8 @@ class PostController extends Controller
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $post->image = ('http://ozboardgamer.com/uploads/' . $filename);
-                $post->thumb = ('http://ozboardgamer.com/uploads/' . $thumbname);
+                $post->image = ('https://ozboardgamer.com/uploads/' . $filename);
+                $post->thumb = ('https://ozboardgamer.com/uploads/' . $thumbname);
                 $post->save();
             }
         }
@@ -141,8 +141,8 @@ class PostController extends Controller
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $post->image = ('http://ozboardgamer.com/uploads/' . $filename);
-                $post->thumb = ('http://ozboardgamer.com/uploads/' . $thumbname);
+                $post->image = ('https://ozboardgamer.com/uploads/' . $filename);
+                $post->thumb = ('https://ozboardgamer.com/uploads/' . $thumbname);
                 $post->save();
             }
         }

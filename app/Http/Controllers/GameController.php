@@ -170,8 +170,8 @@ class GameController extends Controller
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $game->image = ('http://ozboardgamer.com/uploads/' . $filename);
-                $game->thumb = ('http://ozboardgamer.com/uploads/' . $thumbname);
+                $game->image = ('https://ozboardgamer.com/uploads/' . $filename);
+                $game->thumb = ('https://ozboardgamer.com/uploads/' . $thumbname);
                 $game->save();
             }
         }
@@ -309,8 +309,8 @@ class GameController extends Controller
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $game->image = ('http://ozboardgamer.com/uploads/' . $filename);
-                $game->thumb = ('http://ozboardgamer.com/uploads/' . $thumbname);
+                $game->image = ('https://ozboardgamer.com/uploads/' . $filename);
+                $game->thumb = ('https://ozboardgamer.com/uploads/' . $thumbname);
                 $game->save();
             }
         }
