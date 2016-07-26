@@ -56,8 +56,8 @@
 			    <div class="row">
 			      <div class="col-sm-9 col-xs-12">     
 			      	Games {{ $user->name }} Owns <span class="badge">{{ $countOwned }}</span>
-			      	<div class="pull-right">
-			      		<div class="fb-share-button" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse&amp;m2w">Share</a></div>
+			      	<div class="pull-right hidden-xs">
+			      		<div class="fb-share-button" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse">Share</a></div>
 			      	</div>
 			      	@foreach($owned as $game)
 						<div class="row" itemscope itemtype="http://schema.org/Game">
