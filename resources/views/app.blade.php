@@ -86,7 +86,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand topnav" href="/">
-                	<img src="/img/logo.png" class="img-responsive" height="75" width="auto" />
+                	<img src="{{ url('/', $parameters = ['img'], $secure = true) }}/logo.png" class="img-responsive" height="75" width="auto" />
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->

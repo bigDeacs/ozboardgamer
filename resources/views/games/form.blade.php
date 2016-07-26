@@ -79,7 +79,7 @@
       <div class="col-sm-3 col-xs-12">
             <label for="image">Featured Image</label>
             @if(isset($game))
-                  <img src="{!! $game->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
+                  <img src="{{ url('/', $parameters = [], $secure = true) }}{!! $game->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
             @else
                   <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
             @endif

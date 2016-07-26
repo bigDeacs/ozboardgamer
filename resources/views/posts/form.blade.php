@@ -48,7 +48,7 @@
             <br />
             <label for="image">Featured Image</label>
             @if(isset($post))
-                  <img src="{!! $post->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
+                  <img src="{{ url('/', $parameters = [], $secure = true) }}{!! $post->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
             @else
                   <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
             @endif

@@ -30,7 +30,7 @@
 			    	@foreach($mechanics as $mechanic)
 						<div class="col-sm-3 col-xs-12">
 					    	<a href="/mechanics/{{ $mechanic->slug }}">
-				    			<img src="{{ $mechanic->games()->first()->image }}" class="img-responsive" />
+				    			<img src="{{ url('/', $parameters = [], $secure = true) }}{{ $mechanic->games()->first()->image }}" class="img-responsive" />
 				    		</a>
 					    	<p class="text-center"><strong><a href="/mechanics/{{ $mechanic->slug }}">{!! $mechanic->name !!}</a></strong></p>
 						</div>

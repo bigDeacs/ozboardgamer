@@ -85,7 +85,7 @@
       <div class="col-sm-3 col-xs-12">
             <label for="image">Image</label>
             @if(isset($store))
-                  <img src="{!! $store->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
+                  <img src="{{ url('/', $parameters = [], $secure = true) }}{!! $store->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
             @else
                   <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
             @endif

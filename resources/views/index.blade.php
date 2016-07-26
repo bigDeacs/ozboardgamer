@@ -17,13 +17,13 @@
         <div class="carousel-inner">
             @if($featured->isEmpty())
                 <div class="item active">
-                    <div class="fill" style="background-image:url('/img/cover.jpg');"></div>
+                    <div class="fill" style="background-image:url('{{ url('/', $parameters = ['img'], $secure = true) }}/cover.jpg');"></div>
                 </div>
             @else
                 @foreach($featured as $key => $post)
                     <div class="item {{ ($key == 0) ? 'active' : "" }}">
                         <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-                            <div class="fill" style="background-image:url('{{ $post->image }}');"></div>
+                            <div class="fill" style="background-image:url('{{ url('/', $parameters = [], $secure = true) }}{{ $post->image }}');"></div>
                         </a>
                     </div>
                 @endforeach
@@ -53,7 +53,7 @@
                             @foreach($games as $game)
                                 <li itemscope itemtype="http://schema.org/Game">
                                     <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-                                        <img src="{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" width="300" height="auto" itemprop="image" style="margin: auto;" />
+                                        <img src="{{ url('/', $parameters = [], $secure = true) }}{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" width="300" height="auto" itemprop="image" style="margin: auto;" />
                                     </a>
                                     <h5 class="text-center"><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
                                 </li>
@@ -108,7 +108,7 @@
                                         <div class="row post-content">
                                             <div class="col-sm-3 text-center">
                                                 <a href="/reviews/{{ $review->slug }}">
-                                                    <img src="{{ $review->thumb }}" alt="{!! $review->name !!}" class="img-responsive" width="263" height="auto" itemprop="image" />
+                                                    <img src="{{ url('/', $parameters = [], $secure = true) }}{{ $review->thumb }}" alt="{!! $review->name !!}" class="img-responsive" width="263" height="auto" itemprop="image" />
                                                 </a>
                                             </div>
                                             <div class="col-sm-9">
@@ -164,7 +164,7 @@
                                         <div class="row post-content">
                                             <div class="col-sm-3 text-center">
                                                 <a href="/howtos/{{ $howto->slug }}">
-                                                    <img src="{{ $howto->thumb }}" alt="{!! $howto->name !!}" class="img-responsive" width="263" height="auto" />
+                                                    <img src="{{ url('/', $parameters = [], $secure = true) }}{{ $howto->thumb }}" alt="{!! $howto->name !!}" class="img-responsive" width="263" height="auto" />
                                                 </a>
                                             </div>
                                             <div class="col-sm-9">
@@ -220,7 +220,7 @@
                                         <div class="row post-content">
                                             <div class="col-sm-3 text-center">
                                                 <a href="/top10s/{{ $top10->slug }}">
-                                                    <img src="{{ $top10->thumb }}" alt="{!! $top10->name !!}" class="img-responsive" width="263" height="auto" />
+                                                    <img src="{{ url('/', $parameters = [], $secure = true) }}{{ $top10->thumb }}" alt="{!! $top10->name !!}" class="img-responsive" width="263" height="auto" />
                                                 </a>
                                             </div>
                                             <div class="col-sm-9">
@@ -299,7 +299,7 @@
                                 @foreach($stores as $store)
                                     <li>
                                         <a href="/stores/{{ $store->slug }}">
-                                            <img src="{{ $store->thumb }}" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
+                                            <img src="{{ url('/', $parameters = [], $secure = true) }}{{ $store->thumb }}" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
                                         </a>
                                         <h5 class="text-center"><a href="/stores/{{ $store->slug }}">{{ $store->name }}</a></h5>
                                     </li>

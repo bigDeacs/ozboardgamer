@@ -121,8 +121,8 @@ class StoreController extends Controller
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $store->image = ('https://ozboardgamer.com/uploads/' . $filename);
-                $store->thumb = ('https://ozboardgamer.com/uploads/' . $thumbname);
+                $store->image = ('/uploads/' . $filename);
+                $store->thumb = ('/uploads/' . $thumbname);
                 $store->save();
             }
         }
@@ -178,8 +178,8 @@ class StoreController extends Controller
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $store->image = ('https://ozboardgamer.com/uploads/' . $filename);
-                $store->thumb = ('https://ozboardgamer.com/uploads/' . $thumbname);
+                $store->image = ('/uploads/' . $filename);
+                $store->thumb = ('/uploads/' . $thumbname);
                 $store->save();
             }
         }

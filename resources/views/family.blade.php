@@ -36,7 +36,7 @@
 		                    <div class="row post-content">
 		                        <div class="col-md-2 col-sm-3">
 		                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-		                                <img src="{{ $game->image }}" alt="{!! $game->name !!}" class="img-responsive">
+		                                <img src="{{ url('/', $parameters = [], $secure = true) }}{{ $game->image }}" alt="{!! $game->name !!}" class="img-responsive">
 		                            </a>
 		                        </div>
 		                        <div class="col-md-8 col-sm-7">

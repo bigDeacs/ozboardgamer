@@ -36,7 +36,7 @@
 			    	@foreach($stores as $store)
 						<div class="col-sm-3 col-xs-12">
 							<a href="/stores/{{ $store->slug }}">
-				    			<img src="{{ $store->thumb }}" class="img-responsive" />
+				    			<img src="{{ url('/', $parameters = [], $secure = true) }}{{ $store->thumb }}" class="img-responsive" />
 				    		</a>
 					    	<p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
 						</div>

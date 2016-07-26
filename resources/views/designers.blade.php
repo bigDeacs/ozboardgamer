@@ -30,7 +30,7 @@
 			    	@foreach($designers as $designer)
 						<div class="col-sm-3 col-xs-12">
 					    	<a href="/designers/{{ $designer->slug }}">
-				    			<img src="{{ $designer->games()->first()->image }}" class="img-responsive" />
+				    			<img src="{{ url('/', $parameters = [], $secure = true) }}{{ $designer->games()->first()->image }}" class="img-responsive" />
 				    		</a>
 					    	<p class="text-center"><strong><a href="/designers/{{ $designer->slug }}">{!! $designer->name !!}</a></strong></p>
 						</div>

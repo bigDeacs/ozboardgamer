@@ -62,8 +62,8 @@ class UserController extends Controller
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $user->image = ('https://ozboardgamer.com/uploads/' . $filename);
-                $user->thumb = ('https://ozboardgamer.com/uploads/' . $thumbname);
+                $user->image = ('/uploads/' . $filename);
+                $user->thumb = ('/uploads/' . $thumbname);
                 $user->save();
             }
         }
@@ -128,8 +128,8 @@ class UserController extends Controller
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $user->image = ('https://ozboardgamer.com/uploads/' . $filename);
-                $user->thumb = ('https://ozboardgamer.com/uploads/' . $thumbname);
+                $user->image = ('/uploads/' . $filename);
+                $user->thumb = ('/uploads/' . $thumbname);
                 $user->save();
             }
         }
