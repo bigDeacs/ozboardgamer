@@ -27,7 +27,8 @@
 			      <div class="col-sm-3 col-xs-12">
 			      	<span>Search for store: </span>
 			      	<form id="search" action="#" method="post" style="width: 100%;">
-                        <input type="text" name="search-stores" id="search-stores" class="form-control" placeholder="Enter search terms...">
+                        <!--<input type="text" name="search-stores" id="search-stores" class="form-control" placeholder="Enter search terms...">-->
+                        <input type="search" id="address-input" placeholder="Where are we going?" />
                     </form>
                     <br />
 			      </div>
@@ -70,4 +71,10 @@
 @endsection
 
 @section('scripts')
+	<script src="https://cdn.jsdelivr.net/places.js/1/places.min.js"></script>
+	<script>
+	  var placesAutocomplete = places({
+	    container: document.querySelector('#address-input')
+	  });
+	</script>
 @endsection
