@@ -35,7 +35,7 @@
 			<div class="col-md-9 col-sm-8 col-xs-12">
 				<div class="row">
 			      <div class="col-sm-4 col-xs-12">
-			      	<img src="{{ url('/', $parameters = [], $secure = true) }}{{ $game->thumb }}" class="img-responsive" itemprop="image" />
+			      	<img src="{{ secure_url('/') }}{{ $game->thumb }}" class="img-responsive" itemprop="image" />
 			      </div>
 			      <div class="col-sm-8 col-xs-12">
 			      	<h1 itemprop="name">{{ $game->name }}</h1>
@@ -98,12 +98,12 @@
 							@for ($i = 1; $i < 11; $i++)				
 								<div class="col-xs-1" style="padding:0;">
 									@if($game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-										<a href="/users/{{ str_slug(Session::get('name')) }}/addGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="{{ url('/', $parameters = ['img'], $secure = true) }}/{{ $i }}.png" class="img-responsive" /></a>										
+										<a href="/users/{{ str_slug(Session::get('name')) }}/addGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="{{ secure_url('/', $parameters = ['img']) }}/{{ $i }}.png" class="img-responsive" /></a>										
 									@else
 										@if($game->users()->wherePivot('rating', $i)->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-								    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="{{ url('/', $parameters = ['img'], $secure = true) }}/{{ $i }}.png" class="img-responsive" /></a>
+								    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="{{ secure_url('/', $parameters = ['img']) }}/{{ $i }}.png" class="img-responsive" /></a>
 								    	@else
-								    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img src="{{ url('/', $parameters = ['img'], $secure = true) }}/{{ $i }}.png" class="img-responsive" /></a>
+								    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img src="{{ secure_url('/', $parameters = ['img']) }}/{{ $i }}.png" class="img-responsive" /></a>
 								    	@endif
 								    @endif
 							    </div>
@@ -173,7 +173,7 @@
 								    	@foreach($posts as $post)
 								    		<div class="col-md-6 col-sm-12">
 									    		<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-									    			<img src="{{ url('/', $parameters = [], $secure = true) }}{{ $post->image }}" class="img-responsive" />
+									    			<img src="{{ secure_url('/') }}{{ $post->image }}" class="img-responsive" />
 									    		</a>
 									    		<p><a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">{{ $post->name }}</a></p>
 									    	</div>
@@ -191,7 +191,7 @@
 							                    <div class="row post-content">
 							                        <div class="col-md-2 col-sm-3 col-xs-7">
 							                            <a href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">
-							                                <img src="{{ url('/', $parameters = [], $secure = true) }}{{ $rel->thumb }}" alt="{!! $rel->name !!}" class="img-responsive" itemprop="image" />
+							                                <img src="{{ secure_url('/') }}{{ $rel->thumb }}" alt="{!! $rel->name !!}" class="img-responsive" itemprop="image" />
 							                            </a>
 							                        </div>
 							                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">
@@ -242,25 +242,25 @@
 	      </div>
 	      <div class="col-md-3 col-sm-4 col-xs-12">
 			@if($game->rating < 1)
-				<img src="{{ url('/', $parameters = ['img'], $secure = true) }}/1.png" class="img-responsive" />
+				<img src="{{ secure_url('/', $parameters = ['img']) }}/1.png" class="img-responsive" />
 			@elseif($game->rating < 2)
-				<img src="{{ url('/', $parameters = ['img'], $secure = true) }}/2.png" class="img-responsive" />
+				<img src="{{ secure_url('/', $parameters = ['img']) }}/2.png" class="img-responsive" />
 			@elseif($game->rating < 3)
-				<img src="{{ url('/', $parameters = ['img'], $secure = true) }}/3.png" class="img-responsive" />
+				<img src="{{ secure_url('/', $parameters = ['img']) }}/3.png" class="img-responsive" />
 			@elseif($game->rating < 4)
-				<img src="{{ url('/', $parameters = ['img'], $secure = true) }}/4.png" class="img-responsive" />
+				<img src="{{ secure_url('/', $parameters = ['img']) }}/4.png" class="img-responsive" />
 			@elseif($game->rating < 5)
-				<img src="{{ url('/', $parameters = ['img'], $secure = true) }}/5.png" class="img-responsive" />
+				<img src="{{ secure_url('/', $parameters = ['img']) }}/5.png" class="img-responsive" />
 			@elseif($game->rating < 6)
-				<img src="{{ url('/', $parameters = ['img'], $secure = true) }}/6.png" class="img-responsive" />
+				<img src="{{ secure_url('/', $parameters = ['img']) }}/6.png" class="img-responsive" />
 			@elseif($game->rating < 7)
-				<img src="{{ url('/', $parameters = ['img'], $secure = true) }}/7.png" class="img-responsive" />
+				<img src="{{ secure_url('/', $parameters = ['img']) }}/7.png" class="img-responsive" />
 			@elseif($game->rating < 8)
-				<img src="{{ url('/', $parameters = ['img'], $secure = true) }}/8.png" class="img-responsive" />
+				<img src="{{ secure_url('/', $parameters = ['img']) }}/8.png" class="img-responsive" />
 			@elseif($game->rating < 9)
-				<img src="{{ url('/', $parameters = ['img'], $secure = true) }}/9.png" class="img-responsive" />
+				<img src="{{ secure_url('/', $parameters = ['img']) }}/9.png" class="img-responsive" />
 			@else
-				<img src="{{ url('/', $parameters = ['img'], $secure = true) }}/10.png" class="img-responsive" />
+				<img src="{{ secure_url('/', $parameters = ['img']) }}/10.png" class="img-responsive" />
 			@endif
 			<div class="text-center lead" itemscope itemtype="http://schema.org/Rating">
 				<meta itemprop="worstRating" content = "0">

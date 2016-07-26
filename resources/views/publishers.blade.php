@@ -30,7 +30,7 @@
 			    	@foreach($publishers as $publisher)
 						<div class="col-sm-3 col-xs-12">
 					    	<a href="/publishers/{{ $publisher->slug }}">
-				    			<img src="{{ url('/', $parameters = [], $secure = true) }}{{ $publisher->games()->first()->image }}" class="img-responsive" />
+				    			<img src="{{ secure_url('/') }}{{ $publisher->games()->first()->image }}" class="img-responsive" />
 				    		</a>
 					    	<p class="text-center"><strong><a href="/publishers/{{ $publisher->slug }}">{!! $publisher->name !!}</a></strong></p>
 						</div>

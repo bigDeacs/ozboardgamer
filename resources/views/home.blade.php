@@ -35,7 +35,7 @@
 			                            @foreach($toptengames as $game)
 			                                <li itemscope itemtype="http://schema.org/Game">
 			                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-			                                        <img src="{{ url('/', $parameters = [], $secure = true) }}{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" width="300" height="auto" itemprop="image" style="margin: auto;" />
+			                                        <img src="{{ secure_url('/') }}{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" width="300" height="auto" itemprop="image" style="margin: auto;" />
 			                                    </a>
 			                                    <h5 class="text-center"><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
 			                                </li>
@@ -55,7 +55,7 @@
 			                            @foreach($toptenstores as $store)
 			                                <li>
 			                                    <a href="/stores/{{ $store->slug }}">
-			                                        <img src="{{ url('/', $parameters = [], $secure = true) }}{{ $store->thumb }}" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
+			                                        <img src="{{ secure_url('/') }}{{ $store->thumb }}" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
 			                                    </a>
 			                                    <h5 class="text-center"><a href="/stores/{{ $store->slug }}">{{ $store->name }}</a></h5>
 			                                </li>
