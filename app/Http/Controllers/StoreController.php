@@ -66,7 +66,7 @@ class StoreController extends Controller
                         "state" => $state,
                         "abr" => $row['state'],
                         "postcode" => $row['postcode'],
-                        "_geoloc" => array('lat' => $row['latitude'], 'lng' => $row['longitude']);
+                        "_geoloc" => array('lat' => $row['latitude'], 'lng' => $row['longitude'])
                     ));        
                 } else {
                     // delete the record with objectID="myID1"
