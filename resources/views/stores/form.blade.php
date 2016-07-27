@@ -19,7 +19,7 @@
       </div>
       <div class="col-sm-6 col-xs-12">
             <label for="email">Email</label>
-            <input type="text" name="email" id="email" class="form-control" value="{{ isset($store) ? $store->email : old('email') }}" placeholder="" required>
+            <input type="text" name="email" id="email" class="form-control" value="{{ isset($store) ? $store->email : old('email') }}" placeholder="">
       </div>
 </div>
 

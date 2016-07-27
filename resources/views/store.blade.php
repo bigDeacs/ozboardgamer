@@ -47,8 +47,12 @@
 			      			<p>{{ $store->street }}</p>
 			      			<p>{{ $store->suburb }}, {{ $store->state }} {{ $store->postcode }}</p>
 			      			<p>{{ $store->phone }}</p>
-			      			<p><a href="mailto:{{ $store->email }}">{{ $store->email }}</a></p>
-			      			<p><a href="{{ $store->link }}" target="_blank">Go To Site</a></p>
+			      			@if($store->email !== null)
+			      				<p><a href="mailto:{{ $store->email }}">{{ $store->email }}</a></p>
+			      			@endif
+			      			@if($store->link !== null)
+			      				<p><a href="{{ $store->link }}" target="_blank">Go To Site</a></p>
+			      			@endif
 			      			<div class="row">
 					      		@if(Session::has('name'))
 									<div class="col-xs-1" style="padding:0;"></div>		
