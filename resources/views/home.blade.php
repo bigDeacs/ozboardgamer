@@ -14,7 +14,12 @@
 
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-xs-12 col-sm-4 col-sm-offset-8">
+						<div class="col-xs-12 col-sm-8">
+							<h3>{{ $latestpost->name }}</h3>
+							<p>{{ $latestpost->user->name }}</p>
+							<small>{!! date('F d, Y', strtotime($latestpost->published_at)) !!}</small>
+						</div>
+						<div class="col-xs-12 col-sm-4">
 							<h3 class="text-right">
 								@if(Carbon\Carbon::createFromTimestamp(strtotime($latestpost->published_at))->diff(Carbon\Carbon::now())->days > 7)
 									<span class="badge label-danger">
