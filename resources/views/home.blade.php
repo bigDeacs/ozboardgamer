@@ -15,8 +15,8 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-xs-12 col-sm-8">
-							<h3>{{ $latestpost->name }}</h3>
-							<p>{{ $latestpost->user->name }}</p>
+							<h3><a href="/{{ $latestpost->category->slug }}/{{ $latestpost->slug }}" target="_blank">{{ $latestpost->name }}</a></h3>
+							<p><a href="/users/{{ $latestpost->user->slug }}?page=1&sort=published_at-desc" target="_blank">{{ $latestpost->user->name }}</a></p>
 							<small>{!! date('F d, Y', strtotime($latestpost->published_at)) !!}</small>
 						</div>
 						<div class="col-xs-12 col-sm-4">
@@ -39,7 +39,7 @@
 			                        <ul>
 			                            @foreach($toptengames as $game)
 			                                <li itemscope itemtype="http://schema.org/Game">
-			                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
+			                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" target="_blank">
 			                                        <img src="{{ secure_url('/') }}{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" width="300" height="auto" itemprop="image" style="margin: auto;" />
 			                                    </a>
 			                                    <h5 class="text-center"><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
@@ -59,7 +59,7 @@
 			                        <ul>
 			                            @foreach($toptenstores as $store)
 			                                <li>
-			                                    <a href="/stores/{{ $store->slug }}">
+			                                    <a href="/stores/{{ $store->slug }}" target="_blank">
 			                                        <img src="{{ secure_url('/') }}{{ $store->thumb }}" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
 			                                    </a>
 			                                    <h5 class="text-center"><a href="/stores/{{ $store->slug }}">{{ $store->name }}</a></h5>
