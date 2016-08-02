@@ -26,6 +26,8 @@
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#222222">
+
+    <meta property="fb:app_id" content="256969058009917" />
     @yield('meta')
     @yield('head')
 	<link href="{{ asset('/css/style.min.css') }}" rel="stylesheet">
