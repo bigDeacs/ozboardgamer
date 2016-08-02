@@ -96,5 +96,4 @@
 
 @section('scripts')
 	{!! $category->scripts !!}
-	<script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>
 @endsection
