@@ -58,7 +58,7 @@
 		                    <div class="row">
 		                        <div class="col-sm-12 post-header-line">
 		                            <span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&sort=published_at-desc" itemprop="author">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
-		                            </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="/{{ $category->slug }}/{{ $post->slug }}#disqus_thread"></a>
+		                            </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><span class="fb-comments-count" data-href="/{{ $category->slug }}/{{ $post->slug }}"></span>
                                     @unless($post->games->isEmpty())
                                          | <span class="fa fa-trophy"></span>
                                         <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
