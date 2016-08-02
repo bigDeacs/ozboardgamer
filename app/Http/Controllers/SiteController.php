@@ -66,44 +66,6 @@ class SiteController extends Controller {
 		Session::put('email', $user->getEmail());
 		Session::put('thumb', $user->getAvatar());	
 
-		//
-		Session::put('DISQUS_SECRET_KEY', 'aN7OutGQ5Y8lXgdw4g4JqkmZl9CN9XAsWjn5PzONzaaRdzDBjIB2iEniwaKKkmu9');
-		Session::put('DISQUS_PUBLIC_KEY', 'dfGV7FT4p75sDiuGmSslFTMVq5t5a2GfDXkmvJDNyaof90Dc3THzwO5cXTSH9S2C');	
-		 
-		$data = array(
-	        "id" => $user->getId(),
-	        "username" => $user->getName(),
-	        "email" => $user->getEmail()
-	    );
-		 
-		function dsq_hmacsha1($data, $key) {
-		    $blocksize=64;
-		    $hashfunc='sha1';
-		    if (strlen($key)>$blocksize)
-		        $key=pack('H*', $hashfunc($key));
-		    $key=str_pad($key,$blocksize,chr(0x00));
-		    $ipad=str_repeat(chr(0x36),$blocksize);
-		    $opad=str_repeat(chr(0x5c),$blocksize);
-		    $hmac = pack(
-		                'H*',$hashfunc(
-		                    ($key^$opad).pack(
-		                        'H*',$hashfunc(
-		                            ($key^$ipad).$data
-		                        )
-		                    )
-		                )
-		            );
-		    return bin2hex($hmac);
-		}
-
-		$message = base64_encode(json_encode($data));
-		$timestamp = time();
-		$hmac = dsq_hmacsha1($message . ' ' . $timestamp, Session::get('DISQUS_SECRET_KEY'));
-		Session::put('message', $message);	
-		Session::put('timestamp', $timestamp);	
-		Session::put('hmac', $hmac);	
-		//	
-
 		return redirect()->back();
     }
 

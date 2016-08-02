@@ -74,7 +74,8 @@
 				</div>
 			    <hr />
 			    <div class="row">
-			    	<div class="col-xs-12" id="disqus_thread"></div>
+			    	<!--<div class="col-xs-12" id="disqus_thread"></div>-->
+			    	<div class="fb-comments" data-numposts="5" data-width="100%"></div>
 			    </div>
 			</div>
 		</div>
@@ -82,13 +83,6 @@
 @endsection
 
 @section('scripts')
-	<script type="text/javascript">
-		var disqus_config = function() {
-		    this.page.remote_auth_s3 = "{{ Session::get('message') }}{{ Session::get('hmac') }}{{ Session::get('timestamp') }}";
-		    this.page.api_key = "{{ Session::get('DISQUS_PUBLIC_KEY') }}";
-		}
-	</script>	
-
 	<script>
 		/**
 		* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
