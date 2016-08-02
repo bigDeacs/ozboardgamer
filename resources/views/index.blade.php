@@ -90,7 +90,7 @@
                                         <div class="row">
                                             <div class="col-sm-12 post-header-line">
                                                 <span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&sort=published_at-desc" itemprop="author">{!! $review->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
-                                                </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><span class="fb-comments-count" data-href="{{ secure_url('/') }}reviews/{{ $review->slug }}"></span>
+                                                </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><span class="fb-comments-count" data-href="{{ secure_url('/') }}/reviews/{{ $review->slug }}"></span>
                                                 @unless($review->games->isEmpty())
                                                      | <span class="fa fa-trophy"></span>
                                                     <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
@@ -148,7 +148,7 @@
                                         <div class="row">
                                             <div class="col-sm-12 post-header-line">
                                                 <span class="glyphicon glyphicon-user"></span> {!! $howto->user->name !!} | <span class="glyphicon glyphicon-calendar">
-                                                </span>{!! date('F d, Y', strtotime($howto->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><span class="fb-comments-count" data-href="{{ secure_url('/') }}howtos/{{ $howto->slug }}"></span>
+                                                </span>{!! date('F d, Y', strtotime($howto->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><span class="fb-comments-count" data-href="{{ secure_url('/') }}/howtos/{{ $howto->slug }}"></span>
                                                 @unless($howto->games->isEmpty())
                                                      | <span class="fa fa-trophy"></span>
                                                     @foreach($howto->games as $key => $game)
@@ -204,7 +204,7 @@
                                         <div class="row">
                                             <div class="col-sm-12 post-header-line">
                                                 <span class="glyphicon glyphicon-user"></span> {!! $top10->user->name !!} | <span class="glyphicon glyphicon-calendar">
-                                                </span>{!! date('F d, Y', strtotime($top10->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><span class="fb-comments-count" data-href="{{ secure_url('/') }}top10s/{{ $top10->slug }}"></span>
+                                                </span>{!! date('F d, Y', strtotime($top10->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><span class="fb-comments-count" data-href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}"></span>
                                                 @unless($top10->games->isEmpty())
                                                      | <span class="fa fa-trophy"></span>
                                                     @foreach($top10->games as $key => $game)
