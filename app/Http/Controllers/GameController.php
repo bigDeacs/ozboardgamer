@@ -169,9 +169,9 @@ class GameController extends Controller
                 $img->interlace();
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
-                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $game->image = ('https://ozboardgamer.com/uploads/' . $filename);
-                $game->thumb = ('https://ozboardgamer.com/uploads/' . $thumbname);
+				$file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $game->image = ('/uploads/' . $filename);
+                $game->thumb = ('/uploads/' . $thumbname);
                 $game->save();
             }
         }
@@ -308,9 +308,9 @@ class GameController extends Controller
                 $img->interlace();
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
-                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $game->image = ('https://ozboardgamer.com/uploads/' . $filename);
-                $game->thumb = ('https://ozboardgamer.com/uploads/' . $thumbname);
+                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));                
+				$game->image = ('/uploads/' . $filename);
+                $game->thumb = ('/uploads/' . $thumbname);
                 $game->save();
             }
         }
