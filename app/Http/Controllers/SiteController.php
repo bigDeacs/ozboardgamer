@@ -39,25 +39,35 @@ class SiteController extends Controller {
 		 *
 		 * @return Response
 		 */
-		public function addToMailchimp($email, $name){
-			$cURLPutData = array(
-					'apikey'        => '8d26225d206ea8b2aaf5945421d4988b-us13',
-		            'email_address' => $email,
-		            'status'        => 'subscribed',
-		            'merge_fields'  => array(
-		                'NAME' 	=> $name
-		            )
-				);
-				$cURLPutData = json_encode($cURLPutData);
-				$cURLHandle = curl_init();
-				curl_setopt($cURLHandle, CURLOPT_URL, 'https://us13.api.mailchimp.com/3.0/lists/7665e21b2b/members');
-				curl_setopt($cURLHandle, CURLOPT_POST, true);
-				curl_setopt($cURLHandle, CURLOPT_RETURNTRANSFER, true);
-				curl_setopt($cURLHandle, CURLOPT_POSTFIELDS, $cURLPutData);
-				$cURLResponse = curl_exec($cURLHandle);
-				$cURLResponse = json_decode($cURLResponse, true);
-				$cURLInfo = curl_getinfo($cURLHandle);
-				curl_close($cURLHandle);
+		public function syncMailchimp($email, $name){
+				$apiKey = '8d26225d206ea8b2aaf5945421d4988b-us13';
+		    $listId = '7665e21b2b';
+
+		    $memberId = md5(strtolower($email));
+		    $dataCenter = substr($apiKey,strpos($apiKey,'-')+1);
+		    $url = 'https://' . $dataCenter . '.api.mailchimp.com/3.0/lists/' . $listId . '/members/' . $memberId;
+
+		    $json = json_encode([
+		        'email_address' => $email,
+		        'status'        => 'subscribed', // "subscribed","unsubscribed","cleaned","pending"
+		        'merge_fields'  => [
+		            'NAME'     => $name
+		        ]
+		    ]);
+
+		    $ch = curl_init($url);
+
+		    curl_setopt($ch, CURLOPT_USERPWD, 'user:' . $apiKey);
+		    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+		    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+		    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+		    curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+
+		    $result = curl_exec($ch);
+		    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		    curl_close($ch);
 		}
 
 	  /**
@@ -95,7 +105,7 @@ class SiteController extends Controller {
 			Session::put('name', $name);
 			Session::put('email', $email);
 			Session::put('thumb', $thumb);
-			$this->addToMailchimp($email, $name);
+			$this->syncMailchimp($email, $name);
 
 			return redirect()->back();
     }
