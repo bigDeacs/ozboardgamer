@@ -248,21 +248,27 @@
         </div>
     </footer>
 
-
-    <!-- Modal -->
-    <div class="modal fade" id="facebookModal" tabindex="-1" role="dialog" aria-labelledby="facebookModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Login With Facebook</h4>
-          </div>
-          <div class="modal-body">
-
+    @unless(Session::has('name'))
+      <!-- Modal -->
+      <div class="modal fade" id="facebookModal" tabindex="-1" role="dialog" aria-labelledby="facebookModalLabel">
+        <button type="button" class="close" id="closeBtn" data-dismiss="modal" aria-label="Close" style="float:right;font-size: 100px;color: #fff;padding-right: 10px;"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-body" style="min-height: 340px;background: #008751;color: #fff;">
+                <h1>Login with Facebook today!</h1>
+                <p>By logging in with you Facebook account you gain access to:</p>
+                <p><i class="fa fa-check-square-o" aria-hidden="true"></i> Track your personal collection & watchlist</p>
+                <p><i class="fa fa-check-square-o" aria-hidden="true"></i> Add ratings to Games and Stores</p>
+                <p><i class="fa fa-check-square-o" aria-hidden="true"></i> Comment on the latest to Games and Articles</p>
+                <p><i class="fa fa-check-square-o" aria-hidden="true"></i> Receive our monthly Newsletter</p>
+                <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
+                <hr />
+                <small>By logging in you are agreeing to be added to our mailing list, if you wish to be removed from this list you will need to use the unsubscribe link found on the mailing.</small>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    @endunless
 
 
     <!-- Bootstrap core JavaScript

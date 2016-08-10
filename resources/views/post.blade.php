@@ -11,7 +11,7 @@
 
 @section('content')
 	<div class="breadcrumb-holder hidden-lg hidden-md hidden-sm">
-		<div class="container">	
+		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
 				<li><a href="/{{ $post->category->slug }}">{{ str_limit(strip_tags($post->category->name), $limit = 5, $end = '...') }}</a></li>
@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	<div class="breadcrumb-holder hidden-xs">
-		<div class="container">	
+		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
 				<li><a href="/{{ $post->category->slug }}">{{ $post->category->name }}</a></li>
@@ -44,7 +44,7 @@
 				  @else
 			      	<div class="col-sm-9 col-xs-12">
 			      @endif
-					@unless($post->video == null)			      	
+					@unless($post->video == null)
 			      		<div class="embed-responsive embed-responsive-16by9">
 	      					<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen></iframe>
 	      				</div>
@@ -69,13 +69,15 @@
 						    	</div>
 						    </div>
 				    	@endforeach
-				    </div> 
+				    </div>
 				  @endunless
 				</div>
-			    <hr />
-			    <div class="row">
-			    	<div class="fb-comments" data-numposts="10" data-width="100%"></div>
-			    </div>
+        @if(Session::has('name'))
+          <hr />
+          <div class="row">
+            <div class="fb-comments" data-numposts="10" data-width="100%"></div>
+          </div>
+        @endif
 			</div>
 		</div>
 	</div>

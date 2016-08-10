@@ -11,7 +11,7 @@
 
 @section('content')
 	<div class="breadcrumb-holder hidden-lg hidden-md hidden-sm">
-		<div class="container">	
+		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
 				<li class="hidden-xs"><a href="/games">Games</a></li>
@@ -21,7 +21,7 @@
 		</div>
 	</div>
 	<div class="breadcrumb-holder hidden-xs">
-		<div class="container">	
+		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
 				<li class="hidden-xs"><a href="/games">Games</a></li>
@@ -45,7 +45,7 @@
 					    		@if($key == (count($game->publishers) -1))
 					    			<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>
 					    		@else
-					    			<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>, 
+					    			<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>,
 					    		@endif
 					    	@endforeach
 					     | Published: <span itemprop="datePublished">{{ $game->published }}</span></small>
@@ -58,7 +58,7 @@
 						    		@if($key == (count($game->children) -1))
 						    			<a href="/games/{{ $game->types()->first()->slug }}/{{ $child->slug }}">{{ $child->name }}</a>
 						    		@else
-						    			<a href="/games/{{ $game->types()->first()->slug }}/{{ $child->slug }}">{{ $child->name }}</a>, 
+						    			<a href="/games/{{ $game->types()->first()->slug }}/{{ $child->slug }}">{{ $child->name }}</a>,
 						    		@endif
 						    	@endforeach
 						    @endunless
@@ -91,14 +91,14 @@
 				    <br />
 				    <div class="row">
 						@if(Session::has('name'))
-							<div class="col-xs-1" style="padding:0;"></div>		
+							<div class="col-xs-1" style="padding:0;"></div>
 							<strong>Rate This Game</strong>
 							<div style="clear:both;"></div>
 							<div class="col-xs-1" style="padding:0;"></div>
-							@for ($i = 1; $i < 11; $i++)				
+							@for ($i = 1; $i < 11; $i++)
 								<div class="col-xs-1" style="padding:0;">
 									@if($game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-										<a href="/users/{{ str_slug(Session::get('name')) }}/addGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="{{ secure_url('/', $parameters = ['img']) }}/{{ $i }}.png" class="img-responsive" /></a>										
+										<a href="/users/{{ str_slug(Session::get('name')) }}/addGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="{{ secure_url('/', $parameters = ['img']) }}/{{ $i }}.png" class="img-responsive" /></a>
 									@else
 										@if($game->users()->wherePivot('rating', $i)->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
 								    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateGameRating/{!! $game->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="{{ secure_url('/', $parameters = ['img']) }}/{{ $i }}.png" class="img-responsive" /></a>
@@ -108,40 +108,40 @@
 								    @endif
 							    </div>
 							@endfor
-						@else						
-							<div class="col-xs-1" style="padding:0;"></div>		
+						@else
+							<div class="col-xs-1" style="padding:0;"></div>
 							<strong>Login To Rate This Game</strong>
 							<div style="clear:both;"></div>
-							<div class="col-xs-1" style="padding:0;"></div>						
-							@for ($i = 1; $i < 11; $i++)				
+							<div class="col-xs-1" style="padding:0;"></div>
+							@for ($i = 1; $i < 11; $i++)
 								<div class="col-xs-1" style="padding:0;">
-									<img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" />								
+									<img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" />
 							    </div>
-							@endfor						
+							@endfor
 					    @endif
 				    </div>
 			      </div>
 			    </div>
 			    <br />
-			    <div class="row">			    	
+			    <div class="row">
 			    	<div class="btn-group btn-group-justified" role="group">
 					    @if(Session::has('name'))
-					        @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())						        
+					        @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
 					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-xs"> to My Games</span></a>
 					        @else
-						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-times" aria-hidden="true"></i> Remove<span class="hidden-xs"> from My Games</span></a>	    
-					    	@endif						    
+						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-times" aria-hidden="true"></i> Remove<span class="hidden-xs"> from My Games</span></a>
+					    	@endif
 					    	@if($game->users()->wherePivot('type', 'wanted')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
 					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-eye" aria-hidden="true"></i> Add<span class="hidden-xs"> to Watchlist</span></a>
 					        @else
-						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-eye-slash" aria-hidden="true"></i> Remove<span class="hidden-sm hidden-xs"> from Watchlist</span></a>	    
+						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-eye-slash" aria-hidden="true"></i> Remove<span class="hidden-sm hidden-xs"> from Watchlist</span></a>
 					    	@endif
 					    @endif
 					    @unless($game->link == null)
-				    		<a href="{!! $game->link !!}" target="_blank" class="btn btn-primary" style="font-size:13px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order<span class="hidden-xs"> Online</span></a>	    
+				    		<a href="{!! $game->link !!}" target="_blank" class="btn btn-primary" style="font-size:13px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order<span class="hidden-xs"> Online</span></a>
 					    @endunless
 					</div>
-				</div>				
+				</div>
 			    <br />
 			    <div class="row">
 					<!-- Nav tabs -->
@@ -185,7 +185,7 @@
 						<div role="tabpanel" class="tab-pane" id="related">
 							<div class="col-xs-12 panel panel-success" style="min-height: 650px;">
 								<div class="row">
-							    	@foreach($related as $rel)								    		
+							    	@foreach($related as $rel)
 							    		<div class="row" itemscope itemtype="http://schema.org/Game" style="margin: 0 25px;">
 							                <div class="col-md-12 post">
 							                    <div class="row post-content">
@@ -272,16 +272,16 @@
 
 			    <strong>Strategy <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much strategy is a part of gameplay"></span></strong>
 			    <input id="strategy" name="strategy" value="{{ $game->strategy }}" class="rating-loading">
-			
+
 			    <strong>Complexity <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How many complex rules there are"></span></strong>
 			    <input id="complexity" name="complexity" value="{{ $game->complexity }}" class="rating-loading">
-			
+
 			    <strong>Replay <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much replay value the game has"></span></strong>
 			    <input id="replay" name="replay" value="{{ $game->replay }}" class="rating-loading">
-			
+
 			    <strong>Components <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="The quality of what comes in the box"></span></strong>
 			    <input id="components" name="components" value="{{ $game->components }}" class="rating-loading">
-			
+
 			    <strong>Learning <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How easy the game is to learn"></span></strong>
 			    <input id="learning" name="learning" value="{{ $game->learning }}" class="rating-loading">
 
@@ -291,7 +291,7 @@
 			    <strong>Scaling <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How well the game scales between player counts"></span></strong>
 			    <input id="scaling" name="scaling" value="{{ $game->scaling }}" class="rating-loading">
 				<hr />
-				@unless($game->family == null)			      	
+				@unless($game->family == null)
 		      		<strong>Family</strong>
 		      		<div class="row">
 						<div class="col-sm-12">
@@ -307,7 +307,7 @@
 					    		@if($key == (count($game->themes) -1))
 					    			<a href="/themes/{{ $theme->slug }}">{{ $theme->name }}</a>
 					    		@else
-					    			<a href="/themes/{{ $theme->slug }}">{{ $theme->name }}</a>, 
+					    			<a href="/themes/{{ $theme->slug }}">{{ $theme->name }}</a>,
 					    		@endif
 					    	@endforeach
 						</div>
@@ -321,7 +321,7 @@
 					    		@if($key == (count($game->mechanics) -1))
 					    			<a href="/mechanics/{{ $mechanic->slug }}">{{ $mechanic->name }}</a>
 					    		@else
-					    			<a href="/mechanics/{{ $mechanic->slug }}">{{ $mechanic->name }}</a>, 
+					    			<a href="/mechanics/{{ $mechanic->slug }}">{{ $mechanic->name }}</a>,
 					    		@endif
 					    	@endforeach
 						</div>
@@ -335,7 +335,7 @@
 					    		@if($key == (count($game->types) -1))
 					    			<a href="/games/{{ $type->slug }}?page=1&sort=name-asc">{{ $type->name }}</a>
 					    		@else
-					    			<a href="/games/{{ $type->slug }}?page=1&sort=name-asc">{{ $type->name }}</a>, 
+					    			<a href="/games/{{ $type->slug }}?page=1&sort=name-asc">{{ $type->name }}</a>,
 					    		@endif
 					    	@endforeach
 						</div>
@@ -349,7 +349,7 @@
 					    		@if($key == (count($game->designers) -1))
 					    			<a href="/designers/{{ $designer->slug }}" itemprop="creator" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ $designer->name }}</span></a>
 					    		@else
-					    			<a href="/designers/{{ $designer->slug }}" itemprop="creator" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ $designer->name }}</span></a>, 
+					    			<a href="/designers/{{ $designer->slug }}" itemprop="creator" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ $designer->name }}</span></a>,
 					    		@endif
 					    	@endforeach
 						</div>
@@ -358,10 +358,12 @@
 			</div>
 	      </div>
 	    </div>
-	    <hr />
-	    <div class="row">
-	    	<div class="fb-comments" data-numposts="10" data-width="100%"></div>
-	    </div>
+      @if(Session::has('name'))
+        <hr />
+        <div class="row">
+          <div class="fb-comments" data-numposts="10" data-width="100%"></div>
+        </div>
+      @endif
 	</div>
 @endsection
 
