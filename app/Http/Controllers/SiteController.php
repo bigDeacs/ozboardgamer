@@ -39,7 +39,7 @@ class SiteController extends Controller {
 		 *
 		 * @return Response
 		 */
-		function addToMailchimp($email, $name){
+		public function addToMailchimp($email, $name){
 			$cURLPutData = array(
 					'apikey'        => '8d26225d206ea8b2aaf5945421d4988b-us13',
 		            'email_address' => $email,
@@ -79,25 +79,25 @@ class SiteController extends Controller {
     {
     	$user = Socialite::driver('facebook')->user();
 
-		// OAuth Two Providers
-		$token = $user->token;
-		$refreshToken = $user->refreshToken; // not always provided
-		$expiresIn = $user->expiresIn;
+			// OAuth Two Providers
+			$token = $user->token;
+			$refreshToken = $user->refreshToken; // not always provided
+			$expiresIn = $user->expiresIn;
 
-		$id = $user->getId();
-		$email = $user->getEmail();
-		$name = $user->getName();
-		$thumb = $user->getAvatar();
+			$id = $user->getId();
+			$email = $user->getEmail();
+			$name = $user->getName();
+			$thumb = $user->getAvatar();
 
-    $create = User::firstOrCreate(['name' => $name, 'slug' => str_slug($name), 'image' => $thumb, 'email' => $email, 'password' => 'password', 'role' => 'b', 'status' => 1]);
+	    $create = User::firstOrCreate(['name' => $name, 'slug' => str_slug($name), 'image' => $thumb, 'email' => $email, 'password' => 'password', 'role' => 'b', 'status' => 1]);
 
-		Session::put('id', $id);
-		Session::put('name', $name);
-		Session::put('email', $email);
-		Session::put('thumb', $thumb);
-		$this->addToMailchimp($email, $name);
+			Session::put('id', $id);
+			Session::put('name', $name);
+			Session::put('email', $email);
+			Session::put('thumb', $thumb);
+			$this->addToMailchimp($email, $name);
 
-		return redirect()->back();
+			return redirect()->back();
     }
 
     /**
