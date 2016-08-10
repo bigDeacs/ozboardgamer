@@ -43,7 +43,7 @@
 	<!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->    
+	<![endif]-->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
       (adsbygoogle = window.adsbygoogle || []).push({
@@ -73,7 +73,7 @@
       js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6&appId=256969058009917";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-    <!-- End Facebook Plugin Manager -->    
+    <!-- End Facebook Plugin Manager -->
 
 
     <!-- Navigation -->
@@ -93,15 +93,15 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <div class="navbar-right">                
+                <div class="navbar-right">
                     <div class="row navbar-social text-right">
                         <ul class="list-inline intro-social-buttons">
                             <li id="loginFB">
                                 @if(Session::has('name'))
                                     <div class="btn-group">
                                       <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
-                                      <a style="padding: 10px;" href="/facebook/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>                                    
-                                    </div>                                    
+                                      <a style="padding: 10px;" href="/facebook/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
+                                    </div>
                                 @else
                                     <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
                                 @endif
@@ -137,10 +137,10 @@
                                         <input type="text" name="search-terms" id="search-terms" placeholder="Enter search terms...">
                                     </div>
                                 </form>
-                            </li> 
+                            </li>
                             <li>
                                 <a href="/">Home</a>
-                            </li> 
+                            </li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
                               <ul class="dropdown-menu">
@@ -154,19 +154,19 @@
                             </li>
                             <li>
                                 <a href="/news">News</a>
-                            </li>  
+                            </li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                 <li><a href="/reviews">Reviews</a></li>
                                 <li><a href="/top10s">Top 10's</a></li>
-                                <li><a href="/howtos">How To's</a></li>                                
+                                <li><a href="/howtos">How To's</a></li>
                                 <li><a href="/blogs">Blog</a></li>
                               </ul>
                             </li>
                             <li>
                                 <a href="/stores">Stores</a>
-                            </li>                           
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -175,8 +175,8 @@
         </div>
         <!-- /.container -->
     </nav>
-      
-  	@yield('content')    
+
+  	@yield('content')
 
     <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
@@ -246,7 +246,23 @@
                 </div>
             </div>
         </div>
-    </footer>        
+    </footer>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="facebookModal" tabindex="-1" role="dialog" aria-labelledby="facebookModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Login With Facebook</h4>
+          </div>
+          <div class="modal-body">
+
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <!-- Bootstrap core JavaScript
@@ -256,10 +272,10 @@
 	<script src="/js/bootstrap.min.js"></script>
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
-    <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>    
+    <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
     <script src="/js/scripts.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/js/ie10-viewport-bug-workaround.js"></script>            
+    <script src="/js/ie10-viewport-bug-workaround.js"></script>
     <script>
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
           // see next for specifications
@@ -273,18 +289,30 @@
                     } else {
                         $('#back-to-top').fadeOut();
                     }
-                });
-                // scroll body to 0px on click
-                $('#back-to-top').click(function () {
-                    $('#back-to-top').tooltip('hide');
-                    $('body,html').animate({
-                        scrollTop: 0
-                    }, 800);
-                    return false;
-                });
-                $('#back-to-top').tooltip('show');
+              });
+              // scroll body to 0px on click
+              $('#back-to-top').click(function () {
+                  $('#back-to-top').tooltip('hide');
+                  $('body,html').animate({
+                      scrollTop: 0
+                  }, 800);
+                  return false;
+              });
+              $('#back-to-top').tooltip('show');
+
+              //if cookie hasn't been set...
+              if(document.cookie.indexOf("ModalShown=true") < 0) {
+                  setTimeout(function(){
+                    $('#facebookModal').modal('show');
+                  }, 5000);
+                  //Modal has been shown, now set a cookie so it never comes back
+                  $("#facebookModalClose").click(function () {
+                      $("#facebookModal").modal("hide");
+                  });
+                  document.cookie = "ModalShown=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+              }
         });
-    </script>    
+    </script>
     @yield('scripts')
   </body>
 </html>
