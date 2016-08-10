@@ -80,8 +80,7 @@ class SiteController extends Controller {
     public function redirectToProvider()
     {
         return Socialite::driver('facebook')
-								->fields(['first_name', 'last_name', 'email', 'gender', 'birthday'])
-								->scopes(['email', 'user_birthday'])
+								->fields(['first_name', 'last_name', 'email', 'gender'])
 								->redirect();
     }
 
