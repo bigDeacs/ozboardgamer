@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Http\Controllers;
 
@@ -34,8 +34,33 @@ class SiteController extends Controller {
 	|
 	*/
 
+		/**
+		 * Add to mailchimp
+		 *
+		 * @return Response
+		 */
+		function addToMailchimp($email, $name){
+			$cURLPutData = array(
+					'apikey'        => '8d26225d206ea8b2aaf5945421d4988b-us13',
+		            'email_address' => $email,
+		            'status'        => 'subscribed',
+		            'merge_fields'  => array(
+		                'NAME' 	=> $name
+		            )
+				);
+				$cURLPutData = json_encode($cURLPutData);
+				$cURLHandle = curl_init();
+				curl_setopt($cURLHandle, CURLOPT_URL, 'https://us13.api.mailchimp.com/3.0/lists/7665e21b2b/members');
+				curl_setopt($cURLHandle, CURLOPT_POST, true);
+				curl_setopt($cURLHandle, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($cURLHandle, CURLOPT_POSTFIELDS, $cURLPutData);
+				$cURLResponse = curl_exec($cURLHandle);
+				$cURLResponse = json_decode($cURLResponse, true);
+				$cURLInfo = curl_getinfo($cURLHandle);
+				curl_close($cURLHandle);
+		}
 
-	/**
+	  /**
      * Redirect the user to the Facebook authentication page.
      *
      * @return Response
@@ -59,12 +84,18 @@ class SiteController extends Controller {
 		$refreshToken = $user->refreshToken; // not always provided
 		$expiresIn = $user->expiresIn;
 
-        $create = User::firstOrCreate(['name' => $user->getName(), 'slug' => str_slug($user->getName()), 'image' => $user->getAvatar(), 'thumb' => $user->getAvatar(), 'email' => $user->getEmail(), 'password' => 'password', 'role' => 'b', 'status' => 1]);       
+		$id = $user->getId();
+		$email = $user->getEmail();
+		$name = $user->getName();
+		$thumb = $user->getAvatar();
 
-		Session::put('id', $user->getId());
-		Session::put('name', $user->getName());
-		Session::put('email', $user->getEmail());
-		Session::put('thumb', $user->getAvatar());	
+    $create = User::firstOrCreate(['name' => $name, 'slug' => str_slug($name), 'image' => $thumb, 'email' => $email, 'password' => 'password', 'role' => 'b', 'status' => 1]);
+
+		Session::put('id', $id);
+		Session::put('name', $name);
+		Session::put('email', $email);
+		Session::put('thumb', $thumb);
+		$this->addToMailchimp($email, $name);
 
 		return redirect()->back();
     }
@@ -127,8 +158,8 @@ class SiteController extends Controller {
     public function updateGameRating($id, $game, $rating)
     {
     	$user = User::where('slug', '=', $id)->with('games')->firstOrFail();
-    	$user->games()->wherePivot('type', 'rating')->updateExistingPivot($game, ['rating' => $rating]); 
-    	
+    	$user->games()->wherePivot('type', 'rating')->updateExistingPivot($game, ['rating' => $rating]);
+
     	$this->syncGameRatings($game);
 
 		return redirect()->back();
@@ -136,8 +167,8 @@ class SiteController extends Controller {
 
 
     public function syncGameRatings($id)
-    {   
-        $game = Game::where('id', '=', $id)->with('users')->firstOrFail(); 
+    {
+        $game = Game::where('id', '=', $id)->with('users')->firstOrFail();
         $total = $game->rating;
 
         $users = $game->users()->wherePivot('type', 'rating')->get();
@@ -147,9 +178,9 @@ class SiteController extends Controller {
             $total += $user->pivot->rating;
             $count++;
         }
-        
+
         $game->rating = $total/$count;
-        $game->save();  
+        $game->save();
     }
 
     public function addStoreRating($id, $store, $rating)
@@ -165,8 +196,8 @@ class SiteController extends Controller {
     public function updateStoreRating($id, $store, $rating)
     {
     	$user = User::where('slug', '=', $id)->with('stores')->firstOrFail();
-    	$user->stores()->wherePivot('type', 'rating')->updateExistingPivot($store, ['rating' => $rating]); 
-    	
+    	$user->stores()->wherePivot('type', 'rating')->updateExistingPivot($store, ['rating' => $rating]);
+
     	$this->syncStoreRatings($store);
 
 		return redirect()->back();
@@ -174,8 +205,8 @@ class SiteController extends Controller {
 
 
     public function syncStoreRatings($id)
-    {   
-        $store = Store::where('id', '=', $id)->with('users')->firstOrFail(); 
+    {
+        $store = Store::where('id', '=', $id)->with('users')->firstOrFail();
         $total = $store->rating;
 
         $users = $store->users()->wherePivot('type', 'rating')->get();
@@ -185,9 +216,9 @@ class SiteController extends Controller {
             $total += $user->pivot->rating;
             $count++;
         }
-        
+
         $store->rating = $total/$count;
-        $store->save();  
+        $store->save();
     }
 
 
@@ -236,7 +267,7 @@ class SiteController extends Controller {
 	public function game($type = null, $slug = null)
 	{
 		if($type == null) {
-			$types = Type::where('status', '=', '1')->has('games')->with('games')->paginate(12);	
+			$types = Type::where('status', '=', '1')->has('games')->with('games')->paginate(12);
 			return view('types', compact('types'));
 		} elseif($slug == null) {
 			if(Request::has('sort'))
@@ -252,7 +283,7 @@ class SiteController extends Controller {
 			{
 			    $q->where('slug', '=', $type);
 			})->orderBy($sort, $direction)->paginate(10);
-			$type = Type::where('status', '=', '1')->where('slug', '=', $type)->firstOrFail();	
+			$type = Type::where('status', '=', '1')->where('slug', '=', $type)->firstOrFail();
 			return view('type', compact('type','games'));
 		} else {
 			$game = Game::where('status', '=', '1')->with('mechanics')->where('slug', '=', $slug)->firstOrFail();
@@ -263,7 +294,7 @@ class SiteController extends Controller {
 			$related = Game::where('status', '=', '1')->where('id', '!=', $game->id)->whereHas('mechanics', function($q) use($game)
 			{
 			    foreach($game->mechanics as $mechanic) {
-					$q->orWhere('name', '=', $mechanic->name);			    	
+					$q->orWhere('name', '=', $mechanic->name);
 			    }
 			})->orderByRaw("RAND()")->take(4)->get();
 			return view('game', compact('game', 'posts', 'related'));
@@ -391,7 +422,7 @@ class SiteController extends Controller {
 			{
 			    $q->where('slug', '=', 'reviews');
 			})->orderBy($sort, $direction)->paginate(12);
-			$category = Category::where('status', '=', '1')->where('slug', '=', 'reviews')->firstOrFail();	
+			$category = Category::where('status', '=', '1')->where('slug', '=', 'reviews')->firstOrFail();
 			return view('reviews', compact('category','posts'));
 		} else {
 			$post = Post::where('status', '=', '1')->whereHas('category', function($q)
@@ -401,7 +432,7 @@ class SiteController extends Controller {
 
 			$games = Game::where('status', '=', '1')->whereHas('posts', function($q) use($post)
 			{
-				$q->where('name', '=', $post->name);			    	
+				$q->where('name', '=', $post->name);
 			})->orderByRaw("RAND()")->get();
 			return view('review', compact('post', 'games'));
 		}
@@ -450,24 +481,24 @@ class SiteController extends Controller {
 				->whereHas('users', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
-				   	$q->where('type', '=', 'owned');		    
+				   	$q->where('type', '=', 'owned');
 				})->orderBy($sort, $direction)->paginate(12);
 
 				$wanted = Game::where('status', '=', '1')->with('types')->with('users')
 				->whereHas('users', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
-				   	$q->where('type', '=', 'wanted');		    
-				})->orderBy($sort, $direction)->get();				
+				   	$q->where('type', '=', 'wanted');
+				})->orderBy($sort, $direction)->get();
 
 				$total = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
 				})->get();
-				
+
 				return view('user', compact('user', 'owned', 'wanted', 'total'));
 			}
-			
+
 		}
 	}
 
@@ -492,7 +523,7 @@ class SiteController extends Controller {
 			{
 			    $q->where('slug', '=', $category);
 			})->orderBy($sort, $direction)->paginate(12);
-			$category = Category::where('status', '=', '1')->where('slug', '=', $category)->firstOrFail();	
+			$category = Category::where('status', '=', '1')->where('slug', '=', $category)->firstOrFail();
 			return view('posts', compact('category','posts'));
 		} else {
 			$post = Post::where('status', '=', '1')->whereHas('category', function($q) use($category)
@@ -502,7 +533,7 @@ class SiteController extends Controller {
 
 			$games = Game::where('status', '=', '1')->whereHas('posts', function($q) use($post)
 			{
-				$q->where('name', '=', $post->name);			    	
+				$q->where('name', '=', $post->name);
 			})->orderByRaw("RAND()")->get();
 			return view('post', compact('post', 'games'));
 		}
@@ -520,7 +551,7 @@ class SiteController extends Controller {
 			$stores = Store::where('status', '=', '1')->orderBy('name', 'asc')->paginate(12);
 			return view('stores', compact('stores'));
 		} else {
-			$store = Store::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();			
+			$store = Store::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 			return view('store', compact('store'));
 		}
 	}
