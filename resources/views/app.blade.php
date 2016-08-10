@@ -251,7 +251,7 @@
     @unless(Session::has('name'))
       <!-- Modal -->
       <div class="modal fade" id="facebookModal" tabindex="-1" role="dialog" aria-labelledby="facebookModalLabel" aria-hidden="true">
-        <div class="modal-backdrop fade in" style="height: height: 100%;"></div>
+        <div class="modal-backdrop fade in" style="height: 100%;"></div>
         <button type="button" class="close" id="closeBtn" data-dismiss="modal" aria-label="Close" style="float:right;font-size: 100px;color: #fff;padding-right: 10px;"><span aria-hidden="true">&times;</span></button>
         <div class="modal-dialog" style="margin-top: 150px;">
           <div class="modal-content">
@@ -310,8 +310,11 @@
               //if cookie hasn't been set...
               if(document.cookie.indexOf("ModalShown=true") < 0) {
                   setTimeout(function(){
-                    $('#facebookModal').modal('show');
-                  }, 6000);
+                    $('#facebookModal').modal({
+                      show: true,
+                      backdrop: static
+                    });
+                  }, 5000);
                   //Modal has been shown, now set a cookie so it never comes back
                   $("#facebookModalClose").click(function () {
                       $("#facebookModal").modal("hide");
