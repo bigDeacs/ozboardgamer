@@ -39,7 +39,7 @@ class SiteController extends Controller {
 		 *
 		 * @return Response
 		 */
-		public function syncMailchimp($email, $name){
+		public function syncMailchimp($email, $fname, $lname, $gender){
 				$apiKey = '8d26225d206ea8b2aaf5945421d4988b-us13';
 		    $listId = '7665e21b2b';
 
@@ -51,7 +51,9 @@ class SiteController extends Controller {
 		        'email_address' => $email,
 		        'status'        => 'subscribed', // "subscribed","unsubscribed","cleaned","pending"
 		        'merge_fields'  => [
-		            'NAME'     => $name
+		            'FNAME'     => $fname,
+								'LNAME'     => $lname,
+								'GENDER'     => $gender
 		        ]
 		    ]);
 
@@ -98,6 +100,9 @@ class SiteController extends Controller {
 			$email = $user->getEmail();
 			$name = $user->getName();
 			$thumb = $user->getAvatar();
+			$fname = $user->user['first_name'];
+			$lname = $user->user['last_name'];
+			$gender = $user->user['gender'];
 
 	    $create = User::firstOrCreate(['name' => $name, 'slug' => str_slug($name), 'image' => $thumb, 'email' => $email, 'password' => 'password', 'role' => 'b', 'status' => 1]);
 
@@ -105,7 +110,7 @@ class SiteController extends Controller {
 			Session::put('name', $name);
 			Session::put('email', $email);
 			Session::put('thumb', $thumb);
-			$this->syncMailchimp($email, $name);
+			$this->syncMailchimp($email, $fname, $lname, $gender);
 
 			return redirect()->back();
     }
