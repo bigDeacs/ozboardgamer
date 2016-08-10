@@ -311,7 +311,7 @@
               if(document.cookie.indexOf("ModalShown=true") < 0) {
                   setTimeout(function(){
                     $('#facebookModal').modal('show');
-                  }, 5000);
+                  }, 6000);
                   //Modal has been shown, now set a cookie so it never comes back
                   $("#facebookModalClose").click(function () {
                       $("#facebookModal").modal("hide");
