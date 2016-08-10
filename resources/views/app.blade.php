@@ -251,7 +251,7 @@
     @unless(Session::has('name'))
       <!-- Modal -->
       <div class="modal fade" id="facebookModal" tabindex="-1" role="dialog" aria-labelledby="facebookModalLabel" aria-hidden="true">
-        <div class="modal-backdrop fade in" style="height: 995px;"></div>
+        <div class="modal-backdrop fade in" style="height: height: 100%;"></div>
         <button type="button" class="close" id="closeBtn" data-dismiss="modal" aria-label="Close" style="float:right;font-size: 100px;color: #fff;padding-right: 10px;"><span aria-hidden="true">&times;</span></button>
         <div class="modal-dialog" style="margin-top: 150px;">
           <div class="modal-content">
@@ -259,10 +259,10 @@
                 <h1>Sign Up With Facebook!</h1>
                 <p>By logging in with you Facebook account you gain access to:</p>
                 <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Personal collection tracker & watchlist</p>
-                <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Adding ratings to Games and Stores</p>
-                <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Comment on the latest to Games and Articles</p>
-                <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Our monthly newsletter straight to your inbox</p>
-                <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
+                <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Add ratings to Games and Stores</p>
+                <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Add comments to Games and Articles</p>
+                <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i>  Our monthly email newsletter</p>
+                <a href="/facebook" class="btn btn-primary btn-lg"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
                 <hr />
                 <small>By logging in you are agreeing to be added to our mailing list. If you wish to be removed from this list you will need to use the unsubscribe link found on the mailing.</small>
             </div>
