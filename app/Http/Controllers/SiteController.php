@@ -96,13 +96,15 @@ class SiteController extends Controller {
 			$refreshToken = $user->refreshToken; // not always provided
 			$expiresIn = $user->expiresIn;
 
+			$raw = $user->getRaw();
 			$id = $user->getId();
 			$email = $user->getEmail();
 			$name = $user->getName();
 			$thumb = $user->getAvatar();
-			$fname = $user->user['first_name'];
-			$lname = $user->user['last_name'];
-			$gender = $user->user['gender'];
+
+			$fname = $raw['first_name'];
+			$lname = $raw['last_name'];
+			$gender = $raw['gender'];
 
 	    $create = User::firstOrCreate(['name' => $name, 'slug' => str_slug($name), 'image' => $thumb, 'email' => $email, 'password' => 'password', 'role' => 'b', 'status' => 1]);
 
