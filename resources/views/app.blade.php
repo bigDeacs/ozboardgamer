@@ -316,7 +316,9 @@
                   $("#facebookModalClose").click(function () {
                       $("#facebookModal").modal("hide");
                   });
-                  document.cookie = "ModalShown=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+                  date = new Date();
+                  date.setTime(date.getTime()+(30*24*60*60*1000));
+                  document.cookie = "ModalShown=true; expires="+date.toGMTString()+" path=/";
               }
         });
     </script>
