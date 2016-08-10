@@ -79,7 +79,10 @@ class SiteController extends Controller {
      */
     public function redirectToProvider()
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver('facebook')
+								->fields(['first_name', 'last_name', 'email', 'gender', 'birthday'])
+								->scopes(['email', 'user_birthday'])
+								->redirect();
     }
 
     /**
@@ -89,22 +92,21 @@ class SiteController extends Controller {
      */
     public function handleProviderCallback()
     {
-    	$user = Socialite::driver('facebook')->user();
+    	$user = Socialite::driver('facebook')->fields(['name', 'email', 'gender', 'verified', 'first_name', 'last_name'])->user();
 
 			// OAuth Two Providers
 			$token = $user->token;
 			$refreshToken = $user->refreshToken; // not always provided
 			$expiresIn = $user->expiresIn;
 
-			$raw = $user->getRaw();
 			$id = $user->getId();
 			$email = $user->getEmail();
 			$name = $user->getName();
 			$thumb = $user->getAvatar();
 
-			$fname = $raw['first_name'];
-			$lname = $raw['last_name'];
-			$gender = $raw['gender'];
+			$fname = $user['first_name'];
+			$lname = $user['last_name'];
+			$gender = $user['gender'];
 
 	    $create = User::firstOrCreate(['name' => $name, 'slug' => str_slug($name), 'image' => $thumb, 'email' => $email, 'password' => 'password', 'role' => 'b', 'status' => 1]);
 
