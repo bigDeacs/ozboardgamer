@@ -365,8 +365,8 @@
         </div>
       @else
         <hr />
-        <div class="row">
-          Login to add comments
+        <div class="row text-center">
+          <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a> to add comments
         </div>
       @endif
 	</div>
