@@ -77,6 +77,11 @@
           <div class="row">
             <div class="fb-comments" data-numposts="10" data-width="100%"></div>
           </div>
+        @else
+          <hr />
+          <div class="row">
+            Login to add comments
+          </div>
         @endif
 			</div>
 		</div>
