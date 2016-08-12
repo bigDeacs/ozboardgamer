@@ -63,7 +63,7 @@
 							<div class="row">
 								<div class="col-xs-12">
 						    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-						    			<img src="{{ secure_url('/') }}{{ $game->image }}" class="img-responsive" />
+						    			<img src="{{ secure_url('/') }}{{ $game->thumb }}" class="img-responsive" />
 						    		</a>
 						    		<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a></p>
 						    	</div>
