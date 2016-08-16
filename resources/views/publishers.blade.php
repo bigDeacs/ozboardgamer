@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>Publishers</title>
+    <title>Publishers | Oz Board Gamer</title>
     <meta name="description" content="Designers may think of the game, but its the Publishers that bring it to life.">
 @endsection
 
@@ -10,7 +10,7 @@
 
 @section('content')
 	<div class="breadcrumb-holder">
-		<div class="container">	
+		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
 				<li class="hidden-xs"><a href="/games">Games</a></li>
@@ -44,7 +44,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row"> 
+				<div class="row">
 		            <div class="col-xs-12">
 		                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		                <!-- Footer Ad -->

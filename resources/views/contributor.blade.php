@@ -1,16 +1,16 @@
 @extends('app')
 
 @section('meta')
-    <title>{{ $user->name }}</title>
+    <title>{{ $user->name }} | Contributors | Oz Board Gamer</title>
 @endsection
 
 @section('head')
-	
+
 @endsection
 
 @section('content')
 	<div class="breadcrumb-holder">
-		<div class="container">	
+		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
 				<li><a href="/users">Contributors</a></li>
@@ -18,7 +18,7 @@
 			</ol>
 		</div>
 	</div>
-	<div class="container">	
+	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
@@ -32,7 +32,7 @@
 			      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
 			      		<select class="form-control" onchange="sortPosts()" name="sort" id="sort">
 					  		<option value="published_at-desc" {{ (Request::input('sort') == 'published_at-desc') ? 'selected' : "" }}>Publish Date DESC</option>
-							<option value="published_at-asc" {{ (Request::input('sort') == 'published_at-asc') ? 'selected' : "" }}>Publish Date ASC</option>					  		
+							<option value="published_at-asc" {{ (Request::input('sort') == 'published_at-asc') ? 'selected' : "" }}>Publish Date ASC</option>
 					  		<option value="name-desc" {{ (Request::input('sort') == 'name-desc') ? 'selected' : "" }}>Name DESC</option>
 					  		<option value="name-asc" {{ (Request::input('sort') == 'name-asc') ? 'selected' : "" }}>Name ASC</option>
 						</select>

@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>Board Game Mechanics</title>
+    <title>Board Game Mechanics | Oz Board Gamer</title>
     <meta name="description" content="Dice Rolling, Bluffing, Deduction. There are so many different mechanics that make games great!">
 @endsection
 
@@ -10,7 +10,7 @@
 
 @section('content')
 	<div class="breadcrumb-holder">
-		<div class="container">	
+		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
 				<li class="hidden-xs"><a href="/games">Games</a></li>
@@ -34,7 +34,7 @@
 				    		</a>
 					    	<p class="text-center"><strong><a href="/mechanics/{{ $mechanic->slug }}">{!! $mechanic->name !!}</a></strong></p>
 						</div>
-					@endforeach				
+					@endforeach
 				</div>
 				<hr />
 				<div class="row">
@@ -44,7 +44,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row"> 
+				<div class="row">
 		            <div class="col-xs-12">
 		                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		                <!-- Footer Ad -->

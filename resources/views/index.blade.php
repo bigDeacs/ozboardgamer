@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>Oz Board Gamer - Find the latest Board Game News, Reviews and More</title>
+    <title>Oz Board Gamer | Find the latest Board Game News, Reviews and More</title>
     <meta name="description" content="Want to know all the latest and greatest about Board Games? We have News, Reviews and much more!">
 @endsection
 
@@ -45,7 +45,7 @@
     <div class="container">
         @unless($games->isEmpty())
         <div class="row">
-            <div class="col-xs-12"> 
+            <div class="col-xs-12">
                 <h1>Top Rated Games</h1>
                 <div class="jcarousel-wrapper">
                     <div class="jcarousel">
@@ -67,8 +67,8 @@
             </div>
         </div>
         @endunless
-        <div class="row">        
-            <div class="col-md-8 col-sm-7 col-xs-12"> 
+        <div class="row">
+            <div class="col-md-8 col-sm-7 col-xs-12">
                 @unless($reviews->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
@@ -98,10 +98,10 @@
                                                             @if($key == (count($review->games) -1))
                                                                 <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>
                                                             @else
-                                                                <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>, 
+                                                                <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>,
                                                             @endif
                                                         @endforeach
-                                                    </span> 
+                                                    </span>
                                                 @endunless
                                             </div>
                                         </div>
@@ -155,9 +155,9 @@
                                                         @if($key == (count($howto->games) -1))
                                                             <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>
                                                         @else
-                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>, 
+                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>,
                                                         @endif
-                                                    @endforeach 
+                                                    @endforeach
                                                 @endunless
                                             </div>
                                         </div>
@@ -211,9 +211,9 @@
                                                         @if($key == (count($top10->games) -1))
                                                             <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>
                                                         @else
-                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>, 
+                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>,
                                                         @endif
-                                                    @endforeach 
+                                                    @endforeach
                                                 @endunless
                                             </div>
                                         </div>
@@ -291,7 +291,7 @@
         </div>
         @unless($stores->isEmpty())
             <div class="row">
-                <div class="col-xs-12"> 
+                <div class="col-xs-12">
                     <h1>Top Rated Stores</h1>
                     <div class="jcarousel-wrapper">
                         <div class="jcarousel">
@@ -313,7 +313,7 @@
                 </div>
             </div>
         @endunless
-        <div class="row"> 
+        <div class="row">
             <div class="col-xs-12">
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Footer Ad -->

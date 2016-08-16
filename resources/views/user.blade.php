@@ -1,23 +1,23 @@
 @extends('app')
 
 @section('meta')
-    <title>{{ $user->name }}</title>
+    <title>{{ $user->name }} | Users | Oz Board Gamer</title>
 @endsection
 
 @section('head')
-	<?php 
-		$countOwned = 0; 
+	<?php
+		$countOwned = 0;
 		foreach($total as $game) { if($game->users()->first()->pivot->type == 'owned') { $countOwned++; } }
-		$countWanted = 0; 
+		$countWanted = 0;
 		foreach($total as $game) { if($game->users()->first()->pivot->type == 'wanted') { $countWanted++; } }
 	?>
 	<meta property="og:title"              content="Check out this Collection!" />
 	<meta property="og:description"        content="{{ $user->name }} owns {{ $countOwned }} games and has {{ $countWanted }} on his Watch List! Track your own collection now on OzBoardGamer.com" />
 @endsection
 
-@section('content')	
+@section('content')
 	<div class="breadcrumb-holder">
-		<div class="container">	
+		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
 				<li><a href="/users">Users</a></li>
@@ -25,7 +25,7 @@
 			</ol>
 		</div>
 	</div>
-	<div class="container">	
+	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
@@ -52,9 +52,9 @@
 					    }
 					</script>
 			      </div>
-			    </div>	 
+			    </div>
 			    <div class="row">
-			      <div class="col-sm-9 col-xs-12">     
+			      <div class="col-sm-9 col-xs-12">
 			      	Games {{ $user->name }} Owns <span class="badge">{{ $countOwned }}</span>
 			      	<div class="pull-right hidden-xs">
 			      		<div class="fb-share-button" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse">Share</a></div>
@@ -104,7 +104,7 @@
 			                                <a class="btn btn-dark" href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">Read more</a>
 			                            </p>
 			                        </div>
-			                        
+
 			                    </div>
 			                </div>
 			            </div>
@@ -122,8 +122,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-3 hidden-xs"> 
-					<div class="wantedBox">    
+				<div class="col-sm-3 hidden-xs">
+					<div class="wantedBox">
 				      	{{ $user->name }}'s Watchlist <span class="badge">{{ $countWanted }}</span>
 						@foreach($wanted as $game)
 							<div class="row" itemscope itemtype="http://schema.org/Game">
@@ -170,7 +170,7 @@
 				                                <a class="btn btn-dark" href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">Read more</a>
 				                            </p>
 				                        </div>
-				                        
+
 				                    </div>
 				                </div>
 				            </div>

@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>{{ $type->name }}</title>
+    <title>{{ $type->name }} | Types | Oz Board Gamer</title>
     {!! $type->meta !!}
 @endsection
 
@@ -11,7 +11,7 @@
 
 @section('content')
 	<div class="breadcrumb-holder">
-		<div class="container">	
+		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
 				<li class="hidden-xs"><a href="/games">Games</a></li>
@@ -92,7 +92,7 @@
 		                                <a class="btn btn-dark" href="/games/{{ $type->slug }}/{{ $game->slug }}">Read more</a>
 		                            </p>
 		                        </div>
-		                        
+
 		                    </div>
 		                </div>
 		            </div>
@@ -108,7 +108,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row"> 
+				<div class="row">
 		            <div class="col-xs-12">
 		                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		                <!-- Footer Ad -->

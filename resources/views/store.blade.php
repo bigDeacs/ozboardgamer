@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>{{ $store->name }}</title>
+    <title>{{ $store->name }} | Stores | Oz Board Gamer</title>
    	{!! $store->meta !!}
 @endsection
 
@@ -17,7 +17,7 @@
 
 @section('content')
 	<div class="breadcrumb-holder">
-		<div class="container">	
+		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
 				<li class="hidden-xs"><a href="/stores">Stores</a></li>
@@ -55,14 +55,14 @@
 			      			@endif
 			      			<div class="row">
 					      		@if(Session::has('name'))
-									<div class="col-xs-1" style="padding:0;"></div>		
+									<div class="col-xs-1" style="padding:0;"></div>
 									<strong>Rate This Store</strong>
 									<div style="clear:both;"></div>
 									<div class="col-xs-1" style="padding:0;"></div>
-									@for ($i = 1; $i < 11; $i++)				
+									@for ($i = 1; $i < 11; $i++)
 										<div class="col-xs-1" style="padding:0;">
 											@if($store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-												<a href="/users/{{ str_slug(Session::get('name')) }}/addStoreRating/{!! $store->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>										
+												<a href="/users/{{ str_slug(Session::get('name')) }}/addStoreRating/{!! $store->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>
 											@else
 												@if($store->users()->wherePivot('rating', $i)->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
 										    		<a href="/users/{{ str_slug(Session::get('name')) }}/updateStoreRating/{!! $store->id !!}/rating/{{ $i }}" data-toggle="tooltip" data-placement="bottom" title="{{ $i }}/10"><img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" /></a>
@@ -72,16 +72,16 @@
 										    @endif
 									    </div>
 									@endfor
-								@else						
-									<div class="col-xs-1" style="padding:0;"></div>		
+								@else
+									<div class="col-xs-1" style="padding:0;"></div>
 									<strong>Login To Rate This Store</strong>
 									<div style="clear:both;"></div>
-									<div class="col-xs-1" style="padding:0;"></div>						
-									@for ($i = 1; $i < 11; $i++)				
+									<div class="col-xs-1" style="padding:0;"></div>
+									@for ($i = 1; $i < 11; $i++)
 										<div class="col-xs-1" style="padding:0;">
-											<img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" />								
+											<img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" />
 									    </div>
-									@endfor						
+									@endfor
 							    @endif
 						    </div>
 			      		</div>
@@ -113,11 +113,11 @@
 							@endif
 							<div class="text-center lead">
 								<strong>{{ number_format((float)$store->rating, 1, '.', '') }}/10</strong>
-							</div>							
+							</div>
 						</div>
 			      	</div>
-			      	
-			      	<div class="row"> 
+
+			      	<div class="row">
 		            	<div class="col-xs-12">
 			      			<div id="map"></div>
 			      			<br />
@@ -126,7 +126,7 @@
 			      </div>
 			    </div>
 
-				<div class="row"> 
+				<div class="row">
 		            <div class="col-xs-12">
 		                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		                <!-- Footer Ad -->
@@ -161,7 +161,7 @@
 	          title: '{{ $store->name }}'
 	        });
 	    }
-    </script>  
+    </script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC52ck_jrm_AsqBe5CDNXIh7xrW6tmMyMQ&callback=initMap"></script>
 	{!! $store->scripts !!}
 @endsection

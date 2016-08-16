@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>Board Game Stores</title>
+    <title>Board Game Stores | Oz Board Gamer</title>
     <meta name="description" content="Find your local today!">
 @endsection
 
@@ -10,7 +10,7 @@
 
 @section('content')
 	<div class="breadcrumb-holder">
-		<div class="container">	
+		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
 				<li class="active"><span>Stores</span></li>
@@ -40,7 +40,7 @@
 				    		</a>
 					    	<p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
 						</div>
-					@endforeach				
+					@endforeach
 				</div>
 				<hr />
 				<div class="row">
@@ -50,7 +50,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row"> 
+				<div class="row">
 		            <div class="col-xs-12">
 		                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		                <!-- Footer Ad -->

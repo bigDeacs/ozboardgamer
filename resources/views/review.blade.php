@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>{{ $post->name }}</title>
+    <title>{{ $post->name }} | {{ $post->category->name }} | Oz Board Gamer</title>
     {!! $post->meta !!}
 @endsection
 

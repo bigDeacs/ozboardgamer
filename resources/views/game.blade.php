@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>{{ $game->name }}</title>
+    <title>{{ $game->name }} | {{ $game->types()->first()->name }} | Oz Board Gamer</title>
     {!! $game->meta !!}
 @endsection
 
