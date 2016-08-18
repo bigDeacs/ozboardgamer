@@ -601,7 +601,7 @@
                       </div>
                   </div>
               </div>
-            {!! Form::close() !!}
+            {!! Form::close() !!} 
 				</div>
 				<hr />
 				<div class="row">
