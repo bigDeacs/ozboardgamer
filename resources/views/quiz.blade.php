@@ -120,7 +120,7 @@
                                 </div>
                               </div>
                           </div>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+                          <a href="#step-2" class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</a>
                       </div>
                   </div>
               </div>
@@ -173,7 +173,8 @@
                               </div>
                             </div>
                           </div>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" disabled="disabled">Next</button>
+                          <a href="#step-3" class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</a>
+                          <a href="#step-1" class="btn nextBtn btn-lg pull-right" type="button">Prev</a>
                       </div>
                   </div>
               </div>
@@ -226,7 +227,8 @@
                               </div>
                             </div>
                           </div>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                          <a href="#step-4" class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</a>
+                          <a href="#step-2" class="btn nextBtn btn-lg pull-right" type="button">Prev</a>
                       </div>
                   </div>
               </div>
@@ -279,7 +281,8 @@
                               </div>
                             </div>
                           </div>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                          <a href="#step-5" class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</a>
+                          <a href="#step-3" class="btn nextBtn btn-lg pull-right" type="button">Prev</a>
                       </div>
                   </div>
               </div>
@@ -332,7 +335,8 @@
                               </div>
                             </div>
                           </div>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                          <a href="#step-6" class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</a>
+                          <a href="#step-4" class="btn nextBtn btn-lg pull-right" type="button">Prev</a>
                       </div>
                   </div>
               </div>
@@ -385,7 +389,8 @@
                               </div>
                             </div>
                           </div>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                          <a href="#step-7" class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</a>
+                          <a href="#step-5" class="btn nextBtn btn-lg pull-right" type="button">Prev</a>
                       </div>
                   </div>
               </div>
@@ -438,7 +443,8 @@
                               </div>
                             </div>
                           </div>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                          <a href="#step-8" class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</a>
+                          <a href="#step-6" class="btn nextBtn btn-lg pull-right" type="button">Prev</a>
                       </div>
                   </div>
               </div>
@@ -491,7 +497,8 @@
                               </div>
                             </div>
                           </div>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                          <a href="#step-9" class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</a>
+                          <a href="#step-7" class="btn nextBtn btn-lg pull-right" type="button">Prev</a>
                       </div>
                   </div>
               </div>
@@ -544,7 +551,8 @@
                               </div>
                             </div>
                           </div>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                          <a href="#step-10" class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</a>
+                          <a href="#step-8" class="btn nextBtn btn-lg pull-right" type="button">Prev</a>
                       </div>
                   </div>
               </div>
@@ -598,6 +606,7 @@
                             </div>
                           </div>
                           <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
+                          <a href="#step-9" class="btn nextBtn btn-lg pull-right" type="button">Prev</a>
                       </div>
                   </div>
               </div>
