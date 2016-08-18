@@ -45,6 +45,7 @@ return array(
     'AddToUserTable' => $baseDir . '/database/migrations/2016_05_10_063528_add_to_user_table.php',
     'ChangeContentsOnGamesTable' => $baseDir . '/database/migrations/2016_03_17_064234_change_contents_on_games_table.php',
     'ChangePublishedAtOnGamesTable' => $baseDir . '/database/migrations/2016_03_10_042118_change_published_at_on_games_table.php',
+    'CreateArchetypesTable' => $baseDir . '/database/migrations/2016_08_18_014602_create_archetypes_table.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2016_03_07_083329_create_categories_table.php',
     'CreateDesignerGameTable' => $baseDir . '/database/migrations/2016_03_30_041344_create_designer_game_table.php',
     'CreateDesignersTable' => $baseDir . '/database/migrations/2016_03_30_035822_create_designers_table.php',

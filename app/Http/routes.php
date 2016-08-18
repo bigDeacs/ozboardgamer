@@ -63,6 +63,9 @@ Route::group(['prefix' => 'admin'], function()
 	Route::resource('users', 'UserController');
 	Route::get('users/{users}/activate', ['as' => 'users.activate', 'uses' => 'UserController@activate']);
 	Route::get('users/{users}/deactivate', ['as' => 'users.deactivate', 'uses' => 'UserController@deactivate']);
+	Route::resource('archetypes', 'ArchetypeController');
+	Route::get('archetypes/{archetypes}/activate', ['as' => 'archetypes.activate', 'uses' => 'ArchetypeController@activate']);
+	Route::get('archetypes/{archetypes}/deactivate', ['as' => 'archetypes.deactivate', 'uses' => 'ArchetypeController@deactivate']);
 });
 
 // Front Facing Routes

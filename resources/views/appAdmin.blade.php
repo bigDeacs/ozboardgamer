@@ -12,7 +12,7 @@
     <link href="{{ asset('/css/select2.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('/css/star-rating.min.css') }}" media="all" rel="stylesheet" type="text/css" />
     <link href="{{ asset('/css/datepicker.css') }}" rel="stylesheet">
-	
+
 	@yield('head')
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -63,6 +63,7 @@
 							</ul>
 						</li>
 						<li><a href="{{ url('/admin/stores') }}">Stores</a></li>
+						<li><a href="{{ url('/admin/archetypes') }}">Gamer Archetypes</a></li>
 						<li><a href="{{ url('/admin/users') }}">Users</a></li>
 					@endif
 				</ul>
@@ -102,39 +103,39 @@
       });
     </script>
     <script type="text/javascript">
- 
+
             tinymce.init({
               selector: ".textarea",
 
               valid_elements : '*[*]',
 
               content_css : '/css/bootstrap.min.css',
-              
+
               // ===========================================
               // INCLUDE THE PLUGIN
               // ===========================================
-                  
+
                plugins: [
                      "advlist autolink link image lists charmap print preview hr anchor pagebreak",
                      "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
                      "table contextmenu directionality emoticons paste textcolor responsivefilemanager code"
                ],
-                  
+
                toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
                toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | preview code ",
                image_advtab: true ,
-               
+
                external_filemanager_path:"/filemanager/",
                filemanager_title:"Responsive Filemanager" ,
                external_plugins: { "filemanager" : "/filemanager/plugin.min.js"}
-                  
+
               // ===========================================
               // SET RELATIVE_URLS to FALSE (This is required for images to display properly)
-              // ===========================================                 
+              // ===========================================
 
-                  
+
             });
-             
+
       </script>
     @yield('scripts')
 </body>

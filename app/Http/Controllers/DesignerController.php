@@ -100,9 +100,9 @@ class DesignerController extends Controller
 
     public function deactivate($id)
     {
-        $mechanic = Designer::find($id);
-        $mechanic->status = 0;
-        $mechanic->save();
+        $designer = Designer::find($id);
+        $designer->status = 0;
+        $designer->save();
 
         return redirect('/admin/designers');
     }
