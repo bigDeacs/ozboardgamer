@@ -574,6 +574,16 @@ class SiteController extends Controller {
 		}
 	}
 
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function quiz()
+	{		
+			return view('quiz');
+	}
+
 
 	/**
 	 * Show the application welcome screen to the user.

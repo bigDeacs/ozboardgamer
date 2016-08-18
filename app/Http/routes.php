@@ -78,6 +78,7 @@ Route::get('/themes/{slug?}', 'SiteController@theme');
 Route::get('/designers/{slug?}', 'SiteController@designer');
 Route::get('/users/{slug?}', 'SiteController@user');
 Route::get('/stores/{slug?}', 'SiteController@store');
+Route::get('/quiz', 'SiteController@quiz');
 
 Route::get('users/{users}/addToOwned/{game}', ['as' => 'users.addToOwned', 'uses' => 'SiteController@addToOwned']);
 Route::get('users/{users}/removeFromOwned/{game}', ['as' => 'users.removeFromOwned', 'uses' => 'SiteController@removeFromOwned']);
