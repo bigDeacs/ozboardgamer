@@ -52,37 +52,37 @@
                           <div class="form-group">
                               <div class="funkyradio">
                                 <div class="funkyradio-success">
-                                  <input type="radio" name="radio" id="q1" value="1" required="required" />
+                                  <input type="radio" name="radio" id="q1" value="1" />
                                   <label for="q1">Stock up on the essentials and try to cope with the situation</label>
                                 </div>
                               </div>
                               <div class="funkyradio">
                                 <div class="funkyradio-success">
-                                  <input type="radio" name="radio" id="q2" value="2" required="required" />
+                                  <input type="radio" name="radio" id="q2" value="2" />
                                   <label for="q2">Defend your base and command targeted missions out into the affected area</label>
                                 </div>
                               </div>
                               <div class="funkyradio">
                                 <div class="funkyradio-success">
-                                  <input type="radio" name="radio" id="q3" value="3" required="required" />
+                                  <input type="radio" name="radio" id="q3" value="3" />
                                   <label for="q3">Gather your friends together and hope you all make it. Somehow</label>
                                 </div>
                               </div>
                               <div class="funkyradio">
                                 <div class="funkyradio-success">
-                                  <input type="radio" name="radio" id="q4" value="4" required="required" />
+                                  <input type="radio" name="radio" id="q4" value="4" />
                                   <label for="q4">You've been waiting for this day. Time to head out and start wracking up the kill count</label>
                                 </div>
                               </div>
                               <div class="funkyradio">
                                 <div class="funkyradio-success">
-                                  <input type="radio" name="radio" id="q5" value="5" required="required" />
+                                  <input type="radio" name="radio" id="q5" value="5" />
                                   <label for="q5">Luck</label>
                                 </div>
                               </div>
                               <div class="funkyradio">
                                 <div class="funkyradio-success">
-                                  <input type="radio" name="radio" id="q6" value="6" required="required" />
+                                  <input type="radio" name="radio" id="q6" value="6" />
                                   <label for="q6">You've watched movies on this. Grab your cricket bat and head for the nearest pub</label>
                                 </div>
                               </div>
@@ -172,7 +172,7 @@
             var curStep = $(this).closest(".setup-content"),
                 curStepBtn = curStep.attr("id"),
                 nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-                curInputs = curStep.find("input[type='text'],input[type='url']"),
+                curInputs = curStep.find("input[type='radio']"),
                 isValid = true;
 
             $(".form-group").removeClass("has-error");
