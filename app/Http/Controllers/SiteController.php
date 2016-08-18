@@ -584,8 +584,9 @@ class SiteController extends Controller {
 			return view('quiz');
 	}
 
-	//public function quizRequest(QuizRequest $request)
-	//{
+	public function quizRequest(QuizRequest $request)
+	{
+			dd($request);
 		//if($request->get('1_1') !== "") {
 			//$destination = $request->get('1_1');
 		//}
@@ -630,7 +631,7 @@ class SiteController extends Controller {
 		//$this->data['offer_tiles'] = getOfferTiles(15, $this->data['ignore'], true);
 		//$data = $this->data;
 	  //return view('results', $data);
-	//}
+	}
 
 
 	/**

@@ -70,7 +70,7 @@
                   </div>
               </div>
             </div>
-            <form role="form">
+            {!! Form::open(['route' => 'quizRequest', 'role' => 'form']) !!}
               <div class="row setup-content" id="step-1">
                   <div class="col-xs-12">
                       <div class="col-md-12">
@@ -601,7 +601,7 @@
                       </div>
                   </div>
               </div>
-            </form>
+            {!! Form::close() !!}
 				</div>
 				<hr />
 				<div class="row">
