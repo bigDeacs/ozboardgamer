@@ -120,7 +120,7 @@
                                 </div>
                               </div>
                           </div>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
                       </div>
                   </div>
               </div>
@@ -173,7 +173,7 @@
                               </div>
                             </div>
                           </div>
-                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" disabled="disabled">Next</button>
                       </div>
                   </div>
               </div>
