@@ -107,7 +107,7 @@ class ArchetypeController extends Controller
     {
         $archetype = Archetype::where('id', '=', $id)->firstOrFail();
         $games = Game::where('status', '=', '1')->lists('name', 'id');
-        return view('archetypes.edit', compact('archetypes', 'games'));
+        return view('archetypes.edit', compact('archetype', 'games'));
     }
 
     /**
