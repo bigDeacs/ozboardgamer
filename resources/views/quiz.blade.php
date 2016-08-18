@@ -68,46 +68,6 @@
                       <a href="#step-10" type="button" class="btn btn-primary btn-circle" disabled="disabled">10</a>
                       <p>Question 10</p>
                   </div>
-                  <div class="stepwizard-step">
-                      <a href="#step-11" type="button" class="btn btn-default btn-circle" disabled="disabled">11</a>
-                      <p>Question 11</p>
-                  </div>
-                  <div class="stepwizard-step">
-                      <a href="#step-12" type="button" class="btn btn-default btn-circle" disabled="disabled">12</a>
-                      <p>Question 12</p>
-                  </div>
-                  <div class="stepwizard-step">
-                      <a href="#step-13" type="button" class="btn btn-default btn-circle" disabled="disabled">13</a>
-                      <p>Question 13</p>
-                  </div>
-                  <div class="stepwizard-step">
-                      <a href="#step-14" type="button" class="btn btn-primary btn-circle" disabled="disabled">14</a>
-                      <p>Question 14</p>
-                  </div>
-                  <div class="stepwizard-step">
-                      <a href="#step-15" type="button" class="btn btn-default btn-circle" disabled="disabled">15</a>
-                      <p>Question 15</p>
-                  </div>
-                  <div class="stepwizard-step">
-                      <a href="#step-16" type="button" class="btn btn-default btn-circle" disabled="disabled">16</a>
-                      <p>Question 16</p>
-                  </div>
-                  <div class="stepwizard-step">
-                      <a href="#step-17" type="button" class="btn btn-default btn-circle" disabled="disabled">17</a>
-                      <p>Question 17</p>
-                  </div>
-                  <div class="stepwizard-step">
-                      <a href="#step-18" type="button" class="btn btn-default btn-circle" disabled="disabled">18</a>
-                      <p>Question 18</p>
-                  </div>
-                  <div class="stepwizard-step">
-                      <a href="#step-19" type="button" class="btn btn-default btn-circle" disabled="disabled">19</a>
-                      <p>Question 19</p>
-                  </div>
-                  <div class="stepwizard-step">
-                      <a href="#step-20" type="button" class="btn btn-default btn-circle" disabled="disabled">20</a>
-                      <p>Question 20</p>
-                  </div>
               </div>
             </div>
             <form role="form">
@@ -119,42 +79,42 @@
                           <div class="form-group">
                               <div class="funkyradio">
                                 <div class="funkyradio-success">
-                                  // Architect
+                                  <!-- Architect -->
                                   <input type="radio" name="q1" id="q1-1" value="1" />
                                   <label for="q1-1">Stock up on the essentials and try to cope with the situation</label>
                                 </div>
                               </div>
                               <div class="funkyradio">
                                 <div class="funkyradio-success">
-                                  // Tactician
+                                  <!-- Tactician -->
                                   <input type="radio" name="q1" id="q1-2" value="2" />
                                   <label for="q1-2">Defend your base and command targeted missions out into the affected area</label>
                                 </div>
                               </div>
                               <div class="funkyradio">
                                 <div class="funkyradio-success">
-                                  // Socializer
+                                  <!-- Socializer -->
                                   <input type="radio" name="q1" id="q1-3" value="3" />
                                   <label for="q1-3">Gather your group together, we will pull through together!</label>
                                 </div>
                               </div>
                               <div class="funkyradio">
                                 <div class="funkyradio-success">
-                                  // Daredevil
+                                  <!-- Daredevil -->
                                   <input type="radio" name="q1" id="q1-4" value="4" />
                                   <label for="q1-4">Luck</label>
                                 </div>
                               </div>
                               <div class="funkyradio">
                                 <div class="funkyradio-success">
-                                  // Immersionist
+                                  <!-- Immersionist -->
                                   <input type="radio" name="q1" id="q1-5" value="5" />
                                   <label for="q1-5">You've watched movies on this. Grab your cricket bat and head for the nearest pub.</label>
                                 </div>
                               </div>
                               <div class="funkyradio">
                                 <div class="funkyradio-success">
-                                  // Striker
+                                  <!-- Striker -->
                                   <input type="radio" name="q1" id="q1-6" value="6" />
                                   <label for="q1-6">You've been waiting for this day. Time to head out and start wracking up the kill count.</label>
                                 </div>
@@ -172,42 +132,42 @@
                         <div class="form-group">
                             <div class="funkyradio">
                               <div class="funkyradio-success">
-                                // Architect
+                                <!-- Architect -->
                                 <input type="radio" name="q2" id="q2-1" value="1" />
                                 <label for="q2-1">Stock up on the essentials and try to cope with the situation</label>
                               </div>
                             </div>
                             <div class="funkyradio">
                               <div class="funkyradio-success">
-                                // Tactician
+                                <!-- Tactician -->
                                 <input type="radio" name="q2" id="q2-2" value="2" />
                                 <label for="q2-2">Defend your base and command targeted missions out into the affected area</label>
                               </div>
                             </div>
                             <div class="funkyradio">
                               <div class="funkyradio-success">
-                                // Socializer
+                                <!-- Socializer -->
                                 <input type="radio" name="q2" id="q2-3" value="3" />
                                 <label for="q2-3">Gather your group together, we will pull through together!</label>
                               </div>
                             </div>
                             <div class="funkyradio">
                               <div class="funkyradio-success">
-                                // Daredevil
+                                <!-- Daredevil -->
                                 <input type="radio" name="q2" id="q2-4" value="4" />
                                 <label for="q2-4">Luck</label>
                               </div>
                             </div>
                             <div class="funkyradio">
                               <div class="funkyradio-success">
-                                // Immersionist
+                                <!-- Immersionist -->
                                 <input type="radio" name="q2" id="q2-5" value="5" />
                                 <label for="q2-5">You've watched movies on this. Grab your cricket bat and head for the nearest pub.</label>
                               </div>
                             </div>
                             <div class="funkyradio">
                               <div class="funkyradio-success">
-                                // Striker
+                                <!-- Striker -->
                                 <input type="radio" name="q2" id="q2-6" value="6" />
                                 <label for="q2-6">You've been waiting for this day. Time to head out and start wracking up the kill count.</label>
                               </div>
@@ -225,42 +185,42 @@
                         <div class="form-group">
                             <div class="funkyradio">
                               <div class="funkyradio-success">
-                                // Architect
+                                <!-- Architect -->
                                 <input type="radio" name="q3" id="q3-1" value="1" />
                                 <label for="q3-1">Stock up on the essentials and try to cope with the situation</label>
                               </div>
                             </div>
                             <div class="funkyradio">
                               <div class="funkyradio-success">
-                                // Tactician
+                                <!-- Tactician -->
                                 <input type="radio" name="q3" id="q3-2" value="2" />
                                 <label for="q3-2">Defend your base and command targeted missions out into the affected area</label>
                               </div>
                             </div>
                             <div class="funkyradio">
                               <div class="funkyradio-success">
-                                // Socializer
+                                <!-- Socializer -->
                                 <input type="radio" name="q3" id="q3-3" value="3" />
                                 <label for="q3-3">Gather your group together, we will pull through together!</label>
                               </div>
                             </div>
                             <div class="funkyradio">
                               <div class="funkyradio-success">
-                                // Daredevil
+                                <!-- Daredevil -->
                                 <input type="radio" name="q3" id="q3-4" value="4" />
                                 <label for="q3-4">Luck</label>
                               </div>
                             </div>
                             <div class="funkyradio">
                               <div class="funkyradio-success">
-                                // Immersionist
+                                <!-- Immersionist -->
                                 <input type="radio" name="q3" id="q3-5" value="5" />
                                 <label for="q3-5">You've watched movies on this. Grab your cricket bat and head for the nearest pub.</label>
                               </div>
                             </div>
                             <div class="funkyradio">
                               <div class="funkyradio-success">
-                                // Striker
+                                <!-- Striker -->
                                 <input type="radio" name="q3" id="q3-6" value="6" />
                                 <label for="q3-6">You've been waiting for this day. Time to head out and start wracking up the kill count.</label>
                               </div>
@@ -270,10 +230,373 @@
                       </div>
                   </div>
               </div>
-              <div class="row setup-content" id="step-20">
+              <div class="row setup-content" id="step-4">
                   <div class="col-xs-12">
                       <div class="col-md-12">
-                          <h3> Step 3</h3>
+                        <h3>Question 4</h3>
+                        <p>A horde of the undead is knocking at your door! What's do you do?</p>
+                        <div class="form-group">
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Architect -->
+                                <input type="radio" name="q4" id="q4-1" value="1" />
+                                <label for="q4-1">Stock up on the essentials and try to cope with the situation</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Tactician -->
+                                <input type="radio" name="q4" id="q4-2" value="2" />
+                                <label for="q4-2">Defend your base and command targeted missions out into the affected area</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Socializer -->
+                                <input type="radio" name="q4" id="q4-3" value="3" />
+                                <label for="q4-3">Gather your group together, we will pull through together!</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Daredevil -->
+                                <input type="radio" name="q4" id="q4-4" value="4" />
+                                <label for="q4-4">Luck</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Immersionist -->
+                                <input type="radio" name="q4" id="q4-5" value="5" />
+                                <label for="q4-5">You've watched movies on this. Grab your cricket bat and head for the nearest pub.</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Striker -->
+                                <input type="radio" name="q4" id="q4-6" value="6" />
+                                <label for="q4-6">You've been waiting for this day. Time to head out and start wracking up the kill count.</label>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="row setup-content" id="step-5">
+                  <div class="col-xs-12">
+                      <div class="col-md-12">
+                        <h3>Question 5</h3>
+                        <p>A horde of the undead is knocking at your door! What's do you do?</p>
+                        <div class="form-group">
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Architect -->
+                                <input type="radio" name="q5" id="q5-1" value="1" />
+                                <label for="q5-1">Stock up on the essentials and try to cope with the situation</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Tactician -->
+                                <input type="radio" name="q5" id="q5-2" value="2" />
+                                <label for="q5-2">Defend your base and command targeted missions out into the affected area</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Socializer -->
+                                <input type="radio" name="q5" id="q5-3" value="3" />
+                                <label for="q5-3">Gather your group together, we will pull through together!</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Daredevil -->
+                                <input type="radio" name="q5" id="q5-4" value="4" />
+                                <label for="q5-4">Luck</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Immersionist -->
+                                <input type="radio" name="q5" id="q5-5" value="5" />
+                                <label for="q5-5">You've watched movies on this. Grab your cricket bat and head for the nearest pub.</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Striker -->
+                                <input type="radio" name="q5" id="q5-6" value="6" />
+                                <label for="q5-6">You've been waiting for this day. Time to head out and start wracking up the kill count.</label>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="row setup-content" id="step-6">
+                  <div class="col-xs-12">
+                      <div class="col-md-12">
+                        <h3>Question 6</h3>
+                        <p>A horde of the undead is knocking at your door! What's do you do?</p>
+                        <div class="form-group">
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Architect -->
+                                <input type="radio" name="q6" id="q6-1" value="1" />
+                                <label for="q6-1">Stock up on the essentials and try to cope with the situation</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Tactician -->
+                                <input type="radio" name="q6" id="q6-2" value="2" />
+                                <label for="q6-2">Defend your base and command targeted missions out into the affected area</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Socializer -->
+                                <input type="radio" name="q6" id="q6-3" value="3" />
+                                <label for="q6-3">Gather your group together, we will pull through together!</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Daredevil -->
+                                <input type="radio" name="q6" id="q6-4" value="4" />
+                                <label for="q6-4">Luck</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Immersionist -->
+                                <input type="radio" name="q6" id="q6-5" value="5" />
+                                <label for="q6-5">You've watched movies on this. Grab your cricket bat and head for the nearest pub.</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Striker -->
+                                <input type="radio" name="q6" id="q6-6" value="6" />
+                                <label for="q6-6">You've been waiting for this day. Time to head out and start wracking up the kill count.</label>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="row setup-content" id="step-7">
+                  <div class="col-xs-12">
+                      <div class="col-md-12">
+                        <h3>Question 7</h3>
+                        <p>A horde of the undead is knocking at your door! What's do you do?</p>
+                        <div class="form-group">
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Architect -->
+                                <input type="radio" name="q7" id="q7-1" value="1" />
+                                <label for="q7-1">Stock up on the essentials and try to cope with the situation</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Tactician -->
+                                <input type="radio" name="q7" id="q7-2" value="2" />
+                                <label for="q7-2">Defend your base and command targeted missions out into the affected area</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Socializer -->
+                                <input type="radio" name="q7" id="q7-3" value="3" />
+                                <label for="q7-3">Gather your group together, we will pull through together!</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Daredevil -->
+                                <input type="radio" name="q7" id="q7-4" value="4" />
+                                <label for="q7-4">Luck</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Immersionist -->
+                                <input type="radio" name="q7" id="q7-5" value="5" />
+                                <label for="q7-5">You've watched movies on this. Grab your cricket bat and head for the nearest pub.</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Striker -->
+                                <input type="radio" name="q7" id="q7-6" value="6" />
+                                <label for="q7-6">You've been waiting for this day. Time to head out and start wracking up the kill count.</label>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="row setup-content" id="step-8">
+                  <div class="col-xs-12">
+                      <div class="col-md-12">
+                        <h3>Question 8</h3>
+                        <p>A horde of the undead is knocking at your door! What's do you do?</p>
+                        <div class="form-group">
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Architect -->
+                                <input type="radio" name="q8" id="q8-1" value="1" />
+                                <label for="q8-1">Stock up on the essentials and try to cope with the situation</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Tactician -->
+                                <input type="radio" name="q8" id="q8-2" value="2" />
+                                <label for="q8-2">Defend your base and command targeted missions out into the affected area</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Socializer -->
+                                <input type="radio" name="q8" id="q8-3" value="3" />
+                                <label for="q8-3">Gather your group together, we will pull through together!</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Daredevil -->
+                                <input type="radio" name="q8" id="q8-4" value="4" />
+                                <label for="q8-4">Luck</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Immersionist -->
+                                <input type="radio" name="q8" id="q8-5" value="5" />
+                                <label for="q8-5">You've watched movies on this. Grab your cricket bat and head for the nearest pub.</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Striker -->
+                                <input type="radio" name="q8" id="q8-6" value="6" />
+                                <label for="q8-6">You've been waiting for this day. Time to head out and start wracking up the kill count.</label>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="row setup-content" id="step-9">
+                  <div class="col-xs-12">
+                      <div class="col-md-12">
+                        <h3>Question 9</h3>
+                        <p>A horde of the undead is knocking at your door! What's do you do?</p>
+                        <div class="form-group">
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Architect -->
+                                <input type="radio" name="q9" id="q9-1" value="1" />
+                                <label for="q9-1">Stock up on the essentials and try to cope with the situation</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Tactician -->
+                                <input type="radio" name="q9" id="q9-2" value="2" />
+                                <label for="q9-2">Defend your base and command targeted missions out into the affected area</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Socializer -->
+                                <input type="radio" name="q9" id="q9-3" value="3" />
+                                <label for="q9-3">Gather your group together, we will pull through together!</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Daredevil -->
+                                <input type="radio" name="q9" id="q9-4" value="4" />
+                                <label for="q9-4">Luck</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Immersionist -->
+                                <input type="radio" name="q9" id="q9-5" value="5" />
+                                <label for="q9-5">You've watched movies on this. Grab your cricket bat and head for the nearest pub.</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Striker -->
+                                <input type="radio" name="q9" id="q9-6" value="6" />
+                                <label for="q9-6">You've been waiting for this day. Time to head out and start wracking up the kill count.</label>
+                              </div>
+                            </div>
+                          </div>
+                          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                      </div>
+                  </div>
+              </div>
+              <div class="row setup-content" id="step-10">
+                  <div class="col-xs-12">
+                      <div class="col-md-12">
+                        <h3>Question 10</h3>
+                        <p>A horde of the undead is knocking at your door! What's do you do?</p>
+                        <div class="form-group">
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Architect -->
+                                <input type="radio" name="q10" id="q10-1" value="1" />
+                                <label for="q10-1">Stock up on the essentials and try to cope with the situation</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Tactician -->
+                                <input type="radio" name="q10" id="q10-2" value="2" />
+                                <label for="q10-2">Defend your base and command targeted missions out into the affected area</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Socializer -->
+                                <input type="radio" name="q10" id="q10-3" value="3" />
+                                <label for="q10-3">Gather your group together, we will pull through together!</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Daredevil -->
+                                <input type="radio" name="q10" id="q10-4" value="4" />
+                                <label for="q10-4">Luck</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Immersionist -->
+                                <input type="radio" name="q10" id="q10-5" value="5" />
+                                <label for="q10-5">You've watched movies on this. Grab your cricket bat and head for the nearest pub.</label>
+                              </div>
+                            </div>
+                            <div class="funkyradio">
+                              <div class="funkyradio-success">
+                                <!-- Striker -->
+                                <input type="radio" name="q10" id="q10-6" value="6" />
+                                <label for="q10-6">You've been waiting for this day. Time to head out and start wracking up the kill count.</label>
+                              </div>
+                            </div>
+                          </div>
                           <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
                       </div>
                   </div>
