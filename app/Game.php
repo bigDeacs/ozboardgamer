@@ -17,30 +17,30 @@ class Game extends Model {
 	 * @var array
 	 */
 	protected $fillable = [
-		'name', 
+		'name',
         'slug',
 		'image',
         'thumb',
-		'time', 
-		'players', 
-		'age', 
-		'rating', 
-		'contents', 
-		'theming', 
-        'scaling', 
-        'replay', 
-		'components', 
-		'learning', 
-		'luck', 
-		'strategy', 
-		'complexity', 
-		'description', 
-		'website', 
-		'published_at', 
-		'meta', 
-		'head', 
-		'scripts', 
-		'published', 
+		'time',
+		'players',
+		'age',
+		'rating',
+		'contents',
+		'theming',
+        'scaling',
+        'replay',
+		'components',
+		'learning',
+		'luck',
+		'strategy',
+		'complexity',
+		'description',
+		'website',
+		'published_at',
+		'meta',
+		'head',
+		'scripts',
+		'published',
 		'family_id',
         'parent_id',
         'publisher_id',
@@ -71,6 +71,16 @@ class Game extends Model {
     public function getPostListAttribute()
     {
         return $this->posts->lists('id');
+    }
+
+		public function archetypes()
+    {
+        return $this->belongsToMany('App\Archetype')->withTimestamps();
+    }
+
+    public function getArchetypeListAttribute()
+    {
+        return $this->archetypes->lists('id');
     }
 
     public function mechanics()

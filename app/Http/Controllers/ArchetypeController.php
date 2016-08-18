@@ -34,7 +34,8 @@ class ArchetypeController extends Controller
      */
     public function create()
     {
-        return view('archetypes.create');
+        $games = Game::where('status', '=', '1')->lists('name', 'id');
+        return view('archetypes.create', compact('games'));
     }
 
     /**
@@ -65,6 +66,20 @@ class ArchetypeController extends Controller
                 $archetype->save();
             }
         }
+        if(is_array($request->input('game_list'))) {
+            $currentGames = array_filter($request->input('game_list'), 'is_numeric');
+            $newGames = array_diff($request->input('game_list'), $currentGames);
+            foreach($newGames as $newGame)
+            {
+                if($game = Game::create(['name' => $newGame]))
+                {
+                    $newGames[] = $game->id;
+                }
+            }
+        } else {
+            $currentGames = [];
+        }
+        $archetype->games()->sync($currentGames);
 
         return redirect('/admin/archetypes');
     }
@@ -90,7 +105,8 @@ class ArchetypeController extends Controller
     public function edit($id)
     {
         $archetype = Archetype::where('id', '=', $id)->firstOrFail();
-        return view('archetypes.edit', compact('archetype'));
+        $games = Game::where('status', '=', '1')->lists('name', 'id');
+        return view('archetypes.edit', compact('archetypes', 'games'));
     }
 
     /**
@@ -122,6 +138,20 @@ class ArchetypeController extends Controller
                 $archetype->save();
             }
         }
+        if(is_array($request->input('game_list'))) {
+            $currentGames = array_filter($request->input('game_list'), 'is_numeric');
+            $newGames = array_diff($request->input('game_list'), $currentGames);
+            foreach($newGames as $newGame)
+            {
+                if($game = Game::create(['name' => $newGame]))
+                {
+                    $currentGames[] = $game->id;
+                }
+            }
+        } else {
+            $currentGames = [];
+        }
+        $archetype->games()->sync($currentGames);
 
         return redirect('/admin/archetypes');
     }

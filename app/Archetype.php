@@ -28,4 +28,14 @@ class Archetype extends Model {
 		'status'
 	];
 
+	public function games()
+	{
+			return $this->belongsToMany('App\Game');
+	}
+
+	public function getGameListAttribute()
+	{
+			return $this->games->lists('id');
+	}
+
 }

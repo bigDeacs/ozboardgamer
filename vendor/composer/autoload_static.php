@@ -382,6 +382,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'AddToUserTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_10_063528_add_to_user_table.php',
         'ChangeContentsOnGamesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_17_064234_change_contents_on_games_table.php',
         'ChangePublishedAtOnGamesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_10_042118_change_published_at_on_games_table.php',
+        'CreateArchetypeGameTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_18_030301_create_archetype_game_table.php',
         'CreateArchetypesTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_18_014602_create_archetypes_table.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_083329_create_categories_table.php',
         'CreateDesignerGameTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_30_041344_create_designer_game_table.php',
