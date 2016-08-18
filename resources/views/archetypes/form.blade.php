@@ -53,6 +53,12 @@
 
 @section('scripts')
       <script>
+          $('#game_list').select2({
+                placeholder: 'Choose a game',
+                tags: true
+          });
+      </script>
+      <script>
         var loadImage = function(event) {
           var imageUpload = document.getElementById('imageUpload');
           imageUpload.src = URL.createObjectURL(event.target.files[0]);
