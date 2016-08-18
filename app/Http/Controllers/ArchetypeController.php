@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\ArchetypeRequest;
 use App\Archetype;
+use App\Game;
 use Image;
 use App\Http\Controllers\Controller;
 
