@@ -43,7 +43,7 @@
 						    		<td>
 						    			<a href="/admin/archetypes/{{ $archetype->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
 						    			<a href="/archetypes/{{ $archetype->slug }}" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
-						    			@if($mechanic->status == 0)
+						    			@if($archetype->status == 0)
 											<a href="/admin/archetypes/{{ $archetype->id }}/activate" class="btn btn-success">Activate <i class="fa fa-check"></i></a>
 										@else
 											<a href="/admin/archetypes/{{ $archetype->id }}/deactivate" class="btn btn-danger">Deactivate <i class="fa fa-times"></i></a>
