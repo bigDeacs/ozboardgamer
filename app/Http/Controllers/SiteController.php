@@ -580,9 +580,57 @@ class SiteController extends Controller {
 	 * @return Response
 	 */
 	public function quiz()
-	{		
+	{
 			return view('quiz');
 	}
+
+	//public function quizRequest(QuizRequest $request)
+	//{
+		//if($request->get('1_1') !== "") {
+			//$destination = $request->get('1_1');
+		//}
+		//if($request->get('1_2') !== "") {
+			//$destination = $request->get('1_2');
+		//}
+		//if($request->get('1_3') !== "") {
+			//$destination = $request->get('1_3');
+		//}
+		//if($request->get('2_1') !== "") {
+			//$destination = $request->get('2_1');
+		//}
+		//if($request->get('2_2') !== "") {
+			//$destination = $request->get('2_2');
+		//}
+		//if($request->get('2_3') !== "") {
+			//$destination = $request->get('2_3');
+		//}
+		//if($request->get('3_1') !== "") {
+			//$destination = $request->get('3_1');
+		//}
+		//if($request->get('3_2') !== "") {
+			//$destination = $request->get('3_2');
+		//}
+		//if($request->get('3_3') !== "") {
+			//$destination = $request->get('3_3');
+		//}
+		//if($request->get('4_1') !== "") {
+			//$destination = $request->get('4_1');
+		//}
+		//if($request->get('4_2') !== "") {
+			//$destination = $request->get('4_2');
+		//}
+		//if($request->get('4_3') !== "") {
+			//$destination = $request->get('4_3');
+		//}
+		//$cruiselines = getCruiseWizard($destination, $request->get('type'), $request->get('budget'));
+		//foreach ($cruiselines as $cruiseline) {
+			//$this->data['results'][] = array_add($cruiseline, 'offers', getCruiselineOffers($cruiseline['recno']));
+		//}
+		//$this->data['dest'] = $destination;
+		//$this->data['offer_tiles'] = getOfferTiles(15, $this->data['ignore'], true);
+		//$data = $this->data;
+	  //return view('results', $data);
+	//}
 
 
 	/**

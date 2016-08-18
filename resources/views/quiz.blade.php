@@ -47,14 +47,45 @@
               <div class="row setup-content" id="step-1">
                   <div class="col-xs-12">
                       <div class="col-md-12">
-                          <h3> Step 1</h3>
+                          <h3> Question 1</h3>
+                          <p>A horde of the undead is knocking at your door! What's do you do?</p>
                           <div class="form-group">
-                              <label class="control-label">First Name</label>
-                              <input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter First Name"  />
-                          </div>
-                          <div class="form-group">
-                              <label class="control-label">Last Name</label>
-                              <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Last Name" />
+                              <div class="funkyradio">
+                                <div class="funkyradio-success">
+                                  <input type="radio" name="radio" id="q1" value="1" required="required" />
+                                  <label for="q1">Stock up on the essentials and try to cope with the situation</label>
+                                </div>
+                              </div>
+                              <div class="funkyradio">
+                                <div class="funkyradio-success">
+                                  <input type="radio" name="radio" id="q2" value="2" required="required" />
+                                  <label for="q2">Defend your base and command targeted missions out into the affected area</label>
+                                </div>
+                              </div>
+                              <div class="funkyradio">
+                                <div class="funkyradio-success">
+                                  <input type="radio" name="radio" id="q3" value="3" required="required" />
+                                  <label for="q3">Gather your friends together and hope you all make it. Somehow</label>
+                                </div>
+                              </div>
+                              <div class="funkyradio">
+                                <div class="funkyradio-success">
+                                  <input type="radio" name="radio" id="q4" value="4" required="required" />
+                                  <label for="q4">You've been waiting for this day. Time to head out and start wracking up the kill count</label>
+                                </div>
+                              </div>
+                              <div class="funkyradio">
+                                <div class="funkyradio-success">
+                                  <input type="radio" name="radio" id="q5" value="5" required="required" />
+                                  <label for="q5">Luck</label>
+                                </div>
+                              </div>
+                              <div class="funkyradio">
+                                <div class="funkyradio-success">
+                                  <input type="radio" name="radio" id="q6" value="6" required="required" />
+                                  <label for="q6">You've watched movies on this. Grab your cricket bat and head for the nearest pub</label>
+                                </div>
+                              </div>
                           </div>
                           <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
                       </div>
