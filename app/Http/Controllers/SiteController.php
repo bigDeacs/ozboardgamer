@@ -14,6 +14,7 @@ use App\User;
 use App\Post;
 use App\Category;
 use App\Http\Requests\SearchRequest;
+use App\Http\Requests\QuizRequest;
 use Request;
 use Storage;
 use Session;
