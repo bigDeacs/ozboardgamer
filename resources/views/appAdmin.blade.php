@@ -63,7 +63,7 @@
 							</ul>
 						</li>
 						<li><a href="{{ url('/admin/stores') }}">Stores</a></li>
-						<li><a href="{{ url('/admin/archetypes') }}">Gamer Archetypes</a></li>
+						<li><a href="{{ url('/admin/archetypes') }}">Archetypes</a></li>
 						<li><a href="{{ url('/admin/users') }}">Users</a></li>
 					@endif
 				</ul>

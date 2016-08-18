@@ -15,7 +15,7 @@
 			    <h1 class="panel-title"><strong>Archetypes</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right"><a href="/admin/mechanics/create" class="btn btn-primary">Create Archetype <i class="fa fa-plus-square"></i></a></div>
+			  	<div class="pull-right"><a href="/admin/archetypes/create" class="btn btn-primary">Create Archetype <i class="fa fa-plus-square"></i></a></div>
 			  	<div style="clear:both;"></div>
 			  	<div class="row">
 					<div class="col-sm-12">
