@@ -12,7 +12,7 @@ class CreateArchetypesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('archetypes', function(Blueprint $table)
+		Schema::create('archetypes', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('name');
