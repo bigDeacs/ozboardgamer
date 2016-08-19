@@ -35,7 +35,7 @@ class QuestionController extends Controller
      */
     public function create($quizId)
     {
-        $quiz = Quiz::where('quiz_id', '=', $quizId);
+        $quiz = Quiz::where('id', '=', $quizId);
         return view('questions.create', compact('quiz'));
     }
 
@@ -92,7 +92,7 @@ class QuestionController extends Controller
     public function edit($quizId, $id)
     {
         $question = Question::where('id', '=', $id)->firstOrFail();
-        $quiz = Quiz::where('quiz_id', '=', $quizId);
+        $quiz = Quiz::where('id', '=', $quizId);
         return view('questions.edit', compact('question', '$quiz'));
     }
 
