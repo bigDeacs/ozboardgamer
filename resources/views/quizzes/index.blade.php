@@ -43,7 +43,7 @@
 						    		<td>
 						    			<a href="/admin/quizzes/{{ $quiz->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
 						    			<a href="/quizzes/{{ $quiz->slug }}" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
-						    			@if($result->status == 0)
+						    			@if($quiz->status == 0)
 											<a href="/admin/quizzes/{{ $quiz->id }}/activate" class="btn btn-success">Activate <i class="fa fa-check"></i></a>
 										@else
 											<a href="/admin/quizzes/{{ $quiz->id }}/deactivate" class="btn btn-danger">Deactivate <i class="fa fa-times"></i></a>
