@@ -51,7 +51,7 @@ class AnswerController extends Controller
     {
         $answer = Answer::create($request->all());
 
-        return redirect('/admin/quizzes/'.$quizId.'/questions/'.$questionId.'/answers');
+        return redirect('/admin/quizzes/'.$quizId.'/questions/'.$questionId);
     }
 
     /**
@@ -93,7 +93,7 @@ class AnswerController extends Controller
         $answer->update($request->all());
         $answer->save();
 
-        return redirect('/admin/quizzes/'.$quizId.'/questions/'.$questionId.'/answers');
+        return redirect('/admin/quizzes/'.$quizId.'/questions/'.$questionId);
     }
 
     public function activate($quizId, $questionId, $id)
@@ -102,7 +102,7 @@ class AnswerController extends Controller
         $answer->status = 1;
         $answer->save();
 
-        return redirect('/admin/quizzes/'.$quizId.'/questions/'.$questionId.'/answers');
+        return redirect('/admin/quizzes/'.$quizId.'/questions/'.$questionId);
     }
 
     public function deactivate($quizId, $questionId, $id)
@@ -111,6 +111,6 @@ class AnswerController extends Controller
         $answer->status = 0;
         $answer->save();
 
-        return redirect('/admin/quizzes/'.$quizId.'/questions/'.$questionId.'/answers');
+        return redirect('/admin/quizzes/'.$quizId.'/questions/'.$questionId);
     }
 }

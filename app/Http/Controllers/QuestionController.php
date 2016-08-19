@@ -68,7 +68,7 @@ class QuestionController extends Controller
             }
         }
 
-        return redirect('/admin/quizzes/'.$quizId.'/questions');
+        return redirect('/admin/quizzes/'.$quizId);
     }
 
     /**
@@ -126,7 +126,7 @@ class QuestionController extends Controller
             }
         }
 
-        return redirect('/admin/quizzes/'.$quizId.'/questions');
+        return redirect('/admin/quizzes/'.$quizId);
     }
 
     public function activate($quizId, $id)
@@ -135,7 +135,7 @@ class QuestionController extends Controller
         $question->status = 1;
         $question->save();
 
-        return redirect('/admin/quizzes/'.$quizId.'/questions');
+        return redirect('/admin/quizzes/'.$quizId);
     }
 
     public function deactivate($quizId, $id)
@@ -144,6 +144,6 @@ class QuestionController extends Controller
         $question->status = 0;
         $question->save();
 
-        return redirect('/admin/quizzes/'.$quizId.'/questions');
+        return redirect('/admin/quizzes/'.$quizId);
     }
 }

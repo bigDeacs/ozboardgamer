@@ -84,7 +84,7 @@ class ResultController extends Controller
         }
         $result->games()->sync($currentGames);
 
-        return redirect('/admin/quizzes/'.$quizId.'/results');
+        return redirect('/admin/quizzes/'.$quizId);
     }
 
     /**
@@ -157,7 +157,7 @@ class ResultController extends Controller
         }
         $result->games()->sync($currentGames);
 
-        return redirect('/admin/quizzes/'.$quizId.'/results');
+        return redirect('/admin/quizzes/'.$quizId);
     }
 
     public function activate($quizId, $id)
@@ -166,7 +166,7 @@ class ResultController extends Controller
         $result->status = 1;
         $result->save();
 
-        return redirect('/admin/quizzes/'.$quizId.'/results');
+        return redirect('/admin/quizzes/'.$quizId);
     }
 
     public function deactivate($quizId, $id)
@@ -175,6 +175,6 @@ class ResultController extends Controller
         $result->status = 0;
         $result->save();
 
-        return redirect('/admin/quizzes/'.$quizId.'/results');
+        return redirect('/admin/quizzes/'.$quizId);
     }
 }
