@@ -12,13 +12,6 @@
 </div>
 
 <div class="form-group row">
-      <div class="col-xs-12">
-            <label for="game_list">Games</label>
-            {!! Form::select('game_list[]', $games, null, ['id' => 'game_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
-      </div>
-</div>
-
-<div class="form-group row">
     <div class="col-sm-9 col-xs-12">
           <label for="description">Description</label>
           {!! Form::textarea('description', null, ['class' => 'form-control textarea', 'id' => 'description', 'rows' => '25']) !!}
@@ -52,12 +45,6 @@
 </div>
 
 @section('scripts')
-      <script>
-          $('#game_list').select2({
-                placeholder: 'Choose a game',
-                tags: true
-          });
-      </script>
       <script>
         var loadImage = function(event) {
           var imageUpload = document.getElementById('imageUpload');
