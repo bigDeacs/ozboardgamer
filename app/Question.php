@@ -23,6 +23,7 @@ class Question extends Model {
 		'meta',
 		'head',
 		'scripts',
+		'quiz_id',
 		'status'
 	];
 

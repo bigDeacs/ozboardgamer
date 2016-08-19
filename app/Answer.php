@@ -21,6 +21,7 @@ class Answer extends Model {
 		'meta',
 		'head',
 		'scripts',
+		'question_id'
 		'status'
 	];
 

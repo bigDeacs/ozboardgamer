@@ -79,7 +79,7 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        $question = Question::where('id', '=', $id)->firstOrFail();
+        $question = Question::where('id', '=', $id)->with('answers')->get();
         return view('questions.show', compact('question'));
     }
 

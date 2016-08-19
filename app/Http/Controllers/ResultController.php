@@ -50,7 +50,7 @@ class ResultController extends Controller
     public function store(ResultRequest $request, $quizId)
     {
         $result = Result::create($request->all());
-        $result->thumb = '-thumb-' . $archetype->image;
+        $result->thumb = '-thumb-' . $result->image;
         $result->save();
 
         if($request->hasFile('image'))
