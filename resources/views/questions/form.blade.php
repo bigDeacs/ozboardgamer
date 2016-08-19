@@ -1,5 +1,5 @@
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-<input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
+<input type="hidden" name="quiz_id" value="{{ $quiz['id'] }}">
 
 <div class="form-group row">
       <div class="col-sm-6 col-xs-12">
