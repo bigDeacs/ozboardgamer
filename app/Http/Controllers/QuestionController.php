@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\QuestionRequest;
 use App\Question;
+use App\Quiz;
 use Image;
 use App\Http\Controllers\Controller;
 

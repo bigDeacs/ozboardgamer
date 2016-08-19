@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\AnswerRequest;
 use App\Answer;
+use App\Question;
+use App\Result;
 use Image;
 use App\Http\Controllers\Controller;
 
@@ -48,7 +50,7 @@ class AnswerController extends Controller
     public function store(AnswerRequest $request, $quizId, $questionId)
     {
         $answer = Answer::create($request->all());
-        
+
         return redirect('/admin/quizzes/'.$quizId.'/questions/'.$questionId.'/answers');
     }
 
