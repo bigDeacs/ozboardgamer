@@ -26,7 +26,7 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::open(['files'=> true, 'url' => '/admin/quizzes/{{ $quiz->id }}/questions']) !!}
+				{!! Form::open(['files'=> true, 'url' => '/admin/quizzes/'.$quiz->id.'/questions']) !!}
 					@include('questions.form')
 					<div class="form-group btn-submit-top">
 						<button type="submit" class="btn btn-success btn-block">Create</button>
