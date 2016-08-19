@@ -14,12 +14,11 @@ class RemoveNameFromQusetionTable extends Migration {
 	{
 		Schema::table('questions', function(Blueprint $table)
 		{
-			$table->dropIndex('name');
 			$table->longText('name');
 		});
 		Schema::table('answers', function(Blueprint $table)
 		{
-			$table->dropIndex('name');
+			$table->longText('name');
 		});
 	}
 
