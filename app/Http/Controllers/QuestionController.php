@@ -24,7 +24,7 @@ class QuestionController extends Controller
      */
     public function index($quizId)
     {
-        $questions = Question::where('quiz_id', '=', $quizId);
+        $questions = Question::where('quiz_id', '=', $quizId)->get();
         return view('questions.index', compact('questions'));
     }
 
@@ -35,8 +35,7 @@ class QuestionController extends Controller
      */
     public function create($quizId)
     {
-        $quiz = Quiz::where('id', '=', $quizId);
-        dd($quiz);
+        $quiz = Quiz::find($quizId);
         return view('questions.create', compact('quiz'));
     }
 
@@ -93,7 +92,7 @@ class QuestionController extends Controller
     public function edit($quizId, $id)
     {
         $question = Question::where('id', '=', $id)->firstOrFail();
-        $quiz = Quiz::where('id', '=', $quizId);
+        $quiz = Quiz::find($quizId);
         return view('questions.edit', compact('question', '$quiz'));
     }
 

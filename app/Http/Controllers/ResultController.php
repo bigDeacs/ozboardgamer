@@ -25,7 +25,7 @@ class ResultController extends Controller
      */
     public function index($quizId)
     {
-        $results = Result::where('quiz_id', '=', $quizId);
+        $results = Result::where('quiz_id', '=', $quizId)->get();
         return view('results.index', compact('results'));
     }
 
@@ -36,7 +36,7 @@ class ResultController extends Controller
      */
     public function create($quizId)
     {
-        $quiz = Quiz::where('id', '=', $quizId);
+        $quiz = Quiz::find($quizId);
         $games = Game::where('status', '=', '1')->lists('name', 'id');
         return view('results.create', compact('quiz', 'games'));
     }
@@ -108,7 +108,7 @@ class ResultController extends Controller
     public function edit($quizId, $id)
     {
         $result = Result::where('id', '=', $id)->firstOrFail();
-        $quiz = Quiz::where('id', '=', $quizId);
+        $quiz = Quiz::find($quizId);
         $games = Game::where('status', '=', '1')->lists('name', 'id');
         return view('results.edit', compact('result', 'games'));
     }

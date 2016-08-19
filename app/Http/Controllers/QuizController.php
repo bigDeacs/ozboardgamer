@@ -77,7 +77,7 @@ class QuizController extends Controller
      */
     public function show($id)
     {
-        $quiz = Quiz::where('id', '=', $id)->firstOrFail();
+        $quiz = Quiz::find($id);
         return view('quizzes.show', compact('quiz'));
     }
 
@@ -89,7 +89,7 @@ class QuizController extends Controller
      */
     public function edit($id)
     {
-        $quiz = Quiz::where('id', '=', $id)->firstOrFail();
+        $quiz = Quiz::find($id);
         return view('quizzes.edit', compact('quiz'));
     }
 
