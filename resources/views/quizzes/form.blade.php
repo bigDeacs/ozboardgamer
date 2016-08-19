@@ -3,11 +3,11 @@
 <div class="form-group row">
       <div class="col-sm-6 col-xs-12">
             <label for="name">Name</label>
-	      <input type="text" name="name" id="name" class="form-control" value="{{ isset($result) ? $result->name : old('name') }}" placeholder="" required>
+	      <input type="text" name="name" id="name" class="form-control" value="{{ isset($quiz) ? $quiz->name : old('name') }}" placeholder="" required>
       </div>
       <div class="col-sm-6 col-xs-12">
             <label for="slug">Slug</label>
-            <input type="text" name="slug" id="slug" class="form-control" value="{{ isset($result) ? $result->slug : old('slug') }}" placeholder="" required>
+            <input type="text" name="slug" id="slug" class="form-control" value="{{ isset($quiz) ? $quiz->slug : old('slug') }}" placeholder="" required>
       </div>
 </div>
 
@@ -26,7 +26,7 @@
     <div class="col-sm-3 col-xs-12">
         <label for="image">Featured Image</label>
         @if(isset($post))
-              <img src="{{ secure_url('/') }}{!! $result->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
+              <img src="{{ secure_url('/') }}{!! $quiz->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
         @else
               <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
         @endif
