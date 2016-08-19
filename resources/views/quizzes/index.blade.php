@@ -41,7 +41,8 @@
 								@endif
 						    		<td scope="row">{{ $quiz->name }}</td>
 						    		<td>
-						    			<a href="/admin/quizzes/{{ $quiz->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
+						    			<a href="/admin/quizzes/{{ $quiz->id }}" class="btn btn-info">Build <i class="fa fa-cogs"></i></a>
+                      <a href="/admin/quizzes/{{ $quiz->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
 						    			<a href="/quizzes/{{ $quiz->slug }}" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
 						    			@if($quiz->status == 0)
 											<a href="/admin/quizzes/{{ $quiz->id }}/activate" class="btn btn-success">Activate <i class="fa fa-check"></i></a>
