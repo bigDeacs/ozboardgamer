@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests\ArchetypeRequest;
-use App\Archetype;
-use App\Game;
+use App\Http\Requests\QuizRequest;
+use App\Quiz;
 use Image;
 use App\Http\Controllers\Controller;
 
-class ArchetypeController extends Controller
+class QuizController extends Controller
 {
     public function __construct()
     {
@@ -24,8 +23,8 @@ class ArchetypeController extends Controller
      */
     public function index()
     {
-        $archetypes = Archetype::all();
-        return view('archetypes.index', compact('archetypes'));
+        $quizzes = Quiz::all();
+        return view('quizzes.index', compact('quizzes'));
     }
 
     /**
@@ -35,8 +34,7 @@ class ArchetypeController extends Controller
      */
     public function create()
     {
-        $games = Game::where('status', '=', '1')->lists('name', 'id');
-        return view('archetypes.create', compact('games'));
+        return view('quizzes.create');
     }
 
     /**
@@ -45,11 +43,11 @@ class ArchetypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ArchetypeRequest $request)
+    public function store(QuizRequest $request)
     {
-        $archetype = Archetype::create($request->all());
-        $archetype->thumb = '-thumb-' . $archetype->image;
-        $archetype->save();
+        $quiz = Quiz::create($request->all());
+        $quiz->thumb = '-thumb-' . $quiz->image;
+        $quiz->save();
 
         if($request->hasFile('image'))
         {
@@ -62,27 +60,13 @@ class ArchetypeController extends Controller
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $archetype->image = ('/uploads/' . $filename);
-                $archetype->thumb = ('/uploads/' . $thumbname);
-                $archetype->save();
+                $quiz->image = ('/uploads/' . $filename);
+                $quiz->thumb = ('/uploads/' . $thumbname);
+                $quiz->save();
             }
         }
-        if(is_array($request->input('game_list'))) {
-            $currentGames = array_filter($request->input('game_list'), 'is_numeric');
-            $newGames = array_diff($request->input('game_list'), $currentGames);
-            foreach($newGames as $newGame)
-            {
-                if($game = Game::create(['name' => $newGame]))
-                {
-                    $newGames[] = $game->id;
-                }
-            }
-        } else {
-            $currentGames = [];
-        }
-        $archetype->games()->sync($currentGames);
 
-        return redirect('/admin/archetypes');
+        return redirect('/admin/quizzes');
     }
 
     /**
@@ -105,9 +89,8 @@ class ArchetypeController extends Controller
      */
     public function edit($id)
     {
-        $archetype = Archetype::where('id', '=', $id)->firstOrFail();
-        $games = Game::where('status', '=', '1')->lists('name', 'id');
-        return view('archetypes.edit', compact('archetype', 'games'));
+        $quiz = Quiz::where('id', '=', $id)->firstOrFail();
+        return view('quizzes.edit', compact('quiz'));
     }
 
     /**
@@ -117,11 +100,11 @@ class ArchetypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ArchetypeRequest $request, $id)
+    public function update(QuizRequest $request, $id)
     {
-        $archetype = Archetype::where('id', '=', $id)->firstOrFail();
-        $archetype->update($request->all());
-        $archetype->save();
+        $quiz = Quiz::where('id', '=', $id)->firstOrFail();
+        $quiz->update($request->all());
+        $quiz->save();
 
         if($request->hasFile('image'))
         {
@@ -134,44 +117,30 @@ class ArchetypeController extends Controller
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $archetype->image = ('/uploads/' . $filename);
-                $archetype->thumb = ('/uploads/' . $thumbname);
-                $archetype->save();
+                $quiz->image = ('/uploads/' . $filename);
+                $quiz->thumb = ('/uploads/' . $thumbname);
+                $quiz->save();
             }
         }
-        if(is_array($request->input('game_list'))) {
-            $currentGames = array_filter($request->input('game_list'), 'is_numeric');
-            $newGames = array_diff($request->input('game_list'), $currentGames);
-            foreach($newGames as $newGame)
-            {
-                if($game = Game::create(['name' => $newGame]))
-                {
-                    $currentGames[] = $game->id;
-                }
-            }
-        } else {
-            $currentGames = [];
-        }
-        $archetype->games()->sync($currentGames);
 
-        return redirect('/admin/archetypes');
+        return redirect('/admin/quizzes');
     }
 
     public function activate($id)
     {
-        $archetype = Archetype::find($id);
-        $archetype->status = 1;
-        $archetype->save();
+        $quiz = Quiz::find($id);
+        $quiz->status = 1;
+        $quiz->save();
 
-        return redirect('/admin/archetypes');
+        return redirect('/admin/quizzes');
     }
 
     public function deactivate($id)
     {
-        $archetype = Archetype::find($id);
-        $archetype->status = 0;
-        $archetype->save();
+        $quiz = Quiz::find($id);
+        $quiz->status = 0;
+        $quiz->save();
 
-        return redirect('/admin/archetypes');
+        return redirect('/admin/quizzes');
     }
 }
