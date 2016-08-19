@@ -27,7 +27,7 @@
 					</div>
 				@endif
 				{!! Form::model($result, ['files'=> true, 'method' => 'PATCH', 'action' => ['ResultController@update', $result->id]]) !!}
-					<input type="hidden" name="id" value="{{ $archetype->id }}">
+					<input type="hidden" name="id" value="{{ $result->id }}">
 					@include('results.form')
 					<div class="form-group btn-submit-top">
 						<button type="submit" class="btn btn-success btn-block">Update</button>

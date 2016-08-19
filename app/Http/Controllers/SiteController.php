@@ -13,6 +13,10 @@ use App\Designer;
 use App\User;
 use App\Post;
 use App\Category;
+use App\Quiz;
+use App\Question;
+use App\Answer;
+use App\Result;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\QuizRequest;
 use Request;
@@ -580,9 +584,15 @@ class SiteController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function quiz()
+	public function quiz($slug = null)
 	{
-			return view('quiz');
+			if($slug == null) {
+				$quizzes = Quiz::where('status', '=', '1')->orderBy('name', 'asc')->paginate(12);
+				return view('quizzes', compact('quizzes'));
+			} else {
+				$quiz = Quiz::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+				return view('quiz', compact('quiz'));
+			}
 	}
 
 	public function quizRequest(QuizRequest $request)
