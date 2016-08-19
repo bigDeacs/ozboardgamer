@@ -29,6 +29,11 @@ class Result extends Model {
 		'status'
 	];
 
+	public function quiz()
+  {
+      return $this->belongsTo('App\Quiz');
+  }
+
 	public function answers()
   {
       return $this->hasMany('App\Answers');
