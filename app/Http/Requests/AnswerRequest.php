@@ -23,8 +23,6 @@ class AnswerRequest extends Request
      */
     public function rules()
     {
-        return [
-            'name' => 'required|unique:answers,name,'.$this->id
-        ];
+        return [];
     }
 }

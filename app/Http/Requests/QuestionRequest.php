@@ -23,8 +23,6 @@ class QuestionRequest extends Request
      */
     public function rules()
     {
-        return [
-            'name' => 'required|unique:questions,name,'.$this->id
-        ];
+        return [];
     }
 }
