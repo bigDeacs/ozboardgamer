@@ -18,10 +18,8 @@ class Question extends Model {
 	 */
 	protected $fillable = [
 		'name',
-    'slug',
 		'image',
 		'thumb',
-		'description',
 		'meta',
 		'head',
 		'scripts',

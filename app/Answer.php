@@ -18,10 +18,6 @@ class Answer extends Model {
 	 */
 	protected $fillable = [
 		'name',
-    'slug',
-		'image',
-		'thumb',
-		'description',
 		'meta',
 		'head',
 		'scripts',

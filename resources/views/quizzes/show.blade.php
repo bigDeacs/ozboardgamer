@@ -36,7 +36,7 @@
               </thead>
               <tbody>
                 @foreach($quiz->questions() as $question)
-                    @if($result->status == 0)
+                    @if($question->status == 0)
                       <tr class="danger">
                     @else
                       <tr class="success">
