@@ -2,16 +2,9 @@
 <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
 
 <div class="form-group row">
-      <div class="col-xs-12">
-            <label for="name">Name</label>
-	          <input type="text" name="name" id="name" class="form-control" value="{{ isset($question) ? $question->name : old('name') }}" placeholder="" required>
-      </div>
-</div>
-
-<div class="form-group row">
     <div class="col-sm-9 col-xs-12">
-          <label for="description">Description</label>
-          {!! Form::textarea('description', null, ['class' => 'form-control textarea', 'id' => 'description', 'rows' => '25']) !!}
+          <label for="description">Name</label>
+          {!! Form::textarea('name', null, ['class' => 'form-control textarea', 'id' => 'name', 'rows' => '25']) !!}
     </div>
     <div class="col-sm-3 col-xs-12">
         <label for="image">Featured Image</label>
