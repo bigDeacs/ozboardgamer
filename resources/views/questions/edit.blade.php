@@ -15,7 +15,7 @@
 			    <h1 class="panel-title"><strong>Edit {{ $question->name }}</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right btn-back-top"><a href="/admin/quizzes/{{ $quiz['id'] }}/questions" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>
+			  	<div class="pull-right btn-back-top"><a href="/admin/quizzes/{{ $quiz->id }}/questions" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>
 			  	<div style="clear:both;"></div>
 				@if(count($errors) > 0)
 					<div class="alert alert-danger">
@@ -26,8 +26,8 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::model($question, ['files'=> true, 'method' => 'PATCH', 'action' => ['QuestionController@update', $question["id"]]]) !!}
-					<input type="hidden" name="id" value="{{ $question->id }}">
+				{!! Form::model($question, ['files'=> true, 'method' => 'PATCH', 'action' => ['QuestionController@update', $question->id]]) !!}
+					<input type="hidden" name="id" value="{{ $archetype->id }}">
 					@include('questions.form')
 					<div class="form-group btn-submit-top">
 						<button type="submit" class="btn btn-success btn-block">Update</button>

@@ -36,6 +36,7 @@ class QuestionController extends Controller
     public function create($quizId)
     {
         $quiz = Quiz::where('id', '=', $quizId);
+        dd($quiz);
         return view('questions.create', compact('quiz'));
     }
 
