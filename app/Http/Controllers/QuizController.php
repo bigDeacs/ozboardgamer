@@ -77,7 +77,7 @@ class QuizController extends Controller
      */
     public function show($id)
     {
-        $quiz = Quiz::where('id', '=', $id)->with('questions')->with('results')->get();
+        $quiz = Quiz::find($id);
         return view('quizzes.show', compact('quiz'));
     }
 
