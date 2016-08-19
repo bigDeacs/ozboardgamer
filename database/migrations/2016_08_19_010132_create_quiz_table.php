@@ -12,8 +12,8 @@ class CreateQuizTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::drop('archetypes');
 		Schema::drop('archetype_game');
+		Schema::drop('archetypes');
 		Schema::create('results', function(Blueprint $table)
 		{
 			$table->increments('id');
