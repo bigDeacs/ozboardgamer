@@ -93,7 +93,7 @@ class QuestionController extends Controller
     {
         $question = Question::where('id', '=', $id)->firstOrFail();
         $quiz = Quiz::find($quizId);
-        return view('questions.edit', compact('question', '$quiz'));
+        return view('questions.edit', compact('question', 'quiz'));
     }
 
     /**

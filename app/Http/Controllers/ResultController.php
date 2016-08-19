@@ -110,7 +110,7 @@ class ResultController extends Controller
         $result = Result::where('id', '=', $id)->firstOrFail();
         $quiz = Quiz::find($quizId);
         $games = Game::where('status', '=', '1')->lists('name', 'id');
-        return view('results.edit', compact('result', 'games'));
+        return view('results.edit', compact('result', 'quiz', 'games'));
     }
 
     /**
