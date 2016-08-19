@@ -1,7 +1,7 @@
 @extends('appAdmin')
 
 @section('meta')
-    <title>Edit {{ $archetype->name }}</title>
+    <title>Edit {{ $result->name }}</title>
 @endsection
 
 @section('head')
@@ -12,10 +12,10 @@
 		<div class="col-sm-10 col-sm-offset-1">
 			<div class="panel panel-default panel-shadow">
 			  <div class="panel-heading">
-			    <h1 class="panel-title"><strong>Edit {{ $archetype->name }}</strong></h1>
+			    <h1 class="panel-title"><strong>Edit {{ $result->name }}</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right btn-back-top"><a href="/admin/archetypes" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>
+			  	<div class="pull-right btn-back-top"><a href="/admin/quizzes/{{ $quiz->id }}/results" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>
 			  	<div style="clear:both;"></div>
 				@if(count($errors) > 0)
 					<div class="alert alert-danger">
@@ -26,9 +26,9 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::model($archetype, ['files'=> true, 'method' => 'PATCH', 'action' => ['ArchetypeController@update', $archetype->id]]) !!}
+				{!! Form::model($result, ['files'=> true, 'method' => 'PATCH', 'action' => ['ResultController@update', $result->id]]) !!}
 					<input type="hidden" name="id" value="{{ $archetype->id }}">
-					@include('archetypes.form')
+					@include('results.form')
 					<div class="form-group btn-submit-top">
 						<button type="submit" class="btn btn-success btn-block">Update</button>
 					</div>

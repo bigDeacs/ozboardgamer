@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class ArchetypeRequest extends Request
+class AnswerRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class ArchetypeRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required|unique:archetypes,name,'.$this->id
+            'name' => 'required|unique:answers,name,'.$this->id
         ];
     }
 }

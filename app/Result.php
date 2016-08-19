@@ -2,14 +2,14 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Archetype extends Model {
+class Result extends Model {
 
 	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
 	 */
-	protected $table = 'archetypes';
+	protected $table = 'results';
 
 	/**
 	 * The attributes that are mass assignable.
@@ -25,8 +25,14 @@ class Archetype extends Model {
 		'meta',
 		'head',
 		'scripts',
+		'quiz_id',
 		'status'
 	];
+
+	public function answers()
+  {
+      return $this->hasMany('App\Answers');
+  }
 
 	public function games()
 	{

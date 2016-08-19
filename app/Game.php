@@ -73,14 +73,14 @@ class Game extends Model {
         return $this->posts->lists('id');
     }
 
-		public function archetypes()
+		public function results()
     {
-        return $this->belongsToMany('App\Archetype')->withTimestamps();
+        return $this->belongsToMany('App\Result')->withTimestamps();
     }
 
-    public function getArchetypeListAttribute()
+    public function getResultListAttribute()
     {
-        return $this->archetypes->lists('id');
+        return $this->results->lists('id');
     }
 
     public function mechanics()

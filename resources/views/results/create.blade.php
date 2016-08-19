@@ -1,7 +1,7 @@
 @extends('appAdmin')
 
 @section('meta')
-    <title>Create new Archetype</title>
+    <title>Create new Result</title>
 @endsection
 
 @section('head')
@@ -12,10 +12,10 @@
 		<div class="col-sm-10 col-sm-offset-1">
 			<div class="panel panel-default panel-shadow">
 			  <div class="panel-heading">
-			    <h1 class="panel-title"><strong>Create a new Archetype</strong></h1>
+			    <h1 class="panel-title"><strong>Create a new Result</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right btn-back-top"><a href="/admin/archetypes" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>
+			  	<div class="pull-right btn-back-top"><a href="/admin/quizzes/{{ $quiz->id }}/results" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>
 			  	<div style="clear:both;"></div>
 				@if(count($errors) > 0)
 					<div class="alert alert-danger">
@@ -26,8 +26,8 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::open(['files'=> true, 'url' => '/admin/archetypes']) !!}
-					@include('archetypes.form')
+				{!! Form::open(['files'=> true, 'url' => '/admin/quizzes/{{ $quiz->id }}/results']) !!}
+					@include('results.form')
 					<div class="form-group btn-submit-top">
 						<button type="submit" class="btn btn-success btn-block">Create</button>
 					</div>

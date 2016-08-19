@@ -63,9 +63,22 @@ Route::group(['prefix' => 'admin'], function()
 	Route::resource('users', 'UserController');
 	Route::get('users/{users}/activate', ['as' => 'users.activate', 'uses' => 'UserController@activate']);
 	Route::get('users/{users}/deactivate', ['as' => 'users.deactivate', 'uses' => 'UserController@deactivate']);
-	Route::resource('archetypes', 'ArchetypeController');
-	Route::get('archetypes/{archetypes}/activate', ['as' => 'archetypes.activate', 'uses' => 'ArchetypeController@activate']);
-	Route::get('archetypes/{archetypes}/deactivate', ['as' => 'archetypes.deactivate', 'uses' => 'ArchetypeController@deactivate']);
+
+	Route::resource('quizzes', 'QuizController');
+	Route::get('quizzes/{quizzes}/activate', ['as' => 'quizzes.activate', 'uses' => 'QuizController@activate']);
+	Route::get('quizzes/{quizzes}/deactivate', ['as' => 'quizzes.deactivate', 'uses' => 'QuizController@deactivate']);
+
+	Route::resource('quizzes/{quizzes}/results', 'ResultController');
+	Route::get('quizzes/{quizzes}/results/{results}/activate', ['as' => 'results.activate', 'uses' => 'ResultController@activate']);
+	Route::get('quizzes/{quizzes}/results/{results}/deactivate', ['as' => 'results.deactivate', 'uses' => 'ResultController@deactivate']);
+
+	Route::resource('quizzes/{quizzes}/questions', 'QuestionController');
+	Route::get('quizzes/{quizzes}/questions/{questions}/activate', ['as' => 'questions.activate', 'uses' => 'QuestionController@activate']);
+	Route::get('quizzes/{quizzes}/questions/{questions}/deactivate', ['as' => 'questions.deactivate', 'uses' => 'QuestionController@deactivate']);
+
+	Route::resource('quizzes/{quizzes}/questions/{questions}/answers', 'AnswerController');
+	Route::get('quizzes/{quizzes}/questions/{questions}/answers/{answers}/activate', ['as' => 'answers.activate', 'uses' => 'AnswerController@activate']);
+	Route::get('quizzes/{quizzes}/questions/{questions}/answers/{answers}/deactivate', ['as' => 'answers.deactivate', 'uses' => 'AnswerController@deactivate']);
 });
 
 // Front Facing Routes

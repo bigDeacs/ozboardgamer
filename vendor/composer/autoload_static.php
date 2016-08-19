@@ -400,6 +400,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_083221_create_posts_table.php',
         'CreatePublishersTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_083308_create_publishers_table.php',
+        'CreateQuizTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_19_010132_create_quiz_table.php',
         'CreateStoresTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_22_061629_create_stores_table.php',
         'CreateThemesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_083248_create_themes_table.php',
         'CreateTypesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_083241_create_types_table.php',

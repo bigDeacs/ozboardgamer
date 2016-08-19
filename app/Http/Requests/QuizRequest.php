@@ -19,9 +19,11 @@ class QuizRequest extends Request {
 	 *
 	 * @return array
 	 */
-	public function rules()
-	{
-		return [];
-	}
+	 public function rules()
+ 	{
+ 			return [
+ 					'name' => 'required|unique:quizzes,name,'.$this->id
+ 			];
+ 	}
 
 }
