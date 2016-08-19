@@ -26,7 +26,7 @@
 						</ul>
 					</div>
 				@endif
-				{!! Form::model($quiz, ['files'=> true, 'method' => 'PATCH', 'action' => ['QuizController@update', $result->id]]) !!}
+				{!! Form::model($quiz, ['files'=> true, 'method' => 'PATCH', 'action' => ['QuizController@update', $quiz->id]]) !!}
 					<input type="hidden" name="id" value="{{ $quiz->id }}">
 					@include('quizzes.form')
 					<div class="form-group btn-submit-top">
