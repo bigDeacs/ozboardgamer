@@ -30,7 +30,7 @@
               <div class="stepwizard-row setup-panel">
                   @foreach($questions as $key => $question)
                     <div class="stepwizard-step">
-                        <a href="#step-{{ $key+1 }}" type="button" {{ ($key == 0) ? 'class="btn btn-primary btn-circle"' : 'class="btn btn-default btn-circle" disabled="disabled"' }}>{{ $key+1 }}</a>
+                        <a href="#step-{{ $key+1 }}" type="button" class="{{ ($key == 0) ? 'btn btn-primary btn-circle' : 'btn btn-default btn-circle' }}" {{ ($key == 0) ? '' : 'disabled="disabled"' }}>{{ $key+1 }}</a>
                         <p>Question {{ $key+1 }}</p>
                     </div>
                   @endforeach
@@ -38,11 +38,6 @@
             </div>
             {!! Form::open(['route' => 'quizRequest', 'role' => 'form']) !!}
               @foreach($questions as $key => $question)
-                <div class="stepwizard-step">
-                    <a href="#step-{{ $key+1 }}" type="button" class="btn btn-primary btn-circle">{{ $key+1 }}</a>
-                    <p>{{ $key+1 }}</p>
-                </div>
-
                 <div class="row setup-content" id="step-{{ $key+1 }}">
                     <div class="col-xs-12">
                         <div class="col-md-12">
