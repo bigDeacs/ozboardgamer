@@ -607,8 +607,12 @@ class SiteController extends Controller {
 			$counts = array_count_values($request['questions']);
 			arsort($counts);
 			$results = array_slice($counts, 0, 2, true);
-
-			dd($results);
+			if($results[0] == $results[1])
+			{
+					dd('These are equal');
+			} else {
+				dd('the biggest is '.$results[0]);
+			}
 
 		//if($request->get('1_1') !== "") {
 			//$destination = $request->get('1_1');
