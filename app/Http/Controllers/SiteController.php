@@ -18,7 +18,7 @@ use App\Question;
 use App\Answer;
 use App\Result;
 use App\Http\Requests\SearchRequest;
-use App\Http\Requests\QuizRequest;
+use App\Http\Requests\QuizResultRequest;
 use Request;
 use Storage;
 use Session;
@@ -597,7 +597,7 @@ class SiteController extends Controller {
 			}
 	}
 
-	public function quizRequest(QuizRequest $request)
+	public function quizRequest(QuizResultRequest $request)
 	{
 			dd($request);
 		//if($request->get('1_1') !== "") {
