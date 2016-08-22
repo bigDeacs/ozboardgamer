@@ -16,7 +16,7 @@
 			  </div>
 			  <div class="panel-body">
 			  	<div class="pull-right">
-            <a href="/admin/quizzes/{{ $quiz->id }}/{{ (Auth::check()) ? 'questions' : '' }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a>
+            <a href="/admin/quizzes/{{ $quiz->id }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a>
             <a href="/admin/quizzes/{{ $quiz->id }}/questions/{{ $question->id }}/answers/create" class="btn btn-warning">Create Answer <i class="fa fa-plus-square"></i></a>
           </div>
 			  	<div style="clear:both;"></div>
