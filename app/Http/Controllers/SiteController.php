@@ -599,11 +599,12 @@ class SiteController extends Controller {
 
 	public function quizRequest(QuizResultRequest $request)
 	{
-			print_r($request['questions']);
-			print_r($result = array_count_values($request['questions']));
-			print_r(asort($result));
-			print_r(end($result));
-			print_r($answer = key($result));
+			$result = array_count_values($request['questions']);
+			asort($result);
+			end($result);
+			$answer = key($result);
+
+			dd($answer);
 
 		//if($request->get('1_1') !== "") {
 			//$destination = $request->get('1_1');
