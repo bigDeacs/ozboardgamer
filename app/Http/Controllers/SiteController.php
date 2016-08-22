@@ -606,12 +606,12 @@ class SiteController extends Controller {
 
 			$counts = array_count_values($request['questions']);
 			arsort($counts);
-			$results = array_slice($counts, 0, 2, true);
-			if($results[0] == $results[1])
-			{
-					dd('These are equal');
+			$result1 = array_slice($counts, 0, 1, true);
+			$result2 = array_slice($counts, 1, 1, true);
+			if($result1 == $result2) {
+					dd('theses are equal');
 			} else {
-				dd('the biggest is '.$results[0]);
+					dd($result1 .' is larger');
 			}
 
 		//if($request->get('1_1') !== "") {
