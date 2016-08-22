@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>{!! $quiz->->name !!} | Oz Board Gamer</title>
+    <title>{!! $quiz->name !!} | Oz Board Gamer</title>
     <meta name="description" content="Dice Rolling, Bluffing, Deduction. There are so many different mechanics that make games great!">
 @endsection
 
@@ -13,7 +13,7 @@
 		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
-				<li class="active"><span>{!! $quiz->->name !!}</span></li>
+				<li class="active"><span>{!! $quiz->name !!}</span></li>
 			</ol>
 		</div>
 	</div>
@@ -22,7 +22,7 @@
 			<div class="col-sm-12">
 				<div class="row">
 		      <div class="col-xs-12">
-		      	<h1>{!! $quiz->->name !!}</h1>
+		      	<h1>{!! $quiz->name !!}</h1>
 		      </div>
 		    </div>
 		    <div class="row">
