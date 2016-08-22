@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>Board Game Archetypes | Oz Board Gamer</title>
+    <title>{!! $quiz->->name !!} | Oz Board Gamer</title>
     <meta name="description" content="Dice Rolling, Bluffing, Deduction. There are so many different mechanics that make games great!">
 @endsection
 
@@ -13,7 +13,7 @@
 		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
-				<li class="active"><span>Archetypes</span></li>
+				<li class="active"><span>{!! $quiz->->name !!}</span></li>
 			</ol>
 		</div>
 	</div>
@@ -22,43 +22,43 @@
 			<div class="col-sm-12">
 				<div class="row">
 		      <div class="col-xs-12">
-		      	<h1>Which Type of Gamer are you?</h1>
+		      	<h1>{!! $quiz->->name !!}</h1>
 		      </div>
 		    </div>
 		    <div class="row">
             <div class="stepwizard">
               <div class="stepwizard-row setup-panel">
-                  @foreach($quiz->questions as $key => $question)
+                  @foreach($questions as $key => $question)
                     <div class="stepwizard-step">
-                        <a href="#step-{{ $key }}" type="button" class="btn btn-primary btn-circle">1</a>
-                        <p>Question {{ $key }}</p>
+                        <a href="#step-{{ $key+1 }}" type="button" class="btn btn-primary btn-circle">{{ $key+1 }}</a>
+                        <p>Question {{ $key+1 }}</p>
                     </div>
                   @endforeach
               </div>
             </div>
             {!! Form::open(['route' => 'quizRequest', 'role' => 'form']) !!}
-              @foreach($quiz->questions as $key => $question)
+              @foreach($questions as $key => $question)
                 <div class="stepwizard-step">
-                    <a href="#step-{{ $key }}" type="button" class="btn btn-primary btn-circle">{{ $key }}</a>
-                    <p>Question {{ $key }}</p>
+                    <a href="#step-{{ $key+1 }}" type="button" class="btn btn-primary btn-circle">{{ $key+1 }}</a>
+                    <p>{{ $key+1 }}</p>
                 </div>
 
                 <div class="row setup-content" id="step-{{ $key }}">
                     <div class="col-xs-12">
                         <div class="col-md-12">
-                            <h3>Question {{ $key }}</h3>
-                            <p>{{ $question->name }}</p>
+                            <h3>Question {{ $key+1 }}</h3>
+                            <p>{!! $question->name !!}</p>
                             <div class="form-group">
-                                @foreach($question->answers as $lock => $answer) use ($key)
+                                @foreach($question->answers as $lock => $answer) use ($key+1)
                                   <div class="funkyradio">
                                     <div class="funkyradio-success">
-                                      <input type="radio" name="q{{ $key }}" id="q{{ $key }}-{{ $lock }}" value="{{ $lock }}" />
-                                      <label for="q{{ $key }}-{{ $lock }}">{{ $answer->name }}</label>
+                                      <input type="radio" name="q{{ $key }}" id="q{{ $key }}-{{ $lock+1 }}" value="{{ $lock+1 }}" />
+                                      <label for="q{{ $key }}-{{ $lock+1 }}">{!! $answer->name !!}</label>
                                     </div>
                                   </div>
                                 @endforeach
                             </div>
-                            @if($question === end($quiz->questions))
+                            @if($question === end($questions))
                               <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
                             @else
                               <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
