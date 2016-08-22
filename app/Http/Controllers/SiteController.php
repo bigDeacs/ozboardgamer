@@ -592,6 +592,7 @@ class SiteController extends Controller {
 			} else {
 				$quiz = Quiz::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 				$questions = Question::where('status', '=', '1')->where('quiz_id', '=', $quiz->id)->get();
+				$questions = $questions->shuffle();
 				return view('quiz', compact('quiz', 'questions'));
 			}
 	}
