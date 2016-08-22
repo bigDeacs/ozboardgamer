@@ -58,7 +58,7 @@
                                   </div>
                                 @endforeach
                             </div>
-                            @if($key === count($questions))
+                            @if($key+1 === count($questions))
                               <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
                             @else
                               <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
