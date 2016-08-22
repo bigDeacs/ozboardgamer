@@ -37,8 +37,9 @@ class AnswerController extends Controller
     public function create($quizId, $questionId)
     {
         $question = Question::find($questionId);
+        $quiz = Quiz::find($quizId);
         $results = Result::where('quiz_id', '=', $quizId)->where('status', '=', '1')->lists('name', 'id');
-        return view('answers.create', compact('question', 'results'));
+        return view('answers.create', compact('question', 'quiz', 'results'));
     }
 
     /**
@@ -75,9 +76,10 @@ class AnswerController extends Controller
     public function edit($quizId, $questionId, $id)
     {
         $question = Question::find($questionId);
+        $quiz = Quiz::find($quizId);
         $answer = Answer::where('id', '=', $id)->firstOrFail();
         $results = Result::where('quiz_id', '=', $quizId)->where('status', '=', '1')->lists('name', 'id');
-        return view('answers.edit', compact('answer', 'question', 'results'));
+        return view('answers.edit', compact('answer', 'question', 'quiz', 'results'));
     }
 
     /**
