@@ -34,7 +34,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($question->answers() as $answer)
+                @foreach($question->answers as $answer)
                     @if($answer->status == 0)
                       <tr class="danger">
                     @else
