@@ -43,17 +43,17 @@
                     <p>{{ $key+1 }}</p>
                 </div>
 
-                <div class="row setup-content" id="step-{{ $key }}">
+                <div class="row setup-content" id="step-{{ $key+1 }}">
                     <div class="col-xs-12">
                         <div class="col-md-12">
                             <h3>Question {{ $key+1 }}</h3>
                             <p>{!! $question->name !!}</p>
                             <div class="form-group">
-                                @foreach($question->answers as $lock => $answer) use ($key+1)
+                                @foreach($question->answers as $lock => $answer)
                                   <div class="funkyradio">
                                     <div class="funkyradio-success">
-                                      <input type="radio" name="q{{ $key }}" id="q{{ $key }}-{{ $lock+1 }}" value="{{ $lock+1 }}" />
-                                      <label for="q{{ $key }}-{{ $lock+1 }}">{!! $answer->name !!}</label>
+                                      <input type="radio" name="q{{ $key+1 }}" id="q{{ $key+1 }}-{{ $lock+1 }}" value="{{ $lock+1 }}" />
+                                      <label for="q{{ $key+1 }}-{{ $lock+1 }}">{!! $answer->name !!}</label>
                                     </div>
                                   </div>
                                 @endforeach
