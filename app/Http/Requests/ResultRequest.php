@@ -23,8 +23,6 @@ class ResultRequest extends Request
      */
     public function rules()
     {
-        return [
-            'name' => 'required|unique:results,name,'.$this->id
-        ];
+        return [];
     }
 }
