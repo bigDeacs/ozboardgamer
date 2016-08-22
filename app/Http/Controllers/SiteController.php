@@ -604,7 +604,11 @@ class SiteController extends Controller {
 			end($result);
 			$answer = key($result);
 
-			dd($answer);
+			$counts = array_count_values($request['questions']);
+			arsort($counts);
+			$results = array_slice($counts, 0, 2, true);
+
+			dd($results);
 
 		//if($request->get('1_1') !== "") {
 			//$destination = $request->get('1_1');
