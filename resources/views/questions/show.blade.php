@@ -15,7 +15,10 @@
 			    <h1 class="panel-title"><strong>{{ $question->name }}</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right"><a href="/admin/{{ (Auth::check()) ? 'questions' : '' }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>
+			  	<div class="pull-right">
+            <a href="/admin/{{ (Auth::check()) ? 'questions' : '' }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a>
+            <a href="/admin/quizzes/{{ $quiz->id }}/questions/{{ $question->id }}/answers/create" class="btn btn-warning">Create Answer <i class="fa fa-plus-square"></i></a>
+          </div>
 			  	<div style="clear:both;"></div>
           <p><strong>Answers:</strong></p>
           <div class="table-responsive">

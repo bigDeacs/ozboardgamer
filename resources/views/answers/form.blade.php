@@ -7,15 +7,8 @@
           {!! Form::textarea('name', null, ['class' => 'form-control textarea', 'id' => 'name', 'rows' => '25']) !!}
     </div>
     <div class="col-sm-3 col-xs-12">
-        <label for="image">Featured Image</label>
-        @if(isset($answer))
-              <img src="{{ secure_url('/') }}{!! $answer->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
-        @else
-              <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
-        @endif
-        Browse:
-        <input type="file" name="image" accept="image/*" onchange="loadImage(event)">
-        <small>851px X 315px</small>
+          <label for="result_id">Answer Value</label>
+          {!! Form::select('result_id', ['' => 'Select result'] + $results, Input::old('result'), ['class' => 'form-control searchable-select']) !!}
     </div>
 </div>
 
@@ -35,6 +28,11 @@
 </div>
 
 @section('scripts')
+      <script>
+            $(document).ready(function() {
+              $(".searchable-select").select2();
+            });
+      </script>
       <script>
         var loadImage = function(event) {
           var imageUpload = document.getElementById('imageUpload');

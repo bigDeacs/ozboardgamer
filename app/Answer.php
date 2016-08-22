@@ -22,6 +22,7 @@ class Answer extends Model {
 		'head',
 		'scripts',
 		'question_id',
+		'result_id',
 		'status'
 	];
 

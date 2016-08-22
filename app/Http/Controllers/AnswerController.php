@@ -38,7 +38,7 @@ class AnswerController extends Controller
     {
         $question = Question::find($questionId);
         $results = Result::where('quiz_id', '=', $quizId)->where('status', '=', '1')->lists('name', 'id');
-        return view('answers.create', compact('question'));
+        return view('answers.create', compact('question', 'results'));
     }
 
     /**
@@ -77,7 +77,7 @@ class AnswerController extends Controller
         $question = Question::find($questionId);
         $answer = Answer::where('id', '=', $id)->firstOrFail();
         $results = Result::where('quiz_id', '=', $quizId)->where('status', '=', '1')->lists('name', 'id');
-        return view('answers.edit', compact('answer', 'question', '$results'));
+        return view('answers.edit', compact('answer', 'question', 'results'));
     }
 
     /**

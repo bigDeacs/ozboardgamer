@@ -14,6 +14,7 @@ return array(
     'AddRatingToGameUserTable' => $baseDir . '/database/migrations/2016_07_07_001729_add_rating_to_game_user_table.php',
     'AddRatingToStores' => $baseDir . '/database/migrations/2016_07_25_051937_add_rating_to_stores.php',
     'AddRatingsToGamesTable' => $baseDir . '/database/migrations/2016_05_06_060939_add_ratings_to_games_table.php',
+    'AddResultIdToAnswersTable' => $baseDir . '/database/migrations/2016_08_22_001252_add_resultId_to_answers_table.php',
     'AddRoleToGameUser' => $baseDir . '/database/migrations/2016_06_14_034655_add_role_to_game_user.php',
     'AddRoleToUsers' => $baseDir . '/database/migrations/2016_06_14_015458_add_role_to_users.php',
     'AddSlugFixToGamesTable' => $baseDir . '/database/migrations/2016_03_09_082311_add_slug_fix_to_games_table.php',

@@ -351,6 +351,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'AddRatingToGameUserTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_07_001729_add_rating_to_game_user_table.php',
         'AddRatingToStores' => __DIR__ . '/../..' . '/database/migrations/2016_07_25_051937_add_rating_to_stores.php',
         'AddRatingsToGamesTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_06_060939_add_ratings_to_games_table.php',
+        'AddResultIdToAnswersTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_22_001252_add_resultId_to_answers_table.php',
         'AddRoleToGameUser' => __DIR__ . '/../..' . '/database/migrations/2016_06_14_034655_add_role_to_game_user.php',
         'AddRoleToUsers' => __DIR__ . '/../..' . '/database/migrations/2016_06_14_015458_add_role_to_users.php',
         'AddSlugFixToGamesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_09_082311_add_slug_fix_to_games_table.php',
