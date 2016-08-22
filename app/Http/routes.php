@@ -93,6 +93,7 @@ Route::get('/users/{slug?}', 'SiteController@user');
 Route::get('/stores/{slug?}', 'SiteController@store');
 Route::get('/quizzes/{slug?}', 'SiteController@quiz');
 Route::post('/quizzes/results', ['as' => 'quizRequest', 'uses' => 'SiteController@quizRequest']);
+Route::get('/results/{slug}', 'SiteController@result');
 
 Route::get('users/{users}/addToOwned/{game}', ['as' => 'users.addToOwned', 'uses' => 'SiteController@addToOwned']);
 Route::get('users/{users}/removeFromOwned/{game}', ['as' => 'users.removeFromOwned', 'uses' => 'SiteController@removeFromOwned']);

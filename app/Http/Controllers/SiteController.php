@@ -609,56 +609,24 @@ class SiteController extends Controller {
 			list($result1) = array_slice($counts, 0, 1);
 			list($result2) = array_slice($counts, 1, 1);
 			if($result1 == $result2) {
-					dd('theses are equal');
+				$array = array($result1, $result2);
+				$result = Result::find($array[rand(0, count($array) - 1)]);
 			} else {
-					dd($result1 .' is larger');
+					$result = Result::find($result1);
 			}
+			return redirect('/results/'.$result->slug);
+		}
 
-		//if($request->get('1_1') !== "") {
-			//$destination = $request->get('1_1');
-		//}
-		//if($request->get('1_2') !== "") {
-			//$destination = $request->get('1_2');
-		//}
-		//if($request->get('1_3') !== "") {
-			//$destination = $request->get('1_3');
-		//}
-		//if($request->get('2_1') !== "") {
-			//$destination = $request->get('2_1');
-		//}
-		//if($request->get('2_2') !== "") {
-			//$destination = $request->get('2_2');
-		//}
-		//if($request->get('2_3') !== "") {
-			//$destination = $request->get('2_3');
-		//}
-		//if($request->get('3_1') !== "") {
-			//$destination = $request->get('3_1');
-		//}
-		//if($request->get('3_2') !== "") {
-			//$destination = $request->get('3_2');
-		//}
-		//if($request->get('3_3') !== "") {
-			//$destination = $request->get('3_3');
-		//}
-		//if($request->get('4_1') !== "") {
-			//$destination = $request->get('4_1');
-		//}
-		//if($request->get('4_2') !== "") {
-			//$destination = $request->get('4_2');
-		//}
-		//if($request->get('4_3') !== "") {
-			//$destination = $request->get('4_3');
-		//}
-		//$cruiselines = getCruiseWizard($destination, $request->get('type'), $request->get('budget'));
-		//foreach ($cruiselines as $cruiseline) {
-			//$this->data['results'][] = array_add($cruiseline, 'offers', getCruiselineOffers($cruiseline['recno']));
-		//}
-		//$this->data['dest'] = $destination;
-		//$this->data['offer_tiles'] = getOfferTiles(15, $this->data['ignore'], true);
-		//$data = $this->data;
-	  //return view('results', $data);
-	}
+		/**
+		 * Show the application welcome screen to the user.
+		 *
+		 * @return Response
+		 */
+		public function result($slug)
+		{
+				$result = Result::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+				return view('result', compact('result'));
+		}
 
 
 	/**
