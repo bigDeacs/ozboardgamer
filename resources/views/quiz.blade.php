@@ -37,6 +37,7 @@
               </div>
             </div>
             {!! Form::open(['route' => 'quizRequest', 'role' => 'form']) !!}
+              <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
               @foreach($questions as $key => $question)
                 <div class="row setup-content" id="step-{{ $key+1 }}">
                     <div class="col-xs-12">
