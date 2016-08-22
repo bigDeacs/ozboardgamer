@@ -608,10 +608,10 @@ class SiteController extends Controller {
 			arsort($counts);
 			$result1 = array_slice($counts, 0, 1, true);
 			$result2 = array_slice($counts, 1, 1, true);
-			if($result1 == $result2) {
+			if($result1[0] == $result2[0]) {
 					dd('theses are equal');
 			} else {
-					dd($result1 .' is larger');
+					dd($result1[0] .' is larger');
 			}
 
 		//if($request->get('1_1') !== "") {
