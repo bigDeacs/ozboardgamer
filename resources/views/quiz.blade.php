@@ -30,7 +30,7 @@
               <div class="stepwizard-row setup-panel">
                   @foreach($questions as $key => $question)
                     <div class="stepwizard-step">
-                        <a href="#step-{{ $key+1 }}" type="button" class="btn btn-primary btn-circle">{{ $key+1 }}</a>
+                        <a href="#step-{{ $key+1 }}" type="button" class="btn btn-primary btn-circle" {{ ($key == 0) ? '' : ' disabled="disabled"' }}>{{ $key+1 }}</a>
                         <p>Question {{ $key+1 }}</p>
                     </div>
                   @endforeach
@@ -58,6 +58,9 @@
                                   </div>
                                 @endforeach
                             </div>
+                            @if($key+1 < 1)
+                              <button class="btn btn-default prevBtn btn-lg pull-left" type="button">Prev</button>
+                            @endif
                             @if($key+1 === count($questions))
                               <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
                             @else
@@ -100,46 +103,56 @@
   <script>
     $(document).ready(function () {
 
-        var navListItems = $('div.setup-panel div a'),
-                allWells = $('.setup-content'),
-                allNextBtn = $('.nextBtn');
+    var navListItems = $('div.setup-panel div a'),
+            allWells = $('.setup-content'),
+            allNextBtn = $('.nextBtn'),
+            allPrevBtn = $('.prevBtn');
 
-        allWells.hide();
+    allWells.hide();
 
-        navListItems.click(function (e) {
-            e.preventDefault();
-            var $target = $($(this).attr('href')),
-                    $item = $(this);
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+                $item = $(this);
 
-            if (!$item.hasClass('disabled')) {
-                navListItems.removeClass('btn-primary').addClass('btn-default');
-                $item.addClass('btn-primary');
-                allWells.hide();
-                $target.show();
-                $target.find('input:eq(0)').focus();
-            }
-        });
-
-        allNextBtn.click(function(){
-            var curStep = $(this).closest(".setup-content"),
-                curStepBtn = curStep.attr("id"),
-                nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-                curInputs = curStep.find("input[type='radio']"),
-                isValid = true;
-
-            $(".form-group").removeClass("has-error");
-            for(var i=0; i<curInputs.length; i++){
-                if (!curInputs[i].validity.valid){
-                    isValid = false;
-                    $(curInputs[i]).closest(".form-group").addClass("has-error");
-                }
-            }
-
-            if (isValid)
-                nextStepWizard.removeAttr('disabled').trigger('click');
-        });
-
-        $('div.setup-panel div a.btn-primary').trigger('click');
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-primary').addClass('btn-default');
+            $item.addClass('btn-primary');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
     });
+
+    allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+            if (!curInputs[i].validity.valid){
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
+            }
+        }
+
+        if (isValid)
+            nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    allPrevBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a");
+
+        $(".form-group").removeClass("has-error");
+        prevStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+  });
   </script>
 @endsection
