@@ -625,7 +625,11 @@ class SiteController extends Controller {
 		public function result($slug)
 		{
 				$result = Result::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-				return view('result', compact('result'));
+				$games = Game::where('status', '=', '1')->whereHas('results', function($q) use($result)
+				{
+					$q->where('name', '=', $result->name);
+				})->orderByRaw("RAND()")->get();
+				return view('result', compact('result', 'games'));
 		}
 
 

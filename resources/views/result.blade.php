@@ -39,10 +39,29 @@
 			      </div>
 			    </div>
 				<div class="row">
-          <div class="col-xs-12">
+          @if($result->games->isEmpty())
+				  	<div class="col-sm-12 col-xs-12">
+				  @else
+			      	<div class="col-sm-9 col-xs-12">
+		      @endif
             <h1>{{ $result->name }}</h1>
             <p>{!! $result->description !!}</p>
           </div>
+          @unless($games->isEmpty())
+				  	<div class="col-sm-3 col-xs-12 text-center lead">
+				  		<p><strong>Games mentioned:</strong></p>
+				    	@foreach($games as $game)
+							<div class="row">
+								<div class="col-xs-12">
+						    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
+						    			<img src="{{ secure_url('/') }}{{ $game->thumb }}" class="img-responsive" />
+						    		</a>
+						    		<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a></p>
+						    	</div>
+						    </div>
+				    	@endforeach
+				    </div>
+				  @endunless
 				</div>
         @if(Session::has('name'))
           <hr />
