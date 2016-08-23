@@ -30,7 +30,7 @@
     <meta property="fb:app_id" content="256969058009917" />
     @yield('meta')
     @yield('head')
-    <script type="text/javascript">$(window).on('load', function(e){ if(window.location.hash == '#_=_') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); e.preventDefault(); } })</script>
+    <script type="text/javascript">if(window.location.hash == '#_=_') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
 	<link href="{{ asset('/css/style.min.css') }}" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{{ asset('/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
