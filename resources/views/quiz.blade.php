@@ -125,7 +125,7 @@
           var curStep = $(this).closest(".setup-content"),
               curStepBtn = curStep.attr("id"),
               nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-              curInputs = curStep.find("input[type='text'],input[type='url']"),
+              curInputs = curStep.find("input[type='radio']"),
               isValid = true;
 
           $(".form-group").removeClass("has-error");
@@ -151,45 +151,5 @@
 
       $('div.setup-panel div a.btn-primary').trigger('click');
     });
-
-
-
-
-    var createAllErrors = function() {
-        var form = $( this ),
-            errorList = $( "ul.errorMessages", form );
-
-        var showAllErrorMessages = function() {
-            errorList.empty();
-
-            // Find all invalid fields within the form.
-            var invalidFields = form.find( ":invalid" ).first().doSomething(function( index, node ) {
-                errorList
-                    .show()
-                    .append( "<li><span>Error</span> Opps, It looks like you missed something!</li>" );
-            });
-        };
-
-        // Support Safari
-        form.on( "submit", function( event ) {
-            if ( this.checkValidity && !this.checkValidity() ) {
-                $( this ).find( ":invalid" ).first().focus();
-                event.preventDefault();
-            }
-        });
-
-        $( "input[type=submit], button:not([type=button])", form )
-            .on( "click", showAllErrorMessages);
-
-        $( "input", form ).on( "keypress", function( event ) {
-            var type = $( this ).attr( "type" );
-            if ( /date|email|month|number|search|tel|text|time|url|week/.test ( type )
-              && event.keyCode == 13 ) {
-                showAllErrorMessages();
-            }
-        });
-    };
-
-    $( "form" ).each( createAllErrors );
   </script>
 @endsection
