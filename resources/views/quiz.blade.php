@@ -42,7 +42,6 @@
               </div>
             </div>
             {!! Form::open(['route' => 'quizRequest', 'role' => 'form']) !!}
-              <ul class="errorMessages"></ul>
               <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
               @foreach($questions as $key => $question)
                 <div class="row setup-content" id="step-{{ $key+1 }}">
@@ -136,7 +135,7 @@
 
             $(".form-group").removeClass("has-error");
             for(var i=0; i<curInputs.length; i++){
-                if (!curInputs[i].validity.valid){
+                if (!curInputs[i].checked){
                     isValid = false;
                     $(curInputs[i]).closest(".form-group").addClass("has-error");
                 }
