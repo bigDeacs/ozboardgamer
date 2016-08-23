@@ -31,16 +31,6 @@
                 <span class="sr-only">{!! 100 / count($questions) !!}% Complete</span>
               </div>
             </div>
-            <div class="stepwizard">
-              <div class="stepwizard-row setup-panel">
-                  @foreach($questions as $key => $question)
-                    <div class="stepwizard-step">
-                        <a href="#step-{{ $key+1 }}" type="button" class="{{ ($key == 0) ? 'btn btn-primary btn-circle' : 'btn btn-default btn-circle' }}" {{ ($key == 0) ? '' : 'disabled="disabled"' }}>{{ $key+1 }}</a>
-                        <p>Question {{ $key+1 }}</p>
-                    </div>
-                  @endforeach
-              </div>
-            </div>
             {!! Form::open(['route' => 'quizRequest', 'role' => 'form']) !!}
               <ul class="errorMessages"></ul>
               <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
@@ -121,7 +111,9 @@
                 navListItems.removeClass('btn-primary').addClass('btn-default');
                 $item.addClass('btn-primary');
                 allWells.hide();
-                $target.show();;
+                $target.show();
+                $target.find('input:eq(0)').attr('id');
+                $($target).css("border", "3px solid red");
             }
         });
 
@@ -153,6 +145,8 @@
                 prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a");
 
             $(".form-group").removeClass("has-error");
+            var newprogress = parseInt(curProgress) - parseInt(oneStep);
+            $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress + "%");
             prevStepWizard.removeAttr('disabled').trigger('click');
         });
 
