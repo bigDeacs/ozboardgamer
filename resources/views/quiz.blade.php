@@ -112,8 +112,8 @@
                 $item.addClass('btn-primary');
                 allWells.hide();
                 $target.show();
-                $target.find('input:eq(0)').attr('id');
-                $($target).css("border", "3px solid red");
+                $targetId = $target.find('input:eq(0)').attr('id');
+                $("#" + $targetId).css("border", "3px solid red");
             }
         });
 
