@@ -153,25 +153,42 @@
       $('div.setup-panel div a.btn-primary').trigger('click');
     });
 
+    var createAllErrors = function() {
+        var form = $( this ),
+            errorList = $( "ul.errorMessages", form );
+        var showAllErrorMessages = function() {
+            errorList.empty();
+            // Find all invalid fields within the form.
+            var invalidFields = form.find(":invalid").first(function(index, node) {
+                // Find the field's corresponding label
+                var label = $( "label[for=" + node.id + "] "),
+                    // Opera incorrectly does not fill the validationMessage property.
+                    message = node.validationMessage || 'Invalid value.';
+                errorList
+                    .show()
+                    .append( "<li><span>Opps, Seems like you missed a question or two...</li>" );
+            });
+        };
 
-    $(function(){
-        var validator = $("#form").kendoValidator({
-            rules: {
-                radio: function(input) {
-                    if (input.filter("[type=radio]") && input.attr("required")) {
-                        return $("#form").find("[type=radio]").is(":checked");
-                    }
-                    return true;
-                }
-            },
-            messages: {
-                radio: "This is a required field"
+        // Support Safari
+        form.on( "submit", function( event ) {
+            if ( this.checkValidity && !this.checkValidity() ) {
+                event.preventDefault();
             }
-        }).getKendoValidator();
-
-        $("#submit").click(function() {
-            validator.validate();
         });
-    });
+
+        $( "input[type=submit], button:not([type=button])", form)
+            .on( "click", showAllErrorMessages);
+
+        $("input", form).on("keypress", function(event) {
+            var type = $( this ).attr( "type" );
+            if ( /date|email|month|number|search|tel|text|time|url|week/.test ( type )
+              && event.keyCode == 13 ) {
+                showAllErrorMessages();
+            }
+        });
+    };
+
+    $( "form" ).each( createAllErrors );
   </script>
 @endsection
