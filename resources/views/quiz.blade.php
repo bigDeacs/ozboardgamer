@@ -129,16 +129,13 @@
             var curStep = $(this).closest(".setup-content"),
                 curStepBtn = curStep.attr("id"),
                 nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-                curInputs = curStep.find("input[type='radio']").attr("name"),
+                curInputs = curStep.find("input[type='radio']:checked"),
                 isValid = true,
                 curProgress = $('#progress-bar').attr('aria-valuenow');
 
             $(".form-group").removeClass("has-error");
-            for(var i=0; i<curInputs.length; i++){
-                if (!$('input[name="'+ curInputs[i] +'"]:checked').length){
-                    isValid = false;
-                    $(curInputs[i]).closest(".form-group").addClass("has-error");
-                }
+            if (!curInputs.length > 0){
+                isValid = false;
             }
 
             if (isValid)
