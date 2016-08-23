@@ -48,7 +48,7 @@
                                 @foreach($question->answers as $lock => $answer)
                                   <div class="funkyradio">
                                     <div class="funkyradio-success">
-                                      <input type="radio" name="questions[q{{ $key+1 }}]" id="q{{ $key+1 }}-{{ $lock+1 }}" value="{{ $answer->result->id }}" />
+                                      <input type="radio" name="questions[q{{ $key+1 }}]" id="q{{ $key+1 }}-{{ $lock+1 }}" value="{{ $answer->result->id }}" required="required" />
                                       <label for="q{{ $key+1 }}-{{ $lock+1 }}">{!! $answer->name !!}</label>
                                     </div>
                                   </div>
