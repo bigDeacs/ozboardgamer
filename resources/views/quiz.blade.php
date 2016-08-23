@@ -135,7 +135,7 @@
 
             $(".form-group").removeClass("has-error");
             for(var i=0; i<curInputs.length; i++){
-                if (curInputs[i].is(':checked')){
+                if (!curInputs[i]:checked){
                     isValid = false;
                     $(curInputs[i]).closest(".form-group").addClass("has-error");
                 }
