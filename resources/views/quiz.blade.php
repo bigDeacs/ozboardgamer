@@ -31,7 +31,7 @@
                 <span class="sr-only">{!! 100 / count($questions) !!}% Complete</span>
               </div>
             </div>
-            <div class="stepwizard">
+            <div class="stepwizard" style="display:none;">
               <div class="stepwizard-row setup-panel">
                   @foreach($questions as $key => $question)
                     <div class="stepwizard-step">
