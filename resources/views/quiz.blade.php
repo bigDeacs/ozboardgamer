@@ -131,8 +131,7 @@
                 nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
                 curInputs = curStep.find("input[type='radio']"),
                 isValid = true,
-                curProgress = $('#progress-bar').attr('aria-valuenow').val(),
-                newprogress = (curProgress + oneStep);
+                curProgress = $('#progress-bar').attr('aria-valuenow');
 
             $(".form-group").removeClass("has-error");
             for(var i=0; i<curInputs.length; i++){
@@ -142,23 +141,19 @@
                 }
             }
 
-            $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress + "%");
-
             if (isValid)
+                var newprogress = parseInt(curProgress) + parseInt(oneStep);
+                $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress + "%");
                 nextStepWizard.removeAttr('disabled').trigger('click');
         });
 
         allPrevBtn.click(function(){
             var curStep = $(this).closest(".setup-content"),
                 curStepBtn = curStep.attr("id"),
-                prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a"),
-                curProgress = $('#progress-bar').attr('aria-valuenow').val(),
-                newprogress = (curProgress - oneStep);
+                prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a");
 
             $(".form-group").removeClass("has-error");
             prevStepWizard.removeAttr('disabled').trigger('click');
-
-            $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress + "%");
         });
 
         $('div.setup-panel div a.btn-primary').trigger('click');
