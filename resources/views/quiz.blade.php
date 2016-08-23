@@ -163,13 +163,7 @@
             errorList.empty();
 
             // Find all invalid fields within the form.
-            var invalidFields = form.find( ":invalid" ).first( function( index, node ) {
-
-                // Find the field's corresponding label
-                var label = $( "label[for=" + node.id + "] "),
-                    // Opera incorrectly does not fill the validationMessage property.
-                    message = node.validationMessage || 'Invalid value.';
-
+            var invalidFields = form.find( ":invalid" ).first().doSomething(function( index, node ) {
                 errorList
                     .show()
                     .append( "<li><span>Error</span> Opps, It looks like you missed something!</li>" );
