@@ -41,7 +41,7 @@
 				<div class="row">
           <div class="col-xs-12">
             <h1>{{ $result->name }}</h1>
-            <p>{{ $result->description }}</p>
+            <p>{!! $result->description !!}</p>
           </div>
 				</div>
         @if(Session::has('name'))
