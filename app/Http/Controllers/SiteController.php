@@ -120,7 +120,8 @@ class SiteController extends Controller {
 			Session::put('thumb', $thumb);
 			$this->syncMailchimp($email, $fname, $lname, $gender);
 
-			return redirect()->back();
+			// to overwrite #_=_ anchor added by facebook
+    	return redirect('/#')->back();
     }
 
     /**
