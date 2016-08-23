@@ -36,7 +36,7 @@
                   @endforeach
               </div>
             </div>
-            {!! Form::open(['route' => 'quizRequest', 'role' => 'form']) !!}
+            {!! Form::open(['route' => 'quizRequest', 'role' => 'form', ['id' => 'form']']) !!}
               <ul class="errorMessages"></ul>
               <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
               @foreach($questions as $key => $question)
@@ -49,7 +49,7 @@
                                 @foreach($question->answers as $lock => $answer)
                                   <div class="funkyradio">
                                     <div class="funkyradio-success">
-                                      <input type="radio" name="questions[q{{ $key+1 }}]" id="q{{ $key+1 }}-{{ $lock+1 }}" value="{{ $answer->result->id }}" {{ ($lock == 0) ? 'required="required"' : '' }} />
+                                      <input type="radio" name="questions[q{{ $key+1 }}]" id="q{{ $key+1 }}-{{ $lock+1 }}" value="{{ $answer->result->id }}" {{ ($lock == 0) ? 'required' : '' }} />
                                       <label for="q{{ $key+1 }}-{{ $lock+1 }}">{!! $answer->name !!}</label>
                                     </div>
                                   </div>
@@ -59,7 +59,7 @@
                               <button class="btn btn-default prevBtn btn-lg pull-left" type="button">Prev</button>
                             @endif
                             @if($key+1 === count($questions))
-                              <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
+                              <button class="btn btn-success btn-lg pull-right" id="submit" type="submit">Finish!</button>
                             @else
                               <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
                             @endif
@@ -97,6 +97,7 @@
 @endsection
 
 @section('scripts')
+  <script src="http://kendo.cdn.telerik.com/2016.2.714/js/kendo.all.min.js"></script>
   <script>
     $(document).ready(function () {
 
@@ -153,49 +154,24 @@
     });
 
 
-
-
-    var createAllErrors = function() {
-        var form = $( this ),
-            errorList = $( "ul.errorMessages", form );
-
-        var showAllErrorMessages = function() {
-            errorList.empty();
-
-            // Find all invalid fields within the form.
-            var invalidFields = form.find( ":invalid" ).each( function( index, node ) {
-
-                // Find the field's corresponding label
-                var label = $( "label[for=" + node.id + "] "),
-                    // Opera incorrectly does not fill the validationMessage property.
-                    message = node.validationMessage || 'Invalid value.';
-
-                errorList
-                    .show()
-                    .append( "<li><span>" + label.html() + "</span> " + message + "</li>" );
-            });
-        };
-
-        // Support Safari
-        form.on( "submit", function( event ) {
-            if ( this.checkValidity && !this.checkValidity() ) {
-                $( this ).find( ":invalid" ).first().focus();
-                event.preventDefault();
+    $(function(){
+        var validator = $("#form").kendoValidator({
+            rules: {
+                radio: function(input) {
+                    if (input.filter("[type=radio]") && input.attr("required")) {
+                        return $("#form").find("[type=radio]").is(":checked");
+                    }
+                    return true;
+                }
+            },
+            messages: {
+                radio: "This is a required field"
             }
+        }).getKendoValidator();
+
+        $("#submit").click(function() {
+            validator.validate();
         });
-
-        $( "input[type=submit], button:not([type=button])", form )
-            .on( "click", showAllErrorMessages);
-
-        $( "input", form ).on( "keypress", function( event ) {
-            var type = $( this ).attr( "type" );
-            if ( /date|email|month|number|search|tel|text|time|url|week/.test ( type )
-              && event.keyCode == 13 ) {
-                showAllErrorMessages();
-            }
-        });
-    };
-
-    $( "form" ).each( createAllErrors );
+    });
   </script>
 @endsection
