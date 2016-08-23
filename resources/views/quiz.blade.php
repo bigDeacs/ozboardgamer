@@ -122,8 +122,7 @@
                 $item.addClass('btn-primary');
                 allWells.hide();
                 $target.show();
-                $targetId = $target.find('input:eq(0)').attr('id');
-                $("#" + $targetId).css("border", "3px solid red");
+                $target.find('input:eq(0)').addClass('has-error');
             }
         });
 
@@ -152,7 +151,8 @@
         allPrevBtn.click(function(){
             var curStep = $(this).closest(".setup-content"),
                 curStepBtn = curStep.attr("id"),
-                prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a");
+                prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a"),
+                curProgress = $('#progress-bar').attr('aria-valuenow');
 
             $(".form-group").removeClass("has-error");
             var newprogress = parseInt(curProgress) - parseInt(oneStep);
