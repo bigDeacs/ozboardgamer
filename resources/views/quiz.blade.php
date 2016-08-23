@@ -104,66 +104,65 @@
 @section('scripts')
   <script>
     $(document).ready(function () {
-      var numberOfQuestions = {!! count($questions) !!},
-              oneStep = 100/numberOfQuestions,
-              navListItems = $('div.setup-panel div a'),
-              allWells = $('.setup-content'),
-              allNextBtn = $('.nextBtn'),
-              allPrevBtn = $('.prevBtn');
+        var oneStep = (100 / {!! count($questions) !!}),
+                navListItems = $('div.setup-panel div a'),
+                allWells = $('.setup-content'),
+                allNextBtn = $('.nextBtn'),
+                allPrevBtn = $('.prevBtn');
 
-      allWells.hide();
+        allWells.hide();
 
-      navListItems.click(function (e) {
-          e.preventDefault();
-          var $target = $($(this).attr('href')),
-                  $item = $(this);
+        navListItems.click(function (e) {
+            e.preventDefault();
+            var $target = $($(this).attr('href')),
+                    $item = $(this);
 
-          if (!$item.hasClass('disabled')) {
-              navListItems.removeClass('btn-primary').addClass('btn-default');
-              $item.addClass('btn-primary');
-              allWells.hide();
-              $target.show();
-              $target.find('label:eq(0)').addClass('btn-primary');
-          }
-      });
+            if (!$item.hasClass('disabled')) {
+                navListItems.removeClass('btn-primary').addClass('btn-default');
+                $item.addClass('btn-primary');
+                allWells.hide();
+                $target.show();
+                $target.find('label:eq(0)').addClass('btn-primary');
+            }
+        });
 
-      allNextBtn.click(function(){
-          var curStep = $(this).closest(".setup-content"),
-              curStepBtn = curStep.attr("id"),
-              nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-              curInputs = curStep.find("input[type='radio']"),
-              isValid = true,
-              curProgress = $('#progress-bar').attr('aria-valuenow'),
-              newprogress = curProgress + oneStep;
+        allNextBtn.click(function(){
+            var curStep = $(this).closest(".setup-content"),
+                curStepBtn = curStep.attr("id"),
+                nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+                curInputs = curStep.find("input[type='radio']"),
+                isValid = true,
+                curProgress = $('#progress-bar').attr('aria-valuenow'),
+                newprogress = (curProgress + oneStep);
 
-          $(".form-group").removeClass("has-error");
-          for(var i=0; i<curInputs.length; i++){
-              if (!curInputs[i].validity.valid){
-                  isValid = false;
-                  $(curInputs[i]).closest(".form-group").addClass("has-error");
-              }
-          }
+            $(".form-group").removeClass("has-error");
+            for(var i=0; i<curInputs.length; i++){
+                if (!curInputs[i].validity.valid){
+                    isValid = false;
+                    $(curInputs[i]).closest(".form-group").addClass("has-error");
+                }
+            }
 
-          $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress);
+            $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress);
 
-          if (isValid)
-              nextStepWizard.removeAttr('disabled').trigger('click');
-      });
+            if (isValid)
+                nextStepWizard.removeAttr('disabled').trigger('click');
+        });
 
-      allPrevBtn.click(function(){
-          var curStep = $(this).closest(".setup-content"),
-              curStepBtn = curStep.attr("id"),
-              prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a"),
-              curProgress = $('#progress-bar').attr('aria-valuenow'),
-              newprogress = curProgress - oneStep;
+        allPrevBtn.click(function(){
+            var curStep = $(this).closest(".setup-content"),
+                curStepBtn = curStep.attr("id"),
+                prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a"),
+                curProgress = $('#progress-bar').attr('aria-valuenow'),
+                newprogress = (curProgress - oneStep);
 
-          $(".form-group").removeClass("has-error");
-          prevStepWizard.removeAttr('disabled').trigger('click');
+            $(".form-group").removeClass("has-error");
+            prevStepWizard.removeAttr('disabled').trigger('click');
 
-          $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress);
-      });
+            $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress);
+        });
 
-      $('div.setup-panel div a.btn-primary').trigger('click');
+        $('div.setup-panel div a.btn-primary').trigger('click');
     });
   </script>
 @endsection
