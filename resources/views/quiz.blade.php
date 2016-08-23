@@ -135,7 +135,7 @@
 
             $(".form-group").removeClass("has-error");
             for(var i=0; i<curInputs.length; i++){
-                if (!$('input[name='+ curInputs[i] +']:checked').length){
+                if (!$('input[name="'+ curInputs[i] +'"]:checked').length){
                     isValid = false;
                     $(curInputs[i]).closest(".form-group").addClass("has-error");
                 }
