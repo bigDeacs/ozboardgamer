@@ -23,7 +23,8 @@
 		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
-				<li><a href="/{{ $result->quiz->slug }}">{{ $result->quiz->name }}</a></li>
+        <li><a href="/quizzes">Quizzes</a></li>
+        <li><a href="/{{ $result->quiz->slug }}">{{ $result->quiz->name }}</a></li>
 				<li class="active"><span>{{ $result->name }}</span></li>
 			</ol>
 		</div>

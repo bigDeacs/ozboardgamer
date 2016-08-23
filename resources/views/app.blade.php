@@ -87,7 +87,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="/">
+                <a class="navbar-brand topnav" href="/" title="Click to go to home page">
                 	<img src="{{ secure_url('/', $parameters = ['img']) }}/logo.png" class="img-responsive" height="75" width="auto" />
                 </a>
             </div>
@@ -138,9 +138,6 @@
                                     </div>
                                 </form>
                             </li>
-                            <li>
-                                <a href="/">Home</a>
-                            </li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
                               <ul class="dropdown-menu">
@@ -152,20 +149,21 @@
                                 <li><a href="/families">Families</a></li>
                               </ul>
                             </li>
-                            <li>
-                                <a href="/news">News</a>
-                            </li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                 <li><a href="/reviews">Reviews</a></li>
                                 <li><a href="/top10s">Top 10's</a></li>
                                 <li><a href="/howtos">How To's</a></li>
+                                <a href="/news">News</a>
                                 <li><a href="/blogs">Blog</a></li>
                               </ul>
                             </li>
                             <li>
                                 <a href="/stores">Stores</a>
+                            </li>
+                            <li>
+                                <a href="/quizzes">Quizzes</a>
                             </li>
                         </ul>
                     </div>
