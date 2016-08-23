@@ -163,7 +163,7 @@
             errorList.empty();
 
             // Find all invalid fields within the form.
-            var invalidFields = form.find( ":invalid" ).each( function( index, node ) {
+            var invalidFields = form.find( ":invalid" ).first( function( index, node ) {
 
                 // Find the field's corresponding label
                 var label = $( "label[for=" + node.id + "] "),
@@ -172,7 +172,7 @@
 
                 errorList
                     .show()
-                    .append( "<li><span>" + label.html() + "</span> " + message + "</li>" );
+                    .append( "<li><span>Error</span> Opps, It looks like you missed something!</li>" );
             });
         };
 
