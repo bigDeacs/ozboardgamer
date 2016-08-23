@@ -30,7 +30,7 @@
     <meta property="fb:app_id" content="256969058009917" />
     @yield('meta')
     @yield('head')
-    <script type="text/javascript">if (window.location.hash && window.location.hash == '#_=_') { window.location.hash = ''; }</script>
+    <script type="text/javascript">$(window).on('load', function(e){ if(window.location.hash == '#_=_') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); e.preventDefault(); } })</script>
 	<link href="{{ asset('/css/style.min.css') }}" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{{ asset('/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
@@ -138,6 +138,9 @@
                                         <input type="text" name="search-terms" id="search-terms" placeholder="Enter search terms...">
                                     </div>
                                 </form>
+                            </li>
+                            <li>
+                                <a href="/">Home</a>
                             </li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
