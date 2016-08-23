@@ -36,7 +36,7 @@
                   @endforeach
               </div>
             </div>
-            {!! Form::open(['route' => 'quizRequest', 'role' => 'form', ['id' => 'form']']) !!}
+            {!! Form::open(['route' => 'quizRequest', 'role' => 'form', 'id' => 'form']) !!}
               <ul class="errorMessages"></ul>
               <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
               @foreach($questions as $key => $question)
