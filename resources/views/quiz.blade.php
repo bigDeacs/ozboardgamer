@@ -27,8 +27,8 @@
 		    </div>
 		    <div class="row">
             <div class="progress">
-              <div class="progress-bar progress-bar-striped active" id="progress-bar" ole="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                <span class="sr-only">0% Complete</span>
+              <div class="progress-bar progress-bar-striped active" id="progress-bar" ole="progressbar" aria-valuenow="{!! 100 / count($questions) !!}" aria-valuemin="0" aria-valuemax="100" style="width: {!! 100 / count($questions) !!}%">
+                <span class="sr-only">{!! 100 / count($questions) !!}% Complete</span>
               </div>
             </div>
             <div class="stepwizard">
@@ -121,8 +121,7 @@
                 navListItems.removeClass('btn-primary').addClass('btn-default');
                 $item.addClass('btn-primary');
                 allWells.hide();
-                $target.show();
-                $target.find('label:eq(0)').addClass('btn-primary');
+                $target.show();;
             }
         });
 
@@ -132,7 +131,7 @@
                 nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
                 curInputs = curStep.find("input[type='radio']"),
                 isValid = true,
-                curProgress = $('#progress-bar').attr('aria-valuenow'),
+                curProgress = $('#progress-bar').attr('aria-valuenow').val(),
                 newprogress = (curProgress + oneStep);
 
             $(".form-group").removeClass("has-error");
@@ -143,7 +142,7 @@
                 }
             }
 
-            $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress);
+            $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress + "%");
 
             if (isValid)
                 nextStepWizard.removeAttr('disabled').trigger('click');
@@ -153,13 +152,13 @@
             var curStep = $(this).closest(".setup-content"),
                 curStepBtn = curStep.attr("id"),
                 prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a"),
-                curProgress = $('#progress-bar').attr('aria-valuenow'),
+                curProgress = $('#progress-bar').attr('aria-valuenow').val(),
                 newprogress = (curProgress - oneStep);
 
             $(".form-group").removeClass("has-error");
             prevStepWizard.removeAttr('disabled').trigger('click');
 
-            $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress);
+            $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress + "%");
         });
 
         $('div.setup-panel div a.btn-primary').trigger('click');
