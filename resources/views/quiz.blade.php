@@ -166,21 +166,22 @@
                     message = node.validationMessage || 'Invalid value.';
                 errorList
                     .show()
-                    .append( "<li><span>Opps, Seems like you missed a question or two...</li>" );
+                    .append( "<li><span>Opps, Seems like you missed a question or two</li>" );
             });
         };
 
         // Support Safari
         form.on( "submit", function( event ) {
             if ( this.checkValidity && !this.checkValidity() ) {
+                $( this ).find( ":invalid" ).first().focus();
                 event.preventDefault();
             }
         });
 
-        $( "input[type=submit], button:not([type=button])", form)
+        $( "input[type=submit], button:not([type=button])", form )
             .on( "click", showAllErrorMessages);
 
-        $("input", form).on("keypress", function(event) {
+        $( "input", form ).on( "keypress", function( event ) {
             var type = $( this ).attr( "type" );
             if ( /date|email|month|number|search|tel|text|time|url|week/.test ( type )
               && event.keyCode == 13 ) {
