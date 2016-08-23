@@ -136,12 +136,14 @@
             $(".form-group").removeClass("has-error");
             if (!curInputs.length > 0){
                 isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
             }
 
-            if (isValid)
+            if (isValid) {
                 var newprogress = parseInt(curProgress) + parseInt(oneStep);
                 $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress + "%");
                 nextStepWizard.removeAttr('disabled').trigger('click');
+            }
         });
 
         allPrevBtn.click(function(){
