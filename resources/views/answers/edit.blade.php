@@ -12,7 +12,7 @@
 		<div class="col-sm-10 col-sm-offset-1">
 			<div class="panel panel-default panel-shadow">
 			  <div class="panel-heading">
-			    <h1 class="panel-title"><strong>Edit {{ $answer->name }}</strong></h1>
+			    <h1 class="panel-title"><strong>Edit {!! $answer->name !!}</strong></h1>
 			  </div>
 			  <div class="panel-body">
 			  	<div class="pull-right btn-back-top"><a href="/admin/quizzes/{{ $quiz->id }}/questions/{{ $question->id }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>

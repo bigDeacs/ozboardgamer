@@ -31,6 +31,7 @@
               <thead>
                 <tr>
                   <th>Name</th>
+                  <th>Answers</th>
                   <th></th>
                 </tr>
               </thead>
@@ -41,8 +42,8 @@
                     @else
                       <tr class="success">
                     @endif
-                        <td scope="row">
-                          {!! $question->name !!}
+                        <td scope="row">{!! $question->name !!}</td>
+                        <td>
                           @if(count($question->answers) == 0)
                             <span class="badge label-warning">
                           @else
