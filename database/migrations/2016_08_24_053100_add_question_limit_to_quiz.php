@@ -12,7 +12,7 @@ class AddQuestionLimitToQuiz extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('quiz', function(Blueprint $table)
+		Schema::table('quizzes', function(Blueprint $table)
 		{
 			$table->string('limit');
 		});
