@@ -9,7 +9,16 @@
 @endsection
 
 @section('content')
-	<div class="breadcrumb-holder">
+  <div class="breadcrumb-holder hidden-lg hidden-md hidden-sm">
+    <div class="container">
+      <ol class="breadcrumb breadcrumb-arrow">
+        <li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
+        <li><a href="/quizzes">{{ str_limit(strip_tags(Quizzes), $limit = 5, $end = '...') }}</a></li>
+        <li class="active"><span>{{ str_limit(strip_tags($quiz->name), $limit = 10, $end = '...') }}</span></li>
+      </ol>
+    </div>
+  </div>
+	<div class="breadcrumb-holder hidden-xs">
 		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
