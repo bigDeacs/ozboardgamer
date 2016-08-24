@@ -41,7 +41,15 @@
                     @else
                       <tr class="success">
                     @endif
-                        <td scope="row">{{ $question->name }}</td>
+                        <td scope="row">
+                          {!! $question->name !!}
+                          @if(count($question->answers) == 0)
+                            <span class="badge label-warning">
+                          @else
+                            <span class="badge label-success">
+                          @endif
+                            {{ count($question->answers) }}</span>
+                        </td>
                         <td>
                           <a href="/admin/quizzes/{{ $quiz->id }}/questions/{{ $question->id }}" class="btn btn-info">Build <i class="fa fa-cogs"></i></a>
                           <a href="/admin/quizzes/{{ $quiz->id }}/questions/{{ $question->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>

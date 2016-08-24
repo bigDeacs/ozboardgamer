@@ -30,6 +30,7 @@
               <thead>
                 <tr>
                   <th>Name</th>
+                  <th>Result</th>
                   <th></th>
                 </tr>
               </thead>
@@ -40,7 +41,8 @@
                     @else
                       <tr class="success">
                     @endif
-                        <td scope="row">{{ $answer->name }}</td>
+                        <td scope="row">{!! $answer->name !!}</td>
+                        <td>{{ $answer->result->name }}</td>
                         <td>
                           <a href="/admin/quizzes/{{ $quiz->id }}/questions/{{ $question->id }}/answers/{{ $answer->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
                           <a href="/quizzes/{{ $quiz->id }}/questions/{{ $question->id }}/answers/{{ $answer->slug }}" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
