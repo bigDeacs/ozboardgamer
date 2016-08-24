@@ -141,7 +141,7 @@
             }
 
             if (isValid) {
-                var newprogress = parseInt(curProgress) + parseInt(oneStep);
+                var newprogress = parseFloat(curProgress) + parseFloat(oneStep);
                 $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress + "%");
                 nextStepWizard.removeAttr('disabled').trigger('click');
             }
@@ -154,7 +154,7 @@
                 curProgress = $('#progress-bar').attr('aria-valuenow');
 
             $(".form-group").removeClass("has-error");
-            var newprogress = parseInt(curProgress) - parseInt(oneStep);
+            var newprogress = parseFloat(curProgress) - parseFloat(oneStep);
             $('#progress-bar').attr('aria-valuenow', newprogress).css('width',newprogress + "%");
             prevStepWizard.removeAttr('disabled').trigger('click');
         });
