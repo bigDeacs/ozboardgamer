@@ -166,7 +166,7 @@
                             <li>
                                 <a href="/stores">Stores</a>
                             </li>
-                            <li>
+                            <li class="hidden-sm">
                                 <a href="/quizzes">Quizzes</a>
                             </li>
                         </ul>
@@ -258,7 +258,7 @@
         <div class="modal-dialog" style="margin-top: 150px;">
           <div class="modal-content">
             <div class="modal-body text-center" style="min-height: 340px;background: #008751;color: #fff;">
-                <h1>Sign Up With Facebook!</h1>
+                <h3>Sign Up With Facebook!</h3>
                 <p>By logging in with you Facebook account you gain access to:</p>
                 <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Personal collection tracker & watchlist</p>
                 <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Add ratings to Games and Stores</p>

@@ -25,14 +25,14 @@
 			</ol>
 		</div>
 	</div>
-	<div class="container">
+	<div class="container" itemscope itemtype="http://schema.org/Store">
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
 			      <div class="col-xs-12">
 			      	<div class="row">
 			      		<div class="col-sm-9 col-xs-12">
-				      		<h1>{{ $store->name }}</h1>
+				      		<h1 itemprop="name">{{ $store->name }}</h1>
 				      	</div>
 				      	<div class="col-sm-3 col-xs-12">
 				      		<span>Search for store: </span>
@@ -43,15 +43,17 @@
 				    </div>
 			      	<div class="row">
 			      		<div class="col-md-5 col-sm-4 col-xs-12">
-			      			<h3>Store Info</h3>
-			      			<p>{{ $store->street }}</p>
-			      			<p>{{ $store->suburb }}, {{ $store->state }} {{ $store->postcode }}</p>
-			      			<p>{{ $store->phone }}</p>
+			      			<h2>Store Info</h2>
+			      			<span itemprop="address">
+                    <p>{{ $store->street }}</p>
+			      			  <p>{{ $store->suburb }}, {{ $store->state }} {{ $store->postcode }}</p>
+                  </span>
+			      			<p itemprop="telephone">{{ $store->phone }}</p>
 			      			@if($store->email !== null)
-			      				<p><a href="mailto:{{ $store->email }}">{{ $store->email }}</a></p>
+			      				<p itemprop="email"><a href="mailto:{{ $store->email }}">{{ $store->email }}</a></p>
 			      			@endif
 			      			@if($store->link !== null)
-			      				<p><a href="{{ $store->link }}" target="_blank">Go To Site</a></p>
+			      				<p itemprop="sameAs"><a href="{{ $store->link }}" target="_blank">Go To Site</a></p>
 			      			@endif
 			      			<div class="row">
 					      		@if(Session::has('name'))
@@ -86,8 +88,8 @@
 						    </div>
 			      		</div>
 			      		<div class="col-md-4 col-sm-4 col-xs-12">
-			      			<h3>Trading Hours</h3>
-			      			<p>{!! $store->hours !!}</p>
+			      			<h2>Trading Hours</h2>
+			      			<p itemprop="openingHours">{!! $store->hours !!}</p>
 			      		</div>
 			      		<div class="col-md-3 col-sm-4 col-xs-12">
 				      		@if($store->rating < 1)
@@ -118,6 +120,10 @@
 			      	</div>
 
 			      	<div class="row">
+                  <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                    <meta itemprop="latitude" content="{{ $store->latitude }}" />
+                    <meta itemprop="longitude" content="{{ $store->longitude }}" />
+                  </div>
 		            	<div class="col-xs-12">
 			      			<div id="map"></div>
 			      			<br />
