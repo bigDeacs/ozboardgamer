@@ -159,7 +159,7 @@
                                 <li><a href="/reviews">Reviews</a></li>
                                 <li><a href="/top10s">Top 10's</a></li>
                                 <li><a href="/howtos">How To's</a></li>
-                                <a href="/news">News</a>
+                                <li><a href="/news">News</a></li>
                                 <li><a href="/blogs">Blog</a></li>
                               </ul>
                             </li>

@@ -26,11 +26,33 @@
 			      </div>
 			    </div>
 			    <div class="row">
-			    	@foreach($quizzes as $quiz)
-						<div class="col-sm-3 col-xs-12">
-					    	<p class="text-center"><strong><a href="/quizzes/{{ $quiz->slug }}">{!! $quiz->name !!}</a></strong></p>
-						</div>
-					@endforeach
+            @foreach($quizzes as $quiz)
+    					<div class="row">
+    		                <div class="col-sm-12 post">
+    		                    <div class="row">
+    		                        <div class="col-sm-12">
+    		                            <h4>
+    		                                <strong><a href="/quizzes/{{ $quiz->slug }}" class="post-title">{!! $quiz->name !!}</a></strong></h4>
+    		                        </div>
+    		                    </div>
+    		                    <div class="row post-content">
+    		                        <div class="col-sm-3 text-center">
+    		                            <a href="/quizzes/{{ $quiz->slug }}">
+    		                                <img src="{{ secure_url('/') }}{{ $quiz->thumb }}" alt="{!! $quiz->name !!}" class="img-responsive" width="263" height="auto" />
+    		                            </a>
+    		                        </div>
+    		                        <div class="col-sm-9">
+    		                            <p>
+    		                                {!! str_limit(strip_tags($quiz->description), $limit = 100, $end = '...') !!}
+    		                            </p>
+    		                            <p>
+    		                                <a class="btn btn-dark" href="/quizzes/{{ $quiz->slug }}">Read more</a>
+    		                            </p>
+    		                        </div>
+    		                    </div>
+    		                </div>
+    		            </div>
+    				@endforeach
 				</div>
 				<hr />
 				<div class="row">
