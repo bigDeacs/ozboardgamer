@@ -348,6 +348,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'AddImageToStores' => __DIR__ . '/../..' . '/database/migrations/2016_07_25_011022_add_image_to_stores.php',
         'AddLinkToGamesTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_15_015802_add_link_to_games_table.php',
         'AddNewContentsOnGamesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_17_064739_add_new_contents_on_games_table.php',
+        'AddQuestionLimitToQuiz' => __DIR__ . '/../..' . '/database/migrations/2016_08_24_053100_add_question_limit_to_quiz.php',
         'AddRatingToGameUserTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_07_001729_add_rating_to_game_user_table.php',
         'AddRatingToStores' => __DIR__ . '/../..' . '/database/migrations/2016_07_25_051937_add_rating_to_stores.php',
         'AddRatingsToGamesTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_06_060939_add_ratings_to_games_table.php',

@@ -11,6 +11,7 @@ return array(
     'AddImageToStores' => $baseDir . '/database/migrations/2016_07_25_011022_add_image_to_stores.php',
     'AddLinkToGamesTable' => $baseDir . '/database/migrations/2016_06_15_015802_add_link_to_games_table.php',
     'AddNewContentsOnGamesTable' => $baseDir . '/database/migrations/2016_03_17_064739_add_new_contents_on_games_table.php',
+    'AddQuestionLimitToQuiz' => $baseDir . '/database/migrations/2016_08_24_053100_add_question_limit_to_quiz.php',
     'AddRatingToGameUserTable' => $baseDir . '/database/migrations/2016_07_07_001729_add_rating_to_game_user_table.php',
     'AddRatingToStores' => $baseDir . '/database/migrations/2016_07_25_051937_add_rating_to_stores.php',
     'AddRatingsToGamesTable' => $baseDir . '/database/migrations/2016_05_06_060939_add_ratings_to_games_table.php',

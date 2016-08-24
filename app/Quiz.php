@@ -25,6 +25,7 @@ class Quiz extends Model {
 		'meta',
 		'head',
 		'scripts',
+		'limit',
 		'status'
 	];
 
