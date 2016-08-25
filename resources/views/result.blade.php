@@ -3,6 +3,10 @@
 @section('meta')
     <title>{{ $result->name }} | {{ $result->quiz->name }} | Oz Board Gamer</title>
     {!! $result->meta !!}
+    <meta property="og:title"              content="{{ $result->name }} | What Type of Gamer are you?" />
+  	<meta property="og:description"        content="I just took this quiz and got {{ $result->name }}! Take it yourself over on OzBoardGamer.com" />
+    <meta property="og:url"                content="/{{ $result->quiz->slug }}" />
+    <meta property="og:image"              content="{{ secure_url('/') }}{{ $result->image }}" />
 @endsection
 
 @section('head')
@@ -46,6 +50,9 @@
 			      	<div class="col-sm-9 col-xs-12">
 		      @endif
             <h1>{{ $result->name }}</h1>
+            <div class="pull-right hidden-xs">
+              <div class="fb-share-button" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse">Share</a></div>
+            </div>
             <p>{!! $result->description !!}</p>
           </div>
           @unless($games->isEmpty())
