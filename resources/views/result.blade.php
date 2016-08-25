@@ -4,8 +4,8 @@
     <title>{{ $result->name }} | {{ $result->quiz->name }} | Oz Board Gamer</title>
     {!! $result->meta !!}
     <meta property="og:title"              content="{{ $result->name }} | What Type of Gamer are you?" />
-  	<meta property="og:description"        content="I just took this quiz and got {{ $result->name }}! Take it yourself over on OzBoardGamer.com" />
-    <meta property="og:url"                content="https://ozboardgamer.com/quizzes/{{ $result->quiz->slug }}" />
+  	<meta property="og:description"        content="I just took this quiz and got {{ $result->name }}! Take it yourself at https://ozboardgamer.com/quizzes/{{ $result->quiz->slug }}" />
+    <meta property="og:url"                content="https://ozboardgamer.com/results/{{ $result->slug }}" />
     <meta property="og:image"              content="{{ secure_url('/') }}{{ $result->image }}" />
 @endsection
 
