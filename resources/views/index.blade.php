@@ -67,27 +67,25 @@
             </div>
         </div>
         @endunless
-        <div class="row">
+        <div class="row hidden-xs">
             <div class="col-md-8 col-sm-7 col-xs-12">
               <div class="row">
-                  <div class="col-sm-6 col-xs-12">
+                  <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/games">
                       <img src="{{ secure_url('/', $parameters = ['img']) }}/find-new-games.jpg" class="img-responsive" height="200" width="auto" style="width:100%;" />
                     </a>
                   </div>
-                  <div class="col-sm-6 col-xs-12">
+                  <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/reviews">
                         <img src="{{ secure_url('/', $parameters = ['img']) }}/read-our-articles.jpg" class="img-responsive" height="200" width="auto" style="width:100%;" />
                     </a>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm-6 col-xs-12">
+                  <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/quizzes">
                         <img src="{{ secure_url('/', $parameters = ['img']) }}/board-game-quiz.jpg" class="img-responsive" height="200" width="auto" style="width:100%;" />
                     </a>
                   </div>
-                  <div class="col-sm-6 col-xs-12">
+                  <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/stores">
                         <img src="{{ secure_url('/', $parameters = ['img']) }}/find-game-stores.jpg" class="img-responsive" height="200" width="auto" style="width:100%;" />
                     </a>
