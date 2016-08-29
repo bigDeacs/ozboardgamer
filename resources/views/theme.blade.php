@@ -53,7 +53,7 @@
   		                <div class="col-md-12 post">
   		                    <div class="row post-content">
   		                        <div class="col-md-2 col-sm-3 col-xs-7">
-  		                            <a href="/games/{{ $type->slug }}/{{ $game->slug }}">
+  		                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
   		                                <img src="{{ secure_url('/') }}{{ $game->thumb }}" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
   		                            </a>
   		                        </div>
@@ -85,12 +85,12 @@
   		                        </div>
   		                        <div class="col-md-8 col-md-pull-2 col-sm-7 col-sm-pull-2 col-xs-12">
   		                            <h4 itemprop="name">
-  		                                <strong><a href="/games/{{ $type->slug }}/{{ $game->slug }}" class="post-title">{!! $game->name !!}</a></strong></h4>
+  		                                <strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" class="post-title">{!! $game->name !!}</a></strong></h4>
   		                            <p itemprop="description">
   		                                {!! str_limit(strip_tags($game->description), $limit = 100, $end = '...') !!}
   		                            </p>
   		                            <p>
-  		                                <a class="btn btn-dark" href="/games/{{ $type->slug }}/{{ $game->slug }}">Read more</a>
+  		                                <a class="btn btn-dark" href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">Read more</a>
   		                            </p>
   		                        </div>
 
