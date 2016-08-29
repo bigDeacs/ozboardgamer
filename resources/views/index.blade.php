@@ -274,7 +274,7 @@
         @unless($stores->isEmpty())
             <div class="row">
                 <div class="col-xs-12">
-                    <h1>Top Rated Stores</h1>
+                    <h3>Top Rated Stores</h3>
                     <div class="jcarousel-wrapper">
                         <div class="jcarousel">
                             <ul>
