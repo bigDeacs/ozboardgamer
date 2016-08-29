@@ -69,6 +69,28 @@
         @endunless
         <div class="row">
             <div class="col-md-8 col-sm-7 col-xs-12">
+              <div class="row">
+                  <div class="col-sm-6 col-xs-12">
+                    <a href="/games">
+                        <img src="{{ secure_url('/', $parameters = ['img']) }}/find-new-games.jpg" class="img-responsive" height="200" width="auto" />
+                    </a>
+                  </div>
+                  <div class="col-sm-6 col-xs-12">
+                    <a href="/reviews">
+                        <img src="{{ secure_url('/', $parameters = ['img']) }}/read-our-articles.jpg" class="img-responsive" height="200" width="auto" />
+                    </a>
+                  </div>
+                  <div class="col-sm-6 col-xs-12">
+                    <a href="/quizzes">
+                        <img src="{{ secure_url('/', $parameters = ['img']) }}/board-game-quiz.jpg" class="img-responsive" height="200" width="auto" />
+                    </a>
+                  </div>
+                  <div class="col-sm-6 col-xs-12">
+                    <a href="/stores">
+                        <img src="{{ secure_url('/', $parameters = ['img']) }}/find-game-stores.jpg" class="img-responsive" height="200" width="auto" />
+                    </a>
+                  </div>
+                </div>
                 @unless($reviews->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
@@ -117,62 +139,6 @@
                                                 </p>
                                                 <p>
                                                     <a class="btn btn-dark" href="/reviews/{{ $review->slug }}">Read more</a>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
-                            <hr />
-                        </div>
-                    </div>
-                @endunless
-                @unless($howtos->isEmpty())
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <h2>Latest How To's</h2>
-                            @foreach($howtos as $howto)
-                                <div class="row">
-                                    <div class="col-sm-12 post">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h4>
-                                                    <strong>
-                                                        <a href="/howtos/{{ $howto->slug }}" class="post-title">
-                                                            {!! $howto->name !!}
-                                                        </a>
-                                                    </strong>
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12 post-header-line">
-                                                <span class="glyphicon glyphicon-user"></span> {!! $howto->user->name !!} | <span class="glyphicon glyphicon-calendar">
-                                                </span>{!! date('F d, Y', strtotime($howto->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><span class="fb-comments-count" data-href="{{ secure_url('/') }}/howtos/{{ $howto->slug }}"></span>
-                                                @unless($howto->games->isEmpty())
-                                                     | <span class="fa fa-trophy"></span>
-                                                    @foreach($howto->games as $key => $game)
-                                                        @if($key == (count($howto->games) -1))
-                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>
-                                                        @else
-                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>,
-                                                        @endif
-                                                    @endforeach
-                                                @endunless
-                                            </div>
-                                        </div>
-                                        <div class="row post-content">
-                                            <div class="col-sm-3 text-center">
-                                                <a href="/howtos/{{ $howto->slug }}">
-                                                    <img src="{{ secure_url('/') }}{{ $howto->thumb }}" alt="{!! $howto->name !!}" class="img-responsive" width="263" height="auto" />
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <p>
-                                                    {!! str_limit(strip_tags($howto->description), $limit = 100, $end = '...') !!}
-                                                </p>
-                                                <p>
-                                                    <a class="btn btn-dark" href="/howtos/{{ $howto->slug }}">Read more</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -256,6 +222,22 @@
                         </div>
                     @endforeach
                     <hr />
+                @endunless
+                @unless($howtos->isEmpty())
+                  <h3>Latest How To's</h3>
+                  @foreach($howtos as $entry)
+                      <div class="row">
+                          <div class="col-sm-12 post">
+                              <div class="row">
+                                  <div class="col-sm-12">
+                                      <h5>
+                                          <strong><a href="/howtos/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></h5>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  @endforeach
+                  <hr />
                 @endunless
                 @unless($blogs->isEmpty())
                     <h3>Latest Blogs</h3>
