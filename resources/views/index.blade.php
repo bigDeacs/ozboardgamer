@@ -170,11 +170,7 @@
                                                 @unless($top10->games->isEmpty())
                                                      | <span class="fa fa-trophy"></span>
                                                     @foreach($top10->games as $key => $game)
-                                                        @if($key == (count($top10->games) -1))
-                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>
-                                                        @else
-                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>,
-                                                        @endif
+                                                        <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>{{ ($key == (count($top10->games) -1)) ? '' : ',' }}
                                                     @endforeach
                                                 @endunless
                                             </div>
