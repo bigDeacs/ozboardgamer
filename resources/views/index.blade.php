@@ -117,11 +117,7 @@
                                                      | <span class="fa fa-trophy"></span>
                                                     <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
                                                         @foreach($review->games as $key => $game)
-                                                            @if($key == (count($review->games) -1))
-                                                                <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>
-                                                            @else
-                                                                <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>,
-                                                            @endif
+                                                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>{{ ($key == (count($review->games) -1)) ? '' : ',' }}
                                                         @endforeach
                                                     </span>
                                                 @endunless
