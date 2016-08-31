@@ -67,9 +67,9 @@
             </div>
         </div>
         @endunless
-        <div class="row hidden-xs">
+        <div class="row">
             <div class="col-md-8 col-sm-7 col-xs-12">
-              <div class="row">
+              <div class="row hidden-xs">
                   <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/games">
                       <img src="{{ secure_url('/', $parameters = ['img']) }}/find-new-games.jpg" class="img-responsive" height="200" width="auto" style="width:100%;" />
