@@ -258,17 +258,17 @@ class SiteController extends Controller {
          $sitemap->add(secure_url('/'), date("Y/m/d"), '1.0', 'daily');
 
          // get dynamic data from db
-				 $posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->get();
-				 $categories = Category::where('status', '=', '1')->orderBy('rating', 'desc')->get();
-		 		 $games = Game::where('status', '=', '1')->orderBy('rating', 'desc')->get();
-				 $types = Type::where('status', '=', '1')->orderBy('rating', 'desc')->get();
-				 $mechanics = Mechanic::where('status', '=', '1')->orderBy('rating', 'desc')->get();
-				 $themes = Theme::where('status', '=', '1')->orderBy('rating', 'desc')->get();
-				 $designers = Designer::where('status', '=', '1')->orderBy('rating', 'desc')->get();
-				 $publishers = Publisher::where('status', '=', '1')->orderBy('rating', 'desc')->get();
-				 $families = Family::where('status', '=', '1')->orderBy('rating', 'desc')->get();
-		 		 $stores = Store::where('status', '=', '1')->orderBy('rating', 'desc')->get();
-				 $quizzes = Quiz::where('status', '=', '1')->orderBy('rating', 'desc')->get();
+				 $posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->get();
+				 $categories = Category::where('status', '=', '1')->get();
+		 		 $games = Game::where('status', '=', '1')->get();
+				 $types = Type::where('status', '=', '1')->get();
+				 $mechanics = Mechanic::where('status', '=', '1')->get();
+				 $themes = Theme::where('status', '=', '1')->get();
+				 $designers = Designer::where('status', '=', '1')->get();
+				 $publishers = Publisher::where('status', '=', '1')->get();
+				 $families = Family::where('status', '=', '1')->get();
+		 		 $stores = Store::where('status', '=', '1')->get();
+				 $quizzes = Quiz::where('status', '=', '1')->get();
 
          // add every post to the sitemap
 
