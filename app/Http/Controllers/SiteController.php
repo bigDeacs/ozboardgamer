@@ -244,6 +244,38 @@ class SiteController extends Controller {
         $store->save();
     }
 
+		public function sitemap()
+		{
+			// create new sitemap object
+			$sitemap = App::make("sitemap");
+
+			// set cache (key (string), duration in minutes
+			// (Carbon|Datetime|int), turn on/off (boolean))
+			// by default cache is disabled
+			$sitemap->setCache('laravel.sitemap', 3600);
+
+			// elements must be in nested array with 'url' and 'language' keys
+			$translations= array(
+					array(
+							'url'=>'https://ozboardgamer.com/',
+							'language'=>'en'
+					)
+			);
+
+			// we are assuming that your default site content is on croatian
+			$sitemap->add(
+					'https://ozboardgamer.com/', // loc
+					'2012-08-25T20:10:00+02:00', // datetime modified
+					1.0, // priority from 0.0 to 1.0
+					'daily', // frequency
+					null, // title
+					null, // images array() (url|caption)
+					$translations // translations array() (url|language)
+			);
+
+			return $sitemap->render('xml');
+		}
+
 
 	/**
 	 * Show the application welcome screen to the user.
