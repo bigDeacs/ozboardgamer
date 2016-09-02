@@ -134,7 +134,7 @@ return [
 		'Illuminate\Session\SessionServiceProvider',
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
-		'Illuminate\View\ViewServiceProvider',		
+		'Illuminate\View\ViewServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -149,6 +149,7 @@ return [
 		'Intervention\Image\ImageServiceProvider',
 		'AlgoliaSearch\Laravel\AlgoliaServiceProvider',
 		'Laravel\Socialite\SocialiteServiceProvider',
+		'Roumen\Sitemap\SitemapServiceProvider',
 
 
 	],

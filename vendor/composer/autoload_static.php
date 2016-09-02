@@ -266,6 +266,13 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
                 0 => __DIR__ . '/..' . '/symfony/console',
             ),
         ),
+        'R' => 
+        array (
+            'Roumen\\Sitemap' => 
+            array (
+                0 => __DIR__ . '/..' . '/roumen/sitemap/src',
+            ),
+        ),
         'P' => 
         array (
             'Psy\\' => 

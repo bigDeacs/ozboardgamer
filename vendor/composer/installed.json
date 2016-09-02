@@ -2209,7 +2209,8 @@
                 "name": "Taylor Otwell",
                 "email": "taylorotwell@gmail.com"
             }
-        ]
+        ],
+        "abandoned": "laravelcollective/html"
     },
     {
         "name": "psr/http-message",
@@ -2329,12 +2330,12 @@
         "version_normalized": "2.1.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/vinkla/algolia.git",
+            "url": "https://github.com/vinkla/laravel-algolia.git",
             "reference": "506f8a0bd9dce0fd10bee4ef5991c2cc8ca82681"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/vinkla/algolia/zipball/506f8a0bd9dce0fd10bee4ef5991c2cc8ca82681",
+            "url": "https://api.github.com/repos/vinkla/laravel-algolia/zipball/506f8a0bd9dce0fd10bee4ef5991c2cc8ca82681",
             "reference": "506f8a0bd9dce0fd10bee4ef5991c2cc8ca82681",
             "shasum": ""
         },
@@ -3978,7 +3979,8 @@
             "http client",
             "rest",
             "web service"
-        ]
+        ],
+        "abandoned": "guzzlehttp/guzzle"
     },
     {
         "name": "league/oauth1-client",
@@ -4099,6 +4101,56 @@
         "keywords": [
             "laravel",
             "oauth"
+        ]
+    },
+    {
+        "name": "roumen/sitemap",
+        "version": "v2.6.4",
+        "version_normalized": "2.6.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/RoumenDamianoff/laravel-sitemap.git",
+            "reference": "b56f9cf336c04257316bfdc4476e1f5eb875204e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/RoumenDamianoff/laravel-sitemap/zipball/b56f9cf336c04257316bfdc4476e1f5eb875204e",
+            "reference": "b56f9cf336c04257316bfdc4476e1f5eb875204e",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~5",
+            "php": ">=5.5.9"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2016-08-27 18:07:27",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Roumen\\Sitemap": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Roumen Damianoff",
+                "email": "dev@roumen.it",
+                "homepage": "https://roumen.it",
+                "role": "Developer"
+            }
+        ],
+        "description": "A not so simple sitemap generator for Laravel.",
+        "homepage": "https://roumen.it/projects/laravel-sitemap",
+        "keywords": [
+            "Sitemap",
+            "generator",
+            "laravel"
         ]
     }
 ]
