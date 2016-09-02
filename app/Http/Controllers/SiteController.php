@@ -22,6 +22,7 @@ use App\Http\Requests\QuizResultRequest;
 use Request;
 use Storage;
 use Session;
+use App;
 
 use Socialite;
 use App\Http\Requests\GameUpdateRequest;
