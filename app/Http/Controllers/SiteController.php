@@ -275,7 +275,7 @@ class SiteController extends Controller {
 
 	         // add every post to the sitemap
 
-					 $sitemap->add(secure_url('/')URL::to('/games'), date("Y/m/d"), '0.9', 'daily');
+					 $sitemap->add(secure_url('/'), date("Y/m/d"), '0.9', 'daily');
 					 foreach ($types as $type)
 	         {
 	            $sitemap->add($type->slug, $type->updated_at, '0.8', 'weekly');
