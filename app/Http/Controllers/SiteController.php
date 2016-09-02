@@ -252,11 +252,11 @@ class SiteController extends Controller {
 
 	    // set cache key (string), duration in minutes (Carbon|Datetime|int), turn on/off (boolean)
 	    // by default cache is disabled
-	    $sitemap->setCache('laravel.sitemap', 1);
+	    ## $sitemap->setCache('laravel.sitemap', 60);
 
 			// check if there is cached sitemap and build new only if is not
-	    if (!$sitemap->isCached())
-	    {
+	    ## if (!$sitemap->isCached())
+	    ## {
 
          // add item to the sitemap (url, date, priority, freq)
          $sitemap->add(secure_url('/'), date("Y/m/d"), '1.0', 'daily');
@@ -331,7 +331,7 @@ class SiteController extends Controller {
          {
             $sitemap->add(secure_url('/quizzes') . '/' . $quiz->slug, $quiz->updated_at, '0.7', 'yearly');
          }
-			}
+			## }
 
   		// show your sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
 			return $sitemap->render('xml');
