@@ -250,10 +250,6 @@ class SiteController extends Controller {
 			// create new sitemap object
 	    $sitemap = App::make("sitemap");
 
-	    // set cache key (string), duration in minutes (Carbon|Datetime|int), turn on/off (boolean)
-	    // by default cache is disabled
-	    $sitemap->setCache('laravel.sitemap', 60);
-
          // add item to the sitemap (url, date, priority, freq)
          $sitemap->add(secure_url('/'), date("Y/m/d"), '1.0', 'daily');
 
