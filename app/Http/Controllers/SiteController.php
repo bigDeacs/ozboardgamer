@@ -45,7 +45,7 @@ class SiteController extends Controller {
 		 *
 		 * @return Response
 		 */
-		public function syncMailchimp($email, $fname, $lname, $gender){
+		public function syncMailchimp($email, $fname, $lname = null, $gender = null){
 				$apiKey = '8d26225d206ea8b2aaf5945421d4988b-us13';
 		    $listId = '7665e21b2b';
 
