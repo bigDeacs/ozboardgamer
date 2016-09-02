@@ -313,11 +313,11 @@ class SiteController extends Controller {
 
 				 foreach ($posts as $post)
          {
-            $sitemap->add(secure_url('/') . $post->category()->first()->slug . '/' . $post->slug, $post->updated_at, '0.6', 'weekly');
+            $sitemap->add(secure_url('/') . '/' . $post->category()->first()->slug . '/' . $post->slug, $post->updated_at, '0.6', 'weekly');
          }
 				 foreach ($categories as $category)
          {
-            $sitemap->add(secure_url('/') . $category->slug, $category->updated_at, '0.7', 'weekly');
+            $sitemap->add(secure_url('/') . '/' . $category->slug, $category->updated_at, '0.7', 'weekly');
          }
 
 				 $sitemap->add(secure_url('/stores'), date("Y/m/d"), '0.8', 'daily');
@@ -329,7 +329,7 @@ class SiteController extends Controller {
 				 $sitemap->add(secure_url('/quizzes'), date("Y/m/d"), '0.8', 'daily');
 				 foreach ($quizzes as $quiz)
          {
-            $sitemap->add(secure_url('/quizzes') . '/' . $quiz->slug, $quiz->updated_at, '0.7', 'yearly');
+            $sitemap->add(secure_url('/quizzes') . '/' . $quiz->slug, $quiz->updated_at, '0.7', 'monthly');
          }
 			## }
 
