@@ -250,6 +250,14 @@ class SiteController extends Controller {
 			// create new sitemap object
 	    $sitemap = App::make("sitemap");
 
+	    // set cache key (string), duration in minutes (Carbon|Datetime|int), turn on/off (boolean)
+	    // by default cache is disabled
+	    $sitemap->setCache('laravel.sitemap', 1);
+
+			// check if there is cached sitemap and build new only if is not
+	    if (!$sitemap->isCached())
+	    {
+
          // add item to the sitemap (url, date, priority, freq)
          $sitemap->add(secure_url('/'), date("Y/m/d"), '1.0', 'daily');
 
@@ -268,39 +276,39 @@ class SiteController extends Controller {
 
          // add every post to the sitemap
 
-				 $sitemap->add(secure_url('/'), date("Y/m/d"), '0.9', 'daily');
+				 $sitemap->add(secure_url('/games'), date("Y/m/d"), '0.9', 'daily');
 				 foreach ($types as $type)
          {
-            $sitemap->add($type->slug, $type->updated_at, '0.8', 'weekly');
+            $sitemap->add(secure_url('/games') . '/' . $type->slug, $type->updated_at, '0.8', 'weekly');
          }
 				 foreach ($games as $game)
          {
-            $sitemap->add(secure_url('/') . $game->types()->first()->slug . '/' . $game->slug, $game->updated_at->format('Y/m/d'), '0.7', 'weekly');
+            $sitemap->add(secure_url('/games') . '/' . $game->types()->first()->slug . '/' . $game->slug, $game->updated_at->format('Y/m/d'), '0.7', 'weekly');
          }
 				 $sitemap->add(secure_url('/mechanics'), date("Y/m/d"), '0.6', 'daily');
 				 foreach ($mechanics as $mechanic)
          {
-            $sitemap->add(secure_url('/mechanics') . $mechanic->slug, $mechanic->updated_at, '0.5', 'weekly');
+            $sitemap->add(secure_url('/mechanics') . '/' . $mechanic->slug, $mechanic->updated_at, '0.5', 'weekly');
          }
 				 $sitemap->add(secure_url('/themes'), date("Y/m/d"), '0.6', 'daily');
 				 foreach ($themes as $theme)
          {
-            $sitemap->add(secure_url('/themes') . $theme->slug, $theme->updated_at, '0.5', 'weekly');
+            $sitemap->add(secure_url('/themes') . '/' . $theme->slug, $theme->updated_at, '0.5', 'weekly');
          }
 				 $sitemap->add(secure_url('/designers'), date("Y/m/d"), '0.6', 'daily');
 				 foreach ($designers as $designer)
          {
-            $sitemap->add(secure_url('/designers') . $designer->slug, $designer->updated_at, '0.5', 'weekly');
+            $sitemap->add(secure_url('/designers') . '/' . $designer->slug, $designer->updated_at, '0.5', 'weekly');
          }
 				 $sitemap->add(secure_url('/publishers'), date("Y/m/d"), '0.6', 'daily');
 				 foreach ($publishers as $publisher)
          {
-            $sitemap->add(secure_url('/publishers') . $publisher->slug, $publisher->updated_at, '0.5', 'weekly');
+            $sitemap->add(secure_url('/publishers') . '/' . $publisher->slug, $publisher->updated_at, '0.5', 'weekly');
          }
 				 $sitemap->add(secure_url('/families'), date("Y/m/d"), '0.6', 'daily');
 				 foreach ($families as $family)
          {
-            $sitemap->add(secure_url('/families') . $family->slug, $family->updated_at, '0.5', 'weekly');
+            $sitemap->add(secure_url('/families') . '/' . $family->slug, $family->updated_at, '0.5', 'weekly');
          }
 
 				 foreach ($posts as $post)
@@ -315,17 +323,18 @@ class SiteController extends Controller {
 				 $sitemap->add(secure_url('/stores'), date("Y/m/d"), '0.8', 'daily');
 				 foreach ($stores as $store)
          {
-            $sitemap->add(secure_url('/') . $store->slug, $store->updated_at, '0.7', 'monthly');
+            $sitemap->add(secure_url('/stores') . '/' . $store->slug, $store->updated_at, '0.7', 'monthly');
          }
 
 				 $sitemap->add(secure_url('/quizzes'), date("Y/m/d"), '0.8', 'daily');
 				 foreach ($quizzes as $quiz)
          {
-            $sitemap->add(secure_url('/') . $quiz->slug, $quiz->updated_at, '0.7', 'yearly');
+            $sitemap->add(secure_url('/quizzes') . '/' . $quiz->slug, $quiz->updated_at, '0.7', 'yearly');
          }
+			}
 
-		    // show your sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
-				return $sitemap->render('xml');
+  		// show your sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
+			return $sitemap->render('xml');
 
 		}
 
