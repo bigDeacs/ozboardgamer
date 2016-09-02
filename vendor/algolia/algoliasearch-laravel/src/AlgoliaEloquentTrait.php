@@ -15,14 +15,20 @@ trait AlgoliaEloquentTrait
      * Static calls.
      *
      * @param bool $safe
+     * @param bool $setSettings
      */
-    public function _reindex($safe = true)
+    public function _reindex($safe = true, $setSettings = true)
     {
         /** @var \AlgoliaSearch\Laravel\ModelHelper $modelHelper */
         $modelHelper = App::make('\AlgoliaSearch\Laravel\ModelHelper');
 
         $indices = $modelHelper->getIndices($this);
         $indicesTmp = $safe ? $modelHelper->getIndicesTmp($this) : $indices;
+
+        if ($setSettings === true) {
+            $setToTmpIndices = ($safe === true);
+            $this->_setSettings($setToTmpIndices);
+        }
 
         static::chunk(100, function ($models) use ($indicesTmp, $modelHelper) {
             /** @var \AlgoliaSearch\Index $index */
@@ -31,7 +37,7 @@ trait AlgoliaEloquentTrait
 
                 foreach ($models as $model) {
                     if ($modelHelper->indexOnly($model, $index->indexName)) {
-                        $records[] = $model->getAlgoliaRecordDefault();
+                        $records[] = $model->getAlgoliaRecordDefault($index->indexName);
                     }
                 }
 
@@ -136,13 +142,19 @@ trait AlgoliaEloquentTrait
         return $result;
     }
 
-    public function _setSettings()
+    public function _setSettings($setToTmpIndices = false)
     {
         /** @var \AlgoliaSearch\Laravel\ModelHelper $modelHelper */
         $modelHelper = App::make('\AlgoliaSearch\Laravel\ModelHelper');
 
         $settings = $modelHelper->getSettings($this);
-        $indices = $modelHelper->getIndices($this);
+
+        if ($setToTmpIndices === false) {
+            $indices = $modelHelper->getIndices($this);
+        }
+        else {
+            $indices = $modelHelper->getIndicesTmp($this);
+        }
 
         $slaves_settings = $modelHelper->getSlavesSettings($this);
         $slaves = isset($settings['slaves']) ? $settings['slaves'] : [];
@@ -158,8 +170,21 @@ trait AlgoliaEloquentTrait
                 }, $settings['slaves']);
             }
 
+            if (isset($settings['synonyms'])) {
+                $index->batchSynonyms($settings['synonyms'], true, true);
+            }
+            else {
+                // If no synonyms are passed, clear all synonyms from index
+                $index->clearSynonyms(true);
+            }
+
             if (count(array_keys($settings)) > 0) {
-                $index->setSettings($settings);
+                // Synonyms cannot be pushed into "setSettings", it's got rejected from API and throwing exception
+                // Synonyms cannot be removed directly from $settings var, because then synonym would not be set to other indices
+                $settingsWithoutSynonyms = $settings;
+                unset($settingsWithoutSynonyms['synonyms']);
+
+                $index->setSettings($settingsWithoutSynonyms);
             }
 
             if ($b && isset($settings['slaves'])) {
@@ -173,6 +198,7 @@ trait AlgoliaEloquentTrait
                 $index = $modelHelper->getIndices($this, $slave)[0];
 
                 $s = array_merge($settings, $slaves_settings[$slave]);
+                unset($s['synonyms']);
 
                 if (count(array_keys($s)) > 0)
                     $index->setSettings($s);
@@ -218,15 +244,15 @@ trait AlgoliaEloquentTrait
     /**
      * Methods.
      */
-    public function getAlgoliaRecordDefault()
+    public function getAlgoliaRecordDefault($indexName)
     {
         /** @var \AlgoliaSearch\Laravel\ModelHelper $modelHelper */
         $modelHelper = App::make('\AlgoliaSearch\Laravel\ModelHelper');
 
         $record = null;
 
-        if (method_exists($this, static::$methodGetName)) {
-            $record = $this->{static::$methodGetName}();
+        if (method_exists($this, self::$methodGetName)) {
+            $record = $this->{self::$methodGetName}($indexName);
         } else {
             $record = $this->toArray();
         }
@@ -248,7 +274,7 @@ trait AlgoliaEloquentTrait
         /** @var \AlgoliaSearch\Index $index */
         foreach ($indices as $index) {
             if ($modelHelper->indexOnly($this, $index->indexName)) {
-                $index->addObject($this->getAlgoliaRecordDefault());
+                $index->addObject($this->getAlgoliaRecordDefault($index->indexName));
             }
         }
     }

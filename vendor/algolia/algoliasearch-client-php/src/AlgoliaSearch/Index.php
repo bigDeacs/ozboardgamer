@@ -381,7 +381,7 @@ class Index
      *                             param if you trigger the timeout of the search, in that case you won't remove all
      *                             the records
      *
-     * @return int                 the number of delete operations
+     * @return int the number of delete operations
      */
     public function deleteByQuery($query, $args = array(), $waitLastCall = true)
     {
@@ -789,14 +789,22 @@ class Index
      *                        - optionalWords: (array of strings) Specify a list of words that should be considered as
      *                        optional when found in the query.
      *
+     * @param  bool             $forwardToSlaves
      * @return mixed
+     * @throws AlgoliaException
      */
-    public function setSettings($settings)
+    public function setSettings($settings, $forwardToSlaves = false)
     {
+        $url = '/1/indexes/'.$this->urlIndexName.'/settings';
+
+        if ($forwardToSlaves) {
+            $url = $url.'?forwardToSlaves=true';
+        }
+
         return $this->client->request(
             $this->context,
             'PUT',
-            '/1/indexes/'.$this->urlIndexName.'/settings',
+            $url,
             array(),
             $settings,
             $this->context->writeHostsArray,
@@ -1067,7 +1075,7 @@ class Index
         }
         foreach ($params as $key => $value) {
             if (gettype($value) == 'array') {
-                $params[$key] = json_encode($value);
+                $params[$key] = Json::encode($value);
             }
         }
         if ($query != null) {
@@ -1243,8 +1251,8 @@ class Index
             $this->context,
             'PUT',
             '/1/indexes/'.$this->urlIndexName.'/synonyms/'.urlencode($objectID).'?forwardToSlaves='.($forwardToSlaves ? 'true' : 'false'),
-            $content,
             null,
+            $content,
             $this->context->writeHostsArray,
             $this->context->connectTimeout,
             $this->context->readTimeout

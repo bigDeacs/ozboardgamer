@@ -248,9 +248,9 @@ class Client
         return $this->request(
             $this->context,
             'POST',
-            '/1/indexes/*/queries?strategy='.$strategy,
+            '/1/indexes/*/queries',
             array(),
-            array('requests' => $requests),
+            array('requests' => $requests, 'strategy' => $strategy),
             $this->context->readHostsArray,
             $this->context->connectTimeout,
             $this->context->searchTimeout
@@ -695,7 +695,7 @@ class Client
     {
         foreach ($args as $key => $value) {
             if (gettype($value) == 'array') {
-                $args[$key] = json_encode($value);
+                $args[$key] = Json::encode($value);
             }
         }
 
@@ -783,7 +783,7 @@ class Client
             $params2 = array();
             foreach ($params as $key => $val) {
                 if (is_array($val)) {
-                    $params2[$key] = json_encode($val);
+                    $params2[$key] = Json::encode($val);
                 } else {
                     $params2[$key] = $val;
                 }
@@ -804,28 +804,35 @@ class Client
         }
 
         //curl_setopt($curlHandle, CURLOPT_VERBOSE, true);
-        $curlHeaders = array();
-        foreach ($context->headers as $key => $value) {
-            $curlHeaders[] = $key.': '.$value;
-        }
+
+        $defaultHeaders = null;
         if ($context->adminAPIKey == null) {
-            curl_setopt($curlHandle, CURLOPT_HTTPHEADER, array_merge(array(
-                        'X-Algolia-Application-Id: '.$context->applicationID,
-                        'X-Algolia-API-Key: '.$context->apiKey,
-                        'Content-type: application/json',
-                        ), $curlHeaders));
+            $defaultHeaders = array(
+                'X-Algolia-Application-Id' => $context->applicationID,
+                'X-Algolia-API-Key'        => $context->apiKey,
+                'Content-type'             => 'application/json',
+            );
         } else {
-            curl_setopt($curlHandle, CURLOPT_HTTPHEADER, array_merge(array(
-                    'X-Algolia-Application-Id: '.$context->applicationID,
-                    'X-Algolia-API-Key: '.$context->adminAPIKey,
-                    'X-Forwarded-For: '.$context->endUserIP,
-                    'X-Algolia-UserToken: '.$context->algoliaUserToken,
-                    'X-Forwarded-API-Key: '.$context->rateLimitAPIKey,
-                    'Content-type: application/json',
-                    ), $curlHeaders));
+            $defaultHeaders = array(
+                'X-Algolia-Application-Id' => $context->applicationID,
+                'X-Algolia-API-Key'        => $context->adminAPIKey,
+                'X-Forwarded-For'          => $context->endUserIP,
+                'X-Algolia-UserToken'      => $context->algoliaUserToken,
+                'X-Forwarded-API-Key'      => $context->rateLimitAPIKey,
+                'Content-type'             => 'application/json',
+            );
         }
 
-        curl_setopt($curlHandle, CURLOPT_USERAGENT, 'Algolia for PHP '.Version::get());
+        $headers = array_merge($defaultHeaders, $context->headers);
+
+        $curlHeaders = array();
+        foreach ($headers as $key => $value) {
+            $curlHeaders[] = $key.': '.$value;
+        }
+
+        curl_setopt($curlHandle, CURLOPT_HTTPHEADER, $curlHeaders);
+
+        curl_setopt($curlHandle, CURLOPT_USERAGENT, Version::getUserAgent());
         //Return the output instead of printing it
         curl_setopt($curlHandle, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curlHandle, CURLOPT_FAILONERROR, true);
@@ -855,7 +862,7 @@ class Client
             curl_setopt($curlHandle, CURLOPT_POST, false);
         } else {
             if ($method === 'POST') {
-                $body = ($data) ? json_encode($data) : '';
+                $body = ($data) ? Json::encode($data) : '';
                 curl_setopt($curlHandle, CURLOPT_CUSTOMREQUEST, 'POST');
                 curl_setopt($curlHandle, CURLOPT_POST, true);
                 curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $body);
@@ -863,7 +870,7 @@ class Client
                 curl_setopt($curlHandle, CURLOPT_CUSTOMREQUEST, 'DELETE');
                 curl_setopt($curlHandle, CURLOPT_POST, false);
             } elseif ($method === 'PUT') {
-                $body = ($data) ? json_encode($data) : '';
+                $body = ($data) ? Json::encode($data) : '';
                 curl_setopt($curlHandle, CURLOPT_CUSTOMREQUEST, 'PUT');
                 curl_setopt($curlHandle, CURLOPT_POSTFIELDS, $body);
                 curl_setopt($curlHandle, CURLOPT_POST, true);
@@ -902,7 +909,7 @@ class Client
             return;
         }
 
-        $answer = json_decode($response, true);
+        $answer = Json::decode($response, true);
         $context->releaseMHandle($curlHandle);
         curl_close($curlHandle);
 
@@ -910,32 +917,6 @@ class Client
             throw new AlgoliaException(isset($answer['message']) ? $answer['message'] : $http_status + ' error');
         } elseif (intval($http_status / 100) != 2) {
             throw new \Exception($http_status.': '.$response);
-        }
-
-        switch (json_last_error()) {
-            case JSON_ERROR_DEPTH:
-                $errorMsg = 'JSON parsing error: maximum stack depth exceeded';
-                break;
-            case JSON_ERROR_CTRL_CHAR:
-                $errorMsg = 'JSON parsing error: unexpected control character found';
-                break;
-            case JSON_ERROR_SYNTAX:
-                $errorMsg = 'JSON parsing error: syntax error, malformed JSON';
-                break;
-            case JSON_ERROR_STATE_MISMATCH:
-                $errorMsg = 'JSON parsing error: underflow or the modes mismatch';
-                break;
-            // PHP 5.3 less than 1.2.2 (Ubuntu 10.04 LTS)
-            case defined('JSON_ERROR_UTF8') ? JSON_ERROR_UTF8 : -1:
-                $errorMsg = 'JSON parsing error: malformed UTF-8 characters, possibly incorrectly encoded';
-                break;
-            case JSON_ERROR_NONE:
-            default:
-                $errorMsg = null;
-                break;
-        }
-        if ($errorMsg !== null) {
-            throw new AlgoliaException($errorMsg);
         }
 
         return $answer;
@@ -1013,7 +994,7 @@ class Client
             sprintf(
                 'AlgoliaSearch %s options keys are invalid. %s given. error message : %s',
                 static::CURLOPT,
-                json_encode($curlOptions),
+                Json::encode($curlOptions),
                 $errorMsg
             )
         );

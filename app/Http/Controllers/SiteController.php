@@ -258,7 +258,7 @@ class SiteController extends Controller {
 	    if (!$sitemap->isCached())
 	    {
 	         // add item to the sitemap (url, date, priority, freq)
-	         $sitemap->add(URL::to('/'), date("Y/m/d"), '1.0', 'daily');
+	         $sitemap->add(secure_url('/'), date("Y/m/d"), '1.0', 'daily');
 
 	         // get dynamic data from db
 					 $posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->get();
@@ -275,60 +275,60 @@ class SiteController extends Controller {
 
 	         // add every post to the sitemap
 
-					 $sitemap->add(URL::to('/games'), date("Y/m/d"), '0.9', 'daily');
+					 $sitemap->add(secure_url('/')URL::to('/games'), date("Y/m/d"), '0.9', 'daily');
 					 foreach ($types as $type)
 	         {
 	            $sitemap->add($type->slug, $type->updated_at, '0.8', 'weekly');
 	         }
 					 foreach ($games as $game)
 	         {
-	            $sitemap->add($game->slug, $game->updated_at->format('Y/m/d'), '0.7', 'weekly');
+	            $sitemap->add(secure_url('/') . $game->types()->first()->slug . '/' . $game->slug, $game->updated_at->format('Y/m/d'), '0.7', 'weekly');
 	         }
-					 $sitemap->add(URL::to('/mechanics'), date("Y/m/d"), '0.6', 'daily');
+					 $sitemap->add(secure_url('/mechanics'), date("Y/m/d"), '0.6', 'daily');
 					 foreach ($mechanics as $mechanic)
 	         {
-	            $sitemap->add($mechanic->slug, $mechanic->updated_at, '0.5', 'weekly');
+	            $sitemap->add(secure_url('/mechanics') . $mechanic->slug, $mechanic->updated_at, '0.5', 'weekly');
 	         }
-					 $sitemap->add(URL::to('/themes'), date("Y/m/d"), '0.6', 'daily');
+					 $sitemap->add(secure_url('/themes'), date("Y/m/d"), '0.6', 'daily');
 					 foreach ($themes as $theme)
 	         {
-	            $sitemap->add($theme->slug, $theme->updated_at, '0.5', 'weekly');
+	            $sitemap->add(secure_url('/themes') . $theme->slug, $theme->updated_at, '0.5', 'weekly');
 	         }
-					 $sitemap->add(URL::to('/designers'), date("Y/m/d"), '0.6', 'daily');
+					 $sitemap->add(secure_url('/designers'), date("Y/m/d"), '0.6', 'daily');
 					 foreach ($designers as $designer)
 	         {
-	            $sitemap->add($designer->slug, $designer->updated_at, '0.5', 'weekly');
+	            $sitemap->add(secure_url('/designers') . $designer->slug, $designer->updated_at, '0.5', 'weekly');
 	         }
-					 $sitemap->add(URL::to('/publishers'), date("Y/m/d"), '0.6', 'daily');
+					 $sitemap->add(secure_url('/publishers'), date("Y/m/d"), '0.6', 'daily');
 					 foreach ($publishers as $publisher)
 	         {
-	            $sitemap->add($publisher->slug, $publisher->updated_at, '0.5', 'weekly');
+	            $sitemap->add(secure_url('/publishers') . $publisher->slug, $publisher->updated_at, '0.5', 'weekly');
 	         }
-					 $sitemap->add(URL::to('/families'), date("Y/m/d"), '0.6', 'daily');
+					 $sitemap->add(secure_url('/families'), date("Y/m/d"), '0.6', 'daily');
 					 foreach ($families as $family)
 	         {
-	            $sitemap->add($family->slug, $family->updated_at, '0.5', 'weekly');
+	            $sitemap->add(secure_url('/families') . $family->slug, $family->updated_at, '0.5', 'weekly');
 	         }
 
 					 foreach ($posts as $post)
 	         {
-	            $sitemap->add($post->slug, $post->updated_at, '0.6', 'weekly');
+	            $sitemap->add(secure_url('/') . $post->category()->first()->slug . '/' . $post->slug, $post->updated_at, '0.6', 'weekly');
 	         }
 					 foreach ($categories as $category)
 	         {
-	            $sitemap->add($category->slug, $category->updated_at, '0.7', 'weekly');
+	            $sitemap->add(secure_url('/') . $category->slug, $category->updated_at, '0.7', 'weekly');
 	         }
 
-					 $sitemap->add(URL::to('/stores'), date("Y/m/d"), '0.8', 'daily');
+					 $sitemap->add(secure_url('/stores'), date("Y/m/d"), '0.8', 'daily');
 					 foreach ($stores as $store)
 	         {
-	            $sitemap->add($store->slug, $store->updated_at, '0.7', 'monthly');
+	            $sitemap->add(secure_url('/') . $store->slug, $store->updated_at, '0.7', 'monthly');
 	         }
 
-					 $sitemap->add(URL::to('/quizzes'), date("Y/m/d"), '0.8', 'daily');
+					 $sitemap->add(secure_url('/quizzes'), date("Y/m/d"), '0.8', 'daily');
 					 foreach ($quizzes as $quiz)
 	         {
-	            $sitemap->add($quiz->slug, $quiz->updated_at, '0.7', 'yearly');
+	            $sitemap->add(secure_url('/') . $quiz->slug, $quiz->updated_at, '0.7', 'yearly');
 	         }
 	    }
 
