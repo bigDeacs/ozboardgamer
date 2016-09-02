@@ -248,33 +248,92 @@ class SiteController extends Controller {
 		public function sitemap()
 		{
 			// create new sitemap object
-			$sitemap = App::make("sitemap");
+	    $sitemap = App::make("sitemap");
 
-			// set cache (key (string), duration in minutes
-			// (Carbon|Datetime|int), turn on/off (boolean))
-			// by default cache is disabled
-			$sitemap->setCache('laravel.sitemap', 3600);
+	    // set cache key (string), duration in minutes (Carbon|Datetime|int), turn on/off (boolean)
+	    // by default cache is disabled
+	    $sitemap->setCache('laravel.sitemap', 60);
 
-			// elements must be in nested array with 'url' and 'language' keys
-			$translations= array(
-					array(
-							'url'=>'https://ozboardgamer.com/',
-							'language'=>'en'
-					)
-			);
+	    // check if there is cached sitemap and build new only if is not
+	    if (!$sitemap->isCached())
+	    {
+	         // add item to the sitemap (url, date, priority, freq)
+	         $sitemap->add(URL::to('/'), date("Y/m/d"), '1.0', 'daily');
 
-			// we are assuming that your default site content is on croatian
-			$sitemap->add(
-					'https://ozboardgamer.com/', // loc
-					'2012-08-25T20:10:00+02:00', // datetime modified
-					1.0, // priority from 0.0 to 1.0
-					'daily', // frequency
-					null, // title
-					null, // images array() (url|caption)
-					$translations // translations array() (url|language)
-			);
+	         // get dynamic data from db
+					 $posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->get();
+					 $categories = Category::where('status', '=', '1')->orderBy('rating', 'desc')->get();
+			 		 $games = Game::where('status', '=', '1')->orderBy('rating', 'desc')->get();
+					 $types = Type::where('status', '=', '1')->orderBy('rating', 'desc')->get();
+					 $mechanics = Mechanic::where('status', '=', '1')->orderBy('rating', 'desc')->get();
+					 $themes = Theme::where('status', '=', '1')->orderBy('rating', 'desc')->get();
+					 $designers = Designer::where('status', '=', '1')->orderBy('rating', 'desc')->get();
+					 $publishers = Publisher::where('status', '=', '1')->orderBy('rating', 'desc')->get();
+					 $families = Family::where('status', '=', '1')->orderBy('rating', 'desc')->get();
+			 		 $stores = Store::where('status', '=', '1')->orderBy('rating', 'desc')->get();
+					 $quizzes = Quiz::where('status', '=', '1')->orderBy('rating', 'desc')->get();
 
-			return $sitemap->render('xml');
+	         // add every post to the sitemap
+
+					 $sitemap->add(URL::to('/games'), date("Y/m/d"), '0.9', 'daily');
+					 foreach ($types as $type)
+	         {
+	            $sitemap->add($type->slug, $type->updated_at, '0.8', 'weekly');
+	         }
+					 foreach ($games as $game)
+	         {
+	            $sitemap->add($game->slug, $game->updated_at->format('Y/m/d'), '0.7', 'weekly');
+	         }
+					 $sitemap->add(URL::to('/mechanics'), date("Y/m/d"), '0.6', 'daily');
+					 foreach ($mechanics as $mechanic)
+	         {
+	            $sitemap->add($mechanic->slug, $mechanic->updated_at, '0.5', 'weekly');
+	         }
+					 $sitemap->add(URL::to('/themes'), date("Y/m/d"), '0.6', 'daily');
+					 foreach ($themes as $theme)
+	         {
+	            $sitemap->add($theme->slug, $theme->updated_at, '0.5', 'weekly');
+	         }
+					 $sitemap->add(URL::to('/designers'), date("Y/m/d"), '0.6', 'daily');
+					 foreach ($designers as $designer)
+	         {
+	            $sitemap->add($designer->slug, $designer->updated_at, '0.5', 'weekly');
+	         }
+					 $sitemap->add(URL::to('/publishers'), date("Y/m/d"), '0.6', 'daily');
+					 foreach ($publishers as $publisher)
+	         {
+	            $sitemap->add($publisher->slug, $publisher->updated_at, '0.5', 'weekly');
+	         }
+					 $sitemap->add(URL::to('/families'), date("Y/m/d"), '0.6', 'daily');
+					 foreach ($families as $family)
+	         {
+	            $sitemap->add($family->slug, $family->updated_at, '0.5', 'weekly');
+	         }
+
+					 foreach ($posts as $post)
+	         {
+	            $sitemap->add($post->slug, $post->updated_at, '0.6', 'weekly');
+	         }
+					 foreach ($categories as $category)
+	         {
+	            $sitemap->add($category->slug, $category->updated_at, '0.7', 'weekly');
+	         }
+
+					 $sitemap->add(URL::to('/stores'), date("Y/m/d"), '0.8', 'daily');
+					 foreach ($stores as $store)
+	         {
+	            $sitemap->add($store->slug, $store->updated_at, '0.7', 'monthly');
+	         }
+
+					 $sitemap->add(URL::to('/quizzes'), date("Y/m/d"), '0.8', 'daily');
+					 foreach ($quizzes as $quiz)
+	         {
+	            $sitemap->add($quiz->slug, $quiz->updated_at, '0.7', 'yearly');
+	         }
+	    }
+
+	    // show your sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
+	    return $sitemap->render('xml');
 		}
 
 
