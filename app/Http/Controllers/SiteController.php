@@ -48,10 +48,10 @@ class SiteController extends Controller {
 		public function syncMailchimp($email, $fname, $lname, $gender){
 				$apiKey = '8d26225d206ea8b2aaf5945421d4988b-us13';
 		    $listId = '7665e21b2b';
+				$dataCenter = 'us13';
 
 		    $memberId = md5(strtolower($email));
-		    $dataCenter = substr($apiKey,strpos($apiKey,'-')+1);
-		    $url = 'https://' . $dataCenter . '.api.mailchimp.com/3.0/lists/' . $listId . '/members/' . $memberId;
+		    $url = 'https://' . $dataCenter . '.api.mailchimp.com/3.0/lists/' . $listId . '/members/';
 
 		    $json = json_encode([
 		        'email_address' => $email,
@@ -114,12 +114,12 @@ class SiteController extends Controller {
 			$gender = $user['gender'];
 
 	    $create = User::firstOrCreate(['name' => $name, 'slug' => str_slug($name), 'image' => $thumb, 'email' => $email, 'password' => 'password', 'role' => 'b', 'status' => 1]);
+			$this->syncMailchimp($email, $fname, $lname, $gender);
 
 			Session::put('id', $id);
 			Session::put('name', $name);
 			Session::put('email', $email);
 			Session::put('thumb', $thumb);
-			$this->syncMailchimp($email, $fname, $lname, $gender);
 
 			return redirect()->back();
     }
@@ -136,37 +136,37 @@ class SiteController extends Controller {
         Session::forget('email');
         Session::forget('thumb');
 
-		return redirect()->back();
+				return redirect()->back();
     }
 
 
 
     public function addToOwned($id, $game)
     {
-    	$user = User::where('slug', '=', $id)->firstOrFail();
+    		$user = User::where('slug', '=', $id)->firstOrFail();
         $user->games()->attach($game, ['type' => 'owned']);
-		return redirect()->back();
+				return redirect()->back();
     }
 
 	public function removeFromOwned($id, $game)
     {
-    	$user = User::where('slug', '=', $id)->firstOrFail();
+    		$user = User::where('slug', '=', $id)->firstOrFail();
         $user->games()->wherePivot('type', 'owned')->detach($game);
-		return redirect()->back();
+				return redirect()->back();
     }
 
     public function addToWanted($id, $game)
     {
-    	$user = User::where('slug', '=', $id)->firstOrFail();
+    		$user = User::where('slug', '=', $id)->firstOrFail();
         $user->games()->attach($game, ['type' => 'wanted']);
-		return redirect()->back();
+				return redirect()->back();
     }
 
 	public function removeFromWanted($id, $game)
     {
-    	$user = User::where('slug', '=', $id)->firstOrFail();
+    		$user = User::where('slug', '=', $id)->firstOrFail();
         $user->games()->wherePivot('type', 'wanted')->detach($game);
-		return redirect()->back();
+				return redirect()->back();
     }
 
     public function addGameRating($id, $game, $rating)
@@ -176,7 +176,7 @@ class SiteController extends Controller {
 
    		$this->syncGameRatings($game);
 
-		return redirect()->back();
+			return redirect()->back();
     }
 
     public function updateGameRating($id, $game, $rating)
@@ -186,7 +186,7 @@ class SiteController extends Controller {
 
     	$this->syncGameRatings($game);
 
-		return redirect()->back();
+			return redirect()->back();
     }
 
 
