@@ -40,7 +40,7 @@ class PostController extends Controller
     {
         $games = Game::where('status', '=', '1')->lists('name', 'id');
         $categories = Category::where('status', '=', '1')->lists('name', 'id');
-        $users = User::where('status', '=', '1')->lists('name', 'id');
+        $users = User::where('status', '=', '1')->where('role', '=', 'a')->lists('name', 'id');
         return view('posts.create', compact('categories', 'games', 'users'));
     }
 
@@ -74,7 +74,7 @@ class PostController extends Controller
         }
         if(is_array($request->input('game_list'))) {
             $currentGames = array_filter($request->input('game_list'), 'is_numeric');
-            $newGames = array_diff($request->input('game_list'), $currentGames);   
+            $newGames = array_diff($request->input('game_list'), $currentGames);
             foreach($newGames as $newGame)
             {
                 if($game = Game::create(['name' => $newGame]))
@@ -112,7 +112,7 @@ class PostController extends Controller
     {
         $games = Game::where('status', '=', '1')->lists('name', 'id');
         $categories = Category::where('status', '=', '1')->lists('name', 'id');
-        $users = User::where('status', '=', '1')->lists('name', 'id');
+        $users = User::where('status', '=', '1')->where('role', '=', 'a')->lists('name', 'id');
         $post = Post::where('id', '=', $id)->firstOrFail();
         return view('posts.edit', compact('post', 'categories', 'games', 'users'));
     }
@@ -149,7 +149,7 @@ class PostController extends Controller
 
         if(is_array($request->input('game_list'))) {
             $currentGames = array_filter($request->input('game_list'), 'is_numeric');
-            $newGames = array_diff($request->input('game_list'), $currentGames);   
+            $newGames = array_diff($request->input('game_list'), $currentGames);
             foreach($newGames as $newGame)
             {
                 if($game = Game::create(['name' => $newGame]))
