@@ -48,10 +48,10 @@ class SiteController extends Controller {
 		public function syncMailchimp($email, $fname, $lname, $gender){
 				$apiKey = '8d26225d206ea8b2aaf5945421d4988b-us13';
 		    $listId = '7665e21b2b';
-				$dataCenter = 'us13';
 
 		    $memberId = md5(strtolower($email));
-		    $url = 'https://' . $dataCenter . '.api.mailchimp.com/3.0/lists/' . $listId . '/members/';
+		    $dataCenter = substr($apiKey,strpos($apiKey,'-')+1);
+		    $url = 'https://' . $dataCenter . '.api.mailchimp.com/3.0/lists/' . $listId . '/members/' . $memberId;
 
 		    $json = json_encode([
 		        'email_address' => $email,
