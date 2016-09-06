@@ -33,15 +33,16 @@
 			      </div>
 			    </div>
 			    <div class="row">
-			    	@foreach($stores as $store)
+			    	@foreach($stores as $key => $store)
 						<div class="col-sm-3 col-xs-12">
 							<a href="/stores/{{ $store->slug }}">
 				    			<img src="{{ secure_url('/') }}{{ $store->thumb }}" class="img-responsive" />
 				    		</a>
-					    	<p class="text-center"><strong>
-                  <a href="/stores/{{ $store->slug }}">{!! wordwrap($store->name,15,"<br>\n") !!}</a></strong>
-                </p>
+					    	<p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
 						</div>
+            @if(($key + 1) % 3 == 0)
+              </div><div class="row">
+            @endif
 					@endforeach
 				</div>
 				<hr />
