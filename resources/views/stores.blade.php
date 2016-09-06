@@ -38,7 +38,9 @@
 							<a href="/stores/{{ $store->slug }}">
 				    			<img src="{{ secure_url('/') }}{{ $store->thumb }}" class="img-responsive" />
 				    		</a>
-					    	<p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
+					    	<p class="text-center"><strong>
+                  <a href="/stores/{{ $store->slug }}">{!! wordwrap($store->name,15,"<br>\n") !!}</a></strong>
+                </p>
 						</div>
 					@endforeach
 				</div>
