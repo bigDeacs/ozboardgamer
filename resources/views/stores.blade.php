@@ -40,7 +40,7 @@
 				    		</a>
 					    	<p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
 						</div>
-            @if(($key + 1) % 3 == 0)
+            @if(($key + 1) % 4 == 0)
               </div><div class="row">
             @endif
 					@endforeach
