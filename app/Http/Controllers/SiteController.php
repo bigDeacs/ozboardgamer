@@ -333,7 +333,6 @@ class SiteController extends Controller {
          }
 			}
 
-			$sitemap->store('xml', 'sitemap');
 			return $sitemap->render('xml');
 
 		}
@@ -673,7 +672,7 @@ class SiteController extends Controller {
 			} else {
 				$sort = 'rating';
 				$direction = 'desc';
-			}		
+			}
 			$stores = Store::where('status', '=', '1')->orderBy('name', 'asc')->orderBy($sort, $direction)->paginate(12);
 			return view('stores', compact('stores'));
 		} else {
