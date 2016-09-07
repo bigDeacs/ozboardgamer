@@ -29,36 +29,36 @@ class StoreController extends Controller
             // iterate over results and send them by batch of 10000 elements
             foreach ($results as $row)
             {
-                if ($row['status'] == 1) 
+                if ($row['status'] == 1)
                 {
                     if($row['state'] == 'ACT') {
                         $state = 'Australian Capital Territory';
-                    } 
+                    }
                     if($row['state'] == 'NSW') {
                         $state = 'New South Wales';
-                    } 
+                    }
                     if($row['state'] == 'NT') {
                         $state = 'Northern Territory';
-                    } 
+                    }
                     if($row['state'] == 'QLD') {
                         $state = 'Queensland';
-                    } 
+                    }
                     if($row['state'] == 'SA') {
                         $state = 'South Australia';
-                    } 
+                    }
                     if($row['state'] == 'TAS') {
                         $state = 'Tasmania';
-                    } 
+                    }
                     if($row['state'] == 'VIC') {
                         $state = 'Victoria';
-                    } 
+                    }
                     if($row['state'] == 'WA') {
                         $state = 'Western Australia';
-                    } 
+                    }
                     // select the identifier of this row
                     $index->saveObject(array(
                         "objectID" => $row['id'],
-                        "name" => $row['name'], 
+                        "name" => $row['name'],
                         "slug" => "/stores/".$row['slug'],
                         "thumb" => $row['thumb'],
                         "street" => $row['street'],
@@ -66,8 +66,8 @@ class StoreController extends Controller
                         "state" => $state,
                         "abr" => $row['state'],
                         "postcode" => $row['postcode'],
-                        "_geoloc" => array('lat' => $row['latitude'], 'lng' => $row['longitude'])
-                    ));        
+                        "_geoloc" => array('lat' => floatval($row['latitude']), 'lng' => floatval($row['longitude']))
+                    ));
                 } else {
                     // delete the record with objectID="myID1"
                     $index->deleteObject($row['id']);
@@ -77,7 +77,7 @@ class StoreController extends Controller
         return redirect('/admin/stores');
     }
 
-   
+
     /**
      * Display a listing of the resource.
      *
@@ -95,7 +95,7 @@ class StoreController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {    
+    {
         return view('stores.create');
     }
 
