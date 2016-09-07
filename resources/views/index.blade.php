@@ -15,7 +15,7 @@
     <header class="carousel">
         @foreach($featured as $key => $post)
             <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-                <img src="{{ secure_url('/') }}{{ $post->image }}" class="img-responsive" />
+                <img src="{{ secure_url('/') }}{{ $post->image }}" class="img-responsive" width="100%" />
             </a>
         @endforeach
     </header>
@@ -306,7 +306,11 @@
     <script>
         $(document).ready(function(){
           $('.carousel').slick({
-            setting-name: setting-value
+            dots: false,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
           });
         });
     </script>
