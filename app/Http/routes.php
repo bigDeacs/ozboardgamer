@@ -109,6 +109,7 @@ Route::get('users/{users}/updateStoreRating/{store}/rating/{rating}', ['as' => '
 Route::get('/reviews/{slug?}', 'SiteController@review');
 
 Route::get('sitemap', 'SiteController@sitemap');
+Route::get('sitemap.xml', 'SiteController@sitemap');
 
 // Dynamic Routes
 Route::get('/{category}/{slug?}', 'SiteController@post');
