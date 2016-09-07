@@ -46,14 +46,14 @@ class SiteController extends Controller {
 		 * @return Response
 		 */
 		public function syncMailchimp($email, $fname, $lname, $gender){
-				$apikey = "8d26225d206ea8b2aaf5945421d4988b-us13"; // api key
+				$apikey = "1870ebc0089c8fd4e8f17a3449fd2f12-us13"; // api key
 				$list_id = "7665e21b2b"; // web site list
 				$auth = base64_encode( 'user:'.$apikey );
 
 				$data = array(
 					'apikey'        => $apikey,
 					'email_address' => $email,
-					'status'        => 'pending',
+					'status'        => 'subscribed', // "subscribed","unsubscribed","cleaned","pending"
 					'merge_fields'  => array(
 						'FNAME'     => $fname,
 						'LNAME'     => $lname,
@@ -81,29 +81,6 @@ class SiteController extends Controller {
 			 	$status = "undefined";
 				$msg = "unknown error occurred";
 				$myArray = json_decode($result, true);
-
-				foreach($myArray as $key => $value)
-				{
-				    if( $key == "status" )
-				    {
-				        $status=$value;
-				    }
-				    else if ($key == "title")
-				    {
-				        $msg=$value;
-				    }
-				}
-
-				if( $status == "pending" )
-				{
-				    $msg = "Success! <br>$email has been subscribed <Br>check your inbox for the confirmation email to complete your subscription";
-				}
-				else
-				{
-				    $msg = "Sorry can not subscribe email $email <br>$msg <Br>";
-				}
-				echo "$msg <br>";
-				die(' ');
 		}
 
 	  /**
