@@ -21,8 +21,25 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-			      <div class="col-sm-9 col-xs-12">
+			      <div class="col-sm-6 col-xs-12">
 			      	<h1>Stores</h1>
+			      </div>
+			      <div class="col-sm-3 col-xs-12">
+			      	<span>Sort by: </span>
+			      	<form id="sortForm">
+			      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
+			      		<select class="form-control" onchange="sortGames()" name="sort" id="sort">
+  					  		<option value="name-asc" {{ (Request::input('sort') == 'name-asc') ? 'selected' : "" }}>Name ASC</option>
+  					  		<option value="name-desc" {{ (Request::input('sort') == 'name-desc') ? 'selected' : "" }}>Name DESC</option>
+  						  	<option value="rating-asc" {{ (Request::input('sort') == 'rating-asc') ? 'selected' : "" }}>Rating ASC</option>
+  						  	<option value="rating-desc" {{ (Request::input('sort') == 'rating-desc') ? 'selected' : "" }}>Rating DESC</option>
+    						</select>
+    					</form>
+    					<script>
+    						function sortGames() {
+    					        document.getElementById("sortForm").submit();
+    					    }
+    					</script>
 			      </div>
 			      <div class="col-sm-3 col-xs-12">
 			      	<span>Search for store: </span>

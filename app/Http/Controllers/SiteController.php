@@ -665,7 +665,16 @@ class SiteController extends Controller {
 	public function store($slug = null)
 	{
 		if($slug == null) {
-			$stores = Store::where('status', '=', '1')->orderBy('name', 'asc')->paginate(12);
+			if(Request::has('sort'))
+			{
+			    $pieces = explode("-", Request::input('sort'));
+			    $sort = $pieces[0];
+			    $direction = $pieces[1];
+			} else {
+				$sort = 'rating';
+				$direction = 'desc';
+			}		
+			$stores = Store::where('status', '=', '1')->orderBy('name', 'asc')->orderBy($sort, $direction)->paginate(12);
 			return view('stores', compact('stores'));
 		} else {
 			$store = Store::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
