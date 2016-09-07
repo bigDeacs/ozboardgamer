@@ -23,11 +23,6 @@
 				<div class="row">
 			      <div class="col-sm-9 col-xs-12">
 			      	<h1>Stores</h1>
-              <p>Search for store: </p>
-			      	<form id="search" action="#" method="post" style="width: 100%;">
-                  <input type="text" name="search-stores" id="search-stores" class="form-control" placeholder="Enter search terms...">
-              </form>
-              <br />
 			      </div>
 			      <div class="col-sm-3 col-xs-12">
 			      	<span>Sort by: </span>
@@ -47,6 +42,14 @@
     					</script>
 			      </div>
 			    </div>
+          <div class="row">
+  			      <div class="col-xs-12">
+                <p>Search for store: </p>
+                <form id="search" action="#" method="post" style="width: 100%;">
+                    <input type="text" name="search-stores" id="search-stores" class="form-control" placeholder="Enter search terms...">
+                </form>
+              </div>
+          </div>
 			    <div class="row">
 			    	@foreach($stores as $key => $store)
 						<div class="col-sm-3 col-xs-12">
@@ -64,7 +67,11 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="text-center">
-							{!! $stores->render() !!}
+              @if(isset($_GET['sort']))
+								{!! $stores->appends(['sort' => $_GET['sort']])->render() !!}
+							@else
+								{!! $stores->render() !!}
+							@endif
 						</div>
 					</div>
 				</div>

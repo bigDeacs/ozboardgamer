@@ -673,7 +673,7 @@ class SiteController extends Controller {
 				$sort = 'rating';
 				$direction = 'desc';
 			}
-			$stores = Store::where('status', '=', '1')->orderBy('name', 'asc')->orderBy($sort, $direction)->paginate(12);
+			$stores = Store::where('status', '=', '1')->orderBy($sort, $direction)->paginate(12);
 			return view('stores', compact('stores'));
 		} else {
 			$store = Store::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
