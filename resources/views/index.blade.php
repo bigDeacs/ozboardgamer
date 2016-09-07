@@ -12,12 +12,34 @@
 @section('content')
 <!-- Header -->
     <!-- Header Carousel -->
-    <header class="carousel">
-        @foreach($featured as $key => $post)
-            <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-                <img src="{{ secure_url('/') }}{{ $post->image }}" class="img-responsive" width="100%" />
+    <header id="myCarousel" class="carousel slide">
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            @if($featured->isEmpty())
+                <div class="item active">
+                    <div class="fill" style="background-image:url('{{ secure_url('/', $parameters = ['img']) }}/cover.jpg');"></div>
+                </div>
+            @else
+                @foreach($featured as $key => $post)
+                    <div class="item {{ ($key == 0) ? 'active' : "" }}">
+                        <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
+                            <div class="fill" style="background-image:url('{{ secure_url('/') }}{{ $post->image }}');"></div>
+                        </a>
+                    </div>
+                @endforeach
+            @endif
+        </div>
+
+        @unless($featured->isEmpty())
+            <!-- Controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                 <span class="icon-prev"></span>
             </a>
-        @endforeach
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
+        @endunless
     </header>
 
     <!-- Page Content -->
@@ -291,8 +313,6 @@
 @endsection
 
 @section('scripts')
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="/js/slick.min.js"></script>
     <script type="text/javascript">
         var userFeed  = new Instafeed({
             get: 'user',
@@ -304,17 +324,9 @@
         userFeed.run();
     </script>
     <script>
-        $(document).ready(function(){
-          $('.carousel').slick({
-            dots: false,
-            infinite: true,
-            speed: 500,
-            fade: true,
-            cssEase: 'linear'
-          });
-        });
-    </script>
-    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
         $(function() {
             $('.jcarousel').jcarousel({
                 // Configuration goes here
