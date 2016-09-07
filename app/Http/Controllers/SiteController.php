@@ -333,7 +333,7 @@ class SiteController extends Controller {
          }
 			}
 
-  		// show your sitemap (options: 'xml' (default), 'html', 'txt', 'ror-rss', 'ror-rdf')
+			$sitemap->store('xml', 'sitemap');
 			return $sitemap->render('xml');
 
 		}

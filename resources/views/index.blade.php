@@ -1,44 +1,23 @@
 @extends('app')
 
 @section('meta')
-    <title>Oz Board Gamer | Find the latest Board Game News, Reviews and More</title>
-    <meta name="description" content="Want to know all the latest and greatest about Board Games? We have News, Reviews and much more!">
+    <title>Oz Board Gamer | All the latest on board, dice and card games</title>
+    <meta name="description" content="Want to know the latest about Board Games? We have News, Reviews, quizzes and much more!">
 @endsection
 
 @section('head')
+  <link href="{{ asset('/css/slick.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
 <!-- Header -->
     <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide">
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            @if($featured->isEmpty())
-                <div class="item active">
-                    <div class="fill" style="background-image:url('{{ secure_url('/', $parameters = ['img']) }}/cover.jpg');"></div>
-                </div>
-            @else
-                @foreach($featured as $key => $post)
-                    <div class="item {{ ($key == 0) ? 'active' : "" }}">
-                        <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-                            <div class="fill" style="background-image:url('{{ secure_url('/') }}{{ $post->image }}');"></div>
-                        </a>
-                    </div>
-                @endforeach
-            @endif
-        </div>
-
-        @unless($featured->isEmpty())
-            <!-- Controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                 <span class="icon-prev"></span>
+    <header class="carousel">
+        @foreach($featured as $key => $post)
+            <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
+                <img src="{{ secure_url('/') }}{{ $post->image }}" class="img-responsive" />
             </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="icon-next"></span>
-            </a>
-        @endunless
+        @endforeach
     </header>
 
     <!-- Page Content -->
@@ -72,22 +51,26 @@
               <div class="row hidden-xs">
                   <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/games">
-                      <img src="{{ secure_url('/', $parameters = ['img']) }}/find-new-games.jpg" class="img-responsive" height="200" width="auto" style="width:100%;" />
+                      <img src="{{ secure_url('/', $parameters = ['img']) }}/find-new-games.jpg"
+                           class="img-responsive" height="200" width="auto" style="width:100%;" alt="Find new games" />
                     </a>
                   </div>
                   <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/reviews">
-                        <img src="{{ secure_url('/', $parameters = ['img']) }}/read-our-articles.jpg" class="img-responsive" height="200" width="auto" style="width:100%;" />
+                        <img src="{{ secure_url('/', $parameters = ['img']) }}/read-our-articles.jpg"
+                             class="img-responsive" height="200" width="auto" style="width:100%;" alt="Read our articles" />
                     </a>
                   </div>
                   <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/quizzes">
-                        <img src="{{ secure_url('/', $parameters = ['img']) }}/board-game-quiz.jpg" class="img-responsive" height="200" width="auto" style="width:100%;" />
+                        <img src="{{ secure_url('/', $parameters = ['img']) }}/board-game-quiz.jpg"
+                             class="img-responsive" height="200" width="auto" style="width:100%;" alt="Take a quiz" />
                     </a>
                   </div>
                   <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/stores">
-                        <img src="{{ secure_url('/', $parameters = ['img']) }}/find-game-stores.jpg" class="img-responsive" height="200" width="auto" style="width:100%;" />
+                        <img src="{{ secure_url('/', $parameters = ['img']) }}/find-game-stores.jpg"
+                             class="img-responsive" height="200" width="auto" style="width:100%;" alt="Find game stores" />
                     </a>
                   </div>
                 </div>
@@ -111,7 +94,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12 post-header-line">
-                                                <span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&sort=published_at-desc" itemprop="author">{!! $review->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
+                                                <span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}" itemprop="author">{!! $review->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
                                                 </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><span class="fb-comments-count" data-href="{{ secure_url('/') }}/reviews/{{ $review->slug }}"></span>
                                                 @unless($review->games->isEmpty())
                                                      | <span class="fa fa-trophy"></span>
@@ -308,6 +291,8 @@
 @endsection
 
 @section('scripts')
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script type="text/javascript">
         var userFeed  = new Instafeed({
             get: 'user',
@@ -319,14 +304,17 @@
         userFeed.run();
     </script>
     <script>
-        $('.carousel').carousel({
-            interval: 5000 //changes the speed
-        })
+        $(document).ready(function(){
+          $('.carousel').slick({
+            setting-name: setting-value
+          });
+        });
+    </script>
+    <script>
         $(function() {
             $('.jcarousel').jcarousel({
                 // Configuration goes here
             });
         });
     </script>
-    <script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>
 @endsection

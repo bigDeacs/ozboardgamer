@@ -69,7 +69,7 @@
 
     fbq('init', '1565361210443717');
     fbq('track', "PageView");</script>
-    <noscript><img height="1" width="1" style="display:none"
+    <noscript><img height="1" width="1" alt="Facebook Pixel" style="display:none"
     src="https://www.facebook.com/tr?id=1565361210443717&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Facebook Pixel Code -->
@@ -110,7 +110,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand topnav" href="/" title="Click to go to home page">
-                	<img src="{{ secure_url('/', $parameters = ['img']) }}/logo.png" class="img-responsive" height="75" width="auto" />
+                	<img src="{{ secure_url('/', $parameters = ['img']) }}/logo.png" class="img-responsive" height="75" width="auto" alt="OzBoardGamer Logo" />
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
