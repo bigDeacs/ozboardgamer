@@ -292,7 +292,7 @@
 
 @section('scripts')
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript" src="/js/slick.min.js"></script>
     <script type="text/javascript">
         var userFeed  = new Instafeed({
             get: 'user',
