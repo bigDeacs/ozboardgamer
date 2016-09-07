@@ -44,10 +44,11 @@
 			    </div>
           <div class="row">
   			      <div class="col-xs-12">
-                <p>Search for store: </p>
+                <span>Search for store: </span>
                 <form id="search" action="#" method="post" style="width: 100%;">
                     <input type="text" name="search-stores" id="search-stores" class="form-control" placeholder="Enter search terms...">
                 </form>
+                <br />
               </div>
           </div>
 			    <div class="row">
