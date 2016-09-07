@@ -46,36 +46,64 @@ class SiteController extends Controller {
 		 * @return Response
 		 */
 		public function syncMailchimp($email, $fname, $lname, $gender){
-				$apiKey = '8d26225d206ea8b2aaf5945421d4988b-us13';
-		    $listId = '7665e21b2b';
+				$apikey = "8d26225d206ea8b2aaf5945421d4988b-us13"; // api key
+				$list_id = "7665e21b2b"; // web site list
+				$auth = base64_encode( 'user:'.$apikey );
 
-		    $memberId = md5(strtolower($email));
-		    $dataCenter = substr($apiKey,strpos($apiKey,'-')+1);
-		    $url = 'https://' . $dataCenter . '.api.mailchimp.com/3.0/lists/' . $listId . '/members/' . $memberId;
+				$data = array(
+					'apikey'        => $apikey,
+					'email_address' => $email,
+					'status'        => 'pending',
+					'merge_fields'  => array(
+						'FNAME'     => $fname,
+						'LNAME'     => $lname,
+						'GENDER'     => $gender,
+				 	)
+				);
+				$json_data = json_encode($data);
 
-		    $json = json_encode([
-		        'email_address' => $email,
-		        'status'        => 'subscribed', // "subscribed","unsubscribed","cleaned","pending"
-		        'merge_fields'  => [
-		            'FNAME'     => $fname,
-								'LNAME'     => $lname,
-								'GENDER'     => $gender
-		        ]
-		    ]);
+				$ch = curl_init();
 
-		    $ch = curl_init($url);
+				$curlopt_url = "https://us13.api.mailchimp.com/3.0/lists/$list_id/members/";
+				curl_setopt($ch, CURLOPT_URL, $curlopt_url);
 
-		    curl_setopt($ch, CURLOPT_USERPWD, 'user:' . $apiKey);
-		    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
-		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
-		    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
-		    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-		    curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+				curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json',
+				    'Authorization: Basic '.$auth));
+				curl_setopt($ch, CURLOPT_USERAGENT, 'PHP-MCAPI/3.0');
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+				curl_setopt($ch, CURLOPT_POST, true);
+				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
 
-		    $result = curl_exec($ch);
-		    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-		    curl_close($ch);
+				$result = curl_exec($ch);
+
+			 	$status = "undefined";
+				$msg = "unknown error occurred";
+				$myArray = json_decode($result, true);
+
+				foreach($myArray as $key => $value)
+				{
+				    if( $key == "status" )
+				    {
+				        $status=$value;
+				    }
+				    else if ($key == "title")
+				    {
+				        $msg=$value;
+				    }
+				}
+
+				if( $status == "pending" )
+				{
+				    $msg = "Success! <br>$email has been subscribed <Br>check your inbox for the confirmation email to complete your subscription";
+				}
+				else
+				{
+				    $msg = "Sorry can not subscribe email $email <br>$msg <Br>";
+				}
+				echo "$msg <br>";
+				die(' ');
 		}
 
 	  /**
