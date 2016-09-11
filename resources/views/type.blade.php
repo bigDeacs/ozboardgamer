@@ -48,7 +48,9 @@
 			    </div>
           @if($type->description != '')
             <div class="row">
-              <p>{{ $type->description }}</p>
+              <div class="col-xs-12">
+                <p>{{ $type->description }}</p>
+              </div>
             </div>
           @endif
 				@foreach($games as $game)
