@@ -50,7 +50,7 @@
           @if($family->description != '')
             <div class="row">
               <div class="col-xs-12">
-                <p>{{ $family->description }}</p>
+                <p>{!! $family->description !!}</p>
               </div>
             </div>
           @endif

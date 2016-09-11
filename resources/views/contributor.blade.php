@@ -46,7 +46,7 @@
           @if($user->description != '')
             <div class="row">
               <div class="col-xs-12">
-                <p>{{ $user->description }}</p>
+                <p>{!! $user->description !!}</p>
               </div>
             </div>
           @endif

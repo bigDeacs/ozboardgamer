@@ -50,7 +50,7 @@
           @if($designer->description != '')
             <div class="row">
               <div class="col-xs-12">
-                <p>{{ $designer->description }}</p>
+                <p>{!! $designer->description !!}</p>
               </div>
             </div>
           @endif

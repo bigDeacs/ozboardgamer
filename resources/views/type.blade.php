@@ -49,7 +49,7 @@
           @if($type->description != '')
             <div class="row">
               <div class="col-xs-12">
-                <p>{{ $type->description }}</p>
+                <p>{!! $type->description !!}</p>
               </div>
             </div>
           @endif

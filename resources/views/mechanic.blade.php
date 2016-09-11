@@ -50,7 +50,7 @@
           @if($mechanic->description != '')
             <div class="row">
               <div class="col-xs-12">
-                <p>{{ $mechanic->description }}</p>
+                <p>{!! $mechanic->description !!}</p>
               </div>
             </div>
           @endif
