@@ -46,7 +46,11 @@
 					</script>
 			      </div>
 			    </div>
-
+          @if($type->description != '')
+            <div class="row">
+              <p>{{ $type->description }}</p>
+            </div>
+          @endif
 				@foreach($games as $game)
 					<div class="row" itemscope itemtype="http://schema.org/Game">
 		                <div class="col-md-12 post">

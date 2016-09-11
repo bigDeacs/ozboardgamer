@@ -31,7 +31,6 @@
 				<div class="row">
 			      <div class="col-sm-9 col-xs-12">
 			      	<h1>{{ $user->name }}</h1>
-			      	<p>{!! $user->description !!}</p>
 			      </div>
 			      <div class="col-sm-3 col-xs-12">
 			      	<span>Sort by: </span>
@@ -53,6 +52,11 @@
 					</script>
 			      </div>
 			    </div>
+          @if($user->description != '')
+            <div class="row">
+              <p>{{ $user->description }}</p>
+            </div>
+          @endif
 			    <div class="row">
 			      <div class="col-sm-9 col-xs-12">
 			      	Games {{ $user->name }} Owns <span class="badge">{{ $countOwned }}</span>
