@@ -198,6 +198,13 @@
         </div>
         <!-- /.container -->
     </nav>
+    @if(Session::has('name'))
+      <div class="row">
+        <div class="col-xs-12">
+          <span class="label label-success">OzGameShop Coupon Code: <a href="https://t.cfjump.com/33917/c/9404" target="_blank" title="Buy from OzGameShop">SHIP</a></span>
+        </div>
+      </div>
+    @endif
 
   	@yield('content')
 
