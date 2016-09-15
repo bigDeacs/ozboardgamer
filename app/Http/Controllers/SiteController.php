@@ -760,7 +760,7 @@ class SiteController extends Controller {
 
 		// Get the latest post in this category and display the titles
 		$crawler->filter('a')->each(function ($node) {
-		    print_r($node);
+		    print $node->text()."\n";
 		});
 	}
 
