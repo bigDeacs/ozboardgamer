@@ -17,6 +17,7 @@ use App\Quiz;
 use App\Question;
 use App\Answer;
 use App\Result;
+use Goutte\Client;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\QuizResultRequest;
 use Request;
@@ -748,6 +749,19 @@ class SiteController extends Controller {
 	{
 		$category = Category::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->where('slug', '=', $slug)->firstOrFail();
 		return view('category', compact('category'));
+	}
+
+	public function test()
+	{
+		$client = new Client();
+		// Go to the symfony.com website
+		$crawler = $client->request('GET', 'http://www.symfony.com/blog/');
+		$client->getClient()->setDefaultOption('config/curl/'.CURLOPT_TIMEOUT, 60);
+
+		// Get the latest post in this category and display the titles
+		$crawler->filter('h2 > a')->each(function ($node) {
+		    print $node->text()."\n";
+		});
 	}
 
 }
