@@ -26,12 +26,12 @@
                         <input type="text" name="time" id="time" class="form-control" value="{{ isset($game) ? $game->time : old('time') }}" placeholder="" required>
                   </div>
             </div>
-            <div class="row">
+            <!--<div class="row">
                   <div class="col-xs-12">
                         <label for="link">Purchase Link</label>
                         <input type="text" name="link" id="link" class="form-control" value="{{ isset($game) ? $game->link : old('link') }}" placeholder="">
                   </div>
-            </div>
+            </div>-->
             <div class="row">
                   <div class="col-sm-6 col-xs-12">
                         <label for="luck">Luck</label><br /><small>0 = No luck at all, 5 = Too much luck</small>
@@ -136,7 +136,7 @@
             <label for="publisher_list">Publisher</label>
             {!! Form::select('publisher_list[]', $publishers, null, ['id' => 'publisher_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
       </div>
-      
+
 </div>
 
 <div class="form-group row">
@@ -182,7 +182,7 @@
 
 @section('scripts')
 	<script>
-            $(".input-group.date").datepicker({ 
+            $(".input-group.date").datepicker({
                   autoclose: true, format: "yyyy", viewMode: "years", minViewMode: "years"
             });
       </script>
