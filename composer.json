@@ -11,8 +11,7 @@
 		"algolia/algoliasearch-laravel": "^1.0",
 		"laravel/socialite": "~2.0",
 		"guzzlehttp/guzzle": "~5.0",
-		"roumen/sitemap": "2.6.*",
-		"fabpot/goutte": "~2.0"
+		"roumen/sitemap": "2.6.*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

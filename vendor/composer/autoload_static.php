@@ -7,12 +7,11 @@ namespace Composer\Autoload;
 class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
 {
     public static $files = array (
-        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         'fe1bcd0336136e435eaf197895daf81a' => __DIR__ . '/..' . '/nikic/php-parser/lib/bootstrap.php',
         '9f7f3f9b1f82484e76bcd07b985a2d2f' => __DIR__ . '/..' . '/symfony/var-dumper/Symfony/Component/VarDumper/Resources/functions/dump.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         'e40631d46120a9c38ea139981f8dab26' => __DIR__ . '/..' . '/ircmaxell/password-compat/lib/password.php',
+        'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
@@ -44,13 +43,9 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         array (
             'Symfony\\Polyfill\\Util\\' => 22,
             'Symfony\\Polyfill\\Php56\\' => 23,
-            'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
-            'Symfony\\Component\\DomCrawler\\' => 29,
-            'Symfony\\Component\\CssSelector\\' => 30,
-            'Symfony\\Component\\BrowserKit\\' => 29,
             'SuperClosure\\' => 13,
             'Stringy\\' => 8,
         ),
@@ -85,7 +80,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\' => 11,
             'GrahamCampbell\\Manager\\' => 23,
-            'Goutte\\' => 7,
         ),
         'D' => 
         array (
@@ -130,10 +124,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php56',
         ),
-        'Symfony\\Polyfill\\Mbstring\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
-        ),
         'Symfony\\Component\\Yaml\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
@@ -145,18 +135,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
-        ),
-        'Symfony\\Component\\DomCrawler\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/dom-crawler',
-        ),
-        'Symfony\\Component\\CssSelector\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/css-selector',
-        ),
-        'Symfony\\Component\\BrowserKit\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/browser-kit',
         ),
         'SuperClosure\\' => 
         array (
@@ -221,10 +199,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'GrahamCampbell\\Manager\\' => 
         array (
             0 => __DIR__ . '/..' . '/graham-campbell/manager/src',
-        ),
-        'Goutte\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/fabpot/goutte/Goutte',
         ),
         'Doctrine\\Instantiator\\' => 
         array (

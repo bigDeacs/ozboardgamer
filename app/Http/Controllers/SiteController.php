@@ -751,17 +751,4 @@ class SiteController extends Controller {
 		return view('category', compact('category'));
 	}
 
-	public function test()
-	{
-		$client = new Client();
-		// Go to the symfony.com website
-		$crawler = $client->request('GET', 'http://shop.goodgames.com.au/');
-		$client->getClient()->setDefaultOption('config/curl/'.CURLOPT_TIMEOUT, 60);
-
-		// Get the latest post in this category and display the titles
-		$crawler->filter('a')->each(function ($node) {
-		    print $node->text()."\n";
-		});
-	}
-
 }
