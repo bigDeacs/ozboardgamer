@@ -755,12 +755,12 @@ class SiteController extends Controller {
 	{
 		$client = new Client();
 		// Go to the symfony.com website
-		$crawler = $client->request('GET', 'http://www.symfony.com/blog/');
+		$crawler = $client->request('GET', 'http://shop.goodgames.com.au/');
 		$client->getClient()->setDefaultOption('config/curl/'.CURLOPT_TIMEOUT, 60);
 
 		// Get the latest post in this category and display the titles
-		$crawler->filter('h2 > a')->each(function ($node) {
-		    print $node->text()."\n";
+		$crawler->filter('a')->each(function ($node) {
+				echo $node->href . '<br>';
 		});
 	}
 
