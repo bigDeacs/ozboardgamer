@@ -138,7 +138,7 @@
 					    	@endif
 					    @endif
 					    @unless($game->link == null)
-				    		<a href="{!! $game->link !!}" target="_blank" class="btn btn-primary" style="font-size:13px;"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order<span class="hidden-xs"> Online</span></a>
+				    		<a href="{!! $game->link !!}" target="_blank" class="btn btn-primary" style="font-size:13px;" title="Search on Board Game Shopper"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Find<span class="hidden-xs"> Online</span></a>
 					    @endunless
 					</div>
 				</div>
