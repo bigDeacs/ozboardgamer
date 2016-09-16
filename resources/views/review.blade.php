@@ -75,6 +75,7 @@
         @if(Session::has('name'))
           <hr />
           <div class="row">
+            <div class="getsocial gs-reaction-button"></div>
             <div class="fb-comments" data-numposts="10" data-width="100%"></div>
           </div>
         @else

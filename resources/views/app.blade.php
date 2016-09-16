@@ -26,7 +26,6 @@
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#222222">
-
     <meta property="fb:app_id" content="256969058009917" />
     @yield('meta')
     @yield('head')
@@ -38,10 +37,9 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
-
-  <script type="text/javascript">var switchTo5x=true;</script>
-  <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
-  <script type="text/javascript" src="https://ss.sharethis.com/loader.js"></script>
+  <script type="text/javascript">
+    (function() { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = '//api.at.getsocial.io/widget/v1/gs_async.js?id=8ba0b1'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();
+  </script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -313,11 +311,6 @@
     <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
     <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
     <script src="/js/scripts.min.js"></script>
-    <script type="text/javascript">stLight.options({publisher: "e6d3c59e-345b-44de-a1aa-34d79bbd942d", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-    <script>
-    var options={ "publisher": "e6d3c59e-345b-44de-a1aa-34d79bbd942d", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "googleplus", "twitter", "pinterest"]}};
-    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
-    </script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
     <script>
