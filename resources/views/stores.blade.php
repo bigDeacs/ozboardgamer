@@ -21,15 +21,9 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-			      <div class="col-sm-6 col-xs-12">
+			      <div class="col-sm-5 col-xs-12">
 			      	<h1>Stores</h1>
 			      </div>
-			      <div class="col-sm-3 col-xs-12">
-              <span>Search for store: </span>
-              <form id="search" action="#" method="post" style="width: 100%;">
-                  <input type="text" name="search-stores" id="search-stores" class="form-control" placeholder="Enter search terms...">
-              </form>
-            </div>
             <div class="col-sm-3 col-xs-12">
               <span>Sort by: </span>
 			      	<form id="sortForm">
@@ -47,6 +41,12 @@
     					    }
     					</script>
 			      </div>
+			      <div class="col-sm-4 col-xs-12">
+              <span>Search for store: </span>
+              <form id="search" action="#" method="post" style="width: 100%;">
+                  <input type="text" name="search-stores" id="search-stores" class="form-control" placeholder="Enter search terms...">
+              </form>
+            </div>
 			    </div>
 			    <div class="row">
 			    	@foreach($stores as $key => $store)
