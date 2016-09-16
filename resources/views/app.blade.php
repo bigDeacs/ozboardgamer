@@ -202,7 +202,7 @@
     </nav>
     @if(Session::has('name'))
       <div class="row alert alert-success" style="margin-bottom: 0;">
-        <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/c/9404" target="_blank" title="Free shipping when you spend $30 at OzGameShop">OzGameShop Coupon Code: SHIP</a></div>
+        <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
       </div>
     @endif
 
