@@ -371,6 +371,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'AddSlugToPublishersTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_09_084125_add_slug_to_publishers_table.php',
         'AddSlugToThemesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_09_084137_add_slug_to_themes_table.php',
         'AddSlugToTypesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_09_084149_add_slug_to_types_table.php',
+        'AddStartEndToOffersTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_19_115104_add_start_end_to_offers_table.php',
         'AddStatusToCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_14_035539_add_status_to_categories_table.php',
         'AddStatusToDesignersTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_30_041256_add_status_to_designers_table.php',
         'AddStatusToFamiliesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_14_035602_add_status_to_families_table.php',
