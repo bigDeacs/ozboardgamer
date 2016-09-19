@@ -202,21 +202,22 @@
     </nav>
     @if(Session::has('name'))
       @if(!empty($offers))
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="offers">
-                <div class="row alert alert-success offers-item" style="margin-bottom: 0;">
+        <div id="myCarousel" class="vertical-slider carousel vertical slide col-md-12" data-ride="carousel">
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <div class="item active row alert alert-danger" style="margin-bottom: 0;">
                   <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
                 </div>
-                <div class="row alert alert-warning offers-item" style="margin-bottom: 0;">
+                <div class="item row alert alert-warning" style="margin-bottom: 0;">
                   <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
                 </div>
-                <div class="row alert alert-danger offers-item" style="margin-bottom: 0;">
+                <!--/item-->
+                <div class="item row alert alert-danger" style="margin-bottom: 0;">
                   <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
                 </div>
-              </div>
+                <!--/item-->
             </div>
-          </div>
+        </div>
       @endif
     @endif
 
@@ -324,7 +325,6 @@
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
     <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-    <script src="/js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
     <script src="/js/scripts.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
@@ -332,25 +332,6 @@
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
           // see next for specifications
         });
-    </script>
-    <script type="text/javascript">
-      $(function () {
-      $(".demo").bootstrapNews({
-      newsPerPage: 1,
-      navigation: false,
-      autoplay: true,
-      direction:'up', // up or down
-      animationSpeed: 'normal',
-      newsTickerInterval: 5000, //5 secs
-      pauseOnHover: false,
-      onStop: null,
-      onPause: null,
-      onReset: null,
-      onPrev: null,
-      onNext: null,
-      onToDo: null
-      });
-      });
     </script>
     <script>
         $(document).ready(function(){
@@ -384,6 +365,17 @@
                   date.setTime(date.getTime()+(30*24*60*60*1000));
                   document.cookie = "ModalShown=true; expires="+date.toGMTString()+" path=/";
               }
+
+              $('.btn-vertical-slider').on('click', function () {
+
+                  if ($(this).attr('data-slide') == 'next') {
+                      $('#myCarousel').carousel('next');
+                  }
+                  if ($(this).attr('data-slide') == 'prev') {
+                      $('#myCarousel').carousel('prev')
+                  }
+
+              });
         });
     </script>
     @yield('scripts')
