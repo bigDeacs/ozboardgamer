@@ -202,7 +202,7 @@
     </nav>
     @if(Session::has('name'))
       @if(!empty($offers))
-      <div id="myCarousel" class="vertical-slider carousel vertical slide col-md-12" data-ride="carousel">
+      <div id="offerCarousel" class="vertical-slider carousel vertical slide col-md-12" data-ride="carousel">
           <!-- Carousel items -->
           <div class="carousel-inner">
             @foreach($offers as $key => $offer)
@@ -361,16 +361,18 @@
                   date.setTime(date.getTime()+(30*24*60*60*1000));
                   document.cookie = "ModalShown=true; expires="+date.toGMTString()+" path=/";
               }
+              $("#myCarousel").carousel({
+                 interval : 5000,
+                 pause: false
+             });
 
               $('.btn-vertical-slider').on('click', function () {
-
                   if ($(this).attr('data-slide') == 'next') {
                       $('#myCarousel').carousel('next');
                   }
                   if ($(this).attr('data-slide') == 'prev') {
                       $('#myCarousel').carousel('prev')
                   }
-
               });
         });
     </script>

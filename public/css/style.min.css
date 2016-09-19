@@ -255,6 +255,10 @@
           transition: 0.6s ease-in-out top;
 }
 
+#offerCarousel .right.carousel-control, #offerCarousel .left.carousel-control {
+    display: none;
+}
+
  .carousel.vertical .active {
   top: 0;
 }
