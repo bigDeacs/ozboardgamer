@@ -29,7 +29,7 @@ class CheckOffers extends Command {
     $offers = Offer::where('status', '=', '1')->get();
     foreach($offers as $offer)
     {
-      if($offer->end_at > date('Y-m-d'))
+      if($offer->end_at <= date('Y-m-d'))
       {
         $offer->status = 0;
       }
