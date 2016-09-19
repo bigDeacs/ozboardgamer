@@ -206,7 +206,7 @@
           <!-- Carousel items -->
           <div class="carousel-inner">
             @foreach($offers as $key => $offer)
-                <div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0;">
+                <div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0; padding: 25px 0 15px 0;">
                   <div class="col-xs-12 text-center">
                     <a href="{{ $offer->url }}" target="_blank" title="{{ $offer->name }}">{{ $offer->name }}</a>
                   </div>
