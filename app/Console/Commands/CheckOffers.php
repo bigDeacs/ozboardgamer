@@ -1,7 +1,6 @@
 <?php namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Foundation\Inspiring;
 use App\Offer;
 
 class CheckOffers extends Command {
@@ -33,6 +32,7 @@ class CheckOffers extends Command {
       if($offer->end_at <= date('Y-m-d'))
       {
         $offer->status = 0;
+        $offer->save();
       }
     }
 	}
