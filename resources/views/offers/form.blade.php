@@ -15,7 +15,8 @@
       <div class="col-sm-6 col-xs-12">
         <label for="start_at">Start Date</label>
         <div class='input-group date'>
-              <input type="text" autocomplete="off" name="start_at" id="start_at" data-date-format="yyyy-mm-dd" class="form-control" value="{{ isset($offer) ? $offer->start_at : old('start_at') }}" required />
+              <!--<input type="text" autocomplete="off" name="start_at" id="start_at" data-date-format="yyyy-mm-dd" class="form-control" value="{{ isset($offer) ? $offer->start_at : old('start_at') }}" required />-->
+              <input type="text" autocomplete="off" name="start_at" id="start_at" data-date-format="yyyy-mm-dd" class="form-control" required />
               <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
               </span>
@@ -24,7 +25,8 @@
       <div class="col-sm-6 col-xs-12">
             <label for="end_at">End Date</label>
             <div class='input-group date'>
-                  <input type="text" autocomplete="off" name="end_at" id="end_at" data-date-format="yyyy-mm-dd" class="form-control" value="{{ isset($offer) ? $offer->end_at : old('end_at') }}" required />
+                  <!--<input type="text" autocomplete="off" name="end_at" id="end_at" data-date-format="yyyy-mm-dd" class="form-control" value="{{ isset($offer) ? $offer->end_at : old('end_at') }}" required />-->
+                  <input type="text" autocomplete="off" name="end_at" id="end_at" data-date-format="yyyy-mm-dd" class="form-control" required />
                   <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                   </span>
