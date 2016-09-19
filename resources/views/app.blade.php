@@ -251,6 +251,7 @@
           </div>
         <div class="panel-footer"> </div>
       </div>
+      @endif
     @endif
 
   	@yield('content')
