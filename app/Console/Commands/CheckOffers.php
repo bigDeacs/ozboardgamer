@@ -2,6 +2,7 @@
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
+use App\Offer;
 
 class CheckOffers extends Command {
 
