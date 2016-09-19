@@ -406,6 +406,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'CreateGameUserTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_14_034333_create_game_user_table.php',
         'CreateGamesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_083148_create_games_table.php',
         'CreateMechanicsTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_083257_create_mechanics_table.php',
+        'CreateOffersTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_19_093948_create_offers_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_083221_create_posts_table.php',
         'CreatePublishersTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_083308_create_publishers_table.php',

@@ -201,8 +201,55 @@
         <!-- /.container -->
     </nav>
     @if(Session::has('name'))
-      <div class="row alert alert-success" style="margin-bottom: 0;">
-        <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
+      @if(!empty($offers))
+      <div class="panel panel-default">
+        <div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b>News</b></div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-xs-12">
+              <ul class="demo">
+
+              <li class="news-item">
+              <table cellpadding="4">
+              <tr>
+                <td>
+                  <div class="row alert alert-success" style="margin-bottom: 0;">
+                    <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
+                  </div>
+                </td>
+              </tr>
+              </table>
+              </li>
+
+              <li class="news-item">
+              <table cellpadding="4">
+              <tr>
+                <td>
+                  <div class="row alert alert-warning" style="margin-bottom: 0;">
+                    <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
+                  </div>
+                </td>
+              </tr>
+              </table>
+              </li>
+
+              <li class="news-item">
+              <table cellpadding="4">
+              <tr>
+              <td>
+                <div class="row alert alert-danger" style="margin-bottom: 0;">
+                  <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
+                </div>
+              </td>
+              </tr>
+              </table>
+              </li>
+
+              </ul>
+            </div>
+          </div>
+          </div>
+        <div class="panel-footer"> </div>
       </div>
     @endif
 
@@ -310,6 +357,7 @@
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
     <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
+    <script src="/js/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
     <script src="/js/scripts.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
@@ -317,6 +365,25 @@
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
           // see next for specifications
         });
+    </script>
+    <script type="text/javascript">
+      $(function () {
+      $(".demo").bootstrapNews({
+      newsPerPage: 3,
+      navigation: true,
+      autoplay: true,
+      direction:'up', // up or down
+      animationSpeed: 'normal',
+      newsTickerInterval: 4000, //4 secs
+      pauseOnHover: true,
+      onStop: null,
+      onPause: null,
+      onReset: null,
+      onPrev: null,
+      onNext: null,
+      onToDo: null
+      });
+      });
     </script>
     <script>
         $(document).ready(function(){
