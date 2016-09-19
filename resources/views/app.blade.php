@@ -204,14 +204,14 @@
       @if(!empty($offers))
           <div class="row">
             <div class="col-xs-12">
-              <div class="demo">
-                <div class="row alert alert-success news-item" style="margin-bottom: 0;">
+              <div class="offers">
+                <div class="row alert alert-success offers-item" style="margin-bottom: 0;">
                   <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
                 </div>
-                <div class="row alert alert-warning news-item" style="margin-bottom: 0;">
+                <div class="row alert alert-warning offers-item" style="margin-bottom: 0;">
                   <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
                 </div>
-                <div class="row alert alert-danger news-item" style="margin-bottom: 0;">
+                <div class="row alert alert-danger offers-item" style="margin-bottom: 0;">
                   <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
                 </div>
               </div>
