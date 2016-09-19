@@ -202,55 +202,21 @@
     </nav>
     @if(Session::has('name'))
       @if(!empty($offers))
-      <div class="panel panel-default">
-        <div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b>News</b></div>
-        <div class="panel-body">
           <div class="row">
             <div class="col-xs-12">
-              <ul class="demo">
-
-              <li class="news-item">
-              <table cellpadding="4">
-              <tr>
-                <td>
-                  <div class="row alert alert-success" style="margin-bottom: 0;">
-                    <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
-                  </div>
-                </td>
-              </tr>
-              </table>
-              </li>
-
-              <li class="news-item">
-              <table cellpadding="4">
-              <tr>
-                <td>
-                  <div class="row alert alert-warning" style="margin-bottom: 0;">
-                    <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
-                  </div>
-                </td>
-              </tr>
-              </table>
-              </li>
-
-              <li class="news-item">
-              <table cellpadding="4">
-              <tr>
-              <td>
-                <div class="row alert alert-danger" style="margin-bottom: 0;">
+              <div class="demo">
+                <div class="row alert alert-success news-item" style="margin-bottom: 0;">
                   <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
                 </div>
-              </td>
-              </tr>
-              </table>
-              </li>
-
-              </ul>
+                <div class="row alert alert-warning news-item" style="margin-bottom: 0;">
+                  <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
+                </div>
+                <div class="row alert alert-danger news-item" style="margin-bottom: 0;">
+                  <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
+                </div>
+              </div>
             </div>
           </div>
-          </div>
-        <div class="panel-footer"> </div>
-      </div>
       @endif
     @endif
 
@@ -370,13 +336,13 @@
     <script type="text/javascript">
       $(function () {
       $(".demo").bootstrapNews({
-      newsPerPage: 3,
-      navigation: true,
+      newsPerPage: 1,
+      navigation: false,
       autoplay: true,
       direction:'up', // up or down
       animationSpeed: 'normal',
-      newsTickerInterval: 4000, //4 secs
-      pauseOnHover: true,
+      newsTickerInterval: 5000, //5 secs
+      pauseOnHover: false,
       onStop: null,
       onPause: null,
       onReset: null,
