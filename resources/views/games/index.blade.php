@@ -44,7 +44,7 @@
 								@endif
 						    		<td scope="row">{{ $game->name }}</td>
 						    		<td scope="row">{{ $game->types()->first()->name }}</td>
-                    <td scope="row">{{ $game->published_at }}</td>
+                    <td scope="row">{{ $game->published }}</td>
 						    		<td scope="row">{{ number_format((float)$game->rating, 1, '.', '') }}/10</td>
 						    		<td>
 						    			<a href="/admin/games/{{ $game->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
