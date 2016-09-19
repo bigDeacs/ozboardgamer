@@ -201,7 +201,7 @@
         <!-- /.container -->
     </nav>
     @if(Session::has('name'))
-      @if(!empty(Offer::where('status', '=', '1')->get()))
+      @if(!empty($offers))
       <div class="panel panel-default">
         <div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b>News</b></div>
         <div class="panel-body">

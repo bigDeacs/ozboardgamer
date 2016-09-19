@@ -40,7 +40,15 @@ class SiteController extends Controller {
 	| controller as you wish. It is just here to get your app started!
 	|
 	*/
+	public function __construct()
+    {
 
+    }
+		public function __construct()
+	  {
+	    $offers = Offer::where('status', '=', '1')->get(),
+	    View::share('offers', $offers);
+	  }
 
 		/**
 		 * Add to mailchimp
