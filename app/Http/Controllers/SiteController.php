@@ -24,6 +24,7 @@ use Request;
 use Storage;
 use Session;
 use App;
+use View;
 
 use Socialite;
 use App\Http\Requests\GameUpdateRequest;
