@@ -43,7 +43,7 @@ class SiteController extends Controller {
 
 		public function __construct()
 	  {
-	    $offers = Offer::where('status', '=', '1')->get(),
+	    $offers = Offer::where('status', '=', '1')->get();
 	    View::share('offers', $offers);
 	  }
 
