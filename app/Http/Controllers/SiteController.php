@@ -44,7 +44,7 @@ class SiteController extends Controller {
 
 		public function __construct()
 	  {
-	    $offers = Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->get();
+	    $offers = Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get();
 	    View::share('offers', $offers);
 	  }
 

@@ -23,7 +23,7 @@ class Kernel extends ConsoleKernel {
 	protected function schedule(Schedule $schedule)
 	{
 	 $schedule->command('checkoffers')
-				 ->everyFiveMinutes();
+				 ->dailyAt('23:59');
 	}
 
 }
