@@ -202,21 +202,17 @@
     </nav>
     @if(Session::has('name'))
       @if(!empty($offers))
-        <div id="myCarousel" class="vertical-slider carousel vertical slide col-md-12" data-ride="carousel">
-            <!-- Carousel items -->
-            <div class="carousel-inner">
-                <div class="item active row alert alert-danger" style="margin-bottom: 0;">
-                  <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
+      <div id="myCarousel" class="vertical-slider carousel vertical slide col-md-12" data-ride="carousel">
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            @foreach($offers as $key => $offer)
+                <div class="item row alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0;">
+                  <div class="col-xs-12 text-center">
+                    <a href="{{ $offer->url }}" target="_blank" title="{{ $offer->name }}">{{ $offer->name }}</a>
+                  </div>
                 </div>
-                <div class="item row alert alert-warning" style="margin-bottom: 0;">
-                  <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
-                </div>
-                <!--/item-->
-                <div class="item row alert alert-danger" style="margin-bottom: 0;">
-                  <div class="col-xs-12 text-center"><a href="https://t.cfjump.com/33917/o/13550" target="_blank" title="Free shipping when you spend $30 at OzGameShop">SPECIAL OFFERS & 50% MORE PLAYER POINTS FROM OZGAMESHOP.COM</a></div>
-                </div>
-                <!--/item-->
-            </div>
+            @endforeach
+          </div>
         </div>
       @endif
     @endif

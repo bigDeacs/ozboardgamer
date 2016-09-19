@@ -5,10 +5,6 @@
     <meta name="description" content="Want to know the latest about Board Games? We have News, Reviews, quizzes and much more!">
 @endsection
 
-@section('head')
-  <link href="{{ asset('/css/slick.css') }}" rel="stylesheet">
-@endsection
-
 @section('content')
 <!-- Header -->
     <!-- Header Carousel -->

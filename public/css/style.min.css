@@ -247,7 +247,6 @@
 
 
 .btn-vertical-slider{ margin-left:35px; cursor:pointer;}
-a {  cursor:pointer;}
 .carousel.vertical .carousel-inner .item {
   -webkit-transition: 0.6s ease-in-out top;
      -moz-transition: 0.6s ease-in-out top;
