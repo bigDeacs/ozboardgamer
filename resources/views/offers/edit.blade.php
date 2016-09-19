@@ -27,7 +27,7 @@
 					</div>
 				@endif
 				{!! Form::model($offer, ['method' => 'PATCH', 'action' => ['OfferController@update', $offer->id]]) !!}
-					<input type="hidden" name="id" value="{{ $type->id }}">
+					<input type="hidden" name="id" value="{{ $offer->id }}">
 					@include('offers.form')
 					<div class="form-group btn-submit-top">
 						<button type="submit" class="btn btn-success btn-block">Update</button>
