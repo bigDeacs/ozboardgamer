@@ -32,7 +32,7 @@ class AdminController extends Controller {
 	public function index()
 	{
 		$latestpost = Post::orderBy('published_at', 'desc')->where('published_at', '<=', date('Y-m-d'))->first();
-		$toptengames = Game::where('parent_id', '=', null)->orderBy('rating', 'desc')->take(10)->get();
+		$toptengames = Game::has('parent', '<', '1')->orderBy('rating', 'desc')->take(10)->get();
 		$toptenstores = Store::orderBy('rating', 'desc')->take(10)->get();
         return view('home', compact('latestpost', 'toptengames', 'toptenstores'));
 	}
