@@ -40,12 +40,7 @@ class SiteController extends Controller {
 	| controller as you wish. It is just here to get your app started!
 	|
 	*/
-	public function __construct()
-    {
-				$this->data = [
-					'offers'   => Offer::where('status', '=', '1')->get()
-		    ];
-    }
+
 
 		/**
 		 * Add to mailchimp
@@ -357,31 +352,34 @@ class SiteController extends Controller {
 	 */
 	public function index()
 	{
-		$this->data['featured'] = Post::where('status', '=', '1')->where('image', '!=', '')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->take(5)->get();
-		$this->data['reviews'] = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
+		$featured = Post::where('status', '=', '1')->where('image', '!=', '')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->take(5)->get();
+		$reviews = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'reviews');
 		})->orderBy('published_at', 'desc')->take(5)->get();
-		$this->data['news'] = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
+		$news = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'news');
 		})->orderBy('published_at', 'desc')->take(10)->get();
-		$this->data['howtos'] = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
+		$howtos = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'howtos');
 		})->orderBy('published_at', 'desc')->take(5)->get();
-		$this->data['top10s'] = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
+		$top10s = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'top10s');
 		})->orderBy('published_at', 'desc')->take(5)->get();
-		$this->data['blogs'] = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
+		$news = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
+		{
+		    $q->where('slug', '=', 'news');
+		})->orderBy('published_at', 'desc')->take(10)->get();
+		$blogs = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'blogs');
 		})->orderBy('published_at', 'desc')->take(10)->get();
-		$this->data['games'] = Game::where('status', '=', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
-		$this->data['stores'] = Store::where('status', '=', '1')->orderBy('rating', 'desc')->take(10)->get();
-		$data = $this->data;
-		return view('index', compact($data));
+		$games = Game::where('status', '=', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
+		$stores = Store::where('status', '=', '1')->orderBy('rating', 'desc')->take(10)->get();
+		return view('index', compact('featured', 'reviews', 'howtos', 'top10s', 'news', 'blogs', 'games', 'stores'));
 	}
 
 	/**
@@ -392,9 +390,8 @@ class SiteController extends Controller {
 	public function game($type = null, $slug = null)
 	{
 		if($type == null) {
-			$this->data['types'] = Type::where('status', '=', '1')->has('games')->with('games')->paginate(12);
-			$data = $this->data;
-			return view('type', compact($data));
+			$types = Type::where('status', '=', '1')->has('games')->with('games')->paginate(12);
+			return view('types', compact('types'));
 		} elseif($slug == null) {
 			if(Request::has('sort'))
 			{
@@ -405,27 +402,25 @@ class SiteController extends Controller {
 				$sort = 'rating';
 				$direction = 'desc';
 			}
-			$this->data['games'] = Game::where('status', '=', '1')->whereHas('types', function($q) use($type)
+			$games = Game::where('status', '=', '1')->whereHas('types', function($q) use($type)
 			{
 			    $q->where('slug', '=', $type);
 			})->orderBy($sort, $direction)->paginate(10);
-			$this->data['type'] = Type::where('status', '=', '1')->where('slug', '=', $type)->firstOrFail();
-			$data = $this->data;
-			return view('type', compact($data));
+			$type = Type::where('status', '=', '1')->where('slug', '=', $type)->firstOrFail();
+			return view('type', compact('type','games'));
 		} else {
-			$this->data['game'] = Game::where('status', '=', '1')->with('mechanics')->where('slug', '=', $slug)->firstOrFail();
-			$this->data['posts'] = Post::where('status', '=', '1')->where('video', '!=', '')->whereHas('games', function($q) use($slug)
+			$game = Game::where('status', '=', '1')->with('mechanics')->where('slug', '=', $slug)->firstOrFail();
+			$posts = Post::where('status', '=', '1')->where('video', '!=', '')->whereHas('games', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
 			})->get();
-			$this->data['related'] = Game::where('status', '=', '1')->where('id', '!=', $game->id)->whereHas('mechanics', function($q) use($game)
+			$related = Game::where('status', '=', '1')->where('id', '!=', $game->id)->whereHas('mechanics', function($q) use($game)
 			{
 			    foreach($game->mechanics as $mechanic) {
 					$q->orWhere('name', '=', $mechanic->name);
 			    }
 			})->orderByRaw("RAND()")->take(4)->get();
-			$data = $this->data;
-			return view('game', compact($data));
+			return view('game', compact('game', 'posts', 'related'));
 		}
 	}
 
@@ -437,17 +432,15 @@ class SiteController extends Controller {
 	public function family($slug = null)
 	{
 		if($slug == null) {
-			$this->data['families'] = Family::where('status', '=', '1')->has('games')->with('games')->paginate(12);
-			$data = $this->data;
-			return view('families', compact($data));
+			$families = Family::where('status', '=', '1')->has('games')->with('games')->paginate(12);
+			return view('families', compact('families'));
 		} else {
-			$this->data['family'] = Family::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-			$this->data['games'] = Game::where('status', '=', '1')->whereHas('family', function($q) use($slug)
+			$family = Family::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$games = Game::where('status', '=', '1')->whereHas('family', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
 			})->paginate(10);
-			$data = $this->data;
-			return view('family', compact($data));
+			return view('family', compact('family', 'games'));
 		}
 	}
 
@@ -459,17 +452,15 @@ class SiteController extends Controller {
 	public function designer($slug = null)
 	{
 		if($slug == null) {
-			$this->data['designers'] = Designer::where('status', '=', '1')->has('games')->with('games')->paginate(12);
-			$data = $this->data;
-			return view('designers', compact($data));
+			$designers = Designer::where('status', '=', '1')->has('games')->with('games')->paginate(12);
+			return view('designers', compact('designers'));
 		} else {
-			$this->data['designer'] = Designer::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-			$this->data['games'] = Game::where('status', '=', '1')->whereHas('designers', function($q) use($slug)
+			$designer = Designer::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$games = Game::where('status', '=', '1')->whereHas('designers', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
 			})->paginate(10);
-			$data = $this->data;
-			return view('designer', compact($data));
+			return view('designer', compact('designer', 'games'));
 		}
 	}
 
@@ -481,17 +472,15 @@ class SiteController extends Controller {
 	public function publisher($slug = null)
 	{
 		if($slug == null) {
-			$this->data['publishers'] = Publisher::where('status', '=', '1')->has('games')->with('games')->paginate(12);
-			$data = $this->data;
-			return view('publishers', compact($data));
+			$publishers = Publisher::where('status', '=', '1')->has('games')->with('games')->paginate(12);
+			return view('publishers', compact('publishers'));
 		} else {
-			$this->data['publisher'] = Publisher::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-			$this->data['games'] = Game::where('status', '=', '1')->whereHas('publishers', function($q) use($slug)
+			$publisher = Publisher::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$games = Game::where('status', '=', '1')->whereHas('publishers', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
 			})->paginate(10);
-			$data = $this->data;
-			return view('publisher', compact($data));
+			return view('publisher', compact('publisher', 'games'));
 		}
 	}
 
@@ -503,17 +492,15 @@ class SiteController extends Controller {
 	public function mechanic($slug = null)
 	{
 		if($slug == null) {
-			$this->data['mechanics'] = Mechanic::where('status', '=', '1')->has('games')->with('games')->paginate(12);
-			$data = $this->data;
-			return view('mechanics', compact($data));
+			$mechanics = Mechanic::where('status', '=', '1')->has('games')->with('games')->paginate(12);
+			return view('mechanics', compact('mechanics'));
 		} else {
-			$this->data['mechanic'] = Mechanic::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-			$this->data['games'] = Game::where('status', '=', '1')->whereHas('mechanics', function($q) use($slug)
+			$mechanic = Mechanic::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$games = Game::where('status', '=', '1')->whereHas('mechanics', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
 			})->paginate(10);
-			$data = $this->data;
-			return view('mechanic', compact($data));
+			return view('mechanic', compact('mechanic', 'games'));
 		}
 	}
 
@@ -525,17 +512,15 @@ class SiteController extends Controller {
 	public function theme($slug = null)
 	{
 		if($slug == null) {
-			$this->data['themes'] = Theme::where('status', '=', '1')->has('games')->with('games')->paginate(12);
-			$data = $this->data;
-			return view('themes', compact($data));
+			$themes = Theme::where('status', '=', '1')->has('games')->with('games')->paginate(12);
+			return view('themes', compact('themes'));
 		} else {
-			$this->data['theme'] = Theme::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-			$this->data['games'] = Game::where('status', '=', '1')->whereHas('themes', function($q) use($slug)
+			$theme = Theme::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$games = Game::where('status', '=', '1')->whereHas('themes', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
 			})->paginate(10);
-			$data = $this->data;
-			return view('theme', compact($data));
+			return view('theme', compact('theme', 'games'));
 		}
 	}
 
@@ -556,25 +541,23 @@ class SiteController extends Controller {
 				$sort = 'published_at';
 				$direction = 'desc';
 			}
-			$this->data['posts'] = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
+			$posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 			{
 			    $q->where('slug', '=', 'reviews');
 			})->orderBy($sort, $direction)->paginate(12);
-			$this->data['category'] = Category::where('status', '=', '1')->where('slug', '=', 'reviews')->firstOrFail();
-			$data = $this->data;
-			return view('reviews', compact($data));
+			$category = Category::where('status', '=', '1')->where('slug', '=', 'reviews')->firstOrFail();
+			return view('reviews', compact('category','posts'));
 		} else {
-			$this->data['post'] = Post::where('status', '=', '1')->whereHas('category', function($q)
+			$post = Post::where('status', '=', '1')->whereHas('category', function($q)
 			{
 			    $q->where('slug', '=', 'reviews');
 			})->where('slug', '=', $slug)->firstOrFail();
 
-			$this->data['games'] = Game::where('status', '=', '1')->whereHas('posts', function($q) use($post)
+			$games = Game::where('status', '=', '1')->whereHas('posts', function($q) use($post)
 			{
 				$q->where('name', '=', $post->name);
 			})->orderByRaw("RAND()")->get();
-			$data = $this->data;
-			return view('review', compact($data));
+			return view('review', compact('post', 'games'));
 		}
 
 	}
@@ -587,11 +570,10 @@ class SiteController extends Controller {
 	public function user($slug = null)
 	{
 		if($slug == null) {
-			$this->data['users'] = User::where('status', '=', '1')->orderBy('name', 'asc')->has('posts')->with('posts')->paginate(12);
-			$data = $this->data;
-			return view('users', compact($data));
+			$users = User::where('status', '=', '1')->orderBy('name', 'asc')->has('posts')->with('posts')->paginate(12);
+			return view('users', compact('users'));
 		} else {
-			$this->data['user'] = User::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$user = User::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
 			if($user->role == 'a') {
 				if(Request::has('sort'))
 				{
@@ -602,12 +584,11 @@ class SiteController extends Controller {
 					$sort = 'published_at';
 					$direction = 'desc';
 				}
-				$this->data['posts'] = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('user', function($q) use($slug)
+				$posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('user', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
 				})->orderBy($sort, $direction)->paginate(12);
-				$data = $this->data;
-				return view('contributor', compact($data));
+				return view('contributor', compact('user', 'posts'));
 			} else {
 				if(Request::has('sort'))
 				{
@@ -619,27 +600,26 @@ class SiteController extends Controller {
 					$direction = 'desc';
 				}
 
-				$this->data['owned'] = Game::where('status', '=', '1')->with('types')->with('users')
+				$owned = Game::where('status', '=', '1')->with('types')->with('users')
 				->whereHas('users', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
 				   	$q->where('type', '=', 'owned');
 				})->orderBy($sort, $direction)->paginate(12);
 
-				$this->data['wanted'] = Game::where('status', '=', '1')->with('types')->with('users')
+				$wanted = Game::where('status', '=', '1')->with('types')->with('users')
 				->whereHas('users', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
 				   	$q->where('type', '=', 'wanted');
 				})->orderBy($sort, $direction)->get();
 
-				$this->data['total'] = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
+				$total = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
 				{
 				    $q->where('slug', '=', $slug);
 				})->get();
 
-				$data = $this->data;
-				return view('user', compact($data));
+				return view('user', compact('user', 'owned', 'wanted', 'total'));
 			}
 
 		}
@@ -662,25 +642,23 @@ class SiteController extends Controller {
 				$sort = 'published_at';
 				$direction = 'desc';
 			}
-			$this->data['posts'] = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q) use($category)
+			$posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q) use($category)
 			{
 			    $q->where('slug', '=', $category);
 			})->orderBy($sort, $direction)->paginate(12);
-			$this->data['category'] = Category::where('status', '=', '1')->where('slug', '=', $category)->firstOrFail();
-			$data = $this->data;
-			return view('posts', compact($data));
+			$category = Category::where('status', '=', '1')->where('slug', '=', $category)->firstOrFail();
+			return view('posts', compact('category','posts'));
 		} else {
-			$this->data['post'] = Post::where('status', '=', '1')->whereHas('category', function($q) use($category)
+			$post = Post::where('status', '=', '1')->whereHas('category', function($q) use($category)
 			{
 			    $q->where('slug', '=', $category);
 			})->where('slug', '=', $slug)->firstOrFail();
 
-			$this->data['games'] = Game::where('status', '=', '1')->whereHas('posts', function($q) use($post)
+			$games = Game::where('status', '=', '1')->whereHas('posts', function($q) use($post)
 			{
 				$q->where('name', '=', $post->name);
 			})->orderByRaw("RAND()")->get();
-			$data = $this->data;
-			return view('post', compact($data));
+			return view('post', compact('post', 'games'));
 		}
 
 	}
@@ -702,13 +680,11 @@ class SiteController extends Controller {
 				$sort = 'rating';
 				$direction = 'desc';
 			}
-			$this->data['stores'] = Store::where('status', '=', '1')->orderBy($sort, $direction)->paginate(12);
-			$data = $this->data;
-			return view('stores', compact($data));
+			$stores = Store::where('status', '=', '1')->orderBy($sort, $direction)->paginate(12);
+			return view('stores', compact('stores'));
 		} else {
-			$this->data['store'] = Store::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-			$data = $this->data;
-			return view('store', compact($data));
+			$store = Store::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			return view('store', compact('store'));
 		}
 	}
 
@@ -720,14 +696,12 @@ class SiteController extends Controller {
 	public function quiz($slug = null)
 	{
 			if($slug == null) {
-				$this->data['quizzes'] = Quiz::where('status', '=', '1')->orderBy('name', 'asc')->paginate(12);
-				$data = $this->data;
-				return view('quizzes', compact($data));
+				$quizzes = Quiz::where('status', '=', '1')->orderBy('name', 'asc')->paginate(12);
+				return view('quizzes', compact('quizzes'));
 			} else {
-				$this->data['quiz'] = Quiz::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-				$this->data['questions'] = Question::where('status', '=', '1')->where('quiz_id', '=', $quiz->id)->orderByRaw("RAND()")->take($quiz->limit)->get();
-				$data = $this->data;
-				return view('quiz', compact($data));
+				$quiz = Quiz::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+				$questions = Question::where('status', '=', '1')->where('quiz_id', '=', $quiz->id)->orderByRaw("RAND()")->take($quiz->limit)->get();
+				return view('quiz', compact('quiz', 'questions'));
 			}
 	}
 
@@ -758,13 +732,12 @@ class SiteController extends Controller {
 		 */
 		public function result($slug)
 		{
-				$this->data['result'] = Result::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-				$this->data['games'] = Game::where('status', '=', '1')->whereHas('results', function($q) use($result)
+				$result = Result::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+				$games = Game::where('status', '=', '1')->whereHas('results', function($q) use($result)
 				{
 					$q->where('name', '=', $result->name);
 				})->orderByRaw("RAND()")->get();
-				$data = $this->data;
-				return view('result', compact($data));
+				return view('result', compact('result', 'games'));
 		}
 
 
