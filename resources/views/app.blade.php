@@ -202,11 +202,11 @@
     </nav>
     @if(Session::has('name'))
       @if(!empty($offers))
-      <div id="offerCarousel" class="vertical-slider carousel vertical slide col-md-12" data-ride="carousel">
+      <div id="offerCarousel" class="vertical-slider carousel vertical slide row" data-ride="carousel">
           <!-- Carousel items -->
           <div class="carousel-inner">
             @foreach($offers as $key => $offer)
-                <div class="item row alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0;">
+                <div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0;">
                   <div class="col-xs-12 text-center">
                     <a href="{{ $offer->url }}" target="_blank" title="{{ $offer->name }}">{{ $offer->name }}</a>
                   </div>
