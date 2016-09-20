@@ -188,7 +188,7 @@ class SiteController extends Controller {
 		{
 			$user = Socialite::driver('google')
 							->fields(['name', 'email', 'gender', 'verified', 'first_name', 'last_name'])
-							->scopes(['https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/plus.profile.emails.read'])
+							->scopes(['profile', 'email'])
 							->user();
 
 			// OAuth Two Providers
