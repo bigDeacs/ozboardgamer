@@ -220,6 +220,7 @@ class SiteController extends Controller {
 		{
 			$google = Socialite::driver('google')
 							->scopes(['profile', 'email'])
+							->stateless()
 							->user();
 
 			// OAuth Two Providers
