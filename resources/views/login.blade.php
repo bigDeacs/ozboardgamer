@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>Login | Oz Board Gamer</title>
+    <title>Login/Signup | Oz Board Gamer</title>
     <meta name="description" content="">
 @endsection
 
@@ -13,7 +13,7 @@
 		<div class="container">
 			<ol class="breadcrumb breadcrumb-arrow">
 				<li><a href="/"><i class="glyphicon glyphicon-home"></i></a></li>
-				<li class="active"><span>Login</span></li>
+				<li class="active"><span>Login/Signup</span></li>
 			</ol>
 		</div>
 	</div>
@@ -22,7 +22,7 @@
 			<div class="col-sm-12">
 				<div class="row">
 			      <div class="col-xs-12">
-			      	<h1>Login</h1>
+			      	<h1>Login/Signup</h1>
 			      </div>
 			    </div>
 			    <div class="row">
@@ -40,7 +40,7 @@
                       </div>
                  @else
                    <div class="panel-heading">Login/Signup</div>
-                   <div class="panel-body">
+                   <div class="panel-body row">
                      @if (count($errors) > 0)
                        <div class="alert alert-danger">
                          <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -51,44 +51,73 @@
                          </ul>
                        </div>
                      @endif
+                     <div class="col-xs-12 col-sm-6">
+                       <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-                       <div class="form-group">
-                         <label class="col-md-4 control-label">Name</label>
-                         <div class="col-md-6">
-                           <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                         <div class="form-group">
+                           <label class="col-md-4 control-label">E-Mail Address</label>
+                           <div class="col-md-6">
+                             <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                           </div>
                          </div>
-                       </div>
 
-                       <div class="form-group">
-                         <label class="col-md-4 control-label">E-Mail Address</label>
-                         <div class="col-md-6">
-                           <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                         <div class="form-group">
+                           <label class="col-md-4 control-label">Password</label>
+                           <div class="col-md-6">
+                             <input type="password" class="form-control" name="password">
+                           </div>
                          </div>
-                       </div>
 
-                       <div class="form-group">
-                         <label class="col-md-4 control-label">Password</label>
-                         <div class="col-md-6">
-                           <input type="password" class="form-control" name="password">
+                         <div class="form-group">
+                           <div class="col-md-6 col-md-offset-4">
+                             <button type="submit" class="btn btn-primary btn-block">
+                               Login/Signup
+                             </button>
+                           </div>
                          </div>
-                       </div>
+                       </form>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                       <form class="form-horizontal" role="form" method="POST" action="{{ url('/signup') }}">
+                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-                       <div class="form-group">
-                         <div class="col-md-6 col-md-offset-4">
-                           <button type="submit" class="btn btn-primary btn-block">
-                             Login/Signup
-                           </button>
+                         <div class="form-group">
+                           <label class="col-md-4 control-label">Name</label>
+                           <div class="col-md-6">
+                             <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                           </div>
                          </div>
-                       </div>
-                     </form>
-                     <hr />
-                     <div class="row text-center">
-                       <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
-                       <a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a>
+
+                         <div class="form-group">
+                           <label class="col-md-4 control-label">E-Mail Address</label>
+                           <div class="col-md-6">
+                             <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                           </div>
+                         </div>
+
+                         <div class="form-group">
+                           <label class="col-md-4 control-label">Password</label>
+                           <div class="col-md-6">
+                             <input type="password" class="form-control" name="password">
+                           </div>
+                         </div>
+
+                         <div class="form-group">
+                           <div class="col-md-6 col-md-offset-4">
+                             <button type="submit" class="btn btn-primary btn-block">
+                               Signup
+                             </button>
+                           </div>
+                         </div>
+                       </form>
                      </div>
+                   </div>
+
+                   <hr />
+                   <div class="row text-center">
+                     <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
+                     <a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a>
                    </div>
                  @endif
                </div>

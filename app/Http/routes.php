@@ -21,6 +21,7 @@ Route::get('/games/{type?}/{slug?}', 'SiteController@game');
 
 Route::get('login', 'SiteController@login');
 Route::post('login', ['as' => 'loginRequest', 'uses' => 'SiteController@loginRequest']);
+Route::post('signup', ['as' => 'signupRequest', 'uses' => 'SiteController@signupRequest']);
 
 Route::get('/facebook', 'SiteController@redirectToFacebookProvider');
 Route::get('/facebook/callback', 'SiteController@handleFacebookProviderCallback');

@@ -20,6 +20,7 @@ use App\Result;
 use App\Offer;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\SignupRequest;
 use App\Http\Requests\QuizResultRequest;
 use Request;
 use Storage;
@@ -104,24 +105,31 @@ class SiteController extends Controller {
 
 		public function loginRequest(LoginRequest $request)
 		{
-				$user = User::firstOrNew(['email' => $email]);
-				if($user->exists == false)
-				{
-					$user->name = $request['name'];
-					$user->slug = str_slug($request['name']);
-					$user->image = '';
-					$user->password = $request['password'];
-					$user->role = 'b';
-					$user->status = 1;
-					$user->save();
-
-					$this->syncMailchimp($email, $fname, $lname, null);
-				}
-
+			if($user = User::where('email', '=', $request['email'])->where('password', '=', $request['password'])->first())
+			{
 				Session::put('id', $user->id);
 				Session::put('name', $user->name);
 				Session::put('email', $user->email);
 				Session::put('thumb', $user->thumb);
+			}
+			return redirect()->back();
+		}
+
+		public function signupRequest(SignupRequest $request)
+		{
+				$user = User::create($request->all());
+				$user->slug = str_slug($request['name']);
+				$user->image = '';
+				$user->status = 1;
+				$user->role = 'b';
+        $user->save();
+
+				$this->syncMailchimp($email, $fname, $lname, null);
+
+				Session::put('id', $create->id);
+				Session::put('name', $create->name);
+				Session::put('email', $create->email);
+				Session::put('thumb', $create->thumb);
 
 				return redirect()->back();
 		}
