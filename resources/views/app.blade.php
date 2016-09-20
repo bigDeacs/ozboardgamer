@@ -313,7 +313,17 @@
                 <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Add ratings to Games and Stores</p>
                 <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Add comments to Games and Articles</p>
                 <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i>  Our monthly email newsletter</p>
-                <a href="/facebook" class="btn btn-primary btn-lg"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
+                <div class="btn-group">
+                  <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login/Signup</a>
+                  <button type="button" style="padding: 10px;" class="btn btn-primary-darker dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="/facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a></li>
+                    <li><a href="/google"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a></li>
+                  </ul>
+                </div>
                 <hr />
                 <small>By logging in you are agreeing to be added to our mailing list. If you wish to be removed from this list you will need to use the unsubscribe link found on the mailing.</small>
             </div>
