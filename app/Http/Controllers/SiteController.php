@@ -104,17 +104,26 @@ class SiteController extends Controller {
 
 		public function loginRequest(LoginRequest $request)
 		{
-				$create = User::firstOrCreate(['name' => $request['name'], 'slug' => str_slug($request['name']), 'image' => '', 'email' => $request['email'], 'password' => $request['password'], 'role' => 'b', 'status' => 1]);
-				$this->syncMailchimp($email, $fname, $lname, null);
+				$user = User::firstOrNew(['email' => $email]);
+				if($user->exists == false)
+				{
+					$user->name = $request['name'];
+					$user->slug = str_slug($request['name']);
+					$user->image = '';
+					$user->password = $request['password'];
+					$user->role = 'b';
+					$user->status = 1;
+					$user->save();
 
-				Session::put('id', $create->id);
-				Session::put('name', $create->name);
-				Session::put('email', $create->email);
-				Session::put('thumb', $create->thumb);
+					$this->syncMailchimp($email, $fname, $lname, null);
+				}
+
+				Session::put('id', $user->id);
+				Session::put('name', $user->name);
+				Session::put('email', $user->email);
+				Session::put('thumb', $user->thumb);
 
 				return redirect()->back();
-				dd($request);
-				return redirect('/results/'.$result->slug);
 		}
 
 
@@ -167,13 +176,24 @@ class SiteController extends Controller {
 			$lname = $user['last_name'];
 			$gender = $user['gender'];
 
-	    $create = User::firstOrCreate(['name' => $name, 'slug' => str_slug($name), 'image' => $thumb, 'email' => $email, 'password' => 'password', 'role' => 'b', 'status' => 1]);
-			$this->syncMailchimp($email, $fname, $lname, $gender);
+			$user = User::firstOrNew(['email' => $email]);
+			if($user->exists == false)
+			{
+				$user->name = $name;
+				$user->slug = str_slug($name);
+				$user->image = $thumb;
+				$user->password = 'password';
+				$user->role = 'b';
+				$user->status = 1;
+				$user->save();
 
-			Session::put('id', $create->id);
-			Session::put('name', $create->name);
-			Session::put('email', $create->email);
-			Session::put('thumb', $create->thumb);
+				$this->syncMailchimp($email, $fname, $lname, $gender);
+			}
+
+			Session::put('id', $user->id);
+			Session::put('name', $user->name);
+			Session::put('email', $user->email);
+			Session::put('thumb', $user->thumb);
 
 			return redirect()->back();
     }
@@ -204,13 +224,24 @@ class SiteController extends Controller {
 			$lname = $user['last_name'];
 			$gender = $user['gender'];
 
-			$create = User::firstOrCreate(['name' => $name, 'slug' => str_slug($name), 'image' => $thumb, 'email' => $email, 'password' => 'password', 'role' => 'b', 'status' => 1]);
-			$this->syncMailchimp($email, $fname, $lname, $gender);
+			$user = User::firstOrNew(['email' => $email]);
+			if($user->exists == false)
+			{
+				$user->name = $name;
+				$user->slug = str_slug($name);
+				$user->image = $thumb;
+				$user->password = 'password';
+				$user->role = 'b';
+				$user->status = 1;
+				$user->save();
 
-			Session::put('id', $create->id);
-			Session::put('name', $create->name);
-			Session::put('email', $create->email);
-			Session::put('thumb', $create->thumb);
+				$this->syncMailchimp($email, $fname, $lname, $gender);
+			}
+
+			Session::put('id', $user->id);
+			Session::put('name', $user->name);
+			Session::put('email', $user->email);
+			Session::put('thumb', $user->thumb);
 
 			return redirect()->back();
 		}
