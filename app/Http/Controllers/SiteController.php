@@ -110,7 +110,10 @@ class SiteController extends Controller {
      */
     public function handleProviderCallback()
     {
-    	$user = Socialite::driver('facebook')->fields(['name', 'email', 'gender', 'verified', 'first_name', 'last_name'])->user();
+    	$user = Socialite::driver('facebook')
+							->fields(['name', 'email', 'gender', 'verified', 'first_name', 'last_name'])
+							->scopes(['email'])
+							->user();
 
 			// OAuth Two Providers
 			$token = $user->token;
