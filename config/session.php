@@ -135,7 +135,7 @@ return [
 	|
 	*/
 
-	'domain' => 'https://ozboardgamer.com',
+	'domain' => null,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -148,6 +148,6 @@ return [
 	|
 	*/
 
-	'secure' => true,
+	'secure' => false,
 
 ];
