@@ -138,7 +138,6 @@ class SiteController extends Controller {
     public function redirectToGoogleProvider()
     {
         return Socialite::driver('google')
-								->fields(['first_name', 'last_name', 'email', 'gender'])
 								->redirect();
     }
 
