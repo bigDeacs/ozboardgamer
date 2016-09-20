@@ -68,7 +68,7 @@
                          <div class="form-group">
                            <div class="col-md-6 col-md-offset-4">
                              <button type="submit" class="btn btn-primary btn-block">
-                               Login/Signup
+                               Login
                              </button>
                            </div>
                          </div>
@@ -115,6 +115,8 @@
                      <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
                      <a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a>
                    </div>
+                   <hr />
+                   <br/ >
                  @endif
                </div>
              </div>

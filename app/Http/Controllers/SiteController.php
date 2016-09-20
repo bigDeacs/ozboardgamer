@@ -218,7 +218,6 @@ class SiteController extends Controller {
 		public function handleGoogleProviderCallback()
 		{
 			$user = Socialite::driver('google')
-							->fields(['name', 'email', 'gender', 'verified', 'first_name', 'last_name'])
 							->scopes(['profile', 'email'])
 							->user();
 
