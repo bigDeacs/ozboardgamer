@@ -40,4 +40,10 @@ return [
 	    'redirect' => 'https://ozboardgamer.com/facebook/callback',
 	],
 
+	'google' => [
+	    'client_id' => '235672082558-4tc6013v8rtgth9hfs188d67uhmc8am9.apps.googleusercontent.com',
+	    'client_secret' => 'oGhCNUrn0JaqJDiMWNTIBOhk',
+	    'redirect' => 'https://ozboardgamer.com/google/callback',
+	],
+
 ];

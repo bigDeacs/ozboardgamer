@@ -124,7 +124,7 @@
                                 @if(Session::has('name'))
                                     <div class="btn-group">
                                       <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
-                                      <a style="padding: 10px;" href="/facebook/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
+                                      <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
                                     </div>
                                 @else
                                     <div class="btn-group">
@@ -135,7 +135,7 @@
                                       </button>
                                       <ul class="dropdown-menu">
                                         <li><a href="/facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a></li>
-                                        <!--<li><a href="/google"><i class="fa fa-google-official" aria-hidden="true"></i> Login with Google</a></li>-->
+                                        <li><a href="/google"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a></li>
                                       </ul>
                                     </div>
                                 @endif

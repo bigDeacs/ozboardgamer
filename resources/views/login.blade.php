@@ -30,12 +30,12 @@
                <div class="panel panel-default">
                  @if(Session::has('name'))
                      <div class="panel-heading">Welcome {{ Session::get('name') }}!</div>
-                     <div class="panel-body">
+                     <div class="panel-body text-center">
                        Take a look around and dont forget to follow us on Facebook and Instagram!
                        <br />
                        <div class="btn-group">
                          <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
-                         <a style="padding: 10px;" href="/facebook/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
+                         <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
                        </div>
                       </div>
                  @else
@@ -86,7 +86,8 @@
                      </form>
                      <hr />
                      <div class="row text-center">
-                       or <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a> with one click
+                       <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
+                       <a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a>
                      </div>
                    </div>
                  @endif

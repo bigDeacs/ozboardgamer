@@ -123,9 +123,21 @@ class SiteController extends Controller {
      *
      * @return Response
      */
-    public function redirectToProvider()
+    public function redirectToFacebookProvider()
     {
         return Socialite::driver('facebook')
+								->fields(['first_name', 'last_name', 'email', 'gender'])
+								->redirect();
+    }
+
+		/**
+     * Redirect the user to the Facebook authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToGoogleProvider()
+    {
+        return Socialite::driver('google')
 								->fields(['first_name', 'last_name', 'email', 'gender'])
 								->redirect();
     }
@@ -135,7 +147,7 @@ class SiteController extends Controller {
      *
      * @return Response
      */
-    public function handleProviderCallback()
+    public function handleFacebookProviderCallback()
     {
     	$user = Socialite::driver('facebook')
 							->fields(['name', 'email', 'gender', 'verified', 'first_name', 'last_name'])
@@ -166,6 +178,43 @@ class SiteController extends Controller {
 
 			return redirect()->back();
     }
+
+		/**
+		 * Obtain the user information from Facebook.
+		 *
+		 * @return Response
+		 */
+		public function handleGoogleProviderCallback()
+		{
+			$user = Socialite::driver('google')
+							->fields(['name', 'email', 'gender', 'verified', 'first_name', 'last_name'])
+							->scopes(['https://www.googleapis.com/auth/plus.me', 'https://www.googleapis.com/auth/plus.profile.emails.read'])
+							->user();
+
+			// OAuth Two Providers
+			$token = $user->token;
+			$refreshToken = $user->refreshToken; // not always provided
+			$expiresIn = $user->expiresIn;
+
+			$id = $user->getId();
+			$email = $user->getEmail();
+			$name = $user->getName();
+			$thumb = $user->getAvatar();
+
+			$fname = $user['first_name'];
+			$lname = $user['last_name'];
+			$gender = $user['gender'];
+
+			$create = User::firstOrCreate(['name' => $name, 'slug' => str_slug($name), 'image' => $thumb, 'email' => $email, 'password' => 'password', 'role' => 'b', 'status' => 1]);
+			$this->syncMailchimp($email, $fname, $lname, $gender);
+
+			Session::put('id', $create->id);
+			Session::put('name', $create->name);
+			Session::put('email', $create->email);
+			Session::put('thumb', $create->thumb);
+
+			return redirect()->back();
+		}
 
     /**
      * Destroy session data.
