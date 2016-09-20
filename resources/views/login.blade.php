@@ -26,11 +26,9 @@
 			      </div>
 			    </div>
 			    <div class="row">
-             <div class="col-md-8 col-md-offset-2">
-               <div class="panel panel-default">
                  @if(Session::has('name'))
-                     <div class="panel-heading">Welcome {{ Session::get('name') }}!</div>
-                     <div class="panel-body text-center">
+                     <p>Welcome {{ Session::get('name') }}!</p>
+                     <div class="text-center">
                        Take a look around and dont forget to follow us on Facebook and Instagram!
                        <br />
                        <div class="btn-group">
@@ -39,8 +37,6 @@
                        </div>
                       </div>
                  @else
-                   <div class="panel-heading">Login/Signup</div>
-                   <div class="panel-body row">
                      @if (count($errors) > 0)
                        <div class="alert alert-danger">
                          <strong>Whoops!</strong> There were some problems with your input.<br><br>

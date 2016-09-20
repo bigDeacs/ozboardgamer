@@ -25,6 +25,7 @@ use App\Http\Requests\QuizResultRequest;
 use Request;
 use Storage;
 use Session;
+use Hash;
 use App;
 use View;
 
@@ -105,12 +106,15 @@ class SiteController extends Controller {
 
 		public function loginRequest(LoginRequest $request)
 		{
-			if($user = User::where('email', '=', $request['email'])->where('password', '=', $request['password'])->first())
+			if($user = User::where('email', '=', $request['email'])->first())
 			{
-				Session::put('id', $user->id);
-				Session::put('name', $user->name);
-				Session::put('email', $user->email);
-				Session::put('thumb', $user->thumb);
+				if (Hash::check($request['password'], $user->password))
+				{
+					Session::put('id', $user->id);
+					Session::put('name', $user->name);
+					Session::put('email', $user->email);
+					Session::put('thumb', $user->thumb);
+				}
 			}
 			return redirect()->back();
 		}
@@ -190,7 +194,7 @@ class SiteController extends Controller {
 				$user->name = $name;
 				$user->slug = str_slug($name);
 				$user->image = $thumb;
-				$user->password = 'password';
+				$user->password = Hash::make(str_slug($name));
 				$user->role = 'b';
 				$user->status = 1;
 				$user->save();
@@ -238,7 +242,7 @@ class SiteController extends Controller {
 				$user->name = $name;
 				$user->slug = str_slug($name);
 				$user->image = $thumb;
-				$user->password = 'password';
+				$user->password = Hash::make(str_slug($name));
 				$user->role = 'b';
 				$user->status = 1;
 				$user->save();
