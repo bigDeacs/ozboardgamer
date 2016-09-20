@@ -171,6 +171,8 @@ class SiteController extends Controller {
     public function handleFacebookProviderCallback()
     {
     	$facebook = Socialite::driver('facebook')
+							->fields(['name', 'email', 'gender', 'verified', 'first_name', 'last_name'])
+							->scopes(['email'])
 							->user();
 
 			// OAuth Two Providers
@@ -217,7 +219,7 @@ class SiteController extends Controller {
 		public function handleGoogleProviderCallback()
 		{
 			$google = Socialite::driver('google')
-							->stateless()
+							->scopes(['profile', 'email'])
 							->user();
 
 			// OAuth Two Providers
