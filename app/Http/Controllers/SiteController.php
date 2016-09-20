@@ -169,24 +169,24 @@ class SiteController extends Controller {
      */
     public function handleFacebookProviderCallback()
     {
-    	$user = Socialite::driver('facebook')
+    	$facebook = Socialite::driver('facebook')
 							->fields(['name', 'email', 'gender', 'verified', 'first_name', 'last_name'])
 							->scopes(['email'])
 							->user();
 
 			// OAuth Two Providers
-			$token = $user->token;
-			$refreshToken = $user->refreshToken; // not always provided
-			$expiresIn = $user->expiresIn;
+			$token = $facebook->token;
+			$refreshToken = $facebook->refreshToken; // not always provided
+			$expiresIn = $facebook->expiresIn;
 
-			$id = $user->getId();
-			$email = $user->getEmail();
-			$name = $user->getName();
-			$thumb = $user->getAvatar();
+			$id = $facebook->getId();
+			$email = $facebook->getEmail();
+			$name = $facebook->getName();
+			$thumb = $facebook->getAvatar();
 
-			$fname = $user['first_name'];
-			$lname = $user['last_name'];
-			$gender = $user['gender'];
+			$fname = $facebook['first_name'];
+			$lname = $facebook['last_name'];
+			$gender = $facebook['gender'];
 
 			$user = User::firstOrNew(['email' => $email]);
 			if($user->exists == false)
@@ -231,9 +231,9 @@ class SiteController extends Controller {
 			$name = $user->getName();
 			$thumb = $user->getAvatar();
 
-			$fname = $user['first_name'];
-			$lname = $user['last_name'];
-			$gender = $user['gender'];
+			$fname = $name;
+			$lname = '';
+			$gender = '';
 
 			$user = User::firstOrNew(['email' => $email]);
 			if($user->exists == false)
