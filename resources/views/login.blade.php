@@ -29,9 +29,10 @@
              <div class="col-md-8 col-md-offset-2">
                <div class="panel panel-default">
                  @if(Session::has('name'))
-                     <div class="panel-heading">Welcome Session::get('name')!</div>
+                     <div class="panel-heading">Welcome {{ Session::get('name') }}!</div>
                      <div class="panel-body">
                        Take a look around and dont forget to follow us on Facebook and Instagram!
+                       <br />
                        <div class="btn-group">
                          <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
                          <a style="padding: 10px;" href="/facebook/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
@@ -76,22 +77,17 @@
                        </div>
 
                        <div class="form-group">
-                         <label class="col-md-4 control-label">Confirm Password</label>
-                         <div class="col-md-6">
-                           <input type="password" class="form-control" name="password_confirmation">
-                         </div>
-                       </div>
-
-                       <div class="form-group">
                          <div class="col-md-6 col-md-offset-4">
-                           <button type="submit" class="btn btn-primary">
+                           <button type="submit" class="btn btn-primary btn-block">
                              Login/Signup
                            </button>
                          </div>
                        </div>
                      </form>
                      <hr />
-                     or <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
+                     <div class="row text-center">
+                       or <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a> with one click
+                     </div>
                    </div>
                  @endif
                </div>

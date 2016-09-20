@@ -104,7 +104,7 @@ class SiteController extends Controller {
 
 		public function loginRequest(LoginRequest $request)
 		{
-				$create = User::firstOrCreate(['name' => $request['name'], 'slug' => str_slug($request['name']), 'image' => null, 'email' => $request['email'], 'password' => $request['password'], 'role' => 'b', 'status' => 1]);
+				$create = User::firstOrCreate(['name' => $request['name'], 'slug' => str_slug($request['name']), 'image' => '', 'email' => $request['email'], 'password' => $request['password'], 'role' => 'b', 'status' => 1]);
 				$this->syncMailchimp($email, $fname, $lname, null);
 
 				Session::put('id', $create->id);

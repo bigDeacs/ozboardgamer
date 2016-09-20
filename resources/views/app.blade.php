@@ -128,7 +128,7 @@
                                     </div>
                                 @else
                                     <div class="btn-group">
-                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login</a>
+                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login/Signup</a>
                                       <button type="button" style="padding: 10px;" class="btn btn-primary-darker dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="caret"></span>
                                         <span class="sr-only">Toggle Dropdown</span>
