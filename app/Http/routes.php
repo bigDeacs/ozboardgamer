@@ -19,9 +19,12 @@ Route::controllers([
 
 Route::get('/games/{type?}/{slug?}', 'SiteController@game');
 
+Route::get('login', 'SiteController@login');
+Route::post('login', ['as' => 'loginRequest', 'uses' => 'SiteController@loginRequest']);
+
 Route::get('/facebook', 'SiteController@redirectToProvider');
 Route::get('/facebook/callback', 'SiteController@handleProviderCallback');
-Route::get('/facebook/logout', 'SiteController@logoutSocialite');
+Route::get('/facebook/logout', 'SiteController@logout');
 
 Route::get('home', 'AdminController@index');
 

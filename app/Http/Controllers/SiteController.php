@@ -19,6 +19,7 @@ use App\Answer;
 use App\Result;
 use App\Offer;
 use App\Http\Requests\SearchRequest;
+use App\Http\Requests\LoginRequest;
 use App\Http\Requests\QuizResultRequest;
 use Request;
 use Storage;
@@ -91,6 +92,23 @@ class SiteController extends Controller {
 				$myArray = json_decode($result, true);
 		}
 
+		/**
+		 * Show the application welcome screen to the user.
+		 *
+		 * @return Response
+		 */
+		public function login()
+		{
+			return view('login');
+		}
+
+		public function loginRequest(LoginRequest $request)
+		{
+				dd($request);
+				return redirect('/results/'.$result->slug);
+		}
+
+
 	  /**
      * Redirect the user to the Facebook authentication page.
      *
@@ -145,7 +163,7 @@ class SiteController extends Controller {
      *
      * @return Response
      */
-    public function logoutSocialite()
+    public function logout()
     {
         Session::forget('id');
         Session::forget('name');
