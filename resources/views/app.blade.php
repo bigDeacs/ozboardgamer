@@ -127,7 +127,17 @@
                                       <a style="padding: 10px;" href="/facebook/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
                                     </div>
                                 @else
-                                    <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
+                                    <div class="btn-group">
+                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login</a>
+                                      <button type="button" style="padding: 10px;" class="btn btn-primary-darker dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                      </button>
+                                      <ul class="dropdown-menu">
+                                        <li><a href="/facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a></li>
+                                        <!--<li><a href="/google"><i class="fa fa-google-official" aria-hidden="true"></i> Login with Google</a></li>-->
+                                      </ul>
+                                    </div>
                                 @endif
                             </li>
                             <li class="hidden-sm hidden-xs">

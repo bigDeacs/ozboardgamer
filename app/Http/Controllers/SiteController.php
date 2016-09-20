@@ -104,6 +104,15 @@ class SiteController extends Controller {
 
 		public function loginRequest(LoginRequest $request)
 		{
+				$create = User::firstOrCreate(['name' => $request['name'], 'slug' => str_slug($request['name']), 'image' => null, 'email' => $request['email'], 'password' => $request['password'], 'role' => 'b', 'status' => 1]);
+				$this->syncMailchimp($email, $fname, $lname, null);
+
+				Session::put('id', $create->id);
+				Session::put('name', $create->name);
+				Session::put('email', $create->email);
+				Session::put('thumb', $create->thumb);
+
+				return redirect()->back();
 				dd($request);
 				return redirect('/results/'.$result->slug);
 		}
@@ -150,10 +159,10 @@ class SiteController extends Controller {
 	    $create = User::firstOrCreate(['name' => $name, 'slug' => str_slug($name), 'image' => $thumb, 'email' => $email, 'password' => 'password', 'role' => 'b', 'status' => 1]);
 			$this->syncMailchimp($email, $fname, $lname, $gender);
 
-			Session::put('id', $id);
-			Session::put('name', $name);
-			Session::put('email', $email);
-			Session::put('thumb', $thumb);
+			Session::put('id', $create->id);
+			Session::put('name', $create->name);
+			Session::put('email', $create->email);
+			Session::put('thumb', $create->thumb);
 
 			return redirect()->back();
     }
