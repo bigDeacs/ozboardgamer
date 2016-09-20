@@ -146,7 +146,7 @@ class SiteController extends Controller {
      */
     public function redirectToFacebookProvider()
     {
-        return Socialite::driver('facebook')
+        return Socialite::with('facebook')
 								->fields(['first_name', 'last_name', 'email', 'gender'])
 								->redirect();
     }
@@ -158,7 +158,7 @@ class SiteController extends Controller {
      */
     public function redirectToGoogleProvider()
     {
-        return Socialite::driver('google')
+        return Socialite::with('google')
 								->scopes(['profile', 'email'])
 								->redirect();
     }
@@ -170,7 +170,7 @@ class SiteController extends Controller {
      */
     public function handleFacebookProviderCallback()
     {
-    	$facebook = Socialite::driver('facebook')
+    	$facebook = Socialite::with('facebook')
 							->fields(['name', 'email', 'gender', 'verified', 'first_name', 'last_name'])
 							->scopes(['email'])
 							->user();
@@ -218,7 +218,7 @@ class SiteController extends Controller {
 		 */
 		public function handleGoogleProviderCallback()
 		{
-			$google = Socialite::driver('google')
+			$google = Socialite::with('google')
 							->scopes(['profile', 'email'])
 							->user();
 
