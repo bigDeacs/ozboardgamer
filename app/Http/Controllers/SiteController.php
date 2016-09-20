@@ -159,6 +159,7 @@ class SiteController extends Controller {
     public function redirectToGoogleProvider()
     {
         return Socialite::driver('google')
+								->scopes(['profile', 'email'])
 								->redirect();
     }
 
@@ -217,20 +218,19 @@ class SiteController extends Controller {
 		 */
 		public function handleGoogleProviderCallback()
 		{
-			$user = Socialite::driver('google')
+			$google = Socialite::driver('google')
 							->scopes(['profile', 'email'])
-							->stateless()
 							->user();
 
 			// OAuth Two Providers
-			$token = $user->token;
-			$refreshToken = $user->refreshToken; // not always provided
-			$expiresIn = $user->expiresIn;
+			$token = $google->token;
+			$refreshToken = $google->refreshToken; // not always provided
+			$expiresIn = $google->expiresIn;
 
-			$id = $user->getId();
-			$email = $user->getEmail();
-			$name = $user->getName();
-			$thumb = $user->getAvatar();
+			$id = $google->getId();
+			$email = $google->getEmail();
+			$name = $google->getName();
+			$thumb = $google->getAvatar();
 
 			$fname = $name;
 			$lname = '';
