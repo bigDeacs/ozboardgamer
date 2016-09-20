@@ -160,6 +160,7 @@ class SiteController extends Controller {
     {
         return Socialite::driver('google')
 								->scopes(['profile', 'email'])
+								->stateless()
 								->redirect();
     }
 
