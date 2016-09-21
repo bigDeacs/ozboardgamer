@@ -868,5 +868,18 @@ class SiteController extends Controller {
 				return view('result', compact('result', 'games'));
 		}
 
+		public function test()
+		{
+				$ch = curl_init();
+		    curl_setopt($ch, CURLOPT_URL, "http://dashboard.commissionfactory.com/Affiliate/Creatives/DataFeeds/g63c7Yjv3b7C4ZDsjOqY65L82eCUvMjti-KGq4nvwu__6vv7veOo76_j8by0qa6-sei-8rvwq6is4eTst_bz_9Toye6c68_4gvTdkqGVv1o=/");
+		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		    curl_setopt($ch, CURLOPT_HEADER, 0);
+		    $products = collect(curl_exec($ch));
+		    curl_close($ch);
+				dd($products);
+				return view('game', compact('products'));
+			}
+		}
+
 
 }
