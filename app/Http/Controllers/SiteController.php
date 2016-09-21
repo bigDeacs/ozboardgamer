@@ -25,7 +25,7 @@ use App\Http\Requests\QuizResultRequest;
 use Request;
 use Storage;
 use Session;
-use Client;
+use GuzzleHttp\Client;
 use Hash;
 use App;
 use View;
