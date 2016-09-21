@@ -870,9 +870,15 @@ class SiteController extends Controller {
 
 		public function test()
 		{
-				$products = file_get_contents('http://dashboard.commissionfactory.com/Affiliate/Creatives/DataFeeds/gqzd7Inu3L_D4JHtjeuZ6pP92OGVvcnsiuOHqojuw-7-6_r6vOKp7q7i8L21qK-_sOm_87rxqqmt4OXttvfy_tXpyO-d6s75g_Xcgb6XcA==/');				
-				dd($products);
-				return view('game', compact('products'));
+				$ch = curl_init();
+		    curl_setopt($ch, CURLOPT_URL, "http://dashboard.commissionfactory.com/Affiliate/Creatives/DataFeeds/gqzd7Inu3L_D4JHtjeuZ6pP92OGVvcnsiuOHqojuw-7-6_r6vOKp7q7i8L21qK-_sOm_87rxqqmt4OXttvfy_tXpyO-d6s75g_Xcgb6XcA==/");
+		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		    curl_setopt($ch, CURLOPT_HEADER, 0);
+		    $products = curl_exec($ch);
+		    curl_close($ch);
+
+				$products->store('xml', 'products');
+				return true;
 		}
 
 
