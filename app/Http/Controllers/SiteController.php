@@ -874,9 +874,12 @@ class SiteController extends Controller {
 				$guzzleClient = new Client();
 				$response = $guzzleClient->get('https://api.commissionfactory.com/V1/Affiliate/DataFeeds/7044?apiKey=b7040e90cd424521b4ef2c129a4381d1', ['stream' => true]);
 				$body = $response->getBody();
+				$file = [];
 				while (!$body->eof()) {
-				    echo $body->read(1024);
+				    $file =+ $body->read(1024);
 				}
+				File::put(storage_path(), $file);
+
 		}
 
 
