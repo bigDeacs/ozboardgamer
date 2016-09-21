@@ -870,12 +870,16 @@ class SiteController extends Controller {
 
 		public function test()
 		{
-				$ch = curl_init();
-		    curl_setopt($ch, CURLOPT_URL, "https://api.commissionfactory.com/V1/Affiliate/DataFeeds/7044?apiKey=b7040e90cd424521b4ef2c129a4381d1");
-		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		    curl_setopt($ch, CURLOPT_HEADER, 0);
-		    $products = collect(curl_exec($ch));
-		    curl_close($ch);
+				$guzzleClient = new Client();
+				$response = $guzzleClient->get('https://api.commissionfactory.com/V1/Affiliate/DataFeeds/7044?apiKey=b7040e90cd424521b4ef2c129a4381d1');
+				$body = $response->getBody();
+				$body->seek(0);
+				$size = $body->getSize();
+				$file = $body->read($size);
+				File::put(storage_path(), $file);
+
+				// Then you can do stuff with your file locally on your server
+				$products = $reader->load(storage_path() . $file);
 
 				dd($products);
 		}
