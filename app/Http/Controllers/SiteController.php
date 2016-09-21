@@ -874,15 +874,9 @@ class SiteController extends Controller {
 				$guzzleClient = new Client();
 				$response = $guzzleClient->get('https://api.commissionfactory.com/V1/Affiliate/DataFeeds/7044?apiKey=b7040e90cd424521b4ef2c129a4381d1', ['stream' => true]);
 				$body = $response->getBody();
-				$body->seek(0);
-				$size = $body->getSize();
-				$file = $body->read($size);
-				File::put(storage_path(), $file);
-
-				// Then you can do stuff with your file locally on your server
-				$products = $reader->load(storage_path() . $file);
-
-				dd($products);
+				while (!$body->eof()) {
+				    echo $body->read(1024);
+				}
 		}
 
 
