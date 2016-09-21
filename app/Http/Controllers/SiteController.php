@@ -25,7 +25,6 @@ use App\Http\Requests\QuizResultRequest;
 use Request;
 use Storage;
 use Session;
-use GuzzleHttp\Client;
 use Hash;
 use App;
 use View;
@@ -867,18 +866,6 @@ class SiteController extends Controller {
 					$q->where('name', '=', $result->name);
 				})->orderByRaw("RAND()")->get();
 				return view('result', compact('result', 'games'));
-		}
-
-		public function test()
-		{
-			$guzzleClient = new Client();
-			$response = $guzzleClient->get('https://api.commissionfactory.com/V1/Affiliate/DataFeeds?apiKey=b7040e90cd424521b4ef2c129a4381d1&merchantId=11793&merchantName=ozgameshop.com&type=Product%20Catalogue');
-			Storage::put('products.xml', $response);
-
-				if (Storage::exists('products.xml'))
-				{
-				    dd($contents = Storage::get('products.xml'));
-				}
 		}
 
 

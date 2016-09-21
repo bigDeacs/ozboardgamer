@@ -12,7 +12,6 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		'App\Console\Commands\CheckOffers',
-		#'App\Console\Commands\DownloadProducts',
 	];
 
 	/**
@@ -25,8 +24,6 @@ class Kernel extends ConsoleKernel {
 	{
 	 $schedule->command('checkoffers')
 				 ->dailyAt('23:59');
-	 #$schedule->command('downloadproducts')
-				 #->everyFiveMinutes();
 	}
 
 }
