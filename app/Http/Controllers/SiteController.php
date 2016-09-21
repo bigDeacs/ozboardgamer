@@ -871,21 +871,16 @@ class SiteController extends Controller {
 
 		public function test()
 		{
-			$tmpFile = tempnam(sys_get_temp_dir(), 'guzzle-download');
-			$handle = fopen($tmpFile, 'w');
-			$client = new Client('', array(
-				Client::CURL_OPTIONS => array(
-						'CURLOPT_RETURNTRANSFER' => true,
-						'CURLOPT_FILE' => $handle
-				)
-			));
-			$client->get('https://api.commissionfactory.com/V1/Affiliate/DataFeeds/7044?apiKey=b7040e90cd424521b4ef2c129a4381d1')->send();
-			fclose($handle);
-
-				File::put(storage_path(), $client);
+				$guzzleClient = new Client();
+				$response = $guzzleClient->request('GET', '/stream/20', ['stream' => true])->get('https://api.commissionfactory.com/V1/Affiliate/DataFeeds/7044?apiKey=b7040e90cd424521b4ef2c129a4381d1');
+				$body = $response->getBody();
+				$body->seek(0);
+				$size = $body->getSize();
+				$file = $body->read($size);
+				File::put(storage_path(), $file);
 
 				// Then you can do stuff with your file locally on your server
-				$products = $reader->load(storage_path() . $client);
+				$products = $reader->load(storage_path() . $file);
 
 				dd($products);
 		}
