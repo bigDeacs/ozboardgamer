@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel {
 	 $schedule->command('checkoffers')
 				 ->dailyAt('23:59');
 	 $schedule->command('downloadproducts')
-				 ->everyFiveMinute();
+				 ->everyFiveMinutes();
 	}
 
 }
