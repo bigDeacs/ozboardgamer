@@ -878,7 +878,6 @@ class SiteController extends Controller {
 		    curl_close($ch);
 				dd($products);
 				return view('game', compact('products'));
-			}
 		}
 
 
