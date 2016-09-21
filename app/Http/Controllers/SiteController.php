@@ -872,7 +872,7 @@ class SiteController extends Controller {
 		public function test()
 		{
 				$guzzleClient = new Client();
-				$response = $guzzleClient->request('GET', '/stream/20', ['stream' => true])->get('https://api.commissionfactory.com/V1/Affiliate/DataFeeds/7044?apiKey=b7040e90cd424521b4ef2c129a4381d1');
+				$response = $guzzleClient->get('https://api.commissionfactory.com/V1/Affiliate/DataFeeds/7044?apiKey=b7040e90cd424521b4ef2c129a4381d1', ['stream' => true]);
 				$body = $response->getBody();
 				$body->seek(0);
 				$size = $body->getSize();
