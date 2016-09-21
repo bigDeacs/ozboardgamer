@@ -113,7 +113,7 @@
                                         <div class="row">
                                             <div class="col-sm-12 post-header-line">
                                                 <span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}" itemprop="author">{!! $review->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
-                                                </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><span class="fb-comments-count" data-href="{{ secure_url('/') }}/reviews/{{ $review->slug }}"></span>
+                                                </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><span data-href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></span>
                                                 @unless($review->games->isEmpty())
                                                      | <span class="fa fa-trophy"></span>
                                                     <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
