@@ -870,10 +870,14 @@ class SiteController extends Controller {
 
 		public function test()
 		{
-			if(Storage::exists('products.json'))
-			{
-				dd($contents = Storage::get('products.json'));
-			}
+				$ch = curl_init();
+		    curl_setopt($ch, CURLOPT_URL, "https://api.commissionfactory.com/V1/Affiliate/DataFeeds/7044?apiKey=b7040e90cd424521b4ef2c129a4381d1");
+		    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		    curl_setopt($ch, CURLOPT_HEADER, 0);
+		    $products = collect(curl_exec($ch));
+		    curl_close($ch);
+
+				dd($products);
 		}
 
 
