@@ -26,8 +26,7 @@ class DownloadProducts extends Command {
 	 */
 	public function handle()
 	{
-    Storage::put('products.json', fopen("http://dashboard.commissionfactory.com/Affiliate/Creatives/DataFeeds/g63c7Yjv3b7C4ZDsjOqY65L82eCUvMjti-KGq4nvwu__6vv7veOo76_j8by0qa6-sei-8rvwq6is4eTst_bz_9Toye6c68_4gvTdkqGVv1o=/
-", 'r'));
+    
 	}
 
 }
