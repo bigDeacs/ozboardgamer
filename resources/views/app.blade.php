@@ -205,7 +205,7 @@
     </nav>
     @if(Session::has('name'))
       @if(!empty($data['offers']))
-      <div id="offerCarousel" class="vertical-slider carousel vertical slide row" data-ride="carousel">
+      <div id="offerCarousel" class="vertical-slider carousel vertical slide row" data-ride="carousel" style="margin-bottom: -10px;">
           <!-- Carousel items -->
           <div class="carousel-inner">
             @foreach($data['offers'] as $key => $offer)
