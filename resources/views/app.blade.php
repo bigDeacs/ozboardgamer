@@ -54,13 +54,6 @@
         enable_page_level_ads: true
       });
     </script>
-    <!-- Crazy Egg -->
-    <script type="text/javascript">
-    setTimeout(function(){var a=document.createElement("script");
-    var b=document.getElementsByTagName("script")[0];
-    a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0048/2350.js?"+Math.floor(new Date().getTime()/3600000);
-    a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-    </script>
     <!-- Facebook Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -211,11 +204,11 @@
         <!-- /.container -->
     </nav>
     @if(Session::has('name'))
-      @if(!empty($offers))
+      @if(!empty($data['offers']))
       <div id="offerCarousel" class="vertical-slider carousel vertical slide row" data-ride="carousel">
           <!-- Carousel items -->
           <div class="carousel-inner">
-            @foreach($offers as $key => $offer)
+            @foreach($data['offers'] as $key => $offer)
                 <div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0; padding: 15px 0 25px 0;">
                   <div class="col-xs-12 text-center">
                     <a href="{{ $offer->url }}" target="_blank" title="{{ $offer->name }}">{{ $offer->name }}</a>

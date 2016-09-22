@@ -47,14 +47,13 @@ class SiteController extends Controller {
 
 		public function __construct()
 	  {
-	    $offers = Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get();
 			if(Session::has('name'))
 			{
-					$sso = $this->sso(Session::get('id'), Session::get('name'), Session::get('email'), Session::get('thumb'));
-					View::share('offers', compact('sso', 'offers'));
+					$data = ['offers' => Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get(), 'sso' => $this->sso(Session::get('id'), Session::get('name'), Session::get('email'), Session::get('thumb'))];
 			} else {
-					View::share('offers', $offers);
+					$data = ['offers' => Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get()];
 			}
+			View::share('data', $data);
 	  }
 
 		/**
