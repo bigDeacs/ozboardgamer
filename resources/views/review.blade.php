@@ -76,6 +76,9 @@
           <hr />
           <div class="row">
             <div class="getsocial gs-reaction-button"></div>
+            {!! $data['sso']['message'] !!} {!! $data['sso']['hmac'] !!} {!! $data['sso']['timestamp'] !!}<br />
+            {{ $data['sso']['publickey'] }}<br />
+            {!! $data['sso']['publickey'] !!}
             <div id="disqus_thread"></div>
             <script>
 
