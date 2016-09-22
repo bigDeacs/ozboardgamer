@@ -103,7 +103,7 @@
                                             <div class="col-sm-12">
                                                 <h4>
                                                     <strong>
-                                                        <a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
+                                                        <a href="/reviews/{{ $review->slug }}#disqus_thread" class="post-title" itemprop="name">
                                                             {!! $review->name !!}
                                                         </a>
                                                     </strong>
@@ -126,7 +126,7 @@
                                         </div>
                                         <div class="row post-content">
                                             <div class="col-sm-3 text-center">
-                                                <a href="/reviews/{{ $review->slug }}">
+                                                <a href="/reviews/{{ $review->slug }}#disqus_thread">
                                                     <img src="{{ secure_url('/') }}{{ $review->thumb }}" alt="{!! $review->name !!}" class="img-responsive" width="263" height="auto" itemprop="image" />
                                                 </a>
                                             </div>
@@ -135,7 +135,7 @@
                                                     {!! str_limit(strip_tags($review->description), $limit = 100, $end = '...') !!}
                                                 </p>
                                                 <p>
-                                                    <a class="btn btn-dark" href="/reviews/{{ $review->slug }}">Read more</a>
+                                                    <a class="btn btn-dark" href="/reviews/{{ $review->slug }}#disqus_thread">Read more</a>
                                                 </p>
                                             </div>
                                         </div>

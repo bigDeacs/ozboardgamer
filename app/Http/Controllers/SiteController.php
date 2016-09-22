@@ -48,7 +48,13 @@ class SiteController extends Controller {
 		public function __construct()
 	  {
 	    $offers = Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get();
-	    View::share('offers', $offers);
+			if(Session::has('name'))
+			{
+					$sso = sso(Session::put('id', $user->id), Session::put('name', $user->name), Session::put('email', $user->email), Session::put('thumb', $user->thumb));
+					View::share('offers', compact('sso', 'offers');
+			} else {
+					View::share('offers', $offers);
+			}
 	  }
 
 		/**
@@ -92,6 +98,41 @@ class SiteController extends Controller {
 			 	$status = "undefined";
 				$msg = "unknown error occurred";
 				$myArray = json_decode($result, true);
+		}
+
+		public function sso($id, $name, $email, $thumb)
+		{
+			$data = array(
+			        "id" => $id,
+			        "username" => $name,
+			        "email" => $email
+			    );
+
+			$message = base64_encode(json_encode($data));
+			$timestamp = time();
+			$hmac = dsq_hmacsha1($message . ' ' . $timestamp, 'aN7OutGQ5Y8lXgdw4g4JqkmZl9CN9XAsWjn5PzONzaaRdzDBjIB2iEniwaKKkmu9');
+			$publickey = 'dfGV7FT4p75sDiuGmSslFTMVq5t5a2GfDXkmvJDNyaof90Dc3THzwO5cXTSH9S2C';
+			return $sso = ['message' => $message, 'hmac' => $hmac, 'timestamp' => $timestamp, 'publickey' => $publickey]			
+		}
+
+		public function dsq_hmacsha1($data, $key) {
+		    $blocksize=64;
+		    $hashfunc='sha1';
+		    if (strlen($key)>$blocksize)
+		        $key=pack('H*', $hashfunc($key));
+		    $key=str_pad($key,$blocksize,chr(0x00));
+		    $ipad=str_repeat(chr(0x36),$blocksize);
+		    $opad=str_repeat(chr(0x5c),$blocksize);
+		    $hmac = pack(
+		                'H*',$hashfunc(
+		                    ($key^$opad).pack(
+		                        'H*',$hashfunc(
+		                            ($key^$ipad).$data
+		                        )
+		                    )
+		                )
+		            );
+		    return bin2hex($hmac);
 		}
 
 		/**

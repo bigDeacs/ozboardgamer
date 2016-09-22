@@ -344,6 +344,7 @@
     <script src="/js/scripts.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/js/ie10-viewport-bug-workaround.js"></script>
+    <script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>
     <script>
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
           // see next for specifications
