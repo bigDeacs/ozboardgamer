@@ -72,6 +72,9 @@
 				    </div>
 				  @endunless
 				</div>
+        @foreach($data['sso'] as $item)
+          <?php var_dump($item); ?>
+        @endforeach
         @if(Session::has('name'))
           <hr />
           <div class="row">
