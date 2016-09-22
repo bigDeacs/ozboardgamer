@@ -51,7 +51,7 @@ class SiteController extends Controller {
 			if(Session::has('name'))
 			{
 					$sso = sso(Session::put('id', $user->id), Session::put('name', $user->name), Session::put('email', $user->email), Session::put('thumb', $user->thumb));
-					View::share('offers', compact('sso', 'offers');
+					View::share('offers', compact('sso', 'offers'));
 			} else {
 					View::share('offers', $offers);
 			}
@@ -112,7 +112,7 @@ class SiteController extends Controller {
 			$timestamp = time();
 			$hmac = dsq_hmacsha1($message . ' ' . $timestamp, 'aN7OutGQ5Y8lXgdw4g4JqkmZl9CN9XAsWjn5PzONzaaRdzDBjIB2iEniwaKKkmu9');
 			$publickey = 'dfGV7FT4p75sDiuGmSslFTMVq5t5a2GfDXkmvJDNyaof90Dc3THzwO5cXTSH9S2C';
-			return $sso = ['message' => $message, 'hmac' => $hmac, 'timestamp' => $timestamp, 'publickey' => $publickey]			
+			return $sso = ['message' => $message, 'hmac' => $hmac, 'timestamp' => $timestamp, 'publickey' => $publickey]
 		}
 
 		public function dsq_hmacsha1($data, $key) {
