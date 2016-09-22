@@ -76,10 +76,6 @@
           <hr />
           <div class="row">
             <div class="getsocial gs-reaction-button"></div>
-            Message: {{ $data['sso']['message'] }}<br />
-            HMAC: {{ $data['sso']['hmac'] }}<br />
-            Timestamp: {{ $data['sso']['timestamp'] }}<br />
-            <div id="disqus_thread"></div>
             <script>
 
             /**
@@ -99,6 +95,7 @@
             })();
             </script>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <div id="disqus_thread"></div>
           </div>
         @else
           <hr />
