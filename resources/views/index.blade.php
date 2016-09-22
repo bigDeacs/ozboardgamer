@@ -167,7 +167,7 @@
                                         <div class="row">
                                             <div class="col-sm-12 post-header-line">
                                                 <span class="glyphicon glyphicon-user"></span> {!! $top10->user->name !!} | <span class="glyphicon glyphicon-calendar">
-                                                </span>{!! date('F d, Y', strtotime($top10->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><span class="fb-comments-count" data-href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}"></span>
+                                                </span>{!! date('F d, Y', strtotime($top10->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread"></a>
                                                 @unless($top10->games->isEmpty())
                                                      | <span class="fa fa-trophy"></span>
                                                     @foreach($top10->games as $key => $game)

@@ -136,15 +136,14 @@
             <hr />
             <div class="row">
               <div class="getsocial gs-reaction-button"></div>
-              <div id="disqus_thread"></div>
               <script>
 
               /**
                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
               var disqus_config = function () {
-                  this.page.remote_auth_s3 = "{{ $data['sso']['message'] $data['sso']['hmac'] $data['sso']['timestamp'] }}";
-                  this.page.api_key = "{{ $data['sso']['publickey'] }}";
+                  this.page.remote_auth_s3 = '{{ $data["sso"]["message"] }} {{ $data["sso"]["hmac"] }} {{ $data["sso"]["timestamp"] }}';
+                  this.page.api_key = '{{ $data["sso"]["publickey"] }}';
                   this.page.url = '{{ Request::url() }}';  // Replace PAGE_URL with your page's canonical URL variable
                   this.page.identifier = '{{ camel_case($store->name) }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
               };
@@ -156,6 +155,7 @@
               })();
               </script>
               <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              <div id="disqus_thread"></div>                      
             </div>
           @else
             <hr />
