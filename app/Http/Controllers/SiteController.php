@@ -50,7 +50,7 @@ class SiteController extends Controller {
 	    $offers = Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get();
 			if(Session::has('name'))
 			{
-					$sso = $this->sso(Session::put('id', $user->id), Session::put('name', $user->name), Session::put('email', $user->email), Session::put('thumb', $user->thumb));
+					$sso = $this->sso(Session::get('id'), Session::get('name'), Session::get('email'), Session::get('thumb'));
 					View::share('offers', compact('sso', 'offers'));
 			} else {
 					View::share('offers', $offers);
