@@ -49,7 +49,7 @@ class SiteController extends Controller {
 	  {
 			if(Session::has('name'))
 			{
-					dd($data = ['offers' => Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get(), 'sso' => $this->sso(Session::get('id'), Session::get('name'), Session::get('email'), Session::get('thumb'))]);
+					$data = ['offers' => Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get(), 'sso' => $this->sso(Session::get('id'), Session::get('name'), Session::get('email'), Session::get('thumb'))];
 			} else {
 					$data = ['offers' => Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get()];
 			}
