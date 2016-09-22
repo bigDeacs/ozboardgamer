@@ -49,7 +49,7 @@ class SiteController extends Controller {
 	  {
 			if(Session::has('name'))
 			{
-					$data = ['offers' => Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get(), 'sso' => $this->sso(Session::get('id'), Session::get('name'), Session::get('email'), Session::get('thumb'))];
+					$data = ['offers' => Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get(), 'sso' => $this->sso(Session::get('id'), Session::get('name'), Session::get('email'))];
 			} else {
 					$data = ['offers' => Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get()];
 			}
@@ -99,18 +99,18 @@ class SiteController extends Controller {
 				$myArray = json_decode($result, true);
 		}
 
-		public function sso($id, $name, $email, $thumb)
+		public function sso($id, $name, $email)
 		{
 			$data = array(
 			        "id" => $id,
 			        "username" => $name,
 			        "email" => $email
 			    );
-
+			$publickey = 'dfGV7FT4p75sDiuGmSslFTMVq5t5a2GfDXkmvJDNyaof90Dc3THzwO5cXTSH9S2C';
+			$secretkey = 'aN7OutGQ5Y8lXgdw4g4JqkmZl9CN9XAsWjn5PzONzaaRdzDBjIB2iEniwaKKkmu9';
 			$message = base64_encode(json_encode($data));
 			$timestamp = time();
-			$hmac = $this->dsq_hmacsha1($message . ' ' . $timestamp, 'aN7OutGQ5Y8lXgdw4g4JqkmZl9CN9XAsWjn5PzONzaaRdzDBjIB2iEniwaKKkmu9');
-			$publickey = 'dfGV7FT4p75sDiuGmSslFTMVq5t5a2GfDXkmvJDNyaof90Dc3THzwO5cXTSH9S2C';
+			$hmac = $this->dsq_hmacsha1($message . ' ' . $timestamp, $secretkey);
 			return $sso = ['message' => $message, 'hmac' => $hmac, 'timestamp' => $timestamp, 'publickey' => $publickey];
 		}
 
