@@ -876,14 +876,9 @@ class SiteController extends Controller {
 	public function quizRequest(QuizResultRequest $request)
 	{
 			$result = array_count_values($request['questions']);
-			asort($result);
-			end($result);
-			$answer = key($result);
-
-			$result = array_count_values($request['questions']);
 			arsort($result);
-			list($result1) = array_slice($result, 0, 1);
-			list($result2) = array_slice($result, 1, 1);
+			list($result1) = array_slice(key($result), 0, 1);
+			list($result2) = array_slice(key($result), 1, 1);
 			dd($result1);
 			if($result1 == $result2) {
 				$array = array($result1, $result2);
