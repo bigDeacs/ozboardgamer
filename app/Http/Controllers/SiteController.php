@@ -875,6 +875,7 @@ class SiteController extends Controller {
 
 	public function quizRequest(QuizResultRequest $request)
 	{
+		dd($request);
 			$result = array_count_values($request['questions']);
 			asort($result);
 			end($result);
