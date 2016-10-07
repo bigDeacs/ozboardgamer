@@ -879,12 +879,12 @@ class SiteController extends Controller {
 			asort($result);
 			end($result);
 			$answer = key($result);
-			dd($answer);
+			dd($result);
 
-			$counts = array_count_values($request['questions']);
-			arsort($counts);
-			list($result1) = array_slice($counts, 0, 1);
-			list($result2) = array_slice($counts, 1, 1);
+			$result = array_count_values($request['questions']);
+			arsort($result);
+			list($result1) = array_slice($result, 0, 1);
+			list($result2) = array_slice($result, 1, 1);
 			if($result1 == $result2) {
 				$array = array($result1, $result2);
 				$result = Result::find($array[rand(0, count($array) - 1)]);
