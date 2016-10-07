@@ -878,8 +878,8 @@ class SiteController extends Controller {
 			$result = array_count_values($request['questions']);
 			asort($result);
 			end($result);
-			dd($result);
 			$answer = key($result);
+			dd($answer);
 
 			$counts = array_count_values($request['questions']);
 			arsort($counts);
