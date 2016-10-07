@@ -879,6 +879,7 @@ class SiteController extends Controller {
 			arsort($results);
 			$i = 0;
 			foreach($results as $result) {
+				dd($result);
 				$result[$i] = key($result);
 				$i++;
 				if($i >= 1) {
