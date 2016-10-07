@@ -880,7 +880,7 @@ class SiteController extends Controller {
 			array_flip($result);
 			$result1 = array_slice($result, 0, 1);
 			$result2 = array_slice($result, 1, 1);
-			dd($result1);
+			dd($result);
 			if(key($result1) == key($result2)) {
 				$array = array($result1, $result2);
 				$result = Result::find($array[rand(0, count($array) - 1)]);
