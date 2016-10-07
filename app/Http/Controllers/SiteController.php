@@ -879,7 +879,7 @@ class SiteController extends Controller {
 			arsort($results);
 			$i = 0;
 			foreach($results as $key => $result) {
-				$result[$i] = $key;
+				$result[] = $key;
 				$i++;
 				if($i >= 1) {
 					break;
