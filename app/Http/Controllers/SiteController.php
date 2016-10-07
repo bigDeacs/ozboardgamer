@@ -879,18 +879,20 @@ class SiteController extends Controller {
 			arsort($results);
 			$i = 0;
 			foreach($results as $key => $result) {
-				dd($key);
-				$result[$i] = $key;
-				$i++;
-				if($i >= 1) {
+				if($i == 0) {
+					$result1 = $key;
+				} else if ($i == 1) {
+					$result2 = $key;
+				} else {
 					break;
 				}
+				$i++;			
 			}
-			if($result[0] == $result[1]) {
-				$array = array($result[0], $result[1]);
+			if($result1 == $result2) {
+				$array = array($result1, $result2);
 				$result = Result::find($array[rand(0, count($array) - 1)]);
 			} else {
-					$result = Result::find($result[0]);
+					$result = Result::find($result1);
 			}
 			return redirect('/results/'.$result->slug);
 		}
