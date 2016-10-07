@@ -877,9 +877,9 @@ class SiteController extends Controller {
 	{
 			$results = array_count_values($request['questions']);
 			arsort($results);
+			dd($results);
 			$i = 0;
 			foreach($results as $result) {
-				dd($result);
 				$result[$i] = key($result);
 				$i++;
 				if($i >= 1) {
