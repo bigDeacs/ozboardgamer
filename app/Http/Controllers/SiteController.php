@@ -877,14 +877,13 @@ class SiteController extends Controller {
 	{
 			$result = array_count_values($request['questions']);
 			arsort($result);
-			list($result1) = array_slice(key($result), 0, 1);
-			list($result2) = array_slice(key($result), 1, 1);
-			dd($result1);
-			if($result1 == $result2) {
-				$array = array($result1, $result2);
+			$result1 = array_slice($result, 0, 1);
+			$result2 = array_slice($result, 1, 1);
+			if(key($result1) == key($result2)) {
+				$array = array(key($result1), key($result2));
 				$result = Result::find($array[rand(0, count($array) - 1)]);
 			} else {
-					$result = Result::find($result1);
+					$result = Result::find(key($result1));
 			}
 			return redirect('/results/'.$result->slug);
 		}
