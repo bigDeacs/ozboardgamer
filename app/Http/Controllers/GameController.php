@@ -35,12 +35,12 @@ class GameController extends Controller
             // iterate over results and send them by batch of 10000 elements
             foreach ($results as $row)
             {
-                if ($row['status'] == 1) 
+                if ($row['status'] == 1)
                 {
                     $mechanics = array();
                     foreach($row->mechanics()->get() as $mechanic) {
                         $mechanics[]["name"] = $mechanic->name;
-                    };                    
+                    };
                     $themes = array();
                     foreach($row->themes()->get() as $theme) {
                         $themes[]["name"] = $theme->name;
@@ -61,8 +61,8 @@ class GameController extends Controller
                     // select the identifier of this row
                     $index->saveObject(array(
                         "objectID" => $row['id'],
-                        "name" => $row['name'], 
-                        "published" => $row['published'], 
+                        "name" => $row['name'],
+                        "published" => $row['published'],
                         "slug" => "/games/".$row->types()->firstOrFail()->slug."/".$row['slug'],
                         "thumb" => $row['thumb'],
                         "_mechanics" => $mechanics,
@@ -71,7 +71,7 @@ class GameController extends Controller
                         "_designers" => $designers,
                         "_publishers" => $publishers,
                         "rating" => floatval($row['rating'])
-                    ));        
+                    ));
                 } else {
                     // delete the record with objectID="myID1"
                     $index->deleteObject($row['id']);
@@ -82,8 +82,8 @@ class GameController extends Controller
     }
 
     public function rating($id, $luck, $strategy, $complexity, $replay, $components, $learning, $theming, $scaling)
-    {   
-        $game = Game::where('id', '=', $id)->with('users')->firstOrFail(); 
+    {
+        $game = Game::where('id', '=', $id)->with('users')->firstOrFail();
         $luck = $this->scale($luck);
         $strategy = $this->scale($strategy);
         $complexity = $this->scale($complexity);
@@ -97,12 +97,12 @@ class GameController extends Controller
             }
             $count++;
         }
-        
+
         return $result = $total/$count;
     }
 
     public function scale($number)
-    {   
+    {
         if($number == 0.5 || $number == 5) {
             return 1;
         }
@@ -174,10 +174,14 @@ class GameController extends Controller
                 $game->thumb = ('/uploads/' . $thumbname);
                 $game->save();
             }
+        } else {
+          $game->image = ('/public/image_none.jpg');
+          $game->thumb = ('/public/thumb_none.jpg');
+          $game->save();
         }
         if(is_array($request->input('theme_list'))) {
             $currentThemes = array_filter($request->input('theme_list'), 'is_numeric');
-            $newThemes = array_diff($request->input('theme_list'), $currentThemes);   
+            $newThemes = array_diff($request->input('theme_list'), $currentThemes);
             foreach($newThemes as $newTheme)
             {
                 if($theme = Theme::create(['name' => $newTheme, 'slug' => str_slug($newTheme, "-"), 'status' => 1]))
@@ -192,7 +196,7 @@ class GameController extends Controller
 
         if(is_array($request->input('mechanic_list'))) {
             $currentMechanics = array_filter($request->input('mechanic_list'), 'is_numeric');
-            $newMechanics = array_diff($request->input('mechanic_list'), $currentMechanics);   
+            $newMechanics = array_diff($request->input('mechanic_list'), $currentMechanics);
             foreach($newMechanics as $newMechanic)
             {
                 if($mechanic = Mechanic::create(['name' => $newMechanic, 'slug' => str_slug($newMechanic, "-"), 'status' => 1]))
@@ -207,7 +211,7 @@ class GameController extends Controller
 
         if(is_array($request->input('type_list'))) {
             $currentTypes = array_filter($request->input('type_list'), 'is_numeric');
-            $newTypes = array_diff($request->input('type_list'), $currentTypes);   
+            $newTypes = array_diff($request->input('type_list'), $currentTypes);
             foreach($newTypes as $newType)
             {
                 if($type = Type::create(['name' => $newType, 'slug' => str_slug($newType, "-"), 'status' => 1]))
@@ -222,7 +226,7 @@ class GameController extends Controller
 
         if(is_array($request->input('publisher_list'))) {
             $currentPublishers = array_filter($request->input('publisher_list'), 'is_numeric');
-            $newPublishers = array_diff($request->input('publisher_list'), $currentPublishers);   
+            $newPublishers = array_diff($request->input('publisher_list'), $currentPublishers);
             foreach($newPublishers as $newPublisher)
             {
                 if($publisher = Publisher::create(['name' => $newPublisher, 'slug' => str_slug($newPublisher, "-"), 'status' => 1]))
@@ -237,7 +241,7 @@ class GameController extends Controller
 
         if(is_array($request->input('designer_list'))) {
             $currentDesigners = array_filter($request->input('designer_list'), 'is_numeric');
-            $newDesigners = array_diff($request->input('designer_list'), $currentDesigners);   
+            $newDesigners = array_diff($request->input('designer_list'), $currentDesigners);
             foreach($newDesigners as $newDesigner)
             {
                 if($designer = Designer::create(['name' => $newDesigner, 'slug' => str_slug($newDesigner, "-"), 'status' => 1]))
@@ -308,7 +312,7 @@ class GameController extends Controller
                 $img->interlace();
                 $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
-                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));                
+                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
 				$game->image = ('/uploads/' . $filename);
                 $game->thumb = ('/uploads/' . $thumbname);
                 $game->save();
@@ -333,7 +337,7 @@ class GameController extends Controller
 
         if(is_array($request->input('mechanic_list'))) {
             $currentMechanics = array_filter($request->input('mechanic_list'), 'is_numeric');
-            $newMechanics = array_diff($request->input('mechanic_list'), $currentMechanics);   
+            $newMechanics = array_diff($request->input('mechanic_list'), $currentMechanics);
             foreach($newMechanics as $newMechanic)
             {
                 if($mechanic = Mechanic::create(['name' => $newMechanic, 'slug' => str_slug($newMechanic, "-"), 'status' => 1]))
@@ -348,7 +352,7 @@ class GameController extends Controller
 
         if(is_array($request->input('type_list'))) {
             $currentTypes = array_filter($request->input('type_list'), 'is_numeric');
-            $newTypes = array_diff($request->input('type_list'), $currentTypes);   
+            $newTypes = array_diff($request->input('type_list'), $currentTypes);
             foreach($newTypes as $newType)
             {
                 if($type = Type::create(['name' => $newType, 'slug' => str_slug($newType, "-"), 'status' => 1]))
@@ -363,7 +367,7 @@ class GameController extends Controller
 
         if(is_array($request->input('publisher_list'))) {
             $currentPublishers = array_filter($request->input('publisher_list'), 'is_numeric');
-            $newPublishers = array_diff($request->input('publisher_list'), $currentPublishers);   
+            $newPublishers = array_diff($request->input('publisher_list'), $currentPublishers);
             foreach($newPublishers as $newPublisher)
             {
                 if($publisher = Publisher::create(['name' => $newPublisher, 'slug' => str_slug($newPublisher, "-"), 'status' => 1]))
@@ -378,7 +382,7 @@ class GameController extends Controller
 
         if(is_array($request->input('designer_list'))) {
             $currentDesigners = array_filter($request->input('designer_list'), 'is_numeric');
-            $newDesigners = array_diff($request->input('designer_list'), $currentDesigners);   
+            $newDesigners = array_diff($request->input('designer_list'), $currentDesigners);
             foreach($newDesigners as $newDesigner)
             {
                 if($designer = Designer::create(['name' => $newDesigner, 'slug' => str_slug($newDesigner, "-"), 'status' => 1]))
