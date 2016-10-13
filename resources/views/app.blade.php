@@ -159,7 +159,7 @@
                         <ul class="nav navbar-nav">
                             <li class="hidden-xs">
                                 <form id="search" action="#" method="post">
-                                    <div id="label"><label for="search-terms" id="search-label">search</label></div>
+                                    <div id="label" title="Search Games"><label for="search-terms" id="search-label">search</label></div>
                                     <div id="input">
                                         <input type="text" name="search-terms" id="search-terms" placeholder="Enter search terms...">
                                     </div>
