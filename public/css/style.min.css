@@ -338,3 +338,9 @@
   line-height: 1.428571429;
   border-radius: 15px;
 }
+
+.tooltip-inner {
+  max-width: 100px;
+  /* If max-width does not work, try using width instead */
+  width: 100px;
+}
