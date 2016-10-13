@@ -96,7 +96,7 @@
 							<div style="clear:both;"></div>
 							<div class="col-xs-1" style="padding:0;"></div>
 							<div class="col-xs-1" style="padding:0;">
-                <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/1' : '/users/'.str_slug(Session::get('name'))'./updateGameRating/'.$game->id.'/rating/1' }}"
+                <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/1' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/1' }}"
                    data-toggle="tooltip"
                    data-placement="bottom"
                    title="1 ">
