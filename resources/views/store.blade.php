@@ -160,7 +160,7 @@
                                  src="{{ secure_url('/', $parameters = ['img']) }}/10.png"
                                  class="img-responsive" />
                         </a>
-        							</div>								
+        							</div>
 								@else
 									<div class="col-xs-1" style="padding:0;"></div>
 									<strong>Login To Rate This Store</strong>
@@ -258,7 +258,20 @@
 @endsection
 
 @section('scripts')
-	<script>
+  <script>
+    $(document).on('ready', function(){
+          $('#luck').rating({displayOnly: true, size: 'xs'});
+          $('#strategy').rating({displayOnly: true, size: 'xs'});
+          $('#complexity').rating({displayOnly: true, size: 'xs'});
+          $('#replay').rating({displayOnly: true, size: 'xs'});
+          $('#components').rating({displayOnly: true, size: 'xs'});
+          $('#learning').rating({displayOnly: true, size: 'xs'});
+          $('#theming').rating({displayOnly: true, size: 'xs'});
+          $('#scaling').rating({displayOnly: true, size: 'xs'});
+    });
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
 		var map;
 	    function initMap() {
 	    	var myLatLng = { lat: {{ $store->latitude }}, lng: {{ $store->longitude }} };
