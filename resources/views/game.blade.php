@@ -7,6 +7,13 @@
 
 @section('head')
 	{!! $game->head !!}
+  <style>
+    .tooltip-inner {
+      max-width: 100px;
+      /* If max-width does not work, try using width instead */
+      width: 100px; 
+    }
+  </style>
 @endsection
 
 @section('content')
