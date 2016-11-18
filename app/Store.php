@@ -17,26 +17,27 @@ class Store extends Model {
 	 * @var array
 	 */
 	protected $fillable = [
-		'name', 
-		'image', 
+		'name',
+		'image',
 		'thumb',
         'slug',
 		'street',
         'suburb',
-		'state', 
-		'postcode', 
-		'country', 
+		'state',
+		'postcode',
+		'country',
 		'rating',
-		'latitude', 
-		'longitude', 
-		'phone', 
-        'email', 
-        'hours', 
-		'meta', 
-		'head', 
-		'scripts', 	
+		'latitude',
+		'longitude',
+		'phone',
+        'email',
+        'hours',
+		'meta',
+		'head',
+		'scripts',
         'status',
-        'link'
+        'link',
+				'widget'
 	];
 
 	public function users()

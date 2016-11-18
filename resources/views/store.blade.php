@@ -211,10 +211,19 @@
                     <meta itemprop="latitude" content="{{ $store->latitude }}" />
                     <meta itemprop="longitude" content="{{ $store->longitude }}" />
                   </div>
-		            	<div class="col-xs-12">
-			      			<div id="map"></div>
-			      			<br />
-			      		</div>
+                  @if($store->widget)
+                    <div class="col-sm-9 col-xs-12">
+                  @else
+                    <div class="col-xs-12">
+                  @endif
+			      			  <div id="map"></div>
+			      			  <br />
+			      		  </div>
+                  @if($store->widget)
+                    <div class="col-sm-3 col-xs-12">
+                      {!! $store->widget !!}
+                    </div>
+                  @endif
 			      	</div>
 			      </div>
 			    </div>
