@@ -96,11 +96,14 @@
 </div>
 
 <div class="form-group row">
-      <div class="col-sm-8 col-xs-12">
+      <div class="col-xs-12">
             <label for="link">Website Address</label>
             <input type="text" name="link" id="link" class="form-control" value="{{ isset($store) ? $store->link : old('link') }}" placeholder="">
       </div>
-      <div class="col-sm-4 col-xs-12">
+</div>
+
+<div class="form-group row">
+      <div class="col-xs-12">
             <label for="meta">Widget</label>
             {!! Form::textarea('widget', null, ['class' => 'form-control', 'id' => 'widget']) !!}
       </div>
