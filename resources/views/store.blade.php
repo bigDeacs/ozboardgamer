@@ -81,12 +81,10 @@
 			      			@if($store->link !== null)
 			      				<p itemprop="sameAs"><a href="{{ $store->link }}" target="_blank">Go To Site</a></p>
 			      			@endif
-                  <div class="row">
+                  <div class="row" style="padding: 10px;">
 					      		@if(Session::has('name'))
-									    <div class="col-xs-1" style="padding:0;"></div>
 									    <strong>Rate This Store</strong>
 									    <div style="clear:both;"></div>
-									    <div class="col-xs-1" style="padding:0;"></div>
                       <div class="col-xs-1" style="padding:0;">
                         <a href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/1' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/1' }}"
                            data-toggle="tooltip"
@@ -188,10 +186,8 @@
                         </a>
         							</div>
 								@else
-									<div class="col-xs-1" style="padding:0;"></div>
 									<strong>Login To Rate This Store</strong>
 									<div style="clear:both;"></div>
-									<div class="col-xs-1" style="padding:0;"></div>
 									@for ($i = 1; $i < 11; $i++)
 										<div class="col-xs-1" style="padding:0;">
 											<img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" />
@@ -205,7 +201,7 @@
                   <p itemprop="openingHours">{!! $store->hours !!}</p>
 						</div>
 			      	</div>
-
+              <hr />
 			      	<div class="row">
                   <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
                     <meta itemprop="latitude" content="{{ $store->latitude }}" />
