@@ -43,18 +43,30 @@
 				    </div>
 			      	<div class="row">
 			      		<div class="col-md-4 col-sm-4 col-xs-12">
-			      			<h2>Store Info</h2>
-			      			<span itemprop="address">
-                    <p>{{ $store->street }}</p>
-			      			  <p>{{ $store->suburb }}, {{ $store->state }} {{ $store->postcode }}</p>
-                  </span>
-			      			<p itemprop="telephone">{{ $store->phone }}</p>
-			      			@if($store->email !== null)
-			      				<p itemprop="email"><a href="mailto:{{ $store->email }}">{{ $store->email }}</a></p>
-			      			@endif
-			      			@if($store->link !== null)
-			      				<p itemprop="sameAs"><a href="{{ $store->link }}" target="_blank">Go To Site</a></p>
-			      			@endif
+                  @if($store->rating < 1)
+                <img src="/img/1.png" class="img-responsive" />
+              @elseif($store->rating < 2)
+                <img src="/img/2.png" class="img-responsive" />
+              @elseif($store->rating < 3)
+                <img src="/img/3.png" class="img-responsive" />
+              @elseif($store->rating < 4)
+                <img src="/img/4.png" class="img-responsive" />
+              @elseif($store->rating < 5)
+                <img src="/img/5.png" class="img-responsive" />
+              @elseif($store->rating < 6)
+                <img src="/img/6.png" class="img-responsive" />
+              @elseif($store->rating < 7)
+                <img src="/img/7.png" class="img-responsive" />
+              @elseif($store->rating < 8)
+                <img src="/img/8.png" class="img-responsive" />
+              @elseif($store->rating < 9)
+                <img src="/img/9.png" class="img-responsive" />
+              @else
+                <img src="/img/10.png" class="img-responsive" />
+              @endif
+              <div class="text-center lead">
+                <strong>{{ number_format((float)$store->rating, 1, '.', '') }}/10</strong>
+              </div>
 			      			<div class="row">
 					      		@if(Session::has('name'))
 									    <div class="col-xs-1" style="padding:0;"></div>
@@ -175,34 +187,22 @@
 						    </div>
 			      		</div>
 			      		<div class="col-md-4 col-sm-4 col-xs-12">
-			      			<h2>Trading Hours</h2>
-			      			<p itemprop="openingHours">{!! $store->hours !!}</p>
+                  <h2>Store Info</h2>
+			      			<span itemprop="address">
+                    <p>{{ $store->street }}</p>
+			      			  <p>{{ $store->suburb }}, {{ $store->state }} {{ $store->postcode }}</p>
+                  </span>
+			      			<p itemprop="telephone">{{ $store->phone }}</p>
+			      			@if($store->email !== null)
+			      				<p itemprop="email"><a href="mailto:{{ $store->email }}">{{ $store->email }}</a></p>
+			      			@endif
+			      			@if($store->link !== null)
+			      				<p itemprop="sameAs"><a href="{{ $store->link }}" target="_blank">Go To Site</a></p>
+			      			@endif
 			      		</div>
 			      		<div class="col-md-4 col-sm-4 col-xs-12">
-				      		@if($store->rating < 1)
-								<img src="/img/1.png" class="img-responsive" />
-							@elseif($store->rating < 2)
-								<img src="/img/2.png" class="img-responsive" />
-							@elseif($store->rating < 3)
-								<img src="/img/3.png" class="img-responsive" />
-							@elseif($store->rating < 4)
-								<img src="/img/4.png" class="img-responsive" />
-							@elseif($store->rating < 5)
-								<img src="/img/5.png" class="img-responsive" />
-							@elseif($store->rating < 6)
-								<img src="/img/6.png" class="img-responsive" />
-							@elseif($store->rating < 7)
-								<img src="/img/7.png" class="img-responsive" />
-							@elseif($store->rating < 8)
-								<img src="/img/8.png" class="img-responsive" />
-							@elseif($store->rating < 9)
-								<img src="/img/9.png" class="img-responsive" />
-							@else
-								<img src="/img/10.png" class="img-responsive" />
-							@endif
-							<div class="text-center lead">
-								<strong>{{ number_format((float)$store->rating, 1, '.', '') }}/10</strong>
-							</div>
+                  <h2>Trading Hours</h2>
+                  <p itemprop="openingHours">{!! $store->hours !!}</p>
 						</div>
 			      	</div>
 
