@@ -42,7 +42,7 @@
 				      	</div>
 				    </div>
 			      	<div class="row">
-			      		<div class="col-md-5 col-sm-4 col-xs-12">
+			      		<div class="col-md-4 col-sm-4 col-xs-12">
 			      			<h2>Store Info</h2>
 			      			<span itemprop="address">
                     <p>{{ $store->street }}</p>
@@ -178,7 +178,7 @@
 			      			<h2>Trading Hours</h2>
 			      			<p itemprop="openingHours">{!! $store->hours !!}</p>
 			      		</div>
-			      		<div class="col-md-3 col-sm-4 col-xs-12">
+			      		<div class="col-md-4 col-sm-4 col-xs-12">
 				      		@if($store->rating < 1)
 								<img src="/img/1.png" class="img-responsive" />
 							@elseif($store->rating < 2)
@@ -212,7 +212,7 @@
                     <meta itemprop="longitude" content="{{ $store->longitude }}" />
                   </div>
                   @if($store->widget)
-                    <div class="col-sm-9 col-xs-12">
+                    <div class="col-sm-8 col-xs-12">
                   @else
                     <div class="col-xs-12">
                   @endif
@@ -220,7 +220,7 @@
 			      			  <br />
 			      		  </div>
                   @if($store->widget)
-                    <div class="col-sm-3 col-xs-12">
+                    <div class="col-sm-4 col-xs-12">
                       {!! $store->widget !!}
                     </div>
                   @endif
