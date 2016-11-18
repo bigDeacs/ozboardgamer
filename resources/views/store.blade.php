@@ -42,7 +42,7 @@
 				      	</div>
 				    </div>
 			      	<div class="row">
-			      		<div class="col-md-4 col-sm-4 col-xs-12">
+			      		<div class="col-md-3 col-sm-3 col-xs-12">
                   @if($store->rating < 1)
                 <img src="/img/1.png" class="img-responsive" />
               @elseif($store->rating < 2)
@@ -67,7 +67,21 @@
               <div class="text-center lead">
                 <strong>{{ number_format((float)$store->rating, 1, '.', '') }}/10</strong>
               </div>
-			      			<div class="row">
+			      		</div>
+			      		<div class="col-md-5 col-sm-5 col-xs-12">
+                  <h2>Store Info</h2>
+			      			<span itemprop="address">
+                    <p>{{ $store->street }}</p>
+			      			  <p>{{ $store->suburb }}, {{ $store->state }} {{ $store->postcode }}</p>
+                  </span>
+			      			<p itemprop="telephone">{{ $store->phone }}</p>
+			      			@if($store->email !== null)
+			      				<p itemprop="email"><a href="mailto:{{ $store->email }}">{{ $store->email }}</a></p>
+			      			@endif
+			      			@if($store->link !== null)
+			      				<p itemprop="sameAs"><a href="{{ $store->link }}" target="_blank">Go To Site</a></p>
+			      			@endif
+                  <div class="row">
 					      		@if(Session::has('name'))
 									    <div class="col-xs-1" style="padding:0;"></div>
 									    <strong>Rate This Store</strong>
@@ -185,20 +199,6 @@
 									@endfor
 							    @endif
 						    </div>
-			      		</div>
-			      		<div class="col-md-4 col-sm-4 col-xs-12">
-                  <h2>Store Info</h2>
-			      			<span itemprop="address">
-                    <p>{{ $store->street }}</p>
-			      			  <p>{{ $store->suburb }}, {{ $store->state }} {{ $store->postcode }}</p>
-                  </span>
-			      			<p itemprop="telephone">{{ $store->phone }}</p>
-			      			@if($store->email !== null)
-			      				<p itemprop="email"><a href="mailto:{{ $store->email }}">{{ $store->email }}</a></p>
-			      			@endif
-			      			@if($store->link !== null)
-			      				<p itemprop="sameAs"><a href="{{ $store->link }}" target="_blank">Go To Site</a></p>
-			      			@endif
 			      		</div>
 			      		<div class="col-md-4 col-sm-4 col-xs-12">
                   <h2>Trading Hours</h2>
