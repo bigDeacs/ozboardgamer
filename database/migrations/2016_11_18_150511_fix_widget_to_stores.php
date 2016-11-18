@@ -15,6 +15,9 @@ class FixWidgetToStores extends Migration {
 		Schema::table('stores', function(Blueprint $table)
 		{
 			$table->dropColumn('widget');
+		});
+		Schema::table('stores', function(Blueprint $table)
+		{
 			$table->longText('widget')->nullable();
 		});
 	}
