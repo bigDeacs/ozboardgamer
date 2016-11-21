@@ -36,6 +36,27 @@
 				<div class="row">
 			      <div class="col-sm-4 col-xs-12">
 			      	<img src="{{ secure_url('/') }}{{ $game->thumb }}" class="img-responsive" itemprop="image" />
+              <div class="row text-center">
+  				      <div class="col-md-2 col-sm-3 col-xs-4">
+      						<img src="/img/players.png" class="img-responsive" />
+      						<div class="text-center lead" style="margin-bottom: 5px;">
+      							<strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
+      						</div>
+      				      </div>
+      				      <div class="col-md-2 col-sm-3 col-xs-4">
+      						<img src="/img/ages.png" class="img-responsive" />
+      						<div class="text-center lead" style="margin-bottom: 5px;">
+      							<strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
+      						</div>
+      				      </div>
+      				      <div class="col-md-2 col-sm-3 col-xs-4">
+          						<img src="/img/time.png" class="img-responsive" />
+          						<div class="text-center lead" style="margin-bottom: 5px;">
+          							<strong itemprop="timeRequired">{{ $game->time }}</strong>
+          						</div>
+      				      </div>
+    				    </div>
+                <br />
 			      </div>
 			      <div class="col-sm-8 col-xs-12">
 			      	<h1 itemprop="name">{{ $game->name }}</h1>
@@ -68,30 +89,9 @@
 						    @endunless
 				      	</div>
 				    </div>
-				    <div class="row text-center">
-				      <div class="col-md-2 col-sm-3 col-xs-4">
-						<img src="/img/players.png" class="img-responsive" />
-						<div class="text-center lead" style="margin-bottom: 5px;">
-							<strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
-						</div>
-				      </div>
-				      <div class="col-md-2 col-sm-3 col-xs-4">
-						<img src="/img/ages.png" class="img-responsive" />
-						<div class="text-center lead" style="margin-bottom: 5px;">
-							<strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
-						</div>
-				      </div>
-				      <div class="col-md-2 col-sm-3 col-xs-4">
-						<img src="/img/time.png" class="img-responsive" />
-						<div class="text-center lead" style="margin-bottom: 5px;">
-							<strong itemprop="timeRequired">{{ $game->time }}</strong>
-						</div>
-				      </div>
-				    </div>
-            <br />
             <div class="row">
   			    	<div class="btn-group btn-group-justified" role="group">
-  						  <a href="/stores" class="btn btn-warning" style="font-size:13px;"><i class="fa fa-home" aria-hidden="true"></i> Find In Store<span class="hidden-xs"> from My Games</span></a>
+  						  <a href="/stores" class="btn btn-warning" style="font-size:13px;"><i class="fa fa-home" aria-hidden="true"></i> Find In Store</a>
       		      <a href="http://www.boardgamesearch.com.au/#!/search/{!! $game->name !!}" target="_blank" class="btn btn-primary" style="font-size:13px;" title="Search on Board Game Shopper"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Find<span class="hidden-xs"> Online</span></a>
   					</div>
   				</div>
@@ -120,7 +120,6 @@
             <div class="col-xs-1" style="padding:0;"></div>
             <strong>Rate This Game</strong>
             <div style="clear:both;"></div>
-            <div class="col-xs-1" style="padding:0;"></div>
             <div class="col-xs-1" style="padding:0;">
               <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/1' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/1' }}"
                  data-toggle="tooltip"
