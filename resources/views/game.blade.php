@@ -88,145 +88,151 @@
 						</div>
 				      </div>
 				    </div>
+            <br />
+            <div class="row">
+  			    	<div class="btn-group btn-group-justified" role="group">
+  						  <a href="/stores" class="btn btn-warning" style="font-size:13px;"><i class="fa fa-home" aria-hidden="true"></i> Find In Store<span class="hidden-xs"> from My Games</span></a>
+      		      <a href="http://www.boardgamesearch.com.au/#!/search/{!! $game->name !!}" target="_blank" class="btn btn-primary" style="font-size:13px;" title="Search on Board Game Shopper"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Find<span class="hidden-xs"> Online</span></a>
+  					</div>
+  				</div>
 				    <br />
-				    <div class="row">
-						@if(Session::has('name'))
-							<div class="col-xs-1" style="padding:0;"></div>
-							<strong>Rate This Game</strong>
-							<div style="clear:both;"></div>
-							<div class="col-xs-1" style="padding:0;"></div>
-							<div class="col-xs-1" style="padding:0;">
-                <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/1' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/1' }}"
-                   data-toggle="tooltip"
-                   data-placement="bottom"
-                   title="1 Awful">
-                    <img style="{{ $game->users()->wherePivot('rating', 1)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                         src="{{ secure_url('/', $parameters = ['img']) }}/1.png"
-                         class="img-responsive" />
-                </a>
-              </div>
-              <div class="col-xs-1" style="padding:0;">
-                <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/2' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/2' }}"
-                   data-toggle="tooltip"
-                   data-placement="bottom"
-                   title="2 Very Bad">
-                    <img style="{{ $game->users()->wherePivot('rating', 2)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                         src="{{ secure_url('/', $parameters = ['img']) }}/2.png"
-                         class="img-responsive" />
-                </a>
-              </div>
-              <div class="col-xs-1" style="padding:0;">
-                <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/3' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/3' }}"
-                   data-toggle="tooltip"
-                   data-placement="bottom"
-                   title="3 Bad">
-                    <img style="{{ $game->users()->wherePivot('rating', 3)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                         src="{{ secure_url('/', $parameters = ['img']) }}/3.png"
-                         class="img-responsive" />
-                </a>
-              </div>
-              <div class="col-xs-1" style="padding:0;">
-                <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/4' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/4' }}"
-                   data-toggle="tooltip"
-                   data-placement="bottom"
-                   title="4 Not Good">
-                    <img style="{{ $game->users()->wherePivot('rating', 4)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                         src="{{ secure_url('/', $parameters = ['img']) }}/4.png"
-                         class="img-responsive" />
-                </a>
-              </div>
-              <div class="col-xs-1" style="padding:0;">
-                <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/5' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/5' }}"
-                   data-toggle="tooltip"
-                   data-placement="bottom"
-                   title="5 Mediocre">
-                    <img style="{{ $game->users()->wherePivot('rating', 5)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                         src="{{ secure_url('/', $parameters = ['img']) }}/5.png"
-                         class="img-responsive" />
-                </a>
-              </div>
-              <div class="col-xs-1" style="padding:0;">
-                <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/6' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/6' }}"
-                   data-toggle="tooltip"
-                   data-placement="bottom"
-                   title="6 Okay">
-                    <img style="{{ $game->users()->wherePivot('rating', 6)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                         src="{{ secure_url('/', $parameters = ['img']) }}/6.png"
-                         class="img-responsive" />
-                </a>
-              </div>
-              <div class="col-xs-1" style="padding:0;">
-                <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/7' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/7' }}"
-                   data-toggle="tooltip"
-                   data-placement="bottom"
-                   title="7 Good">
-                    <img style="{{ $game->users()->wherePivot('rating', 7)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                         src="{{ secure_url('/', $parameters = ['img']) }}/7.png"
-                         class="img-responsive" />
-                </a>
-              </div>
-              <div class="col-xs-1" style="padding:0;">
-                <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/8' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/8' }}"
-                   data-toggle="tooltip"
-                   data-placement="bottom"
-                   title="8 Very Good">
-                    <img style="{{ $game->users()->wherePivot('rating', 8)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                         src="{{ secure_url('/', $parameters = ['img']) }}/8.png"
-                         class="img-responsive" />
-                </a>
-              </div>
-              <div class="col-xs-1" style="padding:0;">
-                <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/9' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/9' }}"
-                   data-toggle="tooltip"
-                   data-placement="bottom"
-                   title="9 Excellent">
-                    <img style="{{ $game->users()->wherePivot('rating', 9)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                         src="{{ secure_url('/', $parameters = ['img']) }}/9.png"
-                         class="img-responsive" />
-                </a>
-              </div>
-              <div class="col-xs-1" style="padding:0;">
-                <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/10' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/10' }}"
-                   data-toggle="tooltip"
-                   data-placement="bottom"
-                   title="10 Perfect">
-                    <img style="{{ $game->users()->wherePivot('rating', 10)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                         src="{{ secure_url('/', $parameters = ['img']) }}/10.png"
-                         class="img-responsive" />
-                </a>
-							</div>
-						@else
-							<div class="col-xs-1" style="padding:0;"></div>
-							<strong>Login To Rate This Game</strong>
-							<div style="clear:both;"></div>
-							<div class="col-xs-1" style="padding:0;"></div>
-							@for ($i = 1; $i < 11; $i++)
-								<div class="col-xs-1" style="padding:0;">
-									<img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" />
-							    </div>
-							@endfor
-					    @endif
-				    </div>
+            <div class="row">
+  			    	<div class="btn-group btn-group-justified" role="group">
+  					    @if(Session::has('name'))
+  					        @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+  					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-xs"> to My Games</span></a>
+  					        @else
+  						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-times" aria-hidden="true"></i> Remove<span class="hidden-xs"> from My Games</span></a>
+  					    	@endif
+  					    	@if($game->users()->wherePivot('type', 'wanted')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
+  					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-eye" aria-hidden="true"></i> Add<span class="hidden-xs"> to Watchlist</span></a>
+  					        @else
+  						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-eye-slash" aria-hidden="true"></i> Remove<span class="hidden-sm hidden-xs"> from Watchlist</span></a>
+  					    	@endif
+  					    @endif
+  					</div>
+  				</div>
 			      </div>
 			    </div>
-			    <br />
-			    <div class="row">
-			    	<div class="btn-group btn-group-justified" role="group">
-					    @if(Session::has('name'))
-					        @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-xs"> to My Games</span></a>
-					        @else
-						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-times" aria-hidden="true"></i> Remove<span class="hidden-xs"> from My Games</span></a>
-					    	@endif
-					    	@if($game->users()->wherePivot('type', 'wanted')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-					        	<a href="/users/{{ str_slug(Session::get('name')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;"><i class="fa fa-eye" aria-hidden="true"></i> Add<span class="hidden-xs"> to Watchlist</span></a>
-					        @else
-						        <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;"><i class="fa fa-eye-slash" aria-hidden="true"></i> Remove<span class="hidden-sm hidden-xs"> from Watchlist</span></a>
-					    	@endif
-					    @endif
-    		      <a href="http://www.boardgamesearch.com.au/#!/search/{!! $game->name !!}" target="_blank" class="btn btn-primary" style="font-size:13px;" title="Search on Board Game Shopper"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Find<span class="hidden-xs"> Online</span></a>
-					</div>
-				</div>
+          <br />
+          <div class="row">
+          @if(Session::has('name'))
+            <div class="col-xs-1" style="padding:0;"></div>
+            <strong>Rate This Game</strong>
+            <div style="clear:both;"></div>
+            <div class="col-xs-1" style="padding:0;"></div>
+            <div class="col-xs-1" style="padding:0;">
+              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/1' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/1' }}"
+                 data-toggle="tooltip"
+                 data-placement="bottom"
+                 title="1 Awful">
+                  <img style="{{ $game->users()->wherePivot('rating', 1)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+                       src="{{ secure_url('/', $parameters = ['img']) }}/1.png"
+                       class="img-responsive" />
+              </a>
+            </div>
+            <div class="col-xs-1" style="padding:0;">
+              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/2' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/2' }}"
+                 data-toggle="tooltip"
+                 data-placement="bottom"
+                 title="2 Very Bad">
+                  <img style="{{ $game->users()->wherePivot('rating', 2)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+                       src="{{ secure_url('/', $parameters = ['img']) }}/2.png"
+                       class="img-responsive" />
+              </a>
+            </div>
+            <div class="col-xs-1" style="padding:0;">
+              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/3' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/3' }}"
+                 data-toggle="tooltip"
+                 data-placement="bottom"
+                 title="3 Bad">
+                  <img style="{{ $game->users()->wherePivot('rating', 3)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+                       src="{{ secure_url('/', $parameters = ['img']) }}/3.png"
+                       class="img-responsive" />
+              </a>
+            </div>
+            <div class="col-xs-1" style="padding:0;">
+              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/4' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/4' }}"
+                 data-toggle="tooltip"
+                 data-placement="bottom"
+                 title="4 Not Good">
+                  <img style="{{ $game->users()->wherePivot('rating', 4)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+                       src="{{ secure_url('/', $parameters = ['img']) }}/4.png"
+                       class="img-responsive" />
+              </a>
+            </div>
+            <div class="col-xs-1" style="padding:0;">
+              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/5' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/5' }}"
+                 data-toggle="tooltip"
+                 data-placement="bottom"
+                 title="5 Mediocre">
+                  <img style="{{ $game->users()->wherePivot('rating', 5)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+                       src="{{ secure_url('/', $parameters = ['img']) }}/5.png"
+                       class="img-responsive" />
+              </a>
+            </div>
+            <div class="col-xs-1" style="padding:0;">
+              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/6' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/6' }}"
+                 data-toggle="tooltip"
+                 data-placement="bottom"
+                 title="6 Okay">
+                  <img style="{{ $game->users()->wherePivot('rating', 6)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+                       src="{{ secure_url('/', $parameters = ['img']) }}/6.png"
+                       class="img-responsive" />
+              </a>
+            </div>
+            <div class="col-xs-1" style="padding:0;">
+              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/7' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/7' }}"
+                 data-toggle="tooltip"
+                 data-placement="bottom"
+                 title="7 Good">
+                  <img style="{{ $game->users()->wherePivot('rating', 7)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+                       src="{{ secure_url('/', $parameters = ['img']) }}/7.png"
+                       class="img-responsive" />
+              </a>
+            </div>
+            <div class="col-xs-1" style="padding:0;">
+              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/8' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/8' }}"
+                 data-toggle="tooltip"
+                 data-placement="bottom"
+                 title="8 Very Good">
+                  <img style="{{ $game->users()->wherePivot('rating', 8)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+                       src="{{ secure_url('/', $parameters = ['img']) }}/8.png"
+                       class="img-responsive" />
+              </a>
+            </div>
+            <div class="col-xs-1" style="padding:0;">
+              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/9' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/9' }}"
+                 data-toggle="tooltip"
+                 data-placement="bottom"
+                 title="9 Excellent">
+                  <img style="{{ $game->users()->wherePivot('rating', 9)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+                       src="{{ secure_url('/', $parameters = ['img']) }}/9.png"
+                       class="img-responsive" />
+              </a>
+            </div>
+            <div class="col-xs-1" style="padding:0;">
+              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/10' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/10' }}"
+                 data-toggle="tooltip"
+                 data-placement="bottom"
+                 title="10 Perfect">
+                  <img style="{{ $game->users()->wherePivot('rating', 10)->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+                       src="{{ secure_url('/', $parameters = ['img']) }}/10.png"
+                       class="img-responsive" />
+              </a>
+            </div>
+          @else
+            <div class="col-xs-1" style="padding:0;"></div>
+            <strong>Login To Rate This Game</strong>
+            <div style="clear:both;"></div>
+            <div class="col-xs-1" style="padding:0;"></div>
+            @for ($i = 1; $i < 11; $i++)
+              <div class="col-xs-1" style="padding:0;">
+                <img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" />
+                </div>
+            @endfor
+            @endif
+          </div>
 			    <br />
 			    <div class="row">
 					<!-- Nav tabs -->
