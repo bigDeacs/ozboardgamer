@@ -51,7 +51,7 @@
 			      	@endunless
 			      	<div class="panel panel-success" style="padding: 0 10px;">
 			      		<h1>{{ $post->name }}</h1>
-			      		<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&sort=published_at-desc">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
+			      		<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
 		                            </span>{!! date('F d, Y', strtotime($post->published_at)) !!}
 			      		<p>{!! $post->description !!}</p>
 			      	</div>
@@ -59,16 +59,18 @@
 				  @unless($games->isEmpty())
 				  	<div class="col-sm-3 col-xs-12 text-center lead">
 				  		<p><strong>Games mentioned:</strong></p>
-				    	@foreach($games as $game)
-							<div class="row">
-								<div class="col-xs-12">
-						    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-						    			<img src="{{ secure_url('/') }}{{ $game->thumb }}" class="img-responsive" />
-						    		</a>
-						    		<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a></p>
-						    	</div>
-						    </div>
-				    	@endforeach
+              <div class="wantedBox">
+  				    	@foreach($games as $game)
+  							<div class="row">
+  								<div class="col-xs-12">
+  						    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
+  						    			<img src="{{ secure_url('/') }}{{ $game->thumb }}" class="img-responsive" />
+  						    		</a>
+  						    		<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a></p>
+  						    	</div>
+  						    </div>
+  				    	@endforeach
+              </div>
 				    </div>
 				  @endunless
 				</div>
@@ -95,7 +97,7 @@
             })();
             </script>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            <div id="disqus_thread"></div>  
+            <div id="disqus_thread"></div>
           </div>
         @else
           <hr />
