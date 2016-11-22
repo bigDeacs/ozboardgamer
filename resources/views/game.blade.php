@@ -36,27 +36,6 @@
 				<div class="row">
 			      <div class="col-md-4 col-sm-5 col-xs-12">
 			      	<img src="{{ secure_url('/') }}{{ $game->thumb }}" class="img-responsive" itemprop="image" />
-              <div class="row text-center">
-  				      <div class="col-xs-4">
-      						<img src="/img/players.png" class="img-responsive" />
-      						<div class="text-center lead" style="margin-bottom: 5px;">
-      							<strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
-      						</div>
-      				      </div>
-      				      <div class="col-xs-4">
-      						<img src="/img/ages.png" class="img-responsive" />
-      						<div class="text-center lead" style="margin-bottom: 5px;">
-      							<strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
-      						</div>
-      				      </div>
-      				      <div class="col-xs-4">
-          						<img src="/img/time.png" class="img-responsive" />
-          						<div class="text-center lead" style="margin-bottom: 5px;">
-          							<strong itemprop="timeRequired">{{ $game->time }}</strong>
-          						</div>
-      				      </div>
-    				    </div>
-                <br />
 			      </div>
 			      <div class="col-md-8 col-sm-7 col-xs-12">
 			      	<h1 itemprop="name">{{ $game->name }}</h1>
@@ -90,6 +69,27 @@
 				      	</div>
 				    </div>
             <br />
+            <div class="row text-center">
+              <div class="col-md-2 col-sm-3 col-xs-4">
+                <img src="/img/players.png" class="img-responsive" />
+                <div class="text-center lead" style="margin-bottom: 5px;">
+                  <strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
+                </div>
+                  </div>
+                  <div class="col-md-2 col-sm-3 col-xs-4">
+                <img src="/img/ages.png" class="img-responsive" />
+                <div class="text-center lead" style="margin-bottom: 5px;">
+                  <strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
+                </div>
+                  </div>
+                  <div class="col-md-2 col-sm-3 col-xs-4">
+                    <img src="/img/time.png" class="img-responsive" />
+                    <div class="text-center lead" style="margin-bottom: 5px;">
+                      <strong itemprop="timeRequired">{{ $game->time }}</strong>
+                    </div>
+                  </div>
+              </div>
+              <br />
             <div class="row">
   			    	<div class="btn-group btn-group-justified" role="group">
   						  <a href="/stores" class="btn btn-warning" style="font-size:13px;"><i class="fa fa-home" aria-hidden="true"></i> Find In Store</a>
