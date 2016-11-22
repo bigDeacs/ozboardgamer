@@ -1100,6 +1100,11 @@ p {
     overflow-y: scroll;
     overflow-x: hidden;
   }
+  .mentionedBox {
+      height: 800px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+  }
 }
 small,
 .small {
@@ -1383,11 +1388,6 @@ pre code {
 @media (min-width: 768px) {
   .container {
     width: 750px;
-  }
-  .mentionedBox {
-      height: 800px;
-      overflow-y: scroll;
-      overflow-x: hidden;
   }
 }
 @media (min-width: 992px) {
