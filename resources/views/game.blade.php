@@ -34,7 +34,7 @@
 		<div class="row">
 			<div class="col-md-9 col-sm-8 col-xs-12">
 				<div class="row">
-			      <div class="col-sm-4 col-xs-12">
+			      <div class="col-md-4 col-sm-5 col-xs-12">
 			      	<img src="{{ secure_url('/') }}{{ $game->thumb }}" class="img-responsive" itemprop="image" />
               <div class="row text-center">
   				      <div class="col-xs-4">
@@ -58,7 +58,7 @@
     				    </div>
                 <br />
 			      </div>
-			      <div class="col-sm-8 col-xs-12">
+			      <div class="col-md-8 col-sm-7 col-xs-12">
 			      	<h1 itemprop="name">{{ $game->name }}</h1>
 			      	@unless($game->publishers->isEmpty())
 				    	<small>
@@ -89,6 +89,7 @@
 						    @endunless
 				      	</div>
 				    </div>
+            <br />
             <div class="row">
   			    	<div class="btn-group btn-group-justified" role="group">
   						  <a href="/stores" class="btn btn-warning" style="font-size:13px;"><i class="fa fa-home" aria-hidden="true"></i> Find In Store</a>
@@ -100,7 +101,6 @@
           <br />
           <div class="row">
           @if(Session::has('name'))
-            <div class="col-xs-1" style="padding:0;"></div>
             <strong>Rate This Game</strong>
             <div style="clear:both;"></div>
             <div class="col-xs-1" style="padding:0;">
@@ -204,10 +204,8 @@
               </a>
             </div>
           @else
-            <div class="col-xs-1" style="padding:0;"></div>
             <strong>Login for more features!</strong>
             <div style="clear:both;"></div>
-            <div class="col-xs-1" style="padding:0;"></div>
             @for ($i = 1; $i < 11; $i++)
               <div class="col-xs-1" style="padding:0;">
                 <img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" />
