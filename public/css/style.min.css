@@ -344,3 +344,27 @@
   /* If max-width does not work, try using width instead */
   width: 100px;
 }
+
+@media (min-width: 992px) {
+  .mentionedBox {
+    height: 750px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mentionedBox {
+      height: 750px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+  }
+}
+
+@media (min-width: 768px) {
+  .mentionedBox {
+      height: 800px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+  }
+}

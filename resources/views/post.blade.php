@@ -59,7 +59,7 @@
 				  @unless($games->isEmpty())
 				  	<div class="col-sm-3 col-xs-12 text-center lead">
 				  		<p><strong>Games mentioned:</strong></p>
-              <div class="wantedBox">
+              <div class="mentionedBox">
   				    	@foreach($games as $game)
   							<div class="row">
   								<div class="col-xs-12">
