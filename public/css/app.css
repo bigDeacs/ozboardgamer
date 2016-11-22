@@ -1384,6 +1384,11 @@ pre code {
   .container {
     width: 750px;
   }
+  .mentionedBox {
+      height: 800px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+  }
 }
 @media (min-width: 992px) {
   .container {
@@ -1397,7 +1402,13 @@ pre code {
     overflow-y: scroll;
     overflow-x: hidden;
   }
+  .mentionedBox {
+    height: 750px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 }
+
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
@@ -1406,6 +1417,11 @@ pre code {
     height: 1760px;
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+  .mentionedBox {
+      height: 750px;
+      overflow-y: scroll;
+      overflow-x: hidden;
   }
 }
 .container-fluid {
@@ -6346,7 +6362,7 @@ label,
 .post-content { padding-bottom: 15px;padding-top: 15px;}
 
 .breadcrumb-holder {
-    background: #008751;    
+    background: #008751;
 }
 .breadcrumb-arrow {
     height: 36px;
