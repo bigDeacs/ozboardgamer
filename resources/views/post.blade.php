@@ -49,7 +49,7 @@
 	      					<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen></iframe>
 	      				</div>
 			      	@endunless
-			      	<div class="panel panel-success" style="padding: 0 10px;" id="one">
+			      	<div class="panel panel-success" style="padding: 0 10px;" id="parent">
 			      		<h1>{{ $post->name }}</h1>
 			      		<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
 		                            </span>{!! date('F d, Y', strtotime($post->published_at)) !!}
@@ -59,7 +59,7 @@
 				  @unless($games->isEmpty())
 				  	<div class="col-sm-3 col-xs-12 text-center lead">
 				  		<p><strong>Games mentioned:</strong></p>
-              <div id="two">
+              <div id="child" class="scrollBox">
   				    	@foreach($games as $game)
   							<div class="row">
   								<div class="col-xs-12">
@@ -113,4 +113,9 @@
 
 @section('scripts')
 	{!! $post->scripts !!}
+  <script>
+    $(document).ready(function() {
+            $("#child").css("height",$("#parent").height());
+     });
+  </script>
 @endsection

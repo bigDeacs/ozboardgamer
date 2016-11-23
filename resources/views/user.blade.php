@@ -64,7 +64,7 @@
               Games {{ $user->name }} Owns <span class="badge">{{ $countOwned }}</span>
 			      	@foreach($owned as $game)
 						<div class="row" itemscope itemtype="http://schema.org/Game">
-			                <div class="col-md-12 post">
+			                <div class="col-md-12 post" id="parent">
 			                    <div class="row post-content">
 			                        <div class="col-md-2 col-sm-3 col-xs-7">
 			                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
@@ -126,7 +126,7 @@
 					</div>
 				</div>
 				<div class="col-sm-3 hidden-xs">
-					<div class="wantedBox">
+					<div class="scrollBox" id="child">
 				      	{{ $user->name }}'s Watchlist <span class="badge">{{ $countWanted }}</span>
 						@foreach($wanted as $game)
 							<div class="row" itemscope itemtype="http://schema.org/Game">
@@ -187,4 +187,9 @@
 @endsection
 
 @section('scripts')
+  <script>
+    $(document).ready(function() {
+            $("#child").css("height",$("#parent").height());
+     });
+  </script>
 @endsection

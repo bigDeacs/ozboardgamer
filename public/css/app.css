@@ -1095,13 +1095,7 @@ p {
   .breadcrumb-holder {
     margin-top: 12px;
   }
-  .wantedBox {
-    height: 1880px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-  .mentionedBox {
-      height: 800px;
+  .scrollBox {
       overflow-y: scroll;
       overflow-x: hidden;
   }
@@ -1397,13 +1391,7 @@ pre code {
   .breadcrumb-holder {
     margin-top: 10px;
   }
-  .wantedBox {
-    height: 1690px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-  .mentionedBox {
-    height: 750px;
+  .scrollBox {
     overflow-y: scroll;
     overflow-x: hidden;
   }
@@ -1413,15 +1401,9 @@ pre code {
   .container {
     width: 1170px;
   }
-  .wantedBox {
-    height: 1760px;
+  .scrollBox {
     overflow-y: scroll;
     overflow-x: hidden;
-  }
-  .mentionedBox {
-      height: 750px;
-      overflow-y: scroll;
-      overflow-x: hidden;
   }
 }
 .container-fluid {
