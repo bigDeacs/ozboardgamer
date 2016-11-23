@@ -60,11 +60,11 @@
             </div>
           @endif
 			    <div class="row">
-			      <div class="col-sm-9 col-xs-12">
+			      <div class="col-sm-9 col-xs-12" id="parent">
               Games {{ $user->name }} Owns <span class="badge">{{ $countOwned }}</span>
 			      	@foreach($owned as $game)
 						<div class="row" itemscope itemtype="http://schema.org/Game">
-			                <div class="col-md-12 post" id="parent">
+			                <div class="col-md-12 post">
 			                    <div class="row post-content">
 			                        <div class="col-md-2 col-sm-3 col-xs-7">
 			                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
