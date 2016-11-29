@@ -203,9 +203,8 @@
         </div>
         <!-- /.container -->
     </nav>
-    @if(Session::has('name'))
-      @if(!empty($data['offers']))
-      <div id="offerCarousel" class="vertical-slider carousel vertical slide row hidden-xs" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
+    @if(!empty($data['offers']))
+       <div id="offerCarousel" class="vertical-slider carousel vertical slide row hidden-xs" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
           <!-- Carousel items -->
           <div class="carousel-inner">
             @foreach($data['offers'] as $key => $offer)
@@ -217,7 +216,6 @@
             @endforeach
           </div>
         </div>
-      @endif
     @endif
 
   	@yield('content')
