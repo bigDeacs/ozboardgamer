@@ -49,7 +49,7 @@
 	      					<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen itemprop="video"></iframe>
 	      				</div>
 			      	@endunless
-			      	<div class="panel panel-success" style="padding: 0 10px;">
+			      	<div class="panel panel-success" style="padding: 0 10px;" id="parent">
 			      		<h1 itemprop="name">{{ $post->name }}</h1>
 			      		<span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $post->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
 		                            </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
@@ -59,16 +59,18 @@
 				  @unless($games->isEmpty())
 				  	<div class="col-sm-3 col-xs-12 text-center lead" itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
 				  		<p><strong>Games mentioned:</strong></p>
-				    	@foreach($games as $game)
-							<div class="row">
-								<div class="col-xs-12">
-						    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-						    			<img src="{{ secure_url('/') }}{{ $game->thumb }}" class="img-responsive" />
-						    		</a>
-						    		<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}"><span itemprop="name">{{ $game->name }}</span></a></p>
-						    	</div>
-						    </div>
-				    	@endforeach
+				  		<div id="child" class="scrollBox">
+					    	@foreach($games as $game)
+								<div class="row">
+									<div class="col-xs-12">
+							    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
+							    			<img src="{{ secure_url('/') }}{{ $game->thumb }}" class="img-responsive" />
+							    		</a>
+							    		<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}"><span itemprop="name">{{ $game->name }}</span></a></p>
+							    	</div>
+							    </div>
+					    	@endforeach
+					    </div>
 				    </div>
 				  @endunless
 				</div>
@@ -111,4 +113,9 @@
 
 @section('scripts')
 	{!! $post->scripts !!}
+	<script>
+    $(document).ready(function() {
+            $("#child").css("height",$("#parent").height());
+     });
+  </script>
 @endsection
