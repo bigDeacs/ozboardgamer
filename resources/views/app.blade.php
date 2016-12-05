@@ -303,7 +303,6 @@
                 <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Personal collection tracker & watchlist</p>
                 <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Add ratings to Games and Stores</p>
                 <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Add comments to Games and Articles</p>
-                <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i>  Our monthly email newsletter</p>
                 <div class="btn-group">
                   <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login/Signup</a>
                   <button type="button" style="padding: 10px;" class="btn btn-primary-darker dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -316,7 +315,6 @@
                   </ul>
                 </div>
                 <hr />
-                <small>By logging in you are agreeing to be added to our mailing list. If you wish to be removed from this list you will need to use the unsubscribe link found on the mailing.</small>
             </div>
           </div>
         </div>
