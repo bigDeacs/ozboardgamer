@@ -263,9 +263,11 @@
 									<div class="row">
 								    	@foreach($posts as $post)
 								    		<div class="col-md-6 col-sm-12">
-									    		<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-									    			<img src="{{ secure_url('/') }}{{ $post->image }}" class="img-responsive" />
-									    		</a>
+									    		@unless($post->image == null)
+                            <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
+  									    			<img src="{{ secure_url('/') }}{{ $post->image }}" class="img-responsive" />
+  									    		</a>
+                          @endunless
 									    		<p><a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">{{ $post->name }}</a></p>
 									    	</div>
 								    	@endforeach

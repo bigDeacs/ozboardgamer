@@ -45,16 +45,16 @@
 				  	<div class="col-sm-12 col-xs-12">
 				  @else
 			      	<div class="col-sm-9 col-xs-12">
-			      @endif
-					@unless($post->video == null)
-			      		<div class="embed-responsive embed-responsive-16by9">
-	      					<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen itemprop="video"></iframe>
-	      				</div>
-			      	@endunless
+			      @endif					
 			      	<div class="panel panel-success" style="padding: 0 10px;" id="parent">
 			      		<h1 itemprop="name">{{ $post->name }}</h1>
 			      		<span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $post->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
 		                            </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
+		                @unless($post->video == null)
+				      		<div class="embed-responsive embed-responsive-16by9">
+		      					<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen itemprop="video"></iframe>
+		      				</div>
+				      	@endunless
 			      		<p itemprop="reviewBody">{!! $post->description !!}</p>
 			      	</div>
 			      </div>
