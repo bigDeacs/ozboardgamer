@@ -52,8 +52,7 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        $post = Post::create($request->all());
-        $post->thumb = '-thumb-' . $post->image;
+        $post = Post::create($request->all());    
         $post->save();
 
         if($request->hasFile('image'))
