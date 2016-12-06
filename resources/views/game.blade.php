@@ -237,12 +237,12 @@
 			    <div class="row">
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Description</a></li>
-						<li role="presentation"><a href="#contents" aria-controls="contents" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Contents</a></li>
+						<li role="presentation" class="active"><i class="fa fa-book" aria-hidden="true"></i> <a href="#description" aria-controls="description" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Description</a></li>
+						<li role="presentation"><i class="fa fa-diamond" aria-hidden="true"></i> <a href="#contents" aria-controls="contents" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Contents</a></li>
 						@unless($posts->isEmpty())
-							<li role="presentation"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Videos</a></li>
+							<li role="presentation"><i class="fa fa-video-camera" aria-hidden="true"></i> <a href="#videos" aria-controls="videos" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Videos</a></li>
 						@endunless
-						<li role="presentation" class="hidden-xs"><a href="#related" aria-controls="related" role="tab" data-toggle="tab">Similar Games</a></li>
+						<li role="presentation" class="hidden-xs"><i class="fa fa-link" aria-hidden="true"></i> <a href="#related" aria-controls="related" role="tab" data-toggle="tab">Similar Games</a></li>
 					</ul>
 
 					<!-- Tab panes -->
@@ -263,7 +263,11 @@
 									<div class="row">
 								    	@foreach($posts as $post)
 								    		<div class="col-md-6 col-sm-12">
-									    		@unless($post->image == null)
+									    		@if($post->image == null || $post->image == '')
+                            <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
+                              <img src="{{ secure_url('/') }}/img/no_video.jpg" class="img-responsive" />
+                            </a>
+                          @else
                             <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
   									    			<img src="{{ secure_url('/') }}{{ $post->image }}" class="img-responsive" />
   									    		</a>
