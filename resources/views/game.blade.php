@@ -237,12 +237,12 @@
 			    <div class="row">
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><i class="fa fa-book" aria-hidden="true"></i> <a href="#description" aria-controls="description" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Description</a></li>
-						<li role="presentation"><i class="fa fa-diamond" aria-hidden="true"></i> <a href="#contents" aria-controls="contents" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Contents</a></li>
+						<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><span class="hidden-xs"><i class="fa fa-book" aria-hidden="true"></i> Game </span>Description</a></li>
+						<li role="presentation"><a href="#contents" aria-controls="contents" role="tab" data-toggle="tab"><span class="hidden-xs"><i class="fa fa-diamond" aria-hidden="true"></i> Game </span>Contents</a></li>
 						@unless($posts->isEmpty())
-							<li role="presentation"><i class="fa fa-video-camera" aria-hidden="true"></i> <a href="#videos" aria-controls="videos" role="tab" data-toggle="tab"><span class="hidden-xs">Game </span>Videos</a></li>
+							<li role="presentation"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab"><span class="hidden-xs"><i class="fa fa-video-camera" aria-hidden="true"></i> Game </span>Videos</a></li>
 						@endunless
-						<li role="presentation" class="hidden-xs"><i class="fa fa-link" aria-hidden="true"></i> <a href="#related" aria-controls="related" role="tab" data-toggle="tab">Similar Games</a></li>
+						<li role="presentation" class="hidden-xs"><a href="#related" aria-controls="related" role="tab" data-toggle="tab"><i class="fa fa-link" aria-hidden="true"></i> Similar Games</a></li>
 					</ul>
 
 					<!-- Tab panes -->
@@ -272,7 +272,7 @@
   									    			<img src="{{ secure_url('/') }}{{ $post->image }}" class="img-responsive" />
   									    		</a>
                           @endunless
-									    		<p><a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">{{ $post->name }}</a></p>
+									    		<p class="text-center"><a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">{{ $post->name }}</a></p>
 									    	</div>
 								    	@endforeach
 								    </div>
