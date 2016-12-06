@@ -31,13 +31,15 @@
 	<div class="container" itemscope itemtype="http://schema.org/Review">
 		<div class="row">
 			<div class="col-sm-12">
-				<div class="row">
-			      <div class="col-sm-12 hidden-xs">
-			      	<div class="img-container">
-				      	<div class="fill" style="background-image:url('{{ secure_url('/') }}{{ $post->image }}');" itemprop="image"></div>
+				@unless($post->image == null)
+					<div class="row">
+				      <div class="col-sm-12 hidden-xs">
+				      	<div class="img-container">
+					      	<div class="fill" style="background-image:url('{{ secure_url('/') }}{{ $post->image }}');" itemprop="image"></div>
+					    </div>
+				      </div>
 				    </div>
-			      </div>
-			    </div>
+				@endunless
 				<div class="row">
 				  @if($post->games->isEmpty())
 				  	<div class="col-sm-12 col-xs-12">
