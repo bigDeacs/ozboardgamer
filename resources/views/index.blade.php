@@ -2,7 +2,7 @@
 
 @section('meta')
     <title>Helping you find your next favourite game - Oz Board Gamer</title>
-    <meta name="description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!). With new content every day, this is your one stop place for everything board gaming!">
+    <meta name="description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
 @endsection
 
 @section('content')
@@ -276,7 +276,7 @@
                                         <a href="/stores/{{ $store->slug }}">
                                             <img src="{{ secure_url('/') }}{{ $store->thumb }}" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
                                         </a>
-                                        <h5 class="text-center"><a href="/stores/{{ $store->slug }}">{{ $store->name }}</a></h5>
+                                        <p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{{ $store->name }}</a></strong></p>
                                     </li>
                                 @endforeach
                             </ul>
