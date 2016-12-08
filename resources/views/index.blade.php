@@ -5,6 +5,10 @@
     <meta name="description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
 @endsection
 
+@section('head')
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+@endsection
+
 @section('content')
 <!-- Header -->
     <!-- Header Carousel -->
@@ -63,8 +67,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <div class="col-xs-12">                
                 <!-- Above The Fold Ad -->
                 <ins class="adsbygoogle"
                      style="display:block"
@@ -301,8 +304,7 @@
             </div>
         @endunless
         <div class="row">
-            <div class="col-xs-12">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <div class="col-xs-12">                
                 <!-- Footer Ad -->
                 <ins class="adsbygoogle"
                      style="display:block"
