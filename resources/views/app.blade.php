@@ -285,38 +285,6 @@
         </div>
     </footer>
 
-    @unless(Session::has('name'))
-      <!-- Modal -->
-      <div class="modal fade" id="facebookModal" tabindex="-1" role="dialog" aria-labelledby="facebookModalLabel" aria-hidden="true" data-backdrop="static">
-        <div class="modal-backdrop fade in" style="height: 100%;"></div>
-        <button type="button" class="close" id="closeBtn" data-dismiss="modal" aria-label="Close" style="float:right;font-size: 100px;color: #fff;padding-right: 10px;"><span aria-hidden="true">&times;</span></button>
-        <div class="modal-dialog" style="margin-top: 150px;">
-          <div class="modal-content">
-            <div class="modal-body text-center" style="min-height: 340px;background: #008751;color: #fff;">
-                <h3>Sign Up With Facebook!</h3>
-                <p>By logging in with you Facebook account you gain access to:</p>
-                <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Personal collection tracker & watchlist</p>
-                <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Add ratings to Games and Stores</p>
-                <p><i class="fa fa-check-square-o fa-2x" aria-hidden="true"></i> Add comments to Games and Articles</p>
-                <div class="btn-group">
-                  <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login/Signup</a>
-                  <button type="button" style="padding: 10px;" class="btn btn-primary-darker dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="caret"></span>
-                    <span class="sr-only">Toggle Dropdown</span>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a href="/facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a></li>
-                    <li><a href="/google"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a></li>
-                  </ul>
-                </div>
-                <hr />
-            </div>
-          </div>
-        </div>
-      </div>
-    @endunless
-
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Scripts -->
@@ -351,21 +319,7 @@
                   }, 800);
                   return false;
               });
-              $('#back-to-top').tooltip('show');
-
-              //if cookie hasn't been set...
-              if(document.cookie.indexOf("ModalShown=true") < 0) {
-                  setTimeout(function(){
-                    $('#facebookModal').modal('show');
-                  }, 5000);
-                  //Modal has been shown, now set a cookie so it never comes back
-                  $("#facebookModalClose").click(function () {
-                      $("#facebookModal").modal("hide");
-                  });
-                  date = new Date();
-                  date.setTime(date.getTime()+(30*24*60*60*1000));
-                  document.cookie = "ModalShown=true; expires="+date.toGMTString()+" path=/";
-              }
+              $('#back-to-top').tooltip('show');              
               $("#myCarousel").carousel({
                  interval : 5000,
                  pause: false
