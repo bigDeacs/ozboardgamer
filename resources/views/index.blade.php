@@ -1,8 +1,8 @@
 @extends('app')
 
 @section('meta')
-    <title>Oz Board Gamer | All the latest on board, dice and card games</title>
-    <meta name="description" content="Want to know the latest about Board Games? We have News, Reviews, quizzes and much more!">
+    <title>Helping you find your next favourite game - Oz Board Gamer</title>
+    <meta name="description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!). With new content every day, this is your one stop place for everything board gaming!">
 @endsection
 
 @section('content')
@@ -52,7 +52,7 @@
                                     <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
                                         <img src="{{ secure_url('/') }}{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" width="300" height="auto" itemprop="image" style="margin: auto;" />
                                     </a>
-                                    <h5 class="text-center"><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
+                                    <p class="text-center"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></strong></p>
                                 </li>
                             @endforeach
                         </ul>
@@ -101,13 +101,13 @@
                                     <div class="col-sm-12 post">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <h4>
+                                                <p class="blogHeading">
                                                     <strong>
                                                         <a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
                                                             {!! $review->name !!}
                                                         </a>
                                                     </strong>
-                                                </h4>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -155,13 +155,13 @@
                                     <div class="col-sm-12 post">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <h4>
+                                                <p class="blogHeading">
                                                     <strong>
                                                         <a href="/top10s/{{ $top10->slug }}" class="post-title">
                                                             {!! $top10->name !!}
                                                         </a>
                                                     </strong>
-                                                </h4>
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -207,8 +207,8 @@
                             <div class="col-sm-12 post">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <h5>
-                                            <strong><a href="/news/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></h5>
+                                        <p class="blogHeadingSml">
+                                            <strong><a href="/news/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
                                     </div>
                                 </div>
                             </div>
@@ -223,8 +223,8 @@
                           <div class="col-sm-12 post">
                               <div class="row">
                                   <div class="col-sm-12">
-                                      <h5>
-                                          <strong><a href="/howtos/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></h5>
+                                      <p class="blogHeadingSml">
+                                          <strong><a href="/howtos/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
                                   </div>
                               </div>
                           </div>
@@ -239,8 +239,8 @@
                             <div class="col-sm-12 post">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <h5>
-                                            <strong><a href="/blogs/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></h5>
+                                        <p class="blogHeadingSml">
+                                            <strong><a href="/blogs/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
                                     </div>
                                 </div>
                             </div>
