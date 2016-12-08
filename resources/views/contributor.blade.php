@@ -65,13 +65,17 @@
 		                            </span>{!! date('F d, Y', strtotime($post->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="/{{ $post->category->slug }}/{{ $post->slug }}#disqus_thread"></a>
 		                        </div>
 		                    </div>
-		                    <div class="row post-content">
-		                        <div class="col-sm-3 text-center">
-		                            <a href="/{{ $post->category->slug }}/{{ $post->slug }}">
-		                                <img src="{{ secure_url('/') }}{{ $post->thumb }}" alt="{!! $post->name !!}" class="img-responsive" width="263" height="auto" />
-		                            </a>
-		                        </div>
-		                        <div class="col-sm-9">
+		                    <div class="row post-content">            
+		                        @if($post->thumb == null || $post->thumb == '')
+			                        <div class="col-sm-12">
+			                    @else 
+			                    	<div class="col-sm-3 text-center">
+			                            <a href="/{{ $post->category->slug }}/{{ $post->slug }}">
+			                                <img src="{{ secure_url('/') }}{{ $post->thumb }}" alt="{!! $post->name !!}" class="img-responsive" width="263" height="auto" />
+			                            </a>
+			                        </div>
+			                        <div class="col-sm-9">
+			                   	@endif
 		                            <p>
 		                                {!! str_limit(strip_tags($post->description), $limit = 100, $end = '...') !!}
 		                            </p>

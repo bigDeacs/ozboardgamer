@@ -49,10 +49,9 @@
                         <ul>
                             @foreach($games as $game)
                                 <li itemscope itemtype="http://schema.org/Game">
-                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
+                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
                                         <img src="{{ secure_url('/') }}{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
                                     </a>
-                                    <p class="text-center"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></strong></p>
                                 </li>
                             @endforeach
                         </ul>
@@ -112,7 +111,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12 post-header-line">
-                                                <span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}" itemprop="author">{!! $review->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
+                                                <span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $review->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
                                                 </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a>
                                                 @unless($review->games->isEmpty())
                                                      | <span class="fa fa-trophy"></span>
@@ -201,7 +200,7 @@
             </div>
             <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">
                 @unless($news->isEmpty())
-                    <h3>Latest News</h3>
+                    <h3>Latest Game News</h3>
                     @foreach($news as $entry)
                         <div class="row">
                             <div class="col-sm-12 post">
@@ -233,7 +232,7 @@
                   <hr />
                 @endunless
                 @unless($blogs->isEmpty())
-                    <h3>Latest Blogs</h3>
+                    <h3>Latest Blogs Posts</h3>
                     @foreach($blogs as $entry)
                         <div class="row">
                             <div class="col-sm-12 post">
@@ -273,10 +272,9 @@
                             <ul>
                                 @foreach($stores as $store)
                                     <li>
-                                        <a href="/stores/{{ $store->slug }}">
+                                        <a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
                                             <img src="{{ secure_url('/') }}{{ $store->thumb }}" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
                                         </a>
-                                        <p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{{ $store->name }}</a></strong></p>
                                     </li>
                                 @endforeach
                             </ul>
