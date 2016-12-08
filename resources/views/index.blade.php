@@ -50,9 +50,7 @@
                             @foreach($games as $game)
                                 <li itemscope itemtype="http://schema.org/Game">
                                     <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-                                        <img src="{{ secure_url('/') }}{{ $game->thumb }}" 
-                                             srcset="{{ secure_url('/') }}{{ $game->thumb }} 1000w, large.jpg 218w, {{ secure_url('/') }}{{ $game->thumb }} 1000w, {{ secure_url('/') }}{{ $game->thumb }} 230w, {{ secure_url('/') }}{{ $game->thumb }} 185w, {{ secure_url('/') }}{{ $game->thumb }} 300w" 
-                                             alt="{{ $game->name }}" class="img-responsive" width="300" height="auto" itemprop="image" style="margin: auto;" />
+                                        <img src="{{ secure_url('/') }}{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
                                     </a>
                                     <p class="text-center"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></strong></p>
                                 </li>
@@ -72,25 +70,25 @@
                   <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/games">
                       <img src="{{ secure_url('/', $parameters = ['img']) }}/find-new-games.jpg"
-                           class="img-responsive" height="200" width="auto" style="width:100%;" alt="Find new games" />
+                           class="img-responsive" style="width:100%;" alt="Find new games" />
                     </a>
                   </div>
                   <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/reviews">
                         <img src="{{ secure_url('/', $parameters = ['img']) }}/read-our-articles.jpg"
-                             class="img-responsive" height="200" width="auto" style="width:100%;" alt="Read our articles" />
+                             class="img-responsive" style="width:100%;" alt="Read our articles" />
                     </a>
                   </div>
                   <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/quizzes">
                         <img src="{{ secure_url('/', $parameters = ['img']) }}/board-game-quiz.jpg"
-                             class="img-responsive" height="200" width="auto" style="width:100%;" alt="Take a quiz" />
+                             class="img-responsive" style="width:100%;" alt="Take a quiz" />
                     </a>
                   </div>
                   <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/stores">
                         <img src="{{ secure_url('/', $parameters = ['img']) }}/find-game-stores.jpg"
-                             class="img-responsive" height="200" width="auto" style="width:100%;" alt="Find game stores" />
+                             class="img-responsive" style="width:100%;" alt="Find game stores" />
                     </a>
                   </div>
                 </div>
@@ -129,7 +127,7 @@
                                         <div class="row post-content">
                                             <div class="col-sm-3 text-center">
                                                 <a href="/reviews/{{ $review->slug }}">
-                                                    <img src="{{ secure_url('/') }}{{ $review->thumb }}" alt="{!! $review->name !!}" class="img-responsive" width="263" height="auto" itemprop="image" />
+                                                    <img src="{{ secure_url('/') }}{{ $review->thumb }}" alt="{!! $review->name !!}" class="img-responsive" itemprop="image" />
                                                 </a>
                                             </div>
                                             <div class="col-sm-9">
