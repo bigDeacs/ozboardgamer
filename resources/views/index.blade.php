@@ -62,6 +62,20 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Above The Fold Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-5206537313688631"
+                     data-ad-slot="3311917301"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
         @endunless
         <div class="row">
             <div class="col-md-8 col-sm-7 col-xs-12">
@@ -198,7 +212,7 @@
                     </div>
                 @endunless
             </div>
-            <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">
+            <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">                
                 @unless($news->isEmpty())
                     <h3>Latest Game News</h3>
                     @foreach($news as $entry)
@@ -215,6 +229,8 @@
                     @endforeach
                     <hr />
                 @endunless
+                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
+                <hr class="hidden-xs" />                
                 @unless($howtos->isEmpty())
                   <h3>Latest How To's</h3>
                   @foreach($howtos as $entry)
@@ -231,6 +247,8 @@
                   @endforeach
                   <hr />
                 @endunless
+                <div id="instafeed" class="row hidden-xs"></div>
+                <hr class="hidden-xs" />
                 @unless($blogs->isEmpty())
                     <h3>Latest Blogs Posts</h3>
                     @foreach($blogs as $entry)
@@ -246,11 +264,7 @@
                         </div>
                     @endforeach
                     <hr />
-                @endunless
-                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
-                <hr class="hidden-xs" />
-                <div id="instafeed" class="row hidden-xs"></div>
-                <hr class="hidden-xs" />
+                @endunless                
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Home Page Tower Ad Right -->
                 <ins class="adsbygoogle hidden-xs"
