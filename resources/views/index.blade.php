@@ -3,6 +3,11 @@
 @section('meta')
     <title>Helping you find your next favourite game - Oz Board Gamer</title>
     <meta name="description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Helping you find your next favourite game - Oz Board Gamer">
+    <meta property="og:description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
+    <meta property="og:url" content="https://ozboardgamer.com">
+    <meta property="og:image" content="https://ozboardgamer.com/img/logo.png">
 @endsection
 
 @section('head')

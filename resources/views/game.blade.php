@@ -3,6 +3,10 @@
 @section('meta')
     <title>{{ $game->name }} | {{ $game->types()->first()->name }} | Oz Board Gamer</title>
     {!! $game->meta !!}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ $game->name }} - Oz Board Gamer">
+    <meta property="og:url" content="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
+    <meta property="og:image" content="{{ secure_url('/') }}{{ $game->thumb }}">
 @endsection
 
 @section('head')
