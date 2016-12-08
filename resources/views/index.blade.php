@@ -50,7 +50,9 @@
                             @foreach($games as $game)
                                 <li itemscope itemtype="http://schema.org/Game">
                                     <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-                                        <img src="{{ secure_url('/') }}{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" width="300" height="auto" itemprop="image" style="margin: auto;" />
+                                        <img src="{{ secure_url('/') }}{{ $game->thumb }}" 
+                                             srcset="{{ secure_url('/') }}{{ $game->thumb }} 1000w, large.jpg 218w, {{ secure_url('/') }}{{ $game->thumb }} 1000w, {{ secure_url('/') }}{{ $game->thumb }} 230w, {{ secure_url('/') }}{{ $game->thumb }} 185w, {{ secure_url('/') }}{{ $game->thumb }} 300w" 
+                                             alt="{{ $game->name }}" class="img-responsive" width="300" height="auto" itemprop="image" style="margin: auto;" />
                                     </a>
                                     <p class="text-center"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></strong></p>
                                 </li>
