@@ -912,5 +912,15 @@ class SiteController extends Controller {
 				return view('result', compact('result', 'games'));
 		}
 
+		/**
+		 * Show the application welcome screen to the user.
+		 *
+		 * @return Response
+		 */
+		public function privacy()
+		{				
+			return view('privacy');
+		}
+
 
 }
