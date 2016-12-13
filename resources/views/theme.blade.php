@@ -96,7 +96,7 @@
   		                                {!! str_limit(strip_tags($game->description), $limit = 100, $end = '...') !!}
   		                            </p>
   		                            <p>
-  		                                <a class="btn btn-dark" href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">Read more</a>
+  		                                <a class="btn btn-danger" href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">Read more</a>
   		                            </p>
   		                        </div>
 

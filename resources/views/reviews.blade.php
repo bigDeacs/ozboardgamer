@@ -88,7 +88,7 @@
 		                                {!! str_limit(strip_tags($post->description), $limit = 100, $end = '...') !!}
 		                            </p>
 		                            <p>
-		                                <a class="btn btn-dark" href="/{{ $category->slug }}/{{ $post->slug }}">Read more</a>
+		                                <a class="btn btn-danger" href="/{{ $category->slug }}/{{ $post->slug }}">Read more</a>
 		                            </p>
 		                        </div>
 		                    </div>

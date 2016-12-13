@@ -46,7 +46,7 @@
     		                                {!! str_limit(strip_tags($quiz->description), $limit = 100, $end = '...') !!}
     		                            </p>
     		                            <p>
-    		                                <a class="btn btn-dark" href="/quizzes/{{ $quiz->slug }}">Read more</a>
+    		                                <a class="btn btn-danger" href="/quizzes/{{ $quiz->slug }}">Read more</a>
     		                            </p>
     		                        </div>
     		                    </div>

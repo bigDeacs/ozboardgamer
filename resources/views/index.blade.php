@@ -59,27 +59,6 @@
                             @foreach($games as $game)
                                 <li itemscope itemtype="http://schema.org/Game">
                                     <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
-                                        @if($game->rating < 1)
-                                            <img src="/img/1.png" class="img-responsive" style="position: absolute;width: 75px;top: 0;margin: 5px;" />
-                                        @elseif($game->rating < 2)
-                                            <img src="/img/2.png" class="img-responsive" style="position: absolute;width: 75px;top: 0;margin: 5px;" />
-                                        @elseif($game->rating < 3)
-                                            <img src="/img/3.png" class="img-responsive" style="position: absolute;width: 75px;top: 0;margin: 5px;" />
-                                        @elseif($game->rating < 4)
-                                            <img src="/img/4.png" class="img-responsive" style="position: absolute;width: 75px;top: 0;margin: 5px;" />
-                                        @elseif($game->rating < 5)
-                                            <img src="/img/5.png" class="img-responsive" style="position: absolute;width: 75px;top: 0;margin: 5px;" />
-                                        @elseif($game->rating < 6)
-                                            <img src="/img/6.png" class="img-responsive" style="position: absolute;width: 75px;top: 0;margin: 5px;" />
-                                        @elseif($game->rating < 7)
-                                            <img src="/img/7.png" class="img-responsive" style="position: absolute;width: 75px;top: 0;margin: 5px;" />
-                                        @elseif($game->rating < 8)
-                                            <img src="/img/8.png" class="img-responsive" style="position: absolute;width: 75px;top: 0;margin: 5px;" />
-                                        @elseif($game->rating < 9)
-                                            <img src="/img/9.png" class="img-responsive" style="position: absolute;width: 75px;top: 0;margin: 5px;" />
-                                        @else
-                                            <img src="/img/10.png" class="img-responsive" style="position: absolute;width: 75px;top: 0;margin: 5px;" />
-                                        @endif
                                         <img src="{{ secure_url('/') }}{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
                                     </a>
                                 </li>
@@ -177,7 +156,7 @@
                                                     {!! str_limit(strip_tags($review->description), $limit = 100, $end = '...') !!}
                                                 </p>
                                                 <p>
-                                                    <a class="btn btn-dark" href="/reviews/{{ $review->slug }}">Read more</a>
+                                                    <a class="btn btn-danger" href="/reviews/{{ $review->slug }}">Read more</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -229,7 +208,7 @@
                                                     {!! str_limit(strip_tags($top10->description), $limit = 100, $end = '...') !!}
                                                 </p>
                                                 <p>
-                                                    <a class="btn btn-dark" href="/top10s/{{ $top10->slug }}">Read more</a>
+                                                    <a class="btn btn-danger" href="/top10s/{{ $top10->slug }}">Read more</a>
                                                 </p>
                                             </div>
                                         </div>
