@@ -59,7 +59,28 @@
                             @foreach($games as $game)
                                 <li itemscope itemtype="http://schema.org/Game">
                                     <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
-                                        <img src="{{ secure_url('/') }}{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+                                        @if($game->rating < 1)
+                                            <img src="/img/1.png" class="img-responsive" style="position: relative;" />
+                                        @elseif($game->rating < 2)
+                                            <img src="/img/2.png" class="img-responsive" style="position: relative;" />
+                                        @elseif($game->rating < 3)
+                                            <img src="/img/3.png" class="img-responsive" style="position: relative;" />
+                                        @elseif($game->rating < 4)
+                                            <img src="/img/4.png" class="img-responsive" style="position: relative;" />
+                                        @elseif($game->rating < 5)
+                                            <img src="/img/5.png" class="img-responsive" style="position: relative;" />
+                                        @elseif($game->rating < 6)
+                                            <img src="/img/6.png" class="img-responsive" style="position: relative;" />
+                                        @elseif($game->rating < 7)
+                                            <img src="/img/7.png" class="img-responsive" style="position: relative;" />
+                                        @elseif($game->rating < 8)
+                                            <img src="/img/8.png" class="img-responsive" style="position: relative;" />
+                                        @elseif($game->rating < 9)
+                                            <img src="/img/9.png" class="img-responsive" style="position: relative;" />
+                                        @else
+                                            <img src="/img/10.png" class="img-responsive" style="position: relative;" />
+                                        @endif
+                                        <img src="{{ secure_url('/') }}{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;position: absolute;" />
                                     </a>
                                 </li>
                             @endforeach
