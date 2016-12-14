@@ -72,18 +72,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6 col-xs-12">                
-                <!-- Above The Fold Ad -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-5206537313688631"
-                     data-ad-slot="3311917301"
-                     data-ad-format="auto"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-            </div>
-            <div class="col-sm-6 col-xs-12">             
+            <div class="col-xs-12 text-center">             
                 <iframe src="https://www.mightyape.com.au/referrals/widget/best-sellers/wide/2865187/10231" frameborder="0" width="600" height="200" scrolling="no" style="margin-top:10px; margin-bottom:10px;"></iframe>
             </div>
         </div>
