@@ -72,7 +72,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12">                
+            <div class="col-sm-6 col-xs-12">                
                 <!-- Above The Fold Ad -->
                 <ins class="adsbygoogle"
                      style="display:block"
@@ -82,6 +82,9 @@
                 <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
+            </div>
+            <div class="col-sm-6 col-xs-12">             
+                <iframe src="https://www.mightyape.com.au/referrals/widget/best-sellers/wide/2865187/10231" frameborder="0" width="600" height="200" scrolling="no" style="margin-top:10px; margin-bottom:10px;"></iframe>
             </div>
         </div>
         @endunless
@@ -220,9 +223,7 @@
                     </div>
                 @endunless
             </div>
-            <div class="col-md-3 col-xs-12">                
-                <iframe src="https://www.mightyape.com.au/referrals/widget/best-sellers/tall/2865187/10231" frameborder="0" width="100%" height="400" scrolling="no" style="margin-top:10px; margin-bottom:10px;"></iframe>
-                <hr class="hidden-xs" />         
+            <div class="col-md-3 col-xs-12">                    
                 @unless($news->isEmpty())
                     <h3>Latest Game News</h3>
                     @foreach($news as $entry)
