@@ -221,6 +221,8 @@
                 @endunless
             </div>
             <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">                
+                <iframe src="https://www.mightyape.com.au/referrals/widget/best-sellers/tall/2865187/10231" frameborder="0" width="100%" height="400" scrolling="no" style="margin-top:10px; margin-bottom:10px;"></iframe>
+                <hr class="hidden-xs" />         
                 @unless($news->isEmpty())
                     <h3>Latest Game News</h3>
                     @foreach($news as $entry)
