@@ -86,7 +86,7 @@
         </div>
         @endunless
         <div class="row">
-            <div class="col-md-8 col-sm-7 col-xs-12">
+            <div class="col-md-9 col-xs-12">
               <div class="row hidden-xs">
                   <div class="col-sm-6 col-xs-12" style="padding: 15px;">
                     <a href="/games">
@@ -220,7 +220,7 @@
                     </div>
                 @endunless
             </div>
-            <div class="col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-12">                
+            <div class="col-md-3 col-xs-12">                
                 <iframe src="https://www.mightyape.com.au/referrals/widget/best-sellers/tall/2865187/10231" frameborder="0" width="100%" height="400" scrolling="no" style="margin-top:10px; margin-bottom:10px;"></iframe>
                 <hr class="hidden-xs" />         
                 @unless($news->isEmpty())
