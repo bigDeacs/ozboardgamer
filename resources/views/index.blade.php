@@ -71,39 +71,11 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xs-12 text-center">             
-                <iframe src="https://www.mightyape.com.au/referrals/widget/best-sellers/wide/2865187/10231" frameborder="0" width="600" height="200" scrolling="no" style="margin-top:10px; margin-bottom:10px;"></iframe>
-            </div>
-        </div>
         @endunless
         <div class="row">
             <div class="col-md-9 col-xs-12">
-              <div class="row hidden-xs">
-                  <div class="col-sm-6 col-xs-12" style="padding: 15px;">
-                    <a href="/games">
-                      <img src="{{ secure_url('/', $parameters = ['img']) }}/find-new-games.jpg"
-                           class="img-responsive" style="width:100%;" alt="Find new games" />
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-xs-12" style="padding: 15px;">
-                    <a href="/reviews">
-                        <img src="{{ secure_url('/', $parameters = ['img']) }}/read-our-articles.jpg"
-                             class="img-responsive" style="width:100%;" alt="Read our articles" />
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-xs-12" style="padding: 15px;">
-                    <a href="/quizzes">
-                        <img src="{{ secure_url('/', $parameters = ['img']) }}/board-game-quiz.jpg"
-                             class="img-responsive" style="width:100%;" alt="Take a quiz" />
-                    </a>
-                  </div>
-                  <div class="col-sm-6 col-xs-12" style="padding: 15px;">
-                    <a href="/stores">
-                        <img src="{{ secure_url('/', $parameters = ['img']) }}/find-game-stores.jpg"
-                             class="img-responsive" style="width:100%;" alt="Find game stores" />
-                    </a>
-                  </div>
+                <div class="col-xs-12 text-center">             
+                    <iframe src="https://www.mightyape.com.au/referrals/widget/best-sellers/wide/2865187/10231" frameborder="0" width="600" height="200" scrolling="no" style="margin-top:10px; margin-bottom:10px;"></iframe>
                 </div>
                 @unless($reviews->isEmpty())
                     <div class="row">
