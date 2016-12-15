@@ -6,6 +6,13 @@
 	      <input type="text" name="name" id="name" class="form-control" value="{{ isset($offer) ? $offer->name : old('name') }}" placeholder="" required>
       </div>
       <div class="col-sm-6 col-xs-12">
+            <label for="code">Code</label>
+            <input type="text" name="code" id="code" class="form-control" value="{{ isset($offer) ? $offer->code : old('code') }}" placeholder="">
+      </div>
+</div>
+
+<div class="form-group row">
+      <div class="col-xs-12">
             <label for="url">Url</label>
             <input type="text" name="url" id="url" class="form-control" value="{{ isset($offer) ? $offer->url : old('url') }}" placeholder="" required>
       </div>

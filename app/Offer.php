@@ -18,6 +18,7 @@ class Offer extends Model {
 	 */
 	protected $fillable = [
 		'name',
+		'code',
     'url',
 		'start_at',
 		'end_at',
