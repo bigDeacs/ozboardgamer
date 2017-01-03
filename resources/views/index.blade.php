@@ -73,7 +73,7 @@
         </div>
         @endunless
         <div class="row">
-            <div class="col-md-9 col-xs-12">
+            <div class="col-md-9 col-sm-6 col-xs-12">
                 <a href="https://www.mightyape.com.au/toys/board-game-games?r=2865187" target="_blank">
                     <img src="https://www.mightyape.com.au/images/referrals/au/760x120.png" class="img-responsive" alt="" />
                 </a>
@@ -184,7 +184,7 @@
                     </div>
                 @endunless
             </div>
-            <div class="col-md-3 col-xs-12">                    
+            <div class="col-md-3 col-sm-6 col-xs-12">                    
                 @unless($news->isEmpty())
                     <h3>Latest Game News</h3>
                     @foreach($news as $entry)
