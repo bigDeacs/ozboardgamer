@@ -49,6 +49,13 @@
 
     <!-- Page Content -->
     <div class="container">
+        <div class="row">
+            <div class="col-sm-12 hidden-xs text-center">             
+                <a href="https://www.mightyape.com.au/toys/board-game-games?r=2865187">
+                    <img src="https://www.mightyape.com.au/images/referrals/au/760x120.png" class="img-responsive" alt="" />
+                </a>
+            </div>
+        </div>
         @unless($games->isEmpty())
         <div class="row">
             <div class="col-xs-12">
@@ -74,9 +81,6 @@
         @endunless
         <div class="row">
             <div class="col-md-9 col-xs-12">
-                <div class="col-sm-12 hidden-xs text-center">             
-                    <iframe src="https://www.mightyape.com.au/referrals/widget/best-sellers/wide/2865187/10231" frameborder="0" width="600" height="200" scrolling="no" style="margin-top:10px; margin-bottom:10px;"></iframe>
-                </div>
                 @unless($reviews->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">

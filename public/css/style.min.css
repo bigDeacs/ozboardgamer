@@ -101,3 +101,16 @@
 .icon-replay:before {
   content: "\68";
 }
+
+#searchBar {
+	display: block;    
+    height: 30px;
+    margin: 0;
+    padding: 0 10px;
+    border: none;
+    background-color: #008751;
+    color: #fff;
+    font-size: 18px;
+    backface-visibility: none;
+    border-radius: 0;
+}
