@@ -30,7 +30,7 @@
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-	<link href="{{ asset('/css/style.min.css') }}?v=12" rel="stylesheet">
+	<link href="{{ asset('/css/style.min.css') }}?v=13" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{{ asset('/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
 	<!-- Fonts -->
@@ -106,13 +106,13 @@
                             <li id="loginFB">
                                 @if(Session::has('name'))
                                     <div class="btn-group">
-                                      <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
-                                      <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
+                                      <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-success" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
+                                      <a style="padding: 10px;" href="/logout" class="btn btn-success" title="Log Out"><i class="fa fa-sign-out"></i></a>
                                     </div>
                                 @else
                                     <div class="btn-group">
-                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login/Signup</a>
-                                      <button type="button" style="padding: 10px;" class="btn btn-primary-darker dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-success" title="Login">Login/Signup</a>
+                                      <button type="button" style="padding: 10px;" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="caret"></span>
                                         <span class="sr-only">Toggle Dropdown</span>
                                       </button>
