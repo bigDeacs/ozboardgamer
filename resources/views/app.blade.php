@@ -30,7 +30,7 @@
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-	<link href="{{ asset('/css/style.min.css') }}?v=8" rel="stylesheet">
+	<link href="{{ asset('/css/style.min.css') }}?v=9" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{{ asset('/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
 	<!-- Fonts -->
@@ -190,6 +190,13 @@
                 </div>
             </div>
             <!-- /.navbar-collapse -->
+            <div class="hidden-lg hidden-md hidden-sm">
+                <form id="search" action="#" method="post">
+                    <div id="input">
+                        <input type="text" name="search-terms" id="search-terms" placeholder="Enter search terms...">
+                    </div>
+                </form>
+            </div>
         </div>
         <!-- /.container -->
     </nav>
