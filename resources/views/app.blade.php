@@ -106,13 +106,13 @@
                             <li id="loginFB">
                                 @if(Session::has('name'))
                                     <div class="btn-group">
-                                      <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-success" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
-                                      <a style="padding: 10px;" href="/logout" class="btn btn-success" title="Log Out"><i class="fa fa-sign-out"></i></a>
+                                      <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
+                                      <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
                                     </div>
                                 @else
                                     <div class="btn-group">
-                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-success" title="Login">Login/Signup</a>
-                                      <button type="button" style="padding: 10px;" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login/Signup</a>
+                                      <button type="button" style="padding: 10px;" class="btn btn-primary-darker dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="caret"></span>
                                         <span class="sr-only">Toggle Dropdown</span>
                                       </button>
@@ -129,22 +129,22 @@
                                 </a>
                             </li>
                             <li class="hidden-sm hidden-xs">
-                                <a href="https://twitter.com/OzBoardGamer" class="btn btn-info btn-lg" target="_blank" title="Follow us on Twitter">
+                                <a href="https://twitter.com/OzBoardGamer" target="_blank" title="Follow us on Twitter">
                                     <i class="fa fa-twitter fa-fw"></i>
                                 </a>
                             </li>
                             <!--<li class="hidden-sm hidden-xs">
-                                <a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" class="btn btn-danger btn-lg" target="_blank" title="Subscribe to our Youtube channel">
+                                <a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" target="_blank" title="Subscribe to our Youtube channel">
                                     <i class="fa fa-youtube fa-fw"></i>
                                 </a>
                             </li>-->
                             <li class="hidden-sm hidden-xs">
-                                <a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" class="btn btn-danger btn-lg" target="_blank" title="Follow us on Google+">
+                                <a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" target="_blank" title="Follow us on Google+">
                                     <i class="fa fa-google-plus-official fa-fw"></i>
                                 </a>
                             </li>                            
                             <li class="hidden-sm hidden-xs">
-                                <a href="https://www.instagram.com/ozboardgamer/" class="btn btn-warning btn-lg" target="_blank" title="Follow us on Instagram">
+                                <a href="https://www.instagram.com/ozboardgamer/" target="_blank" title="Follow us on Instagram">
                                     <i class="fa fa-instagram fa-fw"></i>
                                 </a>
                             </li>
@@ -228,30 +228,33 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <ul class="list-inline intro-social-buttons pull-right hidden-xs">
+                    <ul class="intro-social-buttons pull-right hidden-xs">
                         <li>
-                            <a href="https://www.facebook.com/ozboardgamer/" class="btn btn-primary btn-lg" target="_blank" title="Like us on Facebook">
-                                <i class="fa fa-facebook-official fa-fw"></i>
+                            <a href="https://www.facebook.com/ozboardgamer/" class="btn btn-primary btn-sm" target="_blank" title="Like us on Facebook">
+                                <i class="fa fa-facebook-official fa-fw"></i> Like Us On Facebook
                             </a>
                         </li>
+                        <br />
                         <li>
-                            <a href="https://twitter.com/OzBoardGamer" class="btn btn-info btn-lg" target="_blank" title="Follow us on Twitter">
-                                <i class="fa fa-twitter fa-fw"></i>
+                            <a href="https://twitter.com/OzBoardGamer" class="btn btn-info btn-sm" target="_blank" title="Follow us on Twitter">
+                                <i class="fa fa-twitter fa-fw"></i> Follow Us On Twitter
                             </a>
                         </li>
+                        <br />
                         <!--<li>
                             <a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" class="btn btn-danger btn-lg" target="_blank" title="Subscribe to our Youtube channel">
                                 <i class="fa fa-youtube fa-fw"></i>
                             </a>
                         </li>-->
                         <li class="hidden-sm hidden-xs">
-                            <a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" class="btn btn-danger btn-lg" target="_blank" title="Follow us on Google+">
-                                <i class="fa fa-google-plus-official fa-fw"></i>
+                            <a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" class="btn btn-danger btn-sm" target="_blank" title="Follow us on Google+">
+                                <i class="fa fa-google-plus-official fa-fw"></i> Follow Us On Google+
                             </a>
                         </li> 
+                        <br />
                         <li>
-                            <a href="https://www.instagram.com/ozboardgamer/" class="btn btn-warning btn-lg" target="_blank" title="Follow us on Instagram">
-                                <i class="fa fa-instagram fa-fw"></i>
+                            <a href="https://www.instagram.com/ozboardgamer/" class="btn btn-warning btn-sm" target="_blank" title="Follow us on Instagram">
+                                <i class="fa fa-instagram fa-fw"></i> Follow Us On Instagram
                             </a>
                         </li>
                     </ul>
