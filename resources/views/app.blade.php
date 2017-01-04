@@ -226,39 +226,21 @@
   	<!-- Footer -->
     <footer class="navbar-inverse navbar-footer">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="intro-social-buttons pull-right hidden-xs">
-                        <li>
-                            <a href="https://www.facebook.com/ozboardgamer/" class="btn btn-primary btn-sm" target="_blank" title="Like us on Facebook">
-                                <i class="fa fa-facebook-official fa-fw"></i> Like Us On Facebook
-                            </a>
-                        </li>
-                        <br />
-                        <li>
-                            <a href="https://twitter.com/OzBoardGamer" class="btn btn-info btn-sm" target="_blank" title="Follow us on Twitter">
-                                <i class="fa fa-twitter fa-fw"></i> Follow Us On Twitter
-                            </a>
-                        </li>
-                        <br />
-                        <!--<li>
-                            <a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" class="btn btn-danger btn-lg" target="_blank" title="Subscribe to our Youtube channel">
-                                <i class="fa fa-youtube fa-fw"></i>
-                            </a>
-                        </li>-->
-                        <li class="hidden-sm hidden-xs">
-                            <a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" class="btn btn-danger btn-sm" target="_blank" title="Follow us on Google+">
-                                <i class="fa fa-google-plus-official fa-fw"></i> Follow Us On Google+
-                            </a>
-                        </li> 
-                        <br />
-                        <li>
-                            <a href="https://www.instagram.com/ozboardgamer/" class="btn btn-warning btn-sm" target="_blank" title="Follow us on Instagram">
-                                <i class="fa fa-instagram fa-fw"></i> Follow Us On Instagram
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="list-inline">
+            <div class="row">                
+                <div class="col-md-4 col-xs-12">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Above Footer Ad -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-5206537313688631"
+                         data-ad-slot="2769589305"
+                         data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>                    
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <ul>
                         <li>
                             <a href="/">Home</a>
                         </li>
@@ -289,6 +271,42 @@
                         <li class="footer-menu-divider">&sdot;</li>
                         <li>
                             <a href="/stores">Stores</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="/quizzes">Quizzes</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <ul class="intro-social-buttons hidden-xs">
+                        <li>
+                            <a href="https://www.facebook.com/ozboardgamer/" class="btn btn-primary btn-xs btn-block" target="_blank" title="Like us on Facebook">
+                                <i class="fa fa-facebook-official fa-fw"></i> Like Us On Facebook
+                            </a>
+                        </li>
+                        <br />
+                        <li>
+                            <a href="https://twitter.com/OzBoardGamer" class="btn btn-info btn-xs btn-block" target="_blank" title="Follow us on Twitter">
+                                <i class="fa fa-twitter fa-fw"></i> Follow Us On Twitter
+                            </a>
+                        </li>
+                        <br />
+                        <!--<li>
+                            <a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" class="btn btn-danger btn-lg" target="_blank" title="Subscribe to our Youtube channel">
+                                <i class="fa fa-youtube fa-fw"></i>
+                            </a>
+                        </li>-->
+                        <li class="hidden-sm hidden-xs">
+                            <a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" class="btn btn-danger btn-xs btn-block" target="_blank" title="Follow us on Google+">
+                                <i class="fa fa-google-plus-official fa-fw"></i> Follow Us On Google+
+                            </a>
+                        </li> 
+                        <br />
+                        <li>
+                            <a href="https://www.instagram.com/ozboardgamer/" class="btn btn-warning btn-xs btn-block" target="_blank" title="Follow us on Instagram">
+                                <i class="fa fa-instagram fa-fw"></i> Follow Us On Instagram
+                            </a>
                         </li>
                     </ul>
                     <p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. All Rights Reserved</p>

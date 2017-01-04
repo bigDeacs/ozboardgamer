@@ -73,10 +73,17 @@
         </div>
         @endunless
         <div class="row">
-            <div class="col-md-9 col-sm-6 col-xs-12">
-                <a href="https://www.mightyape.com.au/toys/board-game-games?r=2865187" target="_blank">
-                    <img src="https://www.mightyape.com.au/images/referrals/au/760x120.png" class="img-responsive" alt="" />
-                </a>
+            <div class="col-md-9 col-sm-6 col-xs-12">                
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Home Page Horizon Left Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-5206537313688631"
+                     data-ad-slot="9138550904"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
                 @unless($reviews->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
@@ -237,7 +244,6 @@
                     @endforeach
                     <hr />
                 @endunless                
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Home Page Tower Ad Right -->
                 <ins class="adsbygoogle hidden-xs"
                      style="display:block"
