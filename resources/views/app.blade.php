@@ -279,6 +279,18 @@
                     <p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. All Rights Reserved</p>
                     <br />
                     <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=pv2OKsYrittSMzLZSe28rYwYxcBBibyRXxK39sTOxgo8IYEWAVxJqvpg4G0b"></script></span>
+                </div>                
+                <div class="col-md-4 col-xs-12">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Above Footer Ad -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-5206537313688631"
+                         data-ad-slot="2769589305"
+                         data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>                    
                 </div>
                 <div class="col-md-4 col-xs-12">
                     <ul>
@@ -311,18 +323,6 @@
                             </a>
                         </li>
                     </ul>                    
-                </div>
-                <div class="col-md-4 col-xs-12">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Above Footer Ad -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-5206537313688631"
-                         data-ad-slot="2769589305"
-                         data-ad-format="auto"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>                    
                 </div>
             </div>
         </div>

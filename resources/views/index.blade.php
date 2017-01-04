@@ -74,7 +74,6 @@
         @endunless
         <div class="row">
             <div class="col-md-9 col-sm-6 col-xs-12">                
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Home Page Horizon Left Ad -->
                 <ins class="adsbygoogle"
                      style="display:block"
