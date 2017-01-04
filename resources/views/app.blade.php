@@ -133,11 +133,16 @@
                                     <i class="fa fa-twitter fa-fw"></i>
                                 </a>
                             </li>
-                            <li class="hidden-sm hidden-xs">
+                            <!--<li class="hidden-sm hidden-xs">
                                 <a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" class="btn btn-danger btn-lg" target="_blank" title="Subscribe to our Youtube channel">
                                     <i class="fa fa-youtube fa-fw"></i>
                                 </a>
-                            </li>
+                            </li>-->
+                            <li class="hidden-sm hidden-xs">
+                                <a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" class="btn btn-danger btn-lg" target="_blank" title="Follow us on Google+">
+                                    <i class="fa fa-google-plus-official fa-fw"></i>
+                                </a>
+                            </li>                            
                             <li class="hidden-sm hidden-xs">
                                 <a href="https://www.instagram.com/ozboardgamer/" class="btn btn-warning btn-lg" target="_blank" title="Follow us on Instagram">
                                     <i class="fa fa-instagram fa-fw"></i>
