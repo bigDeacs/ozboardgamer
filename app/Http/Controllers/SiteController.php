@@ -521,7 +521,7 @@ class SiteController extends Controller {
 	 */
 	public function index()
 	{
-		$featured = Post::where('status', '=', '1')->where('image', '!=', '')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->take(5)->get();
+		$slider = Post::where('status', '=', '1')->where('image', '!=', '')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->take(5)->get();
 		$reviews = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'reviews');
@@ -546,9 +546,10 @@ class SiteController extends Controller {
 		{
 		    $q->where('slug', '=', 'blogs');
 		})->orderBy('published_at', 'desc')->take(10)->get();
+		$featured = Feature::where('year', '=', date('yyyy'))->where('month', '=', date('n'))->firstOrFail();
 		$games = Game::where('status', '=', '1')->has('parent', '<', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
 		$stores = Store::where('status', '=', '1')->orderBy('rating', 'desc')->take(10)->get();
-		return view('index', compact('featured', 'reviews', 'howtos', 'top10s', 'news', 'blogs', 'games', 'stores'));
+		return view('index', compact('slider', 'reviews', 'howtos', 'top10s', 'news', 'blogs', 'featured', 'games', 'stores'));
 	}
 
 	/**

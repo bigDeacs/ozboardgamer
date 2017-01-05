@@ -21,12 +21,12 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            @if($featured->isEmpty())
+            @if($slider->isEmpty())
                 <div class="item active">
                     <div class="fill" style="background-image:url('{{ secure_url('/', $parameters = ['img']) }}/cover.jpg');"></div>
                 </div>
             @else
-                @foreach($featured as $key => $post)
+                @foreach($slider as $key => $post)
                     <div class="item {{ ($key == 0) ? 'active' : "" }}">
                         <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
                             <div class="fill" style="background-image:url('{{ secure_url('/') }}{{ $post->image }}');"></div>
@@ -36,7 +36,7 @@
             @endif
         </div>
 
-        @unless($featured->isEmpty())
+        @unless($slider->isEmpty())
             <!-- Controls -->
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                  <span class="icon-prev"></span>
@@ -195,7 +195,7 @@
                 @endunless
             </div>
             <div class="col-md-3 col-sm-4 col-xs-12">       
-                @unless($featureGame->isEmpty())
+                @unless(!isset($featured))
                     <h3>Game of the Month</h3>
                     <a href="{{ $featureGame->game->slug }}" title="{{ $featureGame->game->name  }}" target="_blank">
                         <img src="{{ secure_url('/') }}{{ $featureGame->game->thumb }}" alt="{{ $featureGame->game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
