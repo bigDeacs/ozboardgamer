@@ -186,7 +186,7 @@
                             </li>
                             <li>
                                 <a href="/stores">Stores</a>
-                            </li>
+                            </li> 
                             <li class="hidden-sm">
                                 <a href="/quizzes">Quizzes</a>
                             </li>
