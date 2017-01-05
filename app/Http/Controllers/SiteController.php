@@ -18,6 +18,7 @@ use App\Question;
 use App\Answer;
 use App\Result;
 use App\Offer;
+use App\Feature;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignupRequest;
@@ -929,7 +930,8 @@ class SiteController extends Controller {
 		 */
 		public function patron()
 		{				
-			return view('patron');
+			$feature = Feature::where('year', '=', date('yyyy'))->where('month', '=', date('n'))->firstOrFail();
+			return view('patron', compact('feature'));
 		}
 
 

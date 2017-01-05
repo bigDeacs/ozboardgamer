@@ -30,12 +30,13 @@
                      
               </div>
               <div class="col-xs-12 col-sm-6">
-                   
+                   @if(isset($feature))
+                      {{ $feature->game->name }}
+                   @endif
               </div>
             </div>
                    <hr />
                    <br/ >
-                 @endif
                </div>
              </div>
 				</div>

@@ -72,7 +72,7 @@ class FeatureController extends Controller
     {
         $feature = Feature::where('id', '=', $id)->firstOrFail();
         $games = Game::where('status', '=', '1')->lists('name', 'id');
-        return view('results.edit', compact('feature', 'games'));
+        return view('features.edit', compact('feature', 'games'));
     }
 
     /**
