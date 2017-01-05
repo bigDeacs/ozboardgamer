@@ -931,6 +931,7 @@ class SiteController extends Controller {
 		public function patron()
 		{				
 			$feature = Feature::where('year', '=', date('yyyy'))->where('month', '=', date('n'))->firstOrFail();
+			dd($feature);
 			return view('patron', compact('feature'));
 		}
 
