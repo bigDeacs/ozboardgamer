@@ -39,6 +39,7 @@ Route::group(['prefix' => 'admin'], function()
 	Route::resource('games', 'GameController');
 	Route::get('games/{games}/activate', ['as' => 'games.activate', 'uses' => 'GameController@activate']);
 	Route::get('games/{games}/deactivate', ['as' => 'games.deactivate', 'uses' => 'GameController@deactivate']);
+	Route::resource('features', 'FeatureController');
 	Route::get('pushGames', 'GameController@addToAlgolia');
 	Route::resource('publishers', 'PublisherController');
 	Route::get('publishers/{publishers}/activate', ['as' => 'publishers.activate', 'uses' => 'PublisherController@activate']);
@@ -89,9 +90,7 @@ Route::group(['prefix' => 'admin'], function()
 
 	Route::resource('quizzes/{quizzes}/questions/{questions}/answers', 'AnswerController');
 	Route::get('quizzes/{quizzes}/questions/{questions}/answers/{answers}/activate', ['as' => 'answers.activate', 'uses' => 'AnswerController@activate']);
-	Route::get('quizzes/{quizzes}/questions/{questions}/answers/{answers}/deactivate', ['as' => 'answers.deactivate', 'uses' => 'AnswerController@deactivate']);
-
-	Route::resource('features', 'FeatureController');
+	Route::get('quizzes/{quizzes}/questions/{questions}/answers/{answers}/deactivate', ['as' => 'answers.deactivate', 'uses' => 'AnswerController@deactivate']);	
 });
 
 // Front Facing Routes

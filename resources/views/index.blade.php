@@ -75,7 +75,7 @@
         <div class="row">
             <div class="col-md-9 col-sm-8 col-xs-12">                
                 <!-- Home Page Horizon Left Ad -->
-                <ins class="adsbygoogle"
+                <ins class="adsbygoogle hidden-xs"
                      style="display:block"
                      data-ad-client="ca-pub-5206537313688631"
                      data-ad-slot="9138550904"
