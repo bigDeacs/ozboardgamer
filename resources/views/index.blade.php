@@ -21,12 +21,12 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-            @if($slider->isEmpty())
+            @if($featured->isEmpty())
                 <div class="item active">
                     <div class="fill" style="background-image:url('{{ secure_url('/', $parameters = ['img']) }}/cover.jpg');"></div>
                 </div>
             @else
-                @foreach($slider as $key => $post)
+                @foreach($featured as $key => $post)
                     <div class="item {{ ($key == 0) ? 'active' : "" }}">
                         <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
                             <div class="fill" style="background-image:url('{{ secure_url('/') }}{{ $post->image }}');"></div>
@@ -36,7 +36,7 @@
             @endif
         </div>
 
-        @unless($slider->isEmpty())
+        @unless($featured->isEmpty())
             <!-- Controls -->
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                  <span class="icon-prev"></span>
@@ -195,13 +195,8 @@
                 @endunless
             </div>
             <div class="col-md-3 col-sm-4 col-xs-12">       
-                @unless(!isset($featured))
-                    <h3>Game of the Month</h3>
-                    <a href="{{ $featureGame->game->slug }}" title="{{ $featureGame->game->name  }}" target="_blank">
-                        <img src="{{ secure_url('/') }}{{ $featureGame->game->thumb }}" alt="{{ $featureGame->game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
-                    </a>
-                    <hr />
-                @endunless
+                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
+                <hr class="hidden-xs" />      
                 @unless($howtos->isEmpty())
                   <h3>Latest How To's</h3>
                   @foreach($howtos as $entry)
@@ -217,9 +212,9 @@
                       </div>
                   @endforeach
                   <hr />
-                @endunless
-                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
-                <hr class="hidden-xs" />               
+                @endunless         
+                <div id="instafeed" class="row hidden-xs"></div>
+                <hr class="hidden-xs" />  
                 @unless($news->isEmpty())
                     <h3>Latest Game News</h3>
                     @foreach($news as $entry)
@@ -235,9 +230,16 @@
                         </div>
                     @endforeach
                     <hr />
-                @endunless
-                <div id="instafeed" class="row hidden-xs"></div>
-                <hr class="hidden-xs" />                       
+                @endunless                     
+                <!-- Home Page Tower Ad Right -->
+                <ins class="adsbygoogle hidden-xs"
+                     style="display:block"
+                     data-ad-client="ca-pub-5206537313688631"
+                     data-ad-slot="2828464904"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
                 @unless($blogs->isEmpty())
                     <h3>Latest Blogs Posts</h3>
                     @foreach($blogs as $entry)
@@ -253,16 +255,7 @@
                         </div>
                     @endforeach
                     <hr />
-                @endunless                
-                <!-- Home Page Tower Ad Right -->
-                <ins class="adsbygoogle hidden-xs"
-                     style="display:block"
-                     data-ad-client="ca-pub-5206537313688631"
-                     data-ad-slot="2828464904"
-                     data-ad-format="auto"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                @endunless 
             </div>
         </div>
         @unless($stores->isEmpty())

@@ -63,7 +63,6 @@
 							</ul>
 						</li>
 						<li><a href="{{ url('/admin/stores') }}">Stores</a></li>
-						<li><a href="{{ url('/admin/features') }}">Featured Games</a></li>
 						<li><a href="{{ url('/admin/quizzes') }}">Quizzes</a></li>
 						<li><a href="{{ url('/admin/offers') }}">Offers</a></li>
 						<li><a href="{{ url('/admin/users') }}">Users</a></li>
