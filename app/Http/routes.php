@@ -88,8 +88,6 @@ Route::group(['prefix' => 'admin'], function()
 	Route::resource('quizzes/{quizzes}/questions/{questions}/answers', 'AnswerController');
 	Route::get('quizzes/{quizzes}/questions/{questions}/answers/{answers}/activate', ['as' => 'answers.activate', 'uses' => 'AnswerController@activate']);
 	Route::get('quizzes/{quizzes}/questions/{questions}/answers/{answers}/deactivate', ['as' => 'answers.deactivate', 'uses' => 'AnswerController@deactivate']);
-
-	Route::resource('features', 'FeatureController');
 });
 
 // Front Facing Routes
@@ -124,4 +122,4 @@ Route::get('sitemap', 'SiteController@sitemap');
 Route::get('sitemap.xml', 'SiteController@sitemap');
 
 // Dynamic Routes
-//Route::get('/{category}/{slug?}', 'SiteController@post');
+Route::get('/{category}/{slug?}', 'SiteController@post');
