@@ -546,9 +546,10 @@ class SiteController extends Controller {
 		{
 		    $q->where('slug', '=', 'blogs');
 		})->orderBy('published_at', 'desc')->take(10)->get();
+		$featureGame = Feature::where('year', '=', date('yyyy'))->where('month', '=', date('n'))->firstOrFail();
 		$games = Game::where('status', '=', '1')->has('parent', '<', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
 		$stores = Store::where('status', '=', '1')->orderBy('rating', 'desc')->take(10)->get();
-		return view('index', compact('featured', 'reviews', 'howtos', 'top10s', 'news', 'blogs', 'games', 'stores'));
+		return view('index', compact('featured', 'reviews', 'howtos', 'top10s', 'news', 'blogs', 'featureGame', 'games', 'stores'));
 	}
 
 	/**
@@ -921,18 +922,7 @@ class SiteController extends Controller {
 		public function privacy()
 		{				
 			return view('privacy');
-		}
-
-		/**
-		 * Show the application welcome screen to the user.
-		 *
-		 * @return Response
-		 */
-		public function patron()
-		{				
-			$feature = Feature::where('year', '=', date('yyyy'))->where('month', '=', date('n'))->firstOrFail();
-			return view('patron', compact('feature'));
-		}
+		}	
 
 
 }

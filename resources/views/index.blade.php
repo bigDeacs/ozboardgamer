@@ -71,10 +71,9 @@
                 </div>
             </div>
         </div>
-        @endunless
         <div class="row">
-            <div class="col-md-9 col-sm-8 col-xs-12">                
-                <!-- Home Page Horizon Left Ad -->
+            <div class="col-xs-12">
+                <!-- Home Page Horizon Ad -->
                 <ins class="adsbygoogle hidden-xs"
                      style="display:block"
                      data-ad-client="ca-pub-5206537313688631"
@@ -83,6 +82,11 @@
                 <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
+            </div>
+        </div>
+        @endunless
+        <div class="row">
+            <div class="col-md-9 col-sm-8 col-xs-12">                               
                 @unless($reviews->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
@@ -191,6 +195,29 @@
                 @endunless
             </div>
             <div class="col-md-3 col-sm-4 col-xs-12">       
+                @unless($featureGame->isEmpty())
+                    <h3>Game of the Month</h3>
+                    <a href="{{ $featureGame->game->slug }}" title="{{ $featureGame->game->name  }}" target="_blank">
+                        <img src="{{ secure_url('/') }}{{ $featureGame->game->thumb }}" alt="{{ $featureGame->game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+                    </a>
+                    <hr />
+                @endunless
+                @unless($howtos->isEmpty())
+                  <h3>Latest How To's</h3>
+                  @foreach($howtos as $entry)
+                      <div class="row">
+                          <div class="col-sm-12 post">
+                              <div class="row">
+                                  <div class="col-sm-12">
+                                      <p class="blogHeadingSml">
+                                          <strong><a href="/howtos/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  @endforeach
+                  <hr />
+                @endunless
                 <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
                 <hr class="hidden-xs" />               
                 @unless($news->isEmpty())
@@ -210,32 +237,7 @@
                     <hr />
                 @endunless
                 <div id="instafeed" class="row hidden-xs"></div>
-                <hr class="hidden-xs" />   
-                @unless($howtos->isEmpty())
-                  <h3>Latest How To's</h3>
-                  @foreach($howtos as $entry)
-                      <div class="row">
-                          <div class="col-sm-12 post">
-                              <div class="row">
-                                  <div class="col-sm-12">
-                                      <p class="blogHeadingSml">
-                                          <strong><a href="/howtos/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  @endforeach
-                  <hr />
-                @endunless
-                <!-- Home Page Tower Ad Right -->
-                <ins class="adsbygoogle hidden-xs"
-                     style="display:block"
-                     data-ad-client="ca-pub-5206537313688631"
-                     data-ad-slot="2828464904"
-                     data-ad-format="auto"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                <hr class="hidden-xs" />                       
                 @unless($blogs->isEmpty())
                     <h3>Latest Blogs Posts</h3>
                     @foreach($blogs as $entry)
@@ -252,6 +254,15 @@
                     @endforeach
                     <hr />
                 @endunless                
+                <!-- Home Page Tower Ad Right -->
+                <ins class="adsbygoogle hidden-xs"
+                     style="display:block"
+                     data-ad-client="ca-pub-5206537313688631"
+                     data-ad-slot="2828464904"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
         @unless($stores->isEmpty())

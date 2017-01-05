@@ -22,7 +22,7 @@
       <div class="col-sm-4 col-xs-12">
           <label for="game_id">Game</label>
           {!! Form::select('game_id', $games, null, ['id' => 'game_id', 'class' => 'form-control', 'style' => 'width: 100%']) !!}
-    </div>
+    </div>      
 </div>
 
 @section('scripts')

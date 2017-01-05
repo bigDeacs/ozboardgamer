@@ -160,6 +160,9 @@
                                     </div>
                                 </form>
                             </li>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
                               <ul class="dropdown-menu">
@@ -186,9 +189,6 @@
                             </li>
                             <li class="hidden-sm">
                                 <a href="/quizzes">Quizzes</a>
-                            </li>
-                            <li class="hidden-sm">
-                                <a href="/patron">Patron</a>
                             </li>
                         </ul>
                     </div>
