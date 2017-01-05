@@ -195,8 +195,6 @@
                 @endunless
             </div>
             <div class="col-md-3 col-sm-4 col-xs-12">       
-                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
-                <hr class="hidden-xs" />      
                 @unless($howtos->isEmpty())
                   <h3>Latest How To's</h3>
                   @foreach($howtos as $entry)
@@ -212,9 +210,9 @@
                       </div>
                   @endforeach
                   <hr />
-                @endunless         
-                <div id="instafeed" class="row hidden-xs"></div>
-                <hr class="hidden-xs" />  
+                @endunless
+                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
+                <hr class="hidden-xs" />               
                 @unless($news->isEmpty())
                     <h3>Latest Game News</h3>
                     @foreach($news as $entry)
@@ -230,16 +228,9 @@
                         </div>
                     @endforeach
                     <hr />
-                @endunless                     
-                <!-- Home Page Tower Ad Right -->
-                <ins class="adsbygoogle hidden-xs"
-                     style="display:block"
-                     data-ad-client="ca-pub-5206537313688631"
-                     data-ad-slot="2828464904"
-                     data-ad-format="auto"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                @endunless
+                <div id="instafeed" class="row hidden-xs"></div>
+                <hr class="hidden-xs" />                       
                 @unless($blogs->isEmpty())
                     <h3>Latest Blogs Posts</h3>
                     @foreach($blogs as $entry)
@@ -255,7 +246,16 @@
                         </div>
                     @endforeach
                     <hr />
-                @endunless 
+                @endunless                
+                <!-- Home Page Tower Ad Right -->
+                <ins class="adsbygoogle hidden-xs"
+                     style="display:block"
+                     data-ad-client="ca-pub-5206537313688631"
+                     data-ad-slot="2828464904"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
         @unless($stores->isEmpty())
