@@ -17,6 +17,8 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+Route::get('/', 'SiteController@index');
+
 Route::get('login', 'SiteController@login');
 Route::post('login', ['as' => 'loginRequest', 'uses' => 'SiteController@loginRequest']);
 Route::post('signup', ['as' => 'signupRequest', 'uses' => 'SiteController@signupRequest']);
@@ -91,7 +93,6 @@ Route::group(['prefix' => 'admin'], function()
 });
 
 // Front Facing Routes
-Route::get('/', 'SiteController@index');
 Route::get('/privacy', 'SiteController@privacy');
 Route::get('/games/{type?}/{slug?}', 'SiteController@game');
 Route::get('/families/{slug?}', 'SiteController@family');
