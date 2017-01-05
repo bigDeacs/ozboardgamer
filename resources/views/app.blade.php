@@ -156,7 +156,7 @@
                                 <form id="search" action="#" method="post">
                                     <div id="label" title="Search Games"><label for="search-terms" id="search-label">search</label></div>
                                     <div id="input">
-                                        <input type="text" name="search-terms" id="search-terms" placeholder="Enter search terms...">
+                                        <input type="text" name="search-terms" id="search-terms" placeholder="Find your next game...">
                                     </div>
                                 </form>
                             </li>
@@ -189,6 +189,9 @@
                             </li>
                             <li class="hidden-sm">
                                 <a href="/quizzes">Quizzes</a>
+                            </li>
+                            <li class="hidden-sm">
+                                <a href="/patron">Patron</a>
                             </li>
                         </ul>
                     </div>

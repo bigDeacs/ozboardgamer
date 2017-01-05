@@ -90,11 +90,14 @@ Route::group(['prefix' => 'admin'], function()
 	Route::resource('quizzes/{quizzes}/questions/{questions}/answers', 'AnswerController');
 	Route::get('quizzes/{quizzes}/questions/{questions}/answers/{answers}/activate', ['as' => 'answers.activate', 'uses' => 'AnswerController@activate']);
 	Route::get('quizzes/{quizzes}/questions/{questions}/answers/{answers}/deactivate', ['as' => 'answers.deactivate', 'uses' => 'AnswerController@deactivate']);
+
+	Route::resource('features', 'FeatureController');
 });
 
 // Front Facing Routes
 Route::get('/', 'SiteController@index');
 Route::get('/privacy', 'SiteController@privacy');
+Route::get('/patron', 'SiteController@patron');
 Route::get('/games/{type?}/{slug?}', 'SiteController@game');
 Route::get('/families/{slug?}', 'SiteController@family');
 Route::get('/publishers/{slug?}', 'SiteController@publisher');

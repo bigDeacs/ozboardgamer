@@ -922,5 +922,15 @@ class SiteController extends Controller {
 			return view('privacy');
 		}
 
+		/**
+		 * Show the application welcome screen to the user.
+		 *
+		 * @return Response
+		 */
+		public function patron()
+		{				
+			return view('patron');
+		}
+
 
 }

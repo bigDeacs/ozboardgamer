@@ -400,6 +400,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'CreateDesignerGameTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_30_041344_create_designer_game_table.php',
         'CreateDesignersTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_30_035822_create_designers_table.php',
         'CreateFamiliesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_083318_create_families_table.php',
+        'CreateFeaturedTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_05_131503_create_featured_table.php',
         'CreateGameMechanicTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_231526_create_game_mechanic_table.php',
         'CreateGamePostTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_231549_create_game_post_table.php',
         'CreateGamePublisherTable' => __DIR__ . '/../..' . '/database/migrations/2016_04_04_042705_create_game_publisher_table.php',

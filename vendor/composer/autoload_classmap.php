@@ -56,6 +56,7 @@ return array(
     'CreateDesignerGameTable' => $baseDir . '/database/migrations/2016_03_30_041344_create_designer_game_table.php',
     'CreateDesignersTable' => $baseDir . '/database/migrations/2016_03_30_035822_create_designers_table.php',
     'CreateFamiliesTable' => $baseDir . '/database/migrations/2016_03_07_083318_create_families_table.php',
+    'CreateFeaturedTable' => $baseDir . '/database/migrations/2017_01_05_131503_create_featured_table.php',
     'CreateGameMechanicTable' => $baseDir . '/database/migrations/2016_03_07_231526_create_game_mechanic_table.php',
     'CreateGamePostTable' => $baseDir . '/database/migrations/2016_03_07_231549_create_game_post_table.php',
     'CreateGamePublisherTable' => $baseDir . '/database/migrations/2016_04_04_042705_create_game_publisher_table.php',
