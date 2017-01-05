@@ -30,7 +30,7 @@
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-	<link href="{{ asset('/css/style.min.css') }}?v=14" rel="stylesheet">
+	<link href="{{ asset('/css/style.min.css') }}?v=15" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{{ asset('/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
 	<!-- Fonts -->
