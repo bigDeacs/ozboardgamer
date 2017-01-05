@@ -37,7 +37,7 @@
 						    <tbody>
 						    	@foreach($features as $feature)
 									<tr class="success">
-						    			<td scope="row">{{ date('M', mktime(0, 0, 0, $feature->month, 10)); }}</td>
+						    			<td scope="row">{{ date('M', mktime(0, 0, 0, $feature->month, 10)) }}</td>
 						    			<td>{{ $feature->year }}</td>					   
 						    			<td>{{ $feature->game->name }}</td>
 						    			<td><a href="/admin/features/{{ $feature->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a></td>
