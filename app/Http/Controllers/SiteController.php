@@ -18,7 +18,6 @@ use App\Question;
 use App\Answer;
 use App\Result;
 use App\Offer;
-use App\Feature;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignupRequest;
