@@ -124,4 +124,4 @@ Route::get('sitemap', 'SiteController@sitemap');
 Route::get('sitemap.xml', 'SiteController@sitemap');
 
 // Dynamic Routes
-Route::get('/{category}/{slug?}', 'SiteController@post');
+//Route::get('/{category}/{slug?}', 'SiteController@post');
