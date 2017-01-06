@@ -52,7 +52,7 @@
         @unless($games->isEmpty())
         <div class="row">
             <div class="col-xs-12">
-                <h1>Top Rated Games</h1>
+                <h1 style="margin-top: 10px;">Top Rated Games</h1>
                 <div class="jcarousel-wrapper">
                     <div class="jcarousel">
                         <ul>
@@ -61,6 +61,7 @@
                                     <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
                                         <img src="{{ secure_url('/') }}{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
                                     </a>
+                                    <p class="text-center"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{!! $game->name !!}</a></strong></p>
                                 </li>
                             @endforeach
                         </ul>
@@ -270,6 +271,7 @@
                                         <a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
                                             <img src="{{ secure_url('/') }}{{ $store->thumb }}" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
                                         </a>
+                                        <p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
                                     </li>
                                 @endforeach
                             </ul>

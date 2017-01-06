@@ -338,7 +338,7 @@
 							                                {!! str_limit(strip_tags($rel->description), $limit = 100, $end = '...') !!}
 							                            </p>
 							                            <p>
-							                                <a class="btn btn-dark" href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">Read more</a>
+							                                <a class="btn btn-danger" href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">Read more</a>
 							                            </p>
 							                        </div>
 							                    </div>
