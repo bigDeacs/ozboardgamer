@@ -304,7 +304,7 @@
                                 <i class="fa fa-youtube fa-fw"></i>
                             </a>
                         </li>-->
-                        <li class="hidden-sm hidden-xs">
+                        <li>
                             <a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" target="_blank" title="Follow us on Google+">
                                 <i class="fa fa-google-plus-official fa-fw"></i> Follow Us On Google+
                             </a>
