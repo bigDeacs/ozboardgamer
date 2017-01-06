@@ -255,10 +255,6 @@
                         <div class="col-sm-6 col-xs-12">
                             <ul>                    
                                 <li>
-                                    <a href="/howtos">How To's</a>
-                                </li>
-                                <li class="footer-menu-divider">&sdot;</li>
-                                <li>
                                     <a href="/top10s">Top 10's</a>
                                 </li>
                                 <li class="footer-menu-divider">&sdot;</li>
@@ -275,10 +271,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                    <p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. All Rights Reserved</p>
-                    <br />
-                    <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=pv2OKsYrittSMzLZSe28rYwYxcBBibyRXxK39sTOxgo8IYEWAVxJqvpg4G0b"></script></span>
+                    </div>                    
                 </div>                
                 <div class="col-md-4 col-xs-12">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -322,7 +315,10 @@
                                 <i class="fa fa-instagram fa-fw"></i> Follow Us On Instagram
                             </a>
                         </li>
-                    </ul>                    
+                    </ul>    
+                    <p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. All Rights Reserved</p>
+                    <br />
+                    <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=pv2OKsYrittSMzLZSe28rYwYxcBBibyRXxK39sTOxgo8IYEWAVxJqvpg4G0b"></script></span>                
                 </div>
             </div>
         </div>

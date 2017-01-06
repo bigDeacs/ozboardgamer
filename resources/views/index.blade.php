@@ -50,7 +50,7 @@
     <!-- Page Content -->
     <div class="container">
         @unless($games->isEmpty())
-        <div class="row">
+        <div class="row hidden-xs">
             <div class="col-xs-12">
                 <h1 style="margin-top: 10px;">Top Rated Games</h1>
                 <div class="jcarousel-wrapper">
@@ -260,7 +260,7 @@
             </div>
         </div>
         @unless($stores->isEmpty())
-            <div class="row">
+            <div class="row hidden-xs">
                 <div class="col-xs-12">
                     <h3>Top Rated Stores</h3>
                     <div class="jcarousel-wrapper">
