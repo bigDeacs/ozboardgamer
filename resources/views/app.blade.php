@@ -30,12 +30,12 @@
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-	<link href="{{ asset('/css/style.min.css') }}?v=15" rel="stylesheet">
+	<link href="https://assets.ozboardgamer.com/css/style.min.css?v=15" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="{{ asset('/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
+    <link href="https://assets.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<!-- Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://assets.ozboardgamer.com/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
   <script type="text/javascript">
     (function() { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = '//api.at.getsocial.io/widget/v1/gs_async.js?id=8ba0b1'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();
@@ -328,13 +328,13 @@
     ================================================== -->
     <!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
+	<script src="https://assets.ozboardgamer.com/js/bootstrap.min.js"></script>
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
     <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-    <script src="/js/scripts.min.js"></script>
+    <script src="https://assets.ozboardgamer.com/js/scripts.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://assets.ozboardgamer.com/js/ie10-viewport-bug-workaround.js"></script>
     <script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>
     <script>
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({

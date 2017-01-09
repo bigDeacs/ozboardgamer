@@ -29,7 +29,7 @@
 			    	@foreach($users as $user)
 						<div class="col-sm-3 col-xs-12">
 					    	<a href="/users/{{ $user->slug }}">
-				    			<img src="{{ secure_url('/') }}{{ $user->thumb }}" class="img-responsive" />
+				    			<img src="https://assets.ozboardgamer.com/{{ $user->thumb }}" class="img-responsive" />
 				    		</a>
 					    	<p class="text-center"><strong><a href="/users/{{ $user->slug }}">{!! $user->name !!}</a></strong></p>
 						</div>

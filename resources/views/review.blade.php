@@ -35,7 +35,7 @@
 					<div class="row">
 				      <div class="col-sm-12 hidden-xs">
 				      	<div class="img-container">
-					      	<div class="fill" style="background-image:url('{{ secure_url('/') }}{{ $post->image }}');" itemprop="image"></div>
+					      	<div class="fill" style="background-image:url('https://assets.ozboardgamer.com/{{ $post->image }}');" itemprop="image"></div>
 					    </div>
 				      </div>
 				    </div>
@@ -66,7 +66,7 @@
 								<div class="row">
 									<div class="col-xs-12">
 							    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-							    			<img src="{{ secure_url('/') }}{{ $game->thumb }}" class="img-responsive" />
+							    			<img src="https://assets.ozboardgamer.com/{{ $game->thumb }}" class="img-responsive" />
 							    		</a>
 							    		<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}"><span itemprop="name">{{ $game->name }}</span></a></p>
 							    	</div>

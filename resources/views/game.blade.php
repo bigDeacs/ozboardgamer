@@ -39,7 +39,7 @@
 			<div class="col-md-9 col-sm-8 col-xs-12">
 				<div class="row">
 			      <div class="col-md-4 col-sm-5 col-xs-12">
-			      	<img src="{{ secure_url('/') }}{{ $game->thumb }}" class="img-responsive" itemprop="image" />
+			      	<img src="https://assets.ozboardgamer.com/{{ $game->thumb }}" class="img-responsive" itemprop="image" />
 			      </div>
 			      <div class="col-md-8 col-sm-7 col-xs-12">
 			      	<h1 itemprop="name">{{ $game->name }}</h1>
@@ -283,7 +283,7 @@
                             </a>
                           @else
                             <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-  									    			<img src="{{ secure_url('/') }}{{ $post->image }}" class="img-responsive" />
+  									    			<img src="https://assets.ozboardgamer.com/{{ $post->image }}" class="img-responsive" />
   									    		</a>
                           @endunless
 									    		<p class="text-center"><a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">{{ $post->name }}</a></p>
@@ -302,30 +302,30 @@
 							                    <div class="row post-content">
 							                        <div class="col-md-2 col-sm-3 col-xs-7">
 							                            <a href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">
-							                                <img src="{{ secure_url('/') }}{{ $rel->thumb }}" alt="{!! $rel->name !!}" class="img-responsive" itemprop="image" />
+							                                <img src="https://assets.ozboardgamer.com/{{ $rel->thumb }}" alt="{!! $rel->name !!}" class="img-responsive" itemprop="image" />
 							                            </a>
 							                        </div>
 							                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">
 														@if($rel->rating < 1)
-															<img src="/img/1.png" class="img-responsive" />
+															<img src="https://assets.ozboardgamer.com/img/1.png" class="img-responsive" />
 														@elseif($rel->rating < 2)
-															<img src="/img/2.png" class="img-responsive" />
+															<img src="https://assets.ozboardgamer.com/img/2.png" class="img-responsive" />
 														@elseif($rel->rating < 3)
-															<img src="/img/3.png" class="img-responsive" />
+															<img src="https://assets.ozboardgamer.com/img/3.png" class="img-responsive" />
 														@elseif($rel->rating < 4)
-															<img src="/img/4.png" class="img-responsive" />
+															<img src="https://assets.ozboardgamer.com/img/4.png" class="img-responsive" />
 														@elseif($rel->rating < 5)
-															<img src="/img/5.png" class="img-responsive" />
+															<img src="https://assets.ozboardgamer.com/img/5.png" class="img-responsive" />
 														@elseif($rel->rating < 6)
-															<img src="/img/6.png" class="img-responsive" />
+															<img src="https://assets.ozboardgamer.com/img/6.png" class="img-responsive" />
 														@elseif($rel->rating < 7)
-															<img src="/img/7.png" class="img-responsive" />
+															<img src="https://assets.ozboardgamer.com/img/7.png" class="img-responsive" />
 														@elseif($rel->rating < 8)
-															<img src="/img/8.png" class="img-responsive" />
+															<img src="https://assets.ozboardgamer.com/img/8.png" class="img-responsive" />
 														@elseif($rel->rating < 9)
-															<img src="/img/9.png" class="img-responsive" />
+															<img src="https://assets.ozboardgamer.com/img/9.png" class="img-responsive" />
 														@else
-															<img src="/img/10.png" class="img-responsive" />
+															<img src="https://assets.ozboardgamer.com/img/10.png" class="img-responsive" />
 														@endif
 														<div class="text-center lead">
 															<strong>{{ number_format((float)$rel->rating, 1, '.', '') }}/10</strong>
@@ -353,25 +353,25 @@
 	      </div>
 	      <div class="col-md-3 col-sm-4 col-xs-12">
 			@if($game->rating < 1)
-				<img src="{{ secure_url('/', $parameters = ['img']) }}/1.png" class="img-responsive" />
+				<img src="https://assets.ozboardgamer.com/img/1.png" class="img-responsive" />
 			@elseif($game->rating < 2)
-				<img src="{{ secure_url('/', $parameters = ['img']) }}/2.png" class="img-responsive" />
+				<img src="https://assets.ozboardgamer.com/img/2.png" class="img-responsive" />
 			@elseif($game->rating < 3)
-				<img src="{{ secure_url('/', $parameters = ['img']) }}/3.png" class="img-responsive" />
+				<img src="https://assets.ozboardgamer.com/img/3.png" class="img-responsive" />
 			@elseif($game->rating < 4)
-				<img src="{{ secure_url('/', $parameters = ['img']) }}/4.png" class="img-responsive" />
+				<img src="https://assets.ozboardgamer.com/img/4.png" class="img-responsive" />
 			@elseif($game->rating < 5)
-				<img src="{{ secure_url('/', $parameters = ['img']) }}/5.png" class="img-responsive" />
+				<img src="https://assets.ozboardgamer.com/img/5.png" class="img-responsive" />
 			@elseif($game->rating < 6)
-				<img src="{{ secure_url('/', $parameters = ['img']) }}/6.png" class="img-responsive" />
+				<img src="https://assets.ozboardgamer.com/img/6.png" class="img-responsive" />
 			@elseif($game->rating < 7)
-				<img src="{{ secure_url('/', $parameters = ['img']) }}/7.png" class="img-responsive" />
+				<img src="https://assets.ozboardgamer.com/img/7.png" class="img-responsive" />
 			@elseif($game->rating < 8)
-				<img src="{{ secure_url('/', $parameters = ['img']) }}/8.png" class="img-responsive" />
+				<img src="https://assets.ozboardgamer.com/img/8.png" class="img-responsive" />
 			@elseif($game->rating < 9)
-				<img src="{{ secure_url('/', $parameters = ['img']) }}/9.png" class="img-responsive" />
+				<img src="https://assets.ozboardgamer.com/img/9.png" class="img-responsive" />
 			@else
-				<img src="{{ secure_url('/', $parameters = ['img']) }}/10.png" class="img-responsive" />
+				<img src="https://assets.ozboardgamer.com/img/10.png" class="img-responsive" />
 			@endif
 			<div class="text-center lead" itemscope itemtype="http://schema.org/Rating">
 				<meta itemprop="worstRating" content = "0">

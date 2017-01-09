@@ -30,7 +30,7 @@
 			    	@foreach($publishers as $publisher)
 						<div class="col-sm-3 col-xs-12">
 					    	<a href="/publishers/{{ $publisher->slug }}">
-				    			<img src="{{ secure_url('/') }}{{ $publisher->games()->first()->image }}" class="img-responsive" />
+				    			<img src="https://assets.ozboardgamer.com/{{ $publisher->games()->orderBy(DB::raw('RAND()'))->first()->image }}" class="img-responsive" />
 				    		</a>
 					    	<p class="text-center"><strong><a href="/publishers/{{ $publisher->slug }}">{!! $publisher->name !!}</a></strong></p>
 						</div>
