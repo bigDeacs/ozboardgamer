@@ -121,17 +121,12 @@
                                             </div>
                                         </div>
                                         <div class="row post-content">
-                                            <div class="col-sm-3 text-center">
-                                                <a href="/reviews/{{ $review->slug }}">
-                                                    <img src="{{ secure_url('/') }}{{ $review->thumb }}" alt="{!! $review->name !!}" class="img-responsive" itemprop="image" />
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-9">
+                                            <div class="col-xs-12">
                                                 <p itemprop="description">
-                                                    {!! str_limit(strip_tags($review->description), $limit = 100, $end = '...') !!}
+                                                    {!! str_limit(strip_tags($review->description), $limit = 150, $end = '...') !!}
                                                 </p>
                                                 <p>
-                                                    <a class="btn btn-danger" href="/reviews/{{ $review->slug }}">Read more</a>
+                                                    <a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
                                                 </p>
                                             </div>
                                         </div>
@@ -173,17 +168,12 @@
                                             </div>
                                         </div>
                                         <div class="row post-content">
-                                            <div class="col-sm-3 text-center">
-                                                <a href="/top10s/{{ $top10->slug }}">
-                                                    <img src="{{ secure_url('/') }}{{ $top10->thumb }}" alt="{!! $top10->name !!}" class="img-responsive" width="263" height="auto" />
-                                                </a>
-                                            </div>
-                                            <div class="col-sm-9">
+                                            <div class="col-xs-12">
                                                 <p>
-                                                    {!! str_limit(strip_tags($top10->description), $limit = 100, $end = '...') !!}
+                                                    {!! str_limit(strip_tags($top10->description), $limit = 150, $end = '...') !!}
                                                 </p>
                                                 <p>
-                                                    <a class="btn btn-danger" href="/top10s/{{ $top10->slug }}">Read more</a>
+                                                    <a class="btn btn-danger pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
                                                 </p>
                                             </div>
                                         </div>
@@ -196,6 +186,8 @@
                 @endunless
             </div>
             <div class="col-md-3 col-sm-4 col-xs-12">       
+                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
+                <hr class="hidden-xs" />            
                 @unless($howtos->isEmpty())
                   <h3>Latest How To's</h3>
                   @foreach($howtos as $entry)
@@ -212,8 +204,6 @@
                   @endforeach
                   <hr />
                 @endunless
-                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
-                <hr class="hidden-xs" />               
                 @unless($news->isEmpty())
                     <h3>Latest Game News</h3>
                     @foreach($news as $entry)
@@ -230,24 +220,6 @@
                     @endforeach
                     <hr />
                 @endunless
-                <div id="instafeed" class="row hidden-xs"></div>
-                <hr class="hidden-xs" />                       
-                @unless($blogs->isEmpty())
-                    <h3>Latest Blogs Posts</h3>
-                    @foreach($blogs as $entry)
-                        <div class="row">
-                            <div class="col-sm-12 post">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <p class="blogHeadingSml">
-                                            <strong><a href="/blogs/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                    <hr />
-                @endunless                
                 <!-- Home Page Tower Ad Right -->
                 <ins class="adsbygoogle hidden-xs"
                      style="display:block"
@@ -290,16 +262,6 @@
 @endsection
 
 @section('scripts')
-    <script type="text/javascript">
-        var userFeed  = new Instafeed({
-            get: 'user',
-            userId: '3016144355',
-            accessToken: '3016144355.b43e804.5755f9c7f8f44ad79b68515f74b9c6da',
-            template: '<a href="@{{link}}" target="_blank" class="col-md-4 col-sm-6" style="padding:0;"><img src="@{{image}}" class="img-responsive" style="width:100%;" /></a>',
-            limit: 9
-        });
-        userFeed.run();
-    </script>
     <script>
         $('.carousel').carousel({
             interval: 5000 //changes the speed

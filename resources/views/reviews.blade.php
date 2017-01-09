@@ -24,6 +24,47 @@
 				<div class="row">
 			      <div class="col-sm-9 col-xs-12">
 			      	<h1>{{ $category->name }}</h1>
+			      	@foreach($posts as $post)
+						<div class="row" itemscope itemtype="http://schema.org/Review">
+                            <div class="col-sm-12 post">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <p class="blogHeading">
+                                            <strong>
+                                                <a href="/{{ $category->slug }}/{{ $post->slug }}" class="post-title" itemprop="name">
+                                                    {!! $post->name !!}
+                                                </a>
+                                            </strong>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 post-header-line">
+                                        <span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $post->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
+                                        </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $post->slug }}#disqus_thread"></a>
+                                        @unless($post->games->isEmpty())
+                                             | <span class="fa fa-trophy"></span>
+                                            <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
+                                                @foreach($post->games as $key => $game)
+                                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>{{ ($key == (count($post->games) -1)) ? '' : ',' }}
+                                                @endforeach
+                                            </span>
+                                        @endunless
+                                    </div>
+                                </div>
+                                <div class="row post-content">
+                                    <div class="col-xs-12">
+                                        <p itemprop="description">
+                                            {!! str_limit(strip_tags($post->description), $limit = 150, $end = '...') !!}
+                                        </p>
+                                        <p>
+                                            <a class="btn btn-danger pull-right" href="/{{ $category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+					@endforeach
 			      </div>
 			      <div class="col-sm-3 col-xs-12">
 			      	<span>Sort by: </span>
@@ -41,60 +82,18 @@
 					        document.getElementById("sortForm").submit();
 					    }
 					</script>
+					<!-- Home Page Tower Ad Right -->
+	                <ins class="adsbygoogle hidden-xs"
+	                     style="display:block"
+	                     data-ad-client="ca-pub-5206537313688631"
+	                     data-ad-slot="2828464904"
+	                     data-ad-format="auto"></ins>
+	                <script>
+	                (adsbygoogle = window.adsbygoogle || []).push({});
+	                </script>
 			      </div>
 			    </div>
-
-				@foreach($posts as $post)
-					<div class="row" itemscope itemtype="http://schema.org/Review">
-		                <div class="col-sm-12 post">
-		                    <div class="row">
-		                        <div class="col-sm-12">
-		                            <h4>
-		                                <strong><a href="/{{ $category->slug }}/{{ $post->slug }}" class="post-title" itemprop="name">
-		                                	{!! $post->name !!}
-		                                </a></strong></h4>
-		                        </div>
-		                    </div>
-		                    <div class="row">
-		                        <div class="col-sm-12 post-header-line">
-		                            <span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&sort=published_at-desc" itemprop="author">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
-		                            </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/{{ $category->slug }}/{{ $post->slug }}#disqus_thread"></a>
-                                    @unless($post->games->isEmpty())
-                                         | <span class="fa fa-trophy"></span>
-                                        <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
-                                            @foreach($post->games as $key => $game)
-                                                @if($key == (count($post->games) -1))
-                                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>
-                                                @else
-                                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>,
-                                                @endif
-                                            @endforeach
-                                        </span>
-                                    @endunless
-		                        </div>
-		                    </div>
-		                    <div class="row post-content">
-		                    	@if($post->thumb == null || $post->thumb == '')			                        
-			                        <div class="col-sm-12">
-			                    @else 
-			                    	<div class="col-sm-3 text-center">
-			                            <a href="/{{ $category->slug }}/{{ $post->slug }}">
-			                                <img src="{{ secure_url('/') }}{{ $post->thumb }}" alt="{!! $post->name !!}" class="img-responsive" width="263" height="auto" itemprop="image" />
-			                            </a>
-			                        </div>
-			                        <div class="col-sm-9">
-			                   	@endif
-		                            <p itemprop="description">
-		                                {!! str_limit(strip_tags($post->description), $limit = 100, $end = '...') !!}
-		                            </p>
-		                            <p>
-		                                <a class="btn btn-danger" href="/{{ $category->slug }}/{{ $post->slug }}">Read more</a>
-		                            </p>
-		                        </div>
-		                    </div>
-		                </div>
-		            </div>
-				@endforeach
+				
 				<hr />
 				<div class="row">
 					<div class="col-xs-12">
