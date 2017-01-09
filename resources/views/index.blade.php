@@ -123,7 +123,7 @@
                                         <div class="row post-content">
                                             <div class="col-xs-12">
                                                 <p itemprop="description">
-                                                    {!! str_limit(strip_tags($review->description), $limit = 150, $end = '...') !!}
+                                                    {!! str_limit(strip_tags($review->description), $limit = 200, $end = '...') !!}
                                                 </p>
                                                 <p>
                                                     <a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
@@ -170,7 +170,7 @@
                                         <div class="row post-content">
                                             <div class="col-xs-12">
                                                 <p>
-                                                    {!! str_limit(strip_tags($top10->description), $limit = 150, $end = '...') !!}
+                                                    {!! str_limit(strip_tags($top10->description), $limit = 200, $end = '...') !!}
                                                 </p>
                                                 <p>
                                                     <a class="btn btn-danger pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>

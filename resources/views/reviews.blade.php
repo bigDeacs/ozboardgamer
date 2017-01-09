@@ -55,7 +55,7 @@
                                 <div class="row post-content">
                                     <div class="col-xs-12">
                                         <p itemprop="description">
-                                            {!! str_limit(strip_tags($post->description), $limit = 150, $end = '...') !!}
+                                            {!! str_limit(strip_tags($post->description), $limit = 200, $end = '...') !!}
                                         </p>
                                         <p>
                                             <a class="btn btn-danger pull-right" href="/{{ $category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
@@ -82,6 +82,7 @@
 					        document.getElementById("sortForm").submit();
 					    }
 					</script>
+					<br />
 					<!-- Home Page Tower Ad Right -->
 	                <ins class="adsbygoogle hidden-xs"
 	                     style="display:block"
@@ -91,6 +92,8 @@
 	                <script>
 	                (adsbygoogle = window.adsbygoogle || []).push({});
 	                </script>
+	                <hr class="hidden-xs" />    
+	                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>   
 			      </div>
 			    </div>
 				
