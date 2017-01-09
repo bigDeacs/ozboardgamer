@@ -188,6 +188,13 @@
             <div class="col-md-3 col-sm-4 col-xs-12">       
                 <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
                 <hr class="hidden-xs" />            
+                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>   
+                <hr class="hidden-xs" />
+                <div id="instafeed" class="row hidden-xs"></div>      
+                <hr class="hidden-xs" />
+                <script src="https://apis.google.com/js/platform.js" class="hidden-xs" async defer></script>
+                <g:page href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en"></g:page>   
+                <hr class="hidden-xs" />   
                 @unless($howtos->isEmpty())
                   <h3>Latest How To's</h3>
                   @foreach($howtos as $entry)
