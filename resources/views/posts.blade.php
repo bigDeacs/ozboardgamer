@@ -55,7 +55,7 @@
                                 <div class="row post-content">
                                     <div class="col-xs-12">
                                         <p itemprop="description">
-                                            {!! str_limit(strip_tags($post->description), $limit = 200, $end = '...') !!}
+                                            {!! str_limit(strip_tags($post->description), $limit = 250, $end = '...') !!}
                                         </p>
                                         <p>
                                             <a class="btn btn-danger pull-right" href="/{{ $category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
@@ -90,7 +90,7 @@
 	                <div id="instafeed" class="row hidden-xs"></div>      
 	                <hr class="hidden-xs" />
 	                <script src="https://apis.google.com/js/platform.js" class="hidden-xs" async defer></script>
-					<g:page href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" data-width="260px"></g:page>           
+					<g:page href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" data-width="260"></g:page>           
 					<hr class="hidden-xs" />        
 					<!-- Home Page Tower Ad Right -->
 	                <ins class="adsbygoogle hidden-xs"

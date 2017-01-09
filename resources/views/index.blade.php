@@ -123,7 +123,7 @@
                                         <div class="row post-content">
                                             <div class="col-xs-12">
                                                 <p itemprop="description">
-                                                    {!! str_limit(strip_tags($review->description), $limit = 200, $end = '...') !!}
+                                                    {!! str_limit(strip_tags($review->description), $limit = 250, $end = '...') !!}
                                                 </p>
                                                 <p>
                                                     <a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
@@ -170,7 +170,7 @@
                                         <div class="row post-content">
                                             <div class="col-xs-12">
                                                 <p>
-                                                    {!! str_limit(strip_tags($top10->description), $limit = 200, $end = '...') !!}
+                                                    {!! str_limit(strip_tags($top10->description), $limit = 250, $end = '...') !!}
                                                 </p>
                                                 <p>
                                                     <a class="btn btn-danger pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
@@ -191,7 +191,7 @@
                 <div id="instafeed" class="row hidden-xs"></div>      
                 <hr class="hidden-xs" />
                 <script src="https://apis.google.com/js/platform.js" class="hidden-xs" async defer></script>
-                <g:page href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" data-width="260px"></g:page>   
+                <g:page href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" data-width="260"></g:page>   
                 <hr class="hidden-xs" />   
                 @unless($howtos->isEmpty())
                   <h3>Latest How To's</h3>
