@@ -190,6 +190,7 @@
                 <hr class="hidden-xs" />
                 <div id="instafeed" class="row hidden-xs"></div>      
                 <hr class="hidden-xs" />                
+                <script src="https://apis.google.com/js/platform.js" async defer></script>
                 <div class="g-page" data-href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" data-width="260" class="hidden-xs"></div>
                 <hr class="hidden-xs" />   
                 @unless($howtos->isEmpty())
