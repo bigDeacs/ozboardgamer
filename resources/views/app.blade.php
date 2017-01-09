@@ -95,7 +95,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand topnav" href="/" title="Click to go to home page">
-                	<img src="{{ secure_url('/', $parameters = ['img']) }}/logo.png" class="img-responsive" height="75" width="auto" alt="OzBoardGamer Logo" />
+                	<img src="https://assets.ozboardgamer.com/img/logo.png" class="img-responsive" height="75" width="auto" alt="OzBoardGamer Logo" />
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->

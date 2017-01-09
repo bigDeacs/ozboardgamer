@@ -23,13 +23,13 @@
         <div class="carousel-inner">
             @if($featured->isEmpty())
                 <div class="item active">
-                    <div class="fill" style="background-image:url('{{ secure_url('/', $parameters = ['img']) }}/cover.jpg');"></div>
+                    <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/img/cover.jpg');"></div>
                 </div>
             @else
                 @foreach($featured as $key => $post)
                     <div class="item {{ ($key == 0) ? 'active' : "" }}">
                         <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-                            <div class="fill" style="background-image:url('{{ secure_url('/') }}{{ $post->image }}');"></div>
+                            <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/{{ $post->image }}');"></div>
                         </a>
                     </div>
                 @endforeach
@@ -59,7 +59,7 @@
                             @foreach($games as $game)
                                 <li itemscope itemtype="http://schema.org/Game">
                                     <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
-                                        <img src="{{ secure_url('/') }}{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+                                        <img src="https://assets.ozboardgamer.com/{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
                                     </a>
                                     <p class="text-center"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{!! $game->name !!}</a></strong></p>
                                 </li>
@@ -295,7 +295,7 @@
                                 @foreach($stores as $store)
                                     <li>
                                         <a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
-                                            <img src="{{ secure_url('/') }}{{ $store->thumb }}" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
+                                            <img src="https://assets.ozboardgamer.com/{{ $store->thumb }}" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
                                         </a>
                                         <p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
                                     </li>
