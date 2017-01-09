@@ -184,6 +184,53 @@
                         </div>
                     </div>
                 @endunless
+                @unless($news->isEmpty())
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2>Latest Game News</h2>
+                            @foreach($news as $entry)
+                                <div class="row">
+                                    <div class="col-sm-12 post">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <p class="blogHeading">
+                                                    <strong>
+                                                        <a href="/news/{{ $entry->slug }}" class="post-title">
+                                                            {!! $entry->name !!}
+                                                        </a>
+                                                    </strong>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 post-header-line">
+                                                <span class="glyphicon glyphicon-user"></span> {!! $entry->user->name !!} | <span class="glyphicon glyphicon-calendar">
+                                                </span>{!! date('F d, Y', strtotime($entry->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/news/{{ $entry->slug }}#disqus_thread"></a>
+                                                @unless($entry->games->isEmpty())
+                                                     | <span class="fa fa-trophy"></span>
+                                                    @foreach($entry->games as $key => $game)
+                                                        <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>{{ ($key == (count($entry->games) -1)) ? '' : ',' }}
+                                                    @endforeach
+                                                @endunless
+                                            </div>
+                                        </div>
+                                        <div class="row post-content">
+                                            <div class="col-xs-12">
+                                                <p>
+                                                    {!! str_limit(strip_tags($entry->description), $limit = 250, $end = '...') !!}
+                                                </p>
+                                                <p>
+                                                    <a class="btn btn-danger pull-right" href="/news/{{ $entry->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <hr />
+                        </div>
+                    </div>
+                @endunless
             </div>
             <div class="col-md-3 col-sm-4 col-xs-12">       
                 <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
@@ -192,6 +239,8 @@
                 <hr class="hidden-xs" />                
                 <script src="https://apis.google.com/js/platform.js" async defer></script>
                 <div class="g-page" data-href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" data-width="260" class="hidden-xs"></div>
+                <hr class="hidden-xs" />   
+                <a class="twitter-timeline hidden-xs" data-width="260" data-height="400" data-dnt="true" href="https://twitter.com/OzBoardGamer">Tweets by OzBoardGamer</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 <hr class="hidden-xs" />   
                 @unless($howtos->isEmpty())
                   <h3>Latest How To's</h3>
@@ -209,22 +258,22 @@
                   @endforeach
                   <hr />
                 @endunless
-                @unless($news->isEmpty())
-                    <h3>Latest Game News</h3>
-                    @foreach($news as $entry)
+                @unless($blogs->isEmpty())
+                    <h3>Latest Blogs Posts</h3>
+                    @foreach($blogs as $entry)
                         <div class="row">
                             <div class="col-sm-12 post">
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <p class="blogHeadingSml">
-                                            <strong><a href="/news/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
+                                            <strong><a href="/blogs/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                     <hr />
-                @endunless
+                @endunless     
                 <!-- Home Page Tower Ad Right -->
                 <ins class="adsbygoogle hidden-xs"
                      style="display:block"
