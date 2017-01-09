@@ -240,7 +240,7 @@
                 <script src="https://apis.google.com/js/platform.js" async defer></script>
                 <div class="g-page" data-href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" data-width="260" class="hidden-xs"></div>
                 <hr class="hidden-xs" />   
-                <a class="twitter-timeline hidden-xs" data-width="260" data-height="400" data-dnt="true" href="https://twitter.com/OzBoardGamer">Tweets by OzBoardGamer</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <a class="twitter-timeline hidden-xs" data-width="260" data-height="400" data-dnt="true" href="https://twitter.com/OzBoardGamer">Tweets by OzBoardGamer</a> <script  async defer src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                 <hr class="hidden-xs" />   
                 @unless($howtos->isEmpty())
                   <h3>Latest How To's</h3>
