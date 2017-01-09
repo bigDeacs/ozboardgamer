@@ -35,7 +35,7 @@
     <link href="https://assets.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<!-- Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://assets.ozboardgamer.com/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
   <script type="text/javascript">
     (function() { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = '//api.at.getsocial.io/widget/v1/gs_async.js?id=8ba0b1'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();
