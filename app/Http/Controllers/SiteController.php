@@ -528,7 +528,7 @@ class SiteController extends Controller {
 		$news = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'news');
-		})->orderBy('published_at', 'desc')->take(10)->get();
+		})->orderBy('published_at', 'desc')->take(5)->get();
 		$howtos = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'howtos');
