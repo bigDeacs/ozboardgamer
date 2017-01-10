@@ -148,6 +148,7 @@ class SiteController extends Controller {
 		{
 			if($user = User::where('email', '=', $request['email'])->first())
 			{
+				dd($user);
 				if (Hash::check($request['password'], $user->password))
 				{
 					Session::put('id', $user->id);
