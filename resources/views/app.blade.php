@@ -27,6 +27,7 @@
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <meta name="theme-color" content="#222222">
     <meta property="fb:app_id" content="256969058009917" />
+    <script src='//cdn.zarget.com/118570/226554.js'></script>
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
