@@ -39,7 +39,7 @@
 			<div class="col-md-9 col-sm-8 col-xs-12">
 				<div class="row">
 			      <div class="col-md-4 col-sm-5 col-xs-12">
-			      	<img src="https://assets.ozboardgamer.com/{{ $game->thumb }}" class="img-responsive" itemprop="image" />
+			      	<img src="https://assets.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" itemprop="image" />
 			      </div>
 			      <div class="col-md-8 col-sm-7 col-xs-12">
 			      	<h1 itemprop="name">{{ $game->name }}</h1>
@@ -302,7 +302,7 @@
 							                    <div class="row post-content">
 							                        <div class="col-md-2 col-sm-3 col-xs-7">
 							                            <a href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">
-							                                <img src="https://assets.ozboardgamer.com/{{ $rel->thumb }}" alt="{!! $rel->name !!}" class="img-responsive" itemprop="image" />
+							                                <img src="https://assets.ozboardgamer.com{{ $rel->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $rel->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $rel->thumb2x }} 2x" alt="{!! $rel->name !!}" class="img-responsive" itemprop="image" />
 							                            </a>
 							                        </div>
 							                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">

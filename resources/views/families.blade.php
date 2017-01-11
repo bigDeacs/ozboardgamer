@@ -30,7 +30,7 @@
 			    	@foreach($families as $family)
 						<div class="col-sm-3 col-xs-12">
 					    	<a href="/families/{{ $family->slug }}">
-				    			<img src="https://assets.ozboardgamer.com/{{ $family->games()->orderBy(DB::raw('RAND()'))->first()->image }}" class="img-responsive" />
+				    			<img src="https://assets.ozboardgamer.com{{ $family->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $family->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $family->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive" />
 				    		</a>
 					    	<p class="text-center"><strong><a href="/families/{{ $family->slug }}">{!! $family->name !!}</a></strong></p>
 						</div>

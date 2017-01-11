@@ -68,7 +68,7 @@
 			                    <div class="row post-content">
 			                        <div class="col-md-2 col-sm-3 col-xs-7">
 			                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-			                                <img src="https://assets.ozboardgamer.com/{{ $game->thumb }}" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
+			                                <img src="https://assets.ozboardgamer.com/{{ $game->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
 			                            </a>
 			                        </div>
 			                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">
@@ -134,7 +134,7 @@
 				                    <div class="row post-content">
 				                        <div class="col-xs-7">
 				                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-				                                <img src="https://assets.ozboardgamer.com/{{ $game->thumb }}" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
+				                                <img src="https://assets.ozboardgamer.com/{{ $game->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
 				                            </a>
 				                        </div>
 				                        <div class="col-xs-5">
