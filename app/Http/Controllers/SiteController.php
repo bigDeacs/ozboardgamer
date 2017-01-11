@@ -708,7 +708,7 @@ class SiteController extends Controller {
 			$posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 			{
 			    $q->where('slug', '=', 'reviews');
-			})->orderBy($sort, $direction)->paginate(12);
+			})->orderBy($sort, $direction)->paginate(10);
 			$category = Category::where('status', '=', '1')->where('slug', '=', 'reviews')->firstOrFail();
 			return view('reviews', compact('category','posts'));
 		} else {
@@ -809,7 +809,7 @@ class SiteController extends Controller {
 			$posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q) use($category)
 			{
 			    $q->where('slug', '=', $category);
-			})->orderBy($sort, $direction)->paginate(12);
+			})->orderBy($sort, $direction)->paginate(10);
 			$category = Category::where('status', '=', '1')->where('slug', '=', $category)->firstOrFail();
 			return view('posts', compact('category','posts'));
 		} else {

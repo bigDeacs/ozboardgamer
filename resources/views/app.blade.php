@@ -317,7 +317,7 @@
                             </a>
                         </li>
                     </ul>    
-                    <p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. All Rights Reserved</p>
+                    <p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. <br />All Rights Reserved</p>
                     <br />
                     <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=pv2OKsYrittSMzLZSe28rYwYxcBBibyRXxK39sTOxgo8IYEWAVxJqvpg4G0b"></script></span>                
                 </div>

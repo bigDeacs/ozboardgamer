@@ -84,14 +84,7 @@
 					</script>
 					<hr class="hidden-xs" />   					
 	                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>   
-					<hr class="hidden-xs" />
-	                <div id="instafeed" class="row hidden-xs"></div>      
-	                <hr class="hidden-xs" />
-	                <script src="https://apis.google.com/js/platform.js" async defer></script>
-                	<div class="g-page" data-href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" data-width="260" class="hidden-xs"></div>
-					<hr class="hidden-xs" />     
-					<a class="twitter-timeline hidden-xs" data-width="260" data-height="400" data-dnt="true" href="https://twitter.com/OzBoardGamer">Tweets by OzBoardGamer</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                	<hr class="hidden-xs" /> 
+					<hr class="hidden-xs" /> 
 					<!-- Home Page Tower Ad Right -->
 	                <ins class="adsbygoogle hidden-xs"
 	                     style="display:block"
@@ -123,14 +116,4 @@
 
 @section('scripts')
 	{!! $category->scripts !!}
-	<script type="text/javascript">
-        var userFeed  = new Instafeed({
-            get: 'user',
-            userId: '3016144355',
-            accessToken: '3016144355.b43e804.5755f9c7f8f44ad79b68515f74b9c6da',
-            template: '<a href="@{{link}}" target="_blank" class="col-md-4 col-sm-6" style="padding:0;"><img src="@{{image}}" class="img-responsive" style="width:100%;" /></a>',
-            limit: 9
-        });
-        userFeed.run();
-    </script>
 @endsection
