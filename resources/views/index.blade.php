@@ -59,7 +59,7 @@
                             @foreach($games as $game)
                                 <li itemscope itemtype="http://schema.org/Game">
                                     <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
-                                        <img src="https://assets.ozboardgamer.com/{{ $game->thumb }}" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+                                        <img src="https://assets.ozboardgamer.com/{{ $game->thumb1x }}" srcset="https://assets.ozboardgamer.com/{{ $game->thumb1x }} 1x, https://assets.ozboardgamer.com/{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
                                     </a>
                                     <p class="text-center"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{!! $game->name !!}</a></strong></p>
                                 </li>

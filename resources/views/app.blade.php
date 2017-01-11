@@ -334,6 +334,7 @@
     <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
     <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
     <script src="https://assets.ozboardgamer.com/js/scripts.min.js"></script>
+    <script src="https://assets.ozboardgamer.com/js/picturefill.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://assets.ozboardgamer.com/js/ie10-viewport-bug-workaround.js"></script>
     <script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>

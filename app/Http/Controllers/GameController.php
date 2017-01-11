@@ -164,14 +164,20 @@ class GameController extends Controller
             $file = $request->file('image');
             if ($file->isValid())
             {
-                $img = Image::make($file);
-                $img->fit(400, 400);
-                $img->interlace();
-                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+                $oneX = Image::make($file);
+                $oneX->fit(200, 200);
+                $oneX->interlace();
+                $oneX->save(storage_path() . '/uploads/' . $thumb1xName = time() . '-@1x-' . $file->getClientOriginalName());
+                $twoX = Image::make($file);
+                $twoX->fit(400, 400);
+                $twoX->interlace();
+                $twoX->save(storage_path() . '/uploads/' . $thumb2xName = time() . '-@2x-' . $file->getClientOriginalName());
 
-				$file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $game->image = ('/uploads/' . $filename);
-                $game->thumb = ('/uploads/' . $thumbname);
+                $file->move(storage_path() . '/uploads/', $imageName = time() . '-' . $file->getClientOriginalName());
+
+                $game->thumb1x = ('/uploads/' . $thumb1xName);   
+                $game->thumb2x = ('/uploads/' . $thumb2xName);   
+                $game->image = ('/uploads/' . $imageName);
                 $game->save();
             }
         } else {
@@ -307,14 +313,20 @@ class GameController extends Controller
             $file = $request->file('image');
             if ($file->isValid())
             {
-                $img = Image::make($file);
-                $img->fit(400, 400);
-                $img->interlace();
-                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+                $oneX = Image::make($file);
+                $oneX->fit(200, 200);
+                $oneX->interlace();
+                $oneX->save(storage_path() . '/uploads/' . $thumb1xName = time() . '-@1x-' . $file->getClientOriginalName());
+                $twoX = Image::make($file);
+                $twoX->fit(400, 400);
+                $twoX->interlace();
+                $twoX->save(storage_path() . '/uploads/' . $thumb2xName = time() . '-@2x-' . $file->getClientOriginalName());
 
-                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-				$game->image = ('/uploads/' . $filename);
-                $game->thumb = ('/uploads/' . $thumbname);
+                $file->move(storage_path() . '/uploads/', $imageName = time() . '-' . $file->getClientOriginalName());
+
+                $game->thumb1x = ('/uploads/' . $thumb1xName);   
+                $game->thumb2x = ('/uploads/' . $thumb2xName);   
+                $game->image = ('/uploads/' . $imageName);
                 $game->save();
             }
         }
