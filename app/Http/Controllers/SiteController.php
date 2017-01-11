@@ -537,10 +537,6 @@ class SiteController extends Controller {
 		{
 		    $q->where('slug', '=', 'top10s');
 		})->orderBy('published_at', 'desc')->take(5)->get();
-		$news = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
-		{
-		    $q->where('slug', '=', 'news');
-		})->orderBy('published_at', 'desc')->take(10)->get();
 		$blogs = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'blogs');
