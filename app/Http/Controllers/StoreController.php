@@ -116,14 +116,20 @@ class StoreController extends Controller
             $file = $request->file('image');
             if ($file->isValid())
             {
-                $img = Image::make($file);
-                $img->fit(400, 400);
-                $img->interlace();
-                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+                $oneX = Image::make($file);
+                $oneX->fit(250, 250);
+                $oneX->interlace();
+                $oneX->save(storage_path() . '/uploads/' . $thumb1xName = time() . '-@1x-' . $file->getClientOriginalName());
+                $twoX = Image::make($file);
+                $twoX->fit(400, 400);
+                $twoX->interlace();
+                $twoX->save(storage_path() . '/uploads/' . $thumb2xName = time() . '-@2x-' . $file->getClientOriginalName());
 
-                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $store->image = ('/uploads/' . $filename);
-                $store->thumb = ('/uploads/' . $thumbname);
+                $file->move(storage_path() . '/uploads/', $imageName = time() . '-' . $file->getClientOriginalName());
+
+                $store->thumb1x = ('/uploads/' . $thumb1xName);   
+                $store->thumb2x = ('/uploads/' . $thumb2xName);   
+                $store->image = ('/uploads/' . $imageName);
                 $store->save();
             }
         }
@@ -173,14 +179,20 @@ class StoreController extends Controller
             $file = $request->file('image');
             if ($file->isValid())
             {
-                $img = Image::make($file);
-                $img->fit(400, 400);
-                $img->interlace();
-                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+                $oneX = Image::make($file);
+                $oneX->fit(250, 250);
+                $oneX->interlace();
+                $oneX->save(storage_path() . '/uploads/' . $thumb1xName = time() . '-@1x-' . $file->getClientOriginalName());
+                $twoX = Image::make($file);
+                $twoX->fit(400, 400);
+                $twoX->interlace();
+                $twoX->save(storage_path() . '/uploads/' . $thumb2xName = time() . '-@2x-' . $file->getClientOriginalName());
 
-                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
-                $store->image = ('/uploads/' . $filename);
-                $store->thumb = ('/uploads/' . $thumbname);
+                $file->move(storage_path() . '/uploads/', $imageName = time() . '-' . $file->getClientOriginalName());
+
+                $store->thumb1x = ('/uploads/' . $thumb1xName);   
+                $store->thumb2x = ('/uploads/' . $thumb2xName);   
+                $store->image = ('/uploads/' . $imageName);
                 $store->save();
             }
         }

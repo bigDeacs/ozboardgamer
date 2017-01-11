@@ -364,6 +364,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'AddRoleToGameUser' => __DIR__ . '/../..' . '/database/migrations/2016_06_14_034655_add_role_to_game_user.php',
         'AddRoleToUsers' => __DIR__ . '/../..' . '/database/migrations/2016_06_14_015458_add_role_to_users.php',
         'AddSizesToGamesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_152113_add_sizes_to_games_table.php',
+        'AddSizesToStoresTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_155620_add_sizes_to_stores_table.php',
         'AddSlugFixToGamesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_09_082311_add_slug_fix_to_games_table.php',
         'AddSlugToCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_09_083946_add_slug_to_categories_table.php',
         'AddSlugToFamiliesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_09_084015_add_slug_to_families_table.php',

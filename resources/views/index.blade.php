@@ -241,7 +241,7 @@
                                 @foreach($stores as $store)
                                     <li>
                                         <a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
-                                            <img src="https://assets.ozboardgamer.com/{{ $store->thumb }}" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
+                                            <img src="https://assets.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $store->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
                                         </a>
                                         <p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
                                     </li>
