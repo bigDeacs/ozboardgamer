@@ -148,7 +148,7 @@ class SiteController extends Controller {
 		{
 			if($user = User::where('email', '=', $request['email'])->first())
 			{
-				if (Hash::check($request['password'], $user->password))
+				if($request['password'] = $user->password)
 				{
 					Session::put('id', $user->id);
 					Session::put('name', $user->name);
@@ -166,7 +166,7 @@ class SiteController extends Controller {
 				$user->image = '';
 				$user->status = 1;
 				$user->role = 'b';
-        $user->save();
+        		$user->save();
 
 				$this->syncMailchimp($email, $fname, $lname, null);
 
