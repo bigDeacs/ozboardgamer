@@ -165,7 +165,7 @@ class GameController extends Controller
             if ($file->isValid())
             {
                 $oneX = Image::make($file);
-                $oneX->fit(200, 200);
+                $oneX->fit(250, 250);
                 $oneX->interlace();
                 $oneX->save(storage_path() . '/uploads/' . $thumb1xName = time() . '-@1x-' . $file->getClientOriginalName());
                 $twoX = Image::make($file);
@@ -314,7 +314,7 @@ class GameController extends Controller
             if ($file->isValid())
             {
                 $oneX = Image::make($file);
-                $oneX->fit(200, 200);
+                $oneX->fit(250, 250);
                 $oneX->interlace();
                 $oneX->save(storage_path() . '/uploads/' . $thumb1xName = time() . '-@1x-' . $file->getClientOriginalName());
                 $twoX = Image::make($file);
