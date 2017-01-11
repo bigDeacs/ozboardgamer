@@ -14,7 +14,7 @@ class AddSizesToGamesTable extends Migration {
 	{
 		Schema::table('games', function(Blueprint $table)
 		{
-			$table->renameColumn('thumb', 'thumb1x');
+			$table->string('thumb1x');
 			$table->string('thumb2x');
 		});
 	}
