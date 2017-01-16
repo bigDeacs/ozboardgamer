@@ -29,21 +29,27 @@
 						    <thead>
 						    	<tr>
 						    		<th>Name</th>
+						    		<th>Prive</th>
+						    		<th>Sale</th>
+						    		<th>Savings</th>
+						    		<th>Link</th>
+						    		<th></th>
 						    		<th></th>
 						    	</tr>
 						    </thead>
 						    <tbody>
 						    	@foreach($products as $product)
-						    	@if($game->status == 0)
-							    	<tr class="danger">
-							    @else
 									<tr class="success">
-								@endif
-						    		<td scope="row">{{ $game->name }}</td>
-						    		<td>
-						    			<a href="/admin/products/add" class="btn btn-warning">Update <i class="fa fa-pencil-square-o"></i></a>
-						    		</td>
-						    	</tr>
+							    		<td scope="row">{{ $product->name }}</td>
+							    		<td>${!! $product->priceDisplay !!}</td>
+							    		<td>${!! $product->saleDisplay !!}</td>
+							    		<td>{!! $product->savings !!}%</td>
+										<td><a href="{!! $product->slug !!}" target="_blank">Link</a></td>
+										<td><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></td>
+										<td>
+							    			<a href="/admin/products/add" class="btn btn-warning">Update <i class="fa fa-pencil-square-o"></i></a>
+							    		</td>
+							    	</tr>
 						    	@endforeach
 						    </tbody>
 						  </table>

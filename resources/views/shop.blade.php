@@ -79,7 +79,6 @@
 		    		@else
 		    			<strong>${!! $product->priceDisplay !!}</strong>
 		    		@endif
-		    		<span class="hidden-xs hidden-sm hidden-md hidden-lg">{!! $product->savings !!}</span>
 		    	</p>
 		    	<p class="text-center">
                     <a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
