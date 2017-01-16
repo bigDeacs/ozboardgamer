@@ -73,12 +73,13 @@
 	    		</a>
 		    	<p class="text-center">
 		    		<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
-		    		@if($product->saleDisplay !== '' || $product->saleDisplay !== null)
+		    		@if($product->sale > 0)
 		    			<strong>${!! $product->saleDisplay !!}</strong><br />
 		    			<s><small>${!! $product->priceDisplay !!}</small></s>
 		    		@else
 		    			<strong>${!! $product->priceDisplay !!}</strong>
 		    		@endif
+		    		<span class="hidden-xs hidden-sm hidden-md hidden-lg">{!! $product->savings !!}</span>
 		    	</p>
 		    	<p class="text-center">
                     <a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>

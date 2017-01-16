@@ -43,7 +43,7 @@ class ProductSeeder extends CsvSeeder
             {
                 DB::table($this->table)
                 ->where('id', $product->id)
-                ->update(['savings' => (($product->price - $product->sale) / $product->price) * 100]);      
+                ->update(['savings' => ((($product->price - $product->sale) / $product->price) * 100)]);      
             }
         }
     }
