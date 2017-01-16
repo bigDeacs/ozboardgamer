@@ -54,7 +54,7 @@
 							<a href="/stores/{{ $store->slug }}">
 				    			<img src="https://assets.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $store->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $store->thumb2x }} 2x" class="img-responsive" />
 				    		</a>
-					    	<p class="text-center" style="height: 50px;"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
+					    	<p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
 					    	<p class="text-center">
 			                    <a class="btn btn-danger" href="/stores/{{ $store->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
 			                </p>

@@ -31,7 +31,7 @@
 					    	<a href="/games/{{ $type->slug }}?page=1&sort=name-asc">
 				    			<img src="https://assets.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive" />
 				    		</a>
-					    	<p class="text-center" style="height: 50px;"><strong><a href="/games/{{ $type->slug }}">{!! $type->name !!}</a></strong></p>
+					    	<p class="text-center"><strong><a href="/games/{{ $type->slug }}">{!! $type->name !!}</a></strong></p>
 					    	<p class="text-center">
 			                    <a class="btn btn-danger" href="/games/{{ $type->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
 			                </p>

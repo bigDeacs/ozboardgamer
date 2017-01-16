@@ -70,8 +70,8 @@
 				<a href="{!! $product->slug !!}" target="_blank">
 	    			<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
 	    		</a>
-		    	<p class="text-center" style="height: 75px;">
-		    		<strong><a href="{!! $product->slug !!}" target="_blank">{!! $product->name !!}</a></strong><br />
+		    	<p class="text-center">
+		    		<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
 		    		<strong>${!! $product->priceDisplay !!}</strong>
 		    	</p>
 		    	<p class="text-center">
