@@ -1,5 +1,6 @@
 <?php
 
+use database\seeds\ProductSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
