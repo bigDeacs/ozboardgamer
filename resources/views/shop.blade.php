@@ -2,7 +2,7 @@
 
 @section('meta')
     <title>Buy Board Games | Oz Board Gamer</title>
-    <meta name="description" content="Find your local today!">
+    <meta name="description" content="Great games for amazing prices!">
 @endsection
 
 @section('head')
@@ -74,8 +74,8 @@
 		    	<p class="text-center">
 		    		<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
 		    		@if($product->saleDisplay !== '' || $product->saleDisplay !== null)
-		    			<strong>${!! $product->saleDisplay !!}</strong>
-		    			<s>${!! $product->priceDisplay !!}</s>
+		    			<strong>${!! $product->saleDisplay !!}</strong><br />
+		    			<s><small>${!! $product->priceDisplay !!}</small></s>
 		    		@else
 		    			<strong>${!! $product->priceDisplay !!}</strong>
 		    		@endif
