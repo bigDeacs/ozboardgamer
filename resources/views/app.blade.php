@@ -198,27 +198,7 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
-    </nav>
-    @if(!empty($data['offers']))
-       <div id="offerCarousel" class="vertical-slider carousel vertical slide row hidden-xs" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
-          <!-- Carousel items -->
-          <div class="carousel-inner">
-            @foreach($data['offers'] as $key => $offer)
-                <div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0; padding: 20px 0 40px 0;">
-                  <div class="col-xs-12 text-center">
-                    <strong>
-                        {{ $offer->name }} 
-                        @if($offer->code !== '' || $offer->code !== null)
-                            | {{ $offer->code }}
-                        @endif
-                    </strong>
-                    <a class="btn btn-danger btn-sm" href="{{ $offer->url }}" target="_blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Start Shopping</a>
-                  </div>
-                </div>
-            @endforeach
-          </div>
-        </div>
-    @endif
+    </nav>    
 
   	@yield('content')
 

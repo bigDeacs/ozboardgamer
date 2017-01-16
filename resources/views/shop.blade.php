@@ -23,10 +23,30 @@
 				<div class="row">
 			      	<div class="col-sm-9 col-xs-12">
 			      		<h1>Buy Board Games</h1>
+			      		@if(!empty($data['offers']))
+					       <div id="offerCarousel" class="vertical-slider carousel vertical slide row hidden-xs" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
+					          <!-- Carousel items -->
+					          <div class="carousel-inner">
+					            @foreach($data['offers'] as $key => $offer)
+					                <div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0; padding: 20px 0 40px 0;">
+					                  <div class="col-xs-12 text-center">
+					                    <strong>
+					                        {{ $offer->name }} 
+					                        @if($offer->code !== '' || $offer->code !== null)
+					                            | {{ $offer->code }}
+					                        @endif
+					                    </strong>					                    
+					                  </div>
+					                </div>
+					            @endforeach
+					          </div>
+					        </div>
+					    @endif
+			      		<div class="row">
 				      	@foreach($products as $key => $product)
 							<div class="col-sm-3 col-xs-12">
 								<a href="{!! $product->slug !!}" target="_blank">
-					    			<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
+					    			<img src="{{ $product->thumb1x }}" class="img-responsive" />
 					    		</a>
 						    	<p class="text-center"><strong><a href="{!! $product->slug !!}" target="_blank">{!! $product->name !!}</a></strong></p>
 						    	<p class="text-center"><strong>{!! $product->price !!}</strong></p>
