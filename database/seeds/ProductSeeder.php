@@ -1,5 +1,7 @@
 <?php namespace App\Http\Middleware;
 
+use Illuminate\Support\Facades\DB;
+
 use Flynsarmy\CsvSeeder\CsvSeeder;
 
 class ProductSeeder extends CsvSeeder
