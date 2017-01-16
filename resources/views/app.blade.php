@@ -192,7 +192,7 @@
                                 <a href="/quizzes">Quizzes</a>
                             </li>-->
                             <li>
-                                <a href="/shop">Buy Games Online</a>
+                                <a href="/shop">Buy Games</a>
                             </li> 
                         </ul>
                     </div>

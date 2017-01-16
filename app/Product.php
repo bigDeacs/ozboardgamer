@@ -21,6 +21,7 @@ class Product extends Model {
         'slug', 
 		'price', 
 		'sale',
+		'savings',
 		'thumb1x',
 		'thumb2x',
 		'category'
