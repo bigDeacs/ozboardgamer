@@ -15,7 +15,10 @@ class ProductSeeder extends CsvSeeder
             8 => 'slug',            
             14 => 'thumb1x',
             16 => 'thumb2x',
-            17 => 'priceDisplay',            
+            17 => 'priceDisplay',       
+            31 => 'saleDisplay',
+            34 => 'stock'
+
         ];
         $this->filename = public_path().'/products.csv';
     }
@@ -34,7 +37,7 @@ class ProductSeeder extends CsvSeeder
         {
             DB::table($this->table)
             ->where('id', $product->id)
-            ->update(['price' => preg_replace('/\b(AUD|,)\b/i', '', $product->priceDisplay), 'thumb1x' => str_replace('http://', 'https://', $product->thumb1x ), 'thumb2x' => str_replace('http://', 'https://', $product->thumb2x )]);
+            ->update(['price' => preg_replace('/\b(AUD|,)\b/i', '', $product->priceDisplay), 'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 'thumb2x' => str_replace('http://', 'https://', $product->thumb2x), 'savings' => (preg_replace('/\b(AUD|,)\b/i', '', $product->priceDisplay) - preg_replace('/\b(AUD|,)\b/i', '', $product->saleDisplay))]);
         }
     }
 }

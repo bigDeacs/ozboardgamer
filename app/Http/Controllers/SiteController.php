@@ -930,7 +930,7 @@ class SiteController extends Controller {
 				$sort = 'name';
 				$direction = 'asc';
 			}
-			$products = Product::where('price', '>', '0')->where('category', '=', 'Toys &amp; Games &gt; Games &gt; Board Games')->orderBy($sort, $direction)->paginate(12);		
+			$products = Product::where('price', '>', '0')->where('category', '=', 'Toys &amp; Games &gt; Games &gt; Board Games')->where('stock', '=', 'in stock')->orderBy($sort, $direction)->paginate(12);		
 			return view('shop', compact('products'));
 		}
 

@@ -21,6 +21,7 @@ return array(
     'AddResultIdToAnswersTable' => $baseDir . '/database/migrations/2016_08_22_001252_add_resultId_to_answers_table.php',
     'AddRoleToGameUser' => $baseDir . '/database/migrations/2016_06_14_034655_add_role_to_game_user.php',
     'AddRoleToUsers' => $baseDir . '/database/migrations/2016_06_14_015458_add_role_to_users.php',
+    'AddSalepriceProducts' => $baseDir . '/database/migrations/2017_01_16_153449_add_saleprice_products.php',
     'AddSizesToGamesTable' => $baseDir . '/database/migrations/2017_01_11_152113_add_sizes_to_games_table.php',
     'AddSizesToStoresTable' => $baseDir . '/database/migrations/2017_01_11_155620_add_sizes_to_stores_table.php',
     'AddSlugFixToGamesTable' => $baseDir . '/database/migrations/2016_03_09_082311_add_slug_fix_to_games_table.php',

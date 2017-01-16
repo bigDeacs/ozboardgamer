@@ -31,6 +31,7 @@
 					  		<option value="name-desc" {{ (Request::input('sort') == 'name-desc') ? 'selected' : "" }}>Name DESC</option>
 						  	<option value="price-asc" {{ (Request::input('sort') == 'price-asc') ? 'selected' : "" }}>Price ASC</option>
 						  	<option value="price-desc" {{ (Request::input('sort') == 'price-desc') ? 'selected' : "" }}>Price DESC</option>
+						  	<option value="savings-desc" {{ (Request::input('sort') == 'savings-desc') ? 'selected' : "" }}>Promotions</option>
 					</select>
 				</form>
 				<script>
@@ -72,7 +73,12 @@
 	    		</a>
 		    	<p class="text-center">
 		    		<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
-		    		<strong>${!! $product->priceDisplay !!}</strong>
+		    		@if($product->saleDisplay !== '' || $product->saleDisplay !== null)
+		    			<strong>${!! $product->saleDisplay !!}</strong>
+		    			<s>${!! $product->priceDisplay !!}</s>
+		    		@else
+		    			<strong>${!! $product->priceDisplay !!}</strong>
+		    		@endif
 		    	</p>
 		    	<p class="text-center">
                     <a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
