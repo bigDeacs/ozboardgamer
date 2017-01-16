@@ -1,6 +1,5 @@
 <?php
 
-use database\seeds\ProductSeeder;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,11 +11,11 @@ class DatabaseSeeder extends Seeder {
 	 * @return void
 	 */
 	public function run()
-	{
-		$this->call(ProductSeeder::class);
-		// Model::unguard();
+	{		
+		Model::unguard();
 
 		// $this->call('UserTableSeeder');
+		$this->call('ProductSeeder');
 	}
 
 }
