@@ -10,7 +10,7 @@ use Storage;
 use Artisan;
 use App\Http\Controllers\Controller;
 
-class GameController extends Controller
+class ProductController extends Controller
 {
     public function __construct()
     {
