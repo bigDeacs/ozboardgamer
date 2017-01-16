@@ -161,13 +161,13 @@
                                     </div>
                                 </form>
                             </li>
-                            <li>
+                            <!--<li>
                                 <a href="/">Home</a>
-                            </li>
+                            </li>-->
                             <li class="dropdown">
                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                <li><a href="/games">Games</a></li>
+                                <li><a href="/games">Find Games</a></li>
                                 <li><a href="/mechanics">Mechanics</a></li>
                                 <li><a href="/publishers">Publishers</a></li>
                                 <li><a href="/designers">Designers</a></li>
@@ -176,7 +176,7 @@
                               </ul>
                             </li>
                             <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game Articles <span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                 <li><a href="/reviews">Reviews</a></li>
                                 <li><a href="/top10s">Top 10's</a></li>
@@ -186,11 +186,14 @@
                               </ul>
                             </li>
                             <li>
-                                <a href="/stores">Stores</a>
+                                <a href="/stores">Find a Store</a>
                             </li> 
-                            <li class="hidden-sm">
+                            <!--<li class="hidden-sm">
                                 <a href="/quizzes">Quizzes</a>
-                            </li>
+                            </li>-->
+                            <li>
+                                <a href="/shop">Buy Games Online</a>
+                            </li> 
                         </ul>
                     </div>
                 </div>
@@ -249,6 +252,9 @@
                                 <li class="footer-menu-divider">&sdot;</li>
                                 <li>
                                     <a href="/quizzes">Quizzes</a>
+                                </li>
+                                <li>
+                                    <a href="/shop">Shop</a>
                                 </li>
                             </ul>
                         </div>
