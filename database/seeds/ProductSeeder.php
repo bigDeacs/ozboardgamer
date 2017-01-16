@@ -31,7 +31,7 @@ class ProductSeeder extends CsvSeeder
 
         foreach(DB::select('select * from '.$this->table) as $product)
         {
-            DB::update('update '.$this->table.' set price = '.number_format($product->priceDisplay, 2, '.', '').' where id = ?', [$product->id]);
+            DB::update('update '.$this->table.' set price = '.preg_replace('/\b(AUD)\b/i', '', str_replace(',', '', $product->priceDisplay)).' where id = ?', [$product->id]);
         }
     }
 }
