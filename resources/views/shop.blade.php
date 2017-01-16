@@ -66,26 +66,23 @@
 		@endif
   		<div class="row">
       	@foreach($products as $key => $product)
-      		@if($product->price > 0)
-				<div class="col-sm-3 col-xs-12">
-					<a href="{!! $product->slug !!}" target="_blank">
-		    			<img src="{{ $product->thumb1x }}" class="img-responsive" />
-		    			<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
-		    		</a>
-			    	<p class="text-center"><strong><a href="{!! $product->slug !!}" target="_blank">{!! $product->name !!}</a></strong></p>
-			    	<p class="text-center"><strong>${!! $product->priceDisplay !!}</strong></p>		    	
-				</div>
-	            @if(($key + 1) % 4 == 0)
-	              </div><div class="row">
-	            @endif
-	        @endif
+			<div class="col-sm-3 col-xs-12">
+				<a href="{!! $product->slug !!}" target="_blank">
+	    			<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
+	    		</a>
+		    	<p class="text-center"><strong><a href="{!! $product->slug !!}" target="_blank">{!! $product->name !!}</a></strong></p>
+		    	<p class="text-center"><strong>${!! $product->priceDisplay !!}</strong></p>		    	
+			</div>
+            @if(($key + 1) % 4 == 0)
+              </div><div class="row">
+            @endif
 		@endforeach
 		</div>
 		<hr />
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="text-center">
-      @if(isset($_GET['sort']))
+      				@if(isset($_GET['sort']))
 						{!! $products->appends(['sort' => $_GET['sort']])->render() !!}
 					@else
 						{!! $products->render() !!}
