@@ -14,7 +14,7 @@ class ProductSeeder extends CsvSeeder
             8 => 'slug',            
             14 => 'thumb1x',
             16 => 'thumb2x',
-            number_format(17, 2, '.', '') => 'price',
+            17 => 'priceDisplay',
         ];
         $this->filename = public_path().'/products.csv';
     }
@@ -28,5 +28,10 @@ class ProductSeeder extends CsvSeeder
         DB::table($this->table)->truncate();
 
         parent::run();
+
+        foreach(DB::select('select * from '.$this->table) as $product)
+        {
+            DB::update('update '.$this->table.' set price = '.number_format($product->priceDisplay, 2, '.', '').' where id = ?', [$product->id]);
+        }
     }
 }

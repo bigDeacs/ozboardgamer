@@ -73,7 +73,7 @@
 		    			<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
 		    		</a>
 			    	<p class="text-center"><strong><a href="{!! $product->slug !!}" target="_blank">{!! $product->name !!}</a></strong></p>
-			    	<p class="text-center"><strong>{!! $product->price !!}</strong></p>		    	
+			    	<p class="text-center"><strong>${!! $product->priceDisplay !!}</strong></p>		    	
 				</div>
 	            @if(($key + 1) % 4 == 0)
 	              </div><div class="row">
