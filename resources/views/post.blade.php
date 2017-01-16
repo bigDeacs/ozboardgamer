@@ -66,7 +66,7 @@
   							<div class="row">
   								<div class="col-xs-12">
   						    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-  						    			<img src="https://assets.ozboardgamer.com/{{ $game->thumb }}" class="img-responsive" />
+  						    			<img src="https://assets.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
   						    		</a>
   						    		<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a></p>
   						    	</div>

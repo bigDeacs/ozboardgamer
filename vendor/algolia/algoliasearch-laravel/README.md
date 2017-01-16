@@ -20,7 +20,7 @@ This PHP package integrates the Algolia Search API to the Laravel Eloquent ORM. 
 4. [Ranking & Relevance](#ranking--relevance)
 5. [Options](#options)
 6. [Indexing](#indexing)
-7. [Master/Slave](#masterslave)
+7. [Primary/Replica](#primaryreplica)
 8. [Target multiple indexes](#target-multiple-indexes)
 
 <!--/NO_HTML-->
@@ -89,6 +89,12 @@ class Contact extends Model
 }
 ```
 
+After setting up your model, you need to manually do the initial import of your data. You can do this by calling `reindex` on your model class. Using our previous example, this would be:
+
+```php
+Contact::reindex();
+```
+
 ### Ranking & Relevance
 
 We provide many ways to configure your index settings to tune the overall relevancy but the most important ones are the **searchable attributes** and the attributes reflecting the **record popularity**. You can configure them with the following code:
@@ -123,7 +129,7 @@ Contact::setSettings();
 
 Synonyms are used to tell the engine about words or expressions that should be considered equal in regard to the textual relevance.
 
-Our [synonyms API](https://www.algolia.com/doc/relevance/synonyms) has been designed to manage as easily as possible a large set of synonyms for an index and its slaves.
+Our [synonyms API](https://www.algolia.com/doc/relevance/synonyms) has been designed to manage as easily as possible a large set of synonyms for an index and its replicas.
 
 You can use the synonyms API by adding a `synonyms` in `$algoliaSettings` class property like this:
 
@@ -170,7 +176,7 @@ index.search('something', function(success, hits) {
 
 ### Backend Search
 
-You could also use the `search` method but it's not recommended to implement instant/realtime search experience:
+You could also use the `search` method but it's not recommended to implement a instant/realtime search experience from the backend (having a frontend search gives a better user experience):
 
 ```php
 Contact::search('jon doe');
@@ -207,6 +213,7 @@ for ($i = 0; $i < 10000; $i++) {
 }
 
 Contact::reindex(); // Will use batch operations.
+Contact::$autoIndex = true;
 ```
 
 You can also make a dynamic condition for those two parameters creating an `autoIndex` and/or `autoDelete method`
@@ -383,6 +390,30 @@ To reindex all your records (in place, without deleting out-dated records):
 Contact::reindex(false);
 ```
 
+To set settings during the reindexing process:
+
+```php
+Contact::reindex(true, true);
+```
+
+To keep settings that you set on the Algolia dashboard when reindexing and setting settings:
+
+```php
+Contact::reindex(true, true, true);
+```
+
+To implement a callback that gets called everytime a batch of entities is indexed:
+
+```php
+Contact::reindex(true, true, false, function ($entities)
+{
+    foreach ($entities as $entity)
+    {
+        var_dump($entity->id); // Contact::$id
+    }
+});
+```
+
 ### Clearing an Index
 
 To clear an index, use the `clearIndices` class method:
@@ -393,9 +424,9 @@ Contact::clearIndices();
 
 ## Manage indices
 
-### Master/Slave
+### Primary/Replica
 
-You can define slave indexes using the `$algolia_settings` variable:
+You can define replica indexes using the `$algolia_settings` variable:
 
 ```php
 use Illuminate\Database\Eloquent\Model;
@@ -413,12 +444,12 @@ class Contact extends Model
             'desc(popularity)',
             'asc(name)',
         ],
-        'slaves' => [
+        'replicas' => [
             'contacts_desc',
         ],
     ];
 
-    public $slavesSettings = [
+    public $replicasSettings = [
         'contacts_desc' => [
             'ranking' => [
                 'desc(name)',
@@ -435,7 +466,7 @@ class Contact extends Model
 }
 ```
 
-To search using a slave use the following code:
+To search using a replica use the following code:
 
 ```php
 Book::search('foo bar', ['index' => 'contacts_desc']);

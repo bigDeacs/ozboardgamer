@@ -18,6 +18,7 @@ use App\Question;
 use App\Answer;
 use App\Result;
 use App\Offer;
+use App\Product;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignupRequest;
@@ -918,5 +919,11 @@ class SiteController extends Controller {
 			return view('privacy');
 		}	
 
+		public function products()
+		{				
+			$products = Product::all();
+			dd($products);
+			return view('products', compact('products'));
+		}
 
 }

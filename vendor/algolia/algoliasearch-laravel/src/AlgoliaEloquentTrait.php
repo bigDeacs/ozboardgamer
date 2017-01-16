@@ -16,8 +16,9 @@ trait AlgoliaEloquentTrait
      *
      * @param bool $safe
      * @param bool $setSettings
+     * @param bool $mergeOldSettings
      */
-    public function _reindex($safe = true, $setSettings = true)
+    public function _reindex($safe = true, $setSettings = true, $mergeOldSettings = false, \Closure $onInsert = null)
     {
         /** @var \AlgoliaSearch\Laravel\ModelHelper $modelHelper */
         $modelHelper = App::make('\AlgoliaSearch\Laravel\ModelHelper');
@@ -27,21 +28,30 @@ trait AlgoliaEloquentTrait
 
         if ($setSettings === true) {
             $setToTmpIndices = ($safe === true);
-            $this->_setSettings($setToTmpIndices);
+            $this->_setSettings($setToTmpIndices, $mergeOldSettings);
         }
 
-        static::chunk(100, function ($models) use ($indicesTmp, $modelHelper) {
+        static::chunk(100, function ($models) use ($indicesTmp, $modelHelper, $onInsert) {
             /** @var \AlgoliaSearch\Index $index */
             foreach ($indicesTmp as $index) {
-                $records = [];
+                $records         = [];
+                $recordsAsEntity = [];
 
                 foreach ($models as $model) {
                     if ($modelHelper->indexOnly($model, $index->indexName)) {
                         $records[] = $model->getAlgoliaRecordDefault($index->indexName);
+
+                        if ($onInsert && is_callable($onInsert)) {
+                            $recordsAsEntity[] = $model;
+                        }
                     }
                 }
 
                 $index->addObjects($records);
+
+                if ($onInsert && is_callable($onInsert)) {
+                    call_user_func_array($onInsert, [$recordsAsEntity]);
+                }
             }
 
         });
@@ -50,6 +60,8 @@ trait AlgoliaEloquentTrait
             for ($i = 0; $i < count($indices); $i++) {
                 $modelHelper->algolia->moveIndex($indicesTmp[$i]->indexName, $indices[$i]->indexName);
             }
+
+            $this->_setSettings(false); // To a setSettings to set the slave on the master
         }
     }
 
@@ -142,7 +154,7 @@ trait AlgoliaEloquentTrait
         return $result;
     }
 
-    public function _setSettings($setToTmpIndices = false)
+    public function _setSettings($setToTmpIndices = false, $mergeOldSettings = false)
     {
         /** @var \AlgoliaSearch\Laravel\ModelHelper $modelHelper */
         $modelHelper = App::make('\AlgoliaSearch\Laravel\ModelHelper');
@@ -156,15 +168,47 @@ trait AlgoliaEloquentTrait
             $indices = $modelHelper->getIndicesTmp($this);
         }
 
-        $slaves_settings = $modelHelper->getSlavesSettings($this);
-        $slaves = isset($settings['slaves']) ? $settings['slaves'] : [];
+        $replicas_settings = $modelHelper->getReplicasSettings($this);
+        $replicas = isset($settings['replicas']) ? $settings['replicas'] : [];
+
+        // Backward compatibility
+        if ($replicas === [] && isset($settings['slaves'])) {
+            $replicas = $settings['slaves'];
+        }
 
         $b = true;
 
         /** @var \AlgoliaSearch\Index $index */
-        foreach ($indices as $index) {
+        foreach ($indices as $key => $index) {
+            if ($mergeOldSettings) {
+                $old_indices = $modelHelper->getIndices($this);
+                $old_index = $old_indices[$key];
 
-            if ($b && isset($settings['slaves'])) {
+                try {
+                    $oldSettings = $old_index->getSettings();
+                }
+                catch (\Exception $e) {
+                    $oldSettings = [];
+                }
+
+                unset($oldSettings['replicas']);
+                unset($oldSettings['slaves']);
+
+                $newSettings = $oldSettings;
+
+                foreach ($settings as $settingName => $settingValue) {
+                    $newSettings[$settingName] = $settingValue;
+                }
+
+                $settings = $newSettings;
+            }
+
+            if ($b && isset($settings['replicas'])) {
+                $settings['replicas'] = array_map(function ($indexName) use ($modelHelper) {
+                    return $modelHelper->getFinalIndexName($this, $indexName);
+                }, $settings['replicas']);
+            } elseif ($b && isset($settings['slaves'])) {
+                // Backward compatibility
                 $settings['slaves'] = array_map(function ($indexName) use ($modelHelper) {
                     return $modelHelper->getFinalIndexName($this, $indexName);
                 }, $settings['slaves']);
@@ -178,6 +222,13 @@ trait AlgoliaEloquentTrait
                 $index->clearSynonyms(true);
             }
 
+            // If we move the index the setSettings should not contains slave or replica.
+            if ($setToTmpIndices && $b) {
+                $b = false;
+                unset($settings['replicas']);
+                unset($settings['slaves']); // backward compatibility
+            }
+
             if (count(array_keys($settings)) > 0) {
                 // Synonyms cannot be pushed into "setSettings", it's got rejected from API and throwing exception
                 // Synonyms cannot be removed directly from $settings var, because then synonym would not be set to other indices
@@ -187,17 +238,18 @@ trait AlgoliaEloquentTrait
                 $index->setSettings($settingsWithoutSynonyms);
             }
 
-            if ($b && isset($settings['slaves'])) {
+            if ($b) {
                 $b = false;
-                unset($settings['slaves']);
+                unset($settings['replicas']);
+                unset($settings['slaves']); // backward compatibility
             }
         }
 
-        foreach ($slaves as $slave) {
-            if (isset($slaves_settings[$slave])) {
-                $index = $modelHelper->getIndices($this, $slave)[0];
+        foreach ($replicas as $replica) {
+            if (isset($replicas_settings[$replica])) {
+                $index = $modelHelper->getIndices($this, $replica)[0];
 
-                $s = array_merge($settings, $slaves_settings[$slave]);
+                $s = array_merge($settings, $replicas_settings[$replica]);
                 unset($s['synonyms']);
 
                 if (count(array_keys($s)) > 0)

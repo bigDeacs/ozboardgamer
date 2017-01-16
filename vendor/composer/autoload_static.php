@@ -55,6 +55,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
         ),
         'M' => 
@@ -147,6 +148,10 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'React\\Promise\\' => 
         array (
             0 => __DIR__ . '/..' . '/react/promise/src',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'Psr\\Http\\Message\\' => 
         array (
@@ -279,10 +284,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
             array (
                 0 => __DIR__ . '/..' . '/psy/psysh/src',
             ),
-            'Psr\\Log\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/psr/log',
-            ),
             'Prophecy\\' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
@@ -312,6 +313,13 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
             'Guzzle' => 
             array (
                 0 => __DIR__ . '/..' . '/guzzle/guzzle/src',
+            ),
+        ),
+        'F' => 
+        array (
+            'Flynsarmy\\CsvSeeder\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/flynsarmy/csv-seeder/src',
             ),
         ),
         'D' => 
@@ -415,6 +423,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'CreateOffersTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_19_093948_create_offers_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_083221_create_posts_table.php',
+        'CreateProductsTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_13_153921_create_products_table.php',
         'CreatePublishersTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_07_083308_create_publishers_table.php',
         'CreateQuizTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_19_010132_create_quiz_table.php',
         'CreateStoresTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_22_061629_create_stores_table.php',
@@ -791,6 +800,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'PHP_Token_STRING' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_STRING_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_STRING_VARNAME' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_SUPER' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_SWITCH' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_Stream' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token/Stream.php',
         'PHP_Token_Stream_CachingFactory' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php',
@@ -805,6 +815,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'PHP_Token_UNSET' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_UNSET_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_USE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_USE_FUNCTION' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_VAR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_VARIABLE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_WHERE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
