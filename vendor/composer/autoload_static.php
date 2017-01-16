@@ -833,6 +833,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'ProductSeeder' => __DIR__ . '/../..' . '/database/seeds/ProductSeeder.php',
         'RemoveNameFromQusetionTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_19_051110_remove_name_from_qusetion_table.php',
         'SebastianBergmann\\Comparator\\ArrayComparator' => __DIR__ . '/..' . '/sebastian/comparator/src/ArrayComparator.php',
         'SebastianBergmann\\Comparator\\Comparator' => __DIR__ . '/..' . '/sebastian/comparator/src/Comparator.php',
