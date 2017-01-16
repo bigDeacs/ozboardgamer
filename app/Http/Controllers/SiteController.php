@@ -919,11 +919,19 @@ class SiteController extends Controller {
 			return view('privacy');
 		}	
 
-		public function products()
+		public function shop()
 		{				
-			$products = Product::all();
-			dd($products);
-			return view('products', compact('products'));
+			if(Request::has('sort'))
+			{
+			    $pieces = explode("-", Request::input('sort'));
+			    $sort = $pieces[0];
+			    $direction = $pieces[1];
+			} else {
+				$sort = 'name';
+				$direction = 'asc';
+			}
+			$products = Product::all()->orderBy($sort, $direction)->paginate(12);		
+			return view('shop', compact('products'));
 		}
 
 }
