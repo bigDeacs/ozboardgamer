@@ -94,7 +94,6 @@ Route::group(['prefix' => 'admin'], function()
 
 // Front Facing Routes
 Route::get('/products', 'SiteController@products');
-Route::get('/productsImport', 'ProductSeeder@run');
 Route::get('/privacy', 'SiteController@privacy');
 Route::get('/games/{type?}/{slug?}', 'SiteController@game');
 Route::get('/families/{slug?}', 'SiteController@family');
