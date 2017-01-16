@@ -20,7 +20,7 @@ class ProductSeeder extends CsvSeeder
             34 => 'stock'
 
         ];
-        $this->filename = public_path().'/products.csv';
+        $this->filename = storage_path().'/uploads/products.csv';
     }
 
     public function run()

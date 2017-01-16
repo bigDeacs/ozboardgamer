@@ -74,6 +74,8 @@ Route::group(['prefix' => 'admin'], function()
 	Route::resource('offers', 'OfferController');
 	Route::get('offers/{offers}/activate', ['as' => 'offers.activate', 'uses' => 'OfferController@activate']);
 	Route::get('offers/{offers}/deactivate', ['as' => 'offers.deactivate', 'uses' => 'OfferController@deactivate']);
+	Route::resource('products', 'ProductsController');
+	Route::get('products/add', ['as' => 'products.add', 'uses' => 'ProductsController@add']);
 
 	Route::resource('quizzes', 'QuizController');
 	Route::get('quizzes/{quizzes}/activate', ['as' => 'quizzes.activate', 'uses' => 'QuizController@activate']);
