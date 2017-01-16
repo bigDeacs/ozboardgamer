@@ -23,7 +23,7 @@
 				<div class="row">
 			      	<div class="col-sm-9 col-xs-12">
 			      		<h1>Buy Board Games</h1>
-				      	@foreach($products as $product)
+				      	@foreach($products as $key => $product)
 							<div class="col-sm-3 col-xs-12">
 								<a href="{!! $product->slug !!}" target="_blank">
 					    			<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
