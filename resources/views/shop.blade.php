@@ -19,10 +19,10 @@
 	</div>
 	<div class="container">
 		<div class="row">
-	      	<div class="col-sm-5 col-xs-12">
+	      	<div class="col-sm-8 col-xs-12">
 	      		<h1>Buy Board Games</h1>
 	      	</div>
-            <div class="col-offset-sm-4 col-sm-3 col-xs-12">
+            <div class="col-sm-3 col-xs-12">
               	<span>Sort by: </span>
 		      	<form id="sortForm">
 		      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
@@ -65,16 +65,19 @@
 		</div>
   		<div class="row">
       	@foreach($products as $key => $product)
-			<div class="col-sm-3 col-xs-12">
-				<a href="{!! $product->slug !!}" target="_blank">
-	    			<img src="{{ $product->thumb1x }}" class="img-responsive" />
-	    		</a>
-		    	<p class="text-center"><strong><a href="{!! $product->slug !!}" target="_blank">{!! $product->name !!}</a></strong></p>
-		    	<p class="text-center"><strong>{!! $product->price !!}</strong></p>
-			</div>
-            @if(($key + 1) % 4 == 0)
-              </div><div class="row">
-            @endif
+      		@if($product->price > 0)
+				<div class="col-sm-3 col-xs-12">
+					<a href="{!! $product->slug !!}" target="_blank">
+		    			<img src="{{ $product->thumb1x }}" class="img-responsive" />
+		    			<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
+		    		</a>
+			    	<p class="text-center"><strong><a href="{!! $product->slug !!}" target="_blank">{!! $product->name !!}</a></strong></p>
+			    	<p class="text-center"><strong>{!! $product->price !!}</strong></p>		    	
+				</div>
+	            @if(($key + 1) % 4 == 0)
+	              </div><div class="row">
+	            @endif
+	        @endif
 		@endforeach
 		</div>
 		<hr />
