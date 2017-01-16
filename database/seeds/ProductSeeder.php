@@ -14,7 +14,7 @@ class ProductSeeder extends CsvSeeder
             8 => 'slug',            
             14 => 'thumb1x',
             16 => 'thumb2x',
-            17 => 'price',
+            number_format(17, 2, '.', '') => 'price',
         ];
         $this->filename = public_path().'/products.csv';
     }
