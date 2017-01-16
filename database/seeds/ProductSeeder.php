@@ -37,13 +37,7 @@ class ProductSeeder extends CsvSeeder
         {
             DB::table($this->table)
             ->where('id', $product->id)
-            ->update(['price' => preg_replace('/\b(AUD|,)\b/i', '', $product->priceDisplay), 'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 'thumb2x' => str_replace('http://', 'https://', $product->thumb2x), 'savings' => 0]);
-            if(preg_replace('/\b(AUD|,)\b/i', '', $product->saleDisplay) !== 0 || preg_replace('/\b(AUD|,)\b/i', '', $product->saleDisplay) !== '' || preg_replace('/\b(AUD|,)\b/i', '', $product->saleDisplay) !== null)
-            {
-                DB::table($this->table)
-                ->where('id', $product->id)
-                ->update(['savings' => ((preg_replace('/\b(AUD|,)\b/i', '', $product->saleDisplay) / preg_replace('/\b(AUD|,)\b/i', '', $product->priceDisplay)) * 100)]);
-            }          
+            ->update(['price' => preg_replace('/\b(AUD|,)\b/i', '', $product->priceDisplay), 'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 'thumb2x' => str_replace('http://', 'https://', $product->thumb2x)]);      
         }
     }
 }
