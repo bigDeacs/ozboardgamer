@@ -19,87 +19,90 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12">
-				<div class="row">
-			      	<div class="col-sm-9 col-xs-12">
-			      		<h1>Buy Board Games</h1>
-			      		@if(!empty($data['offers']))
-					       <div id="offerCarousel" class="vertical-slider carousel vertical slide row hidden-xs" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
-					          <!-- Carousel items -->
-					          <div class="carousel-inner">
-					            @foreach($data['offers'] as $key => $offer)
-					                <div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0; padding: 20px 0 40px 0;">
-					                  <div class="col-xs-12 text-center">
-					                    <strong>
-					                        {{ $offer->name }} 
-					                        @if($offer->code !== '' || $offer->code !== null)
-					                            | {{ $offer->code }}
-					                        @endif
-					                    </strong>					                    
-					                  </div>
-					                </div>
-					            @endforeach
-					          </div>
-					        </div>
-					    @endif
-			      		<div class="row">
-				      	@foreach($products as $key => $product)
-							<div class="col-sm-3 col-xs-12">
-								<a href="{!! $product->slug !!}" target="_blank">
-					    			<img src="{{ $product->thumb1x }}" class="img-responsive" />
-					    		</a>
-						    	<p class="text-center"><strong><a href="{!! $product->slug !!}" target="_blank">{!! $product->name !!}</a></strong></p>
-						    	<p class="text-center"><strong>{!! $product->price !!}</strong></p>
-							</div>
-				            @if(($key + 1) % 4 == 0)
-				              </div><div class="row">
-				            @endif
-						@endforeach
-			      	</div>
-	            	<div class="col-sm-3 col-xs-12">
-	              		<span>Sort by: </span>
-				      	<form id="sortForm">
-				      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
-				      		<select class="form-control" onchange="sortProducts()" name="sort" id="sort">
-	  					  		<option value="name-asc" {{ (Request::input('sort') == 'name-asc') ? 'selected' : "" }}>Name ASC</option>
-	  					  		<option value="name-desc" {{ (Request::input('sort') == 'name-desc') ? 'selected' : "" }}>Name DESC</option>
-	  						  	<option value="rating-asc" {{ (Request::input('sort') == 'price-asc') ? 'selected' : "" }}>Price ASC</option>
-	  						  	<option value="rating-desc" {{ (Request::input('sort') == 'price-desc') ? 'selected' : "" }}>Price DESC</option>
-    						</select>
-    					</form>
-    					<script>
-    						function sortProducts() {
-    					        document.getElementById("sortForm").submit();
-    					    }
-    					</script>
-    					<hr class="hidden-xs" />   					
-		                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>   
-						<hr class="hidden-xs" /> 
-						<!-- Home Page Tower Ad Right -->
-		                <ins class="adsbygoogle hidden-xs"
-		                     style="display:block"
-		                     data-ad-client="ca-pub-5206537313688631"
-		                     data-ad-slot="2828464904"
-		                     data-ad-format="auto"></ins>
-		                <script>
-		                (adsbygoogle = window.adsbygoogle || []).push({});
-		                </script>        
-				      </div>			      
-			    </div>			    
-				<hr />
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="text-center">
-							@if(isset($_GET['sort']))
-								{!! $products->appends(['sort' => $_GET['sort']])->render() !!}
-							@else
-								{!! $products->render() !!}
-							@endif
-						</div>
-					</div>
-				</div>				
+	      	<div class="col-sm-5 col-xs-12">
+	      		<h1>Buy Board Games</h1>
+	      	</div>
+            <div class="col-offset-sm-4 col-sm-3 col-xs-12">
+              	<span>Sort by: </span>
+		      	<form id="sortForm">
+		      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
+		      		<select class="form-control" onchange="sortProducts()" name="sort" id="sort">
+					  		<option value="name-asc" {{ (Request::input('sort') == 'name-asc') ? 'selected' : "" }}>Name ASC</option>
+					  		<option value="name-desc" {{ (Request::input('sort') == 'name-desc') ? 'selected' : "" }}>Name DESC</option>
+						  	<option value="price-asc" {{ (Request::input('sort') == 'price-asc') ? 'selected' : "" }}>Price ASC</option>
+						  	<option value="price-desc" {{ (Request::input('sort') == 'price-desc') ? 'selected' : "" }}>Price DESC</option>
+					</select>
+				</form>
+				<script>
+					function sortProducts() {
+				        document.getElementById("sortForm").submit();
+				    }
+				</script>
+      		</div>					      
+    	</div>
+  		<div class="row">
+  			<div class="col-sm-12 hidden-xs">
+	      		@if(!empty($data['offers']))
+			       <div id="offerCarousel" class="vertical-slider carousel vertical slide row hidden-xs" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
+			          <!-- Carousel items -->
+			          <div class="carousel-inner">
+			            @foreach($data['offers'] as $key => $offer)
+			                <div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0; padding: 20px 0 40px 0;">
+			                  <div class="col-xs-12 text-center">
+			                    <strong>
+			                        {{ $offer->name }} 
+			                        @if($offer->code !== '' || $offer->code !== null)
+			                            | {{ $offer->code }}
+			                        @endif
+			                    </strong>					                    
+			                  </div>
+			                </div>
+			            @endforeach
+			          </div>
+			        </div>
+	    		@endif
+	    	</div>
+		</div>
+  		<div class="row">
+      	@foreach($products as $key => $product)
+			<div class="col-sm-3 col-xs-12">
+				<a href="{!! $product->slug !!}" target="_blank">
+	    			<img src="{{ $product->thumb1x }}" class="img-responsive" />
+	    		</a>
+		    	<p class="text-center"><strong><a href="{!! $product->slug !!}" target="_blank">{!! $product->name !!}</a></strong></p>
+		    	<p class="text-center"><strong>{!! $product->price !!}</strong></p>
+			</div>
+            @if(($key + 1) % 4 == 0)
+              </div><div class="row">
+            @endif
+		@endforeach
+		</div>
+		<hr />
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="text-center">
+      @if(isset($_GET['sort']))
+						{!! $products->appends(['sort' => $_GET['sort']])->render() !!}
+					@else
+						{!! $products->render() !!}
+					@endif
+				</div>
 			</div>
 		</div>
+		<div class="row">
+            <div class="col-xs-12">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Footer Ad -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-5206537313688631"
+                     data-ad-slot="2769589305"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
 	</div>
 @endsection
 
