@@ -40,9 +40,9 @@
 				</script>
       		</div>					      
     	</div>
-  		<div class="row">
-  			<div class="col-sm-12 hidden-xs">
-	      		@if(!empty($data['offers']))
+    	@if(!empty($data['offers']))
+  			<div class="row">
+  				<div class="col-sm-12 hidden-xs">
 			       <div id="offerCarousel" class="vertical-slider carousel vertical slide row hidden-xs" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
 			          <!-- Carousel items -->
 			          <div class="carousel-inner">
@@ -59,10 +59,11 @@
 			                </div>
 			            @endforeach
 			          </div>
-			        </div>
-	    		@endif
-	    	</div>
-		</div>
+			        </div>	    		
+	    		</div>
+			</div>
+			<br />
+		@endif
   		<div class="row">
       	@foreach($products as $key => $product)
       		@if($product->price > 0)
