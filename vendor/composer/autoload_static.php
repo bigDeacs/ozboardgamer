@@ -373,6 +373,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'AddResultIdToAnswersTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_22_001252_add_resultId_to_answers_table.php',
         'AddRoleToGameUser' => __DIR__ . '/../..' . '/database/migrations/2016_06_14_034655_add_role_to_game_user.php',
         'AddRoleToUsers' => __DIR__ . '/../..' . '/database/migrations/2016_06_14_015458_add_role_to_users.php',
+        'AddSaldepriceProducts' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_162202_add_saldeprice_products.php',
         'AddSalepriceProducts' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_153449_add_saleprice_products.php',
         'AddSizesToGamesTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_152113_add_sizes_to_games_table.php',
         'AddSizesToStoresTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_11_155620_add_sizes_to_stores_table.php',

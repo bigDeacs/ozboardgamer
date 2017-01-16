@@ -20,6 +20,7 @@ class Product extends Model {
 		'name', 
         'slug', 
 		'price', 
+		'sale',
 		'thumb1x',
 		'thumb2x',
 		'category'
