@@ -60,7 +60,7 @@ class StoreController extends Controller
                         "objectID" => $row['id'],
                         "name" => $row['name'],
                         "slug" => "/stores/".$row['slug'],
-                        "thumb" => $row['thumb'],
+                        "thumb" => $row['thumb1x'],
                         "street" => $row['street'],
                         "suburb" => $row['suburb'],
                         "state" => $state,

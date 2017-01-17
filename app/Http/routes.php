@@ -77,6 +77,7 @@ Route::group(['prefix' => 'admin'], function()
 	Route::get('products', ['as' => 'products.index', 'uses' => 'ProductController@index']);
 	Route::get('products/add', ['as' => 'products.add', 'uses' => 'ProductController@add']);
 	Route::post('products', ['as' => 'products.update', 'uses' => 'ProductController@update']);
+	Route::get('pushProducts', 'ProductController@addToAlgolia');
 
 	Route::resource('quizzes', 'QuizController');
 	Route::get('quizzes/{quizzes}/activate', ['as' => 'quizzes.activate', 'uses' => 'QuizController@activate']);

@@ -15,7 +15,7 @@
 			    <h1 class="panel-title"><strong>Products</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right"> <a href="/admin/products/add" class="btn btn-primary">Update Products <i class="fa fa-plus-square"></i></a></div>
+			  	<div class="pull-right"><a href="/admin/pushProducts" class="btn btn-danger">Push To Algolia <i class="fa fa-cloud-upload"></i></a> <a href="/admin/products/add" class="btn btn-primary">Update Products <i class="fa fa-plus-square"></i></a></div>
 			  	<div style="clear:both;"></div>
 			  	<div class="row">
 					<div class="col-sm-12">

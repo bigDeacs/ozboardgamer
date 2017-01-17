@@ -64,7 +64,7 @@ class GameController extends Controller
                         "name" => $row['name'],
                         "published" => $row['published'],
                         "slug" => "/games/".$row->types()->firstOrFail()->slug."/".$row['slug'],
-                        "thumb" => $row['thumb'],
+                        "thumb" => $row['thumb1x'],
                         "_mechanics" => $mechanics,
                         "_themes" => $themes,
                         "_types" => $types,
