@@ -22,10 +22,12 @@
 						<p><strong>Products:</strong></p>
 						<div class="table-responsive">
 						  <table class="table dataTable table-striped table-hover">
-						  	<col width="20%">
+						  	<col width="30%">
+  							<col width="15%">
+  							<col width="15%">
+  							<col width="10%">
+  							<col width="10%">
   							<col width="20%">
-  							<col width="20%">
-  							<col width="40%">
 						    <thead>
 						    	<tr>
 						    		<th>Name</th>
@@ -42,13 +44,10 @@
 									<tr class="success">
 							    		<td scope="row">{{ $product->name }}</td>
 							    		<td>${!! $product->priceDisplay !!}</td>
-							    		<td>${!! $product->saleDisplay !!}</td>
-							    		<td>{!! $product->savings !!}%</td>
+							    		<td>@if($product->sale > 0)${!! $product->saleDisplay !!}@endif</td>
+							    		<td>{!! round($product->savings, 2) !!}%</td>
 										<td><a href="{!! $product->slug !!}" target="_blank">Link</a></td>
 										<td><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></td>
-										<td>
-							    			<a href="/admin/products/add" class="btn btn-warning">Update <i class="fa fa-pencil-square-o"></i></a>
-							    		</td>
 							    	</tr>
 						    	@endforeach
 						    </tbody>
