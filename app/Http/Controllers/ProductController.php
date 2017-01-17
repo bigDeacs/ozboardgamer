@@ -46,7 +46,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(GameRequest $request)
+    public function update(ProductRequest $request)
     {
         if($request->hasFile('csv'))
         {
