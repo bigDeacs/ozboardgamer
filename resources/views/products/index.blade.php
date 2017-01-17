@@ -36,7 +36,6 @@
 						    		<th>Savings</th>
 						    		<th>Link</th>
 						    		<th></th>
-						    		<th></th>
 						    	</tr>
 						    </thead>
 						    <tbody>
