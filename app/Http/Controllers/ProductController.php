@@ -74,18 +74,24 @@ class ProductController extends Controller
             foreach ($results as $row)
             {                              
                 // select the identifier of this row
-                $products[] = (array(
-                    "objectID" => $row['id'],
-                    "name" => $row['name'],
-                    "price" => 
-                        if($product->sale > 0) {
-                            $row['saleDisplay']
-                        } else {
-                            $row['priceDisplay']
-                        },
-                    "slug" => $row['slug'],
-                    "thumb" => $row['thumb1x']
-                ));
+                if($row['sale'] > 0) {
+                    $products[] = (array(
+                        "objectID" => $row['id'],
+                        "name" => $row['name'],
+                        "price" => $row['saleDisplay'],                        
+                        "slug" => $row['slug'],
+                        "thumb" => $row['thumb1x']
+                    ));
+                } else {
+                    $products[] = (array(
+                        "objectID" => $row['id'],
+                        "name" => $row['name'],
+                        "price" => $row['priceDisplay'],                        
+                        "slug" => $row['slug'],
+                        "thumb" => $row['thumb1x']
+                    ));
+                }
+                
             }
 
             $index->saveObjects($products);
