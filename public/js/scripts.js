@@ -75,6 +75,7 @@ if ( typeof define === 'function' && define.amd ) {
 var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
       var games = client.initIndex('games');
       var stores = client.initIndex('stores');
+      var products = client.initIndex('products');
 
       autocomplete('#search-terms', {hint: false}, [
         {
@@ -82,7 +83,7 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
           displayKey: 'name',
           templates: {
             header: '<div class="category">Games</div>',
-            footer: '<div class="pull-right col-lg-3 col-md-3 col-sm-3 col-xs-3">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
+            footer: '<div class="pull-right col-xs-6">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
             suggestion: function(suggestion) {
               console.log(suggestion);
               return '<a href="'+suggestion.slug+'"><div class="row">'+
@@ -103,7 +104,7 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
           displayKey: 'name',
           templates: {
             header: '<div class="category">Stores</div>',
-            footer: '<div class="pull-right col-lg-6 col-md-6 col-sm-6 col-xs-3">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
+            footer: '<div class="pull-right col-xs-6">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
             suggestion: function(suggestion) {
               console.log(suggestion);
               return '<a href="'+suggestion.slug+'"><div class="row">'+
@@ -119,11 +120,11 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
 
       autocomplete('#search-products', {hint: false}, [
         {
-          source: autocomplete.sources.hits(stores, {hitsPerPage: 6}),
+          source: autocomplete.sources.hits(products, {hitsPerPage: 6}),
           displayKey: 'name',
           templates: {
             header: '<div class="category">Products</div>',
-            footer: '<div class="pull-right col-lg-6 col-md-6 col-sm-6 col-xs-3">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
+            footer: '<div class="pull-right col-xs-6">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
             suggestion: function(suggestion) {
               console.log(suggestion);
               return '<a href="'+suggestion.slug+'"><div class="row">'+
