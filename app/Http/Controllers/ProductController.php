@@ -66,31 +66,15 @@ class ProductController extends Controller
         $client = new \AlgoliaSearch\Client("LAC06A9QLK", "9d6a129d0c8ce00eaf4ceb19b6ad1bab");
         $index = $client->initIndex('products');
 
-        $results = Product::get();
+        $results = Product::where('price', '>', '0')->get();
 
-        if ($results)
-        {
-            // iterate over results and send them by batch of 10000 elements
-            foreach ($results as $row)
-            {
-                if ($row['status'] == 1)
-                {                
-                    // select the identifier of this row
-                    $index->saveObject(array(
-                        "objectID" => $row['id'],
-                        "name" => $row['name'],
-                        "savings" => $row['savings'],
-                        "sale" => $row['sale'],
-                        "price" => $row['price'],
-                        "slug" => $row['slug'],
-                        "thumb" => $row['thumb1x']
-                    ));
-                } else {
-                    // delete the record with objectID="myID1"
-                    $index->deleteObject($row['id']);
-                }
-            }
-        }
+        $results = Product::where('price', '>', '0')->get()->map(function($item) {
+            $item->objectID = $item->id;
+            return (array) $item;
+        });
+
+        $search->$index->saveObjects($results);
+
         return redirect('/admin/products');
     }
 
