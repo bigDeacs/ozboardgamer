@@ -80,6 +80,8 @@ class ProductController extends Controller
                     "savings" => $row['savings'],
                     "sale" => $row['sale'],
                     "price" => $row['price'],
+                    "saleDisplay" => $row['saleDisplay'],
+                    "priceDisplay" => $row['priceDisplay'],
                     "slug" => $row['slug'],
                     "thumb" => $row['thumb1x']
                 ));
