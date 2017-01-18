@@ -77,11 +77,12 @@ class ProductController extends Controller
                 $products[] = (array(
                     "objectID" => $row['id'],
                     "name" => $row['name'],
-                    "savings" => $row['savings'],
-                    "sale" => $row['sale'],
-                    "price" => $row['price'],
-                    "saleDisplay" => $row['saleDisplay'],
-                    "priceDisplay" => $row['priceDisplay'],
+                    "price" => 
+                        if($product->sale > 0) {
+                            $row['saleDisplay']
+                        } else {
+                            $row['priceDisplay']
+                        },
                     "slug" => $row['slug'],
                     "thumb" => $row['thumb1x']
                 ));
