@@ -66,14 +66,12 @@ class ProductController extends Controller
         $client = new \AlgoliaSearch\Client("LAC06A9QLK", "9d6a129d0c8ce00eaf4ceb19b6ad1bab");
         $index = $client->initIndex('products');
 
-        $results = Product::where('price', '>', '0')->get();
-
         $results = Product::where('price', '>', '0')->get()->map(function($item) {
             $item->objectID = $item->id;
             return (array) $item;
         });
 
-        $search->$index->saveObjects($results);
+        $index->saveObjects($results);
 
         return redirect('/admin/products');
     }
