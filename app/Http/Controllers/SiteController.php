@@ -501,6 +501,7 @@ class SiteController extends Controller {
          {
             $sitemap->add(secure_url('/stores') . '/' . $store->slug, $store->updated_at, '0.7', 'monthly');
          }
+          $sitemap->add(secure_url('/shop'), date("Y/m/d"), '0.8', 'monthly');
 
 				 $sitemap->add(secure_url('/quizzes'), date("Y/m/d"), '0.8', 'daily');
 				 foreach ($quizzes as $quiz)
