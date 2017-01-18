@@ -71,23 +71,23 @@ class ProductController extends Controller
         if ($results)
         {
             // iterate over results and send them by batch of 10000 elements
-            foreach ($results->chunk(500) as $chunk)
-            {              
-                foreach ($chunk as $row)
-                {
-                    // select the identifier of this row
-                    $index->saveObject(array(
-                        "objectID" => $row['id'],
-                        "name" => $row['name'],
-                        "savings" => $row['savings'],
-                        "sale" => $row['sale'],
-                        "price" => $row['price'],
-                        "slug" => $row['slug'],
-                        "thumb" => $row['thumb1x']
-                    ));
-                }
+            foreach ($results as $row)
+            {                              
+                // select the identifier of this row
+                $products[] = (array(
+                    "objectID" => $row['id'],
+                    "name" => $row['name'],
+                    "savings" => $row['savings'],
+                    "sale" => $row['sale'],
+                    "price" => $row['price'],
+                    "slug" => $row['slug'],
+                    "thumb" => $row['thumb1x']
+                ));
             }
+
+            $index->saveObjects($products);
         }
+
         return redirect('/admin/products');
     }
 
