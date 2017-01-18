@@ -83,7 +83,7 @@ class ProductController extends Controller
                         "sale" => $row['sale'],
                         "price" => $row['price'],
                         "slug" => $row['slug'],
-                        "thumb" => $row['thumb1x'])
+                        "thumb" => $row['thumb1x']
                     ));
                 } else {
                     // delete the record with objectID="myID1"
