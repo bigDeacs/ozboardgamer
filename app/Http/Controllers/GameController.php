@@ -28,56 +28,51 @@ class GameController extends Controller
         $client = new \AlgoliaSearch\Client("LAC06A9QLK", "9d6a129d0c8ce00eaf4ceb19b6ad1bab");
         $index = $client->initIndex('games');
 
-        $results = Game::with('types')->get();
-
+        $results = Game::where('status', '=', '1')->with('types')->get();
+        
         if ($results)
         {
             // iterate over results and send them by batch of 10000 elements
             foreach ($results as $row)
-            {
-                if ($row['status'] == 1)
-                {
-                    $mechanics = array();
-                    foreach($row->mechanics()->get() as $mechanic) {
-                        $mechanics[]["name"] = $mechanic->name;
-                    };
-                    $themes = array();
-                    foreach($row->themes()->get() as $theme) {
-                        $themes[]["name"] = $theme->name;
-                    };
-                    $types = array();
-                    foreach($row->types()->get() as $type) {
-                        $types[]["name"] = $type->name;
-                    };
-                    $designers = array();
-                    foreach($row->designers()->get() as $designer) {
-                        $designers[]["name"] = $designer->name;
-                    };
-                    $publishers = array();
-                    foreach($row->publishers()->get() as $publisher) {
-                        $publishers[]["name"] = $publisher->name;
-                    };
-
-                    // select the identifier of this row
-                    $index->saveObject(array(
-                        "objectID" => $row['id'],
-                        "name" => $row['name'],
-                        "published" => $row['published'],
-                        "slug" => "/games/".$row->types()->firstOrFail()->slug."/".$row['slug'],
-                        "thumb" => $row['thumb1x'],
-                        "_mechanics" => $mechanics,
-                        "_themes" => $themes,
-                        "_types" => $types,
-                        "_designers" => $designers,
-                        "_publishers" => $publishers,
-                        "rating" => floatval($row['rating'])
-                    ));
-                } else {
-                    // delete the record with objectID="myID1"
-                    $index->deleteObject($row['id']);
-                }
+            {                              
+                $mechanics = array();
+                foreach($row->mechanics()->get() as $mechanic) {
+                    $mechanics[]["name"] = $mechanic->name;
+                };
+                $themes = array();
+                foreach($row->themes()->get() as $theme) {
+                    $themes[]["name"] = $theme->name;
+                };
+                $types = array();
+                foreach($row->types()->get() as $type) {
+                    $types[]["name"] = $type->name;
+                };
+                $designers = array();
+                foreach($row->designers()->get() as $designer) {
+                    $designers[]["name"] = $designer->name;
+                };
+                $publishers = array();
+                foreach($row->publishers()->get() as $publisher) {
+                    $publishers[]["name"] = $publisher->name;
+                };
+                // select the identifier of this row
+                $games[] = (array(
+                    "objectID" => $row['id'],
+                    "name" => $row['name'],
+                    "published" => $row['published'],
+                    "slug" => "/games/".$row->types()->firstOrFail()->slug."/".$row['slug'],
+                    "thumb" => $row['thumb1x'],
+                    "_mechanics" => $mechanics,
+                    "_themes" => $themes,
+                    "_types" => $types,
+                    "_designers" => $designers,
+                    "_publishers" => $publishers,
+                    "rating" => floatval($row['rating'])
+                ));
             }
-        }
+
+            $index->saveObjects($games);
+        }    
         return redirect('/admin/games');
     }
 

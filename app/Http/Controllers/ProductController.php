@@ -87,7 +87,6 @@ class ProductController extends Controller
 
             $index->saveObjects($products);
         }
-
         return redirect('/admin/products');
     }
 

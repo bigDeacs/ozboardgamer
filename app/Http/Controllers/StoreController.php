@@ -22,58 +22,54 @@ class StoreController extends Controller
         $client = new \AlgoliaSearch\Client("LAC06A9QLK", "9d6a129d0c8ce00eaf4ceb19b6ad1bab");
         $index = $client->initIndex('stores');
 
-        $results = Store::get();
-
+        $results = Store::where('status', '=', '1')->get();
+        
         if ($results)
         {
             // iterate over results and send them by batch of 10000 elements
             foreach ($results as $row)
-            {
-                if ($row['status'] == 1)
-                {
-                    if($row['state'] == 'ACT') {
-                        $state = 'Australian Capital Territory';
-                    }
-                    if($row['state'] == 'NSW') {
-                        $state = 'New South Wales';
-                    }
-                    if($row['state'] == 'NT') {
-                        $state = 'Northern Territory';
-                    }
-                    if($row['state'] == 'QLD') {
-                        $state = 'Queensland';
-                    }
-                    if($row['state'] == 'SA') {
-                        $state = 'South Australia';
-                    }
-                    if($row['state'] == 'TAS') {
-                        $state = 'Tasmania';
-                    }
-                    if($row['state'] == 'VIC') {
-                        $state = 'Victoria';
-                    }
-                    if($row['state'] == 'WA') {
-                        $state = 'Western Australia';
-                    }
-                    // select the identifier of this row
-                    $index->saveObject(array(
-                        "objectID" => $row['id'],
-                        "name" => $row['name'],
-                        "slug" => "/stores/".$row['slug'],
-                        "thumb" => $row['thumb1x'],
-                        "street" => $row['street'],
-                        "suburb" => $row['suburb'],
-                        "state" => $state,
-                        "abr" => $row['state'],
-                        "postcode" => $row['postcode'],
-                        "_geoloc" => array('lat' => floatval($row['latitude']), 'lng' => floatval($row['longitude']))
-                    ));
-                } else {
-                    // delete the record with objectID="myID1"
-                    $index->deleteObject($row['id']);
+            {                              
+                if($row['state'] == 'ACT') {
+                    $state = 'Australian Capital Territory';
                 }
+                if($row['state'] == 'NSW') {
+                    $state = 'New South Wales';
+                }
+                if($row['state'] == 'NT') {
+                    $state = 'Northern Territory';
+                }
+                if($row['state'] == 'QLD') {
+                    $state = 'Queensland';
+                }
+                if($row['state'] == 'SA') {
+                    $state = 'South Australia';
+                }
+                if($row['state'] == 'TAS') {
+                    $state = 'Tasmania';
+                }
+                if($row['state'] == 'VIC') {
+                    $state = 'Victoria';
+                }
+                if($row['state'] == 'WA') {
+                    $state = 'Western Australia';
+                }
+                // select the identifier of this row
+                $stores[] = (array(
+                    "objectID" => $row['id'],
+                    "name" => $row['name'],
+                    "slug" => "/stores/".$row['slug'],
+                    "thumb" => $row['thumb1x'],
+                    "street" => $row['street'],
+                    "suburb" => $row['suburb'],
+                    "state" => $state,
+                    "abr" => $row['state'],
+                    "postcode" => $row['postcode'],
+                    "_geoloc" => array('lat' => floatval($row['latitude']), 'lng' => floatval($row['longitude']))
+                ));
             }
-        }
+
+            $index->saveObjects($stores);
+        }    
         return redirect('/admin/stores');
     }
 
