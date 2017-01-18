@@ -117,6 +117,26 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
         console.log(suggestion, dataset);
       });
 
+      autocomplete('#search-products', {hint: false}, [
+        {
+          source: autocomplete.sources.hits(stores, {hitsPerPage: 6}),
+          displayKey: 'name',
+          templates: {
+            header: '<div class="category">Products</div>',
+            footer: '<div class="pull-right col-lg-6 col-md-6 col-sm-6 col-xs-3">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
+            suggestion: function(suggestion) {
+              console.log(suggestion);
+              return '<a href="'+suggestion.slug+'"><div class="row">'+
+                '<div class="col-xs-3"><img src="'+suggestion.thumb+'" class="img-responsive" /></div>'+
+                '<div class="col-xs-9">'+suggestion._highlightResult.name.value+' ('+suggestion.abr+')'+'</div>'+
+              '</div></a>';
+            }
+          }
+        }
+      ]).on('autocomplete:selected', function(event, suggestion, dataset) {
+        console.log(suggestion, dataset);
+      });
+
 
 
       (function(window){

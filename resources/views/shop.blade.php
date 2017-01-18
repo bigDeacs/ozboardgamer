@@ -19,7 +19,7 @@
 	</div>
 	<div class="container">
 		<div class="row">
-	      	<div class="col-sm-9 col-xs-12">
+	      	<div class="col-sm-5 col-xs-12">
 	      		<h1>Buy Board Games</h1>
 	      	</div>
             <div class="col-sm-3 col-xs-12">
@@ -39,7 +39,13 @@
 				        document.getElementById("sortForm").submit();
 				    }
 				</script>
-      		</div>					      
+      		</div>		
+      		<div class="col-sm-4 col-xs-12">
+              <span>Search for product: </span>
+              <form id="search" action="#" method="post" style="width: 100%;">
+                  <input type="text" name="search-products" id="search-products" class="form-control" placeholder="Find products..." style="top: -5px;">
+              </form>
+            </div>			      
     	</div>
     	@if(!empty($data['offers']))
   			<div class="row">
