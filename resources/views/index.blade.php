@@ -21,13 +21,18 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
+            <div class="item active">
+                <a href="/shop?page=1&sort=savings-desc">
+                    <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/img/buy-online.jpg');"></div>
+                </a>
+            </div>
             @if($featured->isEmpty())
-                <div class="item active">
+                <div class="item">
                     <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/img/cover.jpg');"></div>
                 </div>
             @else
                 @foreach($featured as $key => $post)
-                    <div class="item {{ ($key == 0) ? 'active' : "" }}">
+                    <div class="item">
                         <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
                             <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/{{ $post->image }}');"></div>
                         </a>
