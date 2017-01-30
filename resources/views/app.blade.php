@@ -253,6 +253,7 @@
                                 <li>
                                     <a href="/quizzes">Quizzes</a>
                                 </li>
+                                <li class="footer-menu-divider">&sdot;</li>
                                 <li>
                                     <a href="/shop">Shop</a>
                                 </li>
