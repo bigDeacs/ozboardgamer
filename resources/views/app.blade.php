@@ -31,7 +31,7 @@
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
 	<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
-    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=19" rel="stylesheet">
+    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=20" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="https://assets.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<!-- Fonts -->
@@ -106,11 +106,8 @@
                     </div>
                     <div class="navbar-right">
                         <ul class="nav navbar-nav">                            
-                            <li>
-                                <a href="/">Home</a>
-                            </li>
                             <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Find a Game <span class="caret"></span></a>
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                 <li><a href="/games">Game Types</a></li>
                                 <li><a href="/mechanics">Mechanics</a></li>
@@ -121,7 +118,7 @@
                               </ul>
                             </li>
                             <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Read Articles <span class="caret"></span></a>
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                 <li><a href="/reviews">Reviews</a></li>
                                 <li><a href="/top10s">Top 10's</a></li>
@@ -131,24 +128,24 @@
                               </ul>
                             </li>
                             <li>
-                                <a href="/stores">Find a Store</a>
+                                <a href="/stores">Stores</a>
                             </li> 
-                            <li class="hidden-sm">
-                                <a href="/quizzes">Game Quizzes</a>
+                            <li class="hidden-md hidden-sm">
+                                <a href="/quizzes">Quizzes</a>
                             </li>
-                            <li>
-                                <a href="/shop">Buy Games</a>
+                            <li class="hidden-sm">
+                                <a href="/shop">Buy Online</a>
                             </li> 
-                            <li id="loginFB">
+                            <li id="loginFB" style="margin-bottom: 10px;">
                                 @if(Session::has('name'))
                                     <div class="btn-group">
-                                      <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
-                                      <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
+                                      <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary btn-sm" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
+                                      <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker btn-sm" title="Log Out"><i class="fa fa-sign-out"></i></a>
                                     </div>
                                 @else
                                     <div class="btn-group">
-                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login/Signup</a>
-                                      <button type="button" style="padding: 10px;" class="btn btn-primary-darker dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary btn-sm" title="Login">Login/Signup</a>
+                                      <button type="button" style="padding: 10px;" class="btn btn-primary-darker btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="caret"></span>
                                         <span class="sr-only">Toggle Dropdown</span>
                                       </button>
