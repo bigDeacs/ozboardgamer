@@ -22,18 +22,18 @@
         <div class="fade">
             <div">
                 <a href="/shop?page=1&sort=savings-desc">
-                    <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/img/buy-online.jpg');"></div>
+                    <img href="https://assets.ozboardgamer.com/img/buy-online.jpg');" class="img-responsive" />
                 </a>
             </div>
             @if($featured->isEmpty())
                 <div>
-                    <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/img/cover.jpg');"></div>
+                    <img href="https://assets.ozboardgamer.com/img/cover.jpg');" class="img-responsive" />
                 </div>
             @else
                 @foreach($featured as $key => $post)
                     <div>
                         <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-                            <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/{{ $post->image }}');"></div>
+                            <img href="https://assets.ozboardgamer.com/{{ $post->image }}');" class="img-responsive" />
                         </a>
                     </div>
                 @endforeach
