@@ -153,9 +153,7 @@
                         <ul class="nav navbar-nav">
                             <li>
                                 <form id="search" action="#" method="post">
-                                    <div title="Search Games" style="background: #008751;">
-                                        <i class="fa fa-search fa-stack-1x fa-inverse"></i>
-                                    </div>
+                                    <div id="label" title="Search Games" class="active"><label for="search-terms" id="search-label" style="background: url(/img/search.png) -30px 0;">search</label></div>
                                     <div id="input" class="focus">
                                         <input type="text" name="search-terms" id="search-terms" placeholder="Find your next game..." style="left: 0;">
                                     </div>
