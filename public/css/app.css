@@ -6493,7 +6493,6 @@ label,
     font-size: 0;
     color: rgba(0, 0, 0, 0);
     text-indent: -9999px;
-    cursor: pointer;
 }
 #label label:hover {
     background: url("/img/search.png") -30px 0
