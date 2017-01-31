@@ -79,7 +79,7 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
 
       autocomplete('#search-terms', {hint: false}, [
         {
-          source: autocomplete.sources.hits(games, {hitsPerPage: 6}),
+          source: autocomplete.sources.hits(games, {hitsPerPage: 5}),
           displayKey: 'name',
           templates: {
             header: '<div class="category">Games</div>',
@@ -100,7 +100,7 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
 
       autocomplete('#search-stores', {hint: false}, [
         {
-          source: autocomplete.sources.hits(stores, {hitsPerPage: 6}),
+          source: autocomplete.sources.hits(stores, {hitsPerPage: 5}),
           displayKey: 'name',
           templates: {
             header: '<div class="category">Stores</div>',
@@ -120,7 +120,7 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
 
       autocomplete('#search-products', {hint: false}, [
         {
-          source: autocomplete.sources.hits(products, {hitsPerPage: 6}),
+          source: autocomplete.sources.hits(products, {hitsPerPage: 5}),
           displayKey: 'name',
           templates: {
             header: '<div class="category">Products</div>',
