@@ -28,7 +28,7 @@
 			    </div>
 			    <div class="row">
 			    	@foreach($publishers as $publisher)
-						<div class="col-sm-3 col-xs-12">
+						<div class="col-sm-3 col-xs-12 text-center">
 					    	<a href="/publishers/{{ $publisher->slug }}">
 				    			<img src="https://assets.ozboardgamer.com{{ $publisher->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $publisher->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $publisher->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive" />
 				    		</a>

@@ -17,22 +17,21 @@
 @section('content')
 <!-- Header -->
     <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide">
-
+    <header>
         <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
+        <div class="fade">
+            <div">
                 <a href="/shop?page=1&sort=savings-desc">
                     <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/img/buy-online.jpg');"></div>
                 </a>
             </div>
             @if($featured->isEmpty())
-                <div class="item">
+                <div>
                     <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/img/cover.jpg');"></div>
                 </div>
             @else
                 @foreach($featured as $key => $post)
-                    <div class="item">
+                    <div>
                         <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
                             <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/{{ $post->image }}');"></div>
                         </a>
@@ -40,16 +39,6 @@
                 @endforeach
             @endif
         </div>
-
-        @unless($featured->isEmpty())
-            <!-- Controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                 <span class="icon-prev"></span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="icon-next"></span>
-            </a>
-        @endunless
     </header>
 
     <!-- Page Content -->
@@ -59,21 +48,16 @@
             <div class="col-xs-12">
                 <h1 style="margin-top: 10px;">Top Rated Games</h1>
                 <div class="jcarousel-wrapper">
-                    <div class="jcarousel">
-                        <ul>
-                            @foreach($games as $game)
-                                <li itemscope itemtype="http://schema.org/Game">
-                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
-                                        <img src="https://assets.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
-                                    </a>
-                                    <p class="text-center"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{!! $game->name !!}</a></strong></p>
-                                </li>
-                            @endforeach
-                        </ul>
+                    <div class="responsive">
+                        @foreach($games as $game)
+                            <li itemscope itemtype="http://schema.org/Game">
+                                <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
+                                    <img src="https://assets.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto; padding: 0 5px!important;" />
+                                </a>
+                                <p class="text-center"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{!! $game->name !!}</a></strong></p>
+                            </li>
+                        @endforeach
                     </div>
-
-                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
                 </div>
             </div>
         </div>
@@ -263,6 +247,12 @@
 
 @section('scripts')
     <script>
+        $('.fade').slick({
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: 'linear'
+        });        
         $('.responsive').slick({
           infinite: true,
           speed: 500,

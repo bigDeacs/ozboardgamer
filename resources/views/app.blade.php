@@ -32,8 +32,8 @@
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
 	<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
     <link href="https://assets.ozboardgamer.com/css/style.min.css?v=23" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://assets.ozboardgamer.com/css/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://assets.ozboardgamer.com/css/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="https://assets.ozboardgamer.com/css/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://assets.ozboardgamer.com/css/slick-theme.min.css"/>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="https://assets.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<!-- Fonts -->
