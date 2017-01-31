@@ -92,7 +92,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="/" title="Click to go to home page">
+                <a class="navbar-brand topnav" href="/" title="Click to go to home page" style="padding: 15px 0;">
                 	<img src="https://assets.ozboardgamer.com/img/logo.png" class="img-responsive" height="75" width="auto" alt="OzBoardGamer Logo" />
                 </a>
             </div>
@@ -101,26 +101,7 @@
                 <div class="navbar-right">
                     <div class="row navbar-social text-right">
                         <ul class="list-inline intro-social-buttons">
-                            <li id="loginFB">
-                                @if(Session::has('name'))
-                                    <div class="btn-group">
-                                      <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
-                                      <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
-                                    </div>
-                                @else
-                                    <div class="btn-group">
-                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login/Signup</a>
-                                      <button type="button" style="padding: 10px;" class="btn btn-primary-darker dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="caret"></span>
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                      </button>
-                                      <ul class="dropdown-menu">
-                                        <li><a href="/facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a></li>
-                                        <li><a href="/google"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a></li>
-                                      </ul>
-                                    </div>
-                                @endif
-                            </li>
+                            
                             <li class="hidden-sm hidden-xs">
                                 <a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
                                     <i class="fa fa-facebook-official fa-fw"></i>
@@ -146,13 +127,33 @@
                                     <i class="fa fa-instagram fa-fw"></i>
                                 </a>
                             </li>
+                            <li id="loginFB">
+                                @if(Session::has('name'))
+                                    <div class="btn-group">
+                                      <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
+                                      <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
+                                    </div>
+                                @else
+                                    <div class="btn-group">
+                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login/Signup</a>
+                                      <button type="button" style="padding: 10px;" class="btn btn-primary-darker dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="caret"></span>
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                      </button>
+                                      <ul class="dropdown-menu">
+                                        <li><a href="/facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a></li>
+                                        <li><a href="/google"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a></li>
+                                      </ul>
+                                    </div>
+                                @endif
+                            </li>
                         </ul>
                     </div>
                     <div class="navbar-right">
                         <ul class="nav navbar-nav">
                             <li>
                                 <form id="search" action="#" method="post">
-                                    <div id="label" title="Search Games" class="active"><label for="search-terms" id="search-label" style="background: url(/img/search.png) -30px 0;">search</label></div>
+                                    <div title="Search Games"><label for="search-terms" id="search-label" style="background: url(/img/search.png) -30px 0;">search</label></div>
                                     <div id="input" class="focus">
                                         <input type="text" name="search-terms" id="search-terms" placeholder="Find your next game..." style="left: 0;">
                                     </div>
