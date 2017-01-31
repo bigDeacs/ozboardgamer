@@ -27,7 +27,7 @@
 			    </div>
 			    <div class="row">
 			    	@foreach($users as $user)
-						<div class="col-sm-3 col-xs-12">
+						<div class="col-sm-3 col-xs-12 text-center">
 					    	<a href="/users/{{ $user->slug }}">
 				    			<img src="https://assets.ozboardgamer.com/{{ $user->thumb }}" class="img-responsive" />
 				    		</a>
