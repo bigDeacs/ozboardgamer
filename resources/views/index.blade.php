@@ -245,7 +245,7 @@
                             @foreach($stores as $store)
                                 <div>
                                     <a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
-                                        <img src="https://assets.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $store->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
+                                        <img src="https://assets.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $store->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto; padding: 0 5px!important;" />
                                     </a>
                                     <p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
                                 </div>
@@ -263,13 +263,40 @@
 
 @section('scripts')
     <script>
-        $('.carousel').carousel({
-            interval: 5000 //changes the speed
-        })
-        $(function() {
-            $('.jcarousel').jcarousel({
-                // Configuration goes here
-            });
+        $('.responsive').slick({
+          infinite: true,
+          speed: 500,
+          slidesToShow: 5,
+          slidesToScroll: 5,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                infinite: true,
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+              }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ]
         });
     </script>
 @endsection
