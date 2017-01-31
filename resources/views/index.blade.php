@@ -17,28 +17,39 @@
 @section('content')
 <!-- Header -->
     <!-- Header Carousel -->
-    <header>
+    <header id="myCarousel" class="carousel slide">
+
         <!-- Wrapper for slides -->
-        <div class="fade">
-            <div">
+        <div class="carousel-inner">
+            <div class="item active">
                 <a href="/shop?page=1&sort=savings-desc">
-                    <img href="https://assets.ozboardgamer.com/img/buy-online.jpg');" class="img-responsive" />
+                    <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/img/buy-online.jpg');"></div>
                 </a>
             </div>
             @if($featured->isEmpty())
-                <div>
-                    <img href="https://assets.ozboardgamer.com/img/cover.jpg');" class="img-responsive" />
+                <div class="item">
+                    <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/img/cover.jpg');"></div>
                 </div>
             @else
                 @foreach($featured as $key => $post)
-                    <div>
+                    <div class="item">
                         <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-                            <img href="https://assets.ozboardgamer.com/{{ $post->image }}');" class="img-responsive" />
+                            <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/{{ $post->image }}');"></div>
                         </a>
                     </div>
                 @endforeach
             @endif
         </div>
+
+        @unless($featured->isEmpty())
+            <!-- Controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                 <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
+        @endunless
     </header>
 
     <!-- Page Content -->
@@ -247,12 +258,6 @@
 
 @section('scripts')
     <script>
-        $('.fade').slick({
-          infinite: true,
-          speed: 500,
-          fade: true,
-          cssEase: 'linear'
-        });        
         $('.responsive').slick({
           infinite: true,
           speed: 500,
