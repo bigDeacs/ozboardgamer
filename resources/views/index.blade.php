@@ -12,7 +12,6 @@
 
 @section('head')
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <style>.responsive { visibility: hidden; } .responsive.slick-initialized { visibility: visible; }</style>
 @endsection
 
 @section('content')
@@ -60,16 +59,21 @@
             <div class="col-xs-12">
                 <h1 style="margin-top: 10px;">Top Rated Games</h1>
                 <div class="jcarousel-wrapper">
-                    <div class="responsive">
-                        @foreach($games as $game)
-                            <li itemscope itemtype="http://schema.org/Game">
-                                <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
-                                    <img src="https://assets.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto; padding: 0 5px!important;" />
-                                </a>
-                                <p class="text-center"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{!! $game->name !!}</a></strong></p>
-                            </li>
-                        @endforeach
+                    <div class="jcarousel">
+                        <ul>
+                            @foreach($games as $game)
+                                <li itemscope itemtype="http://schema.org/Game">
+                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
+                                        <img src="https://assets.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+                                    </a>
+                                    <p class="text-center"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{!! $game->name !!}</a></strong></p>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
+
+                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
                 </div>
             </div>
         </div>
@@ -237,16 +241,21 @@
                 <div class="col-xs-12">
                     <h3>Top Rated Stores</h3>
                     <div class="jcarousel-wrapper">
-                        <div class="responsive">                        
-                            @foreach($stores as $store)
-                                <div>
-                                    <a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
-                                        <img src="https://assets.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $store->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto; padding: 0 5px!important;" />
-                                    </a>
-                                    <p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
-                                </div>
-                            @endforeach
+                        <div class="jcarousel">
+                            <ul>
+                                @foreach($stores as $store)
+                                    <li>
+                                        <a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
+                                            <img src="https://assets.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $store->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
+                                        </a>
+                                        <p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
+
+                        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+                        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
                     </div>
                 </div>
             </div>
@@ -259,41 +268,12 @@
 
 @section('scripts')
     <script>
-        $(document).ready(function(){
-          $('.responsive').slick({
-              infinite: true,
-              speed: 500,
-              slidesToShow: 5,
-              slidesToScroll: 5,
-              responsive: [
-                {
-                  breakpoint: 1024,
-                  settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
-                    infinite: true,
-                  }
-                },
-                {
-                  breakpoint: 600,
-                  settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                  }
-                },
-                {
-                  breakpoint: 480,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                  }
-                }
-                // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
-              ]
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+        $(function() {
+            $('.jcarousel').jcarousel({
+                // Configuration goes here
             });
         });
     </script>

@@ -28,7 +28,7 @@
 			    </div>
 			    <div class="row">
 			    	@foreach($themes as $theme)
-						<div class="col-sm-3 col-xs-12 text-center">
+						<div class="col-sm-3 col-xs-12">
 					    	<a href="/themes/{{ $theme->slug }}">
 				    			<img src="https://assets.ozboardgamer.com{{ $theme->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $theme->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $theme->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive" />
 				    		</a>

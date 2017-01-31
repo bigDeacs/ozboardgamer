@@ -50,7 +50,7 @@
 			    </div>
 			    <div class="row">
 			    	@foreach($stores as $key => $store)
-						<div class="col-sm-3 col-xs-12 text-center">
+						<div class="col-sm-3 col-xs-12">
 							<a href="/stores/{{ $store->slug }}">
 				    			<img src="https://assets.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $store->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $store->thumb2x }} 2x" class="img-responsive" />
 				    		</a>

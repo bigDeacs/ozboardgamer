@@ -31,15 +31,16 @@
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
 	<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
-    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=23" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://assets.ozboardgamer.com/css/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://assets.ozboardgamer.com/css/slick-theme.min.css"/>
+    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=18" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="https://assets.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<!-- Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+  <script type="text/javascript">
+    (function() { var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true; po.src = '//api.at.getsocial.io/widget/v1/gs_async.js?id=8ba0b1'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s); })();
+  </script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -102,43 +103,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <div class="navbar-right">
                     <div class="row navbar-social text-right">
-                        <form id="search" action="#" method="post" style="width: 100%;">
-                          <input type="text" name="search-terms" id="search-terms" class="form-control form-green" placeholder="Find your next game..." style="top: -5px;">
-                        </form>
-                    </div>
-                    <div class="navbar-right">
-                        <ul class="nav navbar-nav">                            
-                            <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                <li><a href="/games">Game Types</a></li>
-                                <li><a href="/mechanics">Mechanics</a></li>
-                                <li><a href="/publishers">Publishers</a></li>
-                                <li><a href="/designers">Designers</a></li>
-                                <li><a href="/themes">Themes</a></li>
-                                <li><a href="/families">Families</a></li>
-                              </ul>
-                            </li>
-                            <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Articles <span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                <li><a href="/reviews">Reviews</a></li>
-                                <li><a href="/top10s">Top 10's</a></li>
-                                <li><a href="/howtos">How To's</a></li>
-                                <li><a href="/news">News</a></li>
-                                <li><a href="/blogs">Blog</a></li>
-                              </ul>
-                            </li>
-                            <li>
-                                <a href="/stores">Stores</a>
-                            </li> 
-                            <li class="hidden-md hidden-sm">
-                                <a href="/quizzes">Quizzes</a>
-                            </li>
-                            <li class="hidden-sm">
-                                <a href="/shop">Buy Online</a>
-                            </li> 
-                            <li id="loginFB" style="margin-bottom: 10px;">
+                        <ul class="list-inline intro-social-buttons">
+                            <li id="loginFB">
                                 @if(Session::has('name'))
                                     <div class="btn-group">
                                       <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
@@ -157,7 +123,77 @@
                                       </ul>
                                     </div>
                                 @endif
-                            </li>   
+                            </li>
+                            <li class="hidden-sm hidden-xs">
+                                <a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
+                                    <i class="fa fa-facebook-official fa-fw"></i>
+                                </a>
+                            </li>
+                            <li class="hidden-sm hidden-xs">
+                                <a href="https://twitter.com/OzBoardGamer" target="_blank" title="Follow us on Twitter">
+                                    <i class="fa fa-twitter fa-fw"></i>
+                                </a>
+                            </li>
+                            <!--<li class="hidden-sm hidden-xs">
+                                <a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" target="_blank" title="Subscribe to our Youtube channel">
+                                    <i class="fa fa-youtube fa-fw"></i>
+                                </a>
+                            </li>-->
+                            <li class="hidden-sm hidden-xs">
+                                <a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" target="_blank" title="Follow us on Google+">
+                                    <i class="fa fa-google-plus-official fa-fw"></i>
+                                </a>
+                            </li>                            
+                            <li class="hidden-sm hidden-xs">
+                                <a href="https://www.instagram.com/ozboardgamer/" target="_blank" title="Follow us on Instagram">
+                                    <i class="fa fa-instagram fa-fw"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar-right">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <form id="search" action="#" method="post">
+                                    <div id="label" title="Search Games"><label for="search-terms" id="search-label">search</label></div>
+                                    <div id="input">
+                                        <input type="text" name="search-terms" id="search-terms" placeholder="Find your next game...">
+                                    </div>
+                                </form>
+                            </li>
+                            <!--<li>
+                                <a href="/">Home</a>
+                            </li>-->
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="/games">Find Games</a></li>
+                                <li><a href="/mechanics">Mechanics</a></li>
+                                <li><a href="/publishers">Publishers</a></li>
+                                <li><a href="/designers">Designers</a></li>
+                                <li><a href="/themes">Themes</a></li>
+                                <li><a href="/families">Families</a></li>
+                              </ul>
+                            </li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game Articles <span class="caret"></span></a>
+                              <ul class="dropdown-menu">
+                                <li><a href="/reviews">Reviews</a></li>
+                                <li><a href="/top10s">Top 10's</a></li>
+                                <li><a href="/howtos">How To's</a></li>
+                                <li><a href="/news">News</a></li>
+                                <li><a href="/blogs">Blog</a></li>
+                              </ul>
+                            </li>
+                            <li>
+                                <a href="/stores">Find a Store</a>
+                            </li> 
+                            <!--<li class="hidden-sm">
+                                <a href="/quizzes">Quizzes</a>
+                            </li>-->
+                            <li>
+                                <a href="/shop">Buy Games</a>
+                            </li> 
                         </ul>
                     </div>
                 </div>
@@ -169,7 +205,7 @@
 
   	@yield('content')
 
-    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top hidden-xs" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
   	<!-- Footer -->
     <footer class="navbar-inverse navbar-footer">
@@ -268,13 +304,9 @@
                             </a>
                         </li>
                     </ul>    
-                </div>
-            </div>
-            <div class="row">                                
-                <div class="col-xs-12 text-center">
                     <p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. <br />All Rights Reserved</p>
                     <br />
-                    <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=pv2OKsYrittSMzLZSe28rYwYxcBBibyRXxK39sTOxgo8IYEWAVxJqvpg4G0b"></script></span>  
+                    <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=pv2OKsYrittSMzLZSe28rYwYxcBBibyRXxK39sTOxgo8IYEWAVxJqvpg4G0b"></script></span>                
                 </div>
             </div>
         </div>
@@ -292,8 +324,6 @@
     <script src="https://assets.ozboardgamer.com/js/picturefill.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://assets.ozboardgamer.com/js/ie10-viewport-bug-workaround.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="https://assets.ozboardgamer.com/js/slick.min.js"></script>
     <script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>
     <script>
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
@@ -331,7 +361,7 @@
                       $('#myCarousel').carousel('prev')
                   }
               });
-        });        
+        });
     </script>
     @yield('scripts')
   </body>
