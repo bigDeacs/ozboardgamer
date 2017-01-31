@@ -101,6 +101,14 @@
                 <div class="navbar-right">
                     <div class="row navbar-social text-right">
                         <ul class="list-inline intro-social-buttons">
+                            <li>
+                                <form id="search" action="#" method="post">
+                                    <div id="label" title="Search Games"><label for="search-terms" id="search-label">search</label></div>
+                                    <div id="input">
+                                        <input type="text" name="search-terms" id="search-terms" placeholder="Find your next game...">
+                                    </div>
+                                </form>
+                            </li>
                             <li id="loginFB">
                                 @if(Session::has('name'))
                                     <div class="btn-group">
@@ -120,51 +128,18 @@
                                       </ul>
                                     </div>
                                 @endif
-                            </li>
-                            <li class="hidden-sm hidden-xs">
-                                <a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
-                                    <i class="fa fa-facebook-official fa-fw"></i>
-                                </a>
-                            </li>
-                            <li class="hidden-sm hidden-xs">
-                                <a href="https://twitter.com/OzBoardGamer" target="_blank" title="Follow us on Twitter">
-                                    <i class="fa fa-twitter fa-fw"></i>
-                                </a>
-                            </li>
-                            <!--<li class="hidden-sm hidden-xs">
-                                <a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" target="_blank" title="Subscribe to our Youtube channel">
-                                    <i class="fa fa-youtube fa-fw"></i>
-                                </a>
-                            </li>-->
-                            <li class="hidden-sm hidden-xs">
-                                <a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" target="_blank" title="Follow us on Google+">
-                                    <i class="fa fa-google-plus-official fa-fw"></i>
-                                </a>
-                            </li>                            
-                            <li class="hidden-sm hidden-xs">
-                                <a href="https://www.instagram.com/ozboardgamer/" target="_blank" title="Follow us on Instagram">
-                                    <i class="fa fa-instagram fa-fw"></i>
-                                </a>
-                            </li>
+                            </li>                                                
                         </ul>
                     </div>
                     <div class="navbar-right">
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav">                            
                             <li>
-                                <form id="search" action="#" method="post">
-                                    <div id="label" title="Search Games"><label for="search-terms" id="search-label">search</label></div>
-                                    <div id="input">
-                                        <input type="text" name="search-terms" id="search-terms" placeholder="Find your next game...">
-                                    </div>
-                                </form>
-                            </li>
-                            <!--<li>
                                 <a href="/">Home</a>
-                            </li>-->
+                            </li>
                             <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Find a Game <span class="caret"></span></a>
                               <ul class="dropdown-menu">
-                                <li><a href="/games">Find Games</a></li>
+                                <li><a href="/games">Game Types</a></li>
                                 <li><a href="/mechanics">Mechanics</a></li>
                                 <li><a href="/publishers">Publishers</a></li>
                                 <li><a href="/designers">Designers</a></li>
@@ -173,7 +148,7 @@
                               </ul>
                             </li>
                             <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game Articles <span class="caret"></span></a>
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Read Articles <span class="caret"></span></a>
                               <ul class="dropdown-menu">
                                 <li><a href="/reviews">Reviews</a></li>
                                 <li><a href="/top10s">Top 10's</a></li>
@@ -185,9 +160,9 @@
                             <li>
                                 <a href="/stores">Find a Store</a>
                             </li> 
-                            <!--<li class="hidden-sm">
-                                <a href="/quizzes">Quizzes</a>
-                            </li>-->
+                            <li class="hidden-sm">
+                                <a href="/quizzes">Game Quizzes</a>
+                            </li>
                             <li>
                                 <a href="/shop">Buy Games</a>
                             </li> 
@@ -202,7 +177,7 @@
 
   	@yield('content')
 
-    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
+    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top hidden-xs" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
   	<!-- Footer -->
     <footer class="navbar-inverse navbar-footer">
@@ -301,9 +276,13 @@
                             </a>
                         </li>
                     </ul>    
+                </div>
+            </div>
+            <div class="row">                                
+                <div class="col-xs-12 text-center">
                     <p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. <br />All Rights Reserved</p>
                     <br />
-                    <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=pv2OKsYrittSMzLZSe28rYwYxcBBibyRXxK39sTOxgo8IYEWAVxJqvpg4G0b"></script></span>                
+                    <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=pv2OKsYrittSMzLZSe28rYwYxcBBibyRXxK39sTOxgo8IYEWAVxJqvpg4G0b"></script></span>  
                 </div>
             </div>
         </div>
