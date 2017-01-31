@@ -31,13 +31,13 @@
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
 	<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
-    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=21" rel="stylesheet">
+    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=22" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="https://assets.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<!-- Fonts -->
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -139,13 +139,13 @@
                             <li id="loginFB" style="margin-bottom: 10px;">
                                 @if(Session::has('name'))
                                     <div class="btn-group">
-                                      <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary btn-sm" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
-                                      <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker btn-sm" title="Log Out"><i class="fa fa-sign-out"></i></a>
+                                      <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
+                                      <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
                                     </div>
                                 @else
                                     <div class="btn-group">
-                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary btn-sm" title="Login">Login/Signup</a>
-                                      <button type="button" style="padding: 10px;" class="btn btn-primary-darker btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login/Signup</a>
+                                      <button type="button" style="padding: 10px;" class="btn btn-primary-darker dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <span class="caret"></span>
                                         <span class="sr-only">Toggle Dropdown</span>
                                       </button>
