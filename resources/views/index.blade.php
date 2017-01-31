@@ -12,6 +12,7 @@
 
 @section('head')
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <style>.responsive { visibility: hidden; } .responsive.slick-initialized { visibility: visible; }</style>
 @endsection
 
 @section('content')
