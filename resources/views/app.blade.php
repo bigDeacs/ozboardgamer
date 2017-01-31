@@ -102,11 +102,8 @@
                     <div class="row navbar-social text-right">
                         <ul class="list-inline intro-social-buttons">
                             <li>
-                                <form id="search" action="#" method="post">
-                                    <div id="label" title="Search Games"><label for="search-terms" id="search-label">search</label></div>
-                                    <div id="input">
-                                        <input type="text" name="search-terms" id="search-terms" placeholder="Find your next game...">
-                                    </div>
+                                <form id="search" action="#" method="post" style="width: 100%;">
+                                  <input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next game..." style="top: -5px;">
                                 </form>
                             </li>
                             <li id="loginFB">
