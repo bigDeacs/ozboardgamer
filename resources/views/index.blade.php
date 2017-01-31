@@ -241,21 +241,16 @@
                 <div class="col-xs-12">
                     <h3>Top Rated Stores</h3>
                     <div class="jcarousel-wrapper">
-                        <div class="jcarousel">
-                            <ul>
-                                @foreach($stores as $store)
-                                    <li>
-                                        <a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
-                                            <img src="https://assets.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $store->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
-                                        </a>
-                                        <p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
-                                    </li>
-                                @endforeach
-                            </ul>
+                        <div class="responsive">                        
+                            @foreach($stores as $store)
+                                <div>
+                                    <a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
+                                        <img src="https://assets.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $store->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
+                                    </a>
+                                    <p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
+                                </div>
+                            @endforeach
                         </div>
-
-                        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-                        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
                     </div>
                 </div>
             </div>
