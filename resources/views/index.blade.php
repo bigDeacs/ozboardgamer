@@ -35,7 +35,7 @@
 			<div class="item slides active">
 			  <div class="slide-1" style="background-image:url('https://assets.ozboardgamer.com/img/buy-online.jpg');"></div>
 			  <div class="hero">
-				<hgroup>
+				<hgroup style="z-index: 3;">
 					<h1>Buy Games</h1>        
 					<h3>Choose from thousands of Games and Accessories</h3>
 				</hgroup>
@@ -47,7 +47,7 @@
 					<div class="item slides">
 					  <div class="slide-{{ ($key+2) }}" style="background-image:url('https://assets.ozboardgamer.com/{{ $post->image }}');"></div>
 					  <div class="hero">        
-						<hgroup>
+						<hgroup style="z-index: 3;">
 							<h1>{{ $post->name }}</h1>        
 							<h3>{{ $post->category()->first()->name }}</h3>
 						</hgroup>       

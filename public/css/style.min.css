@@ -97,6 +97,7 @@ Image credits: unsplash.com
     position: absolute;
     width: 100%;
     height: 400px;
+    z-index: 2;
     background-color: #080d15;
     opacity: .7;
 }
@@ -120,7 +121,10 @@ Image credits: unsplash.com
 /********************************/
 .fade-carousel .slides .slide-1, 
 .fade-carousel .slides .slide-2,
-.fade-carousel .slides .slide-3 {
+.fade-carousel .slides .slide-3,
+.fade-carousel .slides .slide-4, 
+.fade-carousel .slides .slide-5,
+.fade-carousel .slides .slide-6 {
   height: 400px;
   background-size: cover;
   background-position: center center;
