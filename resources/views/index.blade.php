@@ -20,45 +20,42 @@
 	  <!-- Overlay -->
 	  <div class="overlay"></div>
 
-	  <!-- Indicators -->
-	  <ol class="carousel-indicators">
-		<li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-		<li data-target="#bs-carousel" data-slide-to="1"></li>
-		<li data-target="#bs-carousel" data-slide-to="2"></li>
-	  </ol>
+	  @unless($featured->isEmpty())
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+			@foreach($featured as $key => $post)
+				<li data-target="#bs-carousel" data-slide-to="{{ ($key+2) }}"></li>
+			@endforeach
+		</ol>
+	  @endunless
 	  
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">
-		<div class="item slides active">
-		  <div class="slide-1"></div>
-		  <div class="hero">
-			<hgroup>
-				<h1>We are creative</h1>        
-				<h3>Get start your next awesome project</h3>
-			</hgroup>
-			<button class="btn btn-hero btn-lg" role="button">See all features</button>
-		  </div>
-		</div>
-		<div class="item slides">
-		  <div class="slide-2"></div>
-		  <div class="hero">        
-			<hgroup>
-				<h1>We are smart</h1>        
-				<h3>Get start your next awesome project</h3>
-			</hgroup>       
-			<button class="btn btn-hero btn-lg" role="button">See all features</button>
-		  </div>
-		</div>
-		<div class="item slides">
-		  <div class="slide-3"></div>
-		  <div class="hero">        
-			<hgroup>
-				<h1>We are amazing</h1>        
-				<h3>Get start your next awesome project</h3>
-			</hgroup>
-			<button class="btn btn-hero btn-lg" role="button">See all features</button>
-		  </div>
-		</div>
+			<div class="item slides active">
+			  <div class="slide-1" style="background-image:url('https://assets.ozboardgamer.com/img/buy-online.jpg');"></div>
+			  <div class="hero">
+				<hgroup>
+					<h1>Buy Games</h1>        
+					<h3>Choose from thousands of Games and Accessories</h3>
+				</hgroup>
+				<a href="/shop?page=1&sort=savings-desc" class="btn btn-hero btn-lg">Start Shopping</a>
+			  </div>
+			</div>
+            @unless($featured->isEmpty())
+                @foreach($featured as $key => $post)
+					<div class="item slides">
+					  <div class="slide-{{ ($key+2) }}" style="background-image:url('https://assets.ozboardgamer.com/{{ $post->image }}');"></div>
+					  <div class="hero">        
+						<hgroup>
+							<h1>{{ $post->name }}</h1>        
+							<h3>{{ $post->category()->first()->name }}</h3>
+						</hgroup>       
+						<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
+					  </div>
+					</div>
+                @endforeach
+            @endunless
 	  </div> 
 	</div>
 
