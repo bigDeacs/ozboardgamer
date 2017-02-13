@@ -25,7 +25,7 @@
 		<ol class="carousel-indicators">
 			<li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
 			@foreach($featured as $key => $post)
-				<li data-target="#bs-carousel" data-slide-to="{{ ($key+2) }}"></li>
+				<li data-target="#bs-carousel" data-slide-to="{{ ($key+1) }}"></li>
 			@endforeach
 		</ol>
 	  @endunless
