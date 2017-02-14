@@ -35,27 +35,28 @@ class ProductSeeder extends CsvSeeder
 
         foreach(DB::select('select * from '.$this->table) as $product)
         {
-            DB::table($this->table)
-            ->where('id', $product->id)
-            ->update(['price' => preg_replace('/\b(AUD|,)\b/i', '', $product->priceDisplay), 'sale' => preg_replace('/\b(AUD|,)\b/i', '', $product->saleDisplay), 'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 'thumb2x' => str_replace('http://', 'https://', $product->thumb2x)]);      
-        }
-		$products = DB::select('select * from '.$this->table);
-		DB::table($this->table)->truncate();
-
-        foreach($products as $product)
-        {
-            if($product->sale > 0)
+			if(preg_replace('/\b(AUD|,)\b/i', '', $product->saleDisplay) > 0)
             {
-                DB::table($this->table)
-                ->where('id', $product->id)
-				->where($product->sale, '>', 20)
-                ->update(['savings' => ((($product->price - $product->sale) / $product->price) * 100)]);      
-            } else {
-                DB::table($this->table)
-                ->where('id', $product->id)
-				->where($product->price, '>', 20)
-                ->update(['savings' => 0]);      
-            }
+				DB::table($this->table)
+				->where('id', $product->id)
+				->update([
+					'price' => preg_replace('/\b(AUD|,)\b/i', '', $product->priceDisplay), 
+					'sale' => preg_replace('/\b(AUD|,)\b/i', '', $product->saleDisplay), 
+					'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 
+					'thumb2x' => str_replace('http://', 'https://', $product->thumb2x),
+					'savings' => ((($product->price - $product->sale) / $product->price) * 100)
+				]);    
+			} else {
+				DB::table($this->table)
+				->where('id', $product->id)
+				->update([
+					'price' => preg_replace('/\b(AUD|,)\b/i', '', $product->priceDisplay), 
+					'sale' => preg_replace('/\b(AUD|,)\b/i', '', $product->saleDisplay), 
+					'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 
+					'thumb2x' => str_replace('http://', 'https://', $product->thumb2x),
+					'savings' => 0
+				]);
+			}
         }
     }
 }
