@@ -17,9 +17,6 @@
 @section('content')
 <!-- Header -->
 	<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
-	  <!-- Overlay -->
-	  <div class="overlay"></div>
-
 	  @unless($featured->isEmpty())
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -33,9 +30,11 @@
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">
 			<div class="item slides active">
+			  <!-- Overlay -->
+			  <div class="overlay"></div>
 			  <div class="slide-1" style="background-image:url('https://assets.ozboardgamer.com/img/buy-online.jpg');"></div>
 			  <div class="hero">
-				<hgroup style="z-index: 3;">
+				<hgroup>
 					<h1>Buy Games</h1>        
 					<h3>Choose from thousands of Games and Accessories</h3>
 				</hgroup>
@@ -45,11 +44,13 @@
             @unless($featured->isEmpty())
                 @foreach($featured as $key => $post)
 					<div class="item slides">
+					  <!-- Overlay -->
+					  <div class="overlay"></div>
 					  <div class="slide-{{ ($key+2) }}" style="background-image:url('https://assets.ozboardgamer.com/{{ $post->image }}');"></div>
 					  <div class="hero">        
-						<hgroup style="z-index: 3;">
-							<h1>{{ $post->name }}</h1>        
-							<h3>{{ $post->category()->first()->name }}</h3>
+						<hgroup>
+							<h1>{{ $post->category()->first()->name }}</h1>        
+							<h3>{{ $post->name }}</h3>
 						</hgroup>       
 						<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
 					  </div>
