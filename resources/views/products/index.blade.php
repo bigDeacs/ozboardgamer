@@ -31,7 +31,7 @@
 						    <thead>
 						    	<tr>
 						    		<th>Name</th>
-						    		<th>Prive</th>
+						    		<th>Price</th>
 						    		<th>Sale</th>
 						    		<th>Savings</th>
 						    		<th>Link</th>

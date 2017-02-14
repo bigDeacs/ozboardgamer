@@ -37,7 +37,7 @@ class ProductSeeder extends CsvSeeder
         {			
 			$sale = preg_replace('/\b(AUD|,)\b/i', '', $product->saleDisplay);
 			$price = preg_replace('/\b(AUD|,)\b/i', '', $product->priceDisplay);
-			if(($sale > 20) && ($price > 20))
+			if(($sale > 20) || ($price > 20))
             {
 				if($sale > 0)
 				{
