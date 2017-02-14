@@ -530,11 +530,11 @@ class SiteController extends Controller {
 		$news = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'news');
-		})->orderBy('published_at', 'desc')->take(5)->get();
+		})->orderBy('published_at', 'desc')->take(7)->get();
 		$howtos = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'howtos');
-		})->orderBy('published_at', 'desc')->take(5)->get();
+		})->orderBy('published_at', 'desc')->take(7)->get();
 		$top10s = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'top10s');
@@ -542,7 +542,7 @@ class SiteController extends Controller {
 		$blogs = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'blogs');
-		})->orderBy('published_at', 'desc')->take(10)->get();
+		})->orderBy('published_at', 'desc')->take(7)->get();
 		$games = Game::where('status', '=', '1')->has('parent', '<', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
 		$stores = Store::where('status', '=', '1')->orderBy('rating', 'desc')->take(10)->get();
 		return view('index', compact('featured', 'reviews', 'howtos', 'top10s', 'news', 'blogs', 'games', 'stores'));
