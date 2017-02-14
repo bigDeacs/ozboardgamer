@@ -254,7 +254,7 @@
                   @endforeach
                   <hr />
                 @endunless
-                @unless($blogs->isEmpty())
+                @unless($news->isEmpty())
                     <h3>Latest Game News</h3>
                     @foreach($news as $entry)
                         <div class="row">
@@ -269,7 +269,23 @@
                         </div>
                     @endforeach
                     <hr />
-                @endunless     
+                @endunless  
+				@unless($blogs->isEmpty())
+                    <h3>Latest Blog Articles</h3>
+                    @foreach($blogs as $entry)
+                        <div class="row">
+                            <div class="col-sm-12 post">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <p class="blogHeadingSml">
+                                            <strong><a href="/blogs/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                    <hr />
+                @endunless  				
                 <!-- Home Page Tower Ad Right -->
                 <ins class="adsbygoogle hidden-xs"
                      style="display:block"
