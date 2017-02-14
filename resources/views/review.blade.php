@@ -59,7 +59,7 @@
 			      	</div>
 			      </div>
 				  @unless($games->isEmpty())
-				  	<div class="col-sm-3 col-xs-12 text-center lead" itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
+				  	<div class="col-sm-3 hidden-xs text-center lead" itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
 				  		<p><strong>Games mentioned:</strong></p>
 				  		<div id="child" class="scrollBox">
 					    	@foreach($games as $game)
