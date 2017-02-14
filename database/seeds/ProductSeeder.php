@@ -43,7 +43,7 @@ class ProductSeeder extends CsvSeeder
 				->where('id', $product->id)
 				->update([
 					'price' => $price, 
-					'sale' => $sale), 
+					'sale' => $sale, 
 					'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 
 					'thumb2x' => str_replace('http://', 'https://', $product->thumb2x),
 					'savings' => ((($price - $sale) / $price) * 100)
@@ -53,7 +53,7 @@ class ProductSeeder extends CsvSeeder
 				->where('id', $product->id)
 				->update([
 					'price' => $price, 
-					'sale' => $sale),
+					'sale' => $sale,
 					'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 
 					'thumb2x' => str_replace('http://', 'https://', $product->thumb2x),
 					'savings' => 0
