@@ -199,23 +199,27 @@
                 @endunless                
             </div>
             <div class="col-md-3 col-sm-4 col-xs-12">       
-				<h3>Featured Product</h3>
-				<a href="{!! $product['slug'] !!}" target="_blank">
-	    			<img src="{{ $product['thumb1x'] }}" srcset="{{ $product['thumb1x'] }} 1x, {{ $product['thumb2x'] }} 2x" class="img-responsive" />
-	    		</a>
-		    	<p class="text-center">
-		    		<strong><a href="{!! $product['slug'] !!}" target="_blank">{!! str_limit(strip_tags($product['name']), $limit = 50, $end = '...') !!}</a></strong><br />
-		    		@if($product['sale'] > 0)
-		    			<strong>${!! $product['saleDisplay'] !!}</strong><br />
-		    			<s><small>${!! $product['priceDisplay'] !!}</small></s>
-		    		@else
-		    			<strong>${!! $product['priceDisplay'] !!}</strong>
-		    		@endif
-		    	</p>
-		    	<p class="text-center">
-                    <a class="btn btn-danger" href="{!! $product['slug'] !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                </p>
-				<hr class="hidden-xs" /> 
+				@unless($products->isEmpty())
+					<h3>Featured Product</h3>
+					@foreach($products as $product)						
+						<a href="{!! $product->slug !!}" target="_blank">
+							<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
+						</a>
+						<p class="text-center">
+							<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
+							@if($product->sale > 0)
+								<strong>${!! $product->saleDisplay !!}</strong><br />
+								<s><small>${!! $product->priceDisplay !!}</small></s>
+							@else
+								<strong>${!! $product->priceDisplay !!}</strong>
+							@endif
+						</p>
+						<p class="text-center">
+							<a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+						</p>
+					@endforeach
+					<hr class="hidden-xs" />
+                @endunless
                 <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
                 <hr class="hidden-xs" />              
                 @unless($howtos->isEmpty())
