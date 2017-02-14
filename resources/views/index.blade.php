@@ -16,7 +16,7 @@
 
 @section('content')
 <!-- Header -->
-	<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+	<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="5000" id="bs-carousel">
 	  @unless($featured->isEmpty())
 		<!-- Indicators -->
 		<ol class="carousel-indicators">
@@ -59,43 +59,6 @@
             @endunless
 	  </div> 
 	</div>
-
-
-    <!-- Header Carousel -->
-    <header id="myCarousel" class="carousel slide" style="display:none;">
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <a href="/shop?page=1&sort=savings-desc">
-                    <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/img/buy-online.jpg');"></div>
-                </a>
-            </div>
-            @if($featured->isEmpty())
-                <div class="item">
-                    <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/img/cover.jpg');"></div>
-                </div>
-            @else
-                @foreach($featured as $key => $post)
-                    <div class="item">
-                        <a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}">
-                            <div class="fill" style="background-image:url('https://assets.ozboardgamer.com/{{ $post->image }}');"></div>
-                        </a>
-                    </div>
-                @endforeach
-            @endif
-        </div>
-
-        @unless($featured->isEmpty())
-            <!-- Controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                 <span class="icon-prev"></span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="icon-next"></span>
-            </a>
-        @endunless
-    </header>
 
     <!-- Page Content -->
     <div class="container">
@@ -329,9 +292,6 @@
 
 @section('scripts')
     <script>
-        $('.carousel').carousel({
-            interval: 5000 //changes the speed
-        })
         $(function() {
             $('.jcarousel').jcarousel({
                 // Configuration goes here
