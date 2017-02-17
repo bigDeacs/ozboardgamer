@@ -222,7 +222,7 @@
 					@endforeach
 					<hr class="hidden-xs" />
                 @endunless
-                <div class="fb-page hidden-xs" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/ozboardgamer/"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div></div>
+				<div class="fb-page" data-href="https://www.facebook.com/ozboardgamer/" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/ozboardgamer/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ozboardgamer/">Oz Board Gamer</a></blockquote></div>
                 <hr class="hidden-xs" />              
                 @unless($howtos->isEmpty())
                   <h3>Latest How To's</h3>
