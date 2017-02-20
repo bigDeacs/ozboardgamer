@@ -26,7 +26,7 @@
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
 	<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
-    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=27" rel="stylesheet">
+    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=28" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="https://assets.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<!-- Fonts -->
@@ -146,7 +146,14 @@
                     </div>
                     <div class="navbar-right">
                         <ul class="nav navbar-nav">
-                            <li><button type="button" data-toggle="modal" data-target="#searchWrapper">Search</button></li>
+                            <li>
+                                <form id="search" action="#" method="post">
+                                    <div id="label" title="Search Games" class="active"><label for="search-terms" id="search-label" style="background: url(/img/search.png) -30px 0;">search</label></div>
+                                    <div id="input" class="focus">
+                                        <input type="text" name="search-terms" id="search-terms" placeholder="Find your next game..." style="left: 0;">
+                                    </div>
+                                </form>
+                            </li>
                             <!--<li>
                                 <a href="/">Home</a>
                             </li>-->
@@ -298,26 +305,6 @@
         </div>
     </footer>
 
-	
-	<div class="modal fade" id="searchWrapper" tabindex="-1" role="dialog" aria-labelledby="searchWrapperLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="searchWrapperLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-		<form id="search" action="#" method="post" style="width: 100%;">
-			<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next favourite game...">
-			<button type="submit" class="btn btn-primary">Search</button>
-		</form>
-      </div>
-    </div>
-  </div>
-</div>
-
-	
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Scripts -->
@@ -354,7 +341,6 @@
                   return false;
               });
               $('#back-to-top').tooltip('show');              
-			  $('#searchWrapper').modal();
         });
     </script>
     @yield('scripts')
