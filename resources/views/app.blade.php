@@ -146,7 +146,7 @@
                     </div>
                     <div class="navbar-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="#searchWrapper"><span id="search-label" style="background: url(/img/search.png) -30px 0;">search</span></a></li>
+                            <li><button type="button" data-toggle="modal" data-target="#searchWrapper">Search</button></li>
                             <!--<li>
                                 <a href="/">Home</a>
                             </li>-->
@@ -297,15 +297,25 @@
             </div>
         </div>
     </footer>
+
 	
-	
-	<div id="searchWrapper">
-		<button type="button" class="close">×</button>
+	<div class="modal fade" id="searchWrapper" tabindex="-1" role="dialog" aria-labelledby="searchWrapperLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="searchWrapperLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
 		<form id="search" action="#" method="post" style="width: 100%;">
 			<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next favourite game...">
 			<button type="submit" class="btn btn-primary">Search</button>
 		</form>
-	</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 	
 
     <!-- Bootstrap core JavaScript
@@ -357,27 +367,6 @@
                       $('#myCarousel').carousel('prev')
                   }
               });
-			  
-			 $(function () {
-				$('a[href="#searchWrapper"]').on('click', function(event) {
-					event.preventDefault();
-					$('#searchWrapper').addClass('open');
-					$('#searchWrapper > form > input[type="search"]').focus();
-				});
-				
-				$('#searchWrapper, #searchWrapper button.close').on('click keyup', function(event) {
-					if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-						$(this).removeClass('open');
-					}
-				});
-				
-				
-				//Do not include! This prevents the form from submitting for DEMO purposes only!
-				$('form').submit(function(event) {
-					event.preventDefault();
-					return false;
-				})
-			 });
         });
     </script>
     @yield('scripts')
