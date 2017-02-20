@@ -325,6 +325,9 @@
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
           // see next for specifications
         });
+		function setFocus() {
+			$("#search-terms").focus();
+		}
     </script>
     <script>
         $(document).ready(function(){
@@ -344,9 +347,6 @@
                   return false;
               });
               $('#back-to-top').tooltip('show');              
-			  function setFocus() {
-				$("#search-terms").focus();;
-			}
         });
     </script>
     @yield('scripts')
