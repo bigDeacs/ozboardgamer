@@ -354,6 +354,7 @@
                   return false;
               });
               $('#back-to-top').tooltip('show');              
+			  $('#searchWrapper').modal();
         });
     </script>
     @yield('scripts')
