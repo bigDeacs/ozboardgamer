@@ -26,7 +26,7 @@
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
 	<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
-    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=26" rel="stylesheet">
+    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=27" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="https://assets.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<!-- Fonts -->
@@ -146,14 +146,7 @@
                     </div>
                     <div class="navbar-right">
                         <ul class="nav navbar-nav">
-                            <li>
-                                <form id="search" action="#" method="post">
-                                    <div id="label" title="Search Games" class="active"><label for="search-terms" id="search-label" style="background: url(/img/search.png) -30px 0;">search</label></div>
-                                    <div id="input" class="focus">
-                                        <input type="text" name="search-terms" id="search-terms" placeholder="Find your next game..." style="left: 0;">
-                                    </div>
-                                </form>
-                            </li>
+                            <li><a href="#searchWrapper"><span id="search-label" style="background: url(/img/search.png) -30px 0;">search</span></a></li>
                             <!--<li>
                                 <a href="/">Home</a>
                             </li>-->
@@ -304,6 +297,16 @@
             </div>
         </div>
     </footer>
+	
+	
+	<div id="searchWrapper">
+		<button type="button" class="close">×</button>
+		<form id="search" action="#" method="post" style="width: 100%;">
+			<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next favourite game...">
+			<button type="submit" class="btn btn-primary">Search</button>
+		</form>
+	</div>
+	
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -354,6 +357,27 @@
                       $('#myCarousel').carousel('prev')
                   }
               });
+			  
+			 $(function () {
+				$('a[href="#searchWrapper"]').on('click', function(event) {
+					event.preventDefault();
+					$('#searchWrapper').addClass('open');
+					$('#searchWrapper > form > input[type="search"]').focus();
+				});
+				
+				$('#searchWrapper, #searchWrapper button.close').on('click keyup', function(event) {
+					if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+						$(this).removeClass('open');
+					}
+				});
+				
+				
+				//Do not include! This prevents the form from submitting for DEMO purposes only!
+				$('form').submit(function(event) {
+					event.preventDefault();
+					return false;
+				})
+			 });
         });
     </script>
     @yield('scripts')
