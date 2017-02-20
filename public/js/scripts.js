@@ -79,7 +79,7 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
 
       autocomplete('#search-terms', {hint: false}, [
         {
-          source: autocomplete.sources.hits(games, {hitsPerPage: 5}),
+          source: autocomplete.sources.hits(games, {hitsPerPage: 8}),
           displayKey: 'name',
           templates: {
             header: '<div class="category">Games</div>',

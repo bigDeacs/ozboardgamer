@@ -26,7 +26,7 @@
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
 	<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
-    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=31" rel="stylesheet">
+    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=32" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="https://assets.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<!-- Fonts -->
@@ -74,235 +74,231 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     <!-- End Facebook Plugin Manager -->
-<div id="wrap" class="text-center">
+	<div id="wrap">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand topnav" href="/" title="Click to go to home page" style="padding: 15px 0;">
-                	<img src="https://assets.ozboardgamer.com/img/logo.png" class="img-responsive" height="75" width="auto" alt="OzBoardGamer Logo" />
-                </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <div class="navbar-right">
-                    <div class="row navbar-social text-right">
-                        <ul class="list-inline intro-social-buttons">
-                            
-                            <li class="hidden-sm hidden-xs">
-                                <a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
-                                    <i class="fa fa-facebook-official fa-fw"></i>
-                                </a>
-                            </li>
-                            <li class="hidden-sm hidden-xs">
-                                <a href="https://twitter.com/OzBoardGamer" target="_blank" title="Follow us on Twitter">
-                                    <i class="fa fa-twitter fa-fw"></i>
-                                </a>
-                            </li>
-                            <!--<li class="hidden-sm hidden-xs">
-                                <a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" target="_blank" title="Subscribe to our Youtube channel">
-                                    <i class="fa fa-youtube fa-fw"></i>
-                                </a>
-                            </li>-->
-                            <li class="hidden-sm hidden-xs">
-                                <a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" target="_blank" title="Follow us on Google+">
-                                    <i class="fa fa-google-plus-official fa-fw"></i>
-                                </a>
-                            </li>                            
-                            <li class="hidden-sm hidden-xs">
-                                <a href="https://www.instagram.com/ozboardgamer/" target="_blank" title="Follow us on Instagram">
-                                    <i class="fa fa-instagram fa-fw"></i>
-                                </a>
-                            </li>
-                            <li id="loginFB">
-                                @if(Session::has('name'))
-                                    <div class="btn-group">
-                                      <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
-                                      <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
-                                    </div>
-                                @else
-                                    <div class="btn-group">
-                                      <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login/Signup</a>
-                                      <button type="button" style="padding: 10px;" class="btn btn-primary-darker dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="caret"></span>
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                      </button>
-                                      <ul class="dropdown-menu">
-                                        <li><a href="/facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a></li>
-                                        <li><a href="/google"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a></li>
-                                      </ul>
-                                    </div>
-                                @endif
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="navbar-right">
-                        <ul class="nav navbar-nav">
-                            <li><a type="button" data-toggle="modal" data-target="#searchWrapper"><i class="fa fa-search" aria-hidden="true"></i> Search</a></li>
-                            <!--<li>
-                                <a href="/">Home</a>
-                            </li>-->
-                            <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                <li><a href="/games">Find Games</a></li>
-                                <li><a href="/mechanics">Mechanics</a></li>
-                                <li><a href="/publishers">Publishers</a></li>
-                                <li><a href="/designers">Designers</a></li>
-                                <li><a href="/themes">Themes</a></li>
-                                <li><a href="/families">Families</a></li>
-                              </ul>
-                            </li>
-                            <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game Articles <span class="caret"></span></a>
-                              <ul class="dropdown-menu">
-                                <li><a href="/reviews">Reviews</a></li>
-                                <li><a href="/top10s">Top 10's</a></li>
-                                <li><a href="/howtos">How To's</a></li>
-                                <li><a href="/news">News</a></li>
-                                <li><a href="/blogs">Blog</a></li>
-                              </ul>
-                            </li>
-                            <li>
-                                <a href="/stores">Find a Store</a>
-                            </li> 
-                            <!--<li class="hidden-sm">
-                                <a href="/quizzes">Quizzes</a>
-                            </li>-->
-                            <li>
-                                <a href="/shop">Buy Games</a>
-                            </li> 
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>    
+		<!-- Navigation -->
+		<nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation">
+			<div class="container topnav">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand topnav" href="/" title="Click to go to home page" style="padding: 15px 0;">
+						<img src="https://assets.ozboardgamer.com/img/logo.png" class="img-responsive" height="75" width="auto" alt="OzBoardGamer Logo" />
+					</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<div class="navbar-right">
+						<div class="row navbar-social text-right">
+							<ul class="list-inline intro-social-buttons">
+								<li class="hidden-sm hidden-xs">
+									<a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
+										<i class="fa fa-facebook-official fa-fw"></i>
+									</a>
+								</li>
+								<li class="hidden-sm hidden-xs">
+									<a href="https://twitter.com/OzBoardGamer" target="_blank" title="Follow us on Twitter">
+										<i class="fa fa-twitter fa-fw"></i>
+									</a>
+								</li>
+								<!--<li class="hidden-sm hidden-xs">
+									<a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" target="_blank" title="Subscribe to our Youtube channel">
+										<i class="fa fa-youtube fa-fw"></i>
+									</a>
+								</li>-->
+								<li class="hidden-sm hidden-xs">
+									<a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" target="_blank" title="Follow us on Google+">
+										<i class="fa fa-google-plus-official fa-fw"></i>
+									</a>
+								</li>                            
+								<li class="hidden-sm hidden-xs">
+									<a href="https://www.instagram.com/ozboardgamer/" target="_blank" title="Follow us on Instagram">
+										<i class="fa fa-instagram fa-fw"></i>
+									</a>
+								</li>
+								<li id="loginFB">
+									@if(Session::has('name'))
+										<div class="btn-group">
+										  <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
+										  <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
+										</div>
+									@else
+										<div class="btn-group">
+										  <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login">Login/Signup</a>
+										  <button type="button" style="padding: 10px;" class="btn btn-primary-darker dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<span class="caret"></span>
+											<span class="sr-only">Toggle Dropdown</span>
+										  </button>
+										  <ul class="dropdown-menu">
+											<li><a href="/facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a></li>
+											<li><a href="/google"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a></li>
+										  </ul>
+										</div>
+									@endif
+								</li>
+							</ul>
+						</div>
+						<div class="navbar-right">
+							<ul class="nav navbar-nav">                            
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
+								  <ul class="dropdown-menu">
+									<li><a href="/games">Find Games</a></li>
+									<li><a href="/mechanics">Mechanics</a></li>
+									<li><a href="/publishers">Publishers</a></li>
+									<li><a href="/designers">Designers</a></li>
+									<li><a href="/themes">Themes</a></li>
+									<li><a href="/families">Families</a></li>
+								  </ul>
+								</li>
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game Articles <span class="caret"></span></a>
+								  <ul class="dropdown-menu">
+									<li><a href="/reviews">Reviews</a></li>
+									<li><a href="/top10s">Top 10's</a></li>
+									<li><a href="/howtos">How To's</a></li>
+									<li><a href="/news">News</a></li>
+									<li><a href="/blogs">Blog</a></li>
+								  </ul>
+								</li>
+								<li>
+									<a href="/stores">Find a Store</a>
+								</li> 
+								<li class="hidden-sm">
+									<a href="/shop">Buy Games</a>
+								</li> 
+								<li class="hidden-xs"><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<form class="hidden-lg hidden-md hidden-sm" action="#" method="post" style="width: 100%;">
+				<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next favourite game...">
+			</form>
+			<!-- /.container -->
+		</nav>    
 
-  	@yield('content')
+		@yield('content')
 
-    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
+		<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
-  	<!-- Footer -->
-    <footer class="navbar-inverse navbar-footer">
-        <div class="container">
-            <div class="row">                                
-                <div class="col-md-4 col-xs-12">
-                    <div class="row">
-                        <div class="col-sm-6 col-xs-12">
-                            <ul>
-                                <li>
-                                    <a href="/">Home</a>
-                                </li>
-                                <li class="footer-menu-divider">&sdot;</li>
-                                <li>
-                                    <a href="/games">Games</a>
-                                </li>
-                                <li class="footer-menu-divider">&sdot;</li>
-                                <li>
-                                    <a href="/news">News</a>
-                                </li>
-                                <li class="footer-menu-divider">&sdot;</li>
-                                <li>
-                                    <a href="/reviews">Reviews</a>
-                                </li>
-                                <li class="footer-menu-divider">&sdot;</li>
-                                <li>
-                                    <a href="/howtos">How To's</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6 col-xs-12">
-                            <ul>                    
-                                <li>
-                                    <a href="/top10s">Top 10's</a>
-                                </li>
-                                <li class="footer-menu-divider">&sdot;</li>
-                                <li>
-                                    <a href="/blogs">Blogs</a>
-                                </li>
-                                <li class="footer-menu-divider">&sdot;</li>
-                                <li>
-                                    <a href="/stores">Stores</a>
-                                </li>
-                                <li class="footer-menu-divider">&sdot;</li>
-                                <li>
-                                    <a href="/quizzes">Quizzes</a>
-                                </li>
-                                <li class="footer-menu-divider">&sdot;</li>
-                                <li>
-                                    <a href="/shop">Shop</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>                    
-                </div>                
-                <div class="col-md-4 col-xs-12">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Above Footer Ad -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-5206537313688631"
-                         data-ad-slot="2769589305"
-                         data-ad-format="auto"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>                    
-                </div>
-                <div class="col-md-4 col-xs-12">
-                    <ul>
-                        <li>
-                            <a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
-                                <i class="fa fa-facebook-official fa-fw"></i> Like Us On Facebook
-                            </a>
-                        </li>
-                        <br />
-                        <li>
-                            <a href="https://twitter.com/OzBoardGamer" target="_blank" title="Follow us on Twitter">
-                                <i class="fa fa-twitter fa-fw"></i> Follow Us On Twitter
-                            </a>
-                        </li>
-                        <br />
-                        <!--<li>
-                            <a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" class="btn btn-danger btn-lg" target="_blank" title="Subscribe to our Youtube channel">
-                                <i class="fa fa-youtube fa-fw"></i>
-                            </a>
-                        </li>-->
-                        <li>
-                            <a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" target="_blank" title="Follow us on Google+">
-                                <i class="fa fa-google-plus-official fa-fw"></i> Follow Us On Google+
-                            </a>
-                        </li> 
-                        <br />
-                        <li>
-                            <a href="https://www.instagram.com/ozboardgamer/" target="_blank" title="Follow us on Instagram">
-                                <i class="fa fa-instagram fa-fw"></i> Follow Us On Instagram
-                            </a>
-                        </li>
-                    </ul>    
-                    <p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. <br />All Rights Reserved</p>
-                    <br />
-                    <span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=pv2OKsYrittSMzLZSe28rYwYxcBBibyRXxK39sTOxgo8IYEWAVxJqvpg4G0b"></script></span>                
-                </div>
-            </div>
-        </div>
-    </footer>
-</div>
+		<!-- Footer -->
+		<footer class="navbar-inverse navbar-footer">
+			<div class="container">
+				<div class="row">                                
+					<div class="col-md-4 col-xs-12">
+						<div class="row">
+							<div class="col-sm-6 col-xs-12">
+								<ul>
+									<li>
+										<a href="/">Home</a>
+									</li>
+									<li class="footer-menu-divider">&sdot;</li>
+									<li>
+										<a href="/games">Games</a>
+									</li>
+									<li class="footer-menu-divider">&sdot;</li>
+									<li>
+										<a href="/news">News</a>
+									</li>
+									<li class="footer-menu-divider">&sdot;</li>
+									<li>
+										<a href="/reviews">Reviews</a>
+									</li>
+									<li class="footer-menu-divider">&sdot;</li>
+									<li>
+										<a href="/howtos">How To's</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col-sm-6 col-xs-12">
+								<ul>                    
+									<li>
+										<a href="/top10s">Top 10's</a>
+									</li>
+									<li class="footer-menu-divider">&sdot;</li>
+									<li>
+										<a href="/blogs">Blogs</a>
+									</li>
+									<li class="footer-menu-divider">&sdot;</li>
+									<li>
+										<a href="/stores">Stores</a>
+									</li>
+									<li class="footer-menu-divider">&sdot;</li>
+									<li>
+										<a href="/quizzes">Quizzes</a>
+									</li>
+									<li class="footer-menu-divider">&sdot;</li>
+									<li>
+										<a href="/shop">Shop</a>
+									</li>
+								</ul>
+							</div>
+						</div>                    
+					</div>                
+					<div class="col-md-4 col-xs-12">
+						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- Above Footer Ad -->
+						<ins class="adsbygoogle"
+							 style="display:block"
+							 data-ad-client="ca-pub-5206537313688631"
+							 data-ad-slot="2769589305"
+							 data-ad-format="auto"></ins>
+						<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>                    
+					</div>
+					<div class="col-md-4 col-xs-12">
+						<ul>
+							<li>
+								<a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
+									<i class="fa fa-facebook-official fa-fw"></i> Like Us On Facebook
+								</a>
+							</li>
+							<br />
+							<li>
+								<a href="https://twitter.com/OzBoardGamer" target="_blank" title="Follow us on Twitter">
+									<i class="fa fa-twitter fa-fw"></i> Follow Us On Twitter
+								</a>
+							</li>
+							<br />
+							<!--<li>
+								<a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" class="btn btn-danger btn-lg" target="_blank" title="Subscribe to our Youtube channel">
+									<i class="fa fa-youtube fa-fw"></i>
+								</a>
+							</li>-->
+							<li>
+								<a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" target="_blank" title="Follow us on Google+">
+									<i class="fa fa-google-plus-official fa-fw"></i> Follow Us On Google+
+								</a>
+							</li> 
+							<br />
+							<li>
+								<a href="https://www.instagram.com/ozboardgamer/" target="_blank" title="Follow us on Instagram">
+									<i class="fa fa-instagram fa-fw"></i> Follow Us On Instagram
+								</a>
+							</li>
+						</ul>    
+						<p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. <br />All Rights Reserved</p>
+						<br />
+						<span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=pv2OKsYrittSMzLZSe28rYwYxcBBibyRXxK39sTOxgo8IYEWAVxJqvpg4G0b"></script></span>                
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
 	
 <div class="modal fade" id="searchWrapper" tabindex="-1" role="dialog" aria-labelledby="searchWrapperLabel" aria-hidden="true">
-	 <div class="container" style="margin-top: 100px;">
+	 <div class="container" style="margin-top: 50px;">
 		<div class="row">
-			<div class="col-sm-6 col-sm-offset-3 text-center">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
 				<br><br>
 				<form id="search" action="#" method="post" style="width: 100%;">
