@@ -325,8 +325,8 @@
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
           // see next for specifications
         });
-		function setFocus() {
-			$("#search-terms").focus();
+		function setFocus() {			
+			document.getElementById("search-terms").focus();
 		}
     </script>
     <script>
