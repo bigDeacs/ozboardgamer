@@ -172,7 +172,7 @@
 								<li class="hidden-sm">
 									<a href="/shop">Buy Games</a>
 								</li> 
-								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games" onclick="setFocus()"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
+								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -299,7 +299,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
 				<br><br>
 				<form id="search" action="#" method="post" style="width: 100%;">
-					<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next game..." style="height: 70px;font-size: 20px;" onblur="this.value='';">
+					<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next game..." style="height: 70px;font-size: 20px;" autofocus>
 				</form>
 			</div>
 		</div>
@@ -325,9 +325,6 @@
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
           // see next for specifications
         });
-		function setFocus() {			
-			document.getElementById("search-terms").focus();
-		}
     </script>
     <script>
         $(document).ready(function(){
