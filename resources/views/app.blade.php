@@ -74,7 +74,7 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     <!-- End Facebook Plugin Manager -->
-
+<div id="wrap" class="text-center">
 
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation">
@@ -146,7 +146,7 @@
                     </div>
                     <div class="navbar-right">
                         <ul class="nav navbar-nav">
-                            <li><button type="button" data-toggle="modal" data-target="#searchWrapper">Search</button></li>
+                            <li><a type="button" data-toggle="modal" data-target="#searchWrapper"><i class="fa fa-search" aria-hidden="true"></i> Search</a></li>
                             <!--<li>
                                 <a href="/">Home</a>
                             </li>-->
@@ -297,22 +297,21 @@
             </div>
         </div>
     </footer>
-
+</div>
 	
-	<div class="modal fade" id="searchWrapper" tabindex="-1" role="dialog" aria-labelledby="searchWrapperLabel" aria-hidden="true">
-	     <div class="container">
-			<div class="row">
-			    <div class="col-sm-6 col-sm-offset-3 text-center">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
-					<br><br>
-					<form id="search" action="#" method="post" style="width: 100%;">
-						<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next favourite game...">
-						<button type="submit" class="btn btn-primary">Search</button>
-					</form>
-			    </div>
+<div class="modal fade" id="searchWrapper" tabindex="-1" role="dialog" aria-labelledby="searchWrapperLabel" aria-hidden="true">
+	 <div class="container" style="margin-top: 100px;">
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3 text-center">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
+				<br><br>
+				<form id="search" action="#" method="post" style="width: 100%;">
+					<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next favourite game...">
+				</form>
 			</div>
-		 </div>
-	</div>
+		</div>
+	 </div>
+</div>
 
 	
 
