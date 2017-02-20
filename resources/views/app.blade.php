@@ -172,7 +172,7 @@
 								<li class="hidden-sm">
 									<a href="/shop">Buy Games</a>
 								</li> 
-								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
+								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games" onclick="setFocus()"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -344,6 +344,9 @@
                   return false;
               });
               $('#back-to-top').tooltip('show');              
+			  function setFocus() {
+				$("#search-terms").focus();;
+			}
         });
     </script>
     @yield('scripts')
