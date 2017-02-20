@@ -43,7 +43,7 @@
 			      </div>
 			      <div class="col-sm-4 col-xs-12">
               <span>Search for store: </span>
-              <form id="search" action="#" method="post" style="width: 100%;">
+              <form id="search" action="#" method="post" style="width: 100%;margin: 5px 0;">
                   <input type="text" name="search-stores" id="search-stores" class="form-control" placeholder="Find your local store..." style="top: -5px;">
               </form>
             </div>

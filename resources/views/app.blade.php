@@ -26,7 +26,7 @@
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
 	<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
-    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=33" rel="stylesheet">
+    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=34" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="https://assets.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<!-- Fonts -->
@@ -172,7 +172,7 @@
 								<li class="hidden-sm">
 									<a href="/shop">Buy Games</a>
 								</li> 
-								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
+								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -299,7 +299,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
 				<br><br>
 				<form id="search" action="#" method="post" style="width: 100%;">
-					<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next favourite game...">
+					<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next favourite game..." style="height: 75px;font-size: 25px;" onfocus="if(this.value == 'value') { this.value = ''; }">
 				</form>
 			</div>
 		</div>
