@@ -38,7 +38,7 @@
 		<div class="row">
 			<div class="col-md-9 col-sm-8 col-xs-12">
 				<div class="row">
-			      <div class="col-md-4 col-sm-5 col-xs-12">
+			      <div class="col-md-4 col-sm-5 col-xs-12 text-center">
 			      	<img src="https://assets.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" itemprop="image" />
 			      </div>
 			      <div class="col-md-8 col-sm-7 col-xs-12">
