@@ -59,6 +59,7 @@ class GameController extends Controller
                 $games[] = (array(
                     "objectID" => $row['id'],
                     "name" => $row['name'],
+					"description" => str_limit(strip_tags($row->description), $limit = 100, $end = '...'),
                     "published" => $row['published'],
                     "slug" => "/games/".$row->types()->firstOrFail()->slug."/".$row['slug'],
                     "thumb" => $row['thumb1x'],
