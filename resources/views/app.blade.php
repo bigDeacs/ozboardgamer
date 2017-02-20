@@ -354,19 +354,6 @@
                   return false;
               });
               $('#back-to-top').tooltip('show');              
-              $("#myCarousel").carousel({
-                 interval : 5000,
-                 pause: false
-             });
-
-              $('.btn-vertical-slider').on('click', function () {
-                  if ($(this).attr('data-slide') == 'next') {
-                      $('#myCarousel').carousel('next');
-                  }
-                  if ($(this).attr('data-slide') == 'prev') {
-                      $('#myCarousel').carousel('prev')
-                  }
-              });
         });
     </script>
     @yield('scripts')
