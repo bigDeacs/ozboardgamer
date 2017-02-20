@@ -172,16 +172,13 @@
 								<li class="hidden-sm">
 									<a href="/shop">Buy Games</a>
 								</li> 
-								<li class="hidden-xs"><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
+								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 				<!-- /.navbar-collapse -->
 			</div>
-			<form class="hidden-lg hidden-md hidden-sm" action="#" method="post" style="width: 100%;">
-				<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next favourite game...">
-			</form>
 			<!-- /.container -->
 		</nav>    
 
@@ -298,7 +295,7 @@
 <div class="modal fade" id="searchWrapper" tabindex="-1" role="dialog" aria-labelledby="searchWrapperLabel" aria-hidden="true">
 	 <div class="container" style="margin-top: 50px;">
 		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2 text-center">
+			<div class="col-sm-8 col-sm-offset-2 col-xs-12 text-center">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
 				<br><br>
 				<form id="search" action="#" method="post" style="width: 100%;">
