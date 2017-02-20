@@ -26,7 +26,7 @@
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
 	<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
-    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=29" rel="stylesheet">
+    <link href="https://assets.ozboardgamer.com/css/style.min.css?v=30" rel="stylesheet">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="https://assets.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<!-- Fonts -->
@@ -146,7 +146,7 @@
                     </div>
                     <div class="navbar-right">
                         <ul class="nav navbar-nav">
-                            <li><button type="button" data-toggle="modal" data-target="#searchWrapper">Search</button></li>
+                            <li><a href="#search"><i class="fa fa-search" aria-hidden="true"></i> Search</a></li>
                             <!--<li>
                                 <a href="/">Home</a>
                             </li>-->
@@ -297,24 +297,13 @@
             </div>
         </div>
     </footer>
-
 	
-	<div class="modal fade" id="searchWrapper" tabindex="-1" role="dialog" aria-labelledby="searchWrapperLabel">
-	  <div class="modal-dialog" role="document">
-		<div class="modal-content">
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<h4 class="modal-title" id="searchWrapperLabel">Modal title</h4>
-		  </div>
-		  <div class="modal-body">
-			<form id="search" action="#" method="post" style="width: 100%;">
-				<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next favourite game...">
-				<button type="submit" class="btn btn-primary">Search</button>
-			</form>
-		  </div>
-		</div>
-	  </div>
-	</div>
+	<div id="search">
+		<button type="button" class="close">×</button>
+		<form>
+			<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next favourite game...">
+		</form>
+</div>
 
 	
 
@@ -353,8 +342,21 @@
                   }, 800);
                   return false;
               });
-              $('#back-to-top').tooltip('show');              
-			  $('#searchWrapper').modal();
+              $('#back-to-top').tooltip('show'); 
+			  
+			  $(function () {
+				$('a[href="#search"]').on('click', function(event) {
+					event.preventDefault();
+					$('#search').addClass('open');
+					$('#search > form > input[type="search"]').focus();
+				});
+				
+				$('#search, #search button.close').on('click keyup', function(event) {
+					if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
+						$(this).removeClass('open');
+					}
+				});
+			});
         });
     </script>
     @yield('scripts')
