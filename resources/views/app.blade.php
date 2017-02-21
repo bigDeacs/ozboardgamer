@@ -26,7 +26,9 @@
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
     <link href="https://assets.ozboardgamer.com/css/style.min.css?v=39" rel="stylesheet">
-	<link href="https://assets.ozboardgamer.com/css/fonts.css?v=2" rel="stylesheet">
+	<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="https://assets.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
