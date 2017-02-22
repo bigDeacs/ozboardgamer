@@ -120,4 +120,7 @@
             $("#child").css("height",$("#parent").height());
      });
   </script>
+  <script>
+	fbq('track', 'ViewContent');
+  </script>
 @endsection

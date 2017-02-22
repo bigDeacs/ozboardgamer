@@ -522,4 +522,7 @@
 		})
   	</script>
 	{!! $game->scripts !!}
+  <script>
+	fbq('track', 'ViewContent');
+  </script>
 @endsection
