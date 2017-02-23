@@ -223,11 +223,10 @@
 			      	</div>
 			      </div>
 			    </div>
-
+				<div class="sharethis-inline-share-buttons"></div>
           @if(Session::has('name'))
             <hr />
             <div class="row">
-              <div class="getsocial gs-reaction-button"></div>
               <script>
 
               /**
