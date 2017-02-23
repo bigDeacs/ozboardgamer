@@ -29,6 +29,13 @@
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#222222">
     <meta property="fb:app_id" content="256969058009917" />
+	<link rel=”publisher” href=”https://plus.google.com/+Ozboardgamer”>
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@OzBoardGamer">
+	<meta name="twitter:title" content="@OzBoardGamer">
+	<meta name="twitter:description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
+	<meta name="twitter:image" content="https://assets.ozboardgamer.com/img/logo.png">
+	<meta name="twitter:image:alt" content="Oz Board Gamer Logo">
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
