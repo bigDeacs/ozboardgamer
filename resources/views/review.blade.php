@@ -117,7 +117,7 @@
 	{!! $post->scripts !!}
 	<script>
     $(document).ready(function() {
-            $("#child").css("height",$("#parent").height());
+            $("#child").css("height",$("#parent").height() - 50);
      });
   </script>
   <script>
