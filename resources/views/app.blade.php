@@ -145,22 +145,22 @@
 								<li class="dropdown">
 								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
 								  <ul class="dropdown-menu">
-									<li><a href="/games">Find Games</a></li>
-									<li><a href="/mechanics">Mechanics</a></li>
-									<li><a href="/publishers">Publishers</a></li>
-									<li><a href="/designers">Designers</a></li>
-									<li><a href="/themes">Themes</a></li>
-									<li><a href="/families">Families</a></li>
+									<li class="text-center"><a href="/games">Find Games</a></li>
+									<li class="text-center"><a href="/mechanics">Mechanics</a></li>
+									<li class="text-center"><a href="/publishers">Publishers</a></li>
+									<li class="text-center"><a href="/designers">Designers</a></li>
+									<li class="text-center"><a href="/themes">Themes</a></li>
+									<li class="text-center"><a href="/families">Families</a></li>
 								  </ul>
 								</li>
 								<li class="dropdown">
 								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game Articles <span class="caret"></span></a>
 								  <ul class="dropdown-menu">
-									<li><a href="/reviews">Reviews</a></li>
-									<li><a href="/top10s">Top 10's</a></li>
-									<li><a href="/howtos">How To's</a></li>
-									<li><a href="/news">News</a></li>
-									<li><a href="/blogs">Blog</a></li>
+									<li class="text-center"><a href="/reviews">Reviews</a></li>
+									<li class="text-center"><a href="/top10s">Top 10's</a></li>
+									<li class="text-center"><a href="/howtos">How To's</a></li>
+									<li class="text-center"><a href="/news">News</a></li>
+									<li class="text-center"><a href="/blogs">Blog</a></li>
 								  </ul>
 								</li>
 								<li>
