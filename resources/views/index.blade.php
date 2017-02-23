@@ -37,7 +37,7 @@
 					<p class="bigText">Buy Games</p>        
 					<p class="smallText">Choose from thousands of Games and Accessories</p>
 				</hgroup>
-				<a href="/shop?page=1&sort=savings-desc" class="btn btn-hero btn-lg">Start Shopping</a>
+				<a href="/shop" class="btn btn-hero btn-lg">Start Shopping</a>
 			  </div>
 			</div>
             @unless($featured->isEmpty())
@@ -203,7 +203,7 @@
 					@foreach($products as $product)	
 						<div class="text-center">					
 							<a href="{!! $product->slug !!}" target="_blank">
-								<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
+								<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" alt="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}" />
 							</a>
 							<p class="text-center">
 								<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
