@@ -34,8 +34,8 @@
 			  <div class="slide-1" style="background-image:url('https://assets.ozboardgamer.com/img/buy-online.jpg');"></div>
 			  <div class="hero">
 				<hgroup>
-					<h1>Buy Games</h1>        
-					<h3>Choose from thousands of Games and Accessories</h3>
+					<p class="bigText">Buy Games</p>        
+					<p class="smallText">Choose from thousands of Games and Accessories</p>
 				</hgroup>
 				<a href="/shop?page=1&sort=savings-desc" class="btn btn-hero btn-lg">Start Shopping</a>
 			  </div>
@@ -48,8 +48,8 @@
 					  <div class="slide-{{ ($key+2) }}" style="background-image:url('https://assets.ozboardgamer.com/{{ $post->image }}');"></div>
 					  <div class="hero">        
 						<hgroup>
-							<h1>{{ $post->category()->first()->name }}</h1>        
-							<h3>{{ $post->name }}</h3>
+							<p class="bigText">{{ $post->category()->first()->name }}</p>        
+							<p class="smallText">{{ $post->name }}</p>
 						</hgroup>       
 						<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
 					  </div>
