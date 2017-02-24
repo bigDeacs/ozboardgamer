@@ -109,12 +109,12 @@
 									@if($review->games->isEmpty())
 										<div class="col-sm-12 post">
 									@else
-										<div class="col-sm-3 col-xs-12 col-xs-push-12">
+										<div class="col-sm-3 col-xs-12 hidden-xs">
 											<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
 												<img src="https://assets.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
 											</a>
 										</div>
-										<div class="col-sm-9 col-xs-12 col-xs-pull-12 post">
+										<div class="col-sm-9 col-xs-12 post">
 									@endif
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -167,12 +167,12 @@
 									@if($top10->games->isEmpty())
 										<div class="col-sm-12 post">
 									@else										
-										<div class="col-sm-3 col-xs-12 col-xs-push-12">
+										<div class="col-sm-3 col-xs-12 hidden-xs">
 											<a href="/top10s/{{ $top10->slug }}" title="{{ $top10->games()->first()->name }}">
 												<img src="https://assets.ozboardgamer.com{{ $top10->games()->first()->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $top10->games()->first()->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $top10->games()->first()->thumb2x }} 2x" alt="{{ $top10->games()->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
 											</a>
 										</div>
-										<div class="col-sm-9 col-xs-12 col-xs-pull-12 post">
+										<div class="col-sm-9 col-xs-12 post">
 									@endif
                                         <div class="row">
                                             <div class="col-sm-12">
