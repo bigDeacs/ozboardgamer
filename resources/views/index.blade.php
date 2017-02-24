@@ -168,7 +168,7 @@
 										<div class="col-sm-12 post">
 									@else										
 										<div class="col-sm-3 col-xs-12 col-xs-push-12">
-											<a href="/top10s/{{ $top10->slug }}" title="{{ $top10->games()->find(rand(0, count($top10->games)))->name }}">
+											<a href="/top10s/{{ $top10->slug }}" title="{{ $top10->games()->first()->name }}">
 												<img src="https://assets.ozboardgamer.com{{ $top10->games()->first()->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $top10->games()->first()->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $top10->games()->first()->thumb2x }} 2x" alt="{{ $top10->games()->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
 											</a>
 										</div>
