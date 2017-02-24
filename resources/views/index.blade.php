@@ -106,7 +106,16 @@
                             <h2>Latest Game Reviews</h2>
                             @foreach($reviews as $review)
                                 <div class="row" itemscope itemtype="http://schema.org/Review">
-                                    <div class="col-sm-12 post">
+									@if($review->games->isEmpty())
+										<div class="col-sm-12 post">
+									@else
+										<div class="col-sm-3 col-xs-12">
+											<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
+												<img src="https://assets.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+											</a>
+										</div>
+										<div class="col-sm-9 col-xs-12 post">
+									@endif
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <p class="blogHeading">
@@ -118,7 +127,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row">											
                                             <div class="col-sm-12 post-header-line">
                                                 <span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $review->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
                                                 </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a>
@@ -155,7 +164,16 @@
                             <h2>Latest Top 10's</h2>
                             @foreach($top10s as $top10)
                                 <div class="row">
-                                    <div class="col-sm-12 post">
+									@if($top10->games->isEmpty())
+										<div class="col-sm-12 post">
+									@else
+										<div class="col-sm-3 col-xs-12 col-sm-push-9">
+											<a href="/top10s/{{ $top10->slug }}" title="{{ $top10->games()->first()->name }}">
+												<img src="https://assets.ozboardgamer.com{{ $top10->games()->first()->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $top10->games()->first()->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $top10->games()->first()->thumb2x }} 2x" alt="{{ $top10->games()->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+											</a>
+										</div>
+										<div class="col-sm-9 col-xs-12 col-sm-pull-3 post">
+									@endif
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <p class="blogHeading">
