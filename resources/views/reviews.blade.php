@@ -29,10 +29,13 @@
 							@if($post->games->isEmpty())
 								<div class="col-sm-12">
 							@else
+								<?php 
+									$game = $post->games()->orderBy(DB::raw('RAND()'))->first(); 
+								?>
 								<div class="col-sm-3 col-xs-12 hidden-xs" style="padding: 15px;">
-									<a href="/{{ $category->slug }}/{{ $post->slug }}" title="{{ $post->games()->first()->name }}">
-										<img src="https://assets.ozboardgamer.com{{ $post->games()->first()->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $post->games()->first()->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $post->games()->first()->thumb2x }} 2x" alt="{{ $post->games()->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
-									</a>
+									<a href="/{{ $category->slug }}/{{ $post->slug }}" title="{{ $game->name }}">
+										<img src="https://assets.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+									</a>								
 								</div>
 								<div class="col-sm-9 col-xs-12">
 							@endif
