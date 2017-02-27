@@ -25,14 +25,14 @@
 			      <div class="col-sm-9 col-xs-12">
 			      	<h1>{{ $category->name }}</h1>
 			      	@foreach($posts as $post)
-						<div class="row post" itemscope itemtype="http://schema.org/Review">
+						<div class="row post">
 							@if($review->games->isEmpty())
 								<div class="col-sm-12">
 							@else
 								<div class="col-sm-3 col-xs-12 hidden-xs" style="padding: 15px;">
-									<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
-										<img src="https://assets.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
-									</a>
+									<a href="/{{ $category->slug }}/{{ $post->slug }}" title="{{ $post->games()->first()->name }}">
+										<img src="https://assets.ozboardgamer.com{{ $post->games()->first()->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $post->games()->first()->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $post->games()->first()->thumb2x }} 2x" alt="{{ $post->games()->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+									</a>								
 								</div>
 								<div class="col-sm-9 col-xs-12">
 							@endif
