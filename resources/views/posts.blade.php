@@ -25,8 +25,17 @@
 			      <div class="col-sm-9 col-xs-12">
 			      	<h1>{{ $category->name }}</h1>
 			      	@foreach($posts as $post)
-						<div class="row" itemscope itemtype="http://schema.org/Review">
-                            <div class="col-sm-12 post">
+						<div class="row post" itemscope itemtype="http://schema.org/Review">
+							@if($review->games->isEmpty())
+								<div class="col-sm-12">
+							@else
+								<div class="col-sm-3 col-xs-12 hidden-xs" style="padding: 15px;">
+									<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
+										<img src="https://assets.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+									</a>
+								</div>
+								<div class="col-sm-9 col-xs-12">
+							@endif
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <p class="blogHeading">
