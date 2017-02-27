@@ -26,7 +26,7 @@
 			      	<h1>{{ $category->name }}</h1>
 			      	@foreach($posts as $post)
 						<div class="row post">
-							@if($review->games->isEmpty())
+							@if($post->games->isEmpty())
 								<div class="col-sm-12">
 							@else
 								<div class="col-sm-3 col-xs-12 hidden-xs" style="padding: 15px;">
