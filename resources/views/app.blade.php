@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-THQLSV');</script>
-	<!-- End Google Tag Manager -->
-	<!-- End Google Tag Manager -->
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">    
@@ -54,16 +46,29 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<!-- Google Ads -->
 	<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=58ae5064f07e8a0012dd628e&product=inline-share-buttons'></script>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-5206537313688631",
+		enable_page_level_ads: true
+	  });
+	</script>
+	<!-- End Google Ads -->
+	<!-- End Facebook Plugin -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=1586488208343901";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- End Facebook Plugin -->
   </head>
-
-  <body>
-	<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-THQLSV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
-	
+  <body>	
 	<div id="wrap">
-
 		<!-- Navigation -->
 		<nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation">
 			<div class="container topnav">
@@ -172,7 +177,7 @@
 
 		@yield('content')
 
-		<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
+		<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
 		<!-- Footer -->
 		<footer class="navbar-inverse navbar-footer">
@@ -323,13 +328,11 @@
               });
               // scroll body to 0px on click
               $('#back-to-top').click(function () {
-                  $('#back-to-top').tooltip('hide');
                   $('body,html').animate({
                       scrollTop: 0
                   }, 800);
                   return false;
-              });
-              $('#back-to-top').tooltip('show');              
+              });            
         });
     </script>
     @yield('scripts')
