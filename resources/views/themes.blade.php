@@ -30,7 +30,7 @@
 			    	@foreach($themes as $theme)
 						<div class="col-sm-3 col-xs-12 text-center">
 					    	<a href="/themes/{{ $theme->slug }}">
-				    			<img src="https://assets-2.ozboardgamer.com{{ $theme->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://assets-2.ozboardgamer.com{{ $theme->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://assets-2.ozboardgamer.com{{ $theme->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive" />
+				    			<img src="https://img.ozboardgamer.com{{ $theme->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $theme->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $theme->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive" />
 				    		</a>
 					    	<p class="text-center"><strong><a href="/themes/{{ $theme->slug }}">{!! $theme->name !!}</a></strong></p>
 						</div>

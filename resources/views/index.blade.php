@@ -31,7 +31,7 @@
 			<div class="item slides active">
 			  <!-- Overlay -->
 			  <div class="overlay"></div>
-			  <div class="slide-1" style="background-image:url('https://assets-1.ozboardgamer.com/img/buy-online.jpg');"></div>
+			  <div class="slide-1" style="background-image:url('https://img.ozboardgamer.com/img/buy-online.jpg');"></div>
 			  <div class="hero">
 				<hgroup>
 					<p class="bigText">Buy Games</p>        
@@ -45,7 +45,7 @@
 					<div class="item slides">
 					  <!-- Overlay -->
 					  <div class="overlay"></div>
-					  <div class="slide-{{ ($key+2) }}" style="background-image:url('https://assets-1.ozboardgamer.com/{{ $post->image }}');"></div>
+					  <div class="slide-{{ ($key+2) }}" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');"></div>
 					  <div class="hero">        
 						<hgroup>
 							<p class="bigText">{{ $post->category()->first()->name }}</p>        
@@ -71,7 +71,7 @@
                             @foreach($games as $game)
                                 <li itemscope itemtype="http://schema.org/Game">
                                     <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
-                                        <img src="https://assets-2.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://assets-2.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets-2.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+                                        <img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
                                     </a>
                                     <p class="text-center"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{!! $game->name !!}</a></strong></p>
                                 </li>
@@ -111,7 +111,7 @@
 									@else
 										<div class="col-sm-3 col-xs-12 hidden-xs" style="padding: 15px;">
 											<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
-												<img src="https://assets-2.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://assets-2.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://assets-2.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+												<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
 											</a>
 										</div>
 										<div class="col-sm-9 col-xs-12">
@@ -169,7 +169,7 @@
 									@else										
 										<div class="col-sm-3 col-xs-12 hidden-xs" style="padding: 15px;">
 											<a href="/top10s/{{ $top10->slug }}" title="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}">
-												<img src="https://assets-2.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://assets-2.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://assets-2.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+												<img src="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
 											</a>
 										</div>
 										<div class="col-sm-9 col-xs-12">
@@ -310,7 +310,7 @@
                                 @foreach($stores as $store)
                                     <li>
                                         <a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
-                                            <img src="https://assets-3.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://assets-3.ozboardgamer.com{{ $store->thumb1x }} 1x, https://assets-3.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
+                                            <img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
                                         </a>
                                         <p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
                                     </li>

@@ -35,17 +35,17 @@
 	<meta name="twitter:site" content="@OzBoardGamer">
 	<meta name="twitter:title" content="@OzBoardGamer">
 	<meta name="twitter:description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
-	<meta name="twitter:image" content="https://assets-1.ozboardgamer.com/img/logo.png">
+	<meta name="twitter:image" content="https://img.ozboardgamer.com/img/logo.png">
 	<meta name="twitter:image:alt" content="Oz Board Gamer Logo">
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-    <link href="https://assets-1.ozboardgamer.com/css/style.min.css?v=42" rel="stylesheet">
+    <link href="https://css.ozboardgamer.com/css/style.min.css?v=42" rel="stylesheet">
 	<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="https://assets-1.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="https://css.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -76,7 +76,7 @@
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand topnav" href="/" title="Click to go to home page">
-						<img src="https://assets-1.ozboardgamer.com/img/logo.png" class="img-responsive" height="95" width="auto" alt="OzBoardGamer Logo" />
+						<img src="https://img.ozboardgamer.com/img/logo.png" class="img-responsive" height="95" width="auto" alt="OzBoardGamer Logo" />
 					</a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -303,9 +303,9 @@
     <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
     <script src="//cdn.jsdelivr.net/hogan.js/3.0/hogan.min.js"></script>
     <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.min.js"></script>
-    <script src="https://assets-1.ozboardgamer.com/js/scripts.js?ver=6"></script>
+    <script src="https://js.ozboardgamer.com/js/scripts.js?ver=6"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="https://assets-1.ozboardgamer.com/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="https://js.ozboardgamer.com/js/ie10-viewport-bug-workaround.js"></script>
     <script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>
     <script>
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({

@@ -68,7 +68,7 @@
 			                    <div class="row post-content">
 			                        <div class="col-md-2 col-sm-3 col-xs-7">
 			                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-			                                <img src="https://assets-2.ozboardgamer.com/{{ $game->thumb1x }}" srcset="https://assets-2.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets-2.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
+			                                <img src="https://img.ozboardgamer.com/{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
 			                            </a>
 			                        </div>
 			                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">
@@ -134,30 +134,30 @@
 				                    <div class="row post-content">
 				                        <div class="col-xs-7">
 				                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-				                                <img src="https://assets-2.ozboardgamer.com/{{ $game->thumb1x }}" srcset="https://assets-2.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets-2.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
+				                                <img src="https://img.ozboardgamer.com/{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
 				                            </a>
 				                        </div>
 				                        <div class="col-xs-5">
 											@if($game->rating < 1)
-												<img src="https://assets-2.ozboardgamer.com/img/1.png" class="img-responsive" />
+												<img src="https://img.ozboardgamer.com/img/1.png" class="img-responsive" />
 											@elseif($game->rating < 2)
-												<img src="https://assets-2.ozboardgamer.com/img/2.png" class="img-responsive" />
+												<img src="https://img.ozboardgamer.com/img/2.png" class="img-responsive" />
 											@elseif($game->rating < 3)
-												<img src="https://assets-2.ozboardgamer.com/img/3.png" class="img-responsive" />
+												<img src="https://img.ozboardgamer.com/img/3.png" class="img-responsive" />
 											@elseif($game->rating < 4)
-												<img src="https://assets-2.ozboardgamer.com/img/4.png" class="img-responsive" />
+												<img src="https://img.ozboardgamer.com/img/4.png" class="img-responsive" />
 											@elseif($game->rating < 5)
-												<img src="https://assets-2.ozboardgamer.com/img/5.png" class="img-responsive" />
+												<img src="https://img.ozboardgamer.com/img/5.png" class="img-responsive" />
 											@elseif($game->rating < 6)
-												<img src="https://assets-2.ozboardgamer.com/img/6.png" class="img-responsive" />
+												<img src="https://img.ozboardgamer.com/img/6.png" class="img-responsive" />
 											@elseif($game->rating < 7)
-												<img src="https://assets-2.ozboardgamer.com/img/7.png" class="img-responsive" />
+												<img src="https://img.ozboardgamer.com/img/7.png" class="img-responsive" />
 											@elseif($game->rating < 8)
-												<img src="https://assets-2.ozboardgamer.com/img/8.png" class="img-responsive" />
+												<img src="https://img.ozboardgamer.com/img/8.png" class="img-responsive" />
 											@elseif($game->rating < 9)
-												<img src="https://assets-2.ozboardgamer.com/img/9.png" class="img-responsive" />
+												<img src="https://img.ozboardgamer.com/img/9.png" class="img-responsive" />
 											@else
-												<img src="https://assets-2.ozboardgamer.com/img/10.png" class="img-responsive" />
+												<img src="https://img.ozboardgamer.com/img/10.png" class="img-responsive" />
 											@endif
 											<div class="text-center lead">
 												<strong>{{ number_format((float)$game->rating, 1, '.', '') }}/10</strong>
