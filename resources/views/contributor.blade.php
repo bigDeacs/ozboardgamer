@@ -71,7 +71,7 @@
 			                    @else 
 			                    	<div class="col-sm-3 text-center">
 			                            <a href="/{{ $post->category->slug }}/{{ $post->slug }}">
-			                                <img src="https://assets.ozboardgamer.com/{{ $post->thumb }}" alt="{!! $post->name !!}" class="img-responsive" width="263" height="auto" />
+			                                <img src="https://assets-2.ozboardgamer.com/{{ $post->thumb }}" alt="{!! $post->name !!}" class="img-responsive" width="263" height="auto" />
 			                            </a>
 			                        </div>
 			                        <div class="col-sm-9">

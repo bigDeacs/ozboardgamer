@@ -52,7 +52,7 @@
 			    	@foreach($stores as $key => $store)
 						<div class="col-sm-3 col-xs-12 text-center">
 							<a href="/stores/{{ $store->slug }}">
-				    			<img src="https://assets.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $store->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $store->thumb2x }} 2x" class="img-responsive" />
+				    			<img src="https://assets-2.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://assets-2.ozboardgamer.com{{ $store->thumb1x }} 1x, https://assets-2.ozboardgamer.com{{ $store->thumb2x }} 2x" class="img-responsive" />
 				    		</a>
 					    	<p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
 					    	<p class="text-center">

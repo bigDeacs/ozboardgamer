@@ -34,7 +34,7 @@
 								?>
 								<div class="col-sm-3 col-xs-12 hidden-xs" style="padding: 15px;">
 									<a href="/{{ $category->slug }}/{{ $post->slug }}" title="{{ $game->name }}">
-										<img src="https://assets.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://assets.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
+										<img src="https://assets-2.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://assets-2.ozboardgamer.com{{ $game->thumb1x }} 1x, https://assets-2.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
 									</a>								
 								</div>
 								<div class="col-sm-9 col-xs-12">
