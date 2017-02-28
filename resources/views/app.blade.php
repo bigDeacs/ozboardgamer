@@ -46,16 +46,6 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
-	<!-- Google Ads -->
-	<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=58ae5064f07e8a0012dd628e&product=inline-share-buttons'></script>
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-	  (adsbygoogle = window.adsbygoogle || []).push({
-		google_ad_client: "ca-pub-5206537313688631",
-		enable_page_level_ads: true
-	  });
-	</script>
-	<!-- End Google Ads -->
 	<!-- End Facebook Plugin -->
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
@@ -236,14 +226,7 @@
 					<div class="col-md-4 col-xs-12">
 						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 						<!-- Above Footer Ad -->
-						<ins class="adsbygoogle"
-							 style="display:block"
-							 data-ad-client="ca-pub-5206537313688631"
-							 data-ad-slot="2769589305"
-							 data-ad-format="auto"></ins>
-						<script>
-						(adsbygoogle = window.adsbygoogle || []).push({});
-						</script>                    
+						<a href="https://t.cfjump.com/33917/b/31466" rel="noindex,nofollow"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/31466" /></a>             
 					</div>
 					<div class="col-md-4 col-xs-12">
 						<ul>

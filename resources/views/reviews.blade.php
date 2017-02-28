@@ -97,15 +97,8 @@
 					<hr class="hidden-xs" />   					
 					<div class="fb-page" data-href="https://www.facebook.com/ozboardgamer" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/ozboardgamer" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ozboardgamer">Oz Board Gamer</a></blockquote></div>
 					<hr class="hidden-xs" /> 
-					<!-- Home Page Tower Ad Right -->
-	                <ins class="adsbygoogle hidden-xs"
-	                     style="display:block"
-	                     data-ad-client="ca-pub-5206537313688631"
-	                     data-ad-slot="2828464904"
-	                     data-ad-format="auto"></ins>
-	                <script>
-	                (adsbygoogle = window.adsbygoogle || []).push({});
-	                </script>        
+					<!-- Reviews Page Tower Ad Right -->
+	                <a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/26455" /></a>      
 			      </div>
 			    </div>
 				

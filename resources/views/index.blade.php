@@ -87,14 +87,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <!-- Home Page Horizon Ad -->
-                <ins class="adsbygoogle hidden-xs"
-                     style="display:block"
-                     data-ad-client="ca-pub-5206537313688631"
-                     data-ad-slot="9138550904"
-                     data-ad-format="auto"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                <a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/26467" /></a>
             </div>
         </div>
         @endunless
@@ -290,14 +283,7 @@
                     <hr />
                 @endunless  				
                 <!-- Home Page Tower Ad Right -->
-                <ins class="adsbygoogle hidden-xs"
-                     style="display:block"
-                     data-ad-client="ca-pub-5206537313688631"
-                     data-ad-slot="2828464904"
-                     data-ad-format="auto"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                <a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/26455" /></a>
             </div>
         </div>
         @unless($stores->isEmpty())
