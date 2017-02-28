@@ -88,7 +88,7 @@
             <div class="col-xs-12">
                 <!-- Home Page Horizon Ad -->
 				<div class="text-center">
-					<a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/26467" /></a>
+					<a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/26467" /></a>
 				</div>
             </div>
         </div>

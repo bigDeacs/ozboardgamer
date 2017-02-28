@@ -99,7 +99,7 @@
 	                <hr class="hidden-xs" />    
 					<!-- Posts Page Tower Ad Right -->
 	                <div class="text-center">
-						<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/26455" /></a>
+						<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/26455" /></a>
 					</div>
 			      </div>
 			    </div>
