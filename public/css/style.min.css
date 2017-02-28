@@ -1,28 +1,28 @@
 @font-face {
     font-family: icon-font-1;
-    src: url(../fonts/icon-font-1.eot);
-    src: url(../fonts/icon-font-1.eot?#iefix) format("embedded-opentype"), url(../fonts/icon-font-1.woff) format("woff"), url(../fonts/icon-font-1.ttf) format("truetype"), url(../fonts/icon-font-1.svg#icon-font-1) format("svg");
+    src: url(https://font.ozboardgamer.com/fonts/icon-font-1.eot);
+    src: url(https://font.ozboardgamer.com/fonts/icon-font-1.eot?#iefix) format("embedded-opentype"), url(https://font.ozboardgamer.com/fonts/icon-font-1.woff) format("woff"), url(https://font.ozboardgamer.com/fonts/icon-font-1.ttf) format("truetype"), url(https://font.ozboardgamer.com/fonts/icon-font-1.svg#icon-font-1) format("svg");
     font-weight: 400;
     font-style: normal
 }
 
 @font-face {
     font-family: 'Glyphicons Halflings';
-    src: url(../fonts/glyphicons-halflings-regular.eot);
-    src: url(../fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(../fonts/glyphicons-halflings-regular.woff) format('woff'), url(../fonts/glyphicons-halflings-regular.ttf) format('truetype'), url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')
+    src: url(https://font.ozboardgamer.com/fonts/glyphicons-halflings-regular.eot);
+    src: url(https://font.ozboardgamer.com/fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(https://font.ozboardgamer.com/fonts/glyphicons-halflings-regular.woff) format('woff'), url(https://font.ozboardgamer.com/fonts/glyphicons-halflings-regular.ttf) format('truetype'), url(https://font.ozboardgamer.com/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')
 }
 
 /* Google Font */
 @font-face {
     font-family: 'Open Sans';
-	src: local('Open Sans'), local('OpenSans'), url(../fonts/opensans-regular-webfont.woff2) format('woff2');
+	src: local('Open Sans'), local('OpenSans'), url(https://font.ozboardgamer.com/fonts/opensans-regular-webfont.woff2) format('woff2');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Open Sans';
-	src: local('Open Sans Bold'), local('OpenSans-Bold'), url(../fonts/opensans-bold-webfont.woff2) format('woff2');
+	src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://font.ozboardgamer.com/fonts/opensans-bold-webfont.woff2) format('woff2');
     font-weight: 700;  
     font-style: normal;
 }
