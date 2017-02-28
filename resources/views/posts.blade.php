@@ -98,7 +98,9 @@
 					<div class="fb-page" data-href="https://www.facebook.com/ozboardgamer" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/ozboardgamer" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ozboardgamer">Oz Board Gamer</a></blockquote></div>	                
 	                <hr class="hidden-xs" />    
 					<!-- Posts Page Tower Ad Right -->
-	                <a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/26455" /></a>
+	                <div class="text-center">
+						<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/26455" /></a>
+					</div>
 			      </div>
 			    </div>
 				<hr />

@@ -226,7 +226,9 @@
 					<div class="col-md-4 col-xs-12">
 						<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 						<!-- Above Footer Ad -->
-						<a href="https://t.cfjump.com/33917/b/31466" rel="noindex,nofollow"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/31466" /></a>             
+						<div class="text-center">
+							<a href="https://t.cfjump.com/33917/b/31466" rel="noindex,nofollow"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/31466" /></a>             
+						</div>
 					</div>
 					<div class="col-md-4 col-xs-12">
 						<ul>
