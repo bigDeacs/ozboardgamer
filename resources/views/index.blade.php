@@ -1,10 +1,10 @@
 @extends('app')
 
 @section('meta')
-    <title>Helping you find your next favourite game - Oz Board Gamer</title>
+    <title>Oz Board Gamer - Board Games News, Reviews and More</title>
     <meta name="description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Helping you find your next favourite game - Oz Board Gamer">
+    <meta property="og:title" content="Oz Board Gamer - Board Games News, Reviews and More">
     <meta property="og:description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
     <meta property="og:url" content="https://ozboardgamer.com">
     <meta property="og:image" content="https://ozboardgamer.com/img/logo.png">
@@ -64,7 +64,7 @@
         @unless($games->isEmpty())
         <div class="row hidden-xs">
             <div class="col-xs-12">
-                <h1 style="margin-top: 10px;">Top Rated Games</h1>
+                <h1 style="margin-top: 10px;">Top Rated Board Games</h1>
                 <div class="jcarousel-wrapper">
                     <div class="jcarousel">
                         <ul>
