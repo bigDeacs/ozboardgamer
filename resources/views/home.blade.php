@@ -114,6 +114,20 @@
 							  <ol class="Chartjs-legend" id="legend-4-container"></ol>
 							</div>
 						</div>
+						<div class="col-xs-12 col-sm-6">
+							<div class="Chartjs">
+							  <h3>Mobile Sizes</h3>
+							  <figure class="Chartjs-figure" id="chart-5-container"></figure>
+							  <ol class="Chartjs-legend" id="legend-5-container"></ol>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6">
+							<div class="Chartjs">
+							  <h3>Mobile Sizes</h3>
+							  <figure class="Chartjs-figure" id="chart-6-container"></figure>
+							  <ol class="Chartjs-legend" id="legend-6-container"></ol>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -223,6 +237,8 @@
 		    renderYearOverYearChart(GID);
 		    renderTopBrowsersChart(GID);
 		    renderTrafficSourcesChart(GID);
+			renderDeviceCategoriesChart(GID);
+			renderSocialNetworkChart(GID);
 		  });
 
 
@@ -416,6 +432,68 @@
 
 		      new Chart(makeCanvas('chart-4-container')).Doughnut(data);
 		      generateLegend('legend-4-container', data);
+		    });
+		  }
+		  
+		    /**
+		   * Draw the a chart.js doughnut chart with data from the specified view that
+		   * compares sessions from mobile, desktop, and tablet over the past seven
+		   * days.
+		   */
+		  function renderDeviceCategoriesChart(ids) {
+		    query({
+		      'ids': ids,
+		      'dimensions': 'ga:deviceCategory',
+		      'metrics': 'ga:sessions',
+		      'sort': '-ga:sessions',
+		      'max-results': 3
+		    })
+		    .then(function(response) {
+
+		      var data = [];
+		      var colors = ['#4D5360','#949FB1','#D4CCC5'];
+
+		      response.rows.forEach(function(row, i) {
+		        data.push({
+		          label: row[0],
+		          value: +row[1],
+		          color: colors[i]
+		        });
+		      });
+
+		      new Chart(makeCanvas('chart-5-container')).Doughnut(data);
+		      generateLegend('legend-5-container', data);
+		    });
+		  }
+		  
+		    /**
+		   * Draw the a chart.js doughnut chart with data from the specified view that
+		   * compares sessions from mobile, desktop, and tablet over the past seven
+		   * days.
+		   */
+		  function renderSocialNetworkChart(ids) {
+		    query({
+		      'ids': ids,
+		      'dimensions': 'ga:socialNetwork',
+		      'metrics': 'ga:sessions',
+		      'sort': '-ga:sessions',
+		      'max-results': 5
+		    })
+		    .then(function(response) {
+
+		      var data = [];
+		      var colors = ['#4D5360','#949FB1','#D4CCC5','#E2EAE9','#F7464A'];
+
+		      response.rows.forEach(function(row, i) {
+		        data.push({
+		          label: row[0],
+		          value: +row[1],
+		          color: colors[i]
+		        });
+		      });
+
+		      new Chart(makeCanvas('chart-6-container')).Doughnut(data);
+		      generateLegend('legend-6-container', data);
 		    });
 		  }
 
