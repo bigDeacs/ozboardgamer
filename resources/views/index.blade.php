@@ -3,6 +3,7 @@
 @section('meta')
     <title>Oz Board Gamer - Board Games News, Reviews and More</title>
     <meta name="description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
+	<meta name="keywords" content="Board,Games,Cards,Strategy,Geek,Online,Store,Buy,Game,Reviews,News,Top,10s">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Oz Board Gamer - Board Games News, Reviews and More">
     <meta property="og:description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
@@ -88,7 +89,7 @@
             <div class="col-xs-12">
                 <!-- Home Page Horizon Ad -->
 				<div class="text-center">
-					<a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/26467" /></a>
+					<a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy amazing Board Games from Oz Game Shop" src="http://t.cfjump.com/33917/a/26467" /></a>
 				</div>
             </div>
         </div>
@@ -286,7 +287,7 @@
                 @endunless  				
                 <!-- Home Page Tower Ad Right -->
 				<div class="text-center">
-					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/26455" /></a>
+					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy amazing Board Games from Oz Game Shop" src="http://t.cfjump.com/33917/a/26455" /></a>
 				</div>
             </div>
         </div>
