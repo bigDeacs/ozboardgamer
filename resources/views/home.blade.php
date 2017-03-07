@@ -92,7 +92,7 @@
 					  			<figure class="Chartjs-figure" id="chart-1-container"></figure>
 						  		<ol class="Chartjs-legend" id="legend-1-container"></ol>
 							</div>
-						</div>
+						</div>					
 						<div class="col-xs-12 col-sm-6">
 							<div class="Chartjs">
 							  <h3>This Year vs Last Year (by users)</h3>
@@ -100,6 +100,8 @@
 							  <ol class="Chartjs-legend" id="legend-2-container"></ol>
 							</div>
 						</div>
+					</div>
+					<div class="row">
 						<div class="col-xs-12 col-sm-6">
 							<div class="Chartjs">
 							  <h3>Top Browsers (by pageview)</h3>
@@ -114,16 +116,18 @@
 							  <ol class="Chartjs-legend" id="legend-4-container"></ol>
 							</div>
 						</div>
+					</div>
+					<div class="row">
 						<div class="col-xs-12 col-sm-6">
 							<div class="Chartjs">
-							  <h3>Mobile Sizes</h3>
+							  <h3>Device Categories</h3>
 							  <figure class="Chartjs-figure" id="chart-5-container"></figure>
 							  <ol class="Chartjs-legend" id="legend-5-container"></ol>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6">
 							<div class="Chartjs">
-							  <h3>Mobile Sizes</h3>
+							  <h3>Social Network</h3>
 							  <figure class="Chartjs-figure" id="chart-6-container"></figure>
 							  <ol class="Chartjs-legend" id="legend-6-container"></ol>
 							</div>
