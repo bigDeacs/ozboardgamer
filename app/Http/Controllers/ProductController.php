@@ -70,7 +70,7 @@ class ProductController extends Controller
 
         $results = Product::where('price', '>', '0')->get();
         
-        /* if ($results)
+        if ($results)
         {
             // iterate over results and send them by batch of 10000 elements
             foreach ($results as $row)
@@ -97,7 +97,7 @@ class ProductController extends Controller
             }
 
             $index->saveObjects($products);
-        } */
+        }
         return redirect('/admin/products');
     }
 
