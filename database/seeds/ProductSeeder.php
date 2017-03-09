@@ -52,6 +52,7 @@ class ProductSeeder extends CsvSeeder
 				}
 			} else {
 				if($price > 20)
+				{
 					DB::table($this->table)
 					->where('id', $product->id)
 					->update([
