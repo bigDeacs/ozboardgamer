@@ -37,24 +37,31 @@ class ProductSeeder extends CsvSeeder
         {			
 			$sale = preg_replace('/\b(AUD|,)\b/i', '', $product->saleDisplay);
 			$price = preg_replace('/\b(AUD|,)\b/i', '', $product->priceDisplay);
-			if(($sale > 20) || ($price > 20))
-            {
-				if($sale > 0)
+			if($sale > 0) {
+				if($sale > 20)
 				{
-					$savings = ((($price - $sale) / $price) * 100);
-				} else {
-					$savings = 0;
+					DB::table($this->table)
+					->where('id', $product->id)
+					->update([
+						'price' => $price, 
+						'sale' => $sale, 
+						'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 
+						'thumb2x' => str_replace('http://', 'https://', $product->thumb2x),
+						'savings' => ((($price - $sale) / $price) * 100)
+					]);  
 				}
-					
-				DB::table($this->table)
-				->where('id', $product->id)
-				->update([
-					'price' => $price, 
-					'sale' => $sale, 
-					'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 
-					'thumb2x' => str_replace('http://', 'https://', $product->thumb2x),
-					'savings' => $savings
-				]);    			
+			} else {
+				if($price > 20)
+					DB::table($this->table)
+					->where('id', $product->id)
+					->update([
+						'price' => $price, 
+						'sale' => $sale, 
+						'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 
+						'thumb2x' => str_replace('http://', 'https://', $product->thumb2x),
+						'savings' => 0
+					]);  
+				}
 			}
         }
     }
