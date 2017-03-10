@@ -66,8 +66,7 @@ class ProductController extends Controller
         $client = new \AlgoliaSearch\Client("LAC06A9QLK", "9d6a129d0c8ce00eaf4ceb19b6ad1bab");
         $index = $client->initIndex('products');
 				
-		$result = $index->browse();
-		dd($results);
+		$results = $index->browse();
 		
         if (Product::where('price', '>', '0')->get())
         {
@@ -95,6 +94,7 @@ class ProductController extends Controller
                 
             }
 			
+			dd(array_diff($results, $products));
 
             $index->saveObjects($products);
         }
