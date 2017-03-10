@@ -274,6 +274,7 @@
 				<div class="text-center">
 					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="https://img.ozboardgamer.com/img/95587c56-eb65-4254-aa84-7d7c09ff2dee.gif" /></a>
 				</div>
+				<hr />
 				@unless($blogs->isEmpty())
                     <h3>Latest Blog Articles</h3>
                     @foreach($blogs as $entry)
