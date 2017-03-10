@@ -94,7 +94,7 @@ class ProductController extends Controller
                 
             }
 			
-			dd(array_diff($algolia, $products->toArray()));
+			dd(array_diff($algolia, $products));
 
             //$index->saveObjects($products);
         }
