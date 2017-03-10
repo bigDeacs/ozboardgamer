@@ -68,7 +68,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="text-center">
-              @if(isset($_GET['sort']))
+							@if(isset($_GET['sort']))
 								{!! $stores->appends(['sort' => $_GET['sort']])->render() !!}
 							@else
 								{!! $stores->render() !!}

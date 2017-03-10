@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('meta')
-    <title>Oz Board Gamer - Board Games News, Reviews and More</title>
+    <title>Oz Board Gamer - Gaming News, Reviews, Top 10s and More</title>
     <meta name="description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
 	<meta name="keywords" content="Board,Games,Cards,Strategy,Geek,Online,Store,Buy,Game,Reviews,News,Top,10s">
     <meta property="og:type" content="website">
@@ -89,7 +89,7 @@
             <div class="col-xs-12">
                 <!-- Home Page Horizon Ad -->
 				<div class="text-center">
-					<a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy amazing Board Games from Oz Game Shop" src="http://t.cfjump.com/33917/a/26467" /></a>
+					<a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy amazing Board Games from Oz Game Shop" src="https://img.ozboardgamer.com/img/d2b546c6-bf54-41c4-bdc9-d5f64bd45508" /></a>
 				</div>
             </div>
         </div>
@@ -125,7 +125,8 @@
                                         </div>
                                         <div class="row">											
                                             <div class="col-sm-12 post-header-line">
-                                                <span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $review->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
+												<meta itemprop="author" content ="{!! $review->user->name !!}">
+                                                <span class="glyphicon glyphicon-calendar">
                                                 </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a>
                                                 @unless($review->games->isEmpty())
                                                      | <span class="fa fa-trophy"></span>
@@ -183,7 +184,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-sm-12 post-header-line">
-                                                <span class="glyphicon glyphicon-user"></span> {!! $top10->user->name !!} | <span class="glyphicon glyphicon-calendar">
+												<span class="glyphicon glyphicon-calendar">
                                                 </span>{!! date('F d, Y', strtotime($top10->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread"></a>
                                                 @unless($top10->games->isEmpty())
                                                      | <span class="fa fa-trophy"></span>
@@ -235,9 +236,7 @@
 					@endforeach
 					<hr class="hidden-xs" />
                 @endunless
-				<div class="fb-page" data-href="https://www.facebook.com/ozboardgamer" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/ozboardgamer" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ozboardgamer">Oz Board Gamer</a></blockquote></div>			
-                <hr class="hidden-xs" />              
-                @unless($howtos->isEmpty())
+				@unless($howtos->isEmpty())
                   <h3>Latest How To's</h3>
                   @foreach($howtos as $entry)
                       <div class="row">
@@ -253,6 +252,8 @@
                   @endforeach
                   <hr />
                 @endunless
+				<div class="fb-page" data-href="https://www.facebook.com/ozboardgamer" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/ozboardgamer" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ozboardgamer">Oz Board Gamer</a></blockquote></div>			
+                <hr class="hidden-xs" />              
                 @unless($news->isEmpty())
                     <h3>Latest Game News</h3>
                     @foreach($news as $entry)
@@ -269,6 +270,10 @@
                     @endforeach
                     <hr />
                 @endunless  
+                <!-- Home Page Tower Ad Right -->
+				<div class="text-center">
+					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="https://img.ozboardgamer.com/img/95587c56-eb65-4254-aa84-7d7c09ff2dee" /></a>
+				</div>
 				@unless($blogs->isEmpty())
                     <h3>Latest Blog Articles</h3>
                     @foreach($blogs as $entry)
@@ -285,10 +290,6 @@
                     @endforeach
                     <hr />
                 @endunless  				
-                <!-- Home Page Tower Ad Right -->
-				<div class="text-center">
-					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy amazing Board Games from Oz Game Shop" src="http://t.cfjump.com/33917/a/26455" /></a>
-				</div>
             </div>
         </div>
         @unless($stores->isEmpty())

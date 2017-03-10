@@ -52,7 +52,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 post-header-line">
-                                        <span class="glyphicon glyphicon-user"></span> <span itemprop="author">{!! $post->user->name !!}</span> | <span class="glyphicon glyphicon-calendar">
+										<meta itemprop="author" content="{!! $post->user->name !!}">
+                                        <span class="glyphicon glyphicon-calendar">
                                         </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $post->slug }}#disqus_thread"></a>
                                         @unless($post->games->isEmpty())
                                              | <span class="fa fa-trophy"></span>
@@ -99,7 +100,7 @@
 	                <hr class="hidden-xs" />    
 					<!-- Posts Page Tower Ad Right -->
 	                <div class="text-center">
-						<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="http://t.cfjump.com/33917/a/26455" /></a>
+						<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="https://img.ozboardgamer.com/img/95587c56-eb65-4254-aa84-7d7c09ff2dee" /></a>
 					</div>
 			      </div>
 			    </div>

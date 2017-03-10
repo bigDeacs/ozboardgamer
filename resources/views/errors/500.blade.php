@@ -1,41 +1,35 @@
-<html>
-	<head>
-		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+@extends('app')
 
-		<style>
-			body {
-				margin: 0;
-				padding: 0;
-				width: 100%;
-				height: 100%;
-				color: #B0BEC5;
-				display: table;
-				font-weight: 100;
-				font-family: 'Lato';
-			}
+@section('meta')
+    <title>Sorry, we couldn't find anything!</title>
+    <meta name="description" content="Want to know all the latest and greatest about Board Games? We have News, Reviews and much more!">
+@endsection
 
-			.container {
-				text-align: center;
-				display: table-cell;
-				vertical-align: middle;
-			}
+@section('head')
+@endsection
 
-			.content {
-				text-align: center;
-				display: inline-block;
-			}
+@section('content')
+	<!-- Page Content -->
+	<div class="container">
+	    <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Uh Oh!</h3>
+                       	Seems like you found a crack in our wall! We couldn't find what you were looking for, why don't you take a look at other parts of our site!
+                       	<div class="row">
+                       		<div class="col-xs-12 text-center">
+		                       	<img src="/img/code.png" class="img-responsive" />
+		                    </div>
+		                </div>
+                        <hr />
+                    </div>
+                </div>
+        	</div>
+    	</div>
+    </div>
+    <!-- /.banner -->
+@endsection
 
-			.title {
-				font-size: 72px;
-				margin-bottom: 40px;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<div class="content">
-				<div class="title">Sorry, we couldn't find anything.</div>
-			</div>
-		</div>
-	</body>
-</html>
+@section('scripts')
+@endsection
