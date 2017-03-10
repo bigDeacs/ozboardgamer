@@ -65,10 +65,10 @@ class ProductController extends Controller
         // initialize API Client & Index
         $client = new \AlgoliaSearch\Client("LAC06A9QLK", "9d6a129d0c8ce00eaf4ceb19b6ad1bab");
         $index = $client->initIndex('products');
-				
-		$algolia = $index->browse();
-		
-        if ($results = Product::where('price', '>', '0')->get())
+
+        $results = Product::where('price', '>', '0')->get();
+        
+        if ($results)
         {
             // iterate over results and send them by batch of 10000 elements
             foreach ($results as $row)
@@ -93,10 +93,8 @@ class ProductController extends Controller
                 }
                 
             }
-			
-			dd(array_diff($algolia, $products));
 
-            //$index->saveObjects($products);
+            $index->saveObjects($products);
         }
         return redirect('/admin/products');
     }
