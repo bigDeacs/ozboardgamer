@@ -89,7 +89,7 @@
             <div class="col-xs-12">
                 <!-- Home Page Horizon Ad -->
 				<div class="text-center">
-					<a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy amazing Board Games from Oz Game Shop" src="https://img.ozboardgamer.com/img/d2b546c6-bf54-41c4-bdc9-d5f64bd45508" /></a>
+					<a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy amazing Board Games from Oz Game Shop" src="https://img.ozboardgamer.com/img/d2b546c6-bf54-41c4-bdc9-d5f64bd45508.gif" /></a>
 				</div>
             </div>
         </div>
@@ -272,7 +272,7 @@
                 @endunless  
                 <!-- Home Page Tower Ad Right -->
 				<div class="text-center">
-					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="https://img.ozboardgamer.com/img/95587c56-eb65-4254-aa84-7d7c09ff2dee" /></a>
+					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="https://img.ozboardgamer.com/img/95587c56-eb65-4254-aa84-7d7c09ff2dee.gif" /></a>
 				</div>
 				@unless($blogs->isEmpty())
                     <h3>Latest Blog Articles</h3>

@@ -218,7 +218,7 @@
 					<div class="col-md-4 col-xs-12">
 						<!-- Above Footer Ad -->
 						<div class="text-center">
-							<a href="https://t.cfjump.com/33917/b/31466" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="https://img.ozboardgamer.com/img/845b6d7d-2206-43a4-8302-6b925caa11ee" /></a>             
+							<a href="https://t.cfjump.com/33917/b/31466" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="https://img.ozboardgamer.com/img/845b6d7d-2206-43a4-8302-6b925caa11ee.png" /></a>             
 						</div>
 					</div>
 					<div class="col-md-4 col-xs-12">
