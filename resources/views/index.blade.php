@@ -1,8 +1,8 @@
 @extends('app')
 
 @section('meta')
-    <title>Oz Board Gamer - Gaming News, Reviews, Top 10s and More</title>
-    <meta name="description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
+    <title>Oz Board Gamer - Board Game News, Reviews, Top 10s and More</title>
+    <meta name="description" content="Helping you find your next favourite game! We have all the latests and greatest on board games. Check out our News, Reviews, Top 10s and more!">
 	<meta name="keywords" content="Board,Games,Cards,Strategy,Geek,Online,Store,Buy,Game,Reviews,News,Top,10s">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Oz Board Gamer - Board Games News, Reviews and More">
