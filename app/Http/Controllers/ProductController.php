@@ -66,7 +66,7 @@ class ProductController extends Controller
         $client = new \AlgoliaSearch\Client("LAC06A9QLK", "9d6a129d0c8ce00eaf4ceb19b6ad1bab");
         $index = $client->initIndex('products');
 				
-		$algolia = $index->browse();
+		$algolia = $index->browse()->toArray();
 		
         if ($results = Product::where('price', '>', '0')->get())
         {
@@ -96,7 +96,7 @@ class ProductController extends Controller
 			
 			dd(array_diff($algolia, $products));
 
-            $index->saveObjects($products);
+            //$index->saveObjects($products);
         }
         return redirect('/admin/products');
     }
