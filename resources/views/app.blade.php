@@ -112,7 +112,7 @@
 										</div>
 									@else
 										<div class="btn-group">
-										  <a style="padding: 10px;font-weight: bold;" href="/login" class="btn btn-primary" title="Login"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>										  
+										  <a style="padding: 10px;font-weight: bold;" href="/facebook" class="btn btn-primary" title="Login"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
 										</div>
 									@endif
 								</li>
