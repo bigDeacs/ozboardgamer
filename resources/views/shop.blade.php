@@ -56,13 +56,15 @@
 			            @foreach($data['offers'] as $key => $offer)
 			                <div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0; padding: 20px 0 40px 0;">
 			                  <div class="col-xs-12 text-center">
-			                    <strong>
-			                        {{ $offer->name }} 
-			                        @if($offer->code !== '' || $offer->code !== null)
-			                            | {{ $offer->code }}
-			                        @endif
-			                    </strong>					                    
-			                  </div>
+			                    <a href="{{ $offer->url }} " target="_blank">
+									<strong>
+										{{ $offer->name }} 
+										@if($offer->code !== '' || $offer->code !== null)
+											| {{ $offer->code }}
+										@endif
+									</strong>					                    
+								</a>
+							  </div>
 			                </div>
 			            @endforeach
 			          </div>
