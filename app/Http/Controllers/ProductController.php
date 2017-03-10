@@ -68,7 +68,7 @@ class ProductController extends Controller
 				
 		$algolia = $index->browse();
 		
-        if (Product::where('price', '>', '0')->get())
+        if ($results = Product::where('price', '>', '0')->get())
         {
             // iterate over results and send them by batch of 10000 elements
             foreach ($results as $row)
