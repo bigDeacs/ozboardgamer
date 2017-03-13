@@ -202,94 +202,92 @@
 						</div>
 			      	</div>
               <hr />				  
-				  <div class="row">
-					<!-- Nav tabs -->
-					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><span class="hidden-xs"><i class="fa fa-book" aria-hidden="true"></i> Game </span>Description</a></li>						
-						<li role="presentation" class="hidden-xs"><a href="#games" aria-controls="games" role="tab" data-toggle="tab"><i class="fa fa-link" aria-hidden="true"></i> Games To Look For</a></li>
-					</ul>
+				<div class="row">
+					@if($store->widget)
+						<div class="col-sm-8 col-xs-12">
+					@else
+						<div class="col-xs-12">
+					@endif
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><span class="hidden-xs"><i class="fa fa-book" aria-hidden="true"></i> Game </span>Description</a></li>						
+								<li role="presentation" class="hidden-xs"><a href="#games" aria-controls="games" role="tab" data-toggle="tab"><i class="fa fa-link" aria-hidden="true"></i> Games To Look For</a></li>
+							</ul>
 
-					<!-- Tab panes -->
-					<div class="tab-content">
-						<div role="tabpanel" class="tab-pane active" id="description">
-							<div class="col-xs-12 panel panel-success" itemprop="description" style="min-height: 650px;">
-								<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-								<meta itemprop="latitude" content="{{ $store->latitude }}" />
-								<meta itemprop="longitude" content="{{ $store->longitude }}" />
-							  </div>
-							  @if($store->widget)
-								<div class="col-sm-8 col-xs-12">
-							  @else
-								<div class="col-xs-12">
-							  @endif
-										  <div id="map"></div>
-										  <br />
-									  </div>
-							  @if($store->widget)
-								<div class="col-sm-4 col-xs-12">
-								  {!! $store->widget !!}
-								</div>
-							  @endif
+							<!-- Tab panes -->
+							<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="description">
+								<div class="col-xs-12 panel panel-success" itemprop="description" style="min-height: 650px;">
+									<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+										<meta itemprop="latitude" content="{{ $store->latitude }}" />
+										<meta itemprop="longitude" content="{{ $store->longitude }}" />
+										<div id="map"></div>
+								    </div>
+								    <br />
 								</div>
 							</div>
-						</div>
-						<div role="tabpanel" class="tab-pane" id="games">
-							<div class="col-xs-12 panel panel-success" style="min-height: 650px;">
-								<div class="row">
-							    	@foreach($games as $rel)
-							    		<div class="row" itemscope itemtype="http://schema.org/Game" style="margin: 0 25px;">
-							                <div class="col-md-12 post">
-							                    <div class="row post-content">
-							                        <div class="col-md-2 col-sm-3 col-xs-7">
-							                            <a href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">
-							                                <img src="https://img.ozboardgamer.com{{ $rel->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $rel->thumb1x }} 1x, https://img.ozboardgamer.com{{ $rel->thumb2x }} 2x" alt="{!! $rel->name !!}" class="img-responsive" itemprop="image" />
-							                            </a>
-							                        </div>
-							                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">
-														@if($rel->rating < 1)
-															<img src="https://img.ozboardgamer.com/img/1.png" class="img-responsive" />
-														@elseif($rel->rating < 2)
-															<img src="https://img.ozboardgamer.com/img/2.png" class="img-responsive" />
-														@elseif($rel->rating < 3)
-															<img src="https://img.ozboardgamer.com/img/3.png" class="img-responsive" />
-														@elseif($rel->rating < 4)
-															<img src="https://img.ozboardgamer.com/img/4.png" class="img-responsive" />
-														@elseif($rel->rating < 5)
-															<img src="https://img.ozboardgamer.com/img/5.png" class="img-responsive" />
-														@elseif($rel->rating < 6)
-															<img src="https://img.ozboardgamer.com/img/6.png" class="img-responsive" />
-														@elseif($rel->rating < 7)
-															<img src="https://img.ozboardgamer.com/img/7.png" class="img-responsive" />
-														@elseif($rel->rating < 8)
-															<img src="https://img.ozboardgamer.com/img/8.png" class="img-responsive" />
-														@elseif($rel->rating < 9)
-															<img src="https://img.ozboardgamer.com/img/9.png" class="img-responsive" />
-														@else
-															<img src="https://img.ozboardgamer.com/img/10.png" class="img-responsive" />
-														@endif
-														<div class="text-center lead">
-															<strong>{{ number_format((float)$rel->rating, 1, '.', '') }}/10</strong>
+							<div role="tabpanel" class="tab-pane" id="games">
+								<div class="col-xs-12 panel panel-success" style="min-height: 650px;">
+									<div class="row">
+										@foreach($games as $rel)
+											<div class="row" itemscope itemtype="http://schema.org/Game" style="margin: 0 25px;">
+												<div class="col-md-12 post">
+													<div class="row post-content">
+														<div class="col-md-2 col-sm-3 col-xs-7">
+															<a href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">
+																<img src="https://img.ozboardgamer.com{{ $rel->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $rel->thumb1x }} 1x, https://img.ozboardgamer.com{{ $rel->thumb2x }} 2x" alt="{!! $rel->name !!}" class="img-responsive" itemprop="image" />
+															</a>
 														</div>
-							                        </div>
-							                        <div class="col-md-8 col-md-pull-2 col-sm-7 col-sm-pull-2 col-xs-12">
-							                            <h4 itemprop="name">
-							                                <strong><a href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}" class="post-title">{!! $rel->name !!}</a></strong></h4>
-							                            <p itemprop="description">
-							                                {!! str_limit(strip_tags($rel->description), $limit = 100, $end = '...') !!}
-							                            </p>
-							                            <p>
-							                                <a class="btn btn-danger" href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">Read more</a>
-							                            </p>
-							                        </div>
-							                    </div>
-							                </div>
-							            </div>
-							    	@endforeach
-							    </div>
+														<div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">
+															@if($rel->rating < 1)
+																<img src="https://img.ozboardgamer.com/img/1.png" class="img-responsive" />
+															@elseif($rel->rating < 2)
+																<img src="https://img.ozboardgamer.com/img/2.png" class="img-responsive" />
+															@elseif($rel->rating < 3)
+																<img src="https://img.ozboardgamer.com/img/3.png" class="img-responsive" />
+															@elseif($rel->rating < 4)
+																<img src="https://img.ozboardgamer.com/img/4.png" class="img-responsive" />
+															@elseif($rel->rating < 5)
+																<img src="https://img.ozboardgamer.com/img/5.png" class="img-responsive" />
+															@elseif($rel->rating < 6)
+																<img src="https://img.ozboardgamer.com/img/6.png" class="img-responsive" />
+															@elseif($rel->rating < 7)
+																<img src="https://img.ozboardgamer.com/img/7.png" class="img-responsive" />
+															@elseif($rel->rating < 8)
+																<img src="https://img.ozboardgamer.com/img/8.png" class="img-responsive" />
+															@elseif($rel->rating < 9)
+																<img src="https://img.ozboardgamer.com/img/9.png" class="img-responsive" />
+															@else
+																<img src="https://img.ozboardgamer.com/img/10.png" class="img-responsive" />
+															@endif
+															<div class="text-center lead">
+																<strong>{{ number_format((float)$rel->rating, 1, '.', '') }}/10</strong>
+															</div>
+														</div>
+														<div class="col-md-8 col-md-pull-2 col-sm-7 col-sm-pull-2 col-xs-12">
+															<h4 itemprop="name">
+																<strong><a href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}" class="post-title">{!! $rel->name !!}</a></strong></h4>
+															<p itemprop="description">
+																{!! str_limit(strip_tags($rel->description), $limit = 100, $end = '...') !!}
+															</p>
+															<p>
+																<a class="btn btn-danger" href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">Read more</a>
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										@endforeach
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
-			    </div>
+						</div>
+						@if($store->widget)
+							<div class="col-sm-4 col-xs-12">
+							  {!! $store->widget !!}
+							</div>
+						 @endif
 			    </div>
 				<div class="sharethis-inline-share-buttons"></div>
           @if(Session::has('name'))
