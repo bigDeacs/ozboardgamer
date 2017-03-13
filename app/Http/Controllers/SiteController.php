@@ -851,7 +851,8 @@ class SiteController extends Controller {
 			return view('stores', compact('stores'));
 		} else {
 			$store = Store::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
-			return view('store', compact('store'));
+			$games = Game::where('status', '=', '1')->orderByRaw("RAND()")->take(4)->get();
+			return view('store', compact('store', 'games'));
 		}
 	}
 
