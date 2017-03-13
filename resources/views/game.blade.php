@@ -108,7 +108,7 @@
             <strong>Rate This Game</strong>
             <div style="clear:both;"></div>
             <div class="col-xs-1" style="padding:0;">
-              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/1' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/1' }}"
+              <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/1' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/1' }}"
                  data-toggle="tooltip"
                  data-placement="bottom"
                  title="1 Awful"
@@ -119,7 +119,7 @@
               </a>
             </div>
             <div class="col-xs-1" style="padding:0;">
-              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/2' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/2' }}"
+              <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/2' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/2' }}"
                  data-toggle="tooltip"
                  data-placement="bottom"
                  title="2 Very Bad"
@@ -130,7 +130,7 @@
               </a>
             </div>
             <div class="col-xs-1" style="padding:0;">
-              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/3' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/3' }}"
+              <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/3' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/3' }}"
                  data-toggle="tooltip"
                  data-placement="bottom"
                  title="3 Bad"
@@ -141,7 +141,7 @@
               </a>
             </div>
             <div class="col-xs-1" style="padding:0;">
-              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/4' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/4' }}"
+              <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/4' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/4' }}"
                  data-toggle="tooltip"
                  data-placement="bottom"
                  title="4 Not Good"
@@ -152,7 +152,7 @@
               </a>
             </div>
             <div class="col-xs-1" style="padding:0;">
-              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/5' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/5' }}"
+              <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/5' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/5' }}"
                  data-toggle="tooltip"
                  data-placement="bottom"
                  title="5 Mediocre"
@@ -163,7 +163,7 @@
               </a>
             </div>
             <div class="col-xs-1" style="padding:0;">
-              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/6' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/6' }}"
+              <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/6' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/6' }}"
                  data-toggle="tooltip"
                  data-placement="bottom"
                  title="6 Okay"
@@ -174,7 +174,7 @@
               </a>
             </div>
             <div class="col-xs-1" style="padding:0;">
-              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/7' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/7' }}"
+              <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/7' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/7' }}"
                  data-toggle="tooltip"
                  data-placement="bottom"
                  title="7 Good"
@@ -185,7 +185,7 @@
               </a>
             </div>
             <div class="col-xs-1" style="padding:0;">
-              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/8' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/8' }}"
+              <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/8' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/8' }}"
                  data-toggle="tooltip"
                  data-placement="bottom"
                  title="8 Very Good"
@@ -196,7 +196,7 @@
               </a>
             </div>
             <div class="col-xs-1" style="padding:0;">
-              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/9' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/9' }}"
+              <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/9' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/9' }}"
                  data-toggle="tooltip"
                  data-placement="bottom"
                  title="9 Excellent"
@@ -207,7 +207,7 @@
               </a>
             </div>
             <div class="col-xs-1" style="padding:0;">
-              <a href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/10' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/10' }}"
+              <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addGameRating/'.$game->id.'/rating/10' : '/users/'.str_slug(Session::get('name')).'/updateGameRating/'.$game->id.'/rating/10' }}"
                  data-toggle="tooltip"
                  data-placement="bottom"
                  title="10 Perfect"
@@ -232,14 +232,14 @@
             <div class="btn-group btn-group-justified" role="group">
               @if(Session::has('name'))
                   @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-                    <a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;" rel="nofollow"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-xs"> to My Games</span></a>
+                    <a rel="nofollow" href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;" rel="nofollow"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-xs"> to My Games</span></a>
                   @else
-                    <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;" rel="nofollow"><i class="fa fa-times" aria-hidden="true"></i> Remove<span class="hidden-xs"> from My Games</span></a>
+                    <a rel="nofollow" href="/users/{{ str_slug(Session::get('name')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;" rel="nofollow"><i class="fa fa-times" aria-hidden="true"></i> Remove<span class="hidden-xs"> from My Games</span></a>
                 @endif
                 @if($game->users()->wherePivot('type', 'wanted')->where('slug', str_slug(Session::get('name')))->get()->isEmpty())
-                    <a href="/users/{{ str_slug(Session::get('name')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;" rel="nofollow"><i class="fa fa-eye" aria-hidden="true"></i> Add<span class="hidden-xs"> to Watchlist</span></a>
+                    <a rel="nofollow" href="/users/{{ str_slug(Session::get('name')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;" rel="nofollow"><i class="fa fa-eye" aria-hidden="true"></i> Add<span class="hidden-xs"> to Watchlist</span></a>
                   @else
-                    <a href="/users/{{ str_slug(Session::get('name')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;" rel="nofollow"><i class="fa fa-eye-slash" aria-hidden="true"></i> Remove<span class="hidden-sm hidden-xs"> from Watchlist</span></a>
+                    <a rel="nofollow" href="/users/{{ str_slug(Session::get('name')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;" rel="nofollow"><i class="fa fa-eye-slash" aria-hidden="true"></i> Remove<span class="hidden-sm hidden-xs"> from Watchlist</span></a>
                 @endif
               @else
                 <a href="/users/{{ str_slug(Session::get('name')) }}/addToOwned/{!! $game->id !!}" disabled class="btn btn-success" style="font-size:13px;opacity: 0.5;filter: alpha(opacity=50);"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-xs"> to My Games</span></a>

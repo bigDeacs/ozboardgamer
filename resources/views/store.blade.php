@@ -86,7 +86,7 @@
 									    <strong>Rate This Store</strong>
 									    <div style="clear:both;"></div>
                       <div class="col-xs-1" style="padding:0;">
-                        <a href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/1' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/1' }}"
+                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/1' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/1' }}"
                            data-toggle="tooltip"
                            data-placement="bottom"
                            title="1 Awful">
@@ -96,7 +96,7 @@
                         </a>
                       </div>
                       <div class="col-xs-1" style="padding:0;">
-                        <a href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/2' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/2' }}"
+                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/2' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/2' }}"
                            data-toggle="tooltip"
                            data-placement="bottom"
                            title="2 Very Bad">
@@ -106,7 +106,7 @@
                         </a>
                       </div>
                       <div class="col-xs-1" style="padding:0;">
-                        <a href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/3' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/3' }}"
+                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/3' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/3' }}"
                            data-toggle="tooltip"
                            data-placement="bottom"
                            title="3 Bad">
@@ -116,7 +116,7 @@
                         </a>
                       </div>
                       <div class="col-xs-1" style="padding:0;">
-                        <a href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/4' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/4' }}"
+                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/4' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/4' }}"
                            data-toggle="tooltip"
                            data-placement="bottom"
                            title="4 Not Good">
@@ -126,7 +126,7 @@
                         </a>
                       </div>
                       <div class="col-xs-1" style="padding:0;">
-                        <a href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/5' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/5' }}"
+                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/5' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/5' }}"
                            data-toggle="tooltip"
                            data-placement="bottom"
                            title="5 Mediocre">
@@ -136,7 +136,7 @@
                         </a>
                       </div>
                       <div class="col-xs-1" style="padding:0;">
-                        <a href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/6' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/6' }}"
+                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/6' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/6' }}"
                            data-toggle="tooltip"
                            data-placement="bottom"
                            title="6 Okay">
@@ -146,7 +146,7 @@
                         </a>
                       </div>
                       <div class="col-xs-1" style="padding:0;">
-                        <a href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/7' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/7' }}"
+                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/7' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/7' }}"
                            data-toggle="tooltip"
                            data-placement="bottom"
                            title="7 Good">
@@ -156,7 +156,7 @@
                         </a>
                       </div>
                       <div class="col-xs-1" style="padding:0;">
-                        <a href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/8' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/8' }}"
+                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/8' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/8' }}"
                            data-toggle="tooltip"
                            data-placement="bottom"
                            title="8 Very Good">
@@ -166,7 +166,7 @@
                         </a>
                       </div>
                       <div class="col-xs-1" style="padding:0;">
-                        <a href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/9' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/9' }}"
+                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/9' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/9' }}"
                            data-toggle="tooltip"
                            data-placement="bottom"
                            title="9 Excellent">
@@ -176,7 +176,7 @@
                         </a>
                       </div>
                       <div class="col-xs-1" style="padding:0;">
-                        <a href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/10' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/10' }}"
+                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('name')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('name')).'/addStoreRating/'.$store->id.'/rating/10' : '/users/'.str_slug(Session::get('name')).'/updateStoreRating/'.$store->id.'/rating/10' }}"
                            data-toggle="tooltip"
                            data-placement="bottom"
                            title="10 Perfect">
