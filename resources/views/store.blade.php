@@ -9,7 +9,7 @@
 	{!! $store->head !!}
 	<style>
       #map {
-        height: 400px;
+        height: 650px;
         width: 100%;
       }
     </style>
@@ -285,7 +285,9 @@
 						</div>
 						@if($store->widget)
 							<div class="col-sm-4 col-xs-12">
-							  {!! $store->widget !!}
+								<div style="margin-top: 40px;">
+									{!! $store->widget !!}
+								</div>
 							</div>
 						 @endif
 					</div>
