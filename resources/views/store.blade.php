@@ -210,7 +210,7 @@
 					@endif
 							<!-- Nav tabs -->
 							<ul class="nav nav-tabs" role="tablist">
-								<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><span class="hidden-xs"><i class="fa fa-map" aria-hidden="true"></i> Store Location </span>Description</a></li>						
+								<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><i class="fa fa-map" aria-hidden="true"></i> Store Location</a></li>						
 								<li role="presentation" class="hidden-xs"><a href="#games" aria-controls="games" role="tab" data-toggle="tab"><i class="fa fa-link" aria-hidden="true"></i> Games To Look For</a></li>
 							</ul>
 
