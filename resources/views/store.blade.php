@@ -288,6 +288,7 @@
 							  {!! $store->widget !!}
 							</div>
 						 @endif
+					</div>
 			    </div>
 				<div class="sharethis-inline-share-buttons"></div>
           @if(Session::has('name'))
