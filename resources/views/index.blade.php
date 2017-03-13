@@ -3,7 +3,7 @@
 @section('meta')
     <title>Oz Board Gamer - Board Game News, Reviews, Top 10s and More</title>
     <meta name="description" content="Helping you find your next favourite game! We have all the latests and greatest on board games. Check out our News, Reviews, Top 10s and more!">
-	<meta name="keywords" content="Board,Games,Cards,Strategy,Geek,Online,Store,Buy,Game,Reviews,News,Top,10s">
+	<meta name="keywords" content="Games,Game,Play,News,Reviews,Board,Online,Geek,Cards,Buy">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Oz Board Gamer - Board Games News, Reviews and More">
     <meta property="og:description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
@@ -272,7 +272,7 @@
                 @endunless  
                 <!-- Home Page Tower Ad Right -->
 				<div class="text-center">
-					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="https://img.ozboardgamer.com/img/95587c56-eb65-4254-aa84-7d7c09ff2dee.gif" /></a>
+					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy Games online from Oz Game Shop" src="https://img.ozboardgamer.com/img/95587c56-eb65-4254-aa84-7d7c09ff2dee.gif" /></a>
 				</div>
 				<hr />
 				@unless($blogs->isEmpty())

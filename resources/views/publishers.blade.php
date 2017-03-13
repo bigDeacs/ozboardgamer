@@ -30,7 +30,7 @@
 			    	@foreach($publishers as $publisher)
 						<div class="col-sm-3 col-xs-12 text-center">
 					    	<a href="/publishers/{{ $publisher->slug }}">
-				    			<img src="https://img.ozboardgamer.com{{ $publisher->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $publisher->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $publisher->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive" />
+				    			<img alt="{!! $publisher->name !!}" src="https://img.ozboardgamer.com{{ $publisher->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $publisher->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $publisher->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive" />
 				    		</a>
 					    	<p class="text-center"><strong><a href="/publishers/{{ $publisher->slug }}">{!! $publisher->name !!}</a></strong></p>
 						</div>
