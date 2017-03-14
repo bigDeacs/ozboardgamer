@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-	@if(Session::has('name') || date("F d, Y") >= date($post->published_at, strtotime("+ 2 day"))
+	@if(Session::has('name') || date("F d, Y") >= date($post->published_at, strtotime("+ 2 day")))
 		Premium
 	@endif
 	<div class="breadcrumb-holder hidden-lg hidden-md hidden-sm">
