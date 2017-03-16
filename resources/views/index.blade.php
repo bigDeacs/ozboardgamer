@@ -28,22 +28,10 @@
 	  @endunless
 	  
 	  <!-- Wrapper for slides -->
-	  <div class="carousel-inner">
-			<div class="item slides active">
-			  <!-- Overlay -->
-			  <div class="overlay"></div>
-			  <div class="slide-1" style="background-image:url('https://img.ozboardgamer.com/img/buy-online.jpg');"></div>
-			  <div class="hero">
-				<hgroup>
-					<p class="bigText">Buy Games</p>        
-					<p class="smallText">Choose from thousands of Games and Accessories</p>
-				</hgroup>
-				<a href="/shop" class="btn btn-hero btn-lg">Start Shopping</a>
-			  </div>
-			</div>
+	  <div class="carousel-inner">			
             @unless($featured->isEmpty())
                 @foreach($featured as $key => $post)
-					<div class="item slides">
+					<div class="item slides {{ ($key == 0) ? 'active' : '' }}">
 					  <!-- Overlay -->
 					  <div class="overlay"></div>
 					  <div class="slide-{{ ($key+2) }}" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');"></div>
@@ -57,6 +45,18 @@
 					</div>
                 @endforeach
             @endunless
+			<div class="item slides {{ ($featured->isEmpty()) ? 'active' : '' }}">
+			  <!-- Overlay -->
+			  <div class="overlay"></div>
+			  <div class="slide-1" style="background-image:url('https://img.ozboardgamer.com/img/buy-online.jpg');"></div>
+			  <div class="hero">
+				<hgroup>
+					<p class="bigText">Buy Games</p>        
+					<p class="smallText">Choose from thousands of Games and Accessories</p>
+				</hgroup>
+				<a href="/shop" class="btn btn-hero btn-lg">Start Shopping</a>
+			  </div>
+			</div>
 	  </div> 
 	</div>
 
