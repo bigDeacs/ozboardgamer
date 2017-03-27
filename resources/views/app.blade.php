@@ -56,7 +56,7 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 	<!-- End Facebook Plugin -->
-	<!-- Optimize Plugin -->
+	<!-- Optimize + Analytics Plugin -->
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -66,7 +66,7 @@
 	  ga('require', 'GTM-MFDVG9R');
 	  ga('send', 'pageview');
 	</script>
-	<!-- End Optimize Plugin -->
+	<!-- End Optimize + Analytics Plugin -->
   </head>
   <body>	
 	<div id="wrap">
