@@ -48,7 +48,7 @@
 	<![endif]-->
 	<!-- End Facebook Plugin -->
 	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
+	<script data-cfasync="false">(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
 	  if (d.getElementById(id)) return;
 	  js = d.createElement(s); js.id = id;
@@ -56,8 +56,16 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 	<!-- End Facebook Plugin -->
+	<!--  Hiding Script -->
+	<style>.async-hide { opacity: 0 !important} </style>
+	<script data-cfasync="false">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+	h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+	(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+	})(window,document.documentElement,'async-hide','dataLayer',4000,
+	{'GTM-MFDVG9R':true});</script>
+	<!-- End Hiding Script -->
 	<!-- Optimize + Analytics Plugin -->
-	<script>
+	<script data-cfasync="false">
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
