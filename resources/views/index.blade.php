@@ -213,7 +213,7 @@
                 @endunless                
             </div>
             <div class="col-md-3 col-sm-4 col-xs-12">       
-				@unless($product->isEmpty())
+				@if($product->isset())
 					<h3>Featured Product</h3>
 					<div class="text-center">					
 						<a href="{!! $product->slug !!}" target="_blank">
@@ -233,7 +233,7 @@
 						</p>
 					</div>
 					<hr class="hidden-xs" />
-                @endunless
+                @endif
 				@unless($howtos->isEmpty())
                   <h3>Latest How To's</h3>
                   @foreach($howtos as $entry)
