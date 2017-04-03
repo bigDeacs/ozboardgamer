@@ -92,7 +92,7 @@
 		                            <h4 itemprop="name">
 		                                <strong><a href="/games/{{ $type->slug }}/{{ $game->slug }}" class="post-title">{!! $game->name !!}</a></strong></h4>
 		                            <p itemprop="description">
-		                                {!! str_limit(strip_tags($game->description), $limit = 100, $end = '...') !!}
+		                                {!! str_limit(strip_tags($game->description), $limit = 150, $end = '...') !!}
 		                            </p>
 		                            <p>
 		                                <a class="btn btn-danger" href="/games/{{ $type->slug }}/{{ $game->slug }}">Read more</a>

@@ -32,7 +32,7 @@
 								<?php 
 									$game = $post->games()->orderBy(DB::raw('RAND()'))->first(); 
 								?>
-								<div class="col-sm-3 col-xs-12 hidden-xs" style="padding: 15px;">
+								<div class="col-sm-3 col-xs-12" style="padding: 15px;overflow: hidden;height: 175px;">
 									<a href="/{{ $category->slug }}/{{ $post->slug }}" title="{{ $game->name }}">
 										<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
 									</a>								
