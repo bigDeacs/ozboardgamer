@@ -213,7 +213,7 @@
                 @endunless                
             </div>
             <div class="col-md-3 col-sm-4 col-xs-12">       
-				@if($product->isset())
+				@if($product)
 					<h3>Featured Product</h3>
 					<div class="text-center">					
 						<a href="{!! $product->slug !!}" target="_blank">
