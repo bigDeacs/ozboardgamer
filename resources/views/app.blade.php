@@ -95,7 +95,7 @@
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<div class="navbar-right">
+					<div class="navbar-right" style="margin-top: 30px;">
 						<div class="navbar-right">
 							<ul class="nav navbar-nav">                            
 								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
@@ -123,7 +123,7 @@
 								<li class="hidden-sm">
 									<a href="/stores">Find a Store</a>
 								</li> 
-								<li class="hidden-sm hidden-md">
+								<li class="hidden-sm">
 									<a href="/shop">Buy Games</a>
 								</li> 
 								<li>
@@ -137,7 +137,7 @@
 										  </ul>
 										</li>
 									@else
-										<a href="/facebook"><i class="fa fa-sign-in" aria-hidden="true"></i> Login with Facebook</a>
+										<a href="/facebook" title="Login with Facebook"><i class="fa fa-sign-in" aria-hidden="true"></i> User Login</a>
 									@endif
 								</li> 
 							</ul>
