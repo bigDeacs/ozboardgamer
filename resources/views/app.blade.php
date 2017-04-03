@@ -96,49 +96,9 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<div class="navbar-right">
-						<div class="row navbar-social text-right">
-							<ul class="list-inline intro-social-buttons">
-								<li class="hidden-sm hidden-xs">
-									<a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
-										<i class="fa fa-facebook-official fa-fw"></i>
-									</a>
-								</li>
-								<li class="hidden-sm hidden-xs">
-									<a href="https://twitter.com/OzBoardGamer" target="_blank" title="Follow us on Twitter">
-										<i class="fa fa-twitter fa-fw"></i>
-									</a>
-								</li>
-								<!--<li class="hidden-sm hidden-xs">
-									<a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" target="_blank" title="Subscribe to our Youtube channel">
-										<i class="fa fa-youtube fa-fw"></i>
-									</a>
-								</li>-->
-								<li class="hidden-sm hidden-xs">
-									<a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" target="_blank" title="Follow us on Google+">
-										<i class="fa fa-google-plus-official fa-fw"></i>
-									</a>
-								</li>                            
-								<li class="hidden-sm hidden-xs">
-									<a href="https://www.instagram.com/ozboardgamer/" target="_blank" title="Follow us on Instagram">
-										<i class="fa fa-instagram fa-fw"></i>
-									</a>
-								</li>
-								<li id="loginFB">
-									@if(Session::has('name'))
-										<div class="btn-group">
-										  <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
-										  <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
-										</div>
-									@else
-										<div class="btn-group">
-										  <a style="padding: 10px;font-weight: bold;" href="/facebook" class="btn btn-primary" title="Login to track your collection"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
-										</div>
-									@endif
-								</li>
-							</ul>
-						</div>
 						<div class="navbar-right">
 							<ul class="nav navbar-nav">                            
+								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
 								<li class="dropdown">
 								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
 								  <ul class="dropdown-menu">
@@ -166,7 +126,20 @@
 								<li class="hidden-sm">
 									<a href="/shop">Buy Games</a>
 								</li> 
-								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
+								<li>
+									@if(Session::has('name'))
+										<?php $name = explode(" ", Session::get('name')); ?>
+										<li class="dropdown">
+										  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Welcome, {{ ucfirst($name[0]) }} <span class="caret"></span></a>
+										  <ul class="dropdown-menu">
+											<li class="text-center"><a href="/users/{{ str_slug(Session::get('name')) }}?page=1"><i class="fa fa-user"></i> Profile</a></li>
+											<li class="text-center"><a href="/top10s"><i class="fa fa-sign-out"></i> Logout</a></li>
+										  </ul>
+										</li>
+									@else
+										<a href="/facebook"><i class="fa fa-sign-in" aria-hidden="true"></i> Login with Facebook</a>
+									@endif
+								</li> 
 							</ul>
 						</div>
 					</div>
