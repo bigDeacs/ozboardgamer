@@ -8,6 +8,7 @@ use App\Http\Requests\ProductRequest;
 use App\Product;
 use Storage;
 use Artisan;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
