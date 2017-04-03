@@ -95,50 +95,53 @@
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<div class="navbar-right">						
-						<ul class="nav navbar-nav">                            
-							<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
-							<li class="dropdown">
-							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
-							  <ul class="dropdown-menu">
-								<li class="text-center"><a href="/games">Find Games</a></li>
-								<li class="text-center"><a href="/mechanics">Mechanics</a></li>
-								<li class="text-center"><a href="/publishers">Publishers</a></li>
-								<li class="text-center"><a href="/designers">Designers</a></li>
-								<li class="text-center"><a href="/themes">Themes</a></li>
-								<li class="text-center"><a href="/families">Families</a></li>
-							  </ul>
-							</li>
-							<li class="dropdown">
-							  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game Articles <span class="caret"></span></a>
-							  <ul class="dropdown-menu">
-								<li class="text-center"><a href="/reviews">Reviews</a></li>
-								<li class="text-center"><a href="/top10s">Top 10's</a></li>
-								<li class="text-center"><a href="/howtos">How To's</a></li>
-								<li class="text-center"><a href="/news">News</a></li>
-								<li class="text-center"><a href="/blogs">Blog</a></li>
-							  </ul>
-							</li>
-							<li class="hidden-sm">
-								<a href="/stores">Find a Store</a>
-							</li> 
-							<li class="hidden-sm">
-								<a href="/shop">Buy Games</a>
-							</li> 
-							<li>
-								@if(Session::has('name'))
-									<li class="dropdown">
-									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }} <span class="caret"></span></a>
-									  <ul class="dropdown-menu">
-										<li class="text-center"><a href="/users/{{ str_slug(Session::get('name')) }}?page=1"><i class="fa fa-user"></i> Profile</a></li>
-										<li class="text-center"><a href="/top10s"><i class="fa fa-sign-out"></i> Logout</a></li>
-									  </ul>
-									</li>
-								@else
-									<a href="/facebook"><i class="fa fa-sign-in" aria-hidden="true"></i> Login with Facebook</a>
-								@endif
-							</li> 
-						</ul>
+					<div class="navbar-right">
+						<div class="navbar-right">
+							<ul class="nav navbar-nav">                            
+								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
+								  <ul class="dropdown-menu">
+									<li class="text-center"><a href="/games">Find Games</a></li>
+									<li class="text-center"><a href="/mechanics">Mechanics</a></li>
+									<li class="text-center"><a href="/publishers">Publishers</a></li>
+									<li class="text-center"><a href="/designers">Designers</a></li>
+									<li class="text-center"><a href="/themes">Themes</a></li>
+									<li class="text-center"><a href="/families">Families</a></li>
+								  </ul>
+								</li>
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game Articles <span class="caret"></span></a>
+								  <ul class="dropdown-menu">
+									<li class="text-center"><a href="/reviews">Reviews</a></li>
+									<li class="text-center"><a href="/top10s">Top 10's</a></li>
+									<li class="text-center"><a href="/howtos">How To's</a></li>
+									<li class="text-center"><a href="/news">News</a></li>
+									<li class="text-center"><a href="/blogs">Blog</a></li>
+								  </ul>
+								</li>
+								<li>
+									<a href="/stores">Find a Store</a>
+								</li> 
+								<li class="hidden-sm">
+									<a href="/shop">Buy Games</a>
+								</li> 
+								<li>
+									@if(Session::has('name'))
+										<?php $name = explode(" ", Session::get('name')); ?>
+										<li class="dropdown">
+										  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Welcome, {{ ucfirst($name[0]) }} <span class="caret"></span></a>
+										  <ul class="dropdown-menu">
+											<li class="text-center"><a href="/users/{{ str_slug(Session::get('name')) }}?page=1"><i class="fa fa-user"></i> Profile</a></li>
+											<li class="text-center"><a href="/top10s"><i class="fa fa-sign-out"></i> Logout</a></li>
+										  </ul>
+										</li>
+									@else
+										<a href="/facebook"><i class="fa fa-sign-in" aria-hidden="true"></i> Login with Facebook</a>
+									@endif
+								</li> 
+							</ul>
+						</div>
 					</div>
 				</div>
 				<!-- /.navbar-collapse -->
