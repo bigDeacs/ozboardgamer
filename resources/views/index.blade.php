@@ -74,7 +74,6 @@
                                     <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
                                         <img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
                                     </a>
-                                    <p class="text-center"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{!! $game->name !!}</a></strong></p>
                                 </li>
                             @endforeach
                         </ul>
@@ -105,7 +104,7 @@
 									@if($review->games->isEmpty())
 										<div class="col-sm-12">
 									@else
-										<div class="col-sm-3 col-xs-12 hidden-xs" style="padding: 15px;">
+										<div class="col-sm-3 col-xs-12" style="padding: 15px;overflow: hidden;height: 175px;">
 											<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
 												<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
 											</a>
@@ -164,7 +163,7 @@
 									@if($top10->games->isEmpty())
 										<div class="col-sm-12">
 									@else										
-										<div class="col-sm-3 col-xs-12 hidden-xs" style="padding: 15px;">
+										<div class="col-sm-3 col-xs-12 hidden-xs" style="padding: 15px;overflow: hidden;height: 175px;">
 											<a href="/top10s/{{ $top10->slug }}" title="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}">
 												<img src="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive" itemprop="image" style="margin: auto;" />
 											</a>
@@ -212,11 +211,11 @@
                     </div>
                 @endunless                
             </div>
-            <div class="col-md-3 col-sm-4 col-xs-12">       
+            <div class="col-md-3 col-sm-4 hidden-xs">       
 				@if($product)
 					<h3>Featured Product</h3>
 					<div class="text-center">					
-						<a href="{!! $product->slug !!}" target="_blank">
+						<a href="{!! $product->slug !!}" target="_blank" title="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}">
 							<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" alt="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}" />
 						</a>
 						<p class="text-center">
@@ -303,7 +302,6 @@
                                         <a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
                                             <img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
                                         </a>
-                                        <p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
                                     </li>
                                 @endforeach
                             </ul>

@@ -29,10 +29,27 @@
 	<meta name="twitter:description" content="Want to find new board games? We have news, reviews and can even help you find out where to buy (both online and in store!).">
 	<meta name="twitter:image" content="https://img.ozboardgamer.com/img/logo.png">
 	<meta name="twitter:image:alt" content="Oz Board Gamer Logo">
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Website",
+		"publisher": {
+			"@type": "Organization",
+			"name": "OzBoardGamer",
+			"logo": "https://img.ozboardgamer.com/img/logo.png"
+		},
+		"url": "https://ozboardgamer.com/",
+		"mainEntityOfPage": {
+			"@type": "WebPage",
+			"@id": "https://ozboardgamer.com"
+		},
+		"description": "Helping you find your next favourite game! We have all the latests and greatest on board games. Check out our News, Reviews, Top 10s and more!"
+	}
+    </script>
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-    <link href="https://css.ozboardgamer.com/css/style.min.css?v=47" rel="stylesheet">
+    <link href="https://css.ozboardgamer.com/css/style.min.css?v=48" rel="stylesheet">
 	<!--<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>-->
 	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">

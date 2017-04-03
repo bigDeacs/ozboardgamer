@@ -32,9 +32,6 @@
 				    			<img alt="{!! $type->name !!}" src="https://img.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive" />
 				    		</a>
 					    	<p class="text-center"><strong><a href="/games/{{ $type->slug }}">{!! $type->name !!}</a></strong></p>
-					    	<p class="text-center">
-			                    <a class="btn btn-danger" href="/games/{{ $type->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
-			                </p>
 						</div>
 					@endforeach
 				</div>
@@ -50,10 +47,10 @@
 		</div>
 		<div class="row">
             <div class="col-xs-12">
-		                <!-- Horizon Ad -->
-						<div class="text-center">
-							<a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy amazing Board Games from Oz Game Shop" src="https://img.ozboardgamer.com/img/d2b546c6-bf54-41c4-bdc9-d5f64bd45508.gif" /></a>
-						</div>
+					<!-- Horizon Ad -->
+					<div class="text-center">
+						<a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy amazing Board Games from Oz Game Shop" src="https://img.ozboardgamer.com/img/d2b546c6-bf54-41c4-bdc9-d5f64bd45508.gif" /></a>
+					</div>
             </div>
         </div>
 	</div>
