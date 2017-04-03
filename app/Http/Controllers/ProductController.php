@@ -60,6 +60,12 @@ class ProductController extends Controller
 
         return redirect('/admin/products');
     }
+	
+	public function remove($id)
+    {
+        DB::table('products')->where('id', '=', $id)->delete();
+        return redirect('/admin/products');
+    }
 
     public function addToAlgolia() {
         // initialize API Client & Index

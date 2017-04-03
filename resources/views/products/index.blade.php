@@ -36,6 +36,7 @@
 						    		<th>Savings</th>
 						    		<th>Link</th>
 						    		<th></th>
+									<th></th>
 						    	</tr>
 						    </thead>
 						    <tbody>
@@ -47,6 +48,7 @@
 							    		<td>{!! round($product->savings, 2) !!}%</td>
 										<td><a href="{!! $product->slug !!}" target="_blank">Link</a></td>
 										<td><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></td>
+										<td><a href="/admin/products/remove/{!! $product->id !!}" target="_blank" class="btn btn-danger">Remove</a></td>
 							    	</tr>
 						    	@endforeach
 						    </tbody>
