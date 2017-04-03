@@ -110,7 +110,7 @@
 									<li class="text-center"><a href="/families">Families</a></li>
 								  </ul>
 								</li>
-								<li class="dropdown">
+								<li class="dropdown hidden-sm">
 								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game Articles <span class="caret"></span></a>
 								  <ul class="dropdown-menu">
 									<li class="text-center"><a href="/reviews">Reviews</a></li>
@@ -120,10 +120,10 @@
 									<li class="text-center"><a href="/blogs">Blog</a></li>
 								  </ul>
 								</li>
-								<li>
+								<li class="hidden-sm">
 									<a href="/stores">Find a Store</a>
 								</li> 
-								<li class="hidden-sm">
+								<li class="hidden-sm hidden-md">
 									<a href="/shop">Buy Games</a>
 								</li> 
 								<li>
