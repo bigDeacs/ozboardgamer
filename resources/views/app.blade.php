@@ -32,7 +32,7 @@
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-    <link href="https://css.ozboardgamer.com/css/style.min.css?v=45" rel="stylesheet">
+    <link href="https://css.ozboardgamer.com/css/style.min.css?v=46" rel="stylesheet">
 	<!--<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>-->
 	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">
@@ -130,14 +130,14 @@
 									@if(Session::has('name'))
 										<?php $name = explode(" ", Session::get('name')); ?>
 										<li class="dropdown">
-										  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> Welcome, {{ ucfirst($name[0]) }} <span class="caret"></span></a>
+										  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #008751;">{{ ucfirst($name[0]) }} <span class="caret"></span></a>
 										  <ul class="dropdown-menu">
 											<li class="text-center"><a href="/users/{{ str_slug(Session::get('name')) }}?page=1"><i class="fa fa-user"></i> Profile</a></li>
 											<li class="text-center"><a href="/top10s"><i class="fa fa-sign-out"></i> Logout</a></li>
 										  </ul>
 										</li>
 									@else
-										<a href="/facebook" title="Login with Facebook"><i class="fa fa-sign-in" aria-hidden="true"></i> User Login</a>
+										<a href="/facebook" title="Login with Facebook" style="color: #008751;"><i class="fa fa-sign-in" aria-hidden="true"></i> User Login</a>
 									@endif
 								</li> 
 							</ul>
