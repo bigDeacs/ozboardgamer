@@ -133,7 +133,7 @@
 										  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #008751;">{{ ucfirst($name[0]) }} <span class="caret"></span></a>
 										  <ul class="dropdown-menu">
 											<li class="text-center"><a href="/users/{{ str_slug(Session::get('name')) }}?page=1"><i class="fa fa-user"></i> Profile</a></li>
-											<li class="text-center"><a href="/top10s"><i class="fa fa-sign-out"></i> Logout</a></li>
+											<li class="text-center"><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
 										  </ul>
 										</li>
 									@else
