@@ -56,12 +56,14 @@
                                         <span class="glyphicon glyphicon-calendar">
                                         </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $post->slug }}#disqus_thread"></a>
                                         @unless($post->games->isEmpty())
-                                             | <span class="fa fa-trophy"></span>
-                                            <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
-                                                @foreach($post->games as $key => $game)
-                                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>{{ ($key == (count($post->games) -1)) ? '' : ',' }}
-                                                @endforeach
-                                            </span>
+											<span class="hidden-xs">
+												 | <span class="fa fa-trophy"></span>
+												<span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
+													@foreach($post->games as $key => $game)
+														<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>{{ ($key == (count($post->games) -1)) ? '' : ',' }}
+													@endforeach
+												</span>
+											</span>
                                         @endunless
                                     </div>
                                 </div>
