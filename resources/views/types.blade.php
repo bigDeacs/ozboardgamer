@@ -29,7 +29,7 @@
 			    	@foreach($types as $type)
 						<div class="col-sm-3 col-xs-12 text-center">
 					    	<a href="/games/{{ $type->slug }}?page=1&sort=name-asc">
-				    			<img alt="{!! $type->name !!}" src="https://img.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive" />
+				    			<img alt="{!! $type->name !!}" src="https://img.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive img-shadow" />
 				    		</a>
 					    	<p class="text-center"><strong><a href="/games/{{ $type->slug }}">{!! $type->name !!}</a></strong></p>
 						</div>

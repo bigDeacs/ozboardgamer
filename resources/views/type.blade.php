@@ -59,7 +59,7 @@
 		                    <div class="row post-content">
 		                        <div class="col-md-2 col-sm-3 col-xs-7">
 		                            <a href="/games/{{ $type->slug }}/{{ $game->slug }}">
-		                                <img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
+		                                <img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive img-shadow" itemprop="image" />
 		                            </a>
 		                        </div>
 		                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">
