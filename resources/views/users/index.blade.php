@@ -29,8 +29,9 @@
 						    <thead>
 						    	<tr>
 						    		<th>Name</th>
+						    		<th>User Type</th>
 						    		<th></th>
-						    		<th></th>
+									<th></th>
 						    	</tr>
 						    </thead>
 						    <tbody>
@@ -57,6 +58,7 @@
 											<a href="/admin/users/{{ $user->id }}/deactivate" class="btn btn-danger">Deactivate <i class="fa fa-times"></i></a>
 										@endif
 						    		</td>
+									<td><a href="/admin/users/{!! $product->id !!}/remove" target="_blank" class="btn btn-info">Remove</a></td>
 						    	</tr>
 						    	@endforeach
 						    </tbody>

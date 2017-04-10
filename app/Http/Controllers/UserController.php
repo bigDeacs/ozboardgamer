@@ -161,5 +161,11 @@ class UserController extends Controller
 
         return redirect('/admin/users');
     }
+	
+	public function remove($id)
+    {
+        DB::table('users')->where('id', '=', $id)->delete();
+        return redirect('/admin/users');
+    }
 
 }
