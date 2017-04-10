@@ -43,8 +43,8 @@
 						    	@foreach($products as $product)
 									<tr class="success">
 							    		<td scope="row">{{ $product->name }}</td>
-							    		<td>${!! $product->priceDisplay !!}</td>
-							    		<td>@if($product->sale > 0)${!! $product->saleDisplay !!}@endif</td>
+							    		<td>${!! str_replace(" AUD", "", $product->priceDisplay) !!}</td>
+							    		<td>@if($product->sale > 0)${!! str_replace(" AUD", "", $product->saleDisplay) !!}@endif</td>
 							    		<td>{!! round($product->savings, 2) !!}%</td>
 										<td><a href="{!! $product->slug !!}" target="_blank">Link</a></td>
 										<td><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></td>

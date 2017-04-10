@@ -96,7 +96,6 @@
 	<script src="/js/bootstrap-datepicker.js"></script>
 	<script src="/tinymce/tinymce.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/plug-ins/1.10.13/type-detection/currency.js"></script>	
 	<script>
       $(document).ready(function() {
         $('.dataTable').DataTable( {
@@ -104,29 +103,6 @@
           "pagingType": "full_numbers"
         });
       });
-	  (function(){
- 
-		// Change this list to the valid characters you want
-		var validChars = "$£€c" + "0123456789" + ".-,'";
-		 
-		// Init the regex just once for speed - it is "closure locked"
-		var
-			str = jQuery.fn.dataTableExt.oApi._fnEscapeRegex( validChars ),
-			re = new RegExp('[^'+str+']');
-		 
-		 
-		jQuery.fn.dataTableExt.aTypes.unshift(
-		   function ( data )
-			{
-				if ( typeof data !== 'string' || re.test(data) ) {
-					return null;
-				}
-		 
-				return 'currency';
-			}
-		);
-		 
-		}());
     </script>
     <script type="text/javascript">
 
