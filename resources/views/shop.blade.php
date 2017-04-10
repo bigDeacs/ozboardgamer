@@ -47,31 +47,33 @@
               </form>
             </div>			      
     	</div>
-    	@if(!empty($data['offers']))
-  			<div class="row">
-  				<div class="col-sm-12 hidden-xs text-center">
-			       <div id="offerCarousel" class="vertical-slider carousel vertical slide row hidden-xs" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
-			          <!-- Carousel items -->
-			          <div class="carousel-inner">
-			            @foreach($data['offers'] as $key => $offer)
-			                <div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0; padding: 20px 0 40px 0;">
-			                  <div class="col-xs-12 text-center">
-			                    <a href="{{ $offer->url }} " target="_blank">
-									<strong>
-										{{ $offer->name }} 
-										@if($offer->code !== '' || $offer->code !== null)
-											| {{ $offer->code }}
-										@endif
-									</strong>					                    
-								</a>
-							  </div>
-			                </div>
-			            @endforeach
-			          </div>
-			        </div>	    		
-	    		</div>
-			</div>
-			<br />
+		@if(Session::has('name'))
+			@if(!empty($data['offers']))
+				<div class="row">
+					<div class="col-sm-12 hidden-xs text-center">
+					   <div id="offerCarousel" class="vertical-slider carousel vertical slide row hidden-xs" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
+						  <!-- Carousel items -->
+						  <div class="carousel-inner">
+							@foreach($data['offers'] as $key => $offer)
+								<div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0; padding: 20px 0 40px 0;">
+								  <div class="col-xs-12 text-center">
+									<a href="{{ $offer->url }} " target="_blank">
+										<strong>
+											{{ $offer->name }} 
+											@if($offer->code !== '' || $offer->code !== null)
+												| {{ $offer->code }}
+											@endif
+										</strong>					                    
+									</a>
+								  </div>
+								</div>
+							@endforeach
+						  </div>
+						</div>	    		
+					</div>
+				</div>
+				<br />
+			@endif
 		@endif
   		<div class="row">
       	@foreach($products as $key => $product)
