@@ -2,7 +2,7 @@
 
 @section('meta')
     <title>Board Game Quizzes | Oz Board Gamer</title>
-    <meta name="description" content="Dice Rolling, Bluffing, Deduction. There are so many different mechanics that make games great!">
+    <meta name="description" content="Ever wonder what kind of gamer you are? Take one of our awesome quizzes!">
 @endsection
 
 @section('head')
