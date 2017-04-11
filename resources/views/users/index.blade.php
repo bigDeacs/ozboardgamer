@@ -58,7 +58,7 @@
 											<a href="/admin/users/{{ $user->id }}/deactivate" class="btn btn-danger">Deactivate <i class="fa fa-times"></i></a>
 										@endif
 						    		</td>
-									<td><a href="/admin/users/{!! $product->id !!}/remove" target="_blank" class="btn btn-info">Remove</a></td>
+									<td><a href="/admin/users/{!! $user->id !!}/remove" class="btn btn-info">Remove</a></td>
 						    	</tr>
 						    	@endforeach
 						    </tbody>
