@@ -144,6 +144,16 @@ class SiteController extends Controller {
 		{
 			return view('login');
 		}
+		
+		/**
+		 * Show the application welcome screen to the user.
+		 *
+		 * @return Response
+		 */
+		public function signup()
+		{
+			return view('signup');
+		}
 
 		public function loginRequest(LoginRequest $request)
 		{
@@ -245,7 +255,11 @@ class SiteController extends Controller {
 				$user->status = 1;
 				$user->save();
 
-				$this->syncMailchimp($email, $fname, $lname, $gender);
+				$parts = explode(" ", $user->name);
+				$lastname = array_pop($parts);
+				$firstname = implode(" ", $parts);
+
+				$this->syncMailchimp($user->email, $firstname, $lastname, null);
 			}
 
 			Session::put('id', $user->id);
@@ -293,13 +307,18 @@ class SiteController extends Controller {
 				$user->status = 1;
 				$user->save();
 
-				$this->syncMailchimp($email, $fname, $lname, $gender);
+				$parts = explode(" ", $user->name);
+				$lastname = array_pop($parts);
+				$firstname = implode(" ", $parts);
+
+				$this->syncMailchimp($user->email, $firstname, $lastname, null);
 			}
 
 			Session::put('id', $user->id);
 			Session::put('name', $user->name);
 			Session::put('email', $user->email);
 			Session::put('thumb', $user->thumb);
+			
 
 			return redirect()->back();
 		}
@@ -316,7 +335,7 @@ class SiteController extends Controller {
         Session::forget('email');
         Session::forget('thumb');
 
-				return redirect()->back();
+		return redirect()->back();
     }
 
 
