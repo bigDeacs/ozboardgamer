@@ -142,7 +142,11 @@ class SiteController extends Controller {
 		 */
 		public function login()
 		{
-			return view('login');
+			$product = Product::where('price', '>', '0')->where('savings', '>', '0')->orderByRaw("RAND()")->first();	
+			$featured = Post::where('status', '=', '1')->where('image', '!=', '')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->take(5)->get();
+			$games = Game::where('status', '=', '1')->has('parent', '<', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
+			$stores = Store::where('status', '=', '1')->orderBy('rating', 'desc')->take(10)->get();
+			return view('login', compact('featured', 'games', 'stores', 'product'));
 		}
 		
 		/**
