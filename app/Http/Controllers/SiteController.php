@@ -159,7 +159,7 @@ class SiteController extends Controller {
 		{
 			if($user = User::where('email', '=', $request['email'])->first())
 			{
-				if($request['password'] = $user->password)
+				if(Hash::make($request['password']) = Hash::make($user->password);)
 				{
 					Session::put('id', $user->id);
 					Session::put('name', $user->name);
@@ -173,8 +173,9 @@ class SiteController extends Controller {
 		public function signupRequest(SignupRequest $request)
 		{
 				$user = User::create($request->all());
-				$user->slug = str_slug($request['name']);
+				$user->slug = date("Ymd").str_slug($request['name']);
 				$user->image = '';
+				$user->password = Hash::make($user->password);
 				$user->status = 1;
 				$user->role = 'b';
         		$user->save();
@@ -248,7 +249,7 @@ class SiteController extends Controller {
 			if($user->exists == false)
 			{
 				$user->name = $name;
-				$user->slug = str_slug($name);
+				$user->slug = date("Ymd").str_slug($name);
 				$user->image = $thumb;
 				$user->password = Hash::make(str_slug($name));
 				$user->role = 'b';
@@ -300,7 +301,7 @@ class SiteController extends Controller {
 			if($user->exists == false)
 			{
 				$user->name = $name;
-				$user->slug = str_slug($name);
+				$user->slug = date("Ymd").str_slug($name);
 				$user->image = $thumb;
 				$user->password = Hash::make(str_slug($name));
 				$user->role = 'b';
