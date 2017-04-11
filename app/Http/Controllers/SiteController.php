@@ -272,7 +272,7 @@ class SiteController extends Controller {
 			Session::put('email', $user->email);
 			Session::put('thumb', $user->thumb);
 
-			return redirect()->back();
+			return redirect(Session::get('last_page'));
     }
 
 		/**
@@ -325,8 +325,6 @@ class SiteController extends Controller {
 			Session::put('email', $user->email);
 			Session::put('thumb', $user->thumb);
 			
-
-			//return redirect()->back();
 			return redirect(Session::get('last_page'));
 		}
 
