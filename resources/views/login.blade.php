@@ -26,19 +26,17 @@
 							  </div>
 						</div>
 					 @else
-						<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+						<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8">
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h1 class="panel-title">Login/Signup</h1>
+									<h1 class="panel-title">Login</h1>
 								</div>
 								<div class="panel-body">
-									@if (count($errors) > 0)
+									@if($errors->any())
 									   <div class="alert alert-danger">
 										 <strong>Whoops!</strong> There were some problems with your input.<br><br>
 										 <ul>
-										   @foreach ($errors->all() as $error)
-											 <li>{{ $error }}</li>
-										   @endforeach
+											 <li>{{$errors->first()}}</li>
 										 </ul>
 									   </div>
 									 @endif

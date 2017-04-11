@@ -166,12 +166,10 @@ class SiteController extends Controller {
 					Session::put('email', $user->email);
 					Session::put('thumb', $user->thumb);
 				} else {
-					$errors = ['Your password did not match'];
-					return redirect()->back()->with($errors);
+					return redirect()->back()->withErrors(['msg', 'Your password did not match']);
 				}				
 			} else {
-				$errors = ['We could not find a User with that email'];
-				return redirect()->back()->with($errors);
+				return redirect()->back()->withErrors(['msg', 'We could not find a User with that email']);
 			}
 			return redirect()->back();
 		}

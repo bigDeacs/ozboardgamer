@@ -26,10 +26,10 @@
 							  </div>
 						</div>
 					 @else
-						<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6">
+						<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8">
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h1 class="panel-title">Login/Signup</h1>
+									<h1 class="panel-title">Signup</h1>
 								</div>
 								<div class="panel-body">
 									@if (count($errors) > 0)
