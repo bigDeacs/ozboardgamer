@@ -21,6 +21,7 @@ Route::get('/', 'SiteController@index');
 
 Route::get('login', 'SiteController@login');
 Route::post('login', ['as' => 'loginRequest', 'uses' => 'SiteController@loginRequest']);
+Route::get('signup', 'SiteController@signup');
 Route::post('signup', ['as' => 'signupRequest', 'uses' => 'SiteController@signupRequest']);
 
 Route::get('/facebook', 'SiteController@redirectToFacebookProvider');

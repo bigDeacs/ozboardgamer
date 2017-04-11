@@ -158,7 +158,7 @@
 										  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #008751;">Login/Signup <span class="caret"></span></a>
 										  <ul class="dropdown-menu">
 											<li class="text-center"><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
-											<li class="text-center"><a href="/signup"><i class="fa fa-sign-up"></i> Signup</a></li>
+											<li class="text-center"><a href="/signup"><i class="fa fa-user-plus"></i> Signup</a></li>
 										  </ul>
 										</li>										
 									@endif
