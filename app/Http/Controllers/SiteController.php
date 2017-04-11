@@ -173,7 +173,7 @@ class SiteController extends Controller {
 		public function signupRequest(SignupRequest $request)
 		{
 				$user = User::create($request->all());
-				$user->slug = date("Ymd").str_slug($request['name']);
+				$user->slug = str_slug($request['name']).'-'.date("dmy");
 				$user->image = '';
 				$user->password = Hash::make($user->password);
 				$user->status = 1;
@@ -188,6 +188,7 @@ class SiteController extends Controller {
 
 				Session::put('id', $user->id);
 				Session::put('name', $user->name);
+				Session::put('slug', $user->slug);
 				Session::put('email', $user->email);
 				Session::put('thumb', $user->thumb);
 
@@ -249,7 +250,7 @@ class SiteController extends Controller {
 			if($user->exists == false)
 			{
 				$user->name = $name;
-				$user->slug = date("Ymd").str_slug($name);
+				$user->slug = str_slug($name).'-'.date("dmy");
 				$user->image = $thumb;
 				$user->password = Hash::make(str_slug($name));
 				$user->role = 'b';
@@ -265,6 +266,7 @@ class SiteController extends Controller {
 
 			Session::put('id', $user->id);
 			Session::put('name', $user->name);
+			Session::put('slug', $user->slug);
 			Session::put('email', $user->email);
 			Session::put('thumb', $user->thumb);
 
@@ -301,7 +303,7 @@ class SiteController extends Controller {
 			if($user->exists == false)
 			{
 				$user->name = $name;
-				$user->slug = date("Ymd").str_slug($name);
+				$user->slug = str_slug($name).'-'.date("dmy");
 				$user->image = $thumb;
 				$user->password = Hash::make(str_slug($name));
 				$user->role = 'b';
@@ -317,6 +319,7 @@ class SiteController extends Controller {
 
 			Session::put('id', $user->id);
 			Session::put('name', $user->name);
+			Session::put('slug', $user->slug);
 			Session::put('email', $user->email);
 			Session::put('thumb', $user->thumb);
 			

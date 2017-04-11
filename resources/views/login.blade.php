@@ -32,7 +32,7 @@
                        Take a look around and dont forget to follow us on Facebook and Instagram!
                        <br />
                        <div class="btn-group">
-                         <a style="padding: 10px;font-weight: bold;" href="/users/{{ str_slug(Session::get('name')) }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
+                         <a style="padding: 10px;font-weight: bold;" href="/users/{{ Session::get('slug') }}?page=1" class="btn btn-primary" title="View Profile"><i class="fa fa-user"></i> Welcome, {{ strtok(Session::get('name'), " ") }}</a>
                          <a style="padding: 10px;" href="/logout" class="btn btn-primary-darker" title="Log Out"><i class="fa fa-sign-out"></i></a>
                        </div>
                       </div>
