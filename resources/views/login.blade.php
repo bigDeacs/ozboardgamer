@@ -27,13 +27,13 @@
 						</div>
 					 @else
 						<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8">
-							<div class="panel panel-default">
+							<div class="panel panel-default" style="margin-top: 25px;">
 								<div class="panel-heading">
 									<h1 class="panel-title">Login</h1>
 								</div>
 								<div class="panel-body">
 									@if($errors->any())
-									   <div class="alert alert-danger">
+									   <div class="col-xs-12 col-sm-10 col-sm-offset-1 alert alert-danger">
 										 <strong>Whoops!</strong> There were some problems with your input.<br><br>
 										 <ul>
 											 <li>{{$errors->first()}}</li>
@@ -43,26 +43,24 @@
 									<form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
 										<input type="hidden" name="_token" value="{{ csrf_token() }}">
 										<div class="form-group">
-										   <label class="col-md-4 control-label">E-Mail Address</label>
-										   <div class="col-md-6">
-												<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+										   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+												<input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-Mail Address">
 											</div>
 										</div>
 										<div class="form-group">
-										   <label class="col-md-4 control-label">Password</label>
-										   <div class="col-md-6">
-												<input type="password" class="form-control" name="password">
+										   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+												<input type="password" class="form-control" name="password" placeholder="Password">
 											</div>
 										</div>
 										<div class="form-group">
-										   <div class="col-md-6 col-md-offset-4">
+										   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
 												<button type="submit" class="btn btn-primary btn-block">Login</button>
 											</div>
 										</div>
 								   </form>
 								   <hr />
 								   <div class="row text-center">
-									 <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a> or 
+									 <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
 									 <a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a>
 								   </div>
 								   <hr />
