@@ -203,6 +203,7 @@ class SiteController extends Controller {
      */
     public function redirectToFacebookProvider()
     {
+		Session::put('last_page', $_SERVER['HTTP_REFERER']);
         return Socialite::driver('facebook')
 								->fields(['first_name', 'last_name', 'email', 'gender'])
 								->redirect();
@@ -215,6 +216,7 @@ class SiteController extends Controller {
      */
     public function redirectToGoogleProvider()
     {
+		Session::put('last_page', $_SERVER['HTTP_REFERER']);
         return Socialite::driver('google')
 								->scopes(['profile', 'email'])
 								->redirect();
@@ -325,7 +327,7 @@ class SiteController extends Controller {
 			
 
 			//return redirect()->back();
-			return redirect('/');
+			return redirect(Session::get('last_page'));
 		}
 
     /**
