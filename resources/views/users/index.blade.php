@@ -24,8 +24,8 @@
 						  <table class="table dataTable table-striped table-hover">
 						  	<col width="20%">
   							<col width="20%">
-  							<col width="20%">
   							<col width="40%">
+							<col width="20%">
 						    <thead>
 						    	<tr>
 						    		<th>Name</th>
