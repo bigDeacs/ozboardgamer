@@ -16,7 +16,7 @@
 					@if(Session::has('name'))
 						<div class="col-xs-12">
 							<h1>Welcome {{ Session::get('name') }}!</h1>
-							Take a look around and dont forget to follow us on <a href="https://www.facebook.com/ozboardgamer/" target="_blank">Facebook</a>, <a href="https://twitter.com/OzBoardGamer" target="_blank">Twitter</a>, <a href="https://www.instagram.com/ozboardgamer/" target="_blank">Instagram</a> and <a href="https://plus.google.com/b/113009055075693721367/+Ozboardgamer?hl=en" target="_blank">Google+</a>!
+							We are so happy you stopped by, while you're here, why don't you check out our latests gaming articles, search our database of games, check out our online store and dont forget to follow us on  <a href="https://www.facebook.com/ozboardgamer/" target="_blank">Facebook</a>, <a href="https://twitter.com/OzBoardGamer" target="_blank">Twitter</a>, <a href="https://www.instagram.com/ozboardgamer/" target="_blank">Instagram</a> and <a href="https://plus.google.com/b/113009055075693721367/+Ozboardgamer?hl=en" target="_blank">Google+</a>!
 							<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="5000" id="bs-carousel" style="margin-top: 20px;">
 							  @unless($featured->isEmpty())
 								<!-- Indicators -->
