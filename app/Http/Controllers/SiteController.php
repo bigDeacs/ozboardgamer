@@ -159,7 +159,7 @@ class SiteController extends Controller {
 		{
 			if($user = User::where('email', '=', $request['email'])->first())
 			{
-				if(Hash::make($request['password']) = Hash::make($user->password);)
+				if(Hash::make($request['password']) = Hash::make($user->password))
 				{
 					Session::put('id', $user->id);
 					Session::put('name', $user->name);
