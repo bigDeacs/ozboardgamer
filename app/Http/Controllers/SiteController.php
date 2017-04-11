@@ -320,7 +320,8 @@ class SiteController extends Controller {
 			Session::put('thumb', $user->thumb);
 			
 
-			return redirect()->back();
+			//return redirect()->back();
+			return redirect('/');
 		}
 
     /**
