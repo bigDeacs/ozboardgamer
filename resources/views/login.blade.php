@@ -16,9 +16,8 @@
 					@if(Session::has('name'))
 						<div class="col-xs-12">
 							<h1>Welcome {{ Session::get('name') }}!</h1>
-							 <div class="text-center">
-							   Take a look around and dont forget to follow us on Facebook and Instagram!
-							 </div>
+							Take a look around and dont forget to follow us on <a href="https://www.facebook.com/ozboardgamer/" target="_blank">Facebook</a>, <a href="https://twitter.com/OzBoardGamer" target="_blank">Twitter</a>, <a href="https://www.instagram.com/ozboardgamer/" target="_blank">Instagram</a> and <a href="https://plus.google.com/b/113009055075693721367/+Ozboardgamer?hl=en" target="_blank">Google+</a>!
+							<br />
 							<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="5000" id="bs-carousel">
 							  @unless($featured->isEmpty())
 								<!-- Indicators -->
