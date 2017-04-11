@@ -168,13 +168,17 @@ class SiteController extends Controller {
 				$user->status = 1;
 				$user->role = 'b';
         		$user->save();
+				
+				$parts = explode(" ", $user->name);
+				$lastname = array_pop($parts);
+				$firstname = implode(" ", $parts);
 
-				$this->syncMailchimp($email, $fname, $lname, null);
+				$this->syncMailchimp($user->email, $firstname, $lastname, null);
 
-				Session::put('id', $create->id);
-				Session::put('name', $create->name);
-				Session::put('email', $create->email);
-				Session::put('thumb', $create->thumb);
+				Session::put('id', $user->id);
+				Session::put('name', $user->name);
+				Session::put('email', $user->email);
+				Session::put('thumb', $user->thumb);
 
 				return redirect()->back();
 		}
