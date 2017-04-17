@@ -51,7 +51,7 @@
 			@if(!empty($data['offers']))
 				<div class="row">
 					<div class="col-sm-12 text-center">
-					   <div id="offerCarousel" class="vertical-slider carousel vertical slide row hidden-xs" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
+					   <div id="offerCarousel" class="vertical-slider carousel vertical slide row" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
 						  <!-- Carousel items -->
 						  <div class="carousel-inner">
 							@foreach($data['offers'] as $key => $offer)
@@ -59,9 +59,9 @@
 								  <div class="col-xs-12 text-center">
 									<a href="{{ $offer->url }} " target="_blank">
 										<strong>
-											{{ $offer->name }} 
+											<span class="hidden-xs">{{ $offer->name }}</span>
 											@if($offer->code !== '' || $offer->code !== null)
-												| {{ $offer->code }}
+											<span class="hidden-xs">|</span> {{ $offer->code }}
 											@endif
 										</strong>					                    
 									</a>
