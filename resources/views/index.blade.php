@@ -35,8 +35,8 @@
 			  <div class="slide-1" style="background-image:url('https://img.ozboardgamer.com/img/signup.jpg');"></div>
 			  <div class="hero">
 				<hgroup>
-					<p class="bigText">Recieve 10% off your next purchase!</p>        
-					<p class="smallText">Just signup to Oz Board Gamer to unlock your code!</p>
+					<p class="bigText">Signup Today</p>        
+					<p class="smallText">Recieve 10% off your next purchase!</p>
 				</hgroup>
 				<a href="/signup" class="btn btn-hero btn-lg">Signup</a>
 			  </div>
