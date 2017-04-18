@@ -29,9 +29,21 @@
 	  
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">			
-            @unless($featured->isEmpty())
+            <div class="item slides active">
+			  <!-- Overlay -->
+			  <div class="overlay"></div>
+			  <div class="slide-1" style="background-image:url('https://img.ozboardgamer.com/img/signup.jpg');"></div>
+			  <div class="hero">
+				<hgroup>
+					<p class="bigText">Signup Today</p>        
+					<p class="smallText">Recieve 10% off your next purchase!</p>
+				</hgroup>
+				<a href="/signup" class="btn btn-hero btn-lg">Signup</a>
+			  </div>
+			</div>
+			@unless($featured->isEmpty())
                 @foreach($featured as $key => $post)
-					<div class="item slides {{ ($key == 0) ? 'active' : '' }}">
+					<div class="item slides {{ ($key == 100) ? 'active' : '' }}">
 					  <!-- Overlay -->
 					  <div class="overlay"></div>
 					  <div class="slide-{{ ($key+2) }}" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');"></div>
