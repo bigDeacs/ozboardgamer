@@ -119,15 +119,16 @@
 								<li class="dropdown">
 								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
 								  <ul class="dropdown-menu">
-									<li class="text-center"><a href="/games">Find Games</a></li>
-									<li class="text-center"><a href="/mechanics">Mechanics</a></li>
-									<li class="text-center"><a href="/publishers">Publishers</a></li>
-									<li class="text-center"><a href="/designers">Designers</a></li>
-									<li class="text-center"><a href="/themes">Themes</a></li>
-									<li class="text-center"><a href="/families">Families</a></li>
+									<li class="text-center"><a href="/shop">Shop for Games</a></li>
+									<li class="text-center"><a href="/games">Games Types</a></li>
+									<li class="text-center"><a href="/mechanics">Game Mechanics</a></li>
+									<li class="text-center"><a href="/publishers">Game Publishers</a></li>
+									<li class="text-center"><a href="/designers">Game Designers</a></li>
+									<li class="text-center"><a href="/themes">Game Themes</a></li>
+									<li class="text-center"><a href="/families">Game Families</a></li>
 								  </ul>
 								</li>
-								<li class="dropdown hidden-sm">
+								<li class="dropdown">
 								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game Articles <span class="caret"></span></a>
 								  <ul class="dropdown-menu">
 									<li class="text-center"><a href="/reviews">Reviews</a></li>
@@ -141,7 +142,7 @@
 									<a href="/stores">Find a Store</a>
 								</li> 
 								<li class="hidden-sm">
-									<a href="/shop">Buy Games</a>
+									<a href="/quizzes">Game Quizzes</a>
 								</li> 
 								<li>
 									@if(Session::has('name'))
