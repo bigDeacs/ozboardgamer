@@ -122,7 +122,16 @@
 													<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
 												</a>														
 											@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-												<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />																						
+												<div class="offer offer-radius offer-danger">
+													<div class="shape">
+														<div class="shape-text">
+															Members Only
+														</div>
+													</div>
+													<div class="offer-content">
+														<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />																						
+													</div>
+												</div>												
 											@else
 												<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
 													<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
@@ -154,7 +163,13 @@
                                             <div class="col-sm-12 post-header-line">
 												<meta itemprop="author" content ="{!! $review->user->name !!}">
                                                 <span class="glyphicon glyphicon-calendar">
-                                                </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a>                                                
+                                                </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span>
+												@if(Session::has('name'))
+													 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a>																												
+												@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+												@else
+													 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a>
+												@endif                                                
 												@unless($review->games->isEmpty())
 													<span class="hidden-xs">
 														 | <span class="fa fa-trophy"></span>
@@ -179,9 +194,7 @@
 														<a class="btn btn-danger pull-right disabled" href="/reviews/{{ $review->slug }}" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>													
 													@else
 														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
-													@endif    
-													Today: {!! date('F d, Y', strtotime("now")) !!}<br />
-													Post: {!! date('F d, Y', strtotime($review->published_at)) !!}
+													@endif    													
                                                 </p>
                                             </div>
                                         </div>
