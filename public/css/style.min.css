@@ -27,6 +27,11 @@
     font-style: normal;
 }
 
+a.disabled, .btn.disabled {
+	cursor: not-allowed!important;
+	pointer-events: all;
+}
+
 a.disabled:hover, .btn.disabled:hover {
 	cursor: not-allowed!important;
 }
