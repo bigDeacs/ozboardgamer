@@ -116,6 +116,14 @@
 									</div>
 								@endunless
 						</div>
+					    <script>
+							$(document).ready(function(){
+								$.cookie("modal-check", true, {
+									path: '/',
+									expires: 365
+								});
+							});
+						</script>
 					 @else
 						<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8">
 							<div class="panel panel-default" style="margin-top: 25px;">

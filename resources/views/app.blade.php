@@ -404,31 +404,6 @@
           // see next for specifications
         });
     </script>
-	@unless(Session::has('name'))
-		<script>
-			$(document).ready(function(){
-				// Cookie Set
-				setTimeout(function(){
-					var my_cookie = $.cookie($('.modal-check').attr('name'));
-					if (my_cookie && my_cookie == "true") {
-						$(this).prop('checked', my_cookie);
-						console.log('checked checkbox');
-					}
-					else{
-						$('#loginWrapper').modal('show');
-						console.log('uncheck checkbox');
-					}
-
-					$(".modal-check").change(function() {
-						$.cookie($(this).attr("name"), $(this).prop('checked'), {
-							path: '/',
-							expires: 1
-						});
-					});
-				},3000)			
-			});
-		</script>
-	@endunless
     <script>
         $(document).ready(function(){
              $(window).scroll(function () {
@@ -444,7 +419,26 @@
                       scrollTop: 0
                   }, 800);
                   return false;
-              });      		
+              });      	
+			// Cookie Set
+			setTimeout(function(){
+				var my_cookie = $.cookie($('.modal-check').attr('name'));
+				if (my_cookie && my_cookie == "true") {
+					$(this).prop('checked', my_cookie);
+					console.log('checked checkbox');
+				}
+				else{
+					$('#loginWrapper').modal('show');
+					console.log('uncheck checkbox');
+				}
+
+				$(".modal-check").change(function() {
+					$.cookie($(this).attr("name"), $(this).prop('checked'), {
+						path: '/',
+						expires: 7
+					});
+				});
+			},3000)	
         });
     </script>
     @yield('scripts')
