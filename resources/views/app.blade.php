@@ -311,7 +311,7 @@
 	 </div>
 </div>
 
-@if(Session::has('name'))
+@unless(Session::has('name'))
 	<div class='modal fade' id='loginWrapper'>
 		<div class='modal-dialog'>
 			<div class='modal-content'>
@@ -410,7 +410,7 @@
 			},3000)	
 		});
 	</script>
-@endif
+@endunless
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
