@@ -123,6 +123,14 @@
 												</a>														
 											@elseif(date(strtotime("now")) == date(strtotime($review->published_at)))
 												<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
+											@else
+											{!! date(strtotime("now")) !!}
+											<br />
+											{!! date(strtotime($review->published_at) !!}
+											<br />
+												<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
+													<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
+												</a>
 											@endif
 										</div>
 										<div class="col-sm-9 col-xs-12">
@@ -137,6 +145,10 @@
 															</a>															
 														@elseif(date(strtotime("now")) == date(strtotime($review->published_at)))
 															{!! $review->name !!}
+														@else
+															<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
+																{!! $review->name !!}
+															</a>
 														@endif
                                                     </strong>
                                                 </p>
@@ -169,6 +181,8 @@
 														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
 													@elseif(date(strtotime("now")) == date(strtotime($review->published_at)))
 														<a class="btn btn-danger pull-right disabled" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+													@else
+														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
 													@endif                                                    
                                                 </p>
                                             </div>
