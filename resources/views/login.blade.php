@@ -116,7 +116,7 @@
 									</div>
 								@endunless
 						</div>
-					    <script>
+					    <script data-cfasync="false">
 							$(document).ready(function(){
 								$.cookie("modal-check", true, {
 									path: '/',
