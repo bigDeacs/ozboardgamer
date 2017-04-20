@@ -48,7 +48,7 @@
 							<div class="col-sm-9 col-xs-12">
 						  @endif					
 							<div class="panel panel-success" style="padding: 0 10px;" id="parent">
-								<h1 itemprop="name">{{ $post->name }}</h1>
+								<h1 itemprop="name"><i class="fa fa-lock" aria-hidden="true"></i> {{ $post->name }}</h1>
 								<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}" itemprop="author">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
 											</span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
 								@unless($post->video == null)
@@ -56,7 +56,7 @@
 										<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen itemprop="video"></iframe>
 									</div>
 								@endunless
-								<p itemprop="reviewBody">{!! str_limit($post->description, $limit = 500, $end = '... Login/Signup to gain early access.') !!}</p>
+								<p itemprop="reviewBody">This Article is for members only, if you would like to gain early access simply Login/Signup. It's easy, you can even Login with your Facebook or Google account with just a click of a button!</p>
 							</div>
 						  </div>
 						  @unless($games->isEmpty())
