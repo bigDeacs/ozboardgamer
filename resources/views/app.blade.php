@@ -139,28 +139,19 @@
 								  </ul>
 								</li>
 								@if(Session::has('name'))
-									<li class="hidden-sm">
-										<a href="/shop">Buy Games</a>
-									</li> 
-								@else
-									<li class="hidden-sm disabled">
-										<a><i class="fa fa-lock" aria-hidden="true"></i> Buy Games</a>
-									</li>
-								@endif
-								@if(Session::has('name'))
-									<li class="dropdown">
-									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+									<li class="dropdown hidden-sm">
+									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Buy Games <span class="caret"></span></a>
 									  <ul class="dropdown-menu">
+										<li class="text-center"><a href="/shop">Buy Online</a></li>
 										<li class="text-center"><a href="/stores">Find a Store</a></i></li>
-										<li class="text-center"><a href="/quizzes">Game Quizzes</a></li>									
 									  </ul>
 									</li>
 								@else
-									<li class="dropdown disabled">
-									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-lock" aria-hidden="true"></i> Extras <span class="caret"></span></a>
+									<li class="dropdown hidden-sm disabled">
+									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-lock" aria-hidden="true"></i> Buy Games <span class="caret"></span></a>
 									  <ul class="dropdown-menu">
-										<li class="text-center disabled"><a><i class="fa fa-lock" aria-hidden="true"></i> Find a Store</a></li>
-										<li class="text-center disabled"><a><i class="fa fa-lock" aria-hidden="true"></i> Game Quizzes</a></li>									
+										<li class="text-center disabled"><a><i class="fa fa-lock" aria-hidden="true"></i> Buy Online</a></li>
+										<li class="text-center disabled"><a><i class="fa fa-lock" aria-hidden="true"></i> Find a Store</a></li>										
 									  </ul>
 									</li>
 								@endif
@@ -400,55 +391,70 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://js.ozboardgamer.com/js/ie10-viewport-bug-workaround.js"></script>
     <script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script>
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
           // see next for specifications
         });
-    </script>
-    <script>
-        $(document).ready(function(){
-             $(window).scroll(function () {
-                    if ($(this).scrollTop() > 50) {
-                        $('#back-to-top').fadeIn();
-                    } else {
-                        $('#back-to-top').fadeOut();
-                    }
-              });
-              // scroll body to 0px on click
-              $('#back-to-top').click(function () {
-                  $('body,html').animate({
-                      scrollTop: 0
-                  }, 800);
-                  return false;
-              });      	
-        });
-    </script>
-	@unless(Session::has('name'))
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    </script>    
+	@if(Session::has('name'))
 		<script>
-			$(document).ready(function(){ 	
-				// Cookie Set
-				setTimeout(function(){
-					var my_cookie = $.cookie($('.modal-check').attr('name'));
-					if (my_cookie && my_cookie == "true") {
-						$(this).prop('checked', my_cookie);
-						console.log('checked checkbox');
-					}
-					else{
-						$('#loginWrapper').modal('show');
-						console.log('uncheck checkbox');
-					}
-
-					$(".modal-check").change(function() {
-						$.cookie($(this).attr("name"), $(this).prop('checked'), {
-							path: '/',
-							expires: 30
-						});
-					});
-				},3000)	
+			$(document).ready(function(){
+				 $(window).scroll(function () {
+						if ($(this).scrollTop() > 50) {
+							$('#back-to-top').fadeIn();
+						} else {
+							$('#back-to-top').fadeOut();
+						}
+				  });
+				  // scroll body to 0px on click
+				  $('#back-to-top').click(function () {
+					  $('body,html').animate({
+						  scrollTop: 0
+					  }, 800);
+					  return false;
+				  });   				 
 			});
 		</script>
-	@endunless
+	@else
+		<script>
+			$(document).ready(function(){
+				 $(window).scroll(function () {
+						if ($(this).scrollTop() > 50) {
+							$('#back-to-top').fadeIn();
+						} else {
+							$('#back-to-top').fadeOut();
+						}
+				  });
+				  // scroll body to 0px on click
+				  $('#back-to-top').click(function () {
+					  $('body,html').animate({
+						  scrollTop: 0
+					  }, 800);
+					  return false;
+				  });   
+				  // Cookie Set
+					setTimeout(function(){
+						var my_cookie = $.cookie($('.modal-check').attr('name'));
+						if (my_cookie && my_cookie == "true") {
+							$(this).prop('checked', my_cookie);
+							console.log('checked checkbox');
+						}
+						else{
+							$('#loginWrapper').modal('show');
+							console.log('uncheck checkbox');
+						}
+
+						$(".modal-check").change(function() {
+							$.cookie($(this).attr("name"), $(this).prop('checked'), {
+								path: '/',
+								expires: 30
+							});
+						});
+					},3000);
+			});
+		</script>
+	@endif
     @yield('scripts')
   </body>
 </html>
