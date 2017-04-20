@@ -29,30 +29,31 @@
 	  
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner">			
-            <div class="item slides active">
-			  <!-- Overlay -->
-			  <div class="overlay"></div>
-			  <div class="slide-1" style="background-image:url('https://img.ozboardgamer.com/img/signup.jpg');"></div>
-			  <div class="hero">
-				<hgroup>
-					<p class="bigText">Signup Today</p>        
-					<p class="smallText">Recieve 10% off your next purchase!</p>
-				</hgroup>
-				<a href="/signup" class="btn btn-hero btn-lg">Signup</a>
-			  </div>
-			</div>
 			@unless($featured->isEmpty())
                 @foreach($featured as $key => $post)
-					<div class="item slides {{ ($key == 100) ? 'active' : '' }}">
+					<div class="item slides {{ ($key == 0) ? 'active' : '' }}">
 					  <!-- Overlay -->
 					  <div class="overlay"></div>
 					  <div class="slide-{{ ($key+2) }}" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');"></div>
 					  <div class="hero">        
 						<hgroup>
-							<p class="bigText">{{ $post->category()->first()->name }}</p>        
-							<p class="smallText">{{ $post->name }}</p>
+							@if(Session::has('name'))		
+								<p class="bigText">{{ $post->category()->first()->name }}</p>        
+								<p class="smallText">{{ $post->name }}</p>								
+							@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+								<p class="bigText">Featured Post</p>        
+								<p class="smallText">Login/Signup for early access</p>
+							@else
+								<p class="bigText">{{ $post->category()->first()->name }}</p>        
+								<p class="smallText">{{ $post->name }}</p>
+							@endif         							
 						</hgroup>       
-						<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
+						@if(Session::has('name'))		
+							<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
+						@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))							
+						@else
+							<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
+						@endif 						
 					  </div>
 					</div>
                 @endforeach
@@ -192,8 +193,7 @@
                                                 <p>
 													@if(Session::has('name'))
 														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
-													@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-														<a class="btn btn-danger pull-right disabled" href="#" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>													
+													@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))														
 													@else
 														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
 													@endif    													
@@ -217,9 +217,28 @@
 										<div class="col-sm-12">
 									@else										
 										<div class="col-sm-3 col-xs-12" style="padding: 15px;overflow: hidden;height: 175px;">
-											<a href="/top10s/{{ $top10->slug }}" title="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}">
-												<img src="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
-											</a>
+											@if(Session::has('name'))
+												<a href="/top10s/{{ $top10->slug }}" title="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}">
+													<img src="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
+												</a>														
+											@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+												<a href="#" class="disabled" title="Login for access">
+													<div class="offer offer-radius offer-danger">
+														<div class="shape">
+															<div class="shape-text">
+																<i class="fa fa-lock" aria-hidden="true"></i>
+															</div>
+														</div>
+														<div class="offer-content">
+															<img src="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
+														</div>
+													</div>	
+												</a>
+											@else
+												<a href="/top10s/{{ $top10->slug }}" title="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}">
+													<img src="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
+												</a>														
+											@endif											
 										</div>
 										<div class="col-sm-9 col-xs-12">
 									@endif
@@ -227,9 +246,17 @@
                                             <div class="col-sm-12">
                                                 <p class="blogHeading">
                                                     <strong>
-                                                        <a href="/top10s/{{ $top10->slug }}" class="post-title">
+														@if(Session::has('name'))
+															 <a href="/top10s/{{ $top10->slug }}" class="post-title">
                                                             {!! $top10->name !!}
-                                                        </a>
+                                                        </a>																													
+														@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+															{!! $top10->name !!}
+														@else
+															 <a href="/top10s/{{ $top10->slug }}" class="post-title">
+																{!! $top10->name !!}
+															</a>
+														@endif
                                                     </strong>
                                                 </p>
                                             </div>
@@ -237,7 +264,13 @@
                                         <div class="row">
                                             <div class="col-sm-12 post-header-line">
 												<span class="glyphicon glyphicon-calendar">
-                                                </span>{!! date('F d, Y', strtotime($top10->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread"></a>
+                                                </span>{!! date('F d, Y', strtotime($top10->published_at)) !!}
+												@if(Session::has('name'))
+													 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread"></a>																												
+												@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+												@else
+													 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread"></a>
+												@endif   												
                                                 @unless($top10->games->isEmpty())
 													<span class="hidden-xs">
 														 | <span class="fa fa-trophy"></span>
@@ -254,7 +287,12 @@
                                                     {!! str_limit(strip_tags($top10->description), $limit = 250, $end = '...') !!}
                                                 </p>
                                                 <p>
-                                                    <a class="btn btn-danger pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+													@if(Session::has('name'))
+														<a class="btn btn-danger pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+													@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))														
+													@else
+														<a class="btn btn-danger pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+													@endif                                                     
                                                 </p>
                                             </div>
                                         </div>
