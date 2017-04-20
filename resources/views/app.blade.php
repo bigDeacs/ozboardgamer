@@ -119,7 +119,7 @@
 								<li class="dropdown">
 								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
 								  <ul class="dropdown-menu">
-									<li class="text-center"><a href="/shop">Shop for Games</a></li>
+									
 									<li class="text-center"><a href="/games">Games Types</a></li>
 									<li class="text-center"><a href="/mechanics">Game Mechanics</a></li>
 									<li class="text-center"><a href="/publishers">Game Publishers</a></li>
@@ -138,12 +138,32 @@
 									<li class="text-center"><a href="/blogs">Blog</a></li>
 								  </ul>
 								</li>
-								<li class="hidden-sm">
-									<a href="/stores">Find a Store</a>
-								</li> 
-								<li class="hidden-sm">
-									<a href="/quizzes">Game Quizzes</a>
-								</li> 
+								@if(Session::has('name'))
+									<li class="hidden-sm">
+										<a href="/shop">Shop for Games</a>
+									</li> 
+								@else
+									<li class="hidden-sm disabled">
+										<a href="/shop">Shop for Games</a> <i class="fa fa-lock" aria-hidden="true"></i>
+									</li>
+								@endif
+								@if(Session::has('name'))
+									<li class="dropdown">
+									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+									  <ul class="dropdown-menu">
+										<li class="text-center"><a href="/stores">Find a Store</a></i></li>
+										<li class="text-center"><a href="/quizzes">Game Quizzes</a></li>									
+									  </ul>
+									</li>
+								@else
+									<li class="dropdown">
+									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+									  <ul class="dropdown-menu">
+										<li class="text-center disabled"><a href="/stores">Find a Store</a> <i class="fa fa-lock" aria-hidden="true"></i></li>
+										<li class="text-center disabled"><a href="/quizzes">Game Quizzes</a> <i class="fa fa-lock" aria-hidden="true"></i></li>									
+									  </ul>
+									</li>
+								@endif
 								<li>
 									@if(Session::has('name'))
 										<?php $name = explode(" ", Session::get('name')); ?>
@@ -297,60 +317,57 @@
 			<div class='modal-header'>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 				<h4 class='modal-title'>
-				  <strong>Signup</strong>
+				  <strong>Signup today for amazing extras</strong>
 				</h4>
 			</div>
 			<!-- / modal-header -->
 			<div class='modal-body'>
-				<div class="panel panel-default" style="margin-top: 25px;">
-					<div class="panel-body">
-						@if (count($errors) > 0)
-						   <div class="col-xs-12 col-sm-10 col-sm-offset-1 alert alert-danger">
-							 <strong>Whoops!</strong> There were some problems with your input.<br><br>
-							 <ul>
-							   @foreach ($errors->all() as $error)
-								 <li>{{ $error }}</li>
-							   @endforeach
-							 </ul>
-						   </div>
-						 @endif
-						<form class="form-horizontal" role="form" method="POST" action="{{ url('/signup') }}">
-							 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<img src="/img/signup-header.jpg" class="img-responsive" alt="Signup" />
+				@if (count($errors) > 0)
+				   <div class="col-xs-12 col-sm-10 col-sm-offset-1 alert alert-danger">
+					 <strong>Whoops!</strong> There were some problems with your input.<br><br>
+					 <ul>
+					   @foreach ($errors->all() as $error)
+						 <li>{{ $error }}</li>
+					   @endforeach
+					 </ul>
+				   </div>
+				 @endif
+				<form class="form-horizontal" role="form" method="POST" action="{{ url('/signup') }}">
+					 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-							 <div class="form-group">
-							   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-								 <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name">
-							   </div>
-							 </div>
-
-							 <div class="form-group">
-							   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-								 <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-Mail Address">
-							   </div>
-							 </div>
-
-							 <div class="form-group">
-							   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-								 <input type="password" class="form-control" name="password" placeholder="Password">
-							   </div>
-							 </div>
-
-							 <div class="form-group">
-							   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-								 <button type="submit" class="btn btn-primary btn-block" onclick="completeRegistration()">
-								   Signup
-								 </button>
-							   </div>
-							 </div>
-						   </form>
-					   <hr />
-					   <div class="row text-center">
-						 <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Signup with Facebook</a>
-						 <a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Signup with Google</a>
+					 <div class="form-group">
+					   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+						 <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name">
 					   </div>
-					   <hr />
-					</div>
+					 </div>
+
+					 <div class="form-group">
+					   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+						 <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-Mail Address">
+					   </div>
+					 </div>
+
+					 <div class="form-group">
+					   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+						 <input type="password" class="form-control" name="password" placeholder="Password">
+					   </div>
+					 </div>
+
+					 <div class="form-group">
+					   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+						 <button type="submit" class="btn btn-primary btn-block" onclick="completeRegistration()">
+						   Signup
+						 </button>
+					   </div>
+					 </div>
+				</form>
+				<hr />
+				<div class="row text-center">
+					<a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Signup with Facebook</a>
+					<a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Signup with Google</a>
 				</div>
+				<hr />
 			</div>
 			<!-- / modal-body -->
 		   <div class='modal-footer'>
