@@ -37,21 +37,16 @@
 					  <div class="slide-{{ ($key+2) }}" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');"></div>
 					  <div class="hero">        
 						<hgroup>
-							@if(Session::has('name'))		
-								<p class="bigText">{{ $post->category()->first()->name }}</p>        
-								<p class="smallText">{{ $post->name }}</p>								
-							@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
-								<p class="bigText">{{ $post->category()->first()->name }}</p>     
+							@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
+								<p class="bigText"><i class="fa fa-lock" aria-hidden="true"></i> {{ $post->category()->first()->name }} <i class="fa fa-lock" aria-hidden="true"></i></p>     
 								<p class="smallText">{{ $post->name }}</p>
 							@else
 								<p class="bigText">{{ $post->category()->first()->name }}</p>        
 								<p class="smallText">{{ $post->name }}</p>
 							@endif         							
 						</hgroup>       
-						@if(Session::has('name'))		
-							<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
-						@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))				
-							<p class="smallText"><i class="fa fa-lock" aria-hidden="true"></i> Login/Signup for early access <i class="fa fa-lock" aria-hidden="true"></i></p>						
+						@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))			
+							<p class="smallText">Login/Signup for early access</p>						
 						@else
 							<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
 						@endif 						
