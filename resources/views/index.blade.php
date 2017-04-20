@@ -117,12 +117,12 @@
 										<div class="col-sm-12">
 									@else
 										<div class="col-sm-3 col-xs-12" style="padding: 15px;overflow: hidden;height: 175px;">
-											@if(date(strtotime($review->published_at)) > strtotime('-1 day'))		
-												<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
-											@else
+											@if(Session::has('name') || date(strtotime($review->published_at)) != date(strtotime()))
 												<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
 													<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
-												</a>
+												</a>														
+											@else
+												<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
 											@endif
 										</div>
 										<div class="col-sm-9 col-xs-12">
@@ -131,12 +131,12 @@
                                             <div class="col-sm-12">
                                                 <p class="blogHeading">
                                                     <strong>
-														@if(date(strtotime($review->published_at)) > strtotime('-1 day'))		
-															{!! $review->name !!}
-														@else
+														@if(Session::has('name') || date(strtotime($review->published_at)) != date(strtotime()))
 															<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
 																{!! $review->name !!}
-															</a>
+															</a>															
+														@else
+															{!! $review->name !!}
 														@endif
                                                     </strong>
                                                 </p>
@@ -165,10 +165,10 @@
                                                     {!! str_limit(strip_tags($review->description), $limit = 250, $end = '...') !!}
                                                 </p>
                                                 <p>
-													@if(date(strtotime($review->published_at)) > strtotime('-1 day'))		
-														<a class="btn btn-danger pull-right disabled" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+													@if(Session::has('name') || date(strtotime($review->published_at)) != date(strtotime()))
+														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
 													@else
-														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+														<a class="btn btn-danger pull-right disabled" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
 													@endif                                                    
                                                 </p>
                                             </div>

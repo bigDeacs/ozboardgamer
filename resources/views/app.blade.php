@@ -140,11 +140,11 @@
 								</li>
 								@if(Session::has('name'))
 									<li class="hidden-sm">
-										<a href="/shop">Shop for Games</a>
+										<a href="/shop">Buy Games</a>
 									</li> 
 								@else
 									<li class="hidden-sm disabled">
-										<a href="/shop">Shop for Games</a> <i class="fa fa-lock" aria-hidden="true"></i>
+										<a>Buy Games <i class="fa fa-lock" aria-hidden="true"></i></a>
 									</li>
 								@endif
 								@if(Session::has('name'))
@@ -156,11 +156,11 @@
 									  </ul>
 									</li>
 								@else
-									<li class="dropdown">
+									<li class="dropdown disabled">
 									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
 									  <ul class="dropdown-menu">
-										<li class="text-center disabled"><a href="/stores">Find a Store</a> <i class="fa fa-lock" aria-hidden="true"></i></li>
-										<li class="text-center disabled"><a href="/quizzes">Game Quizzes</a> <i class="fa fa-lock" aria-hidden="true"></i></li>									
+										<li class="text-center disabled"><a>Find a Store <i class="fa fa-lock" aria-hidden="true"></i></a></li>
+										<li class="text-center disabled"><a>Game Quizzes <i class="fa fa-lock" aria-hidden="true"></i></a></li>									
 									  </ul>
 									</li>
 								@endif
@@ -404,7 +404,7 @@
           // see next for specifications
         });
     </script>
-	@if(Session::has('name'))
+	@unless(Session::has('name'))
 		<script>
 			$(document).ready(function(){
 				// Cookie Set
@@ -428,7 +428,7 @@
 				},3000)			
 			});
 		</script>
-	@endif
+	@endunless
     <script>
         $(document).ready(function(){
              $(window).scroll(function () {
