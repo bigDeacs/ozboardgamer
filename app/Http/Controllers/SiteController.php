@@ -48,11 +48,13 @@ class SiteController extends Controller {
 
 		public function __construct()
 	  {
-			if(Session::has('name'))
+			if(Session::has('thumb'))
 			{
-					$data = ['offers' => Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get(), 'sso' => $this->sso(Session::get('id'), Session::get('name'), Session::get('email'))];
+				$data = ['offers' => Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get(), 'sso' => $this->sso(Session::get('id'), Session::get('name'), Session::get('email'), Session::get('thumb'))];
+			} elseif(Session::has('name')) {
+				$data = ['offers' => Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get(), 'sso' => $this->sso(Session::get('id'), Session::get('name'), Session::get('email'))];
 			} else {
-					$data = ['offers' => Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get()];
+				$data = ['offers' => Offer::where('status', '=', '1')->where('start_at', '<=', date('Y-m-d'))->orderBy('end_at', 'desc')->get()];
 			}
 			View::share('data', $data);
 	  }
@@ -100,12 +102,13 @@ class SiteController extends Controller {
 				$myArray = json_decode($result, true);
 		}
 
-		public function sso($id, $name, $email)
+		public function sso($id, $name, $email, $avatar = null)
 		{
 			$data = array(
 			        "id" => $id,
 			        "username" => $name,
-			        "email" => $email
+			        "email" => $email,
+					"avatar" => $avatar
 			    );
 			$publickey = 'dfGV7FT4p75sDiuGmSslFTMVq5t5a2GfDXkmvJDNyaof90Dc3THzwO5cXTSH9S2C';
 			$secretkey = 'aN7OutGQ5Y8lXgdw4g4JqkmZl9CN9XAsWjn5PzONzaaRdzDBjIB2iEniwaKKkmu9';
