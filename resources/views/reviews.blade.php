@@ -38,7 +38,7 @@
 											<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
 										</a>														
 									@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
-										<a href="#" class="disabled" title="Login for access">
+										<a href="" class="disabled" title="Login for access">
 											<div class="offer offer-radius offer-danger">
 												<div class="shape">
 													<div class="shape-text">

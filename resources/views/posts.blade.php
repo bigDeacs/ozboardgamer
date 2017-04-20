@@ -33,9 +33,28 @@
 									$game = $post->games()->orderBy(DB::raw('RAND()'))->first(); 
 								?>
 								<div class="col-sm-3 col-xs-12" style="padding: 15px;overflow: hidden;height: 175px;">
-									<a href="/{{ $category->slug }}/{{ $post->slug }}" title="{{ $game->name }}">
-										<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
-									</a>								
+									@if(Session::has('name'))
+										<a href="/{{ $category->slug }}/{{ $post->slug }}" title="{{ $game->name }}">
+											<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
+										</a>														
+									@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
+										<a href="" class="disabled" title="Login for access">
+											<div class="offer offer-radius offer-danger">
+												<div class="shape">
+													<div class="shape-text">
+														<i class="fa fa-lock" aria-hidden="true"></i>
+													</div>
+												</div>
+												<div class="offer-content">
+													<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
+												</div>
+											</div>	
+										</a>
+									@else										
+										<a href="/{{ $category->slug }}/{{ $post->slug }}" title="{{ $game->name }}">
+											<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
+										</a>														
+									@endif	
 								</div>
 								<div class="col-sm-9 col-xs-12">
 							@endif
@@ -43,9 +62,17 @@
                                     <div class="col-sm-12">
                                         <p class="blogHeading">
                                             <strong>
-                                                <a href="/{{ $category->slug }}/{{ $post->slug }}" class="post-title" itemprop="name">
-                                                    {!! $post->name !!}
-                                                </a>
+												@if(Session::has('name'))
+													<a href="/{{ $category->slug }}/{{ $post->slug }}" class="post-title" itemprop="name">
+														{!! $post->name !!}
+													</a>																													
+												@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
+													{!! $post->name !!}
+												@else
+													<a href="/{{ $category->slug }}/{{ $post->slug }}" class="post-title" itemprop="name">
+														{!! $post->name !!}
+													</a>
+												@endif
                                             </strong>
                                         </p>
                                     </div>
@@ -54,7 +81,13 @@
                                     <div class="col-sm-12 post-header-line">
 										<meta itemprop="author" content="{!! $post->user->name !!}">
                                         <span class="glyphicon glyphicon-calendar">
-                                        </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $post->slug }}#disqus_thread"></a>
+                                        </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
+										@if(Session::has('name'))
+											 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/{{ $category->slug }}/{{ $post->slug }}#disqus_thread"></a>
+										@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
+										@else
+											 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/{{ $category->slug }}/{{ $post->slug }}#disqus_thread"></a>
+										@endif 											
                                         @unless($post->games->isEmpty())
 											<span class="hidden-xs">
 												 | <span class="fa fa-trophy"></span>
@@ -73,7 +106,12 @@
                                             {!! str_limit(strip_tags($post->description), $limit = 250, $end = '...') !!}
                                         </p>
                                         <p>
-                                            <a class="btn btn-danger pull-right" href="/{{ $category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+											@if(Session::has('name'))
+												<a class="btn btn-danger pull-right" href="/{{ $category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+											@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))														
+											@else
+												<a class="btn btn-danger pull-right" href="/{{ $category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+											@endif   
                                         </p>
                                     </div>
                                 </div>
