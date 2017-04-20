@@ -41,8 +41,8 @@
 								<p class="bigText">{{ $post->category()->first()->name }}</p>        
 								<p class="smallText">{{ $post->name }}</p>								
 							@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
-								<p class="bigText"><i class="fa fa-lock" aria-hidden="true"></i> {{ $post->category()->first()->name }} <i class="fa fa-lock" aria-hidden="true"></i></p>     
-								<p class="smallText">Login/Signup for early access</p>
+								<p class="bigText">{{ $post->category()->first()->name }}</p>     
+								<p class="smallText">{{ $post->name }}</p>
 							@else
 								<p class="bigText">{{ $post->category()->first()->name }}</p>        
 								<p class="smallText">{{ $post->name }}</p>
@@ -50,7 +50,8 @@
 						</hgroup>       
 						@if(Session::has('name'))		
 							<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
-						@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))							
+						@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))				
+							<p class="smallText"><i class="fa fa-lock" aria-hidden="true"></i> Login/Signup for early access <i class="fa fa-lock" aria-hidden="true"></i></p>						
 						@else
 							<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
 						@endif 						
@@ -152,7 +153,9 @@
 																{!! $review->name !!}
 															</a>																													
 														@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-															{!! $review->name !!}
+															<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
+																{!! $review->name !!}
+															</a>
 														@else
 															<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
 																{!! $review->name !!}
@@ -194,6 +197,7 @@
 													@if(Session::has('name'))
 														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
 													@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))														
+														<a class="btn btn-danger pull-right disabled" href="#" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>
 													@else
 														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
 													@endif    													
@@ -251,7 +255,9 @@
                                                             {!! $top10->name !!}
                                                         </a>																													
 														@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-															{!! $top10->name !!}
+															<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
+																{!! $top10->name !!}
+															</a>
 														@else
 															 <a href="/top10s/{{ $top10->slug }}" class="post-title">
 																{!! $top10->name !!}
@@ -290,6 +296,7 @@
 													@if(Session::has('name'))
 														<a class="btn btn-danger pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
 													@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))														
+														<a class="btn btn-danger pull-right disabled" href="#" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>
 													@else
 														<a class="btn btn-danger pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
 													@endif                                                     

@@ -67,7 +67,9 @@
 														{!! $post->name !!}
 													</a>																													
 												@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
-													{!! $post->name !!}
+													<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
+														{!! $post->name !!}
+													</a>
 												@else
 													<a href="/{{ $category->slug }}/{{ $post->slug }}" class="post-title" itemprop="name">
 														{!! $post->name !!}
@@ -109,6 +111,7 @@
 											@if(Session::has('name'))
 												<a class="btn btn-danger pull-right" href="/{{ $category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
 											@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))														
+												<a class="btn btn-danger pull-right disabled" href="#" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>
 											@else
 												<a class="btn btn-danger pull-right" href="/{{ $category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
 											@endif                                               
