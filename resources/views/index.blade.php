@@ -41,7 +41,7 @@
 								<p class="bigText">{{ $post->category()->first()->name }}</p>        
 								<p class="smallText">{{ $post->name }}</p>								
 							@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
-								<p class="bigText">Featured Post</p>        
+								<p class="bigText"><i class="fa fa-lock" aria-hidden="true"></i> {{ $post->category()->first()->name }} <i class="fa fa-lock" aria-hidden="true"></i></p>     
 								<p class="smallText">Login/Signup for early access</p>
 							@else
 								<p class="bigText">{{ $post->category()->first()->name }}</p>        
