@@ -29,7 +29,7 @@
 
 a.disabled, .btn.disabled {
 	cursor: not-allowed!important;
-	pointer-events: all;
+	pointer-events: all!important;
 }
 
 a.disabled:hover, .btn.disabled:hover {
