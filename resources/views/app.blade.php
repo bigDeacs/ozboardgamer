@@ -399,7 +399,7 @@
           // see next for specifications
         });
     </script>    
-	@if(Session::has('name'))
+	@if(Session::has('name') || Request::is('login') || Request::is('signup'))
 		<script>
 			$(document).ready(function(){
 				 $(window).scroll(function () {

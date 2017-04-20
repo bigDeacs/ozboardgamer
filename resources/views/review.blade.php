@@ -48,7 +48,7 @@
 							<div class="col-sm-9 col-xs-12">
 						  @endif					
 							<div class="panel panel-success" style="padding: 0 10px;" id="parent">
-								<h1 itemprop="name"><i class="fa fa-lock" aria-hidden="true"></i> {{ $post->name }}</h1>
+								<h1 itemprop="name"><i class="fa fa-lock" aria-hidden="true"></i> Uh oh!</h1>
 								<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}" itemprop="author">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
 											</span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
 								@unless($post->video == null)
@@ -56,7 +56,15 @@
 										<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen itemprop="video"></iframe>
 									</div>
 								@endunless
-								<p itemprop="reviewBody">This Article is for members only, if you would like to gain early access simply Login/Signup. It's easy, you can even Login with your Facebook or Google account with just a click of a button!</p>
+								<p itemprop="reviewBody">
+									Sorry friend, but it looks like you stumbled upon a members only article. These will be open to the public 1 day after being published.<br />
+									<br />
+									If you would like to gain early access simply Login or Signup to OzBoardGamer. We promise you won't regret it!<br />
+									<br />
+									By signing up you will have access to amazing savings, early access to the latest articles, rate your favourite games and even keep track of your own game collection and watchlist online!<br />
+									<br />
+									It's easy, you can even Login with your Facebook or Google account with just a click of a button!
+								</p>
 							</div>
 						  </div>
 						  @unless($games->isEmpty())
