@@ -126,7 +126,7 @@
 											@else
 											{!! date(strtotime("now")) !!}
 											<br />
-											{!! date(strtotime($review->published_at) !!}
+											{!! date(strtotime($review->published_at)) !!}
 											<br />
 												<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
 													<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
