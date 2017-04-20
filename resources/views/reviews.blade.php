@@ -34,7 +34,7 @@
 								?>
 								<div class="col-sm-3 col-xs-12" style="padding: 15px;overflow: hidden;height: 175px;">																
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
-										<a href="#" class="disabled disabledLink" title="Login for access">
+										<a href="#" class="disabled" title="Login for access">
 											<div class="offer offer-radius offer-danger">
 												<div class="shape">
 													<div class="shape-text">
@@ -59,7 +59,7 @@
                                         <p class="blogHeading">
                                             <strong>
 												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
-													<a href="#" class="post-title disabled disabledLink" itemprop="name" title="Login for access">
+													<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
 														{!! $post->name !!}
 													</a>
 												@else

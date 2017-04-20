@@ -27,12 +27,12 @@
     font-style: normal;
 }
 
-a.disabledLink:hover {
-	cursor: not-allowed;
+a.disabled:hover {
+	cursor: not-allowed!important;
 }
-a.disabledLink:active {
-	cursor: not-allowed;
-	pointer-events: none;
+a.disabled:active {
+	cursor: not-allowed!important;
+	pointer-events: none!important;
 }
 
 .shape{    
