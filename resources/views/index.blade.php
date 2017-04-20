@@ -40,7 +40,7 @@
 							@if(Session::has('name'))		
 								<p class="bigText">{{ $post->category()->first()->name }}</p>        
 								<p class="smallText">{{ $post->name }}</p>								
-							@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+							@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 								<p class="bigText">Featured Post</p>        
 								<p class="smallText">Login/Signup for early access</p>
 							@else
