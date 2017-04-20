@@ -27,9 +27,12 @@
     font-style: normal;
 }
 
-a.disabled {
-   pointer-events: none;
-   cursor: default;
+a.disabled:hover {
+	cursor: default;
+}
+a.disabled:active {
+	cursor: default;
+	pointer-events: none;
 }
 
 .shape{    

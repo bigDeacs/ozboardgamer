@@ -56,7 +56,7 @@
 										<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen itemprop="video"></iframe>
 									</div>
 								@endunless
-								<p itemprop="reviewBody">{!! str_limit(strip_tags($post->description), $limit = 500, $end = '... Login/Signup to gain early access.') !!}</p>
+								<p itemprop="reviewBody">{!! str_limit($post->description, $limit = 500, $end = '... Login/Signup to gain early access.') !!}</p>
 							</div>
 						  </div>
 						  @unless($games->isEmpty())

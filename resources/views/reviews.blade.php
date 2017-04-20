@@ -32,13 +32,9 @@
 								<?php 
 									$game = $post->games()->orderBy(DB::raw('RAND()'))->first(); 
 								?>
-								<div class="col-sm-3 col-xs-12" style="padding: 15px;overflow: hidden;height: 175px;">							
-									@if(Session::has('name'))
-										<a href="/{{ $category->slug }}/{{ $post->slug }}" title="{{ $game->name }}">
-											<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
-										</a>														
-									@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
-										<a href="" class="disabled" title="Login for access">
+								<div class="col-sm-3 col-xs-12" style="padding: 15px;overflow: hidden;height: 175px;">																
+									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
+										<a href="#" class="disabled" title="Login for access">
 											<div class="offer offer-radius offer-danger">
 												<div class="shape">
 													<div class="shape-text">
@@ -62,11 +58,7 @@
                                     <div class="col-sm-12">
                                         <p class="blogHeading">
                                             <strong>
-												@if(Session::has('name'))
-													<a href="/{{ $category->slug }}/{{ $post->slug }}" class="post-title" itemprop="name">
-														{!! $post->name !!}
-													</a>																													
-												@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
+												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 													<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
 														{!! $post->name !!}
 													</a>
@@ -84,9 +76,7 @@
 										<meta itemprop="author" content ="{!! $post->user->name !!}">
                                         <span class="glyphicon glyphicon-calendar">
                                         </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
-										@if(Session::has('name'))
-											 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $post->slug }}#disqus_thread"></a>
-										@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
+										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 										@else
 											 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $post->slug }}#disqus_thread"></a>
 										@endif 										
@@ -108,9 +98,7 @@
                                             {!! str_limit(strip_tags($post->description), $limit = 250, $end = '...') !!}
                                         </p>
                                         <p>
-											@if(Session::has('name'))
-												<a class="btn btn-danger pull-right" href="/{{ $category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
-											@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))														
+											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))												
 												<a class="btn btn-danger pull-right disabled" href="#" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>
 											@else
 												<a class="btn btn-danger pull-right" href="/{{ $category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>

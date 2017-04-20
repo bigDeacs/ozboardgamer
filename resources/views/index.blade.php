@@ -119,11 +119,7 @@
 										<div class="col-sm-12">
 									@else
 										<div class="col-sm-3 col-xs-12" style="padding: 15px;overflow: hidden;height: 175px;">
-											@if(Session::has('name'))
-												<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
-													<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
-												</a>														
-											@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 												<a href="#" class="disabled" title="Login for access">
 													<div class="offer offer-radius offer-danger">
 														<div class="shape">
@@ -147,12 +143,8 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <p class="blogHeading">
-                                                    <strong>
-														@if(Session::has('name'))
-															<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
-																{!! $review->name !!}
-															</a>																													
-														@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+                                                    <strong>														
+														@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 															<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
 																{!! $review->name !!}
 															</a>
@@ -170,9 +162,7 @@
 												<meta itemprop="author" content ="{!! $review->user->name !!}">
                                                 <span class="glyphicon glyphicon-calendar">
                                                 </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span>
-												@if(Session::has('name'))
-													 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a>																												
-												@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 												@else
 													 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a>
 												@endif                                                
@@ -193,10 +183,8 @@
                                                 <p itemprop="description">
                                                     {!! str_limit(strip_tags($review->description), $limit = 250, $end = '...') !!}
                                                 </p>
-                                                <p>
-													@if(Session::has('name'))
-														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
-													@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))														
+                                                <p>												
+													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 														<a class="btn btn-danger pull-right disabled" href="#" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>
 													@else
 														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
@@ -221,11 +209,7 @@
 										<div class="col-sm-12">
 									@else										
 										<div class="col-sm-3 col-xs-12" style="padding: 15px;overflow: hidden;height: 175px;">
-											@if(Session::has('name'))
-												<a href="/top10s/{{ $top10->slug }}" title="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}">
-													<img src="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
-												</a>														
-											@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
 												<a href="#" class="disabled" title="Login for access">
 													<div class="offer offer-radius offer-danger">
 														<div class="shape">
@@ -250,11 +234,7 @@
                                             <div class="col-sm-12">
                                                 <p class="blogHeading">
                                                     <strong>
-														@if(Session::has('name'))
-															 <a href="/top10s/{{ $top10->slug }}" class="post-title">
-                                                            {!! $top10->name !!}
-                                                        </a>																													
-														@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+														@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
 															<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
 																{!! $top10->name !!}
 															</a>
@@ -271,9 +251,7 @@
                                             <div class="col-sm-12 post-header-line">
 												<span class="glyphicon glyphicon-calendar">
                                                 </span>{!! date('F d, Y', strtotime($top10->published_at)) !!}
-												@if(Session::has('name'))
-													 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread"></a>																												
-												@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
 												@else
 													 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread"></a>
 												@endif   												
@@ -293,9 +271,7 @@
                                                     {!! str_limit(strip_tags($top10->description), $limit = 250, $end = '...') !!}
                                                 </p>
                                                 <p>
-													@if(Session::has('name'))
-														<a class="btn btn-danger pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
-													@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))														
+													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))												
 														<a class="btn btn-danger pull-right disabled" href="#" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>
 													@else
 														<a class="btn btn-danger pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
@@ -314,12 +290,31 @@
             <div class="col-md-3 col-sm-4 hidden-xs">       
 				@if($product)
 					<h3>Featured Product</h3>
-					<div class="text-center">					
-						<a href="{!! $product->slug !!}" target="_blank" title="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}">
-							<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive img-shadow" alt="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}" />
-						</a>
+					<div class="text-center">		
+						@if(Session::has('name'))		
+							<a href="{!! $product->slug !!}" target="_blank" title="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}">
+								<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive img-shadow" alt="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}" />
+							</a>							
+						@else
+							<a href="#" class="disabled" title="Login for access">
+								<div class="offer offer-radius offer-danger">
+									<div class="shape">
+										<div class="shape-text">
+											<i class="fa fa-lock" aria-hidden="true"></i>
+										</div>
+									</div>
+									<div class="offer-content">
+										<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive img-shadow" alt="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}" />
+									</div>
+								</div>	
+							</a>
+						@endif
 						<p class="text-center">
-							<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
+							@if(Session::has('name'))		
+								<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
+							@else
+								<strong><a href="#" class="disabled" title="Login for access">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
+							@endif
 							@if($product->sale > 0)
 								<strong>${!! $product->saleDisplay !!}</strong><br />
 								<s><small>${!! $product->priceDisplay !!}</small></s>
@@ -328,7 +323,11 @@
 							@endif
 						</p>
 						<p class="text-center">
-							<a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+							@if(Session::has('name'))		
+								<a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+							@else
+								<a class="btn btn-danger disabled" href="#" title="Login for access">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+							@endif							
 						</p>
 					</div>
 					<hr class="hidden-xs" />
@@ -339,9 +338,12 @@
                       <div class="row">
                           <div class="col-sm-12 post">
                               <div class="row">
-                                  <div class="col-sm-12">
-                                      <p class="blogHeadingSml">
-                                          <strong><a href="/howtos/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
+                                  <div class="col-sm-12">                                      
+										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
+											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled">{!! $entry->name !!}</a></strong></p>
+										@else
+											<p class="blogHeadingSml"><strong><a href="/howtos/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
+										@endif
                                   </div>
                               </div>
                           </div>
@@ -358,8 +360,11 @@
                             <div class="col-sm-12 post">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <p class="blogHeadingSml">
-                                            <strong><a href="/news/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
+										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
+											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled">{!! $entry->name !!}</a></strong></p>
+										@else
+											<p class="blogHeadingSml"><strong><a href="/news/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
+										@endif                                        
                                     </div>
                                 </div>
                             </div>
@@ -379,8 +384,11 @@
                             <div class="col-sm-12 post">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <p class="blogHeadingSml">
-                                            <strong><a href="/blogs/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
+										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
+											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled">{!! $entry->name !!}</a></strong></p>
+										@else
+											<p class="blogHeadingSml"><strong><a href="/blogs/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
+										@endif
                                     </div>
                                 </div>
                             </div>
@@ -391,27 +399,29 @@
             </div>
         </div>
         @unless($stores->isEmpty())
-            <div class="row hidden-xs">
-                <div class="col-xs-12">
-                    <h3>Top Rated Stores</h3>
-                    <div class="jcarousel-wrapper">
-                        <div class="jcarousel">
-                            <ul>
-                                @foreach($stores as $store)
-                                    <li>
-                                        <a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
-                                            <img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive img-shadow" width="300" height="auto" style="margin: auto;" />
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
+			@if(Session::has('name'))		
+				<div class="row hidden-xs">
+					<div class="col-xs-12">
+						<h3>Top Rated Stores</h3>
+						<div class="jcarousel-wrapper">
+							<div class="jcarousel">
+								<ul>
+									@foreach($stores as $store)
+										<li>
+											<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
+												<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive img-shadow" width="300" height="auto" style="margin: auto;" />
+											</a>
+										</li>
+									@endforeach
+								</ul>
+							</div>
 
-                        <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-                        <a href="#" class="jcarousel-control-next">&rsaquo;</a>
-                    </div>
-                </div>
-            </div>
+							<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+							<a href="#" class="jcarousel-control-next">&rsaquo;</a>
+						</div>
+					</div>
+				</div>
+			@endif
         @endunless
     </div>
 
