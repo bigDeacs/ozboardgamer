@@ -28,10 +28,10 @@
 }
 
 a.disabled:hover {
-	cursor: default;
+	cursor: not-allowed;
 }
 a.disabled:active {
-	cursor: default;
+	cursor: not-allowed;
 	pointer-events: none;
 }
 
