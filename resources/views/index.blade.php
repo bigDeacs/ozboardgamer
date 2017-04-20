@@ -122,16 +122,18 @@
 													<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
 												</a>														
 											@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-												<div class="offer offer-radius offer-danger">
-													<div class="shape">
-														<div class="shape-text">
-															Members Only
+												<a href="#" class="disabled" title="Login for access">
+													<div class="offer offer-radius offer-danger">
+														<div class="shape">
+															<div class="shape-text">
+																<i class="fa fa-lock" aria-hidden="true"></i>
+															</div>
 														</div>
-													</div>
-													<div class="offer-content">
-														<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />																						
-													</div>
-												</div>												
+														<div class="offer-content">
+															<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />																						
+														</div>
+													</div>	
+												</a>
 											@else
 												<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
 													<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
@@ -191,7 +193,7 @@
 													@if(Session::has('name'))
 														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
 													@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-														<a class="btn btn-danger pull-right disabled" href="/reviews/{{ $review->slug }}" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>													
+														<a class="btn btn-danger pull-right disabled" href="#" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>													
 													@else
 														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
 													@endif    													

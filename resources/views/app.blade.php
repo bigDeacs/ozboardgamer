@@ -49,7 +49,7 @@
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-    <link href="https://css.ozboardgamer.com/css/style.min.css?v=51" rel="stylesheet">
+    <link href="https://css.ozboardgamer.com/css/style.min.css?v=52" rel="stylesheet">
 	<!--<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>-->
 	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">
@@ -150,8 +150,8 @@
 									<li class="dropdown hidden-sm disabled">
 									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Login for access"><i class="fa fa-lock" aria-hidden="true"></i> Buy Games <span class="caret"></span></a>
 									  <ul class="dropdown-menu">
-										<li class="text-center disabled"><a title="Login for access"><i class="fa fa-lock" aria-hidden="true"></i> Buy Online</a></li>
-										<li class="text-center disabled"><a title="Login for access"><i class="fa fa-lock" aria-hidden="true"></i> Find a Store</a></li>										
+										<li class="text-center disabled"><a href="#" class="disabled" title="Login for access"><i class="fa fa-lock" aria-hidden="true"></i> Buy Online</a></li>
+										<li class="text-center disabled"><a href="#" class="disabled"title="Login for access"><i class="fa fa-lock" aria-hidden="true"></i> Find a Store</a></li>										
 									  </ul>
 									</li>
 								@endif
