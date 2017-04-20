@@ -314,8 +314,7 @@
 				</div>
 				<!-- / modal-header -->
 				<div class='modal-body'>
-					<img src="/img/signup-header.jpg" class="img-responsive" alt="Signup" />
-					<br />
+					<img src="/img/signup-header.jpg" class="img-responsive" alt="Signup" style="margin-bottom: 15px;"/>
 					@if (count($errors) > 0)
 					   <div class="col-xs-12 col-sm-10 col-sm-offset-1 alert alert-danger">
 						 <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -434,24 +433,22 @@
 					  return false;
 				  });   
 				  // Cookie Set
-					setTimeout(function(){
-						var my_cookie = $.cookie($('.modal-check').attr('name'));
-						if (my_cookie && my_cookie == "true") {
-							$(this).prop('checked', my_cookie);
-							console.log('checked checkbox');
-						}
-						else{
-							$('#loginWrapper').modal('show');
-							console.log('uncheck checkbox');
-						}
+				var my_cookie = $.cookie($('.modal-check').attr('name'));
+				if (my_cookie && my_cookie == "true") {
+					$(this).prop('checked', my_cookie);
+					console.log('checked checkbox');
+				}
+				else{
+					$('#loginWrapper').modal('show');
+					console.log('uncheck checkbox');
+				}
 
-						$(".modal-check").change(function() {
-							$.cookie($(this).attr("name"), $(this).prop('checked'), {
-								path: '/',
-								expires: 30
-							});
-						});
-					},3000);
+				$(".modal-check").change(function() {
+					$.cookie($(this).attr("name"), $(this).prop('checked'), {
+						path: '/',
+						expires: 30
+					});
+				});
 			});
 		</script>
 	@endif
