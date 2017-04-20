@@ -117,7 +117,7 @@
 										<div class="col-sm-12">
 									@else
 										<div class="col-sm-3 col-xs-12" style="padding: 15px;overflow: hidden;height: 175px;">
-											@if(Session::has('name') || date(strtotime($review->published_at)) != date(strtotime()))
+											@if(Session::has('name') || date(strtotime($review->published_at)) != date(strtotime("now")))
 												<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
 													<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
 												</a>														
@@ -131,7 +131,7 @@
                                             <div class="col-sm-12">
                                                 <p class="blogHeading">
                                                     <strong>
-														@if(Session::has('name') || date(strtotime($review->published_at)) != date(strtotime()))
+														@if(Session::has('name') || date(strtotime($review->published_at)) != date(strtotime("now")))
 															<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
 																{!! $review->name !!}
 															</a>															
@@ -165,7 +165,7 @@
                                                     {!! str_limit(strip_tags($review->description), $limit = 250, $end = '...') !!}
                                                 </p>
                                                 <p>
-													@if(Session::has('name') || date(strtotime($review->published_at)) != date(strtotime()))
+													@if(Session::has('name') || date(strtotime($review->published_at)) != date(strtotime("now")))
 														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
 													@else
 														<a class="btn btn-danger pull-right disabled" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
