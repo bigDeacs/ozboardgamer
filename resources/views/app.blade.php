@@ -148,10 +148,10 @@
 									</li>
 								@else
 									<li class="dropdown hidden-sm disabled">
-									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-lock" aria-hidden="true"></i> Buy Games <span class="caret"></span></a>
+									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Login for access"><i class="fa fa-lock" aria-hidden="true"></i> Buy Games <span class="caret"></span></a>
 									  <ul class="dropdown-menu">
-										<li class="text-center disabled"><a><i class="fa fa-lock" aria-hidden="true"></i> Buy Online</a></li>
-										<li class="text-center disabled"><a><i class="fa fa-lock" aria-hidden="true"></i> Find a Store</a></li>										
+										<li class="text-center disabled"><a title="Login for access"><i class="fa fa-lock" aria-hidden="true"></i> Buy Online</a></li>
+										<li class="text-center disabled"><a title="Login for access"><i class="fa fa-lock" aria-hidden="true"></i> Find a Store</a></li>										
 									  </ul>
 									</li>
 								@endif
