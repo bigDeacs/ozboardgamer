@@ -293,21 +293,19 @@
 					<div class="text-center">		
 						@if(Session::has('name'))		
 							<a href="{!! $product->slug !!}" target="_blank" title="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}">
-								<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive img-shadow" alt="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}" />
+								<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive img-shadow" alt="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}" width="100%" />
 							</a>							
-						@else
-							<a href="#" class="disabled" title="Login for access">
-								<div class="offer offer-radius offer-danger">
-									<div class="shape">
-										<div class="shape-text">
-											<i class="fa fa-lock" aria-hidden="true"></i>
-										</div>
+						@else							
+							<div class="offer offer-radius offer-danger">
+								<div class="shape">
+									<div class="shape-text">
+										<a href="#" class="disabled" title="Login for access" style="color: #ffffff;"><i class="fa fa-lock" aria-hidden="true"></i></a>
 									</div>
-									<div class="offer-content">
-										<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive img-shadow" alt="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}" />
-									</div>
-								</div>	
-							</a>
+								</div>
+								<div class="offer-content">
+									<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive img-shadow" alt="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}" />
+								</div>
+							</div>								
 						@endif
 						<p class="text-center">
 							@if(Session::has('name'))		
@@ -340,7 +338,7 @@
                               <div class="row">
                                   <div class="col-sm-12">                                      
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
-											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled">{!! $entry->name !!}</a></strong></p>
+											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
 										@else
 											<p class="blogHeadingSml"><strong><a href="/howtos/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
 										@endif
@@ -361,7 +359,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
-											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled">{!! $entry->name !!}</a></strong></p>
+											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
 										@else
 											<p class="blogHeadingSml"><strong><a href="/news/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
 										@endif                                        
@@ -385,7 +383,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
-											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled">{!! $entry->name !!}</a></strong></p>
+											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
 										@else
 											<p class="blogHeadingSml"><strong><a href="/blogs/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
 										@endif

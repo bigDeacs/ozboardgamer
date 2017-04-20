@@ -84,19 +84,17 @@
 					<a href="{!! $product->slug !!}" target="_blank">
 						<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
 					</a>
-				@else
-					<a href="#" class="disabled" title="Login for access">
-						<div class="offer offer-radius offer-danger">
-							<div class="shape">
-								<div class="shape-text">
-									<i class="fa fa-lock" aria-hidden="true"></i>
-								</div>
+				@else					
+					<div class="offer offer-radius offer-danger">
+						<div class="shape">
+							<div class="shape-text">
+								<a href="#" class="disabled" title="Login for access" style="color: #ffffff;"><i class="fa fa-lock" aria-hidden="true"></i></a>
 							</div>
-							<div class="offer-content">
-								<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
-							</div>
-						</div>	
-					</a>
+						</div>
+						<div class="offer-content">
+							<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
+						</div>
+					</div>	
 				@endif
 		    	<p class="text-center">
 					@if(Session::has('name'))		
