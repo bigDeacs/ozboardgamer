@@ -27,10 +27,10 @@
     font-style: normal;
 }
 
-a.disabled:hover {
+a.disabledLink:hover {
 	cursor: not-allowed;
 }
-a.disabled:active {
+a.disabledLink:active {
 	cursor: not-allowed;
 	pointer-events: none;
 }

@@ -118,7 +118,7 @@
 												<div class="offer offer-radius offer-danger">
 													<div class="shape">
 														<div class="shape-text">
-															<a href="#" class="disabled" title="Login for access" style="color: #ffffff;"><i class="fa fa-lock" aria-hidden="true"></i></a>
+															<a href="#" class="disabled disabledLink" title="Login for access" style="color: #ffffff;"><i class="fa fa-lock" aria-hidden="true"></i></a>
 														</div>
 													</div>
 													<div class="offer-content">
@@ -138,7 +138,7 @@
                                                 <p class="blogHeading">
                                                     <strong>														
 														@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-															<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
+															<a href="#" class="post-title disabled disabledLink" itemprop="name" title="Login for access">
 																{!! $review->name !!}
 															</a>
 														@else
@@ -206,7 +206,7 @@
 												<div class="offer offer-radius offer-danger">
 													<div class="shape">
 														<div class="shape-text">
-															<a href="#" class="disabled" title="Login for access" style="color: #ffffff;"><i class="fa fa-lock" aria-hidden="true"></i></a>
+															<a href="#" class="disabled disabledLink" title="Login for access" style="color: #ffffff;"><i class="fa fa-lock" aria-hidden="true"></i></a>
 														</div>
 													</div>
 													<div class="offer-content">
@@ -226,7 +226,7 @@
                                                 <p class="blogHeading">
                                                     <strong>
 														@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-															<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
+															<a href="#" class="post-title disabled disabledLink" itemprop="name" title="Login for access">
 																{!! $top10->name !!}
 															</a>
 														@else
@@ -290,7 +290,7 @@
 							<div class="offer offer-radius offer-danger">
 								<div class="shape">
 									<div class="shape-text">
-										<a href="#" class="disabled" title="Login for access" style="color: #ffffff;"><i class="fa fa-lock" aria-hidden="true"></i></a>
+										<a href="#" class="disabled disabledLink" title="Login for access" style="color: #ffffff;"><i class="fa fa-lock" aria-hidden="true"></i></a>
 									</div>
 								</div>
 								<div class="offer-content">
@@ -302,7 +302,7 @@
 							@if(Session::has('name'))		
 								<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
 							@else
-								<strong><a href="#" class="disabled" title="Login for access">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
+								<strong><a href="#" class="disabled disabledLink" title="Login for access">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
 							@endif
 							@if($product->sale > 0)
 								<strong>${!! $product->saleDisplay !!}</strong><br />
@@ -329,7 +329,7 @@
                               <div class="row">
                                   <div class="col-sm-12">                                      
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
-											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
+											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled disabledLink"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
 										@else
 											<p class="blogHeadingSml"><strong><a href="/howtos/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
 										@endif
@@ -350,7 +350,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
-											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
+											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled disabledLink"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
 										@else
 											<p class="blogHeadingSml"><strong><a href="/news/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
 										@endif                                        
@@ -374,7 +374,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
-											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
+											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled disabledLink"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
 										@else
 											<p class="blogHeadingSml"><strong><a href="/blogs/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
 										@endif
