@@ -144,7 +144,7 @@
 									</li> 
 								@else
 									<li class="hidden-sm disabled">
-										<a>Buy Games <i class="fa fa-lock" aria-hidden="true"></i></a>
+										<a><i class="fa fa-lock" aria-hidden="true"></i> Buy Games</a>
 									</li>
 								@endif
 								@if(Session::has('name'))
@@ -157,10 +157,10 @@
 									</li>
 								@else
 									<li class="dropdown disabled">
-									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+									  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-lock" aria-hidden="true"></i> Extras <span class="caret"></span></a>
 									  <ul class="dropdown-menu">
-										<li class="text-center disabled"><a>Find a Store <i class="fa fa-lock" aria-hidden="true"></i></a></li>
-										<li class="text-center disabled"><a>Game Quizzes <i class="fa fa-lock" aria-hidden="true"></i></a></li>									
+										<li class="text-center disabled"><a><i class="fa fa-lock" aria-hidden="true"></i> Find a Store</a></li>
+										<li class="text-center disabled"><a><i class="fa fa-lock" aria-hidden="true"></i> Game Quizzes</a></li>									
 									  </ul>
 									</li>
 								@endif
@@ -311,81 +311,106 @@
 	 </div>
 </div>
 
-<div class='modal fade' id='loginWrapper'>
-	<div class='modal-dialog'>
-		<div class='modal-content'>
-			<div class='modal-header'>
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h4 class='modal-title'>
-				  <strong>Signup today for amazing extras</strong>
-				</h4>
-			</div>
-			<!-- / modal-header -->
-			<div class='modal-body'>
-				<img src="/img/signup-header.jpg" class="img-responsive" alt="Signup" />
-				@if (count($errors) > 0)
-				   <div class="col-xs-12 col-sm-10 col-sm-offset-1 alert alert-danger">
-					 <strong>Whoops!</strong> There were some problems with your input.<br><br>
-					 <ul>
-					   @foreach ($errors->all() as $error)
-						 <li>{{ $error }}</li>
-					   @endforeach
-					 </ul>
-				   </div>
-				 @endif
-				<form class="form-horizontal" role="form" method="POST" action="{{ url('/signup') }}">
-					 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-					 <div class="form-group">
-					   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-						 <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name">
-					   </div>
-					 </div>
-
-					 <div class="form-group">
-					   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-						 <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-Mail Address">
-					   </div>
-					 </div>
-
-					 <div class="form-group">
-					   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-						 <input type="password" class="form-control" name="password" placeholder="Password">
-					   </div>
-					 </div>
-
-					 <div class="form-group">
-					   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-						 <button type="submit" class="btn btn-primary btn-block" onclick="completeRegistration()">
-						   Signup
-						 </button>
-					   </div>
-					 </div>
-				</form>
-				<hr />
-				<div class="row text-center">
-					<a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Signup with Facebook</a>
-					<a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Signup with Google</a>
+@if(Session::has('name'))
+	<div class='modal fade' id='loginWrapper'>
+		<div class='modal-dialog'>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class='modal-title'>
+					  <strong>Signup today for amazing extras</strong>
+					</h4>
 				</div>
-				<hr />
-			</div>
-			<!-- / modal-body -->
-		   <div class='modal-footer'>
-			   <div class="checkbox pull-right">
-					<label>
-					  <input class='modal-check' name='modal-check' type="checkbox"> Don't Show This Popup Again.
-					</label>
+				<!-- / modal-header -->
+				<div class='modal-body'>
+					<img src="/img/signup-header.jpg" class="img-responsive" alt="Signup" />
+					<br />
+					@if (count($errors) > 0)
+					   <div class="col-xs-12 col-sm-10 col-sm-offset-1 alert alert-danger">
+						 <strong>Whoops!</strong> There were some problems with your input.<br><br>
+						 <ul>
+						   @foreach ($errors->all() as $error)
+							 <li>{{ $error }}</li>
+						   @endforeach
+						 </ul>
+					   </div>
+					 @endif
+					<form class="form-horizontal" role="form" method="POST" action="{{ url('/signup') }}">
+						 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+						 <div class="form-group">
+						   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+							 <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name">
+						   </div>
+						 </div>
+
+						 <div class="form-group">
+						   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+							 <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-Mail Address">
+						   </div>
+						 </div>
+
+						 <div class="form-group">
+						   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+							 <input type="password" class="form-control" name="password" placeholder="Password">
+						   </div>
+						 </div>
+
+						 <div class="form-group">
+						   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+							 <button type="submit" class="btn btn-primary btn-block" onclick="completeRegistration()">
+							   Signup
+							 </button>
+						   </div>
+						 </div>
+					</form>
+					<hr />
+					<div class="row text-center">
+						<a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Signup with Facebook</a>
+						<a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Signup with Google</a>
+					</div>
+					<hr />
 				</div>
-				<!--/ checkbox -->
-		  </div>
-		  <!--/ modal-footer -->
-		</div>
-		<!-- / modal-content -->
-  </div>
-  <!--/ modal-dialog -->
-</div>
-<!-- / modal -->
-	
+				<!-- / modal-body -->
+			   <div class='modal-footer'>
+				   <div class="checkbox pull-right">
+						<label>
+						  <input class='modal-check' name='modal-check' type="checkbox"> Don't Show This Popup Again.
+						</label>
+					</div>
+					<!--/ checkbox -->
+			  </div>
+			  <!--/ modal-footer -->
+			</div>
+			<!-- / modal-content -->
+	  </div>
+	  <!--/ modal-dialog -->
+	</div>
+	<!-- / modal -->
+	<script>
+		$(document).ready(function(){ 	
+			// Cookie Set
+			setTimeout(function(){
+				var my_cookie = $.cookie($('.modal-check').attr('name'));
+				if (my_cookie && my_cookie == "true") {
+					$(this).prop('checked', my_cookie);
+					console.log('checked checkbox');
+				}
+				else{
+					$('#loginWrapper').modal('show');
+					console.log('uncheck checkbox');
+				}
+
+				$(".modal-check").change(function() {
+					$.cookie($(this).attr("name"), $(this).prop('checked'), {
+						path: '/',
+						expires: 30
+					});
+				});
+			},3000)	
+		});
+	</script>
+@endif
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -404,7 +429,7 @@
           // see next for specifications
         });
     </script>
-    <script data-cfasync="false">
+    <script>
         $(document).ready(function(){
              $(window).scroll(function () {
                     if ($(this).scrollTop() > 50) {
@@ -420,25 +445,6 @@
                   }, 800);
                   return false;
               });      	
-			// Cookie Set
-			setTimeout(function(){
-				var my_cookie = $.cookie($('.modal-check').attr('name'));
-				if (my_cookie && my_cookie == "true") {
-					$(this).prop('checked', my_cookie);
-					console.log('checked checkbox');
-				}
-				else{
-					$('#loginWrapper').modal('show');
-					console.log('uncheck checkbox');
-				}
-
-				$(".modal-check").change(function() {
-					$.cookie($(this).attr("name"), $(this).prop('checked'), {
-						path: '/',
-						expires: 7
-					});
-				});
-			},3000)	
         });
     </script>
     @yield('scripts')
