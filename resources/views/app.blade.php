@@ -387,29 +387,6 @@
 	  <!--/ modal-dialog -->
 	</div>
 	<!-- / modal -->
-	<script>
-		$(document).ready(function(){ 	
-			// Cookie Set
-			setTimeout(function(){
-				var my_cookie = $.cookie($('.modal-check').attr('name'));
-				if (my_cookie && my_cookie == "true") {
-					$(this).prop('checked', my_cookie);
-					console.log('checked checkbox');
-				}
-				else{
-					$('#loginWrapper').modal('show');
-					console.log('uncheck checkbox');
-				}
-
-				$(".modal-check").change(function() {
-					$.cookie($(this).attr("name"), $(this).prop('checked'), {
-						path: '/',
-						expires: 30
-					});
-				});
-			},3000)	
-		});
-	</script>
 @endunless
 
     <!-- Bootstrap core JavaScript
@@ -422,8 +399,7 @@
     <script src="https://js.ozboardgamer.com/js/scripts.js?ver=9"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://js.ozboardgamer.com/js/ie10-viewport-bug-workaround.js"></script>
-    <script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>	
     <script>
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
           // see next for specifications
@@ -447,6 +423,32 @@
               });      	
         });
     </script>
+	@unless(Session::has('name'))
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+		<script>
+			$(document).ready(function(){ 	
+				// Cookie Set
+				setTimeout(function(){
+					var my_cookie = $.cookie($('.modal-check').attr('name'));
+					if (my_cookie && my_cookie == "true") {
+						$(this).prop('checked', my_cookie);
+						console.log('checked checkbox');
+					}
+					else{
+						$('#loginWrapper').modal('show');
+						console.log('uncheck checkbox');
+					}
+
+					$(".modal-check").change(function() {
+						$.cookie($(this).attr("name"), $(this).prop('checked'), {
+							path: '/',
+							expires: 30
+						});
+					});
+				},3000)	
+			});
+		</script>
+	@endunless
     @yield('scripts')
   </body>
 </html>
