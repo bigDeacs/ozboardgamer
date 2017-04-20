@@ -50,7 +50,7 @@
 						</hgroup>       
 						@if(Session::has('name'))		
 							<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
-						@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))							
+						@elseif(date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))							
 						@else
 							<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
 						@endif 						
