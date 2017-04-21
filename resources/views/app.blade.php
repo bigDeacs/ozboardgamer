@@ -298,14 +298,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
 				<br><br>
 				<form id="search" action="#" method="post" style="width: 100%;" onsubmit="return false;">
-					<div id="inputField"></div>
-					<script data-cfasync="false">
-						var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-						if (isMobile) {
-							document.getElementById("inputField").innerHTML = '<input type="text" name="search-terms" id="search-terms" class="form-control hidden-xs" placeholder="Find your next game..." style="height: 70px;font-size: 20px;">';
-						} else {
-							document.getElementById("inputField").innerHTML = '<input type="text" name="search-terms" id="search-terms" class="form-control hidden-xs" placeholder="Find your next game..." style="height: 70px;font-size: 20px;" autofocus>';
-						}					
+					<div id="inputField"></div>							
 				</form>
 			</div>
 		</div>
@@ -422,7 +415,15 @@
 						  scrollTop: 0
 					  }, 800);
 					  return false;
-				  });   				 
+				  });  
+				
+				var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+				if (isMobile) {
+					document.getElementById("inputField").innerHTML = '<input type="text" name="search-terms" id="search-terms" class="form-control hidden-xs" placeholder="Find your next game..." style="height: 70px;font-size: 20px;">';
+				} else {
+					document.getElementById("inputField").innerHTML = '<input type="text" name="search-terms" id="search-terms" class="form-control hidden-xs" placeholder="Find your next game..." style="height: 70px;font-size: 20px;" autofocus>';
+				}	
+					
 			});
 		</script>
 	@else
@@ -459,6 +460,13 @@
 						expires: 30
 					});
 				});
+				
+				var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+				if (isMobile) {
+					document.getElementById("inputField").innerHTML = '<input type="text" name="search-terms" id="search-terms" class="form-control hidden-xs" placeholder="Find your next game..." style="height: 70px;font-size: 20px;">';
+				} else {
+					document.getElementById("inputField").innerHTML = '<input type="text" name="search-terms" id="search-terms" class="form-control hidden-xs" placeholder="Find your next game..." style="height: 70px;font-size: 20px;" autofocus>';
+				}	
 			});
 		</script>
 	@endif
