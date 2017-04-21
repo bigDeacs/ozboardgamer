@@ -402,40 +402,46 @@
 	@if(Session::has('name') || Request::is('login') || Request::is('signup'))
 		<script>
 			$(document).ready(function(){
-				 $(window).scroll(function () {
-						if ($(this).scrollTop() > 50) {
-							$('#back-to-top').fadeIn();
-						} else {
-							$('#back-to-top').fadeOut();
-						}
-				  });
-				  // scroll body to 0px on click
-				  $('#back-to-top').click(function () {
-					  $('body,html').animate({
-						  scrollTop: 0
-					  }, 800);
-					  return false;
-				  });   				 
+				$(window).scroll(function () {
+					if ($(this).scrollTop() > 50) {
+						$('#back-to-top').fadeIn();
+					} else {
+						$('#back-to-top').fadeOut();
+					}
+				});
+				// scroll body to 0px on click
+				$('#back-to-top').click(function () {
+					$('body,html').animate({
+						scrollTop: 0
+					}, 800);
+					return false;
+				});   	
+				if (!/iPad|iPhone|iPod/g.test(navigator.userAgent)) {
+					document.getElementById("header-search").focus();
+				}
 			});
 		</script>
 	@else
 		<script>
 			$(document).ready(function(){
 				 $(window).scroll(function () {
-						if ($(this).scrollTop() > 50) {
-							$('#back-to-top').fadeIn();
-						} else {
-							$('#back-to-top').fadeOut();
-						}
-				  });
-				  // scroll body to 0px on click
-				  $('#back-to-top').click(function () {
-					  $('body,html').animate({
-						  scrollTop: 0
-					  }, 800);
-					  return false;
-				  });   
-				  // Cookie Set
+					if ($(this).scrollTop() > 50) {
+						$('#back-to-top').fadeIn();
+					} else {
+						$('#back-to-top').fadeOut();
+					}
+				});
+				// scroll body to 0px on click
+				$('#back-to-top').click(function () {
+					$('body,html').animate({
+						scrollTop: 0
+					}, 800);
+					return false;
+				});   	
+				if (!/iPad|iPhone|iPod/g.test(navigator.userAgent)) {
+					document.getElementById("header-search").focus();
+				}
+				// Cookie Set
 				var my_cookie = $.cookie($('.modal-check').attr('name'));
 				if (my_cookie && my_cookie == "true") {
 					$(this).prop('checked', my_cookie);
