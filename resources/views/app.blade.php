@@ -398,6 +398,11 @@
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
           // see next for specifications
         });
+		function focus() {
+			if (!/iPad|iPhone|iPod/g.test(navigator.userAgent)) {
+				document.getElementById("header-search").focus();
+			}
+		}
     </script>    
 	@if(Session::has('name') || Request::is('login') || Request::is('signup'))
 		<script>
@@ -415,12 +420,7 @@
 						scrollTop: 0
 					}, 800);
 					return false;
-				});   	
-				function focus() {
-					if (!/iPad|iPhone|iPod/g.test(navigator.userAgent)) {
-						document.getElementById("header-search").focus();
-					}
-				}
+				});   					
 			});
 		</script>
 	@else
@@ -439,12 +439,7 @@
 						scrollTop: 0
 					}, 800);
 					return false;
-				});   	
-				function focus() {
-					if (!/iPad|iPhone|iPod/g.test(navigator.userAgent)) {
-						document.getElementById("header-search").focus();
-					}
-				}
+				});   				
 				// Cookie Set
 				var my_cookie = $.cookie($('.modal-check').attr('name'));
 				if (my_cookie && my_cookie == "true") {
