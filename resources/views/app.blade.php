@@ -298,7 +298,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
 				<br><br>
 				<form id="search" action="#" method="post" style="width: 100%;" onsubmit="return false;">
-					<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next game..." style="height: 70px;font-size: 20px;">
+					<input type="text" name="search-terms" id="search-terms" class="form-control" placeholder="Find your next game..." style="height: 70px;font-size: 20px;" autofocus>
 				</form>
 			</div>
 		</div>
