@@ -51,11 +51,6 @@
 								<h1 itemprop="name"><i class="fa fa-lock" aria-hidden="true"></i> Uh oh!</h1>
 								<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}" itemprop="author">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
 											</span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
-								@unless($post->video == null)
-									<div class="embed-responsive embed-responsive-16by9">
-										<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen itemprop="video"></iframe>
-									</div>
-								@endunless
 								<p itemprop="reviewBody">
 									Sorry friend, but it looks like you stumbled upon a members only article. These will be open to the public 1 day after being published.<br />
 									<br />
