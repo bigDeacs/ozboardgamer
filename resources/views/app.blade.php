@@ -416,7 +416,7 @@
 					}, 800);
 					return false;
 				});   			
-				if (!/iPad|iPhone|iPod/g.test(navigator.userAgent)) {
+				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 					$('search-terms').removeAttr('autofocus');
 				}
 			});
@@ -438,7 +438,7 @@
 					}, 800);
 					return false;
 				});   				
-				if (!/iPad|iPhone|iPod/g.test(navigator.userAgent)) {
+				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 					$('search-terms').removeAttr('autofocus');
 				}
 				// Cookie Set
