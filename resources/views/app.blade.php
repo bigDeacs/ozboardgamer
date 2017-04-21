@@ -115,7 +115,7 @@
 					<div class="navbar-right" style="margin: 32px 0;">
 						<div class="navbar-right">
 							<ul class="nav navbar-nav">                            
-								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games" onclick="focus()"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
+								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
 								<li class="dropdown">
 								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
 								  <ul class="dropdown-menu">
@@ -398,11 +398,6 @@
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
           // see next for specifications
         });
-		function focus() {
-			if (!/iPad|iPhone|iPod/g.test(navigator.userAgent)) {
-				document.getElementById("header-search").focus();
-			}
-		}
     </script>    
 	@if(Session::has('name') || Request::is('login') || Request::is('signup'))
 		<script>
@@ -420,7 +415,10 @@
 						scrollTop: 0
 					}, 800);
 					return false;
-				});   					
+				});   			
+				if (!/iPad|iPhone|iPod/g.test(navigator.userAgent)) {
+					$('search-terms').removeAttr('autofocus');
+				}
 			});
 		</script>
 	@else
@@ -440,6 +438,9 @@
 					}, 800);
 					return false;
 				});   				
+				if (!/iPad|iPhone|iPod/g.test(navigator.userAgent)) {
+					$('search-terms').removeAttr('autofocus');
+				}
 				// Cookie Set
 				var my_cookie = $.cookie($('.modal-check').attr('name'));
 				if (my_cookie && my_cookie == "true") {
