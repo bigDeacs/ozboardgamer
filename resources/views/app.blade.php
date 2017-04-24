@@ -197,7 +197,7 @@
 				<div class="row">                                
 					<div class="col-sm-6 col-md-4 col-xs-12">
 						<div class="row">
-							<div class="col-sm-6 col-xs-12">
+							<div class="col-xs-6">
 								<ul class="nav navbar-nav">
 									<li>
 										<a href="/">Home</a>
@@ -220,7 +220,7 @@
 									</li>
 								</ul>
 							</div>
-							<div class="col-sm-6 col-xs-12">
+							<div class="col-xs-6">
 								<ul class="nav navbar-nav">                    
 									<li>
 										<a href="/top10s">Top 10's</a>
@@ -266,7 +266,7 @@
 						</div>
 					</div>
 					<div class="col-sm-6 col-md-4 col-xs-12">
-						<ul>
+						<ul class="text-center" style="padding-left: 0;">
 							<li>
 								<a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
 									<i class="fa fa-facebook-official fa-fw"></i> Like Us On Facebook
@@ -296,7 +296,7 @@
 								</a>
 							</li>
 						</ul>    
-						<p class="copyright text-muted small">Copyright &copy; OzBoardGamer 2016. <br />All Rights Reserved</p>
+						<p class="copyright text-muted text-center small">Copyright &copy; OzBoardGamer 2017. <br />All Rights Reserved</p>
 						<br />
 						<span id="siteseal"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=pv2OKsYrittSMzLZSe28rYwYxcBBibyRXxK39sTOxgo8IYEWAVxJqvpg4G0b"></script></span>                
 					</div>
