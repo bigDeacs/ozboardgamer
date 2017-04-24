@@ -229,18 +229,33 @@
 									<li>
 										<a href="/blogs">Blogs</a>
 									</li>
-									<li class="footer-menu-divider">&sdot;</li>
-									<li>
-										<a href="/stores">Stores</a>
-									</li>
-									<li class="footer-menu-divider">&sdot;</li>
-									<li>
-										<a href="/quizzes">Quizzes</a>
-									</li>
-									<li class="footer-menu-divider">&sdot;</li>
-									<li>
-										<a href="/shop">Shop</a>
-									</li>
+									<li class="footer-menu-divider">&sdot;</li>									
+									@if(Session::has('name'))
+										<li>
+											<a href="/stores">Stores</a>
+										</li>
+										<li class="footer-menu-divider">&sdot;</li>	
+										<li>
+											<a href="/quizzes">Quizzes</a>
+										</li>
+										<li class="footer-menu-divider">&sdot;</li>
+										<li>
+											<a href="/shop">Shop</a>
+										</li>
+									@else
+										<li class="disabled">
+											<a href="/stores" class="disabled">Stores</a>
+										</li>
+										<li class="footer-menu-divider">&sdot;</li>	
+										<li>
+										<li class="disabled">
+											<a href="/quizzes" class="disabled">Quizzes</a>
+										</li>
+										<li class="footer-menu-divider">&sdot;</li>
+										<li class="disabled">
+											<a href="/shop" class="disabled">Shop</a>
+										</li>
+									@endif									
 								</ul>
 							</div>
 						</div>                    
