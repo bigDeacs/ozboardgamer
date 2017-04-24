@@ -198,7 +198,7 @@
 					<div class="col-sm-6 col-md-4 col-xs-12">
 						<div class="row">
 							<div class="col-sm-6 col-xs-12">
-								<ul>
+								<ul class="nav navbar-nav">
 									<li>
 										<a href="/">Home</a>
 									</li>
@@ -221,7 +221,7 @@
 								</ul>
 							</div>
 							<div class="col-sm-6 col-xs-12">
-								<ul>                    
+								<ul class="nav navbar-nav">                    
 									<li>
 										<a href="/top10s">Top 10's</a>
 									</li>
@@ -246,8 +246,7 @@
 										<li class="disabled">
 											<a href="/stores" class="disabled">Stores</a>
 										</li>
-										<li class="footer-menu-divider">&sdot;</li>	
-										<li>
+										<li class="footer-menu-divider">&sdot;</li>											
 										<li class="disabled">
 											<a href="/quizzes" class="disabled">Quizzes</a>
 										</li>
