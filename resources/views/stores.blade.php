@@ -52,38 +52,40 @@
 			    </div>
 			    <div class="row">
 			    	@foreach($stores as $key => $store)
-						<div class="col-sm-3 col-xs-12 text-center thumbnail">
-							@if(Session::has('name'))
-								<a href="/stores/{{ $store->slug }}">
-									<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" class="img-responsive" />
-								</a>
-							@else
-								<a href="#" class="disabled" title="Login for access">
-									<div class="offer offer-radius offer-danger">
-										<div class="shape">
-											<div class="shape-text">
-												<i class="fa fa-lock" aria-hidden="true"></i>
+						<div class="col-sm-3 col-xs-12 text-center">
+							<div class="thumbnail">
+								@if(Session::has('name'))
+									<a href="/stores/{{ $store->slug }}">
+										<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" class="img-responsive" />
+									</a>
+								@else
+									<a href="#" class="disabled" title="Login for access">
+										<div class="offer offer-radius offer-danger">
+											<div class="shape">
+												<div class="shape-text">
+													<i class="fa fa-lock" aria-hidden="true"></i>
+												</div>
 											</div>
-										</div>
-										<div class="offer-content">
-											<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" class="img-responsive" />
-										</div>
-									</div>	
-								</a>
-							@endif												    	
-							@if(Session::has('name'))		
-								<div class="caption text-center">
-									<a href="/stores/{{ $store->slug }}" title="{!! $store->name !!}">											
-										<p class="text-center"><strong>{!! $store->name !!}</strong></p>
+											<div class="offer-content">
+												<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" class="img-responsive" />
+											</div>
+										</div>	
 									</a>
-								</div>								
-							@else			
-								<div class="caption text-center">
-									<a href="#" class="disabled" title="Login for access">											
-										<p class="text-center"><strong>{!! $store->name !!}</strong></p>
-									</a>
-								</div>								
-							@endif					    	
+								@endif												    	
+								@if(Session::has('name'))		
+									<div class="caption text-center">
+										<a href="/stores/{{ $store->slug }}" title="{!! $store->name !!}">											
+											<p class="text-center" style="font-size: 13px;"><strong>{!! $store->name !!}</strong></p>
+										</a>
+									</div>								
+								@else			
+									<div class="caption text-center">
+										<a href="#" class="disabled" title="Login for access">											
+											<p class="text-center" style="font-size: 13px;"><strong>{!! $store->name !!}</strong></p>
+										</a>
+									</div>								
+								@endif					    	
+							</div>
 						</div>
             @if(($key + 1) % 4 == 0)
               </div><div class="row">

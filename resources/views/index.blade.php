@@ -79,14 +79,16 @@
                     <div class="jcarousel">
                         <ul>
                             @foreach($games as $game)
-                                <li class="thumbnail" itemscope itemtype="http://schema.org/Game">
-                                    <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
-                                        <img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive img-shadow" itemprop="image" style="margin-top: 5px;" />
-                                    </a>
-									<div class="caption text-center">
-										<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">											
-											<p class="text-center"><strong>{!! $game->name !!}</strong></p>
+                                <li itemscope itemtype="http://schema.org/Game">
+									<div class="thumbnail">
+										<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
+											<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive img-shadow" itemprop="image" style="margin-top: 5px;" />
 										</a>
+										<div class="caption text-center">
+											<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">											
+												<p class="text-center" style="font-size: 13px;"><strong>{!! $game->name !!}</strong></p>
+											</a>
+										</div>
 									</div>
                                 </li>								
                             @endforeach
@@ -401,14 +403,16 @@
 							<div class="jcarousel">
 								<ul>
 									@foreach($stores as $store)
-										<li class="thumbnail">
-											<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
-												<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive img-shadow" width="300" height="auto" style="margin-top: 5px;" />
-											</a>
-											<div class="caption text-center">
-												<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">											
-													<p class="text-center"><strong>{!! $store->name !!}</strong></p>
+										<li>
+											<div class="thumbnail">
+												<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
+													<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive img-shadow" width="300" height="auto" style="margin-top: 5px;" />
 												</a>
+												<div class="caption text-center">
+													<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">											
+														<p class="text-center" style="font-size: 13px;"><strong>{!! $store->name !!}</strong></p>
+													</a>
+												</div>
 											</div>
 										</li>
 									@endforeach
