@@ -75,13 +75,13 @@
 								@if(Session::has('name'))		
 									<div class="caption text-center">
 										<a href="/stores/{{ $store->slug }}" title="{!! $store->name !!}">											
-											<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit('$store->name', 12) !!}</strong></p>
+											<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit($store->name, 12) !!}</strong></p>
 										</a>
 									</div>								
 								@else			
 									<div class="caption text-center">
 										<a href="#" class="disabled" title="Login for access">											
-											<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit('$store->name', 12) !!}</strong></p>
+											<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit($store->name, 12) !!}</strong></p>
 										</a>
 									</div>								
 								@endif					    	
