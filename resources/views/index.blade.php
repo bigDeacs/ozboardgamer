@@ -86,7 +86,7 @@
 										</a>
 										<div class="caption text-center">
 											<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">											
-												<p class="text-center" style="font-size: 13px;"><strong>{!! $game->name !!}</strong></p>
+												<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit('$game->name', 12) !!}</strong></p>
 											</a>
 										</div>
 									</div>
@@ -410,7 +410,7 @@
 												</a>
 												<div class="caption text-center">
 													<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">											
-														<p class="text-center" style="font-size: 13px;"><strong>{!! $store->name !!}</strong></p>
+														<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit('$store->name', 12) !!}</strong></p>
 													</a>
 												</div>
 											</div>
