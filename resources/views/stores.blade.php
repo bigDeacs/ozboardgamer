@@ -52,7 +52,7 @@
 			    </div>
 			    <div class="row">
 			    	@foreach($stores as $key => $store)
-						<div class="col-sm-3 col-xs-12 text-center">
+						<div class="col-sm-3 col-xs-12 text-center thumbnail">
 							@if(Session::has('name'))
 								<a href="/stores/{{ $store->slug }}">
 									<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" class="img-responsive" />
@@ -72,17 +72,18 @@
 								</a>
 							@endif												    	
 							@if(Session::has('name'))		
-								<p class="text-center"><strong><a href="/stores/{{ $store->slug }}">{!! $store->name !!}</a></strong></p>
-							@else								
-								<p class="text-center"><strong><a href="#" class="disabled" title="Login for access">{!! $store->name !!}</a></strong></p>
-							@endif
-					    	<p class="text-center">			                    
-								@if(Session::has('name'))		
-									<a class="btn btn-danger" href="/stores/{{ $store->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
-								@else
-									<a class="btn btn-danger disabled" href="#" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>
-								@endif
-			                </p>
+								<div class="caption text-center">
+									<a href="/stores/{{ $store->slug }}" title="{!! $store->name !!}">											
+										<p class="text-center"><strong>{!! $store->name !!}</strong></p>
+									</a>
+								</div>								
+							@else			
+								<div class="caption text-center">
+									<a href="#" class="disabled" title="Login for access">											
+										<p class="text-center"><strong>{!! $store->name !!}</strong></p>
+									</a>
+								</div>								
+							@endif					    	
 						</div>
             @if(($key + 1) % 4 == 0)
               </div><div class="row">
