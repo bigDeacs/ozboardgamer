@@ -29,11 +29,17 @@
 			    <div class="row">
 			    	@foreach($families as $family)
 						<div class="col-sm-3 col-xs-12 text-center">
-					    	<a href="/families/{{ $family->slug }}">
-				    			<img src="https://img.ozboardgamer.com{{ $family->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $family->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $family->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive" />
-				    		</a>
-					    	<p class="text-center"><strong><a href="/families/{{ $family->slug }}">{!! $family->name !!}</a></strong></p>
-						</div>
+							<div class="thumbnail img-shadow">
+								<a href="/families/{{ $family->slug }}">
+									<img src="https://img.ozboardgamer.com{{ $family->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $family->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $family->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive img-shadow" />
+								</a>
+								<div class="caption text-center">
+									<a href="/families/{{ $family->slug }}" title="{!! $family->name !!}">											
+										<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit($family->name, 12) !!}</strong></p>
+									</a>
+								</div>
+							</div>
+						</div>	
 					@endforeach
 				</div>
 				<hr />

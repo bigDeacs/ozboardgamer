@@ -27,13 +27,19 @@
 			      </div>
 			    </div>
 			    <div class="row">
-			    	@foreach($designers as $designer)
+			    	@foreach($designers as $designer)				
 						<div class="col-sm-3 col-xs-12 text-center">
-					    	<a href="/designers/{{ $designer->slug }}">
-				    			<img src="https://img.ozboardgamer.com{{ $designer->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $designer->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $designer->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive" />
-				    		</a>
-					    	<p class="text-center"><strong><a href="/designers/{{ $designer->slug }}">{!! $designer->name !!}</a></strong></p>
-						</div>
+							<div class="thumbnail img-shadow">
+								<a href="/designers/{{ $designer->slug }}">
+									<img src="https://img.ozboardgamer.com{{ $designer->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $designer->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $designer->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive img-shadow" />
+								</a>
+								<div class="caption text-center">
+									<a href="/designers/{{ $designer->slug }}" title="{!! $designer->name !!}">											
+										<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit($designer->name, 12) !!}</strong></p>
+									</a>
+								</div>
+							</div>
+						</div>	
 					@endforeach
 				</div>
 				<hr />

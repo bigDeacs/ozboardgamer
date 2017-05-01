@@ -29,11 +29,17 @@
 			    <div class="row">
 			    	@foreach($mechanics as $mechanic)
 						<div class="col-sm-3 col-xs-12 text-center">
-					    	<a href="/mechanics/{{ $mechanic->slug }}">
-				    			<img alt="{!! $mechanic->name !!}" src="https://img.ozboardgamer.com{{ $mechanic->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $mechanic->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $mechanic->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive" />
-				    		</a>
-					    	<p class="text-center"><strong><a href="/mechanics/{{ $mechanic->slug }}">{!! $mechanic->name !!}</a></strong></p>
-						</div>
+							<div class="thumbnail img-shadow">
+								<a href="/mechanics/{{ $mechanic->slug }}">
+									<img alt="{!! $mechanic->name !!}" src="https://img.ozboardgamer.com{{ $mechanic->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $mechanic->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $mechanic->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive img-shadow" />
+								</a>
+								<div class="caption text-center">
+									<a href="/mechanics/{{ $mechanic->slug }}" title="{!! $mechanic->name !!}">											
+										<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit($mechanic->name, 12) !!}</strong></p>
+									</a>
+								</div>
+							</div>
+						</div>	
 					@endforeach
 				</div>
 				<hr />

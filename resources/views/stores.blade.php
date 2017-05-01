@@ -53,7 +53,7 @@
 			    <div class="row">
 			    	@foreach($stores as $key => $store)
 						<div class="col-sm-3 col-xs-12 text-center">
-							<div class="thumbnail">
+							<div class="thumbnail img-shadow">
 								@if(Session::has('name'))
 									<a href="/stores/{{ $store->slug }}">
 										<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" class="img-responsive" />
