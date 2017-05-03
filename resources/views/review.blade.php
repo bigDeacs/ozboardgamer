@@ -117,7 +117,7 @@
 													</a>
 												</li>
 												<li>
-													<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status={{ $post->name }}%0Ahttps://ozboardgamer.com/reviews/{{ $post->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
+													<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status=https://ozboardgamer.com/reviews/{{ $post->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
 														<i class="fa fa-twitter"></i> Share on Twitter
 													</a>
 												</li>
