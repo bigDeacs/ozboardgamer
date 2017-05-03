@@ -100,8 +100,36 @@
 					  @endif					
 						<div class="panel panel-success" style="padding: 0 10px;" id="parent">
 							<h1>{{ $post->name }}</h1>
-							<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
+							<div class="row">
+								<div class="col-xs-12 col-sm-7 col-md-8 col-lg-9">
+									<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
 										</span>{!! date('F d, Y', strtotime($post->published_at)) !!}
+								</div>
+								<div class="col-sm-5 col-md-4 col-lg-3 hidden-xs">
+										<div id="socialShare" class="row hidden-xs" width="100%">
+											<a data-toggle="dropdown" class="col-xs-10 col-xs-offset-1 btn btn-info">
+												 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
+											</a>													
+											<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
+												<li>
+													<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
+														<i class="fa fa-facebook"></i> Share on Facebook
+													</a>
+												</li>
+												<li>
+													<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status={{ $post->name }}%0Ahttps://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
+														<i class="fa fa-twitter"></i> Share on Twitter
+													</a>
+												</li>
+												<li>
+													<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
+														<i class="fa fa-google-plus"></i> Share on Google+
+													</a>
+												</li>														
+											</ul>
+										</div>
+									</div>
+								</div>
 							@unless($post->video == null)
 								<div class="embed-responsive embed-responsive-16by9">
 									<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen></iframe>
