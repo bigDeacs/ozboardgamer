@@ -145,17 +145,17 @@
 												</a>													
 												<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
 													<li>
-														<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/reviews/{{ $review->slug }}')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
+														<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=300,height=300, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
 															<i class="fa fa-facebook"></i> Share on Facebook
 														</a>
 													</li>
 													<li>
-														<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status={{ $review->name }} - https://ozboardgamer.com/reviews/{{ $review->slug }}')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
+														<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status={{ $review->name }} - https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=300,height=300, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
 															<i class="fa fa-twitter"></i> Share on Twitter
 														</a>
 													</li>
 													<li>
-														<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/reviews/{{ $review->slug }}')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
+														<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=300,height=300, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
 															<i class="fa fa-google-plus"></i> Share on Google+
 														</a>
 													</li>														
@@ -257,17 +257,17 @@
 												</a>													
 												<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
 													<li>
-														<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/top10s/{{ $top10->slug }}')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
+														<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/top10s/{{ $top10->slug }}', '', ' scrollbars=yes,menubar=no,width=300,height=300, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
 															<i class="fa fa-facebook"></i> Share on Facebook
 														</a>
 													</li>
 													<li>
-														<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status={{ $top10->name }} - https://ozboardgamer.com/top10s/{{ $top10->slug }}')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
+														<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status={{ $top10->name }} - https://ozboardgamer.com/top10s/{{ $top10->slug }}', '', ' scrollbars=yes,menubar=no,width=300,height=300, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
 															<i class="fa fa-twitter"></i> Share on Twitter
 														</a>
 													</li>
 													<li>
-														<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/top10s/{{ $top10->slug }}')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
+														<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/top10s/{{ $top10->slug }}', '', ' scrollbars=yes,menubar=no,width=300,height=300, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
 															<i class="fa fa-google-plus"></i> Share on Google+
 														</a>
 													</li>														
