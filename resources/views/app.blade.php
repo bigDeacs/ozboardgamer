@@ -49,7 +49,7 @@
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-    <link href="https://css.ozboardgamer.com/css/style.min.css?v=63" rel="stylesheet">
+    <link href="https://css.ozboardgamer.com/css/style.min.css?v=64" rel="stylesheet">
 	<!--<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>-->
 	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">
@@ -173,7 +173,7 @@
 											<li class="text-center"><a href="/signup"><i class="fa fa-user-plus"></i> Signup</a></li>
 											<li role="separator" class="divider"></li>
 											<li class="text-center"><a href="/facebook"><i class="fa fa-facebook-official"></i> Facebook Login</a></li>
-											<li class="text-center"><a href="/google"><i class="fa fa-google-plus-official"></i> Google Login</a></li>
+											<li class="text-center"><a href="/google"><i class="fa fa-google-plus-official"></i> Google+ Login</a></li>
 										  </ul>
 										</li>										
 									@endif
