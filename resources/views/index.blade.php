@@ -139,7 +139,7 @@
 													</a>																										
 												@endif
 											</div>
-											<div id="socialShare" class="row hidden-xs" width="100%">
+											<div id="socialShare" class="row hidden-xs" width="100%" style="margin-top: 10px;">
 												<a data-toggle="dropdown" class="col-xs-10 col-xs-offset-1 btn btn-info">
 													 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
 												</a>													
@@ -251,7 +251,7 @@
 													</a>	
 												@endif											
 											</div>
-											<div id="socialShare" class="row hidden-xs" width="100%">
+											<div id="socialShare" class="row hidden-xs" width="100%" style="margin-top: 10px;">
 												<a data-toggle="dropdown" class="col-xs-10 col-xs-offset-1 btn btn-info">
 													 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
 												</a>													
