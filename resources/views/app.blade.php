@@ -431,10 +431,6 @@
 					return false;
 				});   			
 			});
-			function openwindow(url)
-			{
-				window.open(url,"mywindow","menubar=1,resizable=1,width=350,height=250");
-			}
 		</script>
 	@else
 		<script>
@@ -471,10 +467,6 @@
 					});
 				});
 			});
-			function openwindow(url)
-			{
-				window.open(url,"mywindow","menubar=1,resizable=1,width=350,height=250");
-			}
 		</script>
 	@endif
     @yield('scripts')
