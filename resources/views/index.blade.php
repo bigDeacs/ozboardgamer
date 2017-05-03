@@ -120,7 +120,7 @@
 									@if($review->games->isEmpty())
 										<div class="col-sm-12">
 									@else
-										<div class="col-sm-3 col-xs-12" style="padding: 15px;">
+										<div class="col-sm-4 col-md-3 col-xs-12" style="padding: 15px;">
 											<div style="overflow: hidden;height: 175px;">
 												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 													<div class="offer offer-radius offer-danger">
@@ -139,30 +139,30 @@
 													</a>																										
 												@endif
 											</div>
-											<div id="socialShare" class="share-group" width="100%">
+											<div id="socialShare" class="share-group hidden-xs" width="100%">
 												<a data-toggle="dropdown" class="btn btn-info">
 													 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
 												</a>													
 												<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
 													<li>
-														<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=300, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
+														<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/reviews/{{ $review->slug }}')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
 															<i class="fa fa-facebook"></i> Share on Facebook
 														</a>
 													</li>
 													<li>
-														<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status= {!! $review->name !!} - https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=300, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
+														<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status={{ $review->name }} - https://ozboardgamer.com/reviews/{{ $review->slug }}')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
 															<i class="fa fa-twitter"></i> Share on Twitter
 														</a>
 													</li>
 													<li>
-														<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=300, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
+														<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/reviews/{{ $review->slug }}')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
 															<i class="fa fa-google-plus"></i> Share on Google+
 														</a>
 													</li>														
 												</ul>
 											</div>
 										</div>
-										<div class="col-sm-9 col-xs-12">
+										<div class="col-sm-8 col-md-9 col-xs-12">
 									@endif
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -232,7 +232,7 @@
 									@if($top10->games->isEmpty())
 										<div class="col-sm-12">
 									@else										
-										<div class="col-sm-3 col-xs-12" style="padding: 15px;">
+										<div class="col-sm-4 col-md-3 col-xs-12" style="padding: 15px;">
 											<div style="overflow: hidden;height: 175px;">
 												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
 													<div class="offer offer-radius offer-danger">
@@ -251,30 +251,30 @@
 													</a>	
 												@endif											
 											</div>
-											<div id="socialShare" class="share-group" width="100%">
+											<div id="socialShare" class="share-group hidden-xs" width="100%">
 												<a data-toggle="dropdown" class="btn btn-info">
 													 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
-												</a>
-												<ul class="dropdown-menu">
+												</a>													
+												<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
 													<li>
-														<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/top10s/{{ $top10->slug }}', '', ' scrollbars=yes,menubar=no,width=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-facebook" data-placement="left">
-															<i class="fa fa-facebook"></i>
+														<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/top10s/{{ $top10->slug }}')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
+															<i class="fa fa-facebook"></i> Share on Facebook
 														</a>
 													</li>
 													<li>
-														<a data-original-title="Twitter" rel="tooltip"  href="javascript: openwindow(http://twitter.com/home?status= {!! $top10->name !!} - https://ozboardgamer.com/top10s/{{ $top10->slug }})" class="btn btn-twitter" data-placement="left">
-															<i class="fa fa-twitter"></i>
+														<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status={{ $top10->name }} - https://ozboardgamer.com/top10s/{{ $top10->slug }}')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
+															<i class="fa fa-twitter"></i> Share on Twitter
 														</a>
 													</li>
 													<li>
-														<a data-original-title="Google+" rel="tooltip"  href="javascript: openwindow(https://plus.google.com/share?url=https://ozboardgamer.com/top10s/{{ $top10->slug }})" class="btn btn-google" data-placement="left">
-															<i class="fa fa-google-plus"></i>
+														<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/top10s/{{ $top10->slug }}')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
+															<i class="fa fa-google-plus"></i> Share on Google+
 														</a>
-													</li>													
+													</li>														
 												</ul>
-											</div>	
+											</div>
 										</div>
-										<div class="col-sm-9 col-xs-12">
+										<div class="col-sm-8 col-md-9 col-xs-12">
 									@endif
                                         <div class="row">
                                             <div class="col-sm-12">
