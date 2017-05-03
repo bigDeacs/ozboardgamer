@@ -143,19 +143,19 @@
 												<a data-toggle="dropdown" class="btn btn-info">
 													 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
 												</a>													
-												<ul class="dropdown-menu">
+												<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
 													<li>
-														<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-facebook" data-placement="left" width="100%">
+														<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=300, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
 															<i class="fa fa-facebook"></i> Share on Facebook
 														</a>
 													</li>
 													<li>
-														<a data-original-title="Twitter" rel="tooltip"  href="http://twitter.com/home?status= {!! $review->name !!} - https://ozboardgamer.com/reviews/{{ $review->slug }}" class="btn btn-twitter" data-placement="left" width="100%">
+														<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status= {!! $review->name !!} - https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=300, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
 															<i class="fa fa-twitter"></i> Share on Twitter
 														</a>
 													</li>
 													<li>
-														<a data-original-title="Google+" rel="tooltip"  href="https://plus.google.com/share?url=https://ozboardgamer.com/reviews/{{ $review->slug }}" class="btn btn-google" data-placement="left" width="100%">
+														<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=300, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
 															<i class="fa fa-google-plus"></i> Share on Google+
 														</a>
 													</li>														
