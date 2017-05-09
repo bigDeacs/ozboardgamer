@@ -72,8 +72,7 @@
 									@endforeach
 								@endunless
 								@unless($game->parent == null)								
-									<div class="label label-warning">EXPANSION</div>
-									for <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->parent->slug }}">{{ $game->parent->name }}</a>								
+									<div class="label label-warning">EXPANSION FOR</div> <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->parent->slug }}">{{ $game->parent->name }}</a>								
 								@endunless
 							</div>
 						</div>
