@@ -38,11 +38,13 @@
 		<div class="row">
 			<div class="col-md-9 col-sm-8 col-xs-12">
 				<div class="row">
+					<div class="col-xs-12">
+						<h1 itemprop="name">{{ $game->name }}</h1>
+					</div>
 					<div class="col-md-4 col-sm-5 col-xs-12 text-center">
 						<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" itemprop="image" />
 					</div>
-					<div class="col-md-8 col-sm-7 col-xs-12">
-						<h1 itemprop="name">{{ $game->name }}</h1>
+					<div class="col-md-8 col-sm-7 col-xs-12">						
 						@unless($game->publishers->isEmpty())
 							<small>
 								@foreach($game->publishers as $key => $publisher)
@@ -55,7 +57,7 @@
 								| Published: <span itemprop="datePublished">{{ $game->published }}</span>
 							</small>
 						@endunless
-						<div class="row">
+						<div class="row hidden-sm hidden-xs">
 							<div class="col-xs-12">
 								@unless($game->children->isEmpty())
 									<div class="label label-warning">HAS EXPANSIONS</div>
@@ -67,11 +69,9 @@
 										@endif
 									@endforeach
 								@endunless
-								@unless($game->parent == null)
-								<div class="hidden-sm hidden-xs">
+								@unless($game->parent == null)								
 									<div class="label label-warning">EXPANSION</div>
-									for <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->parent->slug }}">{{ $game->parent->name }}</a>
-								</div>
+									for <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->parent->slug }}">{{ $game->parent->name }}</a>								
 								@endunless
 							</div>
 						</div>
