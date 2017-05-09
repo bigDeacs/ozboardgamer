@@ -36,11 +36,13 @@
 	</div>
 	<div class="container" itemscope itemtype="http://schema.org/Game">
 		<div class="row">
+			<div class="col-xs-12">
+					<h1 itemprop="name">{{ $game->name }}</h1>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-9 col-sm-8 col-xs-12">
-				<div class="row">
-					<div class="col-xs-12">
-						<h1 itemprop="name">{{ $game->name }}</h1>
-					</div>
+				<div class="row">					
 					<div class="col-md-4 col-sm-5 col-xs-12 text-center">
 						<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" itemprop="image" />
 					</div>
@@ -57,7 +59,7 @@
 								| Published: <span itemprop="datePublished">{{ $game->published }}</span>
 							</small>
 						@endunless
-						<div class="row hidden-sm hidden-xs">
+						<div class="row hidden-xs">
 							<div class="col-xs-12">
 								@unless($game->children->isEmpty())
 									<div class="label label-warning">HAS EXPANSIONS</div>
