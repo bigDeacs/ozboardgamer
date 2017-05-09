@@ -38,71 +38,74 @@
 		<div class="row">
 			<div class="col-md-9 col-sm-8 col-xs-12">
 				<div class="row">
-			      <div class="col-md-4 col-sm-5 col-xs-12 text-center">
-			      	<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" itemprop="image" />
-			      </div>
-			      <div class="col-md-8 col-sm-7 col-xs-12">
-			      	<h1 itemprop="name">{{ $game->name }}</h1>
-			      	@unless($game->publishers->isEmpty())
-				    	<small>
-				    		@foreach($game->publishers as $key => $publisher)
-					    		@if($key == (count($game->publishers) -1))
-					    			<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>
-					    		@else
-					    			<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>,
-					    		@endif
-					    	@endforeach
-					     | Published: <span itemprop="datePublished">{{ $game->published }}</span></small>
-					@endunless
-			      	<div class="row">
-				      <div class="col-xs-12">
-					      	@unless($game->children->isEmpty())
-						    	<div class="label label-warning">HAS EXPANSIONS</div>
-						    	@foreach($game->children as $key => $child)
-						    		@if($key == (count($game->children) -1))
-						    			<a href="/games/{{ $game->types()->first()->slug }}/{{ $child->slug }}">{{ $child->name }}</a>
-						    		@else
-						    			<a href="/games/{{ $game->types()->first()->slug }}/{{ $child->slug }}">{{ $child->name }}</a>,
-						    		@endif
-						    	@endforeach
-						    @endunless
-						    @unless($game->parent == null)
-						    	<div class="label label-warning">EXPANSION</div>
-						    	for <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->parent->slug }}">{{ $game->parent->name }}</a>
-						    @endunless
-				      	</div>
-				    </div>
-            <br />
-            <div class="row text-center">
-              <div class="col-md-2 col-sm-3 col-xs-4">
-                <img src="/img/players.png" class="img-responsive" />
-                <div class="text-center lead" style="margin-bottom: 5px;">
-                  <strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
-                </div>
-                  </div>
-                  <div class="col-md-2 col-sm-3 col-xs-4">
-                <img src="/img/ages.png" class="img-responsive" />
-                <div class="text-center lead" style="margin-bottom: 5px;">
-                  <strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
-                </div>
-                  </div>
-                  <div class="col-md-2 col-sm-3 col-xs-4">
-                    <img src="/img/time.png" class="img-responsive" />
-                    <div class="text-center lead" style="margin-bottom: 5px;">
-                      <strong itemprop="timeRequired">{{ $game->time }}</strong>
-                    </div>
-                  </div>
-              </div>
-              <br />
-            <div class="row">
-  			    	<div class="btn-group btn-group-justified" role="group">
-  						  <a href="/stores" class="btn btn-warning" style="font-size:13px;"><i class="fa fa-home" aria-hidden="true"></i> Find In Store</a>
-      		      <a href="http://www.boardgamesearch.com.au/#!/search/{!! $game->name !!}" target="_blank" class="btn btn-primary" style="font-size:13px;" title="Search on Board Game Shopper"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Find<span class="hidden-xs"> Online</span></a>
-  					</div>
-  				</div>
-			      </div>
-			    </div>
-          <br />
+					<div class="col-md-4 col-sm-5 col-xs-12 text-center">
+						<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" itemprop="image" />
+					</div>
+					<div class="col-md-8 col-sm-7 col-xs-12">
+						<h1 itemprop="name">{{ $game->name }}</h1>
+						@unless($game->publishers->isEmpty())
+							<small>
+								@foreach($game->publishers as $key => $publisher)
+									@if($key == (count($game->publishers) -1))
+										<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>
+									@else
+										<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>,
+									@endif
+								@endforeach
+								| Published: <span itemprop="datePublished">{{ $game->published }}</span>
+							</small>
+						@endunless
+						<div class="row">
+							<div class="col-xs-12">
+								@unless($game->children->isEmpty())
+									<div class="label label-warning">HAS EXPANSIONS</div>
+									@foreach($game->children as $key => $child)
+										@if($key == (count($game->children) -1))
+											<a href="/games/{{ $game->types()->first()->slug }}/{{ $child->slug }}">{{ $child->name }}</a>
+										@else
+											<a href="/games/{{ $game->types()->first()->slug }}/{{ $child->slug }}">{{ $child->name }}</a>,
+										@endif
+									@endforeach
+								@endunless
+								@unless($game->parent == null)
+								<div class="hidden-sm hidden-xs">
+									<div class="label label-warning">EXPANSION</div>
+									for <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->parent->slug }}">{{ $game->parent->name }}</a>
+								</div>
+								@endunless
+							</div>
+						</div>
+						<br />
+						<div class="row text-center">
+							<div class="col-md-2 col-sm-3 col-xs-4">
+								<img src="/img/players.png" class="img-responsive" />
+								<div class="text-center lead" style="margin-bottom: 5px;">
+								  <strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-3 col-xs-4">
+								<img src="/img/ages.png" class="img-responsive" />
+								<div class="text-center lead" style="margin-bottom: 5px;">
+								  <strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
+								</div>
+							</div>
+							<div class="col-md-2 col-sm-3 col-xs-4">
+								<img src="/img/time.png" class="img-responsive" />
+								<div class="text-center lead" style="margin-bottom: 5px;">
+									<strong itemprop="timeRequired">{{ $game->time }}</strong>
+								</div>
+							</div>
+						</div>
+						<br />            
+					</div>
+				</div>
+				<br />
+				<div class="row">
+						<div class="btn-group btn-group-justified" role="group">
+							<a href="/stores" class="btn btn-warning" style="font-size:13px;"><i class="fa fa-home" aria-hidden="true"></i> Find In Store</a>
+							<a href="http://www.boardgamesearch.com.au/#!/search/{!! $game->name !!}" target="_blank" class="btn btn-primary" style="font-size:13px;" title="Search on Board Game Shopper"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Find<span class="hidden-xs"> Online</span></a>
+						</div>
+					</div>
           <div class="row">
           @if(Session::has('name'))
             <strong>Rate This Game</strong>
