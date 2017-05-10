@@ -60,7 +60,7 @@
                                             <strong>
 												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 													<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
-														{!! $post->name !!}
+														<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
 													</a>
 												@else
 													<a href="/{{ $category->slug }}/{{ $post->slug }}" class="post-title" itemprop="name">
@@ -94,16 +94,18 @@
                                 </div>
                                 <div class="row post-content">
                                     <div class="col-xs-12">
-                                        <p itemprop="description">
-                                            {!! str_limit(strip_tags($post->description), $limit = 250, $end = '...') !!}
-                                        </p>
-                                        <p>
-											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))												
-												<a class="btn btn-danger pull-right disabled" href="#" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>
+										<p itemprop="description">
+											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
+												Login to gain early access to this post!
 											@else
+												{!! str_limit(strip_tags($post->description), $limit = 250, $end = '...') !!}
+											@endif    													                                                    
+										</p>
+										<p>												
+											@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 												<a class="btn btn-danger pull-right" href="/{{ $category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
-											@endif                                               
-                                        </p>
+											@endunless   													
+										</p>							
                                     </div>
                                 </div>
                             </div>
