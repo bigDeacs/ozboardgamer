@@ -39,17 +39,15 @@
 						<hgroup>
 							@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 								<p class="bigText"><i class="fa fa-lock" aria-hidden="true"></i> {{ $post->category()->first()->name }} <i class="fa fa-lock" aria-hidden="true"></i></p>     
-								<p class="smallText">{{ $post->name }}</p>
+								<p class="smallText">Login/Signup for early access</p>	
 							@else
 								<p class="bigText">{{ $post->category()->first()->name }}</p>        
 								<p class="smallText">{{ $post->name }}</p>
 							@endif         							
 						</hgroup>       
-						@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))			
-							<p class="smallText">Login/Signup for early access</p>						
-						@else
+						@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))			
 							<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
-						@endif 						
+						@endunless 						
 					  </div>
 					</div>
                 @endforeach
@@ -139,28 +137,30 @@
 													</a>																										
 												@endif
 											</div>
-											<div id="socialShare" class="row hidden-xs" width="100%" style="margin-top: 10px;">
-												<a data-toggle="dropdown" class="col-xs-10 col-xs-offset-1 btn btn-info">
-													 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
-												</a>													
-												<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
-													<li>
-														<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
-															<i class="fa fa-facebook"></i> Share on Facebook
-														</a>
-													</li>
-													<li>
-														<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
-															<i class="fa fa-twitter"></i> Share on Twitter
-														</a>
-													</li>
-													<li>
-														<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
-															<i class="fa fa-google-plus"></i> Share on Google+
-														</a>
-													</li>														
-												</ul>
-											</div>
+											@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+												<div id="socialShare" class="row hidden-xs" width="100%" style="margin-top: 10px;">
+													<a data-toggle="dropdown" class="col-xs-10 col-xs-offset-1 btn btn-info">
+														 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
+													</a>													
+													<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
+														<li>
+															<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
+																<i class="fa fa-facebook"></i> Share on Facebook
+															</a>
+														</li>
+														<li>
+															<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
+																<i class="fa fa-twitter"></i> Share on Twitter
+															</a>
+														</li>
+														<li>
+															<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
+																<i class="fa fa-google-plus"></i> Share on Google+
+															</a>
+														</li>														
+													</ul>
+												</div>
+											@endunless
 										</div>
 										<div class="col-sm-8 col-md-9 col-xs-12">
 									@endif
@@ -170,7 +170,7 @@
                                                     <strong>														
 														@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 															<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
-																{!! $review->name !!}
+																<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
 															</a>
 														@else
 															<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
@@ -205,14 +205,16 @@
                                         <div class="row post-content">
                                             <div class="col-xs-12">
                                                 <p itemprop="description">
-                                                    {!! str_limit(strip_tags($review->description), $limit = 250, $end = '...') !!}
+													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+														Login to gain early access to this post!
+													@else
+														{!! str_limit(strip_tags($review->description), $limit = 250, $end = '...') !!}
+													@endif    													                                                    
                                                 </p>
                                                 <p>												
-													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-														<a class="btn btn-danger pull-right disabled" href="#" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>
-													@else
+													@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
-													@endif    													
+													@endunless   													
                                                 </p>
                                             </div>
                                         </div>
@@ -251,28 +253,30 @@
 													</a>	
 												@endif											
 											</div>
-											<div id="socialShare" class="row hidden-xs" width="100%" style="margin-top: 10px;">
-												<a data-toggle="dropdown" class="col-xs-10 col-xs-offset-1 btn btn-info">
-													 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
-												</a>													
-												<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
-													<li>
-														<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/top10s/{{ $top10->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
-															<i class="fa fa-facebook"></i> Share on Facebook
-														</a>
-													</li>
-													<li>
-														<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status=https://ozboardgamer.com/top10s/{{ $top10->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
-															<i class="fa fa-twitter"></i> Share on Twitter
-														</a>
-													</li>
-													<li>
-														<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/top10s/{{ $top10->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
-															<i class="fa fa-google-plus"></i> Share on Google+
-														</a>
-													</li>														
-												</ul>
-											</div>
+											@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+												<div id="socialShare" class="row hidden-xs" width="100%" style="margin-top: 10px;">
+													<a data-toggle="dropdown" class="col-xs-10 col-xs-offset-1 btn btn-info">
+														 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
+													</a>													
+													<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
+														<li>
+															<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/top10s/{{ $top10->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
+																<i class="fa fa-facebook"></i> Share on Facebook
+															</a>
+														</li>
+														<li>
+															<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status=https://ozboardgamer.com/top10s/{{ $top10->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
+																<i class="fa fa-twitter"></i> Share on Twitter
+															</a>
+														</li>
+														<li>
+															<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/top10s/{{ $top10->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
+																<i class="fa fa-google-plus"></i> Share on Google+
+															</a>
+														</li>														
+													</ul>
+												</div>
+											@endunless
 										</div>
 										<div class="col-sm-8 col-md-9 col-xs-12">
 									@endif
@@ -313,15 +317,17 @@
                                         </div>
                                         <div class="row post-content">
                                             <div class="col-xs-12">
-                                                <p>
-                                                    {!! str_limit(strip_tags($top10->description), $limit = 250, $end = '...') !!}
-                                                </p>
-                                                <p>
-													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))												
-														<a class="btn btn-danger pull-right disabled" href="#" title="Login for access">Read more <span class="fa fa-arrow-circle-right"></span></a>
+												<p itemprop="description">
+													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+														Login to gain early access to this post!
 													@else
+														{!! str_limit(strip_tags($top10->description), $limit = 250, $end = '...') !!}
+													@endif    													                                                    
+                                                </p>                                                
+                                                <p>
+													@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))																										
 														<a class="btn btn-danger pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
-													@endif                                                     
+													@endunless                                                     
                                                 </p>
                                             </div>
                                         </div>
