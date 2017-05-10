@@ -92,7 +92,7 @@
 							</div>
 						</div>
 						<div class="offer-content">
-							<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive img-shadow" />
+							<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive img-shadow" style="opacity: 0.5;" />
 						</div>
 					</div>	
 				@endif
