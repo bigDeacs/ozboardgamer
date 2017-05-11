@@ -8,19 +8,8 @@
 @section('head')
 	{!! $post->head !!}
 	<style>
-		.tooltip.right .tooltip-arrow {
-		  top: 50%;
-		  left: 0;
-		  margin-top: -5px;
-		  border-right-color: #000000;
-		  border-width: 5px 5px 5px 0;
-		  width: 300px;
-		}
 		.tooltip-inner {
-		  color: #000;
-		  background: #fff;
-		  border: solid 1px #fff;
-		  width: 300px;
+		  width: 350px!important;
 		}
 	</style>
 @endsection
