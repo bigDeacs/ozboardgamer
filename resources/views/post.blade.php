@@ -101,7 +101,8 @@
 					  @else
 						<div class="col-sm-9 col-xs-12">
 					  @endif					
-						<div class="panel panel-success" style="padding: 0 10px;" id="parent">							
+						<div class="panel panel-success" style="padding: 0 10px;" id="parent">				
+							<h1>{{ $post->name }}</h1>
 							<div class="row">
 								<div class="col-xs-12 col-sm-7 col-md-8 col-lg-9">
 									<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
