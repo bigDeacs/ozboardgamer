@@ -29,6 +29,9 @@
 						</div>
 						<div class="col-xs-10">
 							<h1>Brent</h1>
+							@if($user->description != '')
+								<p>{!! $user->description !!}</p>							
+							@endif
 						</div>
 					</div>			      	
 			      </div>
@@ -50,13 +53,6 @@
 					</script>
 			      </div>
 			    </div>
-          @if($user->description != '')
-            <div class="row">
-              <div class="col-xs-12">
-                <p>{!! $user->description !!}</p>
-              </div>
-            </div>
-          @endif
 				@foreach($posts as $post)
 					<div class="row">
 		                <div class="col-sm-12 post">
