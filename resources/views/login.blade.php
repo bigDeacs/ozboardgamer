@@ -135,12 +135,18 @@
 										<input type="hidden" name="_token" value="{{ csrf_token() }}">
 										<div class="form-group">
 										   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-												<input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-Mail Address">
+											   <div class="input-group">
+													<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+													<input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-Mail Address">
+												</div>												
 											</div>
 										</div>
 										<div class="form-group">
 										   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-												<input type="password" class="form-control" name="password" placeholder="Password">
+												<div class="input-group">
+													<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+													<input type="password" class="form-control" name="password" placeholder="Password">
+												</div>												
 											</div>
 										</div>
 										<div class="form-group">
