@@ -17,9 +17,7 @@ class ProductSeeder extends CsvSeeder
             16 => 'thumb2x',
             17 => 'priceDisplay',  
 			18 => 'brand',  			
-            31 => 'saleDisplay',
-            34 => 'stock'
-
+            31 => 'saleDisplay'
         ];
         $this->filename = storage_path().'/uploads/products.csv';
     }

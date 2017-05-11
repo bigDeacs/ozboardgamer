@@ -24,7 +24,8 @@ class Product extends Model {
 		'savings',
 		'thumb1x',
 		'thumb2x',
-		'category'
+		'category',
+		'brand'
 	];
 
 }

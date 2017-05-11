@@ -356,6 +356,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
     );
 
     public static $classMap = array (
+        'AddBrandToProducts' => __DIR__ . '/../..' . '/database/migrations/2017_05_11_114922_add_brand_to_products.php',
         'AddCategoryProducts' => __DIR__ . '/../..' . '/database/migrations/2017_01_16_151512_add_category_products.php',
         'AddCodeToOffers' => __DIR__ . '/../..' . '/database/migrations/2016_12_15_142342_add_code_to_offers.php',
         'AddImageToGamesTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_08_011149_add_image_to_games_table.php',
