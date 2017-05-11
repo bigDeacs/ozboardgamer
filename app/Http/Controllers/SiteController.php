@@ -175,6 +175,7 @@ class SiteController extends Controller {
 					Session::put('id', $user->id);
 					Session::put('name', $user->name);
 					Session::put('email', $user->email);
+					Session::put('slug', $user->slug);
 					Session::put('thumb', $user->thumb);
 				} else {
 					return redirect()->back()->withErrors(['Your password did not match']);
@@ -353,6 +354,7 @@ class SiteController extends Controller {
         Session::forget('id');
         Session::forget('name');
         Session::forget('email');
+		Session::forget('slug');
         Session::forget('thumb');
 
 		return redirect()->back();
