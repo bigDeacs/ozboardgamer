@@ -157,7 +157,7 @@
 													</div>
 													<div class="col-xs-6">
 														<p><?php $name = explode(" ", Session::get('name')); ?></p>
-														<p><small>{{ Session::get('email')) }}</small></p>
+														<p><small>{{ Session::get('email') }}</small></p>
 														<hr />
 														<a href="/users/{{ Session::get('slug') }}?page=1" class="btn btn-primary"><i class="fa fa-user"></i> View Profile</a></li>												
 													</div>

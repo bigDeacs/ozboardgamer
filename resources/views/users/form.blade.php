@@ -18,7 +18,7 @@
       </div>
       <div class="col-sm-6 col-xs-12">
             <label for="email">Password</label>
-            <input type="text" name="password" id="password" class="form-control" value="{{ isset($user) ? $user->password : old('password') }}"  disabled>
+            <input type="text" name="password" id="password" class="form-control" value="{{ isset($user) ? Crypt::decrypt($user->password) : old('password') }}"  disabled>
       </div>
 </div>
 
