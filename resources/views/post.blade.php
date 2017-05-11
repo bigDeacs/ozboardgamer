@@ -88,7 +88,7 @@
 					@unless($post->image == null)
 						<div class="row">
 						  <div class="col-sm-12 hidden-xs">
-						  <img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" style="position: absolute;bottom: 10px;left: 25px;">
+						  <img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" style="position: absolute;bottom: 10px;left: 25px;" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
 							<div class="img-container">
 								<div class="fill" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');"></div>
 							</div>
