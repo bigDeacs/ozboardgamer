@@ -8,7 +8,7 @@
 @section('head')
 	{!! $post->head !!}
 	<style>
-		.tooltip.right > tooltip-inner {
+		.tooltip.right > .tooltip-inner {
 			max-width: 350px!important;
 			width: 350px!important;
 		}
