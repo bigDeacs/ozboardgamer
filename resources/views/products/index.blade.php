@@ -26,14 +26,16 @@
   							<col width="15%">
   							<col width="15%">
   							<col width="10%">
+							<col width="10%">
   							<col width="10%">
-  							<col width="20%">
+  							<col width="10%">
 						    <thead>
 						    	<tr>
 						    		<th>Name</th>
 						    		<th>Price</th>
 						    		<th>Sale</th>
 						    		<th>Savings</th>
+									<th>Brand</th>
 						    		<th>Link</th>
 						    		<th></th>
 									<th></th>
@@ -46,6 +48,7 @@
 							    		<td>${!! str_replace(" AUD", "", $product->priceDisplay) !!}</td>
 							    		<td>@if($product->sale > 0)${!! str_replace(" AUD", "", $product->saleDisplay) !!}@endif</td>
 							    		<td>{!! round($product->savings, 2) !!}%</td>
+										<td>{!! $product->brand !!}</td>
 										<td><a href="{!! $product->slug !!}" target="_blank">Link</a></td>
 										<td><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></td>
 										<td><a href="/admin/products/{!! $product->id !!}/remove" target="_blank" class="btn btn-danger">Remove</a></td>
