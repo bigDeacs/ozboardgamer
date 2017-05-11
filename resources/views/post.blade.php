@@ -7,7 +7,12 @@
 
 @section('head')
 	{!! $post->head !!}
-	<style>.tooltip { width: 300px!important; }</style>
+	<style>
+		div.tooltip-inner {
+			max-width: 350px;
+			word-break: break-all;
+		}
+	</style>
 @endsection
 
 @section('content')
