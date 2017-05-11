@@ -147,14 +147,31 @@
 								</li>
 								<li>
 									@if(Session::has('name'))
-										<?php $name = explode(" ", Session::get('name')); ?>
+										Account									
 										<li class="dropdown">
-										  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #008751;">{{ ucfirst($name[0]) }} <span class="caret"></span></a>
-										  <ul class="dropdown-menu">
-											<li class="text-center"><a href="/users/{{ Session::get('slug') }}?page=1"><i class="fa fa-user"></i> Profile</a></li>
-											<li class="text-center"><a href="/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
-										  </ul>
-										</li>
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #008751;">Brent <span class="caret"></span></a>
+											<ul class="dropdown-menu">
+												 <div class="row" style="width: 300px;">
+													<div class="col-xs-6">												
+														<img src="{!! $user->image !!}" class="img-responsive" />
+													</div>
+													<div class="col-xs-6">
+														<p><?php $name = explode(" ", Session::get('name')); ?></p>
+														<p><small>{{ Session::get('email')) }}</small></p>
+														<hr />
+														<a href="/users/{{ Session::get('slug') }}?page=1" class="btn btn-primary"><i class="fa fa-user"></i> View Profile</a></li>												
+													</div>
+												 </div>
+												<div class="row" style="background: #222222;color: #9d9d9d;margin: 10px auto 0;">
+													<div class="col-xs-6">
+														<a href="mailto:ozboardgamer@gmail.com" class="btn btn-danger pull-left"><i class="fa fa-question-circle" aria-hidden="true"></i> Trouble?</a></li>    
+													</div>
+													<div class="col-xs-6">
+														<a href="/logout" class="btn btn-danger pull-right"><i class="fa fa-sign-out"></i> Logout</a></li>    
+													</div>
+												</div>
+											</ul>
+										</li>										
 									@else
 										<li class="dropdown">
 										  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #008751;">Login/Signup <span class="caret"></span></a>
