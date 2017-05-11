@@ -23,9 +23,10 @@
 						<div class="table-responsive">
 						  <table class="table dataTable table-striped table-hover">
 						  	<col width="30%">
-  							<col width="15%">
-  							<col width="15%">
   							<col width="10%">
+  							<col width="10%">
+  							<col width="10%">
+							<col width="10%">
 							<col width="20%">
   							<col width="10%">
 						    <thead>
