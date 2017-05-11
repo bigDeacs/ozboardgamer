@@ -153,7 +153,7 @@
 											<ul class="dropdown-menu">
 												 <div class="row" style="width: 300px;">
 													<div class="col-xs-6">												
-														<img src="{!! $user->image !!}" class="img-responsive" />
+														<img src="{{ Session::get('image') }}" class="img-responsive" />
 													</div>
 													<div class="col-xs-6">
 														<p><?php $name = explode(" ", Session::get('name')); ?></p>
