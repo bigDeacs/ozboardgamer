@@ -342,23 +342,27 @@
             <div class="col-md-3 col-sm-4 hidden-xs">       
 				@if($product)
 					<h3>Featured Product</h3>
-					<div class="thumbnail img-shadow">
-						<a href="{!! $product->slug !!}" target="_blank">
-							<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
-						</a>
-						<div class="caption text-center">
-							<a href="{{ $product->slug }}" title="{!! $product->name !!}" target="_blank">											
-								<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit(strip_tags($product->name), $limit = 12, $end = '...') !!}</strong><br /></p>
-							</a>
-							@if($product->sale > 0)
-								<strong>${!! $product->saleDisplay !!}</strong><br />
-								<s><small>${!! $product->priceDisplay !!}</small></s>
-							@else
-								<strong>${!! $product->priceDisplay !!}</strong>
-							@endif
-							<p class="text-center">
-								<a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-							</p>
+					<div class="row" style="margin: auto;">
+						<div class="col-xs-12">
+							<div class="thumbnail img-shadow text-center">
+								<a href="{!! $product->slug !!}" target="_blank">
+									<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
+								</a>
+								<div class="caption text-center">
+									<a href="{{ $product->slug }}" title="{!! $product->name !!}" target="_blank">											
+										<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit(strip_tags($product->name), $limit = 12, $end = '...') !!}</strong><br /></p>
+									</a>
+									@if($product->sale > 0)
+										<strong>${!! $product->saleDisplay !!}</strong><br />
+										<s><small>${!! $product->priceDisplay !!}</small></s>
+									@else
+										<strong>${!! $product->priceDisplay !!}</strong>
+									@endif
+									<p class="text-center">
+										<a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+									</p>
+								</div>													
+							</div>			
 						</div>													
 					</div>			
 					<hr class="hidden-xs" />
