@@ -409,7 +409,7 @@
                 @endunless  
                 <!-- Home Page Tower Ad Right -->
 				<div class="text-center">
-					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy Games online from Oz Game Shop" src="https://img.ozboardgamer.com/img/95587c56-eb65-4254-aa84-7d7c09ff2dee.gif" /></a>
+					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy Board Games online from Oz Game Shop" src="https://img.ozboardgamer.com/img/tower-ad.jpg" /></a>
 				</div>
 				<hr />
 				@unless($blogs->isEmpty())
