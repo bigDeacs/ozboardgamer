@@ -41,7 +41,7 @@
 					@unless($post->image == null)
 						<div class="row">
 						  <div class="col-sm-12 hidden-xs">
-							<div class="profile-header-container" style="position: absolute;bottom: 10px;left: 25px;">   
+							<div class="profile-header-container" style="position: absolute;bottom: 35px;left: 35px;">   
 								<div class="profile-header-img">
 									<img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" data-toggle="tooltip" data-placement="right" title="{{ strip_tags($post->user->description) }}">
 									<!-- badge -->
