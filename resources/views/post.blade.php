@@ -41,18 +41,15 @@
 					@unless($post->image == null)
 						<div class="row">
 						  <div class="col-sm-12 hidden-xs">
-							
 							<div class="profile-header-container" style="position: absolute;bottom: 10px;left: 25px;">   
 								<div class="profile-header-img">
 									<img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" data-toggle="tooltip" data-placement="right" title="{{ strip_tags($post->user->description) }}">
 									<!-- badge -->
 									<div class="rank-label-container">
-										<span class="label label-default rank-label"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+										<span class="label label-default rank-label"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></span>
 									</div>
 								</div>
-							</div> 
-							
-							<!-- <img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" style="position: absolute;bottom: 10px;left: 25px;" data-toggle="tooltip" data-placement="right" title="{{ strip_tags($post->user->description) }}"> -->
+							</div> 						
 							<h1>{{ $post->name }}</h1>
 							<div class="img-container">
 								<div class="fill" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');" itemprop="image"></div>
@@ -105,17 +102,15 @@
 					@unless($post->image == null)
 						<div class="row">
 						  <div class="col-sm-12 hidden-xs">
-						  <div class="profile-header-container" style="position: absolute;bottom: 10px;left: 25px;">   
+							<div class="profile-header-container" style="position: absolute;bottom: 10px;left: 25px;">   
 								<div class="profile-header-img">
 									<img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" data-toggle="tooltip" data-placement="right" title="{{ strip_tags($post->user->description) }}">
 									<!-- badge -->
 									<div class="rank-label-container">
-										<span class="label label-default rank-label"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+										<span class="label label-default rank-label"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></span>
 									</div>
 								</div>
 							</div> 
-							
-							<!-- <img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" style="position: absolute;bottom: 10px;left: 25px;" data-toggle="tooltip" data-placement="right" title="{{ strip_tags($post->user->description) }}"> -->							
 							<div class="img-container">
 								<div class="fill" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');"></div>
 							</div>
