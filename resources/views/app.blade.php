@@ -145,44 +145,39 @@
 									<li class="text-center"><a href="/stores">Find a Store</a></i></li>
 								  </ul>
 								</li>
-								<li>
+								<li class="dropdown">
 									@if(Session::has('name'))
-										Account									
-										<li class="dropdown">
-											<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #008751;">Brent <span class="caret"></span></a>
-											<ul class="dropdown-menu">
-												 <div class="row" style="width: 300px;">
-													<div class="col-xs-6">												
-														<img src="{{ Session::get('image') }}" class="img-responsive" />
-													</div>
-													<div class="col-xs-6">
-														<p><?php $name = explode(" ", Session::get('name')); ?></p>
-														<p><small>{{ Session::get('email') }}</small></p>
-														<hr />
-														<a href="/users/{{ Session::get('slug') }}?page=1" class="btn btn-primary"><i class="fa fa-user"></i> View Profile</a></li>												
-													</div>
-												 </div>
-												<div class="row" style="background: #222222;color: #9d9d9d;margin: 10px auto 0;">
-													<div class="col-xs-6">
-														<a href="mailto:ozboardgamer@gmail.com" class="btn btn-danger pull-left"><i class="fa fa-question-circle" aria-hidden="true"></i> Trouble?</a></li>    
-													</div>
-													<div class="col-xs-6">
-														<a href="/logout" class="btn btn-danger pull-right"><i class="fa fa-sign-out"></i> Logout</a></li>    
-													</div>
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #008751;">Account <span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											 <div class="row" style="width: 300px;">
+												<div class="col-xs-12 col-sm-4">												
+													<img src="{!! Session::get('thumb') !!}" class="img-responsive" />
 												</div>
-											</ul>
-										</li>										
-									@else
-										<li class="dropdown">
-										  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #008751;">Login/Signup <span class="caret"></span></a>
-										  <ul class="dropdown-menu">
+												<div class="col-xs-12 col-sm-8">
+													{{ Session::get('name') }}
+													<p><small>{{ Session::get('email') }}</small></p>
+													<hr />
+													<a href="/users/{{ Session::get('slug') }}?page=1" class="btn btn-primary"><i class="fa fa-user"></i> View Profile</a></li>												
+												</div>
+											 </div>
+											<div class="row" style="background: #222222;color: #9d9d9d;margin: 10px auto 0;">
+												<div class="col-xs-6">
+													<a href="mailto:ozboardgamer@gmail.com" class="btn btn-danger pull-left" style="margin: 10px;"><i class="fa fa-question-circle" aria-hidden="true"></i> Trouble?</a></li>    
+												</div>
+												<div class="col-xs-6">
+													<a href="/logout" class="btn btn-danger pull-right" style="margin: 10px;"><i class="fa fa-sign-out"></i> Logout</a></li>    
+												</div>
+											</div>
+										</ul>
+									@else									
+										 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #008751;">Login/Signup <span class="caret"></span></a>
+										 <ul class="dropdown-menu">
 											<li class="text-center"><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
 											<li class="text-center"><a href="/signup"><i class="fa fa-user-plus"></i> Signup</a></li>
 											<li role="separator" class="divider"></li>
 											<li class="text-center"><a href="/facebook"><i class="fa fa-facebook-official"></i> Facebook Login</a></li>
 											<li class="text-center"><a href="/google"><i class="fa fa-google-plus-official"></i> Google+ Login</a></li>
-										  </ul>
-										</li>										
+										 </ul>									
 									@endif
 								</li> 
 							</ul>
