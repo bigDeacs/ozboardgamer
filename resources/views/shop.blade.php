@@ -41,12 +41,10 @@
 				</script>
       		</div>		
       		<div class="col-sm-4 col-xs-12">
-				@if(Session::has('name'))
-					<span>Search for product: </span>
-					  <form id="search" action="#" method="post" style="width: 100%;margin: 5px 0;" onsubmit="return false;">
-						  <input type="text" name="search-products" id="search-products" class="form-control" placeholder="Find products..." style="top: -5px;">
-					  </form>
-				@endif              
+				<span>Search for product: </span>
+				  <form id="search" action="#" method="post" style="width: 100%;margin: 5px 0;" onsubmit="return false;">
+					  <input type="text" name="search-products" id="search-products" class="form-control" placeholder="Find products..." style="top: -5px;">
+				  </form>      
             </div>			      
     	</div>
 		@if(Session::has('name'))
@@ -80,28 +78,11 @@
   		<div class="row">
       	@foreach($products as $key => $product)
 			<div class="col-sm-3 col-xs-12 text-center">
-				@if(Session::has('name'))
-					<a href="{!! $product->slug !!}" target="_blank">
-						<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
-					</a>
-				@else					
-					<div class="offer offer-radius offer-danger">
-						<div class="shape">
-							<div class="shape-text">
-								<a href="#" class="disabled" title="Login for access" style="color: #ffffff;"><i class="fa fa-lock" aria-hidden="true"></i></a>
-							</div>
-						</div>
-						<div class="offer-content">
-							<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive img-shadow" style="opacity: 0.5;" />
-						</div>
-					</div>	
-				@endif
+				<a href="{!! $product->slug !!}" target="_blank">
+					<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
+				</a>
 		    	<p class="text-center">
-					@if(Session::has('name'))		
-						<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
-					@else
-						<strong><a href="#" class="disabled" title="Login for access">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
-					@endif
+					<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
 		    		@if($product->sale > 0)
 		    			<strong>${!! $product->saleDisplay !!}</strong><br />
 		    			<s><small>${!! $product->priceDisplay !!}</small></s>
@@ -110,11 +91,7 @@
 		    		@endif
 		    	</p>
 		    	<p class="text-center">
-                    @if(Session::has('name'))		
-						<a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-					@else
-						<a class="btn btn-danger disabled" href="#" title="Login for access">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-					@endif
+					<a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
                 </p>
 			</div>
             @if(($key + 1) % 4 == 0)

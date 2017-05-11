@@ -342,29 +342,12 @@
             <div class="col-md-3 col-sm-4 hidden-xs">       
 				@if($product)
 					<h3>Featured Product</h3>
-					<div class="text-center">		
-						@if(Session::has('name'))		
-							<a href="{!! $product->slug !!}" target="_blank" title="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}">
-								<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive img-shadow" alt="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}" width="100%" />
-							</a>							
-						@else							
-							<div class="offer offer-radius offer-danger">
-								<div class="shape">
-									<div class="shape-text">
-										<a href="#" class="disabled" title="Login for access" style="color: #ffffff;"><i class="fa fa-lock" aria-hidden="true"></i></a>
-									</div>
-								</div>
-								<div class="offer-content">
-									<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive img-shadow" alt="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}" style="opacity: 0.5;" width="100%" />
-								</div>
-							</div>								
-						@endif
-						<p class="text-center">
-							@if(Session::has('name'))		
-								<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
-							@else
-								<strong><a href="#" class="disabled" title="Login for access">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
-							@endif
+					<div class="text-center">								
+						<a href="{!! $product->slug !!}" target="_blank" title="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}">
+							<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive img-shadow" alt="{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}" width="100%" />
+						</a>							
+						<p class="text-center">							
+							<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
 							@if($product->sale > 0)
 								<strong>${!! $product->saleDisplay !!}</strong><br />
 								<s><small>${!! $product->priceDisplay !!}</small></s>
@@ -373,11 +356,7 @@
 							@endif
 						</p>
 						<p class="text-center">
-							@if(Session::has('name'))		
-								<a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-							@else
-								<a class="btn btn-danger disabled" href="#" title="Login for access">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-							@endif							
+							<a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>						
 						</p>
 					</div>
 					<hr class="hidden-xs" />
@@ -449,36 +428,34 @@
             </div>
         </div>
         @unless($stores->isEmpty())
-			@if(Session::has('name'))		
-				<div class="row hidden-xs">
-					<div class="col-xs-12">
-						<h3>Top Rated Stores</h3>
-						<div class="jcarousel-wrapper">
-							<div class="jcarousel">
-								<ul>
-									@foreach($stores as $store)
-										<li>
-											<div class="thumbnail img-shadow">
-												<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
-													<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" />
+			<div class="row hidden-xs">
+				<div class="col-xs-12">
+					<h3>Top Rated Stores</h3>
+					<div class="jcarousel-wrapper">
+						<div class="jcarousel">
+							<ul>
+								@foreach($stores as $store)
+									<li>
+										<div class="thumbnail img-shadow">
+											<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
+												<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" />
+											</a>
+											<div class="caption text-center">
+												<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">											
+													<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit($store->name, 12) !!}</strong></p>
 												</a>
-												<div class="caption text-center">
-													<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">											
-														<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit($store->name, 12) !!}</strong></p>
-													</a>
-												</div>
 											</div>
-										</li>
-									@endforeach
-								</ul>
-							</div>
-
-							<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-							<a href="#" class="jcarousel-control-next">&rsaquo;</a>
+										</div>
+									</li>
+								@endforeach
+							</ul>
 						</div>
+
+						<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 					</div>
 				</div>
-			@endif
+			</div>
         @endunless
     </div>
 
