@@ -32,39 +32,39 @@ class ProductSeeder extends CsvSeeder
 
         parent::run();
 
+		DB::table($this->table)->where('brand', '=', '')->orWhereNull('brand')->delete();
+		
         foreach(DB::select('select * from '.$this->table) as $product)
         {			
 			$sale = preg_replace('/\b(AUD|,)\b/i', '', $product->saleDisplay);
 			$price = preg_replace('/\b(AUD|,)\b/i', '', $product->priceDisplay);
-			if(strlen($product->brand) > 0) {
-				if($sale > 0) {
-					if($sale > 20)
-					{
-						DB::table($this->table)
-						->where('id', $product->id)
-						->update([
-							'price' => $price, 
-							'sale' => $sale, 
-							'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 
-							'thumb2x' => str_replace('http://', 'https://', $product->thumb2x),
-							'savings' => ((($price - $sale) / $price) * 100)
-						]);  
-					}
-				} else {
-					if($price > 20)
-					{
-						DB::table($this->table)
-						->where('id', $product->id)
-						->update([
-							'price' => $price, 
-							'sale' => $sale, 
-							'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 
-							'thumb2x' => str_replace('http://', 'https://', $product->thumb2x),
-							'savings' => 0
-						]);  
-					}
+			if($sale > 0) {
+				if($sale > 20)
+				{
+					DB::table($this->table)
+					->where('id', $product->id)
+					->update([
+						'price' => $price, 
+						'sale' => $sale, 
+						'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 
+						'thumb2x' => str_replace('http://', 'https://', $product->thumb2x),
+						'savings' => ((($price - $sale) / $price) * 100)
+					]);  
 				}
-			}
+			} else {
+				if($price > 20)
+				{
+					DB::table($this->table)
+					->where('id', $product->id)
+					->update([
+						'price' => $price, 
+						'sale' => $sale, 
+						'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 
+						'thumb2x' => str_replace('http://', 'https://', $product->thumb2x),
+						'savings' => 0
+					]);  
+				}
+			}			
         }
     }
 }
