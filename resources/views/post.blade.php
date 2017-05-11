@@ -7,6 +7,7 @@
 
 @section('head')
 	{!! $post->head !!}
+	<style>.tooltip.right { width: 200px; }</style>
 @endsection
 
 @section('content')
@@ -35,7 +36,7 @@
 					@unless($post->image == null)
 						<div class="row">
 						  <div class="col-sm-12 hidden-xs">
-							<img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" style="position: absolute;bottom: 10px;left: 25px;" data-toggle="tooltip" data-placement="right" title="{{ $post->user->description }}">
+							<img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" style="position: absolute;bottom: 10px;left: 25px;" data-toggle="tooltip" data-placement="right" title="{!! $post->user->description !!}">
 							<h1>{{ $post->name }}</h1>
 							<div class="img-container">
 								<div class="fill" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');" itemprop="image"></div>
@@ -88,7 +89,7 @@
 					@unless($post->image == null)
 						<div class="row">
 						  <div class="col-sm-12 hidden-xs">
-						  <img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" style="position: absolute;bottom: 10px;left: 25px;" data-toggle="tooltip" data-placement="right" title="{{ $post->user->description }}">
+						  <img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" style="position: absolute;bottom: 10px;left: 25px;" data-toggle="tooltip" data-placement="right" title="{!! $post->user->description !!}">
 							<div class="img-container">
 								<div class="fill" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');"></div>
 							</div>
