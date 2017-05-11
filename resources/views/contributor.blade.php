@@ -23,7 +23,7 @@
 			<div class="col-sm-12">
 				<div class="row">
 			      <div class="col-sm-9 col-xs-12">
-			      	<h1>{{ $user->name }}</h1>
+			      	<img src="{{ $user->image }}" alt="{{ $user->name }}" class="img-circle"><h1>{{ $user->name }}</h1>
 			      </div>
 			      <div class="col-sm-3 col-xs-12">
 			      	<span>Sort by: </span>
