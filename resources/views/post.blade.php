@@ -7,12 +7,6 @@
 
 @section('head')
 	{!! $post->head !!}
-	<style>
-		div.tooltip-inner {
-			max-width: 350px;
-			word-break: break-all;
-		}
-	</style>
 @endsection
 
 @section('content')
@@ -211,7 +205,9 @@
     $(document).ready(function() {
             $("#child").css("height",$("#parent").height() - 50);
 			$(function () {
-			  $('[data-toggle="tooltip"]').tooltip()
+			  $('[data-toggle="tooltip"]').tooltip(
+				template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner my-custom-tooltip" style="width:250px;"></div></div>',
+			  )
 			});
      });
   </script>
