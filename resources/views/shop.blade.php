@@ -78,21 +78,25 @@
   		<div class="row">
       	@foreach($products as $key => $product)
 			<div class="col-sm-3 col-xs-12 text-center">
-				<a href="{!! $product->slug !!}" target="_blank">
-					<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
-				</a>
-		    	<p class="text-center">
-					<strong><a href="{!! $product->slug !!}" target="_blank">{!! str_limit(strip_tags($product->name), $limit = 50, $end = '...') !!}</a></strong><br />
-		    		@if($product->sale > 0)
-		    			<strong>${!! $product->saleDisplay !!}</strong><br />
-		    			<s><small>${!! $product->priceDisplay !!}</small></s>
-		    		@else
-		    			<strong>${!! $product->priceDisplay !!}</strong>
-		    		@endif
-		    	</p>
-		    	<p class="text-center">
-					<a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-                </p>
+				<div class="thumbnail img-shadow">
+					<a href="{!! $product->slug !!}" target="_blank">
+						<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
+					</a>
+					<div class="caption text-center">
+						<a href="{{ $product->slug }}" title="{!! $product->name !!}" target="_blank">											
+							<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit(strip_tags($product->name), $limit = 12, $end = '...') !!}</strong><br /></p>
+						</a>
+						@if($product->sale > 0)
+							<strong>${!! $product->saleDisplay !!}</strong><br />
+							<s><small>${!! $product->priceDisplay !!}</small></s>
+						@else
+							<strong>${!! $product->priceDisplay !!}</strong>
+						@endif
+						<p class="text-center">
+							<a class="btn btn-danger" href="{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+						</p>
+					</div>													
+				</div>
 			</div>
             @if(($key + 1) % 4 == 0)
               </div><div class="row">
