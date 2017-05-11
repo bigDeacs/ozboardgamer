@@ -7,6 +7,22 @@
 
 @section('head')
 	{!! $post->head !!}
+	<style>
+		.tooltip.right .tooltip-arrow {
+		  top: 50%;
+		  left: 0;
+		  margin-top: -5px;
+		  border-right-color: #000000;
+		  border-width: 5px 5px 5px 0;
+		  width: 300px;
+		}
+		.tooltip-inner {
+		  color: #000;
+		  background: #fff;
+		  border: solid 1px #fff;
+		  width: 300px;
+		}
+	</style>
 @endsection
 
 @section('content')
@@ -205,9 +221,7 @@
     $(document).ready(function() {
             $("#child").css("height",$("#parent").height() - 50);
 			$(function () {
-			  $('[data-toggle="tooltip"]').tooltip(
-				template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner my-custom-tooltip" style="width:250px;"></div></div>',
-			  )
+			  $('[data-toggle="tooltip"]').tooltip()
 			});
      });
   </script>
