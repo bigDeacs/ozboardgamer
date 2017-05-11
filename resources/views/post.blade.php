@@ -9,7 +9,8 @@
 	{!! $post->head !!}
 	<style>
 		.tooltip-inner {
-		  width: 350px!important;
+			max-width: 300px!important;
+			width: 300px!important;
 		}
 	</style>
 @endsection
