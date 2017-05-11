@@ -35,6 +35,8 @@
 					@unless($post->image == null)
 						<div class="row">
 						  <div class="col-sm-12 hidden-xs">
+							<img src="{{ $user->image }}" alt="{{ $user->name }}" class="img-circle img-shadow" width="100px" height="auto" style="position: absolute;bottom: 10px;left: 25px;">
+							<h1>{{ $post->name }}</h1>
 							<div class="img-container">
 								<div class="fill" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');" itemprop="image"></div>
 							</div>
@@ -86,6 +88,7 @@
 					@unless($post->image == null)
 						<div class="row">
 						  <div class="col-sm-12 hidden-xs">
+						  <img src="{{ $user->image }}" alt="{{ $user->name }}" class="img-circle img-shadow" width="100px" height="auto" style="position: absolute;bottom: 10px;left: 25px;">
 							<div class="img-container">
 								<div class="fill" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');"></div>
 							</div>
@@ -98,8 +101,7 @@
 					  @else
 						<div class="col-sm-9 col-xs-12">
 					  @endif					
-						<div class="panel panel-success" style="padding: 0 10px;" id="parent">
-							<h1>{{ $post->name }}</h1>
+						<div class="panel panel-success" style="padding: 0 10px;" id="parent">							
 							<div class="row">
 								<div class="col-xs-12 col-sm-7 col-md-8 col-lg-9">
 									<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
