@@ -7,7 +7,7 @@
 
 @section('head')
 	{!! $post->head !!}
-	<style>.tooltip.inner { width: 250px; }</style>
+	<style>.tooltip { width: 300px; }</style>
 @endsection
 
 @section('content')
