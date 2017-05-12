@@ -123,9 +123,9 @@
 								<div class="panel-body">									
 									<h1 class="text-center">Login using:</h1>		
 									<div class="row text-center">
-										<div class="col-xs-4"><a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
-										<div class="col-xs-4"><a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
-										<div class="col-xs-4"><a href="/twitter" class="btn btn-info"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
+										<div class="col-xs-4"><a href="/facebook" class="btn btn-primary btn-block"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
+										<div class="col-xs-4"><a href="/google" class="btn btn-danger btn-block"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+										<div class="col-xs-4"><a href="/twitter" class="btn btn-info btn-block"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
 								   </div>
 								   <br />
 									<div class="row text-center">
@@ -136,7 +136,7 @@
 									<form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
 										<input type="hidden" name="_token" value="{{ csrf_token() }}">
 										<div class="form-group">
-										   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+										   <div class="col-xs-12">
 											   <div class="input-group">
 													<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
 													<input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-Mail Address">
@@ -144,7 +144,7 @@
 											</div>
 										</div>
 										<div class="form-group">
-										   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+										   <div class="col-xs-12">
 												<div class="input-group">
 													<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
 													<input type="password" class="form-control" name="password" placeholder="Password">
@@ -152,20 +152,19 @@
 											</div>
 										</div>
 										<div class="form-group">
-										   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+										   <div class="col-xs-12">
 												<button type="submit" class="btn btn-primary btn-block">Login</button>
 											</div>
 										</div>
 								   </form>
 								   @if($errors->any())
-									   <div class="col-xs-12 col-sm-10 col-sm-offset-1 alert alert-danger">
+									   <div class="col-xs-12 alert alert-danger">
 										 <strong>Whoops!</strong> There were some problems with your input.<br><br>
 										 <ul>
 											 <li>{{$errors->first()}}</li>
 										 </ul>
 									   </div>
-									 @endif		
-								   <hr />
+									 @endif										   
 								</div>
 							</div>							
 						</div>
