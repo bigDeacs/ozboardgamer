@@ -150,20 +150,20 @@
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #008751;">Account <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											 <div class="row" style="min-width: 300px;">
-												<div class="hidden-xs col-sm-4">												
+												<div class="hidden-xs col-sm-4 text-center">												
 													<img src="{!! Session::get('thumb') !!}" class="img-responsive" style="margin: 5px 10px;"/>
 												</div>
-												<div class="col-xs-12 col-sm-8">
+												<div class="col-xs-12 col-sm-8 text-center">
 													<span class="hidden-xs">{{ Session::get('name') }}</span>
 													<p class="hidden-xs"><small>{{ Session::get('email') }}</small></p>
 													<a href="/users/{{ Session::get('slug') }}?page=1" class="btn btn-primary"><i class="fa fa-user"></i> View Profile</a></li>												
 												</div>
 											 </div>
 											<div class="row" style="background: #222222;color: #9d9d9d;margin: 10px auto 0;">
-												<div class="col-xs-6 hidden-xs">
+												<div class="col-xs-6 hidden-xs text-center">
 													<a href="mailto:ozboardgamer@gmail.com" class="btn btn-warning pull-left" style="margin: 10px;"><i class="fa fa-question-circle" aria-hidden="true"></i> Trouble?</a></li>    
 												</div>
-												<div class="col-xs-12 col-sm-6">
+												<div class="col-xs-12 col-sm-6 text-center">
 													<a href="/logout" class="btn btn-danger pull-right" style="margin: 10px;"><i class="fa fa-sign-out"></i> Logout</a></li>    
 												</div>
 											</div>
@@ -173,7 +173,7 @@
 										 <ul class="dropdown-menu">
 											<li class="text-center"><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
 											<li class="text-center"><a href="/signup"><i class="fa fa-user-plus"></i> Signup</a></li>
-											<div class="row" style="background: #222222;color: #9d9d9d;margin: auto;">
+											<div class="row" style="background: #222222;color: #9d9d9d;margin: 10px auto 0;padding: 5px 0;">
 												<li class="text-center col-xs-12">Login Using:</li>
 												<li class="text-center col-xs-4"><a href="/facebook" title="Login/Signup using Facebook"><i class="fa fa-facebook-official fa-2x"></i></a></li>
 												<li class="text-center col-xs-4"><a href="/google" title="Login/Signup using Google"><i class="fa fa-google-plus-official fa-2x"></i></a></li>
