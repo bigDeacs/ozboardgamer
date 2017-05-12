@@ -159,6 +159,7 @@
 								   <div class="row text-center">
 									 <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
 									 <a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a>
+									 <a href="/twitter" class="btn btn-info" style="display:none;"><i class="fa fa-google" aria-hidden="true"></i> Login with Twitter</a>
 								   </div>
 								   <hr />
 								</div>

@@ -30,6 +30,9 @@ Route::get('/facebook/callback', 'SiteController@handleFacebookProviderCallback'
 Route::get('/google', 'SiteController@redirectToGoogleProvider');
 Route::get('/google/callback', 'SiteController@handleGoogleProviderCallback');
 
+Route::get('/twitter', 'SiteController@redirectToTwitterProvider');
+Route::get('/twitter/callback', 'SiteController@handleTwitterProviderCallback');
+
 Route::get('/logout', 'SiteController@logout');
 
 Route::get('home', 'AdminController@index');

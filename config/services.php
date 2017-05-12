@@ -45,5 +45,11 @@ return [
 	    'client_secret' => 'oGhCNUrn0JaqJDiMWNTIBOhk',
 	    'redirect' => 'https://ozboardgamer.com/google/callback',
 	],
+	
+	'twitter' => [
+	    'client_id' => 'NeDgxNygUZpIqLRzBQ7bdqAAW',
+	    'client_secret' => 'cvlrR7wb9ljoN8lBSX3mU21FpIiiCf10RTYat84S5QmqV540w0',
+	    'redirect' => 'https://ozboardgamer.com/twitter/callback',
+	],
 
 ];

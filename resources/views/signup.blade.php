@@ -175,6 +175,7 @@
 								   <div class="row text-center">
 									 <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Signup with Facebook</a>
 									 <a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Signup with Google</a>
+									 <a href="/twitter" class="btn btn-info" style="display:none;"><i class="fa fa-google" aria-hidden="true"></i> Signup with Twitter</a>
 								   </div>
 								   <hr />
 								</div>

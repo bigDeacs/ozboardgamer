@@ -237,6 +237,18 @@ class SiteController extends Controller {
 								->scopes(['profile', 'email'])
 								->redirect();
     }
+	
+			/**
+     * Redirect the user to the Facebook authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToTwitterProvider()
+    {
+		Session::put('last_page', $_SERVER['HTTP_REFERER']);
+        return Socialite::driver('twitter')
+								->redirect();
+    }
 
     /**
      * Obtain the user information from Facebook.
@@ -312,6 +324,58 @@ class SiteController extends Controller {
 			$email = $google->getEmail();
 			$name = $google->getName();
 			$thumb = $google->getAvatar();
+
+			$fname = $name;
+			$lname = '';
+			$gender = '';
+
+			$user = User::firstOrNew(['email' => $email]);
+			if($user->exists == false)
+			{
+				$user->name = $name;
+				$user->slug = str_slug($name).'-'.date("dmy");
+				$user->image = $thumb;
+				$user->password = Hash::make(str_slug($name));
+				$user->role = 'b';
+				$user->status = 1;
+				$user->save();
+
+				$parts = explode(" ", $user->name);
+				$lastname = array_pop($parts);
+				$firstname = implode(" ", $parts);
+
+				$this->syncMailchimp($user->email, $firstname, $lastname, null);
+			}
+
+			Session::put('id', $user->id);
+			Session::put('name', $user->name);
+			Session::put('slug', $user->slug);
+			Session::put('email', $user->email);
+			Session::put('thumb', $user->thumb);
+			
+			return redirect(Session::get('last_page'));
+		}
+		
+		
+		/**
+		 * Obtain the user information from Facebook.
+		 *
+		 * @return Response
+		 */
+		public function handleTwitterProviderCallback()
+		{
+			$twitter = Socialite::driver('twitter')
+							->user();
+
+			// OAuth Two Providers
+			$token = $twitter->token;
+			$refreshToken = $twitter->refreshToken; // not always provided
+			$expiresIn = $twitter->expiresIn;
+
+			$id = $twitter->getId();
+			$email = $twitter->getEmail();
+			$name = $twitter->getName();
+			$thumb = $twitter->getAvatar();
 
 			$fname = $name;
 			$lname = '';
