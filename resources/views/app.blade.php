@@ -161,10 +161,10 @@
 											 </div>
 											<div class="row" style="background: #222222;color: #9d9d9d;margin: 10px auto 0;">
 												<div class="col-xs-6 hidden-xs text-center">
-													<a href="mailto:ozboardgamer@gmail.com" class="btn btn-warning pull-left" style="margin: 10px;"><i class="fa fa-question-circle" aria-hidden="true"></i> Trouble?</a></li>    
+													<a href="mailto:ozboardgamer@gmail.com" class="btn btn-warning" style="margin: 10px;"><i class="fa fa-question-circle" aria-hidden="true"></i> Trouble?</a></li>    
 												</div>
 												<div class="col-xs-12 col-sm-6 text-center">
-													<a href="/logout" class="btn btn-danger pull-right" style="margin: 10px;"><i class="fa fa-sign-out"></i> Logout</a></li>    
+													<a href="/logout" class="btn btn-danger" style="margin: 10px;"><i class="fa fa-sign-out"></i> Logout</a></li>    
 												</div>
 											</div>
 										</ul>
