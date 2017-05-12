@@ -123,9 +123,9 @@
 								<div class="panel-body">									
 									<h1 class="text-center">Login Using:</h1>		
 									<div class="row text-center">
-										<div class="col-xs-4"><a href="/facebook" class="btn btn-primary btn-block"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
-										<div class="col-xs-4"><a href="/google" class="btn btn-danger btn-block"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
-										<div class="col-xs-4"><a href="/twitter" class="btn btn-info btn-block"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
+										<div class="col-xs-4"><a href="/facebook" class="btn btn-primary btn-block" title="Login using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
+										<div class="col-xs-4"><a href="/google" class="btn btn-danger btn-block" title="Login using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+										<div class="col-xs-4"><a href="/twitter" class="btn btn-info btn-block" title="Login using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
 								   </div>
 								   <br />
 									<div class="row text-center">

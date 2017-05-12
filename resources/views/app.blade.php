@@ -176,9 +176,9 @@
 											<li role="separator" class="divider"></li>
 											<li class="text-center">Login Using:</li>
 											<div class="row" style="margin: auto;">
-												<li class="text-center col-xs-4"><a href="/facebook"><i class="fa fa-facebook-official fa-2x"></i></a></li>
-												<li class="text-center col-xs-4"><a href="/google"><i class="fa fa-google-plus-official fa-2x"></i></a></li>
-												<li class="text-center col-xs-4"><a href="/twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
+												<li class="text-center col-xs-4"><a href="/facebook" title="Login/Signup using Facebook"><i class="fa fa-facebook-official fa-2x"></i></a></li>
+												<li class="text-center col-xs-4"><a href="/google" title="Login/Signup using Google"><i class="fa fa-google-plus-official fa-2x"></i></a></li>
+												<li class="text-center col-xs-4"><a href="/twitter" title="Login/Signup using Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
 											</div>
 										 </ul>									
 									@endif
