@@ -369,7 +369,6 @@ class SiteController extends Controller {
 
 			// OAuth Two Providers
 			$token = $twitter->token;
-			$refreshToken = $twitter->refreshToken; // not always provided
 			$expiresIn = $twitter->expiresIn;
 
 			$id = $twitter->getId();
