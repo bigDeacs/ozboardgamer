@@ -121,7 +121,7 @@
 							<div class="panel panel-default" style="margin-top: 25px;">
 								<div class="panel-heading"></div>
 								<div class="panel-body">									
-									<h1 class="text-center">Login using:</h1>		
+									<h1 class="text-center">Login Using:</h1>		
 									<div class="row text-center">
 										<div class="col-xs-4"><a href="/facebook" class="btn btn-primary btn-block"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
 										<div class="col-xs-4"><a href="/google" class="btn btn-danger btn-block"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>

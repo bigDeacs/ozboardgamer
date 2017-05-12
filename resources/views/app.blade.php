@@ -174,9 +174,12 @@
 											<li class="text-center"><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
 											<li class="text-center"><a href="/signup"><i class="fa fa-user-plus"></i> Signup</a></li>
 											<li role="separator" class="divider"></li>
-											<li class="text-center"><a href="/facebook"><i class="fa fa-facebook-official"></i> Facebook Login</a></li>
-											<li class="text-center"><a href="/google"><i class="fa fa-google-plus-official"></i> Google+ Login</a></li>
-											<li class="text-center"><a href="/twitter"><i class="fa fa-twitter"></i> Twitter Login</a></li>
+											<li class="text-center">Login Using:</li>
+											<div class="row" style="margin: auto;">
+												<li class="text-center col-xs-4"><a href="/facebook"><i class="fa fa-facebook-official fa-2x"></i></a></li>
+												<li class="text-center col-xs-4"><a href="/google"><i class="fa fa-google-plus-official fa-2x"></i></a></li>
+												<li class="text-center col-xs-4"><a href="/twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
+											</div>
 										 </ul>									
 									@endif
 								</li> 
