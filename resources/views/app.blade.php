@@ -176,6 +176,7 @@
 											<li role="separator" class="divider"></li>
 											<li class="text-center"><a href="/facebook"><i class="fa fa-facebook-official"></i> Facebook Login</a></li>
 											<li class="text-center"><a href="/google"><i class="fa fa-google-plus-official"></i> Google+ Login</a></li>
+											<li class="text-center"><a href="/twitter"><i class="fa fa-twitter"></i> Twitter Login</a></li>
 										 </ul>									
 									@endif
 								</li> 
