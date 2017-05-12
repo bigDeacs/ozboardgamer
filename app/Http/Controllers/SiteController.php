@@ -247,7 +247,6 @@ class SiteController extends Controller {
     {
 		Session::put('last_page', $_SERVER['HTTP_REFERER']);
         return Socialite::driver('twitter')
-								->scopes(['user:email'])
 								->redirect();
     }
 
@@ -366,7 +365,6 @@ class SiteController extends Controller {
 		public function handleTwitterProviderCallback()
 		{
 			$twitter = Socialite::driver('twitter')
-							->scopes(['user:email'])
 							->user();
 
 			// OAuth Two Providers
@@ -1029,6 +1027,11 @@ class SiteController extends Controller {
 		public function privacy()
 		{				
 			return view('privacy');
+		}	
+		
+		public function terms()
+		{				
+			return view('terms');
 		}	
 
 		public function shop()
