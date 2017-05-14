@@ -372,7 +372,7 @@ class SiteController extends Controller {
 
 			$id = $twitter->getId();
 			$email = $twitter->getEmail();
-			$name = $twitter->getName();
+			$name = $twitter->getNickname();
 			$thumb = $twitter->getAvatar();
 
 			$fname = $name;
