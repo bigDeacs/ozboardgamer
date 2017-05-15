@@ -79,17 +79,17 @@
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 										@else
 											 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/{{ $category->slug }}/{{ $post->slug }}#disqus_thread"></a>
-										@endif 											
-                                        @unless($post->games->isEmpty())
-											<span class="hidden-xs">
-												 | <span class="fa fa-trophy"></span>
-												<span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
-													@foreach($post->games as $key => $game)
-														<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>{{ ($key == (count($post->games) -1)) ? '' : ',' }}
-													@endforeach
+											@unless($post->games->isEmpty())
+												<span class="hidden-xs">
+													 | <span class="fa fa-trophy"></span>
+													<span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
+														@foreach($post->games as $key => $game)
+															<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>{{ ($key == (count($post->games) -1)) ? '' : ',' }}
+														@endforeach
+													</span>
 												</span>
-											</span>
-                                        @endunless
+											@endunless
+										@endif 											                                        
                                     </div>
                                 </div>
                                 <div class="row post-content">

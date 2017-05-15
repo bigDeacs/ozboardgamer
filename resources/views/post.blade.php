@@ -57,12 +57,8 @@
 						  </div>
 						</div>
 					@endunless
-					<div class="row">
-						@if($post->games->isEmpty())
-							<div class="col-sm-12 col-xs-12">
-						  @else
-							<div class="col-sm-9 col-xs-12">
-						  @endif					
+					<div class="row">					
+						<div class="col-sm-12 col-xs-12">				
 							<div class="panel panel-success" style="padding: 0 10px;" id="parent">
 								<h1 itemprop="name"><i class="fa fa-lock" aria-hidden="true"></i> Uh oh!</h1>
 								<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}" itemprop="author">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
@@ -78,23 +74,6 @@
 								</p>
 							</div>
 						  </div>
-						  @unless($games->isEmpty())
-							<div class="col-sm-3 hidden-xs text-center lead" itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
-								<p><strong>Games mentioned:</strong></p>
-								<div id="child" class="scrollBox">
-									@foreach($games as $game)
-										<div class="row">
-											<div class="col-xs-12">
-												<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-													<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive img-shadow" itemprop="image" />
-												</a>
-												<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}"><span itemprop="name">{{ $game->name }}</span></a></p>
-											</div>
-										</div>
-									@endforeach
-								</div>
-							</div>
-						  @endunless
 					</div>
 				</div>
 			@else	
