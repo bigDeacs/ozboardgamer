@@ -366,15 +366,14 @@ class SiteController extends Controller {
 		{
 			$twitter = Socialite::driver('twitter')
 							->user();
-			$t = Socialite::driver('twitter');
 
 			// OAuth Two Providers
 			$token = $twitter->token;
 
 			$id = $twitter->getId();
 			$email = $twitter->getEmail();
-			$name = $t->getName();
-			$thumb = $t->getAvatar();
+			$name = $twitter->getName();
+			$thumb = $twitter->getAvatar();
 
 			$fname = $name;
 			$lname = '';
