@@ -77,7 +77,7 @@
 											</div>	
 										</a>
 									@else										
-										<a href="/{{ $category->slug }}/{{ $post->slug }}" title="{{ $game->name }}">
+										<a href="/{{ $post->category->slug }}/{{ $post->slug }}" title="{{ $game->name }}">
 											<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
 										</a>														
 									@endif	
@@ -93,7 +93,7 @@
 														<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
 													</a>
 												@else
-													<a href="/{{ $category->slug }}/{{ $post->slug }}" class="post-title" itemprop="name">
+													<a href="/{{ $post->category->slug }}/{{ $post->slug }}" class="post-title" itemprop="name">
 														{!! $post->name !!}
 													</a>
 												@endif
@@ -108,7 +108,7 @@
                                         </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 										@else
-											 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/{{ $category->slug }}/{{ $post->slug }}#disqus_thread"></a>
+											 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/{{ $post->category->slug }}/{{ $post->slug }}#disqus_thread"></a>
 											@unless($post->games->isEmpty())
 												<span class="hidden-xs">
 													 | <span class="fa fa-trophy"></span>
@@ -133,7 +133,7 @@
 										</p>
 										<p>												
 											@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
-												<a class="btn btn-danger pull-right" href="/{{ $category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+												<a class="btn btn-danger pull-right" href="/{{ $post->category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
 											@endunless   													
 										</p>										
                                     </div>
