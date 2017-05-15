@@ -247,6 +247,7 @@ class SiteController extends Controller {
     {
 		Session::put('last_page', $_SERVER['HTTP_REFERER']);
         return Socialite::driver('twitter')
+								->scopes(['scope1', 'scope2'])
 								->redirect();
     }
 
@@ -365,6 +366,7 @@ class SiteController extends Controller {
 		public function handleTwitterProviderCallback()
 		{
 			$twitter = Socialite::driver('twitter')
+							->scopes(['scope1', 'scope2'])
 							->user();
 
 			// OAuth Two Providers
@@ -374,7 +376,7 @@ class SiteController extends Controller {
 
 			$id = $twitter->getId();
 			$email = $twitter->getEmail();
-			$name = $twitter->getNickname();
+			$name = $twitter->getName();
 			$thumb = $twitter->getAvatar();
 
 			$fname = $name;
