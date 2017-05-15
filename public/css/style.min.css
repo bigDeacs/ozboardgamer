@@ -226,7 +226,6 @@ a.disabled:active, .btn.disabled:active {
 .profile-header-img > img.img-circle {
     width: 120px;
     height: 120px;
-    border: 2px solid #008751;
 }
 
 .profile-header {
