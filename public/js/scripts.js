@@ -87,8 +87,8 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
             suggestion: function(suggestion) {
               console.log(suggestion);
 			  return '<a href="'+suggestion.slug+'"><div class="row">'+
-				'<div class="col-sm-3 col-md-4"><img src="https://img.ozboardgamer.com'+suggestion.thumb+'" class="img-responsive" /></div>'+
-				'<div class="col-sm-9 col-md-8 text-left"><p><strong>'+suggestion._highlightResult.name.value+' <small>('+suggestion.published+')</small></strong></p>'+
+				'<div class="col-xs-3 col-sm-4"><img src="https://img.ozboardgamer.com'+suggestion.thumb+'" class="img-responsive" /></div>'+
+				'<div class="col-xs-9 col-sm-8 text-left"><p><strong>'+suggestion._highlightResult.name.value+' <small>('+suggestion.published+')</small></strong></p>'+
 				'<p>'+suggestion.description+'</p>'+
 				'<p><a class="btn btn-danger" href="'+suggestion.slug+'">Read more</a></p></div>'+
 				'</div></a>';
