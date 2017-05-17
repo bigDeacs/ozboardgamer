@@ -86,13 +86,12 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
             footer: '<div class="pull-right col-sm-4 col-xs-6">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
             suggestion: function(suggestion) {
               console.log(suggestion);
-              return '<a href="'+suggestion.slug+'"><div class="row">'+
-                '<div class="col-sm-2 col-xs-3"><img src="https://img.ozboardgamer.com'+suggestion.thumb+'" class="img-responsive" /></div>'+
-                '<div class="col-sm-10 col-xs-9"><div class="row"><div class="col-xs-12">'+suggestion._highlightResult.name.value+' ('+suggestion.published+')'+'</div>'+
-				'<div class="col-xs-12 hidden-xs">'+suggestion.description+'</div>'+
-				'<div class="col-xs-12"><a class="btn btn-danger" href="'+suggestion.slug+'">Read more</a></div>'+		                                            
-				'</div></div>'+
-              '</div></a>';
+			  return '<a href="'+suggestion.slug+'"><div class="row">'+
+				'<div class="col-sm-3 col-md-4"><img src="https://img.ozboardgamer.com'+suggestion.thumb+'" class="img-responsive" /></div>'+
+				'<div class="col-sm-9 col-md-8 text-left"><p><strong>'+suggestion._highlightResult.name.value+' <small>('+suggestion.published+')</small></strong></p>'+
+				'<p>'+suggestion.description+'</p>'+
+				'<p><a class="btn btn-danger" href="'+suggestion.slug+'">Read more</a></p></div>'+
+				'</div></a>';
             }
           }
         }
