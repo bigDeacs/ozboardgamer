@@ -419,6 +419,9 @@
     </script>    
 	@if(Session::has('name') || Request::is('login') || Request::is('signup'))
 		<script>
+			$('#searchWrapper').on('shown.bs.modal', function() {
+			  $(this).find('input:first').focus();
+			});	
 			$(document).ready(function(){
 				$(window).scroll(function () {
 					if ($(this).scrollTop() > 50) {
@@ -433,14 +436,14 @@
 						scrollTop: 0
 					}, 800);
 					return false;
-				});   			
-				$('#searchWrapper').on('shown.bs.modal', function() {
-				  $(this).find('input:first').focus();
-				});
+				});   							
 			});
 		</script>
 	@else
 		<script>
+			$('#searchWrapper').on('shown.bs.modal', function() {
+			  $(this).find('input:first').focus();
+			});
 			$(document).ready(function(){
 				 $(window).scroll(function () {
 					if ($(this).scrollTop() > 50) {
@@ -455,10 +458,7 @@
 						scrollTop: 0
 					}, 800);
 					return false;
-				});   			
-				$('#searchWrapper').on('shown.bs.modal', function() {
-				  $(this).find('input:first').focus();
-				});				
+				});   						
 				// Cookie Set
 				var my_cookie = $.cookie($('.modal-check').attr('name'));
 				if (my_cookie && my_cookie == "true") {
