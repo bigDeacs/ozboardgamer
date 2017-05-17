@@ -502,9 +502,17 @@
         </div>
       @else
         <hr />
-        <div class="row text-center">
-          <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a> or <a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a> <span class="hidden-xs">to add comments</span>
-        </div>
+		  <div class="row text-center">
+			<div class="col-xs-12">
+				<h4>Login/Signup Using:</h4>
+				<div class="row text-center">
+					<div class="col-xs-4"><a href="/facebook" class="btn btn-primary btn-block" title="Login/Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
+					<div class="col-xs-4"><a href="/google" class="btn btn-danger btn-block" title="Login/Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+					<div class="col-xs-4"><a href="/twitter" class="btn btn-info btn-block" title="Login/Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
+			   </div>
+				<h6>to add comments</h6>
+			</div>
+		  </div>
       @endif
 	</div>
 @endsection
