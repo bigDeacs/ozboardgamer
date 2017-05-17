@@ -310,7 +310,7 @@
 	</div>	
 	
 <div class="modal fade" id="searchWrapper" tabindex="-1" role="dialog" aria-labelledby="searchWrapperLabel" aria-hidden="true">
-	 <div class="container modal-dialog">
+	 <div class="container modal-dialog modal-lg">
 		<div class="row">
 			<div class="col-sm-8 col-sm-offset-2 col-xs-12 text-center">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
