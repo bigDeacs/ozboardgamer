@@ -243,20 +243,20 @@
                     <a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;" rel="nofollow"><i class="fa fa-eye-slash" aria-hidden="true"></i> Unwatch<span class="hidden-xs hidden-sm"> Game</span></a>
                 @endif             
               @endif
-				<a href="/stores" class="btn btn-warning" style="font-size:13px;"><i class="fa fa-home" aria-hidden="true"></i> <span class="hidden-xs">Find </span>In Store</a>
-				<a href="http://www.boardgamesearch.com.au/#!/search/{!! $game->name !!}" target="_blank" class="btn btn-primary" style="font-size:13px;" title="Search on Board Game Shopper"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="hidden-xs">Find </span>Online</a>
+				<a href="/stores" class="btn btn-warning hidden-xs" style="font-size:13px;"><i class="fa fa-home" aria-hidden="true"></i> <span class="hidden-xs">Find </span>In Store</a>
+				<a href="http://www.boardgamesearch.com.au/#!/search/{!! $game->name !!}" target="_blank" class="btn btn-primary hidden-xs" style="font-size:13px;" title="Search on Board Game Shopper"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="hidden-xs">Find </span>Online</a>
           </div>
         </div>
 			    <br />
 			    <div class="row">
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><i class="fa fa-book" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Game Description</span></a></li>
-						<li role="presentation"><a href="#contents" aria-controls="contents" role="tab" data-toggle="tab"><i class="fa fa-diamond" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Game Contents</span></a></li>
+						<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><i class="fa fa-book" aria-hidden="true"></i> Game<span class="hidden-xs hidden-sm"> Description</span></a></li>
+						<li role="presentation"><a href="#contents" aria-controls="contents" role="tab" data-toggle="tab"><i class="fa fa-diamond" aria-hidden="true"></i> Game<span class="hidden-xs hidden-sm"> Contents</span></a></li>
 						@unless($posts->isEmpty())
-							<li role="presentation"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab"><i class="fa fa-video-camera" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Game Videos</span></a></li>
+							<li role="presentation" class="hidden-xs"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab"><i class="fa fa-video-camera" aria-hidden="true"></i><span class="hidden-sm"> Game Videos</span></a></li>
 						@endunless
-						<li role="presentation"><a href="#related" aria-controls="related" role="tab" data-toggle="tab"><i class="fa fa-link" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Similar Games</span></a></li>
+						<li role="presentation"><a href="#related" aria-controls="related" role="tab" data-toggle="tab"><i class="fa fa-link" aria-hidden="true"></i> Similar<span class="hidden-xs hidden-sm"> Games</span></a></li>
 					</ul>
 
 					<!-- Tab panes -->
