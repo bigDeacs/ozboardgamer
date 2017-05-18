@@ -253,8 +253,8 @@
 			    <div class="row">
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><i class="fa fa-book" aria-hidden="true"></i> Game<span class="hidden-xs hidden-sm"> Description</span></a></li>
-						<li role="presentation"><a href="#contents" aria-controls="contents" role="tab" data-toggle="tab"><i class="fa fa-diamond" aria-hidden="true"></i> Game<span class="hidden-xs hidden-sm"> Contents</span></a></li>
+						<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><i class="fa fa-book" aria-hidden="true"></i> <span class="hidden-xs hidden-sm">Game </span>Description</a></li>
+						<li role="presentation"><a href="#contents" aria-controls="contents" role="tab" data-toggle="tab"><i class="fa fa-diamond" aria-hidden="true"></i> <span class="hidden-xs hidden-sm">Game </span>Contents</a></li>
 						@unless($posts->isEmpty())
 							<li role="presentation" class="hidden-xs"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab"><i class="fa fa-video-camera" aria-hidden="true"></i><span class="hidden-sm"> Game Videos</span></a></li>
 						@endunless
