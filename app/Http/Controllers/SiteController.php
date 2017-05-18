@@ -879,7 +879,7 @@ class SiteController extends Controller {
 				{
 				    $q->where('slug', '=', $slug);
 				   	$q->where('type', '=', 'owned');
-				})->orderBy($sort, $direction)->paginate(12);
+				})->orderBy($sort, $direction)->paginate(10);
 
 				$wanted = Game::where('status', '=', '1')->with('types')->with('users')
 				->whereHas('users', function($q) use($slug)

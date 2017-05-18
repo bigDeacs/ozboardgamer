@@ -353,124 +353,130 @@
 					</div>
 			    </div>
 	      </div>
-	      <div class="col-md-3 col-sm-4 col-xs-12">
-			@if($game->rating < 1)
-				<img src="https://img.ozboardgamer.com/img/1.png" class="img-responsive" />
-			@elseif($game->rating < 2)
-				<img src="https://img.ozboardgamer.com/img/2.png" class="img-responsive" />
-			@elseif($game->rating < 3)
-				<img src="https://img.ozboardgamer.com/img/3.png" class="img-responsive" />
-			@elseif($game->rating < 4)
-				<img src="https://img.ozboardgamer.com/img/4.png" class="img-responsive" />
-			@elseif($game->rating < 5)
-				<img src="https://img.ozboardgamer.com/img/5.png" class="img-responsive" />
-			@elseif($game->rating < 6)
-				<img src="https://img.ozboardgamer.com/img/6.png" class="img-responsive" />
-			@elseif($game->rating < 7)
-				<img src="https://img.ozboardgamer.com/img/7.png" class="img-responsive" />
-			@elseif($game->rating < 8)
-				<img src="https://img.ozboardgamer.com/img/8.png" class="img-responsive" />
-			@elseif($game->rating < 9)
-				<img src="https://img.ozboardgamer.com/img/9.png" class="img-responsive" />
-			@else
-				<img src="https://img.ozboardgamer.com/img/10.png" class="img-responsive" />
-			@endif
-			<div class="text-center lead" itemscope itemtype="http://schema.org/Rating">
-				<meta itemprop="worstRating" content = "0">
-				<strong><span itemprop="ratingValue">{{ number_format((float)$game->rating, 1, '.', '') }}</span>/<span itemprop="bestRating">10</span></strong>
+			<div class="col-md-3 col-sm-4 col-xs-12">
+				<div class="row">
+					<div class="col-sm-12 col-xs-6">
+						@if($game->rating < 1)
+							<img src="https://img.ozboardgamer.com/img/1.png" class="img-responsive" />
+						@elseif($game->rating < 2)
+							<img src="https://img.ozboardgamer.com/img/2.png" class="img-responsive" />
+						@elseif($game->rating < 3)
+							<img src="https://img.ozboardgamer.com/img/3.png" class="img-responsive" />
+						@elseif($game->rating < 4)
+							<img src="https://img.ozboardgamer.com/img/4.png" class="img-responsive" />
+						@elseif($game->rating < 5)
+							<img src="https://img.ozboardgamer.com/img/5.png" class="img-responsive" />
+						@elseif($game->rating < 6)
+							<img src="https://img.ozboardgamer.com/img/6.png" class="img-responsive" />
+						@elseif($game->rating < 7)
+							<img src="https://img.ozboardgamer.com/img/7.png" class="img-responsive" />
+						@elseif($game->rating < 8)
+							<img src="https://img.ozboardgamer.com/img/8.png" class="img-responsive" />
+						@elseif($game->rating < 9)
+							<img src="https://img.ozboardgamer.com/img/9.png" class="img-responsive" />
+						@else
+							<img src="https://img.ozboardgamer.com/img/10.png" class="img-responsive" />
+						@endif
+						<div class="text-center lead" itemscope itemtype="http://schema.org/Rating">
+							<meta itemprop="worstRating" content = "0">
+							<strong><span itemprop="ratingValue">{{ number_format((float)$game->rating, 1, '.', '') }}</span>/<span itemprop="bestRating">10</span></strong>
+						</div>
+						<hr />
+						<div class="text-center">
+							<strong><i class="icon-luck"></i> Luck <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much luck is a part of gameplay"></span></strong>
+							<input id="luck" name="luck" value="{{ $game->luck }}" class="rating-loading">
+
+							<strong><i class="icon-strategy"></i> Strategy <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much strategy is a part of gameplay"></span></strong>
+							<input id="strategy" name="strategy" value="{{ $game->strategy }}" class="rating-loading">
+
+							<strong><i class="icon-complexity"></i> Complexity <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How many complex rules there are"></span></strong>
+							<input id="complexity" name="complexity" value="{{ $game->complexity }}" class="rating-loading">
+
+							<strong><i class="icon-replay"></i> Replay <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much replay value the game has"></span></strong>
+							<input id="replay" name="replay" value="{{ $game->replay }}" class="rating-loading">
+
+							<strong><i class="icon-components"></i> Components <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="The quality of what comes in the box"></span></strong>
+							<input id="components" name="components" value="{{ $game->components }}" class="rating-loading">
+
+							<strong><i class="icon-learning"></i> Learning <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How easy the game is to learn"></span></strong>
+							<input id="learning" name="learning" value="{{ $game->learning }}" class="rating-loading">
+
+							<strong><i class="icon-theme"></i> Theme <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much story/flavour is in the game"></span></strong>
+							<input id="theming" name="theming" value="{{ $game->theming }}" class="rating-loading">
+
+							<strong><i class="icon-scaling"></i> Scaling <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How well the game scales between player counts"></span></strong>
+							<input id="scaling" name="scaling" value="{{ $game->scaling }}" class="rating-loading">
+							<hr />
+						</div>
+					</div>
+					<div class="col-sm-12 col-xs-6">
+						@unless($game->family == null)
+							<strong>Family</strong>
+							<div class="row">
+								<div class="col-sm-12">
+									<a href="/families/{{ $game->family->slug }}">{{ $game->family->name }}</a>
+								</div>
+							</div>
+						@endunless
+						@unless($game->themes->isEmpty())
+							<strong>Themes</strong>
+							<div class="row">
+								<div class="col-sm-12">
+									@foreach($game->themes as $key => $theme)
+										@if($key == (count($game->themes) -1))
+											<a href="/themes/{{ $theme->slug }}">{{ $theme->name }}</a>
+										@else
+											<a href="/themes/{{ $theme->slug }}">{{ $theme->name }}</a>,
+										@endif
+									@endforeach
+								</div>
+							</div>
+						@endunless
+						@unless($game->mechanics->isEmpty())
+							<strong>Mechanics</strong>
+							<div class="row">
+								<div class="col-sm-12">
+									@foreach($game->mechanics as $key => $mechanic)
+										@if($key == (count($game->mechanics) -1))
+											<a href="/mechanics/{{ $mechanic->slug }}">{{ $mechanic->name }}</a>
+										@else
+											<a href="/mechanics/{{ $mechanic->slug }}">{{ $mechanic->name }}</a>,
+										@endif
+									@endforeach
+								</div>
+							</div>
+						@endunless
+						@unless($game->types->isEmpty())
+							<strong>Game Types</strong>
+							<div class="row">
+								<div class="col-sm-12">
+									@foreach($game->types as $key => $type)
+										@if($key == (count($game->types) -1))
+											<a href="/games/{{ $type->slug }}?page=1&sort=name-asc">{{ $type->name }}</a>
+										@else
+											<a href="/games/{{ $type->slug }}?page=1&sort=name-asc">{{ $type->name }}</a>,
+										@endif
+									@endforeach
+								</div>
+							</div>
+						@endunless
+						@unless($game->designers->isEmpty())
+							<strong>Designers</strong>
+							<div class="row">
+								<div class="col-sm-12">
+									@foreach($game->designers as $key => $designer)
+										@if($key == (count($game->designers) -1))
+											<a href="/designers/{{ $designer->slug }}" itemprop="creator" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ $designer->name }}</span></a>
+										@else
+											<a href="/designers/{{ $designer->slug }}" itemprop="creator" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ $designer->name }}</span></a>,
+										@endif
+									@endforeach
+								</div>
+							</div>
+						@endunless
+					</div>
+				</div>
 			</div>
-      <hr />
-			<div class="text-center">
-			    <strong><i class="icon-luck"></i> Luck <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much luck is a part of gameplay"></span></strong>
-			    <input id="luck" name="luck" value="{{ $game->luck }}" class="rating-loading">
-
-			    <strong><i class="icon-strategy"></i> Strategy <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much strategy is a part of gameplay"></span></strong>
-			    <input id="strategy" name="strategy" value="{{ $game->strategy }}" class="rating-loading">
-
-			    <strong><i class="icon-complexity"></i> Complexity <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How many complex rules there are"></span></strong>
-			    <input id="complexity" name="complexity" value="{{ $game->complexity }}" class="rating-loading">
-
-			    <strong><i class="icon-replay"></i> Replay <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much replay value the game has"></span></strong>
-			    <input id="replay" name="replay" value="{{ $game->replay }}" class="rating-loading">
-
-			    <strong><i class="icon-components"></i> Components <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="The quality of what comes in the box"></span></strong>
-			    <input id="components" name="components" value="{{ $game->components }}" class="rating-loading">
-
-			    <strong><i class="icon-learning"></i> Learning <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How easy the game is to learn"></span></strong>
-			    <input id="learning" name="learning" value="{{ $game->learning }}" class="rating-loading">
-
-			    <strong><i class="icon-theme"></i> Theme <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much story/flavour is in the game"></span></strong>
-			    <input id="theming" name="theming" value="{{ $game->theming }}" class="rating-loading">
-
-			    <strong><i class="icon-scaling"></i> Scaling <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How well the game scales between player counts"></span></strong>
-			    <input id="scaling" name="scaling" value="{{ $game->scaling }}" class="rating-loading">
-				<hr />
-				@unless($game->family == null)
-		      		<strong>Family</strong>
-		      		<div class="row">
-						<div class="col-sm-12">
-					    	<a href="/families/{{ $game->family->slug }}">{{ $game->family->name }}</a>
-						</div>
-					</div>
-		      	@endunless
-				@unless($game->themes->isEmpty())
-					<strong>Themes</strong>
-					<div class="row">
-						<div class="col-sm-12">
-					    	@foreach($game->themes as $key => $theme)
-					    		@if($key == (count($game->themes) -1))
-					    			<a href="/themes/{{ $theme->slug }}">{{ $theme->name }}</a>
-					    		@else
-					    			<a href="/themes/{{ $theme->slug }}">{{ $theme->name }}</a>,
-					    		@endif
-					    	@endforeach
-						</div>
-					</div>
-				@endunless
-				@unless($game->mechanics->isEmpty())
-					<strong>Mechanics</strong>
-					<div class="row">
-						<div class="col-sm-12">
-					    	@foreach($game->mechanics as $key => $mechanic)
-					    		@if($key == (count($game->mechanics) -1))
-					    			<a href="/mechanics/{{ $mechanic->slug }}">{{ $mechanic->name }}</a>
-					    		@else
-					    			<a href="/mechanics/{{ $mechanic->slug }}">{{ $mechanic->name }}</a>,
-					    		@endif
-					    	@endforeach
-						</div>
-					</div>
-				@endunless
-				@unless($game->types->isEmpty())
-					<strong>Game Types</strong>
-					<div class="row">
-						<div class="col-sm-12">
-					    	@foreach($game->types as $key => $type)
-					    		@if($key == (count($game->types) -1))
-					    			<a href="/games/{{ $type->slug }}?page=1&sort=name-asc">{{ $type->name }}</a>
-					    		@else
-					    			<a href="/games/{{ $type->slug }}?page=1&sort=name-asc">{{ $type->name }}</a>,
-					    		@endif
-					    	@endforeach
-						</div>
-					</div>
-				@endunless
-				@unless($game->designers->isEmpty())
-					<strong>Designers</strong>
-					<div class="row">
-						<div class="col-sm-12">
-					    	@foreach($game->designers as $key => $designer)
-					    		@if($key == (count($game->designers) -1))
-					    			<a href="/designers/{{ $designer->slug }}" itemprop="creator" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ $designer->name }}</span></a>
-					    		@else
-					    			<a href="/designers/{{ $designer->slug }}" itemprop="creator" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ $designer->name }}</span></a>,
-					    		@endif
-					    	@endforeach
-						</div>
-					</div>
-				@endunless
-			</div>
-	      </div>
 	    </div>
 		<div class="sharethis-inline-share-buttons"></div>
       @if(Session::has('name'))
