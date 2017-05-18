@@ -256,7 +256,7 @@
 						@unless($posts->isEmpty())
 							<li role="presentation"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab"><i class="fa fa-video-camera" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Game Videos</span></a></li>
 						@endunless
-						<li role="presentation" class="hidden-xs"><a href="#related" aria-controls="related" role="tab" data-toggle="tab"><i class="fa fa-link" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Similar Games</span></a></li>
+						<li role="presentation"><a href="#related" aria-controls="related" role="tab" data-toggle="tab"><i class="fa fa-link" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Similar Games</span></a></li>
 					</ul>
 
 					<!-- Tab panes -->
