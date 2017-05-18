@@ -381,7 +381,8 @@
 							<meta itemprop="worstRating" content = "0">
 							<strong><span itemprop="ratingValue">{{ number_format((float)$game->rating, 1, '.', '') }}</span>/<span itemprop="bestRating">10</span></strong>
 						</div>
-						<hr />
+					</div>
+					<div class="col-sm-12 col-xs-6 col-xs-push-6 text-center">
 						<div class="text-center">
 							<strong><i class="icon-luck"></i> Luck <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much luck is a part of gameplay"></span></strong>
 							<input id="luck" name="luck" value="{{ $game->luck }}" class="rating-loading">
@@ -409,7 +410,7 @@
 							<hr />
 						</div>
 					</div>
-					<div class="col-sm-12 col-xs-6">
+					<div class="col-sm-12 col-xs-6 col-xs-pull-6">
 						@unless($game->family == null)
 							<strong>Family</strong>
 							<div class="row">
