@@ -57,7 +57,7 @@
 								</a>
 								<div class="caption text-center">
 									<a href="/stores/{{ $store->slug }}" title="{!! $store->name !!}">											
-										<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit($store->name, 12) !!}</strong></p>
+										<p class="text-center" style="font-size: 16px;"><strong>{!! str_limit($store->name, 12) !!}</strong></p>
 									</a>
 								</div>													
 							</div>

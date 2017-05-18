@@ -35,7 +35,7 @@
 								</a>
 								<div class="caption text-center">
 									<a href="/themes/{{ $theme->slug }}" title="{!! $theme->name !!}">											
-										<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit($theme->name, 12) !!}</strong></p>
+										<p class="text-center" style="font-size: 16px;"><strong>{!! str_limit($theme->name, 15) !!}</strong></p>
 									</a>
 								</div>
 							</div>
