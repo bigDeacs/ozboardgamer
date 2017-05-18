@@ -251,12 +251,12 @@
 			    <div class="row">
 					<!-- Nav tabs -->
 					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><span class="hidden-xs"><i class="fa fa-book" aria-hidden="true"></i> Game </span>Description</a></li>
-						<li role="presentation"><a href="#contents" aria-controls="contents" role="tab" data-toggle="tab"><span class="hidden-xs"><i class="fa fa-diamond" aria-hidden="true"></i> Game </span>Contents</a></li>
+						<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><i class="fa fa-book" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Game Description</span></a></li>
+						<li role="presentation"><a href="#contents" aria-controls="contents" role="tab" data-toggle="tab"><i class="fa fa-diamond" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Game Contents</span></a></li>
 						@unless($posts->isEmpty())
-							<li role="presentation"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab"><span class="hidden-xs"><i class="fa fa-video-camera" aria-hidden="true"></i> Game </span>Videos</a></li>
+							<li role="presentation"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab"><i class="fa fa-video-camera" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Game Videos</span></a></li>
 						@endunless
-						<li role="presentation" class="hidden-xs"><a href="#related" aria-controls="related" role="tab" data-toggle="tab"><i class="fa fa-link" aria-hidden="true"></i> Similar Games</a></li>
+						<li role="presentation" class="hidden-xs"><a href="#related" aria-controls="related" role="tab" data-toggle="tab"><i class="fa fa-link" aria-hidden="true"></i><span class="hidden-xs hidden-sm"> Similar Games</span></a></li>
 					</ul>
 
 					<!-- Tab panes -->
