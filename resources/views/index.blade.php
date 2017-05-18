@@ -221,7 +221,6 @@
                                     </div>
                                 </div>
                             @endforeach
-                            <hr />
                         </div>
                     </div>
                 @endunless
@@ -334,7 +333,6 @@
                                     </div>
                                 </div>
                             @endforeach
-                            <hr />
                         </div>
                     </div>
                 @endunless                
@@ -342,7 +340,7 @@
             <div class="col-md-3 col-sm-4 hidden-xs">       
 				@if($product)
 					<h3>Featured Product</h3>
-					<div class="row" style="margin: auto;">
+					<div class="row" style="margin: auto;border-bottom: 1px solid #DDD;">
 						<div class="col-xs-12">
 							<div class="thumbnail img-shadow text-center">
 								<a href="{!! $product->slug !!}" target="_blank">
@@ -365,7 +363,6 @@
 							</div>			
 						</div>													
 					</div>			
-					<hr class="hidden-xs" />
                 @endif
 				@unless($howtos->isEmpty())
                   <h3>Latest How To's</h3>
@@ -384,10 +381,8 @@
                           </div>
                       </div>
                   @endforeach
-                  <hr />
                 @endunless
-				<div class="fb-page" data-href="https://www.facebook.com/ozboardgamer" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/ozboardgamer" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ozboardgamer">Oz Board Gamer</a></blockquote></div>			
-                <hr class="hidden-xs" />              
+				<div class="fb-page" data-href="https://www.facebook.com/ozboardgamer" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/ozboardgamer" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ozboardgamer">Oz Board Gamer</a></blockquote></div>			           
                 @unless($news->isEmpty())
                     <h3>Latest Game News</h3>
                     @foreach($news as $entry)
@@ -405,13 +400,11 @@
                             </div>
                         </div>
                     @endforeach
-                    <hr />
                 @endunless  
                 <!-- Home Page Tower Ad Right -->
 				<div class="text-center">
 					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy Board Games online from Oz Game Shop" src="https://img.ozboardgamer.com/img/tower-ad.jpg" /></a>
 				</div>
-				<hr />
 				@unless($blogs->isEmpty())
                     <h3>Latest Blog Articles</h3>
                     @foreach($blogs as $entry)
@@ -429,7 +422,6 @@
                             </div>
                         </div>
                     @endforeach
-                    <hr />
                 @endunless  				
             </div>
         </div>
