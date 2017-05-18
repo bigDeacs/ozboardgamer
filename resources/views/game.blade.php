@@ -48,7 +48,7 @@
 					</div>
 					<div class="col-md-8 col-xs-7">						
 						@unless($game->publishers->isEmpty())
-							<div style="margin-bottom: 15px;">
+							<div style="margin-bottom: 10px;">
 								<small>
 									@foreach($game->publishers as $key => $publisher)
 										@if($key == (count($game->publishers) -1))
@@ -62,7 +62,7 @@
 							</div>
 						@endunless
 						@unless($game->children->isEmpty())
-							<div class="row hidden-xs">
+							<div class="row hidden-xs" style="margin-bottom: 10px;">
 								<div class="col-xs-12">
 									<div class="label label-warning">HAS EXPANSIONS</div>
 									@foreach($game->children as $key => $child)
@@ -76,8 +76,10 @@
 							</div>
 						@endunless
 						@unless($game->parent == null)	
-							<div class="row hidden-xs">						
-								<div class="label label-warning">EXPANSION FOR</div> <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->parent->slug }}">{{ $game->parent->name }}</a>								
+							<div class="row hidden-xs" style="margin-bottom: 10px;">				
+								<div class="col-xs-12">							
+									<div class="label label-warning">EXPANSION FOR</div> <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->parent->slug }}">{{ $game->parent->name }}</a>								
+								</div>
 							</div>
 						@endunless							
 						<div class="row text-center">
@@ -99,8 +101,7 @@
 									<p style="font-size: 20px;"><strong itemprop="timeRequired">{{ $game->time }}</strong></p>
 								</div>
 							</div>
-						</div>
-						<br />   
+						</div>  
 						<div class="row hidden-xs">
 						  @if(Session::has('name'))
 							<strong>Rate This Game</strong>
