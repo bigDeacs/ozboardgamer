@@ -154,7 +154,7 @@
 						</div>
 					  </div>
 					  @unless($games->isEmpty())
-						<div class="col-sm-3 hidden-xs text-center lead">
+						<div class="col-sm-3 hidden-xs text-center">
 							<p><strong>Games mentioned:</strong></p>
 							 <div id="child" class="scrollBox">
 										@foreach($games as $game)
@@ -163,7 +163,7 @@
 													<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
 														<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive img-shadow" itemprop="image" />
 													</a>
-													<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a></p>
+													<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}"><strong>{{ $game->name }}</strong></a></p>
 												</div>
 											</div>
 										@endforeach

@@ -93,7 +93,7 @@
 										@else
 											<img src="{{ secure_url('/', $parameters = ['img']) }}/10.png" class="img-responsive" />
 										@endif
-										<div class="text-center lead">
+										<div class="text-center small-lead">
 											<strong>{{ number_format((float)$game->rating, 1, '.', '') }}/10</strong>
 										</div>
 			                        </div>
@@ -159,7 +159,7 @@
 											@else
 												<img src="https://img.ozboardgamer.com/img/10.png" class="img-responsive" />
 											@endif
-											<div class="text-center lead">
+											<div class="text-center small-lead">
 												<strong>{{ number_format((float)$game->rating, 1, '.', '') }}/10</strong>
 											</div>
 				                        </div>
