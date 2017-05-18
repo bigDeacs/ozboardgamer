@@ -48,16 +48,18 @@
 					</div>
 					<div class="col-md-8 col-xs-7">						
 						@unless($game->publishers->isEmpty())
-							<small>
-								@foreach($game->publishers as $key => $publisher)
-									@if($key == (count($game->publishers) -1))
-										<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>
-									@else
-										<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>,
-									@endif
-								@endforeach
-								| Published: <span itemprop="datePublished">{{ $game->published }}</span>
-							</small>
+							<div style="margin-bottom: 15px;">
+								<small>
+									@foreach($game->publishers as $key => $publisher)
+										@if($key == (count($game->publishers) -1))
+											<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>
+										@else
+											<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>,
+										@endif
+									@endforeach
+									| Published: <span itemprop="datePublished">{{ $game->published }}</span>
+								</small>
+							</div>
 						@endunless
 						@unless($game->children->isEmpty())
 							<div class="row hidden-xs">
@@ -78,7 +80,6 @@
 								<div class="label label-warning">EXPANSION FOR</div> <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->parent->slug }}">{{ $game->parent->name }}</a>								
 							</div>
 						@endunless							
-						<br />
 						<div class="row text-center">
 							<div class="col-md-2 col-sm-3 col-xs-4">
 								<div class="text-center lead" style="margin-bottom: 5px;">
