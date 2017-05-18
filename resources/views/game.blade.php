@@ -43,10 +43,10 @@
 		<div class="row">
 			<div class="col-md-9 col-sm-8 col-xs-12">
 				<div class="row">					
-					<div class="col-md-4 col-sm-5 col-xs-12 text-center">
+					<div class="col-md-4 col-xs-5 text-center">
 						<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" itemprop="image" />
 					</div>
-					<div class="col-md-8 col-sm-7 col-xs-12">						
+					<div class="col-md-8 col-xs-7">						
 						@unless($game->publishers->isEmpty())
 							<small>
 								@foreach($game->publishers as $key => $publisher)
@@ -78,27 +78,27 @@
 						</div>
 						<br />
 						<div class="row text-center">
-							<div class="col-md-2 col-sm-3 col-xs-4">
-								<img src="/img/players.png" class="img-responsive" />
+							<div class="col-xs-4">
 								<div class="text-center lead" style="margin-bottom: 5px;">
-								  <strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
+									<i class="fa fa-users" aria-hidden="true"></i>				
+									<strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
 								</div>
 							</div>
-							<div class="col-md-2 col-sm-3 col-xs-4">
-								<img src="/img/ages.png" class="img-responsive" />
+							<div class="col-xs-4">								
 								<div class="text-center lead" style="margin-bottom: 5px;">
-								  <strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
+									<i class="fa fa-birthday-cake" aria-hidden="true"></i>
+									<strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
 								</div>
 							</div>
-							<div class="col-md-2 col-sm-3 col-xs-4">
-								<img src="/img/time.png" class="img-responsive" />
+							<div class="col-xs-4">								
 								<div class="text-center lead" style="margin-bottom: 5px;">
+									<i class="fa fa-clock-o" aria-hidden="true"></i>
 									<strong itemprop="timeRequired">{{ $game->time }}</strong>
 								</div>
 							</div>
 						</div>
 						<br />   
-						<div class="row">
+						<div class="row hidden-xs">
 						  @if(Session::has('name'))
 							<strong>Rate This Game</strong>
 							<div style="clear:both;"></div>
@@ -226,7 +226,7 @@
 				</div>			
           <br />
           <div class="row">
-            <div class="btn-group btn-group-justified" role="group">
+            <div class="btn-group btn-group-justified col-xs-12" role="group">
               @if(Session::has('name'))
                   @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty())
                     <a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;" rel="nofollow"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-xs hidden-sm"> to My Games</span></a>
@@ -234,13 +234,10 @@
                     <a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;" rel="nofollow"><i class="fa fa-times" aria-hidden="true"></i> Remove<span class="hidden-xs hidden-sm"> from My Games</span></a>
                 @endif
                 @if($game->users()->wherePivot('type', 'wanted')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty())
-                    <a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;" rel="nofollow"><i class="fa fa-eye" aria-hidden="true"></i> Add<span class="hidden-xs hidden-sm"> to Watchlist</span></a>
+                    <a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;" rel="nofollow"><i class="fa fa-eye" aria-hidden="true"></i> Watch<span class="hidden-xs hidden-sm"> Game</span></a>
                   @else
-                    <a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;" rel="nofollow"><i class="fa fa-eye-slash" aria-hidden="true"></i> Remove<span class="hidden-xs hidden-sm"> from Watchlist</span></a>
-                @endif
-              @else
-                <a href="/users/{{ str_slug(Session::get('slug')) }}/addToOwned/{!! $game->id !!}" disabled class="btn btn-success" style="font-size:13px;opacity: 0.5;filter: alpha(opacity=50);"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-xs hidden-sm"> to My Games</span></a>
-                <a href="/users/{{ str_slug(Session::get('slug')) }}/addToWanted/{!! $game->id !!}" disabled class="btn btn-success" style="font-size:13px;opacity: 0.5;filter: alpha(opacity=50);"><i class="fa fa-eye" aria-hidden="true"></i> Add<span class="hidden-xs hidden-sm"> to Watchlist</span></a>
+                    <a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/removeFromWanted/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;" rel="nofollow"><i class="fa fa-eye-slash" aria-hidden="true"></i> Unwatch<span class="hidden-xs hidden-sm"> Game</span></a>
+                @endif             
               @endif
 				<a href="/stores" class="btn btn-warning" style="font-size:13px;"><i class="fa fa-home" aria-hidden="true"></i> <span class="hidden-xs">Find </span>In Store</a>
 				<a href="http://www.boardgamesearch.com.au/#!/search/{!! $game->name !!}" target="_blank" class="btn btn-primary" style="font-size:13px;" title="Search on Board Game Shopper"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="hidden-xs">Find </span>Online</a>
