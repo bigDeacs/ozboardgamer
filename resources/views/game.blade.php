@@ -36,12 +36,8 @@
 	</div>
 	<div class="container" itemscope itemtype="http://schema.org/Game">
 		<div class="row">
-			<div class="col-xs-12">
-					<h1 itemprop="name">{{ $game->name }}</h1>
-			</div>
-		</div>
-		<div class="row">
 			<div class="col-md-9 col-sm-8 col-xs-12">
+				<h1 itemprop="name">{{ $game->name }}</h1>
 				<div class="row">					
 					<div class="col-md-4 col-xs-5 text-center">
 						<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" itemprop="image" />
