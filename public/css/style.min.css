@@ -77,7 +77,7 @@ a.disabled:active, .btn.disabled:active {
   }
 }
 @media (min-width: 768px) {
-	.game-panel { min-height: 650px; }
+	.game-panel { min-height: 650px!important; }
 }
 
 @media (min-width: 900px) {

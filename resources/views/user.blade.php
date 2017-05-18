@@ -60,8 +60,8 @@
             </div>
           @endif
 			    <div class="row">
-			      <div class="col-sm-9 col-xs-12" id="parent">
-              Games {{ $user->name }} Owns <span class="badge">{{ $countOwned }}</span>
+			      <div class="col-sm-8 col-xs-12" id="parent">
+              Games {{ $user->name }} Owns <span class="badge" style="background-color: #d9534f;">{{ $countOwned }}</span>
 			      	@foreach($owned as $game)
 						<div class="row" itemscope itemtype="http://schema.org/Game">
 			                <div class="col-md-12 post">
@@ -125,9 +125,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-3 hidden-xs">
+				<div class="col-sm-4 hidden-xs">
 					<div class="scrollBox" id="child">
-				      	{{ $user->name }}'s Watchlist <span class="badge">{{ $countWanted }}</span>
+				      	{{ $user->name }}'s Watchlist <span class="badge" style="background-color: #d9534f;">{{ $countWanted }}</span>
 						@foreach($wanted as $game)
 							<div class="row" itemscope itemtype="http://schema.org/Game">
 				                <div class="col-md-12 post">
