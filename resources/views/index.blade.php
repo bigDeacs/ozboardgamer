@@ -84,7 +84,7 @@
 										</a>
 										<div class="caption text-center">
 											<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">											
-												<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit($game->name, 12) !!}</strong></p>
+												<p class="text-center" style="font-size: 16px;"><strong>{!! str_limit($game->name, 15) !!}</strong></p>
 											</a>
 										</div>
 									</div>
@@ -350,7 +350,7 @@
 								</a>
 								<div class="caption text-center">
 									<a href="{{ $product->slug }}" title="{!! $product->name !!}" target="_blank">											
-										<p class="text-center" style="font-size: 13px;"><strong>{!! str_limit(strip_tags($product->name), $limit = 12, $end = '...') !!}</strong><br /></p>
+										<p class="text-center" style="font-size: 16px;"><strong>{!! str_limit(strip_tags($product->name), $limit = 12, $end = '...') !!}</strong><br /></p>
 									</a>
 									@if($product->sale > 0)
 										<strong>${!! $product->saleDisplay !!}</strong><br />
