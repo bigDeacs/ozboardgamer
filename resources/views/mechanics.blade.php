@@ -35,7 +35,7 @@
 								</a>
 								<div class="caption text-center">
 									<a href="/mechanics/{{ $mechanic->slug }}" title="{!! $mechanic->name !!}">											
-										<p class="text-center" style="font-size: 16px;"><strong>{!! str_limit($mechanic->name, 15) !!}</strong></p>
+										<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit($mechanic->name, 14) !!}</strong></p>
 									</a>
 								</div>
 							</div>
