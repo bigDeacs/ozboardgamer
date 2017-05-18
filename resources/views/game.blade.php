@@ -76,7 +76,7 @@
 								@endunless
 							</div>
 						</div>
-						<br />
+						<br /><br />
 						<div class="row text-center">
 							<div class="col-xs-4">
 								<div class="text-center lead" style="margin-bottom: 5px;">
