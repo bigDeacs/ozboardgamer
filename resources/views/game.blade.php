@@ -50,7 +50,7 @@
 						@unless($game->publishers->isEmpty())
 							<div style="margin-bottom: 10px;">
 								<small>
-									@foreach(shuffle($game->publishers) as $key => $publisher)
+									@foreach($game->publishers->shuffle() as $key => $publisher)
 										@if($key == (count($game->publishers) -1))
 											<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>
 										@else
