@@ -34,7 +34,7 @@
 								</a>
 								<div class="caption text-center">
 									<a href="/games/{{ $type->slug }}" title="{!! $type->name !!}">											
-										<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit($type->name, 14) !!}</strong></p>
+										<p class="text-center" style="font-size: 14px;"><strong>{!! str_limit($type->name, 14) !!}</strong></p>
 									</a>
 								</div>
 							</div>

@@ -706,7 +706,17 @@ class SiteController extends Controller {
 	public function family($slug = null)
 	{
 		if($slug == null) {
-			$families = Family::where('status', '=', '1')->has('games')->with('games')->paginate(12);
+			if(Request::has('sort'))
+			{
+			    $pieces = explode("-", Request::input('sort'));
+			    $sort = $pieces[0];
+			    $direction = $pieces[1];
+			} else {
+				$sort = 'rating';
+				$direction = 'desc';
+			}
+			
+			$families = Family::where('status', '=', '1')->has('games')->with('games')->orderBy($sort, $direction)->paginate(10);
 			return view('families', compact('families'));
 		} else {
 			$family = Family::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
@@ -726,7 +736,17 @@ class SiteController extends Controller {
 	public function designer($slug = null)
 	{
 		if($slug == null) {
-			$designers = Designer::where('status', '=', '1')->has('games')->with('games')->paginate(12);
+			if(Request::has('sort'))
+			{
+			    $pieces = explode("-", Request::input('sort'));
+			    $sort = $pieces[0];
+			    $direction = $pieces[1];
+			} else {
+				$sort = 'rating';
+				$direction = 'desc';
+			}
+			
+			$designers = Designer::where('status', '=', '1')->has('games')->with('games')->orderBy($sort, $direction)->paginate(10);
 			return view('designers', compact('designers'));
 		} else {
 			$designer = Designer::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
@@ -746,7 +766,17 @@ class SiteController extends Controller {
 	public function publisher($slug = null)
 	{
 		if($slug == null) {
-			$publishers = Publisher::where('status', '=', '1')->has('games')->with('games')->paginate(12);
+			if(Request::has('sort'))
+			{
+			    $pieces = explode("-", Request::input('sort'));
+			    $sort = $pieces[0];
+			    $direction = $pieces[1];
+			} else {
+				$sort = 'rating';
+				$direction = 'desc';
+			}
+			
+			$publishers = Publisher::where('status', '=', '1')->has('games')->with('games')->orderBy($sort, $direction)->paginate(10);
 			return view('publishers', compact('publishers'));
 		} else {
 			$publisher = Publisher::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
@@ -766,7 +796,17 @@ class SiteController extends Controller {
 	public function mechanic($slug = null)
 	{
 		if($slug == null) {
-			$mechanics = Mechanic::where('status', '=', '1')->has('games')->with('games')->paginate(12);
+			if(Request::has('sort'))
+			{
+			    $pieces = explode("-", Request::input('sort'));
+			    $sort = $pieces[0];
+			    $direction = $pieces[1];
+			} else {
+				$sort = 'rating';
+				$direction = 'desc';
+			}
+			
+			$mechanics = Mechanic::where('status', '=', '1')->has('games')->with('games')->orderBy($sort, $direction)->paginate(10);
 			return view('mechanics', compact('mechanics'));
 		} else {
 			$mechanic = Mechanic::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
@@ -786,7 +826,17 @@ class SiteController extends Controller {
 	public function theme($slug = null)
 	{
 		if($slug == null) {
-			$themes = Theme::where('status', '=', '1')->has('games')->with('games')->paginate(12);
+			if(Request::has('sort'))
+			{
+			    $pieces = explode("-", Request::input('sort'));
+			    $sort = $pieces[0];
+			    $direction = $pieces[1];
+			} else {
+				$sort = 'rating';
+				$direction = 'desc';
+			}
+			
+			$themes = Theme::where('status', '=', '1')->has('games')->with('games')->orderBy($sort, $direction)->paginate(10);
 			return view('themes', compact('themes'));
 		} else {
 			$theme = Theme::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
