@@ -54,7 +54,7 @@
 										@if($key == (count($game->publishers) -1))
 											<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>
 										@else
-											<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">{{ $publisher->name }}</span></a>,
+											<a href="/publishers/{{ $publisher->slug }}" itemprop="publisher" itemscope itemtype="http://schema.org/Organization" class="hidden-xs"><span itemprop="name">{{ $publisher->name }}</span></a>,
 										@endif
 									@endforeach
 									| Published: <span itemprop="datePublished">{{ $game->published }}</span>
