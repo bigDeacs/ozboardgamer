@@ -327,7 +327,7 @@
 														@else
 															<img src="https://img.ozboardgamer.com/img/10.png" class="img-responsive" />
 														@endif
-														<div class="text-center lead">
+														<div class="text-center small-lead">
 															<strong>{{ number_format((float)$rel->rating, 1, '.', '') }}/10</strong>
 														</div>
 							                        </div>
