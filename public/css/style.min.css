@@ -76,6 +76,10 @@ a.disabled:active, .btn.disabled:active {
     width: 50%;
   }
 }
+@media (min-width: 768px) {
+	.game-panel { min-height: 650px; }
+}
+
 @media (min-width: 900px) {
   .container {
     max-width: 970px;

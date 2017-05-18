@@ -256,7 +256,7 @@
 						<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><i class="fa fa-book" aria-hidden="true"></i> <span class="hidden-xs hidden-sm">Game </span>Description</a></li>
 						<li role="presentation"><a href="#contents" aria-controls="contents" role="tab" data-toggle="tab"><i class="fa fa-diamond" aria-hidden="true"></i> <span class="hidden-xs hidden-sm">Game </span>Contents</a></li>
 						@unless($posts->isEmpty())
-							<li role="presentation" class="hidden-xs"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab"><i class="fa fa-video-camera" aria-hidden="true"></i><span class="hidden-sm"> Game Videos</span></a></li>
+							<li role="presentation" class="hidden-xs"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab"><i class="fa fa-video-camera" aria-hidden="true"></i> Game Videos</a></li>
 						@endunless
 						<li role="presentation"><a href="#related" aria-controls="related" role="tab" data-toggle="tab"><i class="fa fa-link" aria-hidden="true"></i> Similar<span class="hidden-xs hidden-sm"> Games</span></a></li>
 					</ul>
@@ -264,18 +264,18 @@
 					<!-- Tab panes -->
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane active" id="description">
-							<div class="col-xs-12 panel panel-success" itemprop="description" style="min-height: 650px;">
+							<div class="col-xs-12 panel panel-success game-panel" itemprop="description">
 								{!! $game->description !!}
 							</div>
 						</div>
 						<div role="tabpanel" class="tab-pane" id="contents">
-							<div class="col-xs-12 panel panel-success" style="min-height: 650px;">
+							<div class="col-xs-12 panel panel-success game-panel">
 								{!! $game->contents !!}
 							</div>
 						</div>
 						@unless($posts->isEmpty())
 							<div role="tabpanel" class="tab-pane" id="videos">
-								<div class="col-xs-12 panel panel-success" style="min-height: 650px;">
+								<div class="col-xs-12 panel panel-success game-panel">
 									<div class="row">
 								    	@foreach($posts as $post)
 								    		<div class="col-md-6 col-sm-12">
@@ -296,7 +296,7 @@
 							</div>
 						@endunless
 						<div role="tabpanel" class="tab-pane" id="related">
-							<div class="col-xs-12 panel panel-success" style="min-height: 650px;">
+							<div class="col-xs-12 panel panel-success game-panel">
 								<div class="row">
 							    	@foreach($related as $rel)
 							    		<div class="row" itemscope itemtype="http://schema.org/Game" style="margin: 0 25px;">
