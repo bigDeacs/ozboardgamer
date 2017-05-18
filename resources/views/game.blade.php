@@ -80,20 +80,20 @@
 						<div class="row text-center">
 							<div class="col-xs-4">
 								<div class="text-center lead" style="margin-bottom: 5px;">
-									<i class="fa fa-users" aria-hidden="true"></i>				
-									<strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
+									<p><i class="fa fa-users fa-2x" aria-hidden="true"></i></p>
+									<p style="font-size: 20px;"><strong itemprop="numberOfPlayers">{{ $game->players }}</strong></p>
 								</div>
 							</div>
 							<div class="col-xs-4">								
 								<div class="text-center lead" style="margin-bottom: 5px;">
-									<i class="fa fa-birthday-cake" aria-hidden="true"></i>
-									<strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
+									<p><i class="fa fa-birthday-cake fa-2x" aria-hidden="true"></i></p>
+									<p style="font-size: 20px;"><strong itemprop="typicalAgeRange">{{ $game->age }}</strong></p>
 								</div>
 							</div>
 							<div class="col-xs-4">								
 								<div class="text-center lead" style="margin-bottom: 5px;">
-									<i class="fa fa-clock-o" aria-hidden="true"></i>
-									<strong itemprop="timeRequired">{{ $game->time }}</strong>
+									<p><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i></p>
+									<p style="font-size: 20px;"><strong itemprop="timeRequired">{{ $game->time }}</strong></p>
 								</div>
 							</div>
 						</div>
@@ -229,9 +229,9 @@
             <div class="btn-group btn-group-justified col-xs-12" role="group">
               @if(Session::has('name'))
                   @if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty())
-                    <a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;" rel="nofollow"><i class="fa fa-check" aria-hidden="true"></i> Add<span class="hidden-xs hidden-sm"> to My Games</span></a>
+                    <a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/addToOwned/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;" rel="nofollow"><i class="fa fa-plus" aria-hidden="true"></i> Add<span class="hidden-xs hidden-sm"> to Owned</span></a>
                   @else
-                    <a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;" rel="nofollow"><i class="fa fa-times" aria-hidden="true"></i> Remove<span class="hidden-xs hidden-sm"> from My Games</span></a>
+                    <a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-danger" style="font-size:13px;" rel="nofollow"><i class="fa fa-minus" aria-hidden="true"></i> Remove<span class="hidden-xs hidden-sm"> from Owned</span></a>
                 @endif
                 @if($game->users()->wherePivot('type', 'wanted')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty())
                     <a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/addToWanted/{!! $game->id !!}" class="btn btn-success" style="font-size:13px;" rel="nofollow"><i class="fa fa-eye" aria-hidden="true"></i> Watch<span class="hidden-xs hidden-sm"> Game</span></a>
