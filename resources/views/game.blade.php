@@ -82,20 +82,20 @@
 						@endunless							
 						<div class="row text-center">
 							<div class="col-md-2 col-sm-3 col-xs-4">
-								<div class="text-center lead" style="margin-bottom: 5px;">
-									<p><i class="fa fa-users fa-2x" aria-hidden="true"></i></p>
+								<div class="text-center" style="margin-bottom: 5px;">
+									<p><i class="fa fa-users fa-3x" aria-hidden="true"></i></p>
 									<p style="font-size: 20px;"><strong itemprop="numberOfPlayers">{{ $game->players }}</strong></p>
 								</div>
 							</div>
 							<div class="col-md-2 col-sm-3 col-xs-4">								
-								<div class="text-center lead" style="margin-bottom: 5px;">
-									<p><i class="fa fa-birthday-cake fa-2x" aria-hidden="true"></i></p>
+								<div class="text-center" style="margin-bottom: 5px;">
+									<p><i class="fa fa-birthday-cake fa-3x" aria-hidden="true"></i></p>
 									<p style="font-size: 20px;"><strong itemprop="typicalAgeRange">{{ $game->age }}</strong></p>
 								</div>
 							</div>
 							<div class="col-md-2 col-sm-3 col-xs-4">								
-								<div class="text-center lead" style="margin-bottom: 5px;">
-									<p><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i></p>
+								<div class="text-center" style="margin-bottom: 5px;">
+									<p><i class="fa fa-clock-o fa-3x" aria-hidden="true"></i></p>
 									<p style="font-size: 20px;"><strong itemprop="timeRequired">{{ $game->time }}</strong></p>
 								</div>
 							</div>
