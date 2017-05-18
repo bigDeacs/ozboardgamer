@@ -410,7 +410,8 @@
 							<input id="scaling" name="scaling" value="{{ $game->scaling }}" class="rating-loading">
 						</div>
 					</div>
-					<div class="col-xs-5 col-md-12">
+					<div class="col-xs-5 col-sm-12">
+						<hr class="hidden-xs" />
 						@unless($game->family == null)
 							<strong>Family</strong>
 							<div class="row">
@@ -474,8 +475,7 @@
 									@endforeach
 								</div>
 							</div>
-						@endunless
-						<hr class="hidden-xs" />
+						@endunless						
 					</div>
 				</div>
 			</div>
