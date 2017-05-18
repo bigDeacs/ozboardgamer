@@ -59,9 +59,9 @@
 								| Published: <span itemprop="datePublished">{{ $game->published }}</span>
 							</small>
 						@endunless
-						<div class="row hidden-xs">
-							<div class="col-xs-12">
-								@unless($game->children->isEmpty())
+						@unless($game->children->isEmpty())
+							<div class="row hidden-xs">
+								<div class="col-xs-12">
 									<div class="label label-warning">HAS EXPANSIONS</div>
 									@foreach($game->children as $key => $child)
 										@if($key == (count($game->children) -1))
@@ -70,13 +70,15 @@
 											<a href="/games/{{ $game->types()->first()->slug }}/{{ $child->slug }}">{{ $child->name }}</a>,
 										@endif
 									@endforeach
-								@endunless
-								@unless($game->parent == null)								
-									<div class="label label-warning">EXPANSION FOR</div> <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->parent->slug }}">{{ $game->parent->name }}</a>								
-								@endunless
+								</div>
 							</div>
-						</div>
-						<br /><br />
+						@endunless
+						@unless($game->parent == null)	
+							<div class="row hidden-xs">						
+								<div class="label label-warning">EXPANSION FOR</div> <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->parent->slug }}">{{ $game->parent->name }}</a>								
+							</div>
+						@endunless							
+						<br />
 						<div class="row text-center">
 							<div class="col-md-2 col-sm-3 col-xs-4">
 								<div class="text-center lead" style="margin-bottom: 5px;">
