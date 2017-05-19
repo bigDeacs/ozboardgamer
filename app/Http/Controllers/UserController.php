@@ -28,7 +28,7 @@ class UserController extends Controller
         $users = User::all();
 		foreach($users as $user) 
 		{
-			$total[] = Game::where('status', '=', '1')->whereHas('users', function($q) use($user->slug)
+			$total[] = Game::where('status', '=', '1')->whereHas('users', function($q) use($user)
 			{
 				$q->where('slug', '=', $user->slug);
 			})->get();
