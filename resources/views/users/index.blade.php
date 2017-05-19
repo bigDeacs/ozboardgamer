@@ -32,6 +32,7 @@
 						    		<th>User Type</th>
 						    		<th></th>
 									<th></th>
+									<th></th>
 						    	</tr>
 						    </thead>
 						    <tbody>
@@ -49,6 +50,15 @@
 						    				<i class="fa fa-user"></i> User
 						    			@endif
 						    		</td>
+									<?php
+										$total = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
+										{
+											$q->where('slug', '=', $user->slug);
+										})->get();
+										$countOwned = 0;
+										foreach($total as $game) { if($game->users()->first()->pivot->type == 'owned') { $countOwned++; } }	
+									?>
+									<td><span class="badge" style="background-color: #d9534f;">{{ $countOwned }}</span></td>
 						    		<td>
 						    			<a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
 						    			<a href="/users/{{ $user->slug }}?page=1" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
