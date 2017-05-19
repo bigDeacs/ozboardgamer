@@ -30,7 +30,7 @@ class UserController extends Controller
 		{
 			$total[] = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
 			{
-				$q->where('slug', '=', $slug);
+				$q->where('slug', '=', $user->slug);
 			})->get();
 		}
         return view('users.index', compact('users', 'total'));
