@@ -26,7 +26,14 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('users.index', compact('users'));
+		foreach($users as $user) 
+		{
+			$total[] = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
+			{
+				$q->where('slug', '=', $slug);
+			})->get();
+		}
+        return view('users.index', compact('users', 'total'));
     }
 
     /**

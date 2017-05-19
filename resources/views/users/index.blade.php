@@ -36,6 +36,9 @@
 						    	</tr>
 						    </thead>
 						    <tbody>
+								<?php
+									$count = 0;								
+								?>
 						    	@foreach($users as $user)
 						    	@if($user->status == 0)
 							    	<tr class="danger">
@@ -50,13 +53,10 @@
 						    				<i class="fa fa-user"></i> User
 						    			@endif
 						    		</td>
-									<?php
-										$total = Game::where('status', '=', '1')->whereHas('users', function($q) use($slug)
-										{
-											$q->where('slug', '=', $user->slug);
-										})->get();
+									<?php										
 										$countOwned = 0;
-										foreach($total as $game) { if($game->users()->first()->pivot->type == 'owned') { $countOwned++; } }	
+										foreach($total[$count] as $game) { if($game->users()->first()->pivot->type == 'owned') { $countOwned++; } }	
+										$count++;
 									?>
 									<td><span class="badge" style="background-color: #d9534f;">{{ $countOwned }}</span></td>
 						    		<td>
