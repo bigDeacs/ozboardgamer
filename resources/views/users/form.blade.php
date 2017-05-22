@@ -45,8 +45,10 @@
             <input type="file" name="image" accept="image/*" onchange="loadImage(event)">
             <small>851px X 315px</small>
 			<hr />
-			<label for="role">Role</label><br />
-            <input type="radio" name="role" value="a" @if($user->role == 'a') checked @endif> Admin | <input type="radio" name="role" value="b" @if($user->role == 'b') checked @endif> User
+			@if(isset($user))
+				<label for="role">Role</label><br />
+				<input type="radio" name="role" value="a" @if($user->role == 'a') checked @endif> Admin | <input type="radio" name="role" value="b" @if($user->role == 'b') checked @endif> User
+			@endif
       </div>
 </div>
 
