@@ -381,29 +381,38 @@
 					</div>
 					<div class="col-sm-12 col-xs-7 pull-right">				
 						<div class="text-center">
+						@unless($game->luck == 0)
 							<strong><i class="icon-luck"></i> Luck <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much luck is a part of gameplay"></span></strong>
 							<input id="luck" name="luck" value="{{ $game->luck }}" class="rating-loading">
-
+						@endunless
+						@unless($game->strategy == 0)
 							<strong><i class="icon-strategy"></i> Strategy <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much strategy is a part of gameplay"></span></strong>
 							<input id="strategy" name="strategy" value="{{ $game->strategy }}" class="rating-loading">
-
+						@endunless
+						@unless($game->complexity == 0)
 							<strong><i class="icon-complexity"></i> Complexity <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How many complex rules there are"></span></strong>
 							<input id="complexity" name="complexity" value="{{ $game->complexity }}" class="rating-loading">
-
+						@endunless
+						@unless($game->replay == 0)
 							<strong><i class="icon-replay"></i> Replay <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much replay value the game has"></span></strong>
 							<input id="replay" name="replay" value="{{ $game->replay }}" class="rating-loading">
-							
+						@endunless
+						@unless($game->components == 0)
 							<strong><i class="icon-components"></i> Components <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="The quality of what comes in the box"></span></strong>
 							<input id="components" name="components" value="{{ $game->components }}" class="rating-loading">
-
+						@endunless
+						@unless($game->learning == 0)
 							<strong><i class="icon-learning"></i> Learning <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How easy the game is to learn"></span></strong>
 							<input id="learning" name="learning" value="{{ $game->learning }}" class="rating-loading">
-
+						@endunless
+						@unless($game->theming == 0)
 							<strong><i class="icon-theme"></i> Theme <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much story/flavour is in the game"></span></strong>
 							<input id="theming" name="theming" value="{{ $game->theming }}" class="rating-loading">
-
+						@endunless
+						@unless($game->scaling == 0)
 							<strong><i class="icon-scaling"></i> Scaling <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How well the game scales between player counts"></span></strong>
 							<input id="scaling" name="scaling" value="{{ $game->scaling }}" class="rating-loading">
+						@endunless
 						</div>
 					</div>
 					<div class="col-xs-5 col-sm-12">
