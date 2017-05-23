@@ -85,7 +85,7 @@
 									@endif
 								</div>
 								<div class="col-xs-6">
-									<h2>Trading Hours</h2>
+									<h2><span class="hidden-xs">Trading </span>Hours</h2>
 									<p itemprop="openingHours">{!! $store->hours !!}</p>
 								</div>
 							</div>
