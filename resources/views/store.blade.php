@@ -68,7 +68,7 @@
                 <strong>{{ number_format((float)$store->rating, 1, '.', '') }}/10</strong>
               </div>
 			      		</div>
-			      		<div class="col-md-5 col-sm-5 col-xs-12">
+			      		<div class="col-md-5 col-sm-5 col-xs-6">
                   <h2>Store Info</h2>
 			      			<span itemprop="address">
                     <p>{{ $store->street }}</p>
@@ -81,7 +81,13 @@
 			      			@if($store->link !== null)
 			      				<p itemprop="sameAs"><a href="{{ $store->link }}" target="_blank">Go To Site</a></p>
 			      			@endif
-                  <div class="row" style="padding: 10px;">
+			      		</div>
+			      		<div class="col-md-4 col-sm-4 col-xs-6">
+                  <h2>Trading Hours</h2>
+                  <p itemprop="openingHours">{!! $store->hours !!}</p>
+						</div>
+			      	</div>
+					<div class="row" style="padding: 10px;">
 					      		@if(Session::has('name'))
 									    <strong>Rate This Store</strong>
 									    <div style="clear:both;"></div>
@@ -195,12 +201,6 @@
 									@endfor
 							    @endif
 						    </div>
-			      		</div>
-			      		<div class="col-md-4 col-sm-4 col-xs-12">
-                  <h2>Trading Hours</h2>
-                  <p itemprop="openingHours">{!! $store->hours !!}</p>
-						</div>
-			      	</div>
               <hr />				  
 				<div class="row">
 					@if($store->widget)
