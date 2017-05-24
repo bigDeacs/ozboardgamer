@@ -1095,7 +1095,7 @@ class SiteController extends Controller {
 				return view('products', compact('products'));
 			} else {
 				$product = Product::where('slug', '=', $slug)->firstOrFail();		
-				$products = Product::where('save', '>', '0')->where('slug', '!=', $slug)->orderByRaw("RAND()")->get();
+				$products = Product::where('sale', '>', '0')->where('slug', '!=', $slug)->orderByRaw("RAND()")->get();
 				return view('product', compact('product', 'products'));
 			}
 		}
