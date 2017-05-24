@@ -56,7 +56,7 @@
 								<article>{{ $product->description }}</article>
 							</div>
 						</div>				
-						<div class="row">
+						<div class="row hidden-xs">
 							<div class="col-xs-12">
 								<h4>More Amazing Products</h4>
 								<div class="jcarousel-wrapper">
@@ -64,7 +64,7 @@
 										<ul>
 											@foreach($products as $item)
 												<li>
-													<div class="text-center thumbnail img-shadow">
+													<div class="thumbnail img-shadow">
 														<a href="/shop/{{ $item->slug }}" title="{{ $item->name }}">
 															<img src="{{ $item->thumb1x }}" srcset="{{ $item->thumb1x }} 1x, {{ $item->thumb2x }} 2x" class="img-responsive" width="300" height="auto" />
 														</a>
