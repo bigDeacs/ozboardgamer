@@ -34,11 +34,10 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-4 col-sm-3 col-xs-12">
+							<div class="col-sm-4 col-xs-12">
 								<div class="row">
 									<div class="col-sm-12 col-xs-5">
-										<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
-										<p class="text-center" style="font-size: 20px;"><strong>{!! $product->brand !!}</strong></p>
+										<p class="text-center"><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></p>
 									</div>
 									<div class="col-sm-12 col-xs-7">
 										@if($product->sale > 0)
@@ -53,7 +52,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-md-8 col-sm-9 col-xs-12">								
+							<div class="col-sm-8 col-xs-12">								
 								<p>{{ $product->description }}</p>
 							</div>
 						</div>				
