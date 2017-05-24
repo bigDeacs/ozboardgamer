@@ -34,13 +34,13 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-4 col-sm-4 col-xs-12">
+							<div class="col-md-3 col-sm-4 col-xs-6">
 								<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
 							</div>
-							<div class="col-md-8 col-sm-8 col-xs-12 text-right">
+							<div class="col-md-3 col-md-push-6 col-sm-4 col-sm-push-4 col-xs-6 text-right">
 								@if($product->sale > 0)
 									<strong style="font-size: 40px;">${!! $product->saleDisplay !!}</strong><br />
-									<s><small style="font-size: 25px;">${!! $product->priceDisplay !!}</small></s>
+									<s><small style="font-size: 20px;">${!! $product->priceDisplay !!}</small></s>
 								@else
 									<strong style="font-size: 40px;">${!! $product->priceDisplay !!}</strong>
 								@endif
@@ -49,12 +49,10 @@
 									<a class="btn btn-danger" href="/shop/{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 								</p>
 							</div>
-						</div>		
-						<div class="row">
-							<div class="col-xs-12">								
+							<div class="col-md-6 col-md-pull-3 col-sm-4 col-sm-pull-4 col-xs-12">								
 								<p>{!! $product->description !!}</p>
 							</div>
-						</div>		
+						</div>				
 						<div class="row">
 							<div class="col-xs-12">
 								<h3>More Amazing Products</h3>
