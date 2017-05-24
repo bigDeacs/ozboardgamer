@@ -34,22 +34,26 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-3 col-sm-3 col-xs-5">
-								<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
-								<p class="text-center" style="font-size: 20px;"><strong>{!! $product->brand !!}</strong></p>
+							<div class="col-md-4 col-sm-3 col-xs-12">
+								<div class="row">
+									<div class="col-sm-12 col-xs-5">
+										<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
+										<p class="text-center" style="font-size: 20px;"><strong>{!! $product->brand !!}</strong></p>
+									</div>
+									<div class="col-sm-12 col-xs-7">
+										@if($product->sale > 0)
+											<p class="text-center"><strong style="font-size: 30px;">${!! $product->saleDisplay !!}</strong></p>
+											<p class="text-center"><s><small style="font-size: 20px;">${!! $product->priceDisplay !!}</small></s></p>
+										@else
+											<p class="text-center"><strong style="font-size: 30px;">${!! $product->priceDisplay !!}</strong></p>
+										@endif								
+										<p class="text-center">
+											<a class="btn btn-danger" href="{!! $product->externalURL !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+										</p>
+									</div>
+								</div>
 							</div>
-							<div class="col-md-3 col-md-push-6 col-sm-4 col-sm-push-5 col-xs-7 text-right">
-								@if($product->sale > 0)
-									<strong style="font-size: 30px;">${!! $product->saleDisplay !!}</strong><br />
-									<s><small style="font-size: 20px;">${!! $product->priceDisplay !!}</small></s>
-								@else
-									<strong style="font-size: 30px;">${!! $product->priceDisplay !!}</strong>
-								@endif								
-								<p>
-									<a class="btn btn-danger" href="{!! $product->externalURL !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-								</p>
-							</div>
-							<div class="col-md-6 col-md-pull-3 col-sm-5 col-sm-pull-4 col-xs-12">								
+							<div class="col-md-8 col-sm-9 col-xs-12">								
 								<p>{{ $product->description }}</p>
 							</div>
 						</div>				
