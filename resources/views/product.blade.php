@@ -64,7 +64,7 @@
 										<ul>
 											@foreach($products as $item)
 												<li>
-													<div class="thumbnail img-shadow">
+													<div class="text-center thumbnail img-shadow">
 														<a href="/shop/{{ $item->slug }}" title="{{ $item->name }}">
 															<img src="{{ $item->thumb1x }}" srcset="{{ $item->thumb1x }} 1x, {{ $item->thumb2x }} 2x" class="img-responsive" width="300" height="auto" />
 														</a>
@@ -97,7 +97,7 @@
 	<script>
 		$('article').readmore({
 		  speed: 100,
-		  collapsedHeight: 100,
+		  collapsedHeight: 350,
 		  lessLink: '<a href="#" class="text-right">Read less</a>',
 		  moreLink: '<a href="#" class="text-right">Read more</a>',
 		});
