@@ -57,6 +57,7 @@ return array(
     'AddToUserTable' => $baseDir . '/database/migrations/2016_05_10_063528_add_to_user_table.php',
     'AddWidgetToStores' => $baseDir . '/database/migrations/2016_11_18_145320_add_widget_to_stores.php',
     'ChangeContentsOnGamesTable' => $baseDir . '/database/migrations/2016_03_17_064234_change_contents_on_games_table.php',
+    'ChangeDescription' => $baseDir . '/database/migrations/2017_05_24_125332_change_description.php',
     'ChangePriceAgainProducts' => $baseDir . '/database/migrations/2017_01_16_132458_change_price_again_products.php',
     'ChangePriceProducts' => $baseDir . '/database/migrations/2017_01_16_132044_change_price_products.php',
     'ChangePublishedAtOnGamesTable' => $baseDir . '/database/migrations/2016_03_10_042118_change_published_at_on_games_table.php',

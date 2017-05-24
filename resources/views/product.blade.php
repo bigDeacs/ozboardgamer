@@ -34,10 +34,10 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6 col-sm-6 col-xs-12">
+							<div class="col-md-4 col-sm-4 col-xs-12">
 								<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
 							</div>
-							<div class="col-md-6 col-sm-6 col-xs-12 text-right">
+							<div class="col-md-8 col-sm-8 col-xs-12 text-right">
 								@if($product->sale > 0)
 									<strong style="font-size: 40px;">${!! $product->saleDisplay !!}</strong><br />
 									<s><small style="font-size: 25px;">${!! $product->priceDisplay !!}</small></s>
