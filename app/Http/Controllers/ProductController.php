@@ -64,7 +64,13 @@ class ProductController extends Controller
 	
 	public function remove($id)
     {
-        DB::table('products')->where('id', '=', $id)->delete();
+        $product = Product::where('id', '=', $id)->first();
+		// initialize API Client & Index
+        $client = new \AlgoliaSearch\Client("LAC06A9QLK", "9d6a129d0c8ce00eaf4ceb19b6ad1bab");
+        $index = $client->initIndex('products');
+		$params = [ "restrictSearchableAttributes": "name", "typoTolerance": "strict" ];
+		$index->deleteByQuery($product->name, $params);
+		DB::table('products')->where('id', '=', $id)->delete();
         return redirect('/admin/products');
     }
 
