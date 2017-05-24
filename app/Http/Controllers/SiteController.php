@@ -1079,19 +1079,25 @@ class SiteController extends Controller {
 			return view('terms');
 		}	
 
-		public function shop()
+		public function shop($slug = null)
 		{				
-			if(Request::has('sort'))
-			{
-			    $pieces = explode("-", Request::input('sort'));
-			    $sort = $pieces[0];
-			    $direction = $pieces[1];
+			if($slug == null) {
+				if(Request::has('sort'))
+				{
+					$pieces = explode("-", Request::input('sort'));
+					$sort = $pieces[0];
+					$direction = $pieces[1];
+				} else {
+					$sort = 'savings';
+					$direction = 'desc';
+				}
+				$products = Product::where('price', '>', '0')->orderBy($sort, $direction)->paginate(12);		
+				return view('products', compact('products'));
 			} else {
-				$sort = 'savings';
-				$direction = 'desc';
+				$product = Product::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();		
+				$products = Product::where('price', '>', '0')->where('slug', '!=', $slug)->orderBy($sort, $direction)->take(10);		
+				return view('product', compact('product', 'products'));
 			}
-			$products = Product::where('price', '>', '0')->orderBy($sort, $direction)->paginate(12);		
-			return view('shop', compact('products'));
 		}
 
 }

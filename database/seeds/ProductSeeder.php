@@ -12,7 +12,8 @@ class ProductSeeder extends CsvSeeder
         $this->mapping = [
             5 => 'name',
             6 => 'category',
-            8 => 'slug',            
+			7 => 'description',       
+			8 => 'externalURL',        			
             14 => 'thumb1x',
             16 => 'thumb2x',
             17 => 'priceDisplay',  
@@ -46,6 +47,7 @@ class ProductSeeder extends CsvSeeder
 					->update([
 						'price' => $price, 
 						'sale' => $sale, 
+						'slug' =>  str_slug($product->name, "-"), 
 						'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 
 						'thumb2x' => str_replace('http://', 'https://', $product->thumb2x),
 						'savings' => ((($price - $sale) / $price) * 100)
@@ -59,6 +61,7 @@ class ProductSeeder extends CsvSeeder
 					->update([
 						'price' => $price, 
 						'sale' => $sale, 
+						'slug' =>  str_slug($product->name, "-"), 
 						'thumb1x' => str_replace('http://', 'https://', $product->thumb1x), 
 						'thumb2x' => str_replace('http://', 'https://', $product->thumb2x),
 						'savings' => 0
