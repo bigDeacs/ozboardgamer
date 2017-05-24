@@ -33,7 +33,7 @@
 								</form>  
 							</div>
 						</div>
-						<div class="row">
+						<div class="row post" style="padding-bottom: 10px;margin-bottom: 10px;">
 							<div class="col-sm-4 col-xs-12">
 								<div class="row">
 									<div class="col-sm-12 col-xs-5">
@@ -47,7 +47,7 @@
 											<p class="text-center"><strong style="font-size: 30px;">${!! $product->priceDisplay !!}</strong></p>
 										@endif								
 										<p class="text-center">
-											<a class="btn btn-danger" href="{!! $product->externalURL !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+											<a class="btn btn-danger btn-lg" href="{!! $product->externalURL !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 										</p>
 									</div>
 								</div>
