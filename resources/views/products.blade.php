@@ -83,7 +83,7 @@
 						<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
 					</a>
 					<div class="caption text-center">
-						<a href="{{ $product->slug }}" title="{!! $product->name !!}" target="_blank">											
+						<a href="/shop/{{ $product->slug }}" title="{!! $product->name !!}">											
 							<p class="text-center" style="font-size: 16px;"><strong>{!! str_limit(strip_tags($product->name), $limit = 12, $end = '...') !!}</strong><br /></p>
 						</a>
 						@if($product->sale > 0)
