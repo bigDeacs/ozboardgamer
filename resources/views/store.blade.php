@@ -43,30 +43,30 @@
 				    </div>
 			      	<div class="row">
 			      		<div class="col-md-3 col-sm-3 col-xs-12">
-                  @if($store->rating < 1)
-                <img src="https://img.ozboardgamer.com/img/1.png" class="img-responsive" />
-              @elseif($store->rating < 2)
-                <img src="https://img.ozboardgamer.com/img/2.png" class="img-responsive" />
-              @elseif($store->rating < 3)
-                <img src="https://img.ozboardgamer.com/img/3.png" class="img-responsive" />
-              @elseif($store->rating < 4)
-                <img src="https://img.ozboardgamer.com/img/4.png" class="img-responsive" />
-              @elseif($store->rating < 5)
-                <img src="https://img.ozboardgamer.com/img/5.png" class="img-responsive" />
-              @elseif($store->rating < 6)
-                <img src="https://img.ozboardgamer.com/img/6.png" class="img-responsive" />
-              @elseif($store->rating < 7)
-                <img src="https://img.ozboardgamer.com/img/7.png" class="img-responsive" />
-              @elseif($store->rating < 8)
-                <img src="https://img.ozboardgamer.com/img/8.png" class="img-responsive" />
-              @elseif($store->rating < 9)
-                <img src="https://img.ozboardgamer.com/img/9.png" class="img-responsive" />
-              @else
-                <img src="https://img.ozboardgamer.com/img/10.png" class="img-responsive" />
-              @endif
-              <div class="text-center lead">
-                <strong>{{ number_format((float)$store->rating, 1, '.', '') }}/10</strong>
-              </div>
+							  @if($store->rating < 1)
+							<img src="https://img.ozboardgamer.com/img/1.png" class="img-responsive" />
+						  @elseif($store->rating < 2)
+							<img src="https://img.ozboardgamer.com/img/2.png" class="img-responsive" />
+						  @elseif($store->rating < 3)
+							<img src="https://img.ozboardgamer.com/img/3.png" class="img-responsive" />
+						  @elseif($store->rating < 4)
+							<img src="https://img.ozboardgamer.com/img/4.png" class="img-responsive" />
+						  @elseif($store->rating < 5)
+							<img src="https://img.ozboardgamer.com/img/5.png" class="img-responsive" />
+						  @elseif($store->rating < 6)
+							<img src="https://img.ozboardgamer.com/img/6.png" class="img-responsive" />
+						  @elseif($store->rating < 7)
+							<img src="https://img.ozboardgamer.com/img/7.png" class="img-responsive" />
+						  @elseif($store->rating < 8)
+							<img src="https://img.ozboardgamer.com/img/8.png" class="img-responsive" />
+						  @elseif($store->rating < 9)
+							<img src="https://img.ozboardgamer.com/img/9.png" class="img-responsive" />
+						  @else
+							<img src="https://img.ozboardgamer.com/img/10.png" class="img-responsive" />
+						  @endif
+						  <div class="text-center lead">
+							<strong>{{ number_format((float)$store->rating, 1, '.', '') }}/10</strong>
+						  </div>
 			      		</div>
 						<div class="col-md-9 col-sm-9 col-xs-12">
 							<div class="row">
@@ -90,201 +90,200 @@
 								</div>
 							</div>
 							<div class="row" style="padding: 10px;">
-					      		@if(Session::has('name'))
+								@if(Session::has('name'))
 									    <strong>Rate This Store</strong>
 									    <div style="clear:both;"></div>
-                      <div class="col-xs-1" style="padding:0;">
-                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/1' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/1' }}"
-                           data-toggle="tooltip"
-                           data-placement="bottom"
-                           title="1 Awful">
-                            <img style="{{ $store->users()->wherePivot('rating', 1)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                                 src="{{ secure_url('/', $parameters = ['img']) }}/1.png"
-                                 class="img-responsive" />
-                        </a>
-                      </div>
-                      <div class="col-xs-1" style="padding:0;">
-                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/2' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/2' }}"
-                           data-toggle="tooltip"
-                           data-placement="bottom"
-                           title="2 Very Bad">
-                            <img style="{{ $store->users()->wherePivot('rating', 2)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                                 src="{{ secure_url('/', $parameters = ['img']) }}/2.png"
-                                 class="img-responsive" />
-                        </a>
-                      </div>
-                      <div class="col-xs-1" style="padding:0;">
-                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/3' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/3' }}"
-                           data-toggle="tooltip"
-                           data-placement="bottom"
-                           title="3 Bad">
-                            <img style="{{ $store->users()->wherePivot('rating', 3)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                                 src="{{ secure_url('/', $parameters = ['img']) }}/3.png"
-                                 class="img-responsive" />
-                        </a>
-                      </div>
-                      <div class="col-xs-1" style="padding:0;">
-                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/4' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/4' }}"
-                           data-toggle="tooltip"
-                           data-placement="bottom"
-                           title="4 Not Good">
-                            <img style="{{ $store->users()->wherePivot('rating', 4)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                                 src="{{ secure_url('/', $parameters = ['img']) }}/4.png"
-                                 class="img-responsive" />
-                        </a>
-                      </div>
-                      <div class="col-xs-1" style="padding:0;">
-                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/5' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/5' }}"
-                           data-toggle="tooltip"
-                           data-placement="bottom"
-                           title="5 Mediocre">
-                            <img style="{{ $store->users()->wherePivot('rating', 5)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                                 src="{{ secure_url('/', $parameters = ['img']) }}/5.png"
-                                 class="img-responsive" />
-                        </a>
-                      </div>
-                      <div class="col-xs-1" style="padding:0;">
-                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/6' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/6' }}"
-                           data-toggle="tooltip"
-                           data-placement="bottom"
-                           title="6 Okay">
-                            <img style="{{ $store->users()->wherePivot('rating', 6)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                                 src="{{ secure_url('/', $parameters = ['img']) }}/6.png"
-                                 class="img-responsive" />
-                        </a>
-                      </div>
-                      <div class="col-xs-1" style="padding:0;">
-                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/7' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/7' }}"
-                           data-toggle="tooltip"
-                           data-placement="bottom"
-                           title="7 Good">
-                            <img style="{{ $store->users()->wherePivot('rating', 7)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                                 src="{{ secure_url('/', $parameters = ['img']) }}/7.png"
-                                 class="img-responsive" />
-                        </a>
-                      </div>
-                      <div class="col-xs-1" style="padding:0;">
-                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/8' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/8' }}"
-                           data-toggle="tooltip"
-                           data-placement="bottom"
-                           title="8 Very Good">
-                            <img style="{{ $store->users()->wherePivot('rating', 8)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                                 src="{{ secure_url('/', $parameters = ['img']) }}/8.png"
-                                 class="img-responsive" />
-                        </a>
-                      </div>
-                      <div class="col-xs-1" style="padding:0;">
-                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/9' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/9' }}"
-                           data-toggle="tooltip"
-                           data-placement="bottom"
-                           title="9 Excellent">
-                            <img style="{{ $store->users()->wherePivot('rating', 9)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                                 src="{{ secure_url('/', $parameters = ['img']) }}/9.png"
-                                 class="img-responsive" />
-                        </a>
-                      </div>
-                      <div class="col-xs-1" style="padding:0;">
-                        <a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/10' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/10' }}"
-                           data-toggle="tooltip"
-                           data-placement="bottom"
-                           title="10 Perfect">
-                            <img style="{{ $store->users()->wherePivot('rating', 10)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
-                                 src="{{ secure_url('/', $parameters = ['img']) }}/10.png"
-                                 class="img-responsive" />
-                        </a>
-        							</div>
+										  <div class="col-xs-1" style="padding:0;">
+											<a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/1' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/1' }}"
+											   data-toggle="tooltip"
+											   data-placement="bottom"
+											   title="1 Awful">
+												<img style="{{ $store->users()->wherePivot('rating', 1)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+													 src="{{ secure_url('/', $parameters = ['img']) }}/1.png"
+													 class="img-responsive" />
+											</a>
+										  </div>
+										  <div class="col-xs-1" style="padding:0;">
+											<a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/2' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/2' }}"
+											   data-toggle="tooltip"
+											   data-placement="bottom"
+											   title="2 Very Bad">
+												<img style="{{ $store->users()->wherePivot('rating', 2)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+													 src="{{ secure_url('/', $parameters = ['img']) }}/2.png"
+													 class="img-responsive" />
+											</a>
+										  </div>
+										  <div class="col-xs-1" style="padding:0;">
+											<a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/3' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/3' }}"
+											   data-toggle="tooltip"
+											   data-placement="bottom"
+											   title="3 Bad">
+												<img style="{{ $store->users()->wherePivot('rating', 3)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+													 src="{{ secure_url('/', $parameters = ['img']) }}/3.png"
+													 class="img-responsive" />
+											</a>
+										  </div>
+										  <div class="col-xs-1" style="padding:0;">
+											<a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/4' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/4' }}"
+											   data-toggle="tooltip"
+											   data-placement="bottom"
+											   title="4 Not Good">
+												<img style="{{ $store->users()->wherePivot('rating', 4)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+													 src="{{ secure_url('/', $parameters = ['img']) }}/4.png"
+													 class="img-responsive" />
+											</a>
+										  </div>
+										  <div class="col-xs-1" style="padding:0;">
+											<a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/5' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/5' }}"
+											   data-toggle="tooltip"
+											   data-placement="bottom"
+											   title="5 Mediocre">
+												<img style="{{ $store->users()->wherePivot('rating', 5)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+													 src="{{ secure_url('/', $parameters = ['img']) }}/5.png"
+													 class="img-responsive" />
+											</a>
+										  </div>
+										  <div class="col-xs-1" style="padding:0;">
+											<a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/6' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/6' }}"
+											   data-toggle="tooltip"
+											   data-placement="bottom"
+											   title="6 Okay">
+												<img style="{{ $store->users()->wherePivot('rating', 6)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+													 src="{{ secure_url('/', $parameters = ['img']) }}/6.png"
+													 class="img-responsive" />
+											</a>
+										  </div>
+										  <div class="col-xs-1" style="padding:0;">
+											<a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/7' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/7' }}"
+											   data-toggle="tooltip"
+											   data-placement="bottom"
+											   title="7 Good">
+												<img style="{{ $store->users()->wherePivot('rating', 7)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+													 src="{{ secure_url('/', $parameters = ['img']) }}/7.png"
+													 class="img-responsive" />
+											</a>
+										  </div>
+										  <div class="col-xs-1" style="padding:0;">
+											<a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/8' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/8' }}"
+											   data-toggle="tooltip"
+											   data-placement="bottom"
+											   title="8 Very Good">
+												<img style="{{ $store->users()->wherePivot('rating', 8)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+													 src="{{ secure_url('/', $parameters = ['img']) }}/8.png"
+													 class="img-responsive" />
+											</a>
+										  </div>
+										  <div class="col-xs-1" style="padding:0;">
+											<a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/9' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/9' }}"
+											   data-toggle="tooltip"
+											   data-placement="bottom"
+											   title="9 Excellent">
+												<img style="{{ $store->users()->wherePivot('rating', 9)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+													 src="{{ secure_url('/', $parameters = ['img']) }}/9.png"
+													 class="img-responsive" />
+											</a>
+										  </div>
+										  <div class="col-xs-1" style="padding:0;">
+											<a rel="nofollow" href="{{ $store->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addStoreRating/'.$store->id.'/rating/10' : '/users/'.str_slug(Session::get('slug')).'/updateStoreRating/'.$store->id.'/rating/10' }}"
+											   data-toggle="tooltip"
+											   data-placement="bottom"
+											   title="10 Perfect">
+												<img style="{{ $store->users()->wherePivot('rating', 10)->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? 'opacity: 0.5;filter: alpha(opacity=50);' : 'opacity: 1.0;filter: alpha(opacity=100);' }}"
+													 src="{{ secure_url('/', $parameters = ['img']) }}/10.png"
+													 class="img-responsive" />
+											</a>
+										</div>
 								@else
 									<strong>Login To Rate This Store</strong>
 									<div style="clear:both;"></div>
 									@for ($i = 1; $i < 11; $i++)
 										<div class="col-xs-1" style="padding:0;">
 											<img style="opacity: 0.5;filter: alpha(opacity=50);" src="https://img.ozboardgamer.com/img/{{ $i }}.png" class="img-responsive" />
-									    </div>
+										</div>
 									@endfor
-							    @endif
+								@endif
 						    </div>
 						</div>
 			      	</div>			  
-				<div class="row">
-					@if($store->widget)
-						<div class="col-sm-8 col-xs-12">
-					@else
-						<div class="col-xs-12">
-					@endif
+					<div class="row">
+						@if($store->widget)
+							<div class="col-sm-8 col-xs-12">
+						@else
+							<div class="col-xs-12">
+						@endif
 							<!-- Nav tabs -->
 							<ul class="nav nav-tabs" role="tablist">
 								<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><i class="fa fa-map" aria-hidden="true"></i> Store Location</a></li>						
 								<li role="presentation" class="hidden-xs"><a href="#games" aria-controls="games" role="tab" data-toggle="tab"><i class="fa fa-link" aria-hidden="true"></i> Games To Look For</a></li>
 							</ul>
-
 							<!-- Tab panes -->
 							<div class="tab-content">
-							<div role="tabpanel" class="tab-pane active" id="description">
-								<div class="col-xs-12 panel panel-success" itemprop="description" style="min-height: 650px;">
-									<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-										<meta itemprop="latitude" content="{{ $store->latitude }}" />
-										<meta itemprop="longitude" content="{{ $store->longitude }}" />
-										<div id="map"></div>
-								    </div>
-								    <br />
+								<div role="tabpanel" class="tab-pane active" id="description">
+									<div class="col-xs-12 panel panel-success" itemprop="description" style="min-height: 650px;">
+										<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+											<meta itemprop="latitude" content="{{ $store->latitude }}" />
+											<meta itemprop="longitude" content="{{ $store->longitude }}" />
+											<div id="map"></div>
+										</div>
+										<br />
+									</div>
 								</div>
-							</div>
-							<div role="tabpanel" class="tab-pane" id="games">
-								<div class="col-xs-12 panel panel-success" style="min-height: 650px;">
-									<div class="row">
-										@foreach($games as $rel)
-											<div class="row" itemscope itemtype="http://schema.org/Game" style="margin: 0 25px;">
-												<div class="col-md-12 post">
-													<div class="row post-content">
-														<div class="col-md-2 col-sm-3 col-xs-7">
-															<a href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">
-																<img src="https://img.ozboardgamer.com{{ $rel->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $rel->thumb1x }} 1x, https://img.ozboardgamer.com{{ $rel->thumb2x }} 2x" alt="{!! $rel->name !!}" class="img-responsive" itemprop="image" />
-															</a>
-														</div>
-														<div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">
-															@if($rel->rating < 1)
-																<img src="https://img.ozboardgamer.com/img/1.png" class="img-responsive" />
-															@elseif($rel->rating < 2)
-																<img src="https://img.ozboardgamer.com/img/2.png" class="img-responsive" />
-															@elseif($rel->rating < 3)
-																<img src="https://img.ozboardgamer.com/img/3.png" class="img-responsive" />
-															@elseif($rel->rating < 4)
-																<img src="https://img.ozboardgamer.com/img/4.png" class="img-responsive" />
-															@elseif($rel->rating < 5)
-																<img src="https://img.ozboardgamer.com/img/5.png" class="img-responsive" />
-															@elseif($rel->rating < 6)
-																<img src="https://img.ozboardgamer.com/img/6.png" class="img-responsive" />
-															@elseif($rel->rating < 7)
-																<img src="https://img.ozboardgamer.com/img/7.png" class="img-responsive" />
-															@elseif($rel->rating < 8)
-																<img src="https://img.ozboardgamer.com/img/8.png" class="img-responsive" />
-															@elseif($rel->rating < 9)
-																<img src="https://img.ozboardgamer.com/img/9.png" class="img-responsive" />
-															@else
-																<img src="https://img.ozboardgamer.com/img/10.png" class="img-responsive" />
-															@endif
-															<div class="text-center lead">
-																<strong>{{ number_format((float)$rel->rating, 1, '.', '') }}/10</strong>
+								<div role="tabpanel" class="tab-pane" id="games">
+									<div class="col-xs-12 panel panel-success" style="min-height: 650px;">
+										<div class="row">
+											@foreach($games as $rel)
+												<div class="row" itemscope itemtype="http://schema.org/Game" style="margin: 0 25px;">
+													<div class="col-md-12 post">
+														<div class="row post-content">
+															<div class="col-md-2 col-sm-3 col-xs-7">
+																<a href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">
+																	<img src="https://img.ozboardgamer.com{{ $rel->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $rel->thumb1x }} 1x, https://img.ozboardgamer.com{{ $rel->thumb2x }} 2x" alt="{!! $rel->name !!}" class="img-responsive" itemprop="image" />
+																</a>
 															</div>
-														</div>
-														<div class="col-md-8 col-md-pull-2 col-sm-7 col-sm-pull-2 col-xs-12">
-															<h4 itemprop="name">
-																<strong><a href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}" class="post-title">{!! $rel->name !!}</a></strong></h4>
-															<p itemprop="description">
-																{!! str_limit(strip_tags($rel->description), $limit = 100, $end = '...') !!}
-															</p>
-															<p>
-																<a class="btn btn-danger" href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">Read more</a>
-															</p>
+															<div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">
+																@if($rel->rating < 1)
+																	<img src="https://img.ozboardgamer.com/img/1.png" class="img-responsive" />
+																@elseif($rel->rating < 2)
+																	<img src="https://img.ozboardgamer.com/img/2.png" class="img-responsive" />
+																@elseif($rel->rating < 3)
+																	<img src="https://img.ozboardgamer.com/img/3.png" class="img-responsive" />
+																@elseif($rel->rating < 4)
+																	<img src="https://img.ozboardgamer.com/img/4.png" class="img-responsive" />
+																@elseif($rel->rating < 5)
+																	<img src="https://img.ozboardgamer.com/img/5.png" class="img-responsive" />
+																@elseif($rel->rating < 6)
+																	<img src="https://img.ozboardgamer.com/img/6.png" class="img-responsive" />
+																@elseif($rel->rating < 7)
+																	<img src="https://img.ozboardgamer.com/img/7.png" class="img-responsive" />
+																@elseif($rel->rating < 8)
+																	<img src="https://img.ozboardgamer.com/img/8.png" class="img-responsive" />
+																@elseif($rel->rating < 9)
+																	<img src="https://img.ozboardgamer.com/img/9.png" class="img-responsive" />
+																@else
+																	<img src="https://img.ozboardgamer.com/img/10.png" class="img-responsive" />
+																@endif
+																<div class="text-center lead">
+																	<strong>{{ number_format((float)$rel->rating, 1, '.', '') }}/10</strong>
+																</div>
+															</div>
+															<div class="col-md-8 col-md-pull-2 col-sm-7 col-sm-pull-2 col-xs-12">
+																<h4 itemprop="name">
+																	<strong><a href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}" class="post-title">{!! $rel->name !!}</a></strong></h4>
+																<p itemprop="description">
+																	{!! str_limit(strip_tags($rel->description), $limit = 100, $end = '...') !!}
+																</p>
+																<p>
+																	<a class="btn btn-danger" href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">Read more</a>
+																</p>
+															</div>
 														</div>
 													</div>
 												</div>
-											</div>
-										@endforeach
+											@endforeach
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 						</div>
 						@if($store->widget)
 							<div class="col-sm-4 col-xs-12">
@@ -295,7 +294,8 @@
 						 @endif
 					</div>
 			    </div>
-				<div class="sharethis-inline-share-buttons"></div>
+			</div>
+			<div class="sharethis-inline-share-buttons"></div>
           @if(Session::has('name'))
             <hr />
             <div class="row">

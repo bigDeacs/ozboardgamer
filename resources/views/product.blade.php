@@ -34,18 +34,18 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-3 col-sm-3 col-xs-12">
+							<div class="col-md-6 col-sm-6 col-xs-12">
 								<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
 							</div>
-							<div class="col-md-9 col-sm-9 col-xs-12">
+							<div class="col-md-6 col-sm-6 col-xs-12 text-right">
 								@if($product->sale > 0)
-									<strong>${!! $product->saleDisplay !!}</strong><br />
-									<s><small>${!! $product->priceDisplay !!}</small></s>
+									<strong style="font-size: 40px;">${!! $product->saleDisplay !!}</strong><br />
+									<s><small style="font-size: 25px;">${!! $product->priceDisplay !!}</small></s>
 								@else
-									<strong>${!! $product->priceDisplay !!}</strong>
+									<strong style="font-size: 40px;">${!! $product->priceDisplay !!}</strong>
 								@endif
-								{!! $product->brand !!}
-								<p class="text-center">
+								<p>{!! $product->brand !!}</p>
+								<p>
 									<a class="btn btn-danger" href="/shop/{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 								</p>
 							</div>
@@ -54,7 +54,35 @@
 							<div class="col-xs-12">								
 								<p>{!! $product->description !!}</p>
 							</div>
-						</div>						
+						</div>		
+						<div class="row">
+							<div class="col-xs-12">
+								<h3>More Amazing Products</h3>
+								<div class="jcarousel-wrapper">
+									<div class="jcarousel">
+										<ul>
+											@foreach($products as $item)
+												<li>
+													<div class="thumbnail img-shadow">
+														<a href="/shop/{{ $item->slug }}" title="{{ $item->name }}">
+															<img src="{{ $item->thumb1x }}" srcset="{{ $item->thumb1x }} 1x, {{ $item->thumb2x }} 2x" class="img-responsive" width="300" height="auto" />
+														</a>
+														<div class="caption text-center">
+															<a href="/shop/{{ $item->slug }}" title="{{ $item->name }}">											
+																<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit($item->name, 12) !!}</strong></p>
+															</a>
+														</div>
+													</div>
+												</li>
+											@endforeach
+										</ul>
+									</div>
+
+									<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+									<a href="#" class="jcarousel-control-next">&rsaquo;</a>
+								</div>
+							</div>
+						</div>								
 					</div>
 			    </div>			
 
@@ -64,4 +92,11 @@
 @endsection
 
 @section('scripts')
+	<script>
+        $(function() {
+            $('.jcarousel').jcarousel({
+                // Configuration goes here
+            });
+        });
+    </script>
 @endsection
