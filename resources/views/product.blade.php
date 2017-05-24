@@ -55,7 +55,7 @@
 						</div>				
 						<div class="row">
 							<div class="col-xs-12">
-								<h3>More Amazing Products</h3>
+								<h4>More Amazing Products</h4>
 								<div class="jcarousel-wrapper">
 									<div class="jcarousel">
 										<ul>
