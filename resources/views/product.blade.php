@@ -40,10 +40,10 @@
 							</div>
 							<div class="col-md-3 col-md-push-6 col-sm-4 col-sm-push-5 col-xs-7 text-right">
 								@if($product->sale > 0)
-									<strong style="font-size: 35px;">${!! $product->saleDisplay !!}</strong><br />
+									<strong style="font-size: 30px;">${!! $product->saleDisplay !!}</strong><br />
 									<s><small style="font-size: 20px;">${!! $product->priceDisplay !!}</small></s>
 								@else
-									<strong style="font-size: 35px;">${!! $product->priceDisplay !!}</strong>
+									<strong style="font-size: 30px;">${!! $product->priceDisplay !!}</strong>
 								@endif								
 								<p>
 									<a class="btn btn-danger" href="/shop/{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
