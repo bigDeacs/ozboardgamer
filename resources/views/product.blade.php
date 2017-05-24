@@ -50,7 +50,7 @@
 								</p>
 							</div>
 							<div class="col-md-6 col-md-pull-3 col-sm-5 col-sm-pull-4 col-xs-12">								
-								<p>{!! $product->description !!}</p>
+								<p>{{ $product->description }}</p>
 							</div>
 						</div>				
 						<div class="row">
