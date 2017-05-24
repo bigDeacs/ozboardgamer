@@ -36,7 +36,7 @@
 						<div class="row">
 							<div class="col-md-3 col-sm-3 col-xs-5">
 								<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
-								<p><strong>{!! $product->brand !!}</strong></p>
+								<p class="text-center" style="font-size: 20px;"><strong>{!! $product->brand !!}</strong></p>
 							</div>
 							<div class="col-md-3 col-md-push-6 col-sm-4 col-sm-push-5 col-xs-7 text-right">
 								@if($product->sale > 0)
