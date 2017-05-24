@@ -1094,7 +1094,7 @@ class SiteController extends Controller {
 				$products = Product::where('price', '>', '0')->orderBy($sort, $direction)->paginate(12);		
 				return view('products', compact('products'));
 			} else {
-				$product = Product::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();		
+				$product = Product::where('slug', '=', $slug)->firstOrFail();		
 				$products = Product::where('price', '>', '0')->where('slug', '!=', $slug)->orderBy($sort, $direction)->take(10);		
 				return view('product', compact('product', 'products'));
 			}
