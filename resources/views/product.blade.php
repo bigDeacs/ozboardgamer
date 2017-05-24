@@ -53,7 +53,7 @@
 								</div>
 							</div>
 							<div class="col-sm-8 col-xs-12">								
-								<p>{{ $product->description }}</p>
+								<article>{{ $product->description }}</article>
 							</div>
 						</div>				
 						<div class="row">
@@ -93,7 +93,14 @@
 @endsection
 
 @section('scripts')
+	<script src="/js/readmore.min.js"></script>
 	<script>
+		$('article').readmore({
+		  speed: 100,
+		  collapsedHeight: 100,
+		  lessLink: '<a href="#" class="text-right">Read less</a>',
+		  moreLink: '<a href="#" class="text-right">Read more</a>',
+		});
         $(function() {
             $('.jcarousel').jcarousel({
                 // Configuration goes here
