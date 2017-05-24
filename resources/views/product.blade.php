@@ -46,7 +46,7 @@
 									<strong style="font-size: 30px;">${!! $product->priceDisplay !!}</strong>
 								@endif								
 								<p>
-									<a class="btn btn-danger" href="/shop/{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+									<a class="btn btn-danger" href="{!! $product->externalURL !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 								</p>
 							</div>
 							<div class="col-md-6 col-md-pull-3 col-sm-5 col-sm-pull-4 col-xs-12">								

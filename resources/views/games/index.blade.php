@@ -24,8 +24,9 @@
 						  <table class="table dataTable table-striped table-hover">
 						  	<col width="20%">
   							<col width="20%">
-  							<col width="20%">
-  							<col width="40%">
+  							<col width="15%">
+  							<col width="15%">
+							<col width="30%">
 						    <thead>
 						    	<tr>
 						    		<th>Name</th>
@@ -47,13 +48,15 @@
                     <td scope="row">{{ $game->published }}</td>
 						    		<td scope="row">{{ number_format((float)$game->rating, 1, '.', '') }}/10</td>
 						    		<td>
-						    			<a href="/admin/games/{{ $game->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
-						    			<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
-						    			@if($game->status == 0)
-											<a href="/admin/games/{{ $game->id }}/activate" class="btn btn-success">Activate <i class="fa fa-check"></i></a>
-										@else
-											<a href="/admin/games/{{ $game->id }}/deactivate" class="btn btn-danger">Deactivate <i class="fa fa-times"></i></a>
-										@endif
+										<div class="btn-group" role="group">
+											<a href="/admin/games/{{ $game->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
+											<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
+											@if($game->status == 0)
+												<a href="/admin/games/{{ $game->id }}/activate" class="btn btn-success">Activate <i class="fa fa-check"></i></a>
+											@else
+												<a href="/admin/games/{{ $game->id }}/deactivate" class="btn btn-danger">Deactivate <i class="fa fa-times"></i></a>
+											@endif
+										</div>
 						    		</td>
 						    	</tr>
 						    	@endforeach

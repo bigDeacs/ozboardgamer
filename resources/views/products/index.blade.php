@@ -25,10 +25,9 @@
 						  	<col width="30%">
   							<col width="10%">
   							<col width="10%">
-  							<col width="10%">
 							<col width="10%">
 							<col width="20%">
-  							<col width="10%">
+  							<col width="20%">
 						    <thead>
 						    	<tr>
 						    		<th>Name</th>
@@ -37,7 +36,6 @@
 						    		<th>Savings</th>
 									<th>Brand</th>
 						    		<th></th>
-									<th></th>
 						    	</tr>
 						    </thead>
 						    <tbody>
@@ -45,7 +43,6 @@
 									<tr class="success">
 							    		<td scope="row">{{ $product->name }}</td>
 							    		<td>${!! str_replace(" AUD", "", $product->priceDisplay) !!}</td>
-							    		<td>@if($product->sale > 0)${!! str_replace(" AUD", "", $product->saleDisplay) !!}@endif</td>
 							    		<td>{!! round($product->savings, 2) !!}%</td>
 										<td>{!! $product->brand !!}</td>
 										<td><a href="/shop/{!! $product->slug !!}" target="_blank"><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></a></td>
