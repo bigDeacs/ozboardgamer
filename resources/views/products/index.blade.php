@@ -48,7 +48,7 @@
 							    		<td>@if($product->sale > 0)${!! str_replace(" AUD", "", $product->saleDisplay) !!}@endif</td>
 							    		<td>{!! round($product->savings, 2) !!}%</td>
 										<td>{!! $product->brand !!}</td>
-										<td><a href="{!! $product->slug !!}" target="_blank"><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></a></td>
+										<td><a href="/{!! $product->slug !!}" target="_blank"><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></a></td>
 										<td><a href="/admin/products/{!! $product->id !!}/remove" target="_blank" class="btn btn-danger">Remove</a></td>
 							    	</tr>
 						    	@endforeach

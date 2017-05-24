@@ -34,22 +34,22 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-3 col-sm-4 col-xs-6">
+							<div class="col-md-3 col-sm-3 col-xs-5">
 								<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
+								<p><strong>{!! $product->brand !!}</strong></p>
 							</div>
-							<div class="col-md-3 col-md-push-6 col-sm-4 col-sm-push-4 col-xs-6 text-right">
+							<div class="col-md-3 col-md-push-6 col-sm-4 col-sm-push-5 col-xs-7 text-right">
 								@if($product->sale > 0)
-									<strong style="font-size: 40px;">${!! $product->saleDisplay !!}</strong><br />
+									<strong style="font-size: 35px;">${!! $product->saleDisplay !!}</strong><br />
 									<s><small style="font-size: 20px;">${!! $product->priceDisplay !!}</small></s>
 								@else
-									<strong style="font-size: 40px;">${!! $product->priceDisplay !!}</strong>
-								@endif
-								<p>{!! $product->brand !!}</p>
+									<strong style="font-size: 35px;">${!! $product->priceDisplay !!}</strong>
+								@endif								
 								<p>
 									<a class="btn btn-danger" href="/shop/{!! $product->slug !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
 								</p>
 							</div>
-							<div class="col-md-6 col-md-pull-3 col-sm-4 col-sm-pull-4 col-xs-12">								
+							<div class="col-md-6 col-md-pull-3 col-sm-5 col-sm-pull-4 col-xs-12">								
 								<p>{!! $product->description !!}</p>
 							</div>
 						</div>				
