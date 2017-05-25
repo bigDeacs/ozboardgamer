@@ -28,7 +28,7 @@
 							<img src="{{ $user->image }}" alt="{{ $user->name }}" class="img-circle img-shadow" width="100px" height="auto">
 						</div>
 						<div class="col-xs-10">
-							<h1>Brent</h1>
+							<h1>{{ $user->name }}</h1>
 							@if($user->description != '')
 								<p>{!! $user->description !!}</p>							
 							@endif
