@@ -10,7 +10,7 @@
 		foreach($total as $game) { if($game->users()->first()->pivot->type == 'owned') { $countOwned++; } }
 	?>
 	<meta property="og:title"              content="Check out this Collection!" />
-	<meta property="og:description"        content="{{ $user->name }} owns {{ $countOwned }} games and has {{ $countWanted }} on his Watch List! Track your own collection now on OzBoardGamer.com" />
+	<meta property="og:description"        content="{{ $user->name }} owns {{ $countOwned }} games! Track your own collection now on OzBoardGamer.com" />
 @endsection
 
 @section('content')
