@@ -8,8 +8,6 @@
 	<?php
 		$countOwned = 0;
 		foreach($total as $game) { if($game->users()->first()->pivot->type == 'owned') { $countOwned++; } }
-		$countWanted = 0;
-		foreach($total as $game) { if($game->users()->first()->pivot->type == 'wanted') { $countWanted++; } }
 	?>
 	<meta property="og:title"              content="Check out this Collection!" />
 	<meta property="og:description"        content="{{ $user->name }} owns {{ $countOwned }} games and has {{ $countWanted }} on his Watch List! Track your own collection now on OzBoardGamer.com" />
@@ -127,7 +125,7 @@
 				</div>
 				<div class="col-sm-4 hidden-xs">
 					<div class="scrollBox" id="child">
-				      	{{ $user->name }}'s Watchlist <span class="badge" style="background-color: #d9534f;">{{ $countWanted }}</span>
+				      	{{ $user->name }}'s Watchlist
 						@foreach($wanted as $game)
 							<div class="row" itemscope itemtype="http://schema.org/Game">
 				                <div class="col-md-12 post">
