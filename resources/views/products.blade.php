@@ -91,7 +91,7 @@
 							<p><s><small>${!! $product->priceDisplay !!}</small></s></p>
 						@else
 							<p><strong>${!! $product->priceDisplay !!}</strong></p>
-							<p></p>
+							<p>&nbsp;</p>
 						@endif
 						<p class="text-center">
 							<a class="btn btn-danger" href="/shop/{!! $product->slug !!}">Read more <span class="fa fa-arrow-circle-right"></span></a>
