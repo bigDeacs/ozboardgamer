@@ -87,10 +87,11 @@
 							<p class="text-center" style="font-size: 16px;"><strong>{!! str_limit(strip_tags($product->name), $limit = 12, $end = '...') !!}</strong><br /></p>
 						</a>
 						@if($product->sale > 0)
-							<strong>${!! $product->saleDisplay !!}</strong><br />
-							<s><small>${!! $product->priceDisplay !!}</small></s>
+							<p><strong>${!! $product->saleDisplay !!}</strong></p>
+							<p><s><small>${!! $product->priceDisplay !!}</small></s></p>
 						@else
-							<strong>${!! $product->priceDisplay !!}</strong>
+							<p><strong>${!! $product->priceDisplay !!}</strong></p>
+							<p></p>
 						@endif
 						<p class="text-center">
 							<a class="btn btn-danger" href="/shop/{!! $product->slug !!}">Read more <span class="fa fa-arrow-circle-right"></span></a>
