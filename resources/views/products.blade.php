@@ -77,7 +77,7 @@
 		@endif
   		<div class="row">
       	@foreach($products as $key => $product)
-			<div class="col-md-3 col-sm-4 col-xs-12 text-center">
+			<div class="col-sm-3 col-xs-12 text-center">
 				<div class="thumbnail img-shadow">
 					<a href="/shop/{!! $product->slug !!}">
 						<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
