@@ -203,47 +203,39 @@
 					<div class="col-sm-6 col-md-4 col-xs-12">
 						<div class="row">
 							<div class="col-xs-6">
-								<ul class="nav navbar-nav">
-									<li>
+								<ul class="nav navbar-nav" style="padding-left: 0;">
+									<li style="width:100%;">
 										<a href="/">Home</a>
 									</li>
-									<li class="footer-menu-divider">&sdot;</li>
-									<li>
+									<li style="width:100%;">
 										<a href="/games">Games</a>
 									</li>
-									<li class="footer-menu-divider">&sdot;</li>
-									<li>
+									<li style="width:100%;">
 										<a href="/news">News</a>
 									</li>
-									<li class="footer-menu-divider">&sdot;</li>
-									<li>
+									<li style="width:100%;">
 										<a href="/reviews">Reviews</a>
 									</li>
-									<li class="footer-menu-divider">&sdot;</li>
-									<li>
+									<li style="width:100%;">
 										<a href="/howtos">How To's</a>
 									</li>
 								</ul>
 							</div>
 							<div class="col-xs-6">
-								<ul class="nav navbar-nav">                    
-									<li>
+								<ul class="nav navbar-nav" style="padding-left: 0;">                    
+									<li style="width:100%;">
 										<a href="/top10s">Top 10's</a>
 									</li>
-									<li class="footer-menu-divider">&sdot;</li>
-									<li>
+									<li style="width:100%;">
 										<a href="/blogs">Blogs</a>
 									</li>
-									<li class="footer-menu-divider">&sdot;</li>									
-									<li>
+									<li style="width:100%;">
 										<a href="/stores">Stores</a>
 									</li>
-									<li class="footer-menu-divider">&sdot;</li>	
-									<li>
+									<li style="width:100%;">
 										<a href="/quizzes">Quizzes</a>
 									</li>
-									<li class="footer-menu-divider">&sdot;</li>
-									<li>
+									<li style="width:100%;">
 										<a href="/shop">Shop</a>
 									</li>
 								</ul>
