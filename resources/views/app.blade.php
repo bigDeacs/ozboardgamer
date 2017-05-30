@@ -144,6 +144,7 @@
 									<li class="text-center"><a href="/stores">Find a Store</a></i></li>
 								  </ul>
 								</li>
+								<li class="text-center hidden-sm"><a href="/quizzes">Quizzes</a></li>
 								<li class="dropdown">
 									@if(Session::has('name'))
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
@@ -234,31 +235,17 @@
 										<a href="/blogs">Blogs</a>
 									</li>
 									<li class="footer-menu-divider">&sdot;</li>									
-									@if(Session::has('name'))
-										<li>
-											<a href="/stores">Stores</a>
-										</li>
-										<li class="footer-menu-divider">&sdot;</li>	
-										<li>
-											<a href="/quizzes">Quizzes</a>
-										</li>
-										<li class="footer-menu-divider">&sdot;</li>
-										<li>
-											<a href="/shop">Shop</a>
-										</li>
-									@else
-										<li class="disabled">
-											<a href="/stores" class="disabled">Stores</a>
-										</li>
-										<li class="footer-menu-divider">&sdot;</li>											
-										<li class="disabled">
-											<a href="/quizzes" class="disabled">Quizzes</a>
-										</li>
-										<li class="footer-menu-divider">&sdot;</li>
-										<li class="disabled">
-											<a href="/shop" class="disabled">Shop</a>
-										</li>
-									@endif									
+									<li>
+										<a href="/stores">Stores</a>
+									</li>
+									<li class="footer-menu-divider">&sdot;</li>	
+									<li>
+										<a href="/quizzes">Quizzes</a>
+									</li>
+									<li class="footer-menu-divider">&sdot;</li>
+									<li>
+										<a href="/shop">Shop</a>
+									</li>
 								</ul>
 							</div>
 						</div>                    
