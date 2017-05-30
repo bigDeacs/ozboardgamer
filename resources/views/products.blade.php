@@ -127,7 +127,7 @@
 	<script src="/js/flipclock.min.js"></script>
 	<script type="text/javascript">		
 		$(document).ready(function() {
-			var clock = $('.clock').FlipClock({{ Carbon::now()->secondsUntilStartOfWeek() }}, {
+			var clock = $('.clock').FlipClock({{ strtotime('Next Monday') - time() }}, {
 				clockFace: 'DailyCounter',
 				countdown: true
 			});
