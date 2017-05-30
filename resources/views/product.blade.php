@@ -19,34 +19,6 @@
 		</div>
 	</div>
 	<div class="container" itemscope itemtype="http://schema.org/Product">
-		@if(Session::has('name'))
-			@if(!empty($data['offers']))
-				<div class="row hidden-xs">
-					<div class="col-sm-12 text-center">
-					   <div id="offerCarousel" class="vertical-slider carousel vertical slide row" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
-						  <!-- Carousel items -->
-						  <div class="carousel-inner">
-							@foreach($data['offers'] as $key => $offer)
-								<div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0; padding: 20px 0 40px 0;">
-								  <div class="col-xs-12 text-center">
-									<a href="{{ $offer->url }} " target="_blank">
-										<strong>
-											<span class="hidden-xs">{{ $offer->name }}</span>
-											@if($offer->code !== '' || $offer->code !== null)
-											<span class="hidden-xs">|</span> {{ $offer->code }}
-											@endif
-										</strong>					                    
-									</a>
-								  </div>
-								</div>
-							@endforeach
-						  </div>
-						</div>	    		
-					</div>
-				</div>		
-				<br />				
-			@endif
-		@endif		
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
@@ -62,29 +34,38 @@
 								</form>  
 							</div>
 						</div>
-						<div class="row post" style="padding-bottom: 10px;margin-bottom: 10px;">
-							<div class="col-sm-4 col-xs-12">
-								<div class="row">
-									<div class="col-sm-12 col-xs-5">
-										<p class="text-center"><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></p>
-									</div>
-									<div class="col-sm-12 col-xs-7">
-										@if($product->sale > 0)
-											<p class="text-center"><strong style="font-size: 30px;">${!! $product->saleDisplay !!}</strong></p>
-											<p class="text-center"><s><small style="font-size: 20px;">${!! $product->priceDisplay !!}</small></s></p>
-										@else
-											<p class="text-center"><strong style="font-size: 30px;">${!! $product->priceDisplay !!}</strong></p>
-										@endif								
-										<p class="text-center">
-											<a class="btn btn-danger btn-lg" href="{!! $product->externalURL !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-										</p>
+						<div class="post" style="padding-bottom: 10px;margin-bottom: 10px;">
+							<div class="row">
+								<div class="col-sm-4 col-xs-12">
+									<div class="row">
+										<div class="col-sm-12 col-xs-5">
+											<p class="text-center"><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></p>
+										</div>
+										<div class="col-sm-12 col-xs-7">
+											@if($product->sale > 0)
+												<p class="text-center"><strong style="font-size: 30px;">${!! $product->saleDisplay !!}</strong></p>
+												<p class="text-center"><s><small style="font-size: 20px;">${!! $product->priceDisplay !!}</small></s></p>
+											@else
+												<p class="text-center"><strong style="font-size: 30px;">${!! $product->priceDisplay !!}</strong></p>
+											@endif								
+											<p class="text-center">
+												<a class="btn btn-danger btn-lg" href="{!! $product->externalURL !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+											</p>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-sm-8 col-xs-12">								
-								<article>{{ $product->description }}</article>
-							</div>
-						</div>				
+								<div class="col-sm-8 col-xs-12">								
+									<article>{{ $product->description }}</article>
+								</div>
+							</div>		
+							<div class="row hidden-xs">
+								<div class="col-xs-12 text-center">
+									<h3>New Deals In:</h3>
+									<br />
+									<div class="clock" style="margin: 0 auto;width:625px;"></div>
+								</div>
+							</div>		
+						</div>		
 						<div class="row hidden-xs">
 							<div class="col-xs-12">
 								<h4>More Amazing Products</h4>
@@ -113,13 +94,6 @@
 								</div>
 							</div>
 						</div>	
-						<div class="row hidden-xs">
-							<div class="col-xs-12 text-center">
-								<h3>New Deals In:</h3>
-								<br />
-								<div class="clock" style="margin: 0 auto;width:625px;"></div>
-							</div>
-						</div>						
 					</div>
 			    </div>			
 
