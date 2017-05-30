@@ -114,8 +114,7 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<div class="navbar-right" style="margin: 32px 0;">
 						<div class="navbar-right">
-							<ul class="nav navbar-nav">                            
-								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
+							<ul class="nav navbar-nav">                            								
 								<li class="dropdown">
 								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
 								  <ul class="dropdown-menu">
@@ -182,6 +181,7 @@
 										 </ul>									
 									@endif
 								</li> 
+								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
 							</ul>
 						</div>
 					</div>
