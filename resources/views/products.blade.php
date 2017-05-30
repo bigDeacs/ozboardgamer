@@ -72,7 +72,8 @@
 						  </div>
 						</div>	    		
 					</div>
-				</div>				
+				</div>		
+				<br />
 			@endif
 		@endif		
   		<div class="row">
@@ -105,7 +106,7 @@
 			<div class="col-xs-12 text-center">
 				<h3>New Deals In:</h3>
 				<br />
-				<div class="clock" style="margin: 0 auto;width:460px;"></div>
+				<div class="clock" style="margin: 0 auto;width:625px;"></div>
 			</div>
 		</div>
 		<hr />

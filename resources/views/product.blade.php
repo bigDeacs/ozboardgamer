@@ -5,6 +5,7 @@
 @endsection
 
 @section('head')
+	<link rel="stylesheet" href="/css/flipclock.css">
 @endsection
 
 @section('content')
@@ -18,6 +19,34 @@
 		</div>
 	</div>
 	<div class="container" itemscope itemtype="http://schema.org/Product">
+		@if(Session::has('name'))
+			@if(!empty($data['offers']))
+				<div class="row hidden-xs">
+					<div class="col-sm-12 text-center">
+					   <div id="offerCarousel" class="vertical-slider carousel vertical slide row" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
+						  <!-- Carousel items -->
+						  <div class="carousel-inner">
+							@foreach($data['offers'] as $key => $offer)
+								<div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0; padding: 20px 0 40px 0;">
+								  <div class="col-xs-12 text-center">
+									<a href="{{ $offer->url }} " target="_blank">
+										<strong>
+											<span class="hidden-xs">{{ $offer->name }}</span>
+											@if($offer->code !== '' || $offer->code !== null)
+											<span class="hidden-xs">|</span> {{ $offer->code }}
+											@endif
+										</strong>					                    
+									</a>
+								  </div>
+								</div>
+							@endforeach
+						  </div>
+						</div>	    		
+					</div>
+				</div>		
+				<br />				
+			@endif
+		@endif		
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
@@ -88,7 +117,7 @@
 							<div class="col-xs-12 text-center">
 								<h3>New Deals In:</h3>
 								<br />
-								<div class="clock" style="margin: 0 auto;width:460px;"></div>
+								<div class="clock" style="margin: 0 auto;width:625px;"></div>
 							</div>
 						</div>						
 					</div>
@@ -114,4 +143,13 @@
             });
         });
     </script>
+	<script src="/js/flipclock.min.js"></script>
+	<script type="text/javascript">		
+		$(document).ready(function() {
+			var clock = $('.clock').FlipClock({{ strtotime('Next Monday') - time() }}, {
+				clockFace: 'DailyCounter',
+				countdown: true
+			});
+		});
+	</script>	
 @endsection
