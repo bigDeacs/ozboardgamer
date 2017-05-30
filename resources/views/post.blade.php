@@ -43,7 +43,9 @@
 						  <div class="col-sm-12 hidden-xs">
 							<div class="profile-header-container" style="position: absolute;bottom: 35px;left: 35px;">   
 								<div class="profile-header-img">
-									<img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" data-toggle="tooltip" data-placement="right" title="{{ strip_tags($post->user->description) }}">
+									<a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">
+										<img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" data-toggle="tooltip" data-placement="right" title="{{ strip_tags($post->user->description) }}">
+									</a>
 									<!-- badge -->
 									<div class="rank-label-container">
 										<span class="label label-default rank-label"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></span>
@@ -94,7 +96,9 @@
 						  <div class="col-sm-12 hidden-xs">
 							<div class="profile-header-container" style="position: absolute;bottom: 35px;left: 35px;">   
 								<div class="profile-header-img">
-									<img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" data-toggle="tooltip" data-placement="right" title="{{ strip_tags($post->user->description) }}">
+									<a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">
+										<img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" data-toggle="tooltip" data-placement="right" title="{{ strip_tags($post->user->description) }}">
+									</a>
 									<!-- badge -->
 									<div class="rank-label-container">
 										<span class="label label-default rank-label"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></span>
