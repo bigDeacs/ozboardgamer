@@ -50,7 +50,7 @@
     	</div>
 		@if(Session::has('name'))
 			@if(!empty($data['offers']))
-				<div class="row">
+				<div class="row hidden-xs">
 					<div class="col-sm-12 text-center">
 					   <div id="offerCarousel" class="vertical-slider carousel vertical slide row" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
 						  <!-- Carousel items -->
@@ -72,16 +72,9 @@
 						  </div>
 						</div>	    		
 					</div>
-				</div>
-				<br />
+				</div>				
 			@endif
-		@endif
-		<div class="row">
-			<div class="col-xs-12 text-center">
-				<p>New deals in:</p>
-				<div class="clock" style="margin:2em;"></div>
-			</div>
-		</div>
+		@endif		
   		<div class="row">
       	@foreach($products as $key => $product)
 			<div class="col-md-3 col-sm-4 col-xs-12 text-center">
@@ -107,6 +100,13 @@
 				</div>
 			</div>
 		@endforeach
+		</div>
+		<div class="row hidden-xs">
+			<div class="col-xs-12 text-center">
+				<h3>New Deals In:</h3>
+				<br />
+				<div class="clock" style="margin: 0 auto;width:460px;"></div>
+			</div>
 		</div>
 		<hr />
 		<div class="row">

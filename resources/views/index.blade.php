@@ -357,7 +357,7 @@
 										<strong>${!! $product->priceDisplay !!}</strong>
 									@endif
 									<p class="text-center">
-										<a class="btn btn-danger" href="/shop/{!! $product->slug !!}">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+										<a class="btn btn-danger" href="/shop/{!! $product->slug !!}">Read more <span class="fa fa-arrow-circle-right"></span></a>
 									</p>
 								</div>													
 							</div>			
