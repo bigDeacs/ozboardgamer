@@ -213,7 +213,7 @@
                                                 </p>
                                                 <p>												
 													@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-														<a class="btn btn-danger pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
+														<a class="btn btn-hot text-uppercase pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
 													@endunless   													
                                                 </p>
                                             </div>
@@ -325,7 +325,7 @@
                                                 </p>                                                
                                                 <p>
 													@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))																										
-														<a class="btn btn-danger pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+														<a class="btn btn-hot text-uppercase pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
 													@endunless                                                     
                                                 </p>
                                             </div>
@@ -357,7 +357,7 @@
 										<strong>${!! $product->priceDisplay !!}</strong>
 									@endif
 									<p class="text-center">
-										<a class="btn btn-danger" href="/shop/{!! $product->slug !!}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+										<a class="btn btn-hot text-uppercase" href="/shop/{!! $product->slug !!}">Read more <span class="fa fa-arrow-circle-right"></span></a>
 									</p>
 								</div>													
 							</div>			

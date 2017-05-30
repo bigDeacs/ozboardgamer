@@ -55,16 +55,25 @@
 					   <div id="offerCarousel" class="vertical-slider carousel vertical slide row" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
 						  <!-- Carousel items -->
 						  <div class="carousel-inner">
+							<div class="item notice notice-danger active" style="margin-bottom: 0; padding: 20px 0 40px 0;">							
+							  <div class="col-xs-12 text-center">
+								<a href="https://t.cfjump.com/33917/b/31466" target="_blank">
+									<strong>
+										<span class="hidden-xs">New Deals Every Tuesday!</span>									
+									</strong>											
+								</a>
+							  </div>
+							</div>
 							@foreach($data['offers'] as $key => $offer)
-								<div class="item alert alert-success {{ ($key == 0) ? 'active' : '' }}" style="margin-bottom: 0; padding: 20px 0 40px 0;">
+								<div class="item notice notice-danger" style="margin-bottom: 0; padding: 20px 0 40px 0;">
 								  <div class="col-xs-12 text-center">
-									<a href="{{ $offer->url }} " target="_blank">
+									<a href="{{ $offer->url }}" target="_blank">
 										<strong>
 											<span class="hidden-xs">{{ $offer->name }}</span>
-											@if($offer->code !== '' || $offer->code !== null)
-											<span class="hidden-xs">|</span> {{ $offer->code }}
-											@endif
-										</strong>					                    
+										</strong>	
+										@if($offer->code !== '' || $offer->code !== null)
+											{{ $offer->code }}
+										@endif										
 									</a>
 								  </div>
 								</div>
@@ -128,7 +137,7 @@
 	<script src="/js/flipclock.min.js"></script>
 	<script type="text/javascript">		
 		$(document).ready(function() {
-			var clock = $('.clock').FlipClock({{ strtotime('Next Monday') - time() }}, {
+			var clock = $('.clock').FlipClock({{ strtotime('Next Tuesday') - time() }}, {
 				clockFace: 'DailyCounter',
 				countdown: true
 			});
