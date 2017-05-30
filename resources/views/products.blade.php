@@ -6,6 +6,7 @@
 @endsection
 
 @section('head')
+	<link rel="stylesheet" href="/css/flipclock.css">
 @endsection
 
 @section('content')
@@ -76,7 +77,10 @@
 			@endif
 		@endif
 		<div class="row">
-			<div id="countdown-clock"></div>
+			<div class="col-xs-12 text-center">
+				<p>New deals in:</p>
+				<div class="clock" style="margin:2em;"></div>
+			</div>
 		</div>
   		<div class="row">
       	@foreach($products as $key => $product)
@@ -120,13 +124,18 @@
 @endsection
 
 @section('scripts')
-	<script src="/js/jquery.countdown.min.js"></script>
-	<script type="text/javascript">	
-		$("#countdown-clock")
-		.countdown("{{ date('Y/m/d h:i:s', strtotime('next monday')) }}", function(event) {
-			$(this).text(
-				event.strftime('%D days %H:%M:%S')
-			);
+	<script src="/js/flipclock.min.js"></script>
+	<script type="text/javascript">
+		var clock;
+		$(document).ready(function() {
+			var clock;
+			clock = $('.clock').FlipClock({
+		        clockFace: 'DailyCounter',
+		        autoStart: false,
+		    });
+		    clock.setTime({{ strtotime('next monday') }});
+		    clock.setCountdown(true);
+		    clock.start();
 		});
-	</script>	
+	</script>
 @endsection
