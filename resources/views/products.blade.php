@@ -75,6 +75,9 @@
 				<br />
 			@endif
 		@endif
+		<div class="row">
+			<div id="countdown-clock"></div>
+		</div>
   		<div class="row">
       	@foreach($products as $key => $product)
 			<div class="col-md-3 col-sm-4 col-xs-12 text-center">
@@ -117,4 +120,13 @@
 @endsection
 
 @section('scripts')
+	<script src="/js/jquery.countdown.min.js"></script>
+	<script type="text/javascript">	
+		$("#countdown-clock")
+		.countdown("{{ date('Y/m/d h:i:s', strtotime('next monday')) }}", function(event) {
+			$(this).text(
+				event.strftime('%D days %H:%M:%S')
+			);
+		});
+	</script>	
 @endsection
