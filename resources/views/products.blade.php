@@ -125,17 +125,12 @@
 
 @section('scripts')
 	<script src="/js/flipclock.min.js"></script>
-	<script type="text/javascript">
-		var clock;
+	<script type="text/javascript">		
 		$(document).ready(function() {
-			var clock;
-			clock = $('.clock').FlipClock({
-		        clockFace: 'DailyCounter',
-		        autoStart: false,
-		    });
-		    clock.setTime({{ strtotime('next monday') }});
-		    clock.setCountdown(true);
-		    clock.start();
+			var clock = $('.clock').FlipClock({{ strtotime('next monday') }}, {
+				clockFace: 'DailyCounter',
+				countdown: true
+			});
 		});
-	</script>
+	</script>	
 @endsection
