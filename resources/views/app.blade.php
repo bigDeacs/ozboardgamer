@@ -146,7 +146,7 @@
 								</li>
 								<li class="dropdown">
 									@if(Session::has('name'))
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #008751;">Account <span class="caret"></span></a>
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											 <div class="row" style="min-width: 300px;">
 												<div class="hidden-xs col-sm-4 text-center">												
@@ -168,7 +168,7 @@
 											</div>
 										</ul>
 									@else									
-										 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #008751;">Login/Signup <span class="caret"></span></a>
+										 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Signup <span class="caret"></span></a>
 										 <ul class="dropdown-menu">
 											<li class="text-center"><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
 											<li class="text-center"><a href="/signup"><i class="fa fa-user-plus"></i> Signup</a></li>
