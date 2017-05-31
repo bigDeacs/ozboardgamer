@@ -234,8 +234,8 @@
 						<a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/removeFromOwned/{!! $game->id !!}" class="btn btn-hot text-uppercase" style="font-size:13px;" rel="nofollow"><i class="fa fa-minus" aria-hidden="true"></i> Remove<span class="hidden-xs hidden-sm"> from Owned</span></a>
 					@endif
 				@endif	
-				<a href="/stores" class="btn btn-sunny text-uppercase hidden-xs" style="font-size:13px;"><i class="fa fa-home" aria-hidden="true"></i> <span class="hidden-xs">Find </span>In Store</a>
-				<a href="http://www.ozgameshop.com/search/{!! str_replace('-', '+', $game->slug) !!}/sort-relevance" target="_blank" class="btn btn-ocean text-uppercase hidden-xs" style="font-size:13px;" title="Search on Board Game Shopper"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="hidden-xs">Find </span>Online</a>
+				<a href="/stores" class="btn btn-sunny text-uppercase hidden-xs" style="font-size:13px;"><i class="fa fa-home" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Find </span>In Store</a>
+				<a href="http://www.ozgameshop.com/search/{!! str_replace('-', '+', $game->slug) !!}/sort-relevance" target="_blank" class="btn btn-ocean text-uppercase hidden-xs" style="font-size:13px;" title="Search on Board Game Shopper"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Find </span>Online</a>
 				@if(Session::has('name'))
 					@if($game->users()->wherePivot('type', 'wanted')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty())
 						<a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/addToWanted/{!! $game->id !!}" class="btn btn-fresh text-uppercase" style="font-size:13px;" rel="nofollow"><i class="fa fa-eye" aria-hidden="true"></i> Watch<span class="hidden-xs hidden-sm"> Game</span></a>
