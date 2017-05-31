@@ -61,13 +61,6 @@
 									</p>
 								</div>
 							</div>		
-							<div class="row hidden-xs">
-								<div class="col-xs-12 text-center">
-									<h3>New Deals In:</h3>
-									<br />
-									<div class="clock" style="margin: 0 auto;width:625px;"></div>
-								</div>
-							</div>		
 						</div>		
 						<div class="row hidden-xs">
 							<div class="col-xs-12">
@@ -120,13 +113,4 @@
             });
         });
     </script>
-	<script src="/js/flipclock.min.js"></script>
-	<script type="text/javascript">		
-		$(document).ready(function() {
-			var clock = $('.clock').FlipClock({{ strtotime('Next Tuesday') - time() }}, {
-				clockFace: 'DailyCounter',
-				countdown: true
-			});
-		});
-	</script>	
 @endsection
