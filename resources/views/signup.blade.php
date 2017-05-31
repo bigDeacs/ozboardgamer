@@ -41,7 +41,7 @@
 													<p class="bigText">{{ $post->category()->first()->name }}</p>        
 													<p class="smallText">{{ $post->name }}</p>
 												</hgroup>       
-												<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg">Find Out More</a>
+												<a href="/{{ $post->category()->first()->slug }}/{{ $post->slug }}" class="btn btn-hero btn-lg"><span class="fa fa-arrow-circle-right"></span> Find Out More</a>
 											  </div>
 											</div>
 										@endforeach
@@ -55,7 +55,7 @@
 											<p class="bigText">Buy Games</p>        
 											<p class="smallText">Choose from thousands of Games and Accessories</p>
 										</hgroup>
-										<a href="/shop" class="btn btn-hero btn-lg">Start Shopping</a>
+										<a href="/shop" class="btn btn-hero btn-lg"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Start Shopping</a>
 									  </div>
 									</div>
 							  </div> 
@@ -124,8 +124,8 @@
 									<h1 class="text-center">Signup Using:</h1>		
 									<div class="row text-center">
 										<div class="col-xs-4"><a href="/facebook" class="btn btn-primary btn-block" title="Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
-										<div class="col-xs-4"><a href="/google" class="btn btn-danger btn-block" title="Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
-										<div class="col-xs-4"><a href="/twitter" class="btn btn-info btn-block" title="Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
+										<div class="col-xs-4"><a href="/google" class="btn btn-hot text-uppercase btn-block" title="Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+										<div class="col-xs-4"><a href="/twitter" class="btn btn-sky text-uppercase btn-block" title="Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
 								   </div>
 								   <br />
 									<div class="row text-center">

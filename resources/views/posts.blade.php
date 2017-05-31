@@ -103,7 +103,7 @@
 										</p>
 										<p>												
 											@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
-												<a class="btn btn-danger pull-right" href="/{{ $category->slug }}/{{ $post->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+												<a class="btn btn-hot text-uppercase pull-right" href="/{{ $category->slug }}/{{ $post->slug }}"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 											@endunless   													
 										</p>										
                                     </div>

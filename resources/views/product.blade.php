@@ -49,7 +49,7 @@
 												<p class="text-center"><strong style="font-size: 30px;">${!! $product->priceDisplay !!}</strong></p>
 											@endif								
 											<p class="text-center">
-												<a class="btn btn-danger btn-lg" href="{!! $product->externalURL !!}" target="_blank">Buy now <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+												<a class="btn btn-hot text-uppercase btn-lg" href="{!! $product->externalURL !!}" target="_blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy now</a>
 											</p>
 										</div>
 									</div>

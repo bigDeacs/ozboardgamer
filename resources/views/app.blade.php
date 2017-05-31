@@ -161,10 +161,10 @@
 											 </div>
 											<div class="row" style="background: #222222;color: #9d9d9d;margin: 10px auto 0;">
 												<div class="col-xs-6 hidden-xs text-center">
-													<a href="mailto:ozboardgamer@gmail.com" class="btn btn-warning" style="margin: 10px;"><i class="fa fa-question-circle" aria-hidden="true"></i> Trouble?</a></li>    
+													<a href="mailto:ozboardgamer@gmail.com" class="btn btn-sunny text-uppercase" style="margin: 10px;"><i class="fa fa-question-circle" aria-hidden="true"></i> Trouble?</a></li>    
 												</div>
 												<div class="col-xs-12 col-sm-6 text-center">
-													<a href="/logout" class="btn btn-danger" style="margin: 10px;"><i class="fa fa-sign-out"></i> Logout</a></li>    
+													<a href="/logout" class="btn btn-hot text-uppercase" style="margin: 10px;"><i class="fa fa-sign-out"></i> Logout</a></li>    
 												</div>
 											</div>
 										</ul>
@@ -263,7 +263,7 @@
 							</li>
 							<br />
 							<!--<li>
-								<a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" class="btn btn-danger btn-lg" target="_blank" title="Subscribe to our Youtube channel">
+								<a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" class="btn btn-hot text-uppercase btn-lg" target="_blank" title="Subscribe to our Youtube channel">
 									<i class="fa fa-youtube fa-fw"></i>
 								</a>
 							</li>-->
@@ -357,7 +357,7 @@
 					<hr />
 					<div class="row text-center">
 						<a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Signup with Facebook</a>
-						<a href="/google" class="btn btn-danger"><i class="fa fa-google" aria-hidden="true"></i> Signup with Google</a>
+						<a href="/google" class="btn btn-hot text-uppercase"><i class="fa fa-google" aria-hidden="true"></i> Signup with Google</a>
 					</div>
 					<hr />
 				</div>

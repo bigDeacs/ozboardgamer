@@ -73,7 +73,7 @@
                               <button class="btn btn-default prevBtn btn-lg pull-left" type="button">Prev</button>
                             @endif
                             @if($key+1 === count($questions))
-                              <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
+                              <button class="btn btn-fresh text-uppercase btn-lg pull-right" type="submit">Finish!</button>
                             @else
                               <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
                             @endif

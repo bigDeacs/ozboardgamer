@@ -139,7 +139,7 @@
 											</div>
 											@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 												<div id="socialShare" class="row hidden-xs" width="100%" style="margin-top: 10px;">
-													<a data-toggle="dropdown" class="col-xs-10 col-xs-offset-1 btn btn-info">
+													<a data-toggle="dropdown" class="col-xs-10 col-xs-offset-1 btn btn-sky text-uppercase">
 														 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
 													</a>													
 													<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
@@ -213,7 +213,7 @@
                                                 </p>
                                                 <p>												
 													@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-														<a class="btn btn-hot text-uppercase pull-right" href="/reviews/{{ $review->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>													
+														<a class="btn btn-hot text-uppercase pull-right" href="/reviews/{{ $review->slug }}"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
 													@endunless   													
                                                 </p>
                                             </div>
@@ -254,7 +254,7 @@
 											</div>
 											@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
 												<div id="socialShare" class="row hidden-xs" width="100%" style="margin-top: 10px;">
-													<a data-toggle="dropdown" class="col-xs-10 col-xs-offset-1 btn btn-info">
+													<a data-toggle="dropdown" class="col-xs-10 col-xs-offset-1 btn btn-sky text-uppercase">
 														 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
 													</a>													
 													<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
@@ -325,7 +325,7 @@
                                                 </p>                                                
                                                 <p>
 													@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))																										
-														<a class="btn btn-hot text-uppercase pull-right" href="/top10s/{{ $top10->slug }}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+														<a class="btn btn-hot text-uppercase pull-right" href="/top10s/{{ $top10->slug }}"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 													@endunless                                                     
                                                 </p>
                                             </div>

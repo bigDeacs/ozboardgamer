@@ -56,26 +56,16 @@
 						  <!-- Carousel items -->
 						  <div class="carousel-inner">
 							<div class="item notice notice-danger active" style="margin-bottom: 0; padding: 20px 0 40px 0;">							
-							  <div class="col-xs-12 text-center">
-								<a href="https://t.cfjump.com/33917/b/31466" target="_blank">
-									<strong>
-										<span class="hidden-xs">New Deals Every Tuesday!</span>									
-									</strong>											
-								</a>
-							  </div>
+								<strong>New Deals Every Tuesday!</strong>											
+								<a class="btn btn-hot text-uppercase pull-right" href="https://t.cfjump.com/33917/b/31466" target="_blank"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 							</div>
 							@foreach($data['offers'] as $key => $offer)
 								<div class="item notice notice-danger" style="margin-bottom: 0; padding: 20px 0 40px 0;">
-								  <div class="col-xs-12 text-center">
-									<a href="{{ $offer->url }}" target="_blank">
-										<strong>
-											<span class="hidden-xs">{{ $offer->name }}</span>
-										</strong>	
-										@if($offer->code !== '' || $offer->code !== null)
-											{{ $offer->code }}
-										@endif										
-									</a>
-								  </div>
+									<strong>{{ $offer->name }}</strong>
+									@if($offer->code !== '' || $offer->code !== null)
+										{{ $offer->code }}
+									@endif										
+									<a class="btn btn-hot text-uppercase pull-right" href="{{ $offer->url }}" target="_blank"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 								</div>
 							@endforeach
 						  </div>
@@ -104,7 +94,7 @@
 							<p>&nbsp;</p>
 						@endif
 						<p class="text-center">
-							<a class="btn btn-danger" href="/shop/{!! $product->slug !!}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+							<a class="btn btn-hot text-uppercase" href="/shop/{!! $product->slug !!}"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 						</p>
 					</div>													
 				</div>
