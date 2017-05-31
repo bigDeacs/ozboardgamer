@@ -235,7 +235,7 @@
 					@endif
 				@endif	
 				<a href="/stores" class="btn btn-sunny text-uppercase hidden-xs" style="font-size:13px;"><i class="fa fa-home" aria-hidden="true"></i> <span class="hidden-xs">Find </span>In Store</a>
-				<a href="http://www.ozgameshop.com/search/{!! str_replace('-', '+', $game->slug) !!}/sort-relevance" target="_blank" class="btn btn-primary hidden-xs" style="font-size:13px;" title="Search on Board Game Shopper"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="hidden-xs">Find </span>Online</a>
+				<a href="http://www.ozgameshop.com/search/{!! str_replace('-', '+', $game->slug) !!}/sort-relevance" target="_blank" class="btn btn-ocean text-uppercase hidden-xs" style="font-size:13px;" title="Search on Board Game Shopper"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="hidden-xs">Find </span>Online</a>
 				@if(Session::has('name'))
 					@if($game->users()->wherePivot('type', 'wanted')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty())
 						<a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/addToWanted/{!! $game->id !!}" class="btn btn-fresh text-uppercase" style="font-size:13px;" rel="nofollow"><i class="fa fa-eye" aria-hidden="true"></i> Watch<span class="hidden-xs hidden-sm"> Game</span></a>
@@ -516,7 +516,7 @@
 			<div class="col-xs-12">
 				<h4>Login/Signup Using:</h4>
 				<div class="row text-center">
-					<div class="col-xs-4"><a href="/facebook" class="btn btn-primary btn-block" title="Login/Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
+					<div class="col-xs-4"><a href="/facebook" class="btn btn-ocean text-uppercase btn-block" title="Login/Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
 					<div class="col-xs-4"><a href="/google" class="btn btn-hot text-uppercase btn-block" title="Login/Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
 					<div class="col-xs-4"><a href="/twitter" class="btn btn-sky text-uppercase btn-block" title="Login/Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
 			   </div>

@@ -45,7 +45,7 @@
               <div class="stepwizard-row setup-panel">
                   @foreach($questions as $key => $question)
                     <div class="stepwizard-step">
-                        <a href="#step-{{ $key+1 }}" type="button" class="{{ ($key == 0) ? 'btn btn-primary btn-circle' : 'btn btn-default btn-circle' }}" {{ ($key == 0) ? '' : 'disabled="disabled"' }}>{{ $key+1 }}</a>
+                        <a href="#step-{{ $key+1 }}" type="button" class="{{ ($key == 0) ? 'btn btn-ocean text-uppercase btn-circle' : 'btn btn-default btn-circle' }}" {{ ($key == 0) ? '' : 'disabled="disabled"' }}>{{ $key+1 }}</a>
                         <p>Question {{ $key+1 }}</p>
                     </div>
                   @endforeach
@@ -75,7 +75,7 @@
                             @if($key+1 === count($questions))
                               <button class="btn btn-fresh text-uppercase btn-lg pull-right" type="submit">Finish!</button>
                             @else
-                              <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+                              <button class="btn btn-ocean text-uppercase nextBtn btn-lg pull-right" type="button">Next</button>
                             @endif
                         </div>
                     </div>
@@ -127,8 +127,8 @@
                     $item = $(this);
 
             if (!$item.hasClass('disabled')) {
-                navListItems.removeClass('btn-primary').addClass('btn-default');
-                $item.addClass('btn-primary');
+                navListItems.removeClass('btn-ocean text-uppercase').addClass('btn-default');
+                $item.addClass('btn-ocean text-uppercase');
                 allWells.hide();
                 $target.show();
                 $target.find('input:eq(0)').addClass('has-error');
@@ -168,7 +168,7 @@
             prevStepWizard.removeAttr('disabled').trigger('click');
         });
 
-        $('div.setup-panel div a.btn-primary').trigger('click');
+        $('div.setup-panel div a.btn-ocean text-uppercase').trigger('click');
     });
   </script>
 @endsection

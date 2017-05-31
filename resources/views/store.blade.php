@@ -323,7 +323,7 @@
           @else
             <hr />
             <div class="row text-center">
-              <a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
+              <a href="/facebook" class="btn btn-ocean text-uppercase"><i class="fa fa-facebook-official" aria-hidden="true"></i> Login with Facebook</a>
             <!--or <a href="/google" class="btn btn-hot text-uppercase"><i class="fa fa-google" aria-hidden="true"></i> Login with Google</a>--> <span class="hidden-xs">to add comments</span>
             </div>
           @endif

@@ -49,7 +49,7 @@
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-    <link href="https://css.ozboardgamer.com/css/style.min.css?v=77" rel="stylesheet">
+    <link href="https://css.ozboardgamer.com/css/style.min.css?v=78" rel="stylesheet">
 	<!--<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>-->
 	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">
@@ -156,7 +156,7 @@
 												<div class="col-xs-12 col-sm-8 text-center">
 													<span class="hidden-xs">{{ Session::get('name') }}</span>
 													<p class="hidden-xs"><small>{{ Session::get('email') }}</small></p>
-													<a href="/users/{{ Session::get('slug') }}?page=1" class="btn btn-primary"><i class="fa fa-user"></i> View Profile</a></li>												
+													<a href="/users/{{ Session::get('slug') }}?page=1" class="btn btn-ocean text-uppercase"><i class="fa fa-user"></i> View Profile</a></li>												
 												</div>
 											 </div>
 											<div class="row" style="background: #222222;color: #9d9d9d;margin: 10px auto 0;">
@@ -194,7 +194,7 @@
 
 		@yield('content')
 
-		<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
+		<a id="back-to-top" href="#" class="btn btn-ocean text-uppercase btn-lg back-to-top" role="button" title="Click to return on the top page" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
 		<!-- Footer -->
 		<footer class="navbar-inverse navbar-footer">
@@ -348,7 +348,7 @@
 
 						 <div class="form-group">
 						   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-							 <button type="submit" class="btn btn-primary btn-block" onclick="completeRegistration()">
+							 <button type="submit" class="btn btn-ocean text-uppercase btn-block" onclick="completeRegistration()">
 							   Signup
 							 </button>
 						   </div>
@@ -356,7 +356,7 @@
 					</form>
 					<hr />
 					<div class="row text-center">
-						<a href="/facebook" class="btn btn-primary"><i class="fa fa-facebook-official" aria-hidden="true"></i> Signup with Facebook</a>
+						<a href="/facebook" class="btn btn-ocean text-uppercase"><i class="fa fa-facebook-official" aria-hidden="true"></i> Signup with Facebook</a>
 						<a href="/google" class="btn btn-hot text-uppercase"><i class="fa fa-google" aria-hidden="true"></i> Signup with Google</a>
 					</div>
 					<hr />

@@ -123,7 +123,7 @@
 								<div class="panel-body">									
 									<h1 class="text-center">Login Using:</h1>		
 									<div class="row text-center">
-										<div class="col-xs-4"><a href="/facebook" class="btn btn-primary btn-block" title="Login using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
+										<div class="col-xs-4"><a href="/facebook" class="btn btn-ocean text-uppercase btn-block" title="Login using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
 										<div class="col-xs-4"><a href="/google" class="btn btn-hot text-uppercase btn-block" title="Login using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
 										<div class="col-xs-4"><a href="/twitter" class="btn btn-sky text-uppercase btn-block" title="Login using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
 								   </div>
@@ -153,7 +153,7 @@
 										</div>
 										<div class="form-group">
 										   <div class="col-xs-12">
-												<button type="submit" class="btn btn-primary btn-block">Login</button>
+												<button type="submit" class="btn btn-ocean text-uppercase btn-block">Login</button>
 											</div>
 										</div>
 								   </form>
