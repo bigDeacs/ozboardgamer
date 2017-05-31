@@ -54,18 +54,18 @@
 					<div class="col-sm-12 text-center">
 					   <div id="offerCarousel" class="vertical-slider carousel vertical slide row" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
 						  <!-- Carousel items -->
-						  <div class="carousel-inner">
-							<div class="item notice notice-danger active">							
+						  <div class="carousel-inner col-xs-12">
+							<div class="item notice notice-lg notice-danger active">							
 								<strong>New Deals Every Tuesday!</strong>											
-								<a class="btn btn-hot btn-xs text-uppercase" href="https://t.cfjump.com/33917/b/31466" target="_blank"><span class="fa fa-arrow-circle-right"></span> Read more</a>
+								<a class="btn btn-hot text-uppercase" href="https://t.cfjump.com/33917/b/31466" target="_blank"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 							</div>
 							@foreach($data['offers'] as $key => $offer)
-								<div class="item notice notice-danger">
+								<div class="item notice notice-lg notice-danger">
 									<strong>{{ $offer->name }}</strong>
 									@if($offer->code !== '' || $offer->code !== null)
 										{{ $offer->code }}
 									@endif										
-									<a class="btn btn-hot btn-xs text-uppercase" href="{{ $offer->url }}" target="_blank"><span class="fa fa-arrow-circle-right"></span> Read more</a>
+									<a class="btn btn-hot text-uppercase" href="{{ $offer->url }}" target="_blank"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 								</div>
 							@endforeach
 						  </div>
