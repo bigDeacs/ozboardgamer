@@ -36,28 +36,27 @@
 						</div>
 						<div class="post" style="padding-bottom: 10px;margin-bottom: 10px;">
 							<div class="row">
-								<div class="col-sm-4 col-xs-12">
-									<div class="row">
-										<div class="col-sm-12 col-xs-5">
-											<p class="text-center"><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></p>
-										</div>
-										<div class="col-sm-12 col-xs-7">
-											@if($product->sale > 0)
-												<p class="text-center"><strong style="font-size: 30px;">${!! $product->saleDisplay !!}</strong></p>
-												<p class="text-center"><s><small style="font-size: 20px;">${!! $product->priceDisplay !!}</small></s></p>
-											@else
-												<p class="text-center"><strong style="font-size: 30px;">${!! $product->priceDisplay !!}</strong></p>
-											@endif								
-											<p class="text-center">
-												<a class="btn btn-hot text-uppercase btn-lg" href="{!! $product->externalURL !!}" target="_blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy now</a>
-											</p>
-										</div>
-									</div>
+								<div class="col-sm-4 col-xs-5">
+									<p class="text-center"><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></p>
 								</div>
-								<div class="col-sm-8 col-xs-12">								
-									<article>{{ $product->description }}</article>
+								<div class="col-sm-8 col-xs-7">			
+									<p>Published by: {{ $product->brand }}</p>
+									@if($product->sale > 0)
+										<p class="text-center"><small style="font-size: 15px;"><s>${!! $product->price !!}</s> Save ${!! $product->price - $product->sale !!}</small></p>
+										<p class="text-center"><strong style="font-size: 30px;color: #db5566;">${!! $product->saleDisplay !!}</strong></p>
+									@else
+										<p class="text-center"><strong style="font-size: 30px;color: #db5566;">${!! $product->priceDisplay !!}</strong></p>	
+									@endif
+									<p class="text-center">
+										<a class="btn btn-hot text-uppercase btn-lg" href="{!! $product->externalURL !!}" target="_blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy now</a>
+									</p>
 								</div>
 							</div>		
+							<div class="row">
+								<div class="col-xs-12 text-center">
+									<article>{{ $product->description }}</article>
+								</div>
+							</div>								
 							<div class="row hidden-xs">
 								<div class="col-xs-12 text-center">
 									<h3>New Deals In:</h3>
