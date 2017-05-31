@@ -25,8 +25,7 @@
 					<div class="col-xs-12">
 						<div class="row">
 							<div class="col-sm-8 col-xs-12">
-								<h1 itemprop="name">{{ $product->name }}</h1>
-								<p><strong>Published by:</strong> {{ $product->brand }}</p>
+								<h1 itemprop="name">{{ $product->name }}</h1>								
 							</div>
 							<div class="col-sm-4 col-xs-12">
 								<span>Search for product: </span>
@@ -37,14 +36,15 @@
 						</div>
 						<div class="post" style="padding-bottom: 10px;margin-bottom: 10px;">
 							<div class="row">
-								<div class="col-sm-4 col-xs-12">
+								<div class="col-md-3 col-sm-4 col-xs-12">
 									<div class="row">
 										<div class="col-sm-12 col-xs-6">
 											<p class="text-center"><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></p>
 										</div>
 										<div class="col-sm-12 col-xs-6">
 											@if($product->sale > 0)
-												<p class="text-center"><small style="font-size: 15px;"><s>${!! $product->price !!}</s> Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</small></p>
+												<p class="text-center"><small style="font-size: 15px;"><s>Was ${!! $product->price !!}</s></small></p>
+												<p class="text-center"><small style="font-size: 15px;">Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</small></p>
 												<p class="text-center"><strong style="font-size: 30px;color: #db5566;">${!! $product->saleDisplay !!}</strong></p>
 											@else
 												<p class="text-center"><strong style="font-size: 30px;color: #db5566;">${!! $product->priceDisplay !!}</strong></p>	
@@ -52,8 +52,10 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-8 col-xs-12">												
+								<div class="col-md-9 col-sm-8 col-xs-12">				
+									<p><strong>Published by:</strong> {{ $product->brand }}</p>								
 									<article>{{ $product->description }}</article>
+									<br />
 									<p class="text-center">
 										<a class="btn btn-hot text-uppercase btn-block btn-lg" href="{!! $product->externalURL !!}" target="_blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy now</a>
 									</p>
