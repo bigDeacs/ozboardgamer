@@ -357,7 +357,7 @@
 										<strong>${!! $product->priceDisplay !!}</strong>
 									@endif
 									<p class="text-center">
-										<a class="btn btn-hot text-uppercase" href="/shop/{!! $product->slug !!}">Read more <span class="fa fa-arrow-circle-right"></span></a>
+										<a class="btn btn-hot text-uppercase" href="/shop/{!! $product->slug !!}"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 									</p>
 								</div>													
 							</div>			

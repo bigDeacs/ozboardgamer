@@ -28,11 +28,11 @@
 		      	<form id="sortForm">
 		      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
 		      		<select class="form-control" onchange="sortProducts()" name="sort" id="sort">
+							<option value="savings-desc" {{ (Request::input('sort') == 'savings-desc') ? 'selected' : "" }}>Promotions</option>
 					  		<option value="name-asc" {{ (Request::input('sort') == 'name-asc') ? 'selected' : "" }}>Name ASC</option>
 					  		<option value="name-desc" {{ (Request::input('sort') == 'name-desc') ? 'selected' : "" }}>Name DESC</option>
 						  	<option value="price-asc" {{ (Request::input('sort') == 'price-asc') ? 'selected' : "" }}>Price ASC</option>
-						  	<option value="price-desc" {{ (Request::input('sort') == 'price-desc') ? 'selected' : "" }}>Price DESC</option>
-						  	<option value="savings-desc" {{ (Request::input('sort') == 'savings-desc') ? 'selected' : "" }}>Promotions</option>
+						  	<option value="price-desc" {{ (Request::input('sort') == 'price-desc') ? 'selected' : "" }}>Price DESC</option>						  	
 					</select>
 				</form>
 				<script>
@@ -55,17 +55,17 @@
 					   <div id="offerCarousel" class="vertical-slider carousel vertical slide row" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
 						  <!-- Carousel items -->
 						  <div class="carousel-inner">
-							<div class="item notice notice-danger active" style="margin-bottom: 0; padding: 20px 0 40px 0;">							
+							<div class="item notice notice-danger active">							
 								<strong>New Deals Every Tuesday!</strong>											
-								<a class="btn btn-hot text-uppercase pull-right" href="https://t.cfjump.com/33917/b/31466" target="_blank"><span class="fa fa-arrow-circle-right"></span> Read more</a>
+								<a class="btn btn-hot btn-xs text-uppercase" href="https://t.cfjump.com/33917/b/31466" target="_blank"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 							</div>
 							@foreach($data['offers'] as $key => $offer)
-								<div class="item notice notice-danger" style="margin-bottom: 0; padding: 20px 0 40px 0;">
+								<div class="item notice notice-danger">
 									<strong>{{ $offer->name }}</strong>
 									@if($offer->code !== '' || $offer->code !== null)
 										{{ $offer->code }}
 									@endif										
-									<a class="btn btn-hot text-uppercase pull-right" href="{{ $offer->url }}" target="_blank"><span class="fa fa-arrow-circle-right"></span> Read more</a>
+									<a class="btn btn-hot btn-xs text-uppercase" href="{{ $offer->url }}" target="_blank"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 								</div>
 							@endforeach
 						  </div>

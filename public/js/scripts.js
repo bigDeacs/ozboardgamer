@@ -83,14 +83,14 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
           displayKey: 'name',
           templates: {
             header: '<div class="category">Games</div>',
-            footer: '<div class="pull-right col-sm-4 col-xs-6">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
+            footer: '<div class="pull-right col-sm-3 col-xs-5">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
             suggestion: function(suggestion) {
               console.log(suggestion);
 			  return '<a href="'+suggestion.slug+'"><div class="row">'+
 				'<div class="col-xs-3 col-sm-4"><img src="https://img.ozboardgamer.com'+suggestion.thumb+'" class="img-responsive" /></div>'+
 				'<div class="col-xs-9 col-sm-8 text-left"><p><strong>'+suggestion._highlightResult.name.value+' <small>('+suggestion.published+')</small></strong></p>'+
 				'<p>'+suggestion.description+'</p>'+
-				'<p><a class="btn btn-danger" href="'+suggestion.slug+'">Read more</a></p></div>'+
+				'<p><a class="btn btn-hot text-uppercase" href="'+suggestion.slug+'"><span class="fa fa-arrow-circle-right"></span> Read more</a></p></div>'+
 				'</div></a>';
             }
           }
@@ -105,7 +105,7 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
           displayKey: 'name',
           templates: {
             header: '<div class="category">Stores</div>',
-            footer: '<div class="pull-right col-xs-6">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
+            footer: '<div class="pull-right col-sm-3 col-xs-5">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
             suggestion: function(suggestion) {
               console.log(suggestion);
               return '<a href="'+suggestion.slug+'"><div class="row">'+
@@ -125,7 +125,7 @@ var client = algoliasearch('LAC06A9QLK', 'fdfd933ae74a447ae896c1279229c83b');
           displayKey: 'name',
           templates: {
             header: '<div class="category">Products</div>',
-            footer: '<div class="pull-right col-xs-6">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
+            footer: '<div class="pull-right col-sm-3 col-xs-5">Search powered by <img src="/img/Algolia_logo_bg-white.jpg" class="img-responsive" /></div>',
             suggestion: function(suggestion) {
               console.log(suggestion);
               return '<a href="/shop/'+suggestion.slug+'"><div class="row">'+
