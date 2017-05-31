@@ -56,8 +56,8 @@
 						  <!-- Carousel items -->
 						  <div class="carousel-inner col-xs-12">
 							<div class="item notice notice-lg notice-danger active">							
-								<strong>New Deals Every Tuesday!</strong>											
-								<a class="btn btn-hot text-uppercase" href="https://t.cfjump.com/33917/b/31466" target="_blank"><span class="fa fa-arrow-circle-right"></span> Read more</a>
+								<strong>New Amazing Deals</strong> Every Tuesday!
+								<a class="btn btn-hot text-uppercase" href="https://t.cfjump.com/33917/b/31466" target="_blank" style="margin-left: 25px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 							</div>
 							@foreach($data['offers'] as $key => $offer)
 								<div class="item notice notice-lg notice-danger">
@@ -65,7 +65,7 @@
 									@if($offer->code !== '' || $offer->code !== null)
 										{{ $offer->code }}
 									@endif										
-									<a class="btn btn-hot text-uppercase" href="{{ $offer->url }}" target="_blank"><span class="fa fa-arrow-circle-right"></span> Read more</a>
+									<a class="btn btn-hot btn-sm text-uppercase" href="{{ $offer->url }}" target="_blank" style="margin-left: 25px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 								</div>
 							@endforeach
 						  </div>

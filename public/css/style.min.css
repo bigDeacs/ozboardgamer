@@ -286,7 +286,7 @@ a.disabled:active, .btn.disabled:active {
     font-size: 80%;
 }
 .notice-lg {
-    padding: 35px;
+    padding: 20px 35px;
     font-size: large;
 }
 .notice-success {
