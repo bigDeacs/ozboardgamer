@@ -120,11 +120,11 @@
 						<div class="panel panel-success" style="padding: 0 10px;" id="parent">
 							<h1 itemprop="name">{{ $post->name }}</h1>
 							<div class="row">
-								<div class="col-xs-6 col-sm-6 col-md-7 col-lg-9">
+								<div class="col-xs-6 col-sm-6 col-md-7 col-lg-8">
 									<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}" itemprop="author">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
 										</span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
 								</div>
-								<div class="col-sm-6 col-md-5 col-lg-3 col-xs-6" style="display: flex;padding-left: 30px;">
+								<div class="col-sm-6 col-md-5 col-lg-4 col-xs-6" style="display: flex;padding-left: 30px;">
 									<div style="margin: 0 10px;">
 										<div class="fb-share-button" data-href="https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}">Share</a></div>
 									</div>
