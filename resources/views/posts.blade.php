@@ -53,11 +53,6 @@
 										</a>														
 									@endif													
 									</div>
-									@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
-										<div class="fb-share-button" data-href="https://ozboardgamer.com/{{ $category->slug }}/{{ $post->slug }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/{{ $category->slug }}/{{ $post->slug }}">Share</a></div>
-										<a class="twitter-share-button" href="https://ozboardgamer.com/{{ $category->slug }}/{{ $post->slug }}">Tweet</a>
-										<div class="g-plusone" data-size="tall" data-annotation="none" data-href="https://ozboardgamer.com/{{ $category->slug }}/{{ $post->slug }}"></div>
-									@endunless
 								</div>
 								<div class="col-sm-9 col-xs-12">
 							@endif

@@ -120,16 +120,22 @@
 						<div class="panel panel-success" style="padding: 0 10px;" id="parent">
 							<h1 itemprop="name">{{ $post->name }}</h1>
 							<div class="row">
-								<div class="col-xs-12 col-sm-7 col-md-8 col-lg-9">
+								<div class="col-xs-6 col-sm-6 col-md-7 col-lg-9">
 									<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}" itemprop="author">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
 										</span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
 								</div>
-								<div class="col-sm-5 col-md-4 col-lg-3 hidden-xs">
+								<div class="col-sm-6 col-md-5 col-lg-3 col-xs-6" style="display: flex;padding-left: 30px;">
+									<div style="margin: 0 10px;">
 										<div class="fb-share-button" data-href="https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}">Share</a></div>
+									</div>
+									<div style="margin: 0 10px;">
 										<a class="twitter-share-button" href="https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}">Tweet</a>
+									</div>
+									<div style="margin: 0 10px;">
 										<div class="g-plusone" data-size="tall" data-annotation="none" data-href="https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}"></div>
 									</div>
 								</div>
+							</div>
 							@unless($post->video == null)
 								<div class="embed-responsive embed-responsive-16by9">
 									<iframe class="embed-responsive-item" src="{{ $post->video }}" allowfullscreen itemprop="video"></iframe>
