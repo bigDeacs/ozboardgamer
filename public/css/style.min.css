@@ -88,6 +88,15 @@ a.disabled:active, .btn.disabled:active {
     width: 33.33333333333333%;
   }
 }
+.textbox-height {
+	min-height: 125px;
+}
+
+@media (min-width: 992px) {
+  .textbox-height {
+		min-height: 200px!important;
+	}
+}
 
 @media (min-width: 1200px) {
   .container {

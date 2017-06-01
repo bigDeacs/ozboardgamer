@@ -178,7 +178,7 @@
 											</div>
 											<div class="row post-content">
 												<div class="col-xs-12">
-													<p itemprop="description">
+													<p itemprop="description" class="textbox-height">
 														@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 															Login to gain early access to this post!
 														@else
@@ -260,7 +260,7 @@
 											</div>
 											<div class="row post-content">
 												<div class="col-xs-12">
-													<p itemprop="description">
+													<p itemprop="description" class="textbox-height">
 														@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
 															Login to gain early access to this post!
 														@else
