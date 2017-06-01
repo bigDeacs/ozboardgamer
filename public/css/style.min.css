@@ -97,7 +97,7 @@ a.disabled:active, .btn.disabled:active {
 
 @media (min-width: 992px) {
   .textbox-height {
-		min-height: 125px!important;
+		min-height: 150px!important;
 	}
 }
 

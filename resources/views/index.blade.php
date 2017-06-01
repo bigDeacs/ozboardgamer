@@ -172,7 +172,7 @@
 								</p>
 								<p>												
 									@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-										<a class="btn btn-hot text-uppercase pull-right" href="/reviews/{{ $review->slug }}"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
+										<a class="btn btn-hot text-uppercase pull-right btn-block" href="/reviews/{{ $review->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
 									@endunless   													
 								</p>
 							</div>
@@ -238,7 +238,7 @@
 								</p>                                                
 								<p>
 									@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))																										
-										<a class="btn btn-hot text-uppercase pull-right" href="/top10s/{{ $top10->slug }}"><span class="fa fa-arrow-circle-right"></span> Read more</a>
+										<a class="btn btn-hot text-uppercase pull-right btn-block" href="/top10s/{{ $top10->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 									@endunless                                                     
 								</p>
 							</div>
