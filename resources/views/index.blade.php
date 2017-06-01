@@ -99,11 +99,9 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12">
-                <!-- Home Page Horizon Ad -->
-				<div class="text-center">
-					<a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy amazing Board Games from Oz Game Shop" src="https://img.ozboardgamer.com/img/d2b546c6-bf54-41c4-bdc9-d5f64bd45508.gif" /></a>
-				</div>
+            <div class="col-xs-12 text-center">
+				<h2>Welcome to Oz Board Gamer!</h2>
+				<p>Helping you find your next favourite game! We have all the latests and greatest on board games. Check out our News, Reviews, Top 10s and more!</p>
             </div>
         </div>
         @endunless
@@ -112,7 +110,7 @@
                 @unless($reviews->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
-                            <h2>Latest Board Game Reviews</h2>
+                            <h3>Latest Board Game Reviews</h3>
                             @foreach($reviews as $review)
                                 <div class="row post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
 									@if($review->games->isEmpty())
@@ -203,7 +201,7 @@
                 @unless($top10s->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
-                            <h2>Latest Board Game Top 10's</h2>
+                            <h3>Latest Board Game Top 10's</h3>
                             @foreach($top10s as $top10)
                                 <div class="row post" style="margin-bottom: 15px;">
 									@if($top10->games->isEmpty())
@@ -321,7 +319,7 @@
 				<div class="row">
 					<div class="col-sm-4 col-xs-12">
 						@unless($howtos->isEmpty())
-						  <h3>Latest How To's</h3>
+						  <h4>Latest How To's</h4>
 						  @foreach($howtos as $entry)
 							  <div class="row">
 								  <div class="col-sm-12 post">
@@ -341,7 +339,7 @@
 					</div>
 					<div class="col-sm-4 col-xs-12">
 						@unless($news->isEmpty())
-							<h3>Latest Game News</h3>
+							<h4>Latest Game News</h4>
 							@foreach($news as $entry)
 								<div class="row">
 									<div class="col-sm-12 post">
@@ -361,7 +359,7 @@
 					</div>
 					<div class="col-sm-4 col-xs-12">
 						@unless($blogs->isEmpty())
-							<h3>Latest Blog Articles</h3>
+							<h4>Latest Blog Articles</h4>
 							@foreach($blogs as $entry)
 								<div class="row">
 									<div class="col-sm-12 post">
@@ -393,7 +391,7 @@
         @unless($stores->isEmpty())
 			<div class="row hidden-xs">
 				<div class="col-xs-12">
-					<h3>Top Rated Stores</h3>
+					<h4>Top Rated Stores</h4>
 					<div class="jcarousel-wrapper">
 						<div class="jcarousel">
 							<ul>
