@@ -85,7 +85,7 @@
     <!-- Page Content -->
     <div class="container">
         @unless($games->isEmpty())
-			<div class="row hidden-xs">
+			<div class="row hidden-xs" style="border-bottom: 1px solid #DDD;">
 				<div class="col-xs-12">
 					<h2 style="margin-top: 10px;">Top Rated Board Games</h2>
 					<div class="jcarousel-wrapper">
