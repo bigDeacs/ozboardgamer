@@ -630,7 +630,7 @@ class SiteController extends Controller {
 	public function index()
 	{
 		$product = Product::where('price', '>', '0')->where('savings', '>', '0')->orderByRaw("RAND()")->first();	
-		$featured = Post::where('status', '=', '1')->where('image', '!=', '')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->take(5)->get();
+		$featured = Post::where('status', '=', '1')->where('image', '!=', '')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->take(4)->get();
 		$reviews = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'reviews');

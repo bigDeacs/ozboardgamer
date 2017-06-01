@@ -28,10 +28,21 @@
 	  @endunless
 	  
 	  <!-- Wrapper for slides -->
-	  <div class="carousel-inner">			
+	  <div class="carousel-inner">		
+			<div class="item slides active">
+			  <!-- Overlay -->
+			  <div class="overlay"></div>
+			  <div class="slide-1" style="background-image:url('https://img.ozboardgamer.com/img/welcome.jpg');"></div>
+			  <div class="hero">
+				<hgroup>
+					<p class="bigText">Welcome to Oz Board Gamer</p>        
+					<p class="smallText">Helping you find your next favourite game!</p>
+				</hgroup>
+			  </div>
+			</div>
 			@unless($featured->isEmpty())
                 @foreach($featured as $key => $post)
-					<div class="item slides {{ ($key == 0) ? 'active' : '' }}">
+					<div class="item slides">
 					  <!-- Overlay -->
 					  <div class="overlay"></div>
 					  <div class="slide-{{ ($key+2) }}" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');"></div>
@@ -52,10 +63,10 @@
 					</div>
                 @endforeach
             @endunless
-			<div class="item slides {{ ($featured->isEmpty()) ? 'active' : '' }}">
+			<div class="item slides">
 			  <!-- Overlay -->
 			  <div class="overlay"></div>
-			  <div class="slide-1" style="background-image:url('https://img.ozboardgamer.com/img/buy-online.jpg');"></div>
+			  <div class="slide-{{ ($featured->isEmpty()) ? '2' : '6' }}" style="background-image:url('https://img.ozboardgamer.com/img/buy-online.jpg');"></div>
 			  <div class="hero">
 				<hgroup>
 					<p class="bigText">Buy Games</p>        
@@ -65,14 +76,13 @@
 			  </div>
 			</div>
 	  </div> 
-	</div>
-
+	</div>		
     <!-- Page Content -->
     <div class="container">
         @unless($games->isEmpty())
         <div class="row hidden-xs">
             <div class="col-xs-12">
-                <h1 style="margin-top: 10px;">Top Rated Board Games</h1>
+                <h2 style="margin-top: 10px;">Top Rated Board Games</h2>
                 <div class="jcarousel-wrapper">
                     <div class="jcarousel">
                         <ul>
@@ -97,13 +107,7 @@
                     <a href="#" class="jcarousel-control-next">&rsaquo;</a>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 text-center">
-				<h2>Welcome to Oz Board Gamer!</h2>
-				<p>Helping you find your next favourite game! We have all the latests and greatest on board games. Check out our News, Reviews, Top 10s and more!</p>
-            </div>
-        </div>
+        </div>        
         @endunless
         <div class="row">
             <div class="col-xs-12">                               
@@ -286,106 +290,6 @@
                         </div>
                     </div>
                 @endunless                
-            </div>
-            <div class="col-xs-12">       
-				<div style="display:none;">
-					@if($product)
-						<h3>Featured Product</h3>
-						<div class="row" style="margin: auto;border-bottom: 1px solid #DDD;">
-							<div class="col-xs-12">
-								<div class="thumbnail img-shadow text-center">
-									<a href="/shop/{!! $product->slug !!}">
-										<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
-									</a>
-									<div class="caption text-center">
-										<a href="/shop/{{ $product->slug }}" title="{!! $product->name !!}">											
-											<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit(strip_tags($product->name), $limit = 12, $end = '...') !!}</strong><br /></p>
-										</a>
-										@if($product->sale > 0)
-											<strong>${!! $product->saleDisplay !!}</strong><br />
-											<s><small>${!! $product->priceDisplay !!}</small></s>
-										@else
-											<strong>${!! $product->priceDisplay !!}</strong>
-										@endif
-										<p class="text-center">
-											<a class="btn btn-hot text-uppercase" href="/shop/{!! $product->slug !!}"><span class="fa fa-arrow-circle-right"></span> Read more</a>
-										</p>
-									</div>													
-								</div>			
-							</div>													
-						</div>
-					@endif
-				</div>
-				<div class="row">
-					<div class="col-sm-4 col-xs-12">
-						@unless($howtos->isEmpty())
-						  <h4>Latest How To's</h4>
-						  @foreach($howtos as $entry)
-							  <div class="row">
-								  <div class="col-sm-12 post">
-									  <div class="row">
-										  <div class="col-sm-12">                                      
-												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
-													<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
-												@else
-													<p class="blogHeadingSml"><strong><a href="/howtos/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
-												@endif
-										  </div>
-									  </div>
-								  </div>
-							  </div>
-						  @endforeach
-						@endunless
-					</div>
-					<div class="col-sm-4 col-xs-12">
-						@unless($news->isEmpty())
-							<h4>Latest Game News</h4>
-							@foreach($news as $entry)
-								<div class="row">
-									<div class="col-sm-12 post">
-										<div class="row">
-											<div class="col-sm-12">
-												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
-													<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
-												@else
-													<p class="blogHeadingSml"><strong><a href="/news/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
-												@endif                                        
-											</div>
-										</div>
-									</div>
-								</div>
-							@endforeach
-						@endunless  
-					</div>
-					<div class="col-sm-4 col-xs-12">
-						@unless($blogs->isEmpty())
-							<h4>Latest Blog Articles</h4>
-							@foreach($blogs as $entry)
-								<div class="row">
-									<div class="col-sm-12 post">
-										<div class="row">
-											<div class="col-sm-12">
-												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
-													<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
-												@else
-													<p class="blogHeadingSml"><strong><a href="/blogs/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
-												@endif
-											</div>
-										</div>
-									</div>
-								</div>
-							@endforeach
-						@endunless  		
-					</div>
-				</div>
-				
-				<div style="display:none;" class="fb-page" data-href="https://www.facebook.com/ozboardgamer" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/ozboardgamer" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ozboardgamer">Oz Board Gamer</a></blockquote></div>			           
-                
-                <!-- Home Page Tower Ad Right -->
-				<div class="text-center" style="display:none;" >
-					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy Board Games online from Oz Game Shop" src="https://img.ozboardgamer.com/img/tower-ad.jpg" /></a>
-				</div>
-						
             </div>
         </div>
         @unless($stores->isEmpty())
