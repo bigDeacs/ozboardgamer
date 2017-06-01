@@ -40,7 +40,7 @@
 			  <div class="slide-1" style="background-image:url('https://img.ozboardgamer.com/img/welcome.jpg');"></div>
 			  <div class="hero" width="100%;">
 				<hgroup>
-					<p class="bigText">Oz Board Gamer</p>        
+					<h1 class="bigText">Oz Board Gamer</h1>        
 					<p class="smallText">Helping you find your next favourite game!</p>
 				</hgroup>
 			  </div>
