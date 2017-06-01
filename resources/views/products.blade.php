@@ -56,7 +56,7 @@
 						  <!-- Carousel items -->
 						  <div class="carousel-inner col-xs-12">
 							<div class="item notice notice-lg notice-danger active">							
-								<strong>New Amazing Deals</strong> Every Tuesday!
+								<strong>New Amazing Deals</strong> Every Thursday!
 								<a class="btn btn-hot text-uppercase" href="https://t.cfjump.com/33917/b/31466" target="_blank" style="margin-left: 25px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 							</div>
 							@foreach($data['offers'] as $key => $offer)
@@ -127,7 +127,7 @@
 	<script src="/js/flipclock.min.js"></script>
 	<script type="text/javascript">		
 		$(document).ready(function() {
-			var clock = $('.clock').FlipClock({{ strtotime('Next Tuesday') - time() }}, {
+			var clock = $('.clock').FlipClock({{ strtotime('Next Thursday') - time() }}, {
 				clockFace: 'DailyCounter',
 				countdown: true
 			});
