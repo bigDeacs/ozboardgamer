@@ -173,17 +173,7 @@
 													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 													@else
 														 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a>
-													@endif                                                
-													@unless($review->games->isEmpty())
-														<span class="hidden-xs">
-															 | <span class="fa fa-trophy"></span>
-															<span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
-																@foreach($review->games as $key => $game)
-																	<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a>{{ ($key == (count($review->games) -1)) ? '' : ',' }}
-																@endforeach
-															</span>
-														</span>
-													@endunless
+													@endif                                                											
 												</div>
 											</div>
 											<div class="row post-content">
@@ -265,15 +255,7 @@
 													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
 													@else
 														 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread"></a>
-													@endif   												
-													@unless($top10->games->isEmpty())
-														<span class="hidden-xs">
-															 | <span class="fa fa-trophy"></span>
-															@foreach($top10->games as $key => $game)
-																<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">{{ $game->name }}</a>{{ ($key == (count($top10->games) -1)) ? '' : ',' }}
-															@endforeach
-														</span>
-													@endunless
+													@endif   																									
 												</div>
 											</div>
 											<div class="row post-content">
