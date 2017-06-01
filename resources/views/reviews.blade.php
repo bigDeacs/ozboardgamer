@@ -31,26 +31,33 @@
 							@else
 								<?php 
 									$game = $post->games()->orderBy(DB::raw('RAND()'))->first(); 
-								?>
-								<div class="col-sm-3 col-xs-12" style="padding: 15px;overflow: hidden;height: 175px;">																
-									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
-										<a href="#" class="disabled" title="Login for access">
-											<div class="offer offer-radius offer-danger">
-												<div class="shape">
-													<div class="shape-text">
-														<i class="fa fa-lock" aria-hidden="true"></i>
+								?>								
+								<div class="col-sm-3 col-xs-12" style="padding: 15px;">
+									<div style="overflow: hidden;height: 175px;">
+										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
+											<a href="#" class="disabled" title="Login for access">
+												<div class="offer offer-radius offer-danger">
+													<div class="shape">
+														<div class="shape-text">
+															<i class="fa fa-lock" aria-hidden="true"></i>
+														</div>
 													</div>
-												</div>
-												<div class="offer-content">
-													<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;opacity: 0.5;" width="100%" />
-												</div>
-											</div>	
-										</a>
-									@else										
-										<a href="/{{ $category->slug }}/{{ $post->slug }}" title="{{ $game->name }}">
-											<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
-										</a>														
-									@endif									
+													<div class="offer-content">
+														<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;opacity: 0.5;" width="100%" />
+													</div>
+												</div>	
+											</a>
+										@else										
+											<a href="/{{ $category->slug }}/{{ $post->slug }}" title="{{ $game->name }}">
+												<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
+											</a>														
+										@endif													
+									</div>
+									@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
+										<div class="fb-like" data-href="https://ozboardgamer.com/{{ $category->slug }}/{{ $post->slug }}" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+										<a class="twitter-share-button" href="https://ozboardgamer.com/{{ $category->slug }}/{{ $post->slug }}">Tweet</a>
+										<div class="g-plusone" data-size="tall" data-annotation="none" data-href="https://ozboardgamer.com/{{ $category->slug }}/{{ $post->slug }}"></div>
+									@endunless
 								</div>
 								<div class="col-sm-9 col-xs-12">
 							@endif

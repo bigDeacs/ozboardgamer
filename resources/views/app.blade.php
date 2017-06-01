@@ -63,7 +63,7 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
-	<!-- End Facebook Plugin -->
+	<!-- Facebook Plugin -->
 	<div id="fb-root"></div>
 	<script data-cfasync="false">(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
@@ -73,6 +73,7 @@
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 	<!-- End Facebook Plugin -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<!--  Hiding Script -->
 	<style>.async-hide { opacity: 0 !important} </style>
 	<script data-cfasync="false">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;

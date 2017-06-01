@@ -138,28 +138,9 @@
 												@endif
 											</div>
 											@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-												<div id="socialShare" class="row hidden-xs" width="100%" style="margin-top: 10px;">
-													<a data-toggle="dropdown" class="col-xs-10 col-xs-offset-1 btn btn-sky text-uppercase">
-														 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
-													</a>													
-													<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
-														<li>
-															<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
-																<i class="fa fa-facebook"></i> Share on Facebook
-															</a>
-														</li>
-														<li>
-															<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
-																<i class="fa fa-twitter"></i> Share on Twitter
-															</a>
-														</li>
-														<li>
-															<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/reviews/{{ $review->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
-																<i class="fa fa-google-plus"></i> Share on Google+
-															</a>
-														</li>														
-													</ul>
-												</div>
+												<div class="fb-like" data-href="https://ozboardgamer.com/reviews/{{ $review->slug }}" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+												<a class="twitter-share-button" href="https://ozboardgamer.com/reviews/{{ $review->slug }}">Tweet</a>
+												<div class="g-plusone" data-size="tall" data-annotation="none" data-href="https://ozboardgamer.com/reviews/{{ $review->slug }}"></div>
 											@endunless
 										</div>
 										<div class="col-sm-8 col-md-9 col-xs-12">
@@ -253,28 +234,9 @@
 												@endif											
 											</div>
 											@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-												<div id="socialShare" class="row hidden-xs" width="100%" style="margin-top: 10px;">
-													<a data-toggle="dropdown" class="col-xs-10 col-xs-offset-1 btn btn-sky text-uppercase">
-														 <i class="fa fa-share-alt fa-inverse"></i> Share <span class="caret"></span>
-													</a>													
-													<ul class="dropdown-menu" style="padding: 5px 10px;top: 90%;">
-														<li>
-															<a data-original-title="Facebook" rel="tooltip" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/top10s/{{ $top10->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-facebook" data-placement="left" style="width:100%;margin: 5px auto;">
-																<i class="fa fa-facebook"></i> Share on Facebook
-															</a>
-														</li>
-														<li>
-															<a data-original-title="Twitter" rel="tooltip" onclick="window.open('http://twitter.com/home?status=https://ozboardgamer.com/top10s/{{ $top10->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-twitter" data-placement="left" style="width:100%;margin: 5px auto;">
-																<i class="fa fa-twitter"></i> Share on Twitter
-															</a>
-														</li>
-														<li>
-															<a data-original-title="Google+" rel="tooltip" onclick="window.open('https://plus.google.com/share?url=https://ozboardgamer.com/top10s/{{ $top10->slug }}', '', ' scrollbars=yes,menubar=no,width=500,height=500, resizable=yes,toolbar=no,location=no,status=no')" class="btn btn-google" data-placement="left" style="width:100%;margin: 5px auto;">
-																<i class="fa fa-google-plus"></i> Share on Google+
-															</a>
-														</li>														
-													</ul>
-												</div>
+												<div class="fb-like" data-href="https://ozboardgamer.com/top10s/{{ $top10->slug }}" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+												<a class="twitter-share-button" href="https://ozboardgamer.com/top10s/{{ $top10->slug }}">Tweet</a>
+												<div class="g-plusone" data-size="tall" data-annotation="none" data-href="https://ozboardgamer.com/top10s/{{ $top10->slug }}"></div>
 											@endunless
 										</div>
 										<div class="col-sm-8 col-md-9 col-xs-12">
