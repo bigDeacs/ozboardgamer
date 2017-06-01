@@ -23,7 +23,12 @@
 			<li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
 			@foreach($featured as $key => $post)
 				<li data-target="#bs-carousel" data-slide-to="{{ ($key+1) }}"></li>
-			@endforeach
+			@endforeach		
+			@if($featured->isEmpty())
+				<li data-target="#bs-carousel" data-slide-to="2" class="active"></li>
+			@else
+				<li data-target="#bs-carousel" data-slide-to="6" class="active"></li>
+			@endif
 		</ol>
 	  @endunless
 	  
@@ -33,9 +38,9 @@
 			  <!-- Overlay -->
 			  <div class="overlay"></div>
 			  <div class="slide-1" style="background-image:url('https://img.ozboardgamer.com/img/welcome.jpg');"></div>
-			  <div class="hero">
+			  <div class="hero" width="100%;">
 				<hgroup>
-					<p class="bigText">Welcome to Oz Board Gamer</p>        
+					<p class="bigText">Oz Board Gamer</p>        
 					<p class="smallText">Helping you find your next favourite game!</p>
 				</hgroup>
 			  </div>
@@ -46,7 +51,7 @@
 					  <!-- Overlay -->
 					  <div class="overlay"></div>
 					  <div class="slide-{{ ($key+2) }}" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');"></div>
-					  <div class="hero">        
+					  <div class="hero" width="100%;">    
 						<hgroup>
 							@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 								<p class="bigText"><i class="fa fa-lock" aria-hidden="true"></i> {{ $post->category()->first()->name }} <i class="fa fa-lock" aria-hidden="true"></i></p>     
@@ -67,7 +72,7 @@
 			  <!-- Overlay -->
 			  <div class="overlay"></div>
 			  <div class="slide-{{ ($featured->isEmpty()) ? '2' : '6' }}" style="background-image:url('https://img.ozboardgamer.com/img/buy-online.jpg');"></div>
-			  <div class="hero">
+			  <div class="hero" width="100%;">
 				<hgroup>
 					<p class="bigText">Buy Games</p>        
 					<p class="smallText">Choose from thousands of Games and Accessories</p>
