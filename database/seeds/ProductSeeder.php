@@ -40,7 +40,7 @@ class ProductSeeder extends CsvSeeder
 			$sale = preg_replace('/\b(AUD|,)\b/i', '', $product->saleDisplay);
 			$price = preg_replace('/\b(AUD|,)\b/i', '', $product->priceDisplay);
 			if($sale > 0) {
-				if($sale > 9)
+				if($sale > 5)
 				{
 					DB::table($this->table)
 					->where('id', $product->id)
@@ -53,8 +53,8 @@ class ProductSeeder extends CsvSeeder
 						'savings' => ((($price - $sale) / $price) * 100)
 					]);  
 				}
-			} else {
-				if($price > 9)
+			} elseif($price > 0) {
+				if($price > 5)
 				{
 					DB::table($this->table)
 					->where('id', $product->id)
@@ -67,7 +67,9 @@ class ProductSeeder extends CsvSeeder
 						'savings' => 0
 					]);  
 				}
-			}			
+			} else {		
+				DB::table($this->table)->where('id', '=', $product->id)->delete();
+			}
         }
     }
 }
