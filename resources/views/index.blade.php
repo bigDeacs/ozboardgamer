@@ -108,11 +108,11 @@
         </div>
         @endunless
         <div class="row">
-            <div class="col-md-9 col-sm-8 col-xs-12">                               
+            <div class="col-xs-12">                               
                 @unless($reviews->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
-                            <h2>Latest Game Reviews</h2>
+                            <h2>Latest Board Game Reviews</h2>
                             @foreach($reviews as $review)
                                 <div class="row post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
 									@if($review->games->isEmpty())
@@ -203,7 +203,7 @@
                 @unless($top10s->isEmpty())
                     <div class="row">
                         <div class="col-xs-12">
-                            <h2>Latest Top 10's</h2>
+                            <h2>Latest Board Game Top 10's</h2>
                             @foreach($top10s as $top10)
                                 <div class="row post" style="margin-bottom: 15px;">
 									@if($top10->games->isEmpty())
@@ -289,92 +289,105 @@
                     </div>
                 @endunless                
             </div>
-            <div class="col-md-3 col-sm-4 hidden-xs">       
-				@if($product)
-					<h3>Featured Product</h3>
-					<div class="row" style="margin: auto;border-bottom: 1px solid #DDD;">
-						<div class="col-xs-12">
-							<div class="thumbnail img-shadow text-center">
-								<a href="/shop/{!! $product->slug !!}">
-									<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
-								</a>
-								<div class="caption text-center">
-									<a href="/shop/{{ $product->slug }}" title="{!! $product->name !!}">											
-										<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit(strip_tags($product->name), $limit = 12, $end = '...') !!}</strong><br /></p>
+            <div class="col-xs-12">       
+				<div style="display:none;">
+					@if($product)
+						<h3>Featured Product</h3>
+						<div class="row" style="margin: auto;border-bottom: 1px solid #DDD;">
+							<div class="col-xs-12">
+								<div class="thumbnail img-shadow text-center">
+									<a href="/shop/{!! $product->slug !!}">
+										<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
 									</a>
-									@if($product->sale > 0)
-										<strong>${!! $product->saleDisplay !!}</strong><br />
-										<s><small>${!! $product->priceDisplay !!}</small></s>
-									@else
-										<strong>${!! $product->priceDisplay !!}</strong>
-									@endif
-									<p class="text-center">
-										<a class="btn btn-hot text-uppercase" href="/shop/{!! $product->slug !!}"><span class="fa fa-arrow-circle-right"></span> Read more</a>
-									</p>
-								</div>													
-							</div>			
-						</div>													
-					</div>			
-                @endif
-				@unless($howtos->isEmpty())
-                  <h3>Latest How To's</h3>
-                  @foreach($howtos as $entry)
-                      <div class="row">
-                          <div class="col-sm-12 post">
-                              <div class="row">
-                                  <div class="col-sm-12">                                      
-										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
-											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
+									<div class="caption text-center">
+										<a href="/shop/{{ $product->slug }}" title="{!! $product->name !!}">											
+											<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit(strip_tags($product->name), $limit = 12, $end = '...') !!}</strong><br /></p>
+										</a>
+										@if($product->sale > 0)
+											<strong>${!! $product->saleDisplay !!}</strong><br />
+											<s><small>${!! $product->priceDisplay !!}</small></s>
 										@else
-											<p class="blogHeadingSml"><strong><a href="/howtos/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
+											<strong>${!! $product->priceDisplay !!}</strong>
 										@endif
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  @endforeach
-                @endunless
-				<div class="fb-page" data-href="https://www.facebook.com/ozboardgamer" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/ozboardgamer" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ozboardgamer">Oz Board Gamer</a></blockquote></div>			           
-                @unless($news->isEmpty())
-                    <h3>Latest Game News</h3>
-                    @foreach($news as $entry)
-                        <div class="row">
-                            <div class="col-sm-12 post">
-                                <div class="row">
-                                    <div class="col-sm-12">
-										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
-											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
-										@else
-											<p class="blogHeadingSml"><strong><a href="/news/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
-										@endif                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                @endunless  
+										<p class="text-center">
+											<a class="btn btn-hot text-uppercase" href="/shop/{!! $product->slug !!}"><span class="fa fa-arrow-circle-right"></span> Read more</a>
+										</p>
+									</div>													
+								</div>			
+							</div>													
+						</div>
+					@endif
+				</div>
+				<div class="row">
+					<div class="col-sm-4 col-xs-12">
+						@unless($howtos->isEmpty())
+						  <h3>Latest How To's</h3>
+						  @foreach($howtos as $entry)
+							  <div class="row">
+								  <div class="col-sm-12 post">
+									  <div class="row">
+										  <div class="col-sm-12">                                      
+												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
+													<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
+												@else
+													<p class="blogHeadingSml"><strong><a href="/howtos/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
+												@endif
+										  </div>
+									  </div>
+								  </div>
+							  </div>
+						  @endforeach
+						@endunless
+					</div>
+					<div class="col-sm-4 col-xs-12">
+						@unless($news->isEmpty())
+							<h3>Latest Game News</h3>
+							@foreach($news as $entry)
+								<div class="row">
+									<div class="col-sm-12 post">
+										<div class="row">
+											<div class="col-sm-12">
+												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
+													<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
+												@else
+													<p class="blogHeadingSml"><strong><a href="/news/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
+												@endif                                        
+											</div>
+										</div>
+									</div>
+								</div>
+							@endforeach
+						@endunless  
+					</div>
+					<div class="col-sm-4 col-xs-12">
+						@unless($blogs->isEmpty())
+							<h3>Latest Blog Articles</h3>
+							@foreach($blogs as $entry)
+								<div class="row">
+									<div class="col-sm-12 post">
+										<div class="row">
+											<div class="col-sm-12">
+												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
+													<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
+												@else
+													<p class="blogHeadingSml"><strong><a href="/blogs/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
+												@endif
+											</div>
+										</div>
+									</div>
+								</div>
+							@endforeach
+						@endunless  		
+					</div>
+				</div>
+				
+				<div style="display:none;" class="fb-page" data-href="https://www.facebook.com/ozboardgamer" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/ozboardgamer" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/ozboardgamer">Oz Board Gamer</a></blockquote></div>			           
+                
                 <!-- Home Page Tower Ad Right -->
-				<div class="text-center">
+				<div class="text-center" style="display:none;" >
 					<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy Board Games online from Oz Game Shop" src="https://img.ozboardgamer.com/img/tower-ad.jpg" /></a>
 				</div>
-				@unless($blogs->isEmpty())
-                    <h3>Latest Blog Articles</h3>
-                    @foreach($blogs as $entry)
-                        <div class="row">
-                            <div class="col-sm-12 post">
-                                <div class="row">
-                                    <div class="col-sm-12">
-										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($entry->published_at)))
-											<p class="blogHeadingSml"><strong><a href="#" title="Login for access" class="post-title disabled"><i class="fa fa-lock" aria-hidden="true"></i> {!! $entry->name !!}</a></strong></p>
-										@else
-											<p class="blogHeadingSml"><strong><a href="/blogs/{{ $entry->slug }}" class="post-title">{!! $entry->name !!}</a></strong></p>
-										@endif
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                @endunless  				
+						
             </div>
         </div>
         @unless($stores->isEmpty())
