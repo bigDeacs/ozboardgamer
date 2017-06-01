@@ -124,8 +124,8 @@
 									<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
 										</span>{!! date('F d, Y', strtotime($post->published_at)) !!}
 								</div>
-								<div class="col-sm-5 col-md-4 col-lg-3 hidden-xs">
-									<div class="fb-like" data-href="https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+								<div class="col-sm-5 col-md-4 col-lg-3 hidden-xs">									
+									<div class="fb-share-button" data-href="https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}">Share</a></div>
 									<a class="twitter-share-button" href="https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}">Tweet</a>
 									<div class="g-plusone" data-size="tall" data-annotation="none" data-href="https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}"></div>
 								</div>

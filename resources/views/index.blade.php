@@ -138,7 +138,7 @@
 												@endif
 											</div>
 											@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-												<div class="fb-like" data-href="https://ozboardgamer.com/reviews/{{ $review->slug }}" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+												<div class="fb-share-button" data-href="https://ozboardgamer.com/reviews/{{ $review->slug }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/reviews/{{ $review->slug }}">Share</a></div>
 												<a class="twitter-share-button" href="https://ozboardgamer.com/reviews/{{ $review->slug }}">Tweet</a>
 												<div class="g-plusone" data-size="tall" data-annotation="none" data-href="https://ozboardgamer.com/reviews/{{ $review->slug }}"></div>
 											@endunless
@@ -233,8 +233,8 @@
 													</a>	
 												@endif											
 											</div>
-											@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-												<div class="fb-like" data-href="https://ozboardgamer.com/top10s/{{ $top10->slug }}" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+											@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))											
+												<div class="fb-share-button" data-href="https://ozboardgamer.com/top10s/{{ $top10->slug }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/top10s/{{ $top10->slug }}">Share</a></div>
 												<a class="twitter-share-button" href="https://ozboardgamer.com/top10s/{{ $top10->slug }}">Tweet</a>
 												<div class="g-plusone" data-size="tall" data-annotation="none" data-href="https://ozboardgamer.com/top10s/{{ $top10->slug }}"></div>
 											@endunless
