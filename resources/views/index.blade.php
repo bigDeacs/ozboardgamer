@@ -288,7 +288,7 @@
 									<li>
 										<div class="thumbnail img-shadow">
 											<a href="/shop/{{ $product->slug }}" title="{{ $product->name }}">
-												<img src="https://img.ozboardgamer.com{{ $product->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $product->thumb1x }} 1x, https://img.ozboardgamer.com{{ $product->thumb2x }} 2x" alt="{{ $product->name }}" class="img-responsive" width="300" height="auto" />
+												<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" alt="{{ $product->name }}" class="img-responsive" width="300" height="auto" />
 											</a>
 											<div class="caption text-center">
 												<a href="/shop/{{ $product->slug }}" title="{{ $product->name }}">											
