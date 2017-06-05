@@ -78,6 +78,7 @@
 															<a href="/shop/{{ $item->slug }}" title="{{ $item->name }}">											
 																<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit($item->name, 12) !!}</strong></p>
 															</a>
+															<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $item->priceDisplay !!}</strong></p>
 														</div>
 													</div>
 												</li>
