@@ -181,6 +181,36 @@
 				</div>
 			</div>
 		@endunless	
+		@unless($stores->isEmpty())
+			<div class="row hidden-xs">
+				<div class="col-xs-12">
+					<h3>Top Rated Stores</h3>
+					<div class="jcarousel-wrapper">
+						<div class="jcarousel">
+							<ul>
+								@foreach($stores as $store)
+									<li>
+										<div class="thumbnail img-shadow">
+											<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
+												<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" />
+											</a>
+											<div class="caption text-center">
+												<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">											
+													<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit($store->name, 12) !!}</strong></p>
+												</a>
+											</div>
+										</div>
+									</li>
+								@endforeach
+							</ul>
+						</div>
+
+						<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
+					</div>
+				</div>
+			</div>
+        @endunless
 		@unless($top10s->isEmpty())
 			<div class="row">
 				<div class="col-xs-12">    
@@ -246,23 +276,23 @@
 					@endforeach
 				</div>
 			</div>
-		@endunless			
-        @unless($stores->isEmpty())
+		@endunless		
+		@unless($products->isEmpty())
 			<div class="row hidden-xs">
 				<div class="col-xs-12">
-					<h4>Top Rated Stores</h4>
+					<h3>Featured Products</h3>
 					<div class="jcarousel-wrapper">
 						<div class="jcarousel">
 							<ul>
-								@foreach($stores as $store)
+								@foreach($products as $product)
 									<li>
 										<div class="thumbnail img-shadow">
-											<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
-												<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" />
+											<a href="/shop/{{ $product->slug }}" title="{{ $product->name }}">
+												<img src="https://img.ozboardgamer.com{{ $product->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $product->thumb1x }} 1x, https://img.ozboardgamer.com{{ $product->thumb2x }} 2x" alt="{{ $product->name }}" class="img-responsive" width="300" height="auto" />
 											</a>
 											<div class="caption text-center">
-												<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">											
-													<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit($store->name, 12) !!}</strong></p>
+												<a href="/shop/{{ $product->slug }}" title="{{ $product->name }}">											
+													<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit($product->name, 12) !!}</strong></p>
 												</a>
 											</div>
 										</div>
@@ -276,7 +306,7 @@
 					</div>
 				</div>
 			</div>
-        @endunless
+        @endunless		
     </div>
 
     </div>

@@ -628,8 +628,7 @@ class SiteController extends Controller {
 	 * @return Response
 	 */
 	public function index()
-	{
-		$product = Product::where('price', '>', '0')->where('savings', '>', '0')->orderByRaw("RAND()")->first();	
+	{		
 		$featured = Post::where('status', '=', '1')->where('image', '!=', '')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->take(4)->get();
 		$reviews = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
@@ -653,7 +652,8 @@ class SiteController extends Controller {
 		})->orderBy('published_at', 'desc')->take(10)->get();
 		$games = Game::where('status', '=', '1')->has('parent', '<', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
 		$stores = Store::where('status', '=', '1')->orderBy('rating', 'desc')->take(10)->get();
-		return view('index', compact('featured', 'reviews', 'howtos', 'top10s', 'news', 'blogs', 'games', 'stores', 'product'));
+		$products = Product::where('price', '>', '0')->where('savings', '>', '0')->orderByRaw("RAND()")->take(10)->get();
+		return view('index', compact('featured', 'reviews', 'howtos', 'top10s', 'news', 'blogs', 'games', 'stores', 'products'));
 	}
 
 	/**
