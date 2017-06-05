@@ -1074,18 +1074,7 @@ class SiteController extends Controller {
 		{				
 			return view('contact');
 		}	
-		
-		public function contactRequest(ContactRequest $request)
-		{
-			if($user = User::where('email', '=', $request['email'])->first())
-			{
-						
-			} else {
-				return redirect()->back()->withErrors(['We could not find a User with that email']);
-			}
-			return redirect()->back();
-		}
-		
+	
 		public function contactRequest(ContactRequest $request)
 		{
 			$token = $request->get('g-recaptcha-response');
