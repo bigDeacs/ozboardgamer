@@ -22,6 +22,7 @@ use App\Product;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignupRequest;
+use App\Http\Requests\ContactRequest;
 use App\Http\Requests\QuizResultRequest;
 use Request;
 use Storage;
@@ -1069,6 +1070,43 @@ class SiteController extends Controller {
 		 *
 		 * @return Response
 		 */
+		public function contact()
+		{				
+			return view('contact');
+		}	
+		
+		public function contactRequest(ContactRequest $request)
+		{
+			if($user = User::where('email', '=', $request['email'])->first())
+			{
+						
+			} else {
+				return redirect()->back()->withErrors(['We could not find a User with that email']);
+			}
+			return redirect()->back();
+		}
+		
+		public function contactRequest(ContactRequest $request)
+		{
+			$token = $request->get('g-recaptcha-response');
+			if($token) {
+				Mail::send('emails.contact',
+					['name' => $request->get('name'), 'email' => $request->get('email'), 'phone' => $request->get('phone'), 'info' => $request->get('info')], function($message)
+					{
+						$message->from('admin@ozboardgamer.com');
+						$message->to('ozboardgamer@gmail.com', 'Admin')->cc('brentdeacon23@gmail.com', 'Brent')->subject('Ozboardgamer Contact Request');
+					}
+				);
+				return redirect('thankyou');
+			}
+			return redirect()->back()->withInput()->with('data', 'Captcha not complete');
+		}
+		
+		public function thankyou()
+		{
+			return view('thankyou', $data);
+		}
+		
 		public function privacy()
 		{				
 			return view('privacy');

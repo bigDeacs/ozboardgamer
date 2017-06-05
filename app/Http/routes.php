@@ -104,6 +104,9 @@ Route::group(['prefix' => 'admin'], function()
 
 // Front Facing Routes
 Route::get('/shop/{slug?}', 'SiteController@shop');
+Route::get('/contact', 'SiteController@contact');
+Route::post('contact', ['as' => 'contactRequest', 'uses' => 'SiteController@contactRequest']);
+Route::get('/thankyou', 'SiteController@thankyou');
 Route::get('/privacy', 'SiteController@privacy');
 Route::get('/terms', 'SiteController@terms');
 Route::get('/games/{type?}/{slug?}', 'SiteController@game');

@@ -56,6 +56,7 @@
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="https://css.ozboardgamer.com/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+	<script src='https://www.google.com/recaptcha/api.js'></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
