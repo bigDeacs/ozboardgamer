@@ -47,15 +47,11 @@
 									<div class="form-group">
 										<div class="col-xs-12">		
 											<textarea class="form-control" required="required" name="info" cols="50" rows="10" placeholder="Let us know what you think"></textarea>
-									</div>									 
-									<div class="form-group">
-										<div class="g-recaptcha" data-sitekey="6LfcdxYUAAAAAHOQZ3YhuTfHlqa87dWrqTX5-Rmr"></div>
+										</div>
 									</div>
 									 <div class="form-group">
 									   <div class="col-xs-12">
-										 <button type="submit" class="btn btn-ocean text-uppercase btn-block" onclick="completeRegistration()">
-										   Signup
-										 </button>
+										 <button type="submit" class="btn btn-ocean text-uppercase btn-block g-recaptcha" data-sitekey="6LcWSSQUAAAAAGiLY-96hDHiCTuY1L8yxsAjmQBX" data-callback="YourOnSubmitFn">Submit</button>
 									   </div>
 									 </div>
 								</form>
