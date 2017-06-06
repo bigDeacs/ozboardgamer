@@ -18,13 +18,13 @@
 							<div class="panel-heading"></div>
 							<div class="panel-body">									
 								<h1 class="text-center">Contact Us</h1>		
-								<form class="form-horizontal" role="form" method="POST" action="{{ url('/contact') }}">
+								<form class="form-horizontal" role="form" method="POST" action="{{ url('/contact') }}" id="contactForm>
 									 <input type="hidden" name="_token" value="{{ csrf_token() }}">									 
 									 <div class="form-group">
 									   <div class="col-xs-12">											 
 											 <div class="input-group">
 												<span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
-												<input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name">
+												<input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name" required="required">
 											</div>	
 									   </div>
 									 </div>
@@ -32,7 +32,7 @@
 									   <div class="col-xs-12">											 
 											<div class="input-group">
 												<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-												<input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-Mail Address">
+												<input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-Mail Address" required="required">
 											</div>	
 									   </div>
 									 </div>
@@ -40,7 +40,7 @@
 									   <div class="col-xs-12">											 
 											 <div class="input-group">
 												<span class="input-group-addon"><i class="fa fa-mobile fa-lg" aria-hidden="true"></i></span>
-												<input type="text" class="form-control" name="phone" value="{{ old('phone') }}" placeholder="Phone">
+												<input type="text" class="form-control" name="phone" value="{{ old('phone') }}" placeholder="Phone" required="required">
 											</div>	
 									   </div>
 									 </div>					
@@ -51,7 +51,7 @@
 									</div>
 									 <div class="form-group">
 									   <div class="col-xs-12">
-										 <button type="submit" class="btn btn-ocean text-uppercase btn-block g-recaptcha" data-sitekey="6LcWSSQUAAAAAGiLY-96hDHiCTuY1L8yxsAjmQBX" data-callback="YourOnSubmitFn">Submit</button>
+										 <button type="submit" class="btn btn-ocean text-uppercase btn-block g-recaptcha" data-sitekey="6LcWSSQUAAAAAGiLY-96hDHiCTuY1L8yxsAjmQBX" data-callback="formSubmit">Submit</button>
 									   </div>
 									 </div>
 								</form>
@@ -73,4 +73,9 @@
 @endsection
 
 @section('scripts')
+	<script>
+		function formSubmit(callback) {
+			$('form#contactForm').submit();
+		}
+	</script>
 @endsection
