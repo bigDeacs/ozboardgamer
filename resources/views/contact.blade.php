@@ -18,7 +18,12 @@
 							<div class="panel-heading"></div>
 							<div class="panel-body">									
 								<h1 class="text-center">Contact Us</h1>		
-								<form class="form-horizontal" role="form" method="POST" action="{{ url('/contact') }}" id="contactForm>
+								<form class="form-horizontal" role="form" method="POST" action="{{ url('/contact') }}" id="contactForm">
+									<script>
+										function submitForm() {
+											document.getElementById("contactForm").submit();
+										}
+									</script>
 									 <input type="hidden" name="_token" value="{{ csrf_token() }}">									 
 									 <div class="form-group">
 									   <div class="col-xs-12">											 
@@ -51,7 +56,7 @@
 									</div>
 									 <div class="form-group">
 									   <div class="col-xs-12">
-										 <button type="submit" class="btn btn-ocean text-uppercase btn-block g-recaptcha" data-sitekey="6LcWSSQUAAAAAGiLY-96hDHiCTuY1L8yxsAjmQBX" data-callback="formSubmit">Submit</button>
+										 <button type="submit" class="btn btn-ocean text-uppercase btn-block g-recaptcha" data-sitekey="6LcWSSQUAAAAAGiLY-96hDHiCTuY1L8yxsAjmQBX" data-callback="submitForm">Submit</button>
 									   </div>
 									 </div>
 								</form>
@@ -72,10 +77,5 @@
 	</div>
 @endsection
 
-@section('scripts')
-	<script>
-		function formSubmit(callback) {
-			$('form#contactForm').submit();
-		}
-	</script>
+@section('scripts')	
 @endsection
