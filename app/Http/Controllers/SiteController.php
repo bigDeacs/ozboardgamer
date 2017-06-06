@@ -633,7 +633,7 @@ class SiteController extends Controller {
 			// check if there is cached sitemap and build new only if is not
 			
 			// cache the feed for 60 minutes (second parameter is optional)
-			$feed->setCache(60, 'laravelFeedKey');
+			$feed->setCache(5, 'laravelFeedKey');
 
 			// check if there is cached feed and build new only if is not
 			if (!$feed->isCached())
@@ -650,6 +650,7 @@ class SiteController extends Controller {
 			   $feed->lang = 'en';
 			   $feed->setShortening(true); // true or false
 			   $feed->setTextLimit(100); // maximum length of description text
+			   $feed->setView('pages.rss');
 
 			   foreach ($posts as $post)
 			   {
@@ -658,13 +659,12 @@ class SiteController extends Controller {
 			   }
 
 			}		
-			
-			$feed->setView('InstantArticles.blade');
+						
 			
 			// first param is the feed format
 			// optional: second param is cache duration (value of 0 turns off caching)
 			// optional: you can set custom cache key with 3rd param as string
-			return $feed->render('', 0);
+			return $feed->render();
 			
 
 			// to return your feed as a string set second param to -1
