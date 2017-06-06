@@ -137,5 +137,7 @@ Route::get('/reviews/{slug?}', 'SiteController@review');
 Route::get('sitemap', 'SiteController@sitemap');
 Route::get('sitemap.xml', 'SiteController@sitemap');
 
+Route::get('feed', 'SiteController@feed');
+
 // Dynamic Routes
 Route::get('/{category}/{slug?}', 'SiteController@post');

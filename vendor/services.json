@@ -31,7 +31,8 @@
         "Intervention\\Image\\ImageServiceProvider",
         "AlgoliaSearch\\Laravel\\AlgoliaServiceProvider",
         "Laravel\\Socialite\\SocialiteServiceProvider",
-        "Roumen\\Sitemap\\SitemapServiceProvider"
+        "Roumen\\Sitemap\\SitemapServiceProvider",
+        "Roumen\\Feed\\FeedServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -51,7 +52,8 @@
         "App\\Providers\\EventServiceProvider",
         "App\\Providers\\RouteServiceProvider",
         "Intervention\\Image\\ImageServiceProvider",
-        "AlgoliaSearch\\Laravel\\AlgoliaServiceProvider"
+        "AlgoliaSearch\\Laravel\\AlgoliaServiceProvider",
+        "Roumen\\Feed\\FeedServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",
@@ -133,7 +135,8 @@
         "html": "Illuminate\\Html\\HtmlServiceProvider",
         "form": "Illuminate\\Html\\HtmlServiceProvider",
         "Laravel\\Socialite\\Contracts\\Factory": "Laravel\\Socialite\\SocialiteServiceProvider",
-        "sitemap": "Roumen\\Sitemap\\SitemapServiceProvider"
+        "sitemap": "Roumen\\Sitemap\\SitemapServiceProvider",
+        "Roumen\\Sitemap\\Sitemap": "Roumen\\Sitemap\\SitemapServiceProvider"
     },
     "when": {
         "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider": [],

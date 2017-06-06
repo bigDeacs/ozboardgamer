@@ -17,6 +17,7 @@ return array(
     'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Symfony\\Component\\Console\\' => array($vendorDir . '/symfony/console'),
     'Roumen\\Sitemap' => array($vendorDir . '/roumen/sitemap/src'),
+    'Roumen\\Feed' => array($vendorDir . '/roumen/feed/src'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
     'PhpSpec' => array($vendorDir . '/phpspec/phpspec/src'),

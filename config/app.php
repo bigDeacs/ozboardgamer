@@ -134,7 +134,7 @@ return [
 		'Illuminate\Session\SessionServiceProvider',
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
-		'Illuminate\View\ViewServiceProvider',
+		'Illuminate\View\ViewServiceProvider',		
 
 		/*
 		 * Application Service Providers...
@@ -150,7 +150,7 @@ return [
 		'AlgoliaSearch\Laravel\AlgoliaServiceProvider',
 		'Laravel\Socialite\SocialiteServiceProvider',
 		'Roumen\Sitemap\SitemapServiceProvider',
-
+		'Roumen\Feed\FeedServiceProvider',
 
 	],
 
@@ -204,6 +204,7 @@ return [
         'Html'      => 'Illuminate\Html\HtmlFacade',
         'Image'	 	=> 'Intervention\Image\Facades\Image',
         'Socialite' => 'Laravel\Socialite\Facades\Socialite',
+		'Feed'	   => 'Roumen\Feed\Feed',
 
 	],
 

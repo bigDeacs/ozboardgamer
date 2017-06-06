@@ -282,6 +282,10 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
             array (
                 0 => __DIR__ . '/..' . '/roumen/sitemap/src',
             ),
+            'Roumen\\Feed' => 
+            array (
+                0 => __DIR__ . '/..' . '/roumen/feed/src',
+            ),
         ),
         'P' => 
         array (
