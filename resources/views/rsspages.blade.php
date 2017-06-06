@@ -28,16 +28,7 @@
 								<meta property="op:markup_version" content="v1.0">
 							  </head>
 							  <body>
-								<article>
-									<header>
-									  <figure>
-										<img src="{{ $item['media:content']['url'] }}" />
-									  </figure>
-									  <h1>{{ $item['title'] }}</h1>
-									  <address>
-										<a>{!! $item['author'] !!}</a>
-									  </address>
-									</header>
+								<article>									
 									{!! $item['content'] !!}
 								</article>
 							  </body>
