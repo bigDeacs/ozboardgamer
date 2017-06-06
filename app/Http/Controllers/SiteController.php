@@ -651,6 +651,8 @@ class SiteController extends Controller {
 			   $feed->lang = 'en';
 			   $feed->setShortening(true); // true or false
 			   $feed->setTextLimit(100); // maximum length of description text
+			   $feed->ctype = "application/rss+xml";
+			   $feed->customView('InstantArticles.blade');
 
 			   foreach ($posts as $post)
 			   {
@@ -660,7 +662,6 @@ class SiteController extends Controller {
 
 			}		
 			
-			$feed->ctype = "rss";
 			
 			// first param is the feed format
 			// optional: second param is cache duration (value of 0 turns off caching)
