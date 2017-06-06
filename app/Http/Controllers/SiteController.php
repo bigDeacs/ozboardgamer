@@ -660,6 +660,8 @@ class SiteController extends Controller {
 
 			}		
 			
+			$feed->ctype = "rss";
+			
 			// first param is the feed format
 			// optional: second param is cache duration (value of 0 turns off caching)
 			// optional: you can set custom cache key with 3rd param as string
