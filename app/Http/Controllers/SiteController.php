@@ -658,14 +658,14 @@ class SiteController extends Controller {
 				   $feed->add($post->name, $post->user->name, "https://ozboardgamer.com/".$post->category->slug."/".$post->slug, date('F d, Y', strtotime($post->published_at)), str_limit(strip_tags($post->description), $limit = 250, $end = '...'), $post->description);
 			   }
 
-			}
+			}		
 			
-			$feed->setView('InstantArticles.blade');
+			$feed->ctype = "rss";
 			
 			// first param is the feed format
 			// optional: second param is cache duration (value of 0 turns off caching)
 			// optional: you can set custom cache key with 3rd param as string
-			return $feed->render();
+			return $feed->render('rss', 0);
 			
 
 			// to return your feed as a string set second param to -1
