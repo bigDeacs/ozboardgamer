@@ -645,7 +645,6 @@ class SiteController extends Controller {
 			   $feed->title = 'OzBoardGamer';
 			   $feed->description = 'Feed of our latest posts';
 			   $feed->logo = 'https://img.ozboardgamer.com/img/logo.png';
-			   $feed->link = url('feed');
 			   $feed->setDateFormat('datetime'); // 'datetime', 'timestamp' or 'carbon'
 			   $feed->pubdate = $posts[0]->created_at;
 			   $feed->lang = 'en';
