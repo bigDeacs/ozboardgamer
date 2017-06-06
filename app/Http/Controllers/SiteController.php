@@ -1094,7 +1094,7 @@ class SiteController extends Controller {
 		
 		public function thankyou()
 		{
-			return view('thankyou', $data);
+			return view('thankyou');
 		}
 		
 		public function privacy()
