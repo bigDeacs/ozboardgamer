@@ -650,7 +650,7 @@ class SiteController extends Controller {
 			   $feed->lang = 'en';
 			   $feed->setShortening(true); // true or false
 			   $feed->setTextLimit(100); // maximum length of description text
-			   $feed->setView('pages.rss');
+			   $feed->setView('rsspages');
 
 			   foreach ($posts as $post)
 			   {
