@@ -659,8 +659,6 @@ class SiteController extends Controller {
 			   }
 
 			}
-
-			$feed->ctype = "text/xml";
 			
 			// first param is the feed format
 			// optional: second param is cache duration (value of 0 turns off caching)
