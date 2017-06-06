@@ -660,10 +660,13 @@ class SiteController extends Controller {
 
 			}
 
+			$feed->ctype = "text/xml";
+			
 			// first param is the feed format
 			// optional: second param is cache duration (value of 0 turns off caching)
 			// optional: you can set custom cache key with 3rd param as string
 			return $feed->render('rss');
+			
 
 			// to return your feed as a string set second param to -1
 			// $xml = $feed->render('atom', -1);
