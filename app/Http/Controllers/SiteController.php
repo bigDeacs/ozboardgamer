@@ -30,6 +30,7 @@ use Session;
 use Hash;
 use App;
 use View;
+use Mail;
 
 use Socialite;
 use App\Http\Requests\GameUpdateRequest;
