@@ -660,7 +660,7 @@ class SiteController extends Controller {
 
 			}
 			
-			$feed->setView('rss.blade');
+			$feed->setView('rssFeed.blade');
 			
 			// first param is the feed format
 			// optional: second param is cache duration (value of 0 turns off caching)
