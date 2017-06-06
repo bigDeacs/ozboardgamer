@@ -664,7 +664,7 @@ class SiteController extends Controller {
 			// first param is the feed format
 			// optional: second param is cache duration (value of 0 turns off caching)
 			// optional: you can set custom cache key with 3rd param as string
-			return $feed->render('rss', 0);
+			return $feed->render('', 0);
 			
 
 			// to return your feed as a string set second param to -1
