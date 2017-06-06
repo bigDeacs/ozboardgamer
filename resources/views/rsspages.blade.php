@@ -24,6 +24,7 @@
 							  <head>
 								<meta charset="utf-8">
 								<link rel="canonical" href="{{ $item['link'] }}">
+								<meta property="fb:article_style" content="OzBoardGamer">
 								<meta property="op:markup_version" content="v1.0">
 							  </head>
 							  <body>
