@@ -623,7 +623,7 @@ class SiteController extends Controller {
 
 		}
 
-		public function sitemap()
+		public function feed()
 		{
 			 // create new feed
 			$feed = App::make("feed");
