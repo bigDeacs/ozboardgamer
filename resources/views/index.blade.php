@@ -188,7 +188,7 @@
 							</div>
 						</div>
 					@endforeach
-					<p class="text-center"><a href="/reviews">View More Board Game Reviews</a></p>
+					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;"><a href="/reviews">View More Board Game Reviews</a></p>
 				</div>
 			</div>
 		@endunless	
@@ -219,7 +219,7 @@
 						<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
 						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 					</div>
-					<p class="text-center"><a href="/stores">View More Board Game Stores</a></p>
+					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;"><a href="/stores">View More Board Game Stores</a></p>
 				</div>
 			</div>
         @endunless
@@ -294,7 +294,7 @@
 							</div>
 						</div>
 					@endforeach
-					<p class="text-center"><a href="/top10s">View More Top 10 Lists</a></p>
+					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;"><a href="/top10s">View More Top 10 Lists</a></p>
 				</div>
 			</div>
 		@endunless		
@@ -326,14 +326,14 @@
 						<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
 						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 					</div>
-					<div class="row hidden-xs">
+					<div class="row hidden-xs" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;margin-bottom: 15px;">
 						<div class="col-xs-12 text-center">
 							<p><strong>New Deals In:</strong></p>
 							<br />
 							<div class="clock" style="margin: 0 auto;width:625px;"></div>
 						</div>
 					</div>
-					<p class="text-center"><a href="/shop">View More Products</a></p>
+					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;"><a href="/shop">View More Products</a></p>
 				</div>
 			</div>
         @endunless		
@@ -408,7 +408,7 @@
 							</div>
 						</div>
 					@endforeach
-					<p class="text-center"><a href="/blogs">View More Board Game Blogs</a></p>
+					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;"><a href="/blogs">View More Board Game Blogs</a></p>
 				</div>
 			</div>
 		@endunless	
