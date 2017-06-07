@@ -16,6 +16,11 @@
 				<pubDate>{{ $item['pubdate'] }}</pubDate>
 				<author>{!! $item['author'] !!}</author>
 				<description><![CDATA[{!! $item['description'] !!}]]></description>
+				<?php 
+					$wash = str_replace('../../../', 'https://ozboardgamer.com/', $item['content']);
+					$rinse = str_replace('../../', 'https://ozboardgamer.com/', $wash);
+					$repeat = str_replace('../', 'https://ozboardgamer.com/', $rinse);
+				?>
 				@if (!empty($item['content']))
 					<content:encoded>
 						<![CDATA[
@@ -29,7 +34,7 @@
 							  </head>
 							  <body>
 								<article>									
-									{!! str_replace('../../../', 'https://ozboardgamer.com', str_replace('../../../', 'https://ozboardgamer.com', $item['content'])) !!}
+									{!! $repeat !!}
 								</article>
 							  </body>
 							</html>
