@@ -12,6 +12,7 @@
 @endsection
 
 @section('head')
+	<link rel="stylesheet" href="/css/flipclock.css">
 @endsection
 
 @section('content')
@@ -186,7 +187,7 @@
 							</div>
 						</div>
 					@endforeach
-					<a href="/reviews" class="text-center">View more</a>
+					<p class="text-center"><a href="/reviews">View More Board Game Reviews</a></p>
 				</div>
 			</div>
 		@endunless	
@@ -291,7 +292,7 @@
 							</div>
 						</div>
 					@endforeach
-					<a href="/top10s" class="text-center">View more</a>
+					<p class="text-center"><a href="/top10s">View More Top 10 Lists</a></p>
 				</div>
 			</div>
 		@endunless		
@@ -400,7 +401,7 @@
 							</div>
 						</div>
 					@endforeach
-					<a href="/blogs" class="text-center">View more</a>
+					<p class="text-center"><a href="/blogs">View More Board Game Blogs</a></p>
 				</div>
 			</div>
 		@endunless	
@@ -418,6 +419,7 @@
             });
         });
     </script>
+	<script src="/js/flipclock.min.js"></script>
 	<script type="text/javascript">		
 		$(document).ready(function() {
 			var clock = $('.clock').FlipClock({{ strtotime('Next Thursday') - time() }}, {
