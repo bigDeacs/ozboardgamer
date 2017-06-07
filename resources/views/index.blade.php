@@ -120,7 +120,7 @@
 					<h3>Latest Board Game Reviews</h3>
 					@foreach($reviews as $review)
 						<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
-							<div style="padding: 15px;">
+							<div>
 								<div style="overflow: hidden;height: 175px;">
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 										<div class="offer offer-radius offer-danger">
@@ -225,7 +225,7 @@
 					<h3>Latest Board Game Top 10's</h3>
 					@foreach($top10s as $top10)
 						<div class="col-xs-12 col-sm-4 post" style="margin-bottom: 15px;">				
-							<div style="padding: 15px;">
+							<div>
 								<div style="overflow: hidden;height: 175px;">
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
 										<div class="offer offer-radius offer-danger">
