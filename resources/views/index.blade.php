@@ -140,41 +140,49 @@
 									@endif
 								</div>
 							</div>
-							<p class="blogHeading">
-								<strong>														
+							<div class="row">
+								<div class="col-sm-12">
+									<p class="blogHeading">
+										<strong>														
+											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+												<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
+													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
+												</a>
+											@else
+												<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
+													{!! $review->name !!}
+												</a>
+											@endif
+										</strong>
+									</p>			
+								</div>
+							</div>							
+							<div class="row">
+								<div class="col-sm-12 post-header-line">
+									<meta itemprop="author" content ="{!! $review->user->name !!}">
+									<span class="glyphicon glyphicon-calendar">
+									</span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span>
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-										<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
-											<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
-										</a>
 									@else
-										<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
-											{!! $review->name !!}
-										</a>
-									@endif
-								</strong>
-							</p>									
-							<div class="post-header-line">
-								<meta itemprop="author" content ="{!! $review->user->name !!}">
-								<span class="glyphicon glyphicon-calendar">
-								</span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span>
-								@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-								@else
-									 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a>
-								@endif                                                											
+										 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a>
+									@endif                                                											
+								</div>
 							</div>
-							<div class="post-content">
-								<p itemprop="description" class="textbox-height">
-									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-										Login to gain early access to this post!
-									@else
-										{!! str_limit(strip_tags($review->description), $limit = 250, $end = '...') !!}
-									@endif    													                                                    
-								</p>
-								<p>												
-									@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-										<a class="btn btn-hot text-uppercase pull-right btn-block" href="/reviews/{{ $review->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
-									@endunless   													
-								</p>
+							<div class="row post-content">
+								<div class="col-xs-12">
+									<p itemprop="description" class="textbox-height">
+										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+											Login to gain early access to this post!
+										@else
+											{!! str_limit(strip_tags($review->description), $limit = 250, $end = '...') !!}
+										@endif    													                                                    
+									</p>
+									<p>												
+										@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/reviews/{{ $review->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
+										@endunless   													
+									</p>
+								</div>
 							</div>
 						</div>
 					@endforeach
@@ -237,40 +245,48 @@
 									@endif											
 								</div>
 							</div>
-							<p class="blogHeading">
-								<strong>
+							<div class="row">
+								<div class="col-sm-12">
+									<p class="blogHeading">
+										<strong>
+											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+												<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
+													{!! $top10->name !!}
+												</a>
+											@else
+												 <a href="/top10s/{{ $top10->slug }}" class="post-title">
+													{!! $top10->name !!}
+												</a>
+											@endif
+										</strong>
+									</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 post-header-line">						
+									<span class="glyphicon glyphicon-calendar">
+									</span>{!! date('F d, Y', strtotime($top10->published_at)) !!}
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-										<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
-											{!! $top10->name !!}
-										</a>
 									@else
-										 <a href="/top10s/{{ $top10->slug }}" class="post-title">
-											{!! $top10->name !!}
-										</a>
-									@endif
-								</strong>
-							</p>
-							<div class="post-header-line">
-								<span class="glyphicon glyphicon-calendar">
-								</span>{!! date('F d, Y', strtotime($top10->published_at)) !!}
-								@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-								@else
-									 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread"></a>
-								@endif   																									
+										 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread"></a>
+									@endif   																									
+								</div>		
 							</div>							
-							<div class="post-content">
-								<p itemprop="description" class="textbox-height">
-									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-										Login to gain early access to this post!
-									@else
-										{!! str_limit(strip_tags($top10->description), $limit = 250, $end = '...') !!}
-									@endif    													                                                    
-								</p>                                                
-								<p>
-									@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))																										
-										<a class="btn btn-hot text-uppercase pull-right btn-block" href="/top10s/{{ $top10->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>
-									@endunless                                                     
-								</p>
+							<div class="row post-content">
+								<div class="col-xs-12">
+									<p itemprop="description" class="textbox-height">
+										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+											Login to gain early access to this post!
+										@else
+											{!! str_limit(strip_tags($top10->description), $limit = 250, $end = '...') !!}
+										@endif    													                                                    
+									</p>                                                
+									<p>
+										@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))																										
+											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/top10s/{{ $top10->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>
+										@endunless                                                     
+									</p>
+								</div>
 							</div>
 						</div>
 					@endforeach
