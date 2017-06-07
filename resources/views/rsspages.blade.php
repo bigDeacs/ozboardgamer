@@ -29,7 +29,7 @@
 							  </head>
 							  <body>
 								<article>									
-									{!! $item['content'] !!}
+									{!! str_replace('../../../', 'https://ozboardgamer.com', str_replace('../../../', 'https://ozboardgamer.com', $item['content'])) !!}
 								</article>
 							  </body>
 							</html>
