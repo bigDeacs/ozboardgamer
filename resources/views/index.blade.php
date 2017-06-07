@@ -112,6 +112,7 @@
 						<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
 						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 					</div>
+					<p class="text-center"><a href="/games">View More Board Games</a></p>
 				</div>
 			</div>        
         @endunless
@@ -218,6 +219,7 @@
 						<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
 						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 					</div>
+					<p class="text-center"><a href="/stores">View More Board Game Stores</a></p>
 				</div>
 			</div>
         @endunless
@@ -331,6 +333,7 @@
 							<div class="clock" style="margin: 0 auto;width:625px;"></div>
 						</div>
 					</div>
+					<p class="text-center"><a href="/shop">View More Products</a></p>
 				</div>
 			</div>
         @endunless		
