@@ -7,19 +7,6 @@
 
 @section('head')
 	<link rel="stylesheet" href="/css/flipclock.css">
-	<style>
-		.clock {
-			transform-origin: 0 0;
-			transform: scale(.25);
-			-ms-transform: scale(.25);
-			-webkit-transform-origin: 0 0;
-			-webkit-transform: scale(.25);
-			-o-transform-origin: 0 0;
-			-o-transform: scale(.25);
-			-moz-transform-origin: 0 0;
-			-moz-transform: scale(.25);
-		}
-	</style>
 @endsection
 
 @section('content')
@@ -118,7 +105,7 @@
 			<div class="col-xs-12 text-center">
 				<h3>New Deals In:</h3>
 				<br />
-				<div class="clock" style="margin: 0 auto;width:625px;"></div>				
+				<div class="clock" style="margin: 0 auto;width:625px;"></div>
 			</div>
 		</div>
 		<hr />
