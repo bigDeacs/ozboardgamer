@@ -103,7 +103,7 @@
 		</div>
 		<div class="row hidden-xs">
 			<div class="col-xs-12 text-center">
-				<h3>New Deals In:</h3>
+				<p><strong>New Deals In:</strong></p>
 				<br />
 				<div class="clock" style="margin: 0 auto;width:625px;"></div>
 			</div>

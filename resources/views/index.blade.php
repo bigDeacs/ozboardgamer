@@ -324,9 +324,13 @@
 						<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
 						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 					</div>
-					<h4>New Deals In:</h4>
-					<br />
-					<div class="clock" style="margin: 0 auto;width:625px;"></div>
+					<div class="row hidden-xs">
+						<div class="col-xs-12 text-center">
+							<p><strong>New Deals In:</strong></p>
+							<br />
+							<div class="clock" style="margin: 0 auto;width:625px;"></div>
+						</div>
+					</div>
 				</div>
 			</div>
         @endunless		
