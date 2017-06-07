@@ -27,7 +27,7 @@
 			@if($featured->isEmpty())
 				<li data-target="#bs-carousel" data-slide-to="1" class="active"></li>
 			@else
-				<li data-target="#bs-carousel" data-slide-to="4" class="active"></li>
+				<li data-target="#bs-carousel" data-slide-to="5" class="active"></li>
 			@endif
 		</ol>
 	  @endunless
