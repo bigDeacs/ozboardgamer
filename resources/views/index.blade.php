@@ -112,7 +112,7 @@
 						<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
 						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 					</div>
-					<p class="text-center"><a href="/games">View More Board Games</a></p>
+					<p class="text-center" style="border-top: 1px solid #DDD;padding-top: 10px;"><a href="/games">View More Board Games</a></p>
 				</div>
 			</div>        
         @endunless
@@ -219,7 +219,7 @@
 						<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
 						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 					</div>
-					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;"><a href="/stores">View More Board Game Stores</a></p>
+					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;border-top: 1px solid #DDD;padding-top: 10px;"><a href="/stores">View More Board Game Stores</a></p>
 				</div>
 			</div>
         @endunless
