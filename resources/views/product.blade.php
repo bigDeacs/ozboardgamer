@@ -2,6 +2,14 @@
 
 @section('meta')
     <title>{{ $product->name }} | Shop | Oz Board Gamer</title>
+	<meta property="og:url"                content="https://ozboardgamer.com/shop/{{ $product->slug }}" />
+	@if($product->sale > 0)
+		<meta property="og:title" content="{{ $product->name }} On Sale Now - ${!! $product->saleDisplay !!}" />
+	@else
+		<meta property="og:title" content="{{ $product->name }} - ${!! $product->priceDisplay !!}" />
+	@endif	
+	<meta property="og:description" content="{!! str_limit(strip_tags($product->description), $limit = 250, $end = '...') !!}" />
+	<meta property="og:image" content="{{ $product->thumb1x }}" />
 @endsection
 
 @section('head')
