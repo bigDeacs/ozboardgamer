@@ -152,7 +152,7 @@
 												</a>
 											@else
 												<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
-													{!! $review->name !!}
+													{!! str_limit($review->name, 20) !!}
 												</a>
 											@endif
 										</strong>
@@ -254,12 +254,12 @@
 									<p class="blogHeading">
 										<strong>
 											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-												<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
-													{!! $top10->name !!}
+												<a href="#" class="post-title disabled" itemprop="name" title="Login for access">													
+													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
 												</a>
 											@else
 												 <a href="/top10s/{{ $top10->slug }}" class="post-title">
-													{!! $top10->name !!}
+													{!! str_limit($top10->name, 20) !!}
 												</a>
 											@endif
 										</strong>
@@ -369,11 +369,11 @@
 										<strong>
 											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
 												<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
-													{!! $blog->name !!}
+													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
 												</a>
 											@else
 												 <a href="/blogs/{{ $blog->slug }}" class="post-title">
-													{!! $blog->name !!}
+													{!! str_limit($blog->name, 20) !!}
 												</a>
 											@endif
 										</strong>
