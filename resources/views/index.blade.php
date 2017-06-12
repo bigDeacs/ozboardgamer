@@ -194,7 +194,7 @@
 					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;"><a href="/reviews">View More Board Game Reviews</a></p>
 				</div>
 			</div>
-		@endunless	
+		@endunless			
 		@unless($stores->isEmpty())
 			<div class="row hidden-xs">
 				<div class="col-xs-12">
@@ -205,14 +205,12 @@
 								@foreach($stores as $store)
 									<li>
 										<div class="thumbnail img-shadow">
+											<div style="position: absolute;right: 5px;bottom: 15px;">
+												<p class="blogHeading text-right"><strong><a href="/stores/{{ $store->slug }}" class="post-title" itemprop="name" title="{{ $store->name }}" style="color:white;">{!! str_limit($store->name, 16) !!}</a></strong></p>
+											</div>
 											<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
 												<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" />
-											</a>
-											<div class="caption text-center">
-												<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">											
-													<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit($store->name, 12) !!}</strong></p>
-												</a>
-											</div>
+											</a>										
 										</div>
 									</li>
 								@endforeach
@@ -305,7 +303,7 @@
 					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;"><a href="/top10s">View More Top 10 Lists</a></p>
 				</div>
 			</div>
-		@endunless		
+		@endunless				
 		@unless($products->isEmpty())
 			<div class="row hidden-xs">
 				<div class="col-xs-12">
@@ -316,13 +314,13 @@
 								@foreach($products as $product)
 									<li>
 										<div class="thumbnail img-shadow">
+											<div style="position: absolute;right: 5px;bottom: 15px;">
+												<p class="blogHeading text-right"><strong><a href="/shop/{{ $product->slug }}" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 16) !!}</a></strong></p>
+											</div>
 											<a href="/shop/{{ $product->slug }}" title="{{ $product->name }}">
 												<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" alt="{{ $product->name }}" class="img-responsive" width="300" height="auto" />
 											</a>
 											<div class="caption text-center">
-												<a href="/shop/{{ $product->slug }}" title="{{ $product->name }}">											
-													<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit($product->name, 12) !!}</strong></p>
-												</a>
 												<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->priceDisplay !!}</strong></p>
 											</div>
 										</div>

@@ -75,17 +75,37 @@
 				<br />
 			@endif
 		@endif		
+		
+		
+		@foreach($products as $product)
+			<li>
+				<div class="thumbnail img-shadow">
+					<div style="position: absolute;right: 5px;bottom: 15px;">
+						<p class="blogHeading text-right"><strong><a href="/shop/{{ $product->slug }}" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 16) !!}</a></strong></p>
+					</div>
+					<a href="/shop/{{ $product->slug }}" title="{{ $product->name }}">
+						<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" alt="{{ $product->name }}" class="img-responsive" width="300" height="auto" />
+					</a>
+					<div class="caption text-center">
+						<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->priceDisplay !!}</strong></p>
+					</div>
+				</div>
+			</li>
+		@endforeach
+								
+								
+								
   		<div class="row">
       	@foreach($products as $key => $product)
 			<div class="col-md-3 col-sm-4 col-xs-12 text-center">
 				<div class="thumbnail img-shadow">
+					<div style="position: absolute;right: 5px;bottom: 15px;">
+						<p class="blogHeading text-right"><strong><a href="/shop/{{ $product->slug }}" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 16) !!}</a></strong></p>
+					</div>
 					<a href="/shop/{!! $product->slug !!}">
 						<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
 					</a>
 					<div class="caption text-center">
-						<a href="/shop/{{ $product->slug }}" title="{!! $product->name !!}">											
-							<p class="text-center" style="font-size: 16px;"><strong>{{ str_limit(strip_tags($product->name), $limit = 12, $end = '...') }}</strong><br /></p>
-						</a>
 						@if($product->sale > 0)
 							<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->saleDisplay !!}</strong></p>
 							<p style="margin: 0;"><s><small>${!! $product->priceDisplay !!}</small></s></p>
