@@ -28,7 +28,7 @@
 				
 			    <div class="row">
 			    	@foreach($users as $user)
-						<div class="col-sm-3 col-xs-12 text-center">
+						<div class="col-md-3 col-sm-4 col-xs-12 text-center">
 							<div class="thumbnail img-shadow" style="position: relative;">
 								<div style="position: absolute;right: 5px;bottom: 15px;">
 									<p class="blogHeading text-right"><strong><a href="/users/{{ $user->slug }}" class="post-title" itemprop="name" title="{{ $user->name }}" style="color:white;">{!! str_limit($user->name, 16) !!}</a></strong></p>

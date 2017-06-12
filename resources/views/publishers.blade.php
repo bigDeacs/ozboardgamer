@@ -28,7 +28,7 @@
 			    </div>
 			    <div class="row">
 			    	@foreach($publishers as $publisher)
-						<div class="col-sm-3 col-xs-12 text-center">
+						<div class="col-md-3 col-sm-4 col-xs-12 text-center">
 							<div class="thumbnail img-shadow" style="position: relative;">
 								<div style="position: absolute;right: 4px;bottom: 15px;">
 									<p class="blogHeading text-right"><strong><a href="/publishers/{{ $publisher->slug }}" class="post-title" itemprop="name" title="{{ $publisher->name }}" style="color:white;">{!! str_limit($publisher->name, 14) !!}</a></strong></p>

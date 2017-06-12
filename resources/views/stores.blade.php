@@ -49,22 +49,17 @@
 				</div>
 			    </div>
 			    <div class="row">
-			    	@foreach($stores as $key => $store)
-						<div class="col-sm-3 col-xs-12 text-center">
-							<div class="thumbnail img-shadow">
+			    	@foreach($stores as $key => $store)			
+						<div class="col-md-3 col-sm-4 col-xs-12 text-center">
+							<div class="thumbnail img-shadow" style="position: relative;">
+								<div style="position: absolute;right: 4px;bottom: 15px;">
+									<p class="blogHeading text-right"><strong><a href="/stores/{{ $store->slug }}" class="post-title" itemprop="name" title="{{ $store->name }}" style="color:white;">{!! str_limit($store->name, 14) !!}</a></strong></p>
+								</div>
 								<a href="/stores/{{ $store->slug }}">
 									<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" class="img-responsive" />
 								</a>
-								<div class="caption text-center">
-									<a href="/stores/{{ $store->slug }}" title="{!! $store->name !!}">											
-										<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit($store->name, 12) !!}</strong></p>
-									</a>
-								</div>													
 							</div>
 						</div>
-            @if(($key + 1) % 4 == 0)
-              </div><div class="row">
-            @endif
 					@endforeach
 				</div>
 				<hr />

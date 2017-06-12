@@ -28,7 +28,7 @@
 			    </div>
 			    <div class="row">
 			    	@foreach($mechanics as $mechanic)
-						<div class="col-sm-3 col-xs-12 text-center">
+						<div class="col-md-3 col-sm-4 col-xs-12 text-center">
 							<div class="thumbnail img-shadow" style="position: relative;">
 								<div style="position: absolute;right: 4px;bottom: 15px;">
 									<p class="blogHeading text-right"><strong><a href="/mechanics/{{ $mechanic->slug }}" class="post-title" itemprop="name" title="{{ $mechanic->name }}" style="color:white;">{!! str_limit($mechanic->name, 14) !!}</a></strong></p>
