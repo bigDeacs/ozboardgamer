@@ -95,7 +95,7 @@
 								@foreach($games as $game)
 									<li itemscope itemtype="http://schema.org/Game">
 										<div class="thumbnail img-shadow" style="position: relative;">
-											<div style="position: absolute;right: 5px;bottom: 20px;">
+											<div style="position: absolute;right: 5px;bottom: 15px;">
 												<p class="blogHeading text-right"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" class="post-title" itemprop="name" title="{{ $game->name }}" style="color:white;">{!! str_limit($game->name, 16) !!}</a></strong></p>
 											</div>
 											<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
