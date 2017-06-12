@@ -74,32 +74,12 @@
 				</div>		
 				<br />
 			@endif
-		@endif		
-		
-		
-		@foreach($products as $product)
-			<li>
-				<div class="thumbnail img-shadow">
-					<div style="position: absolute;right: 5px;bottom: 15px;">
-						<p class="blogHeading text-right"><strong><a href="/shop/{{ $product->slug }}" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 16) !!}</a></strong></p>
-					</div>
-					<a href="/shop/{{ $product->slug }}" title="{{ $product->name }}">
-						<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" alt="{{ $product->name }}" class="img-responsive" width="300" height="auto" />
-					</a>
-					<div class="caption text-center">
-						<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->priceDisplay !!}</strong></p>
-					</div>
-				</div>
-			</li>
-		@endforeach
-								
-								
-								
+		@endif										
   		<div class="row">
       	@foreach($products as $key => $product)
 			<div class="col-md-3 col-sm-4 col-xs-12 text-center">
 				<div class="thumbnail img-shadow" style="position: relative;">
-					<div style="position: absolute;right: 5px;bottom: 15px;">
+					<div style="position: absolute;right: 4px;bottom: 135px;">
 						<p class="blogHeading text-right"><strong><a href="/shop/{{ $product->slug }}" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 16) !!}</a></strong></p>
 					</div>
 					<a href="/shop/{!! $product->slug !!}">
