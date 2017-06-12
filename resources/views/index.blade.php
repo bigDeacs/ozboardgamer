@@ -396,23 +396,6 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-sm-12">
-									<p class="blogHeading">
-										<strong>
-											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
-												<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
-													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
-												</a>
-											@else
-												 <a href="/blogs/{{ $blog->slug }}" class="post-title" title="{{ $blog->name }}">
-													{!! str_limit($blog->name, 20) !!}
-												</a>
-											@endif
-										</strong>
-									</p>
-								</div>
-							</div>
-							<div class="row">
 								<div class="col-sm-12 post-header-line">						
 									<span class="glyphicon glyphicon-calendar">
 									</span>{!! date('F d, Y', strtotime($blog->published_at)) !!}
