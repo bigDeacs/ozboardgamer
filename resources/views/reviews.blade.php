@@ -58,7 +58,7 @@
 							@endif
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <p class="blogHeading">
+                                        <p style="font-size: 18px;">
                                             <strong>
 												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 													<a href="#" class="post-title disabled" itemprop="name" title="Login for access">

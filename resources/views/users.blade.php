@@ -25,13 +25,18 @@
 			      	<h1>Contributors</h1>
 			      </div>
 			    </div>
+				
 			    <div class="row">
 			    	@foreach($users as $user)
 						<div class="col-sm-3 col-xs-12 text-center">
-					    	<a href="/users/{{ $user->slug }}">
-				    			<img src="https://img.ozboardgamer.com/{{ $user->thumb }}" class="img-responsive" />
-				    		</a>
-					    	<p class="text-center"><strong><a href="/users/{{ $user->slug }}">{!! $user->name !!}</a></strong></p>
+							<div class="thumbnail img-shadow" style="position: relative;">
+								<div style="position: absolute;right: 5px;bottom: 15px;">
+									<p class="blogHeading text-right"><strong><a href="/users/{{ $user->slug }}" class="post-title" itemprop="name" title="{{ $user->name }}" style="color:white;">{!! str_limit($user->name, 16) !!}</a></strong></p>
+								</div>
+								<a href="/users/{{ $user->slug }}">
+									<img src="https://img.ozboardgamer.com/{{ $user->thumb }}" class="img-responsive" />
+								</a>					
+							</div>
 						</div>
 					@endforeach
 				</div>
