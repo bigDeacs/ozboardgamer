@@ -314,7 +314,7 @@
 								@foreach($products as $product)
 									<li>
 										<div class="thumbnail img-shadow" style="position: relative;">
-											<div style="position: absolute;right: 4px;bottom: 15px;">
+											<div style="position: absolute;right: 4px;bottom: 60px;">
 												<p class="blogHeading text-right"><strong><a href="/shop/{{ $product->slug }}" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 14) !!}</a></strong></p>
 											</div>
 											<a href="/shop/{{ $product->slug }}" title="{{ $product->name }}">
@@ -360,7 +360,7 @@
 													</a>
 												@else
 													<a href="/blogs/{{ $blog->slug }}" class="post-title" itemprop="name" title="{{ $blog->name }}" style="color:white;">
-														{!! str_limit($blog->name, 20) !!}
+														{!! str_limit($blog->name, 16) !!}
 													</a>
 												@endif
 											</strong>
