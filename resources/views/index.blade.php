@@ -123,7 +123,7 @@
 					@foreach($reviews as $review)
 						<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
 							<div>
-								<div class="col-sm-12">
+								<div class="col-sm-12" style="position: absolute;">
 									<p class="blogHeading">
 										<strong>														
 											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
