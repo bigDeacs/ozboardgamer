@@ -362,7 +362,7 @@
 													</a>
 												@else
 													<a href="/blogs/{{ $blog->slug }}" class="post-title" itemprop="name" title="{{ $blog->name }}" style="color:white;">
-														{{ $blog->name }}
+														{!! str_limit($blog->name, 20) !!}
 													</a>
 												@endif
 											</strong>
