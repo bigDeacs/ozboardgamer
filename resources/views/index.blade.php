@@ -204,7 +204,7 @@
 							<ul>
 								@foreach($stores as $store)
 									<li>
-										<div class="thumbnail img-shadow">
+										<div class="thumbnail img-shadow" style="position: relative;">
 											<div style="position: absolute;right: 5px;bottom: 15px;">
 												<p class="blogHeading text-right"><strong><a href="/stores/{{ $store->slug }}" class="post-title" itemprop="name" title="{{ $store->name }}" style="color:white;">{!! str_limit($store->name, 16) !!}</a></strong></p>
 											</div>
@@ -313,7 +313,7 @@
 							<ul>
 								@foreach($products as $product)
 									<li>
-										<div class="thumbnail img-shadow">
+										<div class="thumbnail img-shadow" style="position: relative;">
 											<div style="position: absolute;right: 5px;bottom: 15px;">
 												<p class="blogHeading text-right"><strong><a href="/shop/{{ $product->slug }}" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 16) !!}</a></strong></p>
 											</div>
