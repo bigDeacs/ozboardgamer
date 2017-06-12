@@ -123,7 +123,7 @@
 					@foreach($reviews as $review)
 						<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
 							<div class="row">
-								<div style="overflow: hidden;height: 175px;">
+								<div class="col-xs-12" style="overflow: hidden;height: 175px;">
 									<div style="position: absolute;right: 15px;">
 										<p class="blogHeading text-right">
 											<strong>														
@@ -234,8 +234,30 @@
 					<h3>Latest Board Game Top 10's</h3>
 					@foreach($top10s as $top10)
 						<div class="col-xs-12 col-sm-4 post" style="margin-bottom: 15px;">				
-							<div>
-								<div style="overflow: hidden;height: 175px;">
+							<div class="row">
+								<div class="col-xs-12" style="overflow: hidden;height: 175px;">
+									<div style="position: absolute;right: 15px;">
+										<p class="blogHeading text-right">
+											<strong>														
+												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+													<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
+														<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
+													</a>
+												@else
+													<a href="/top10s/{{ $top10->slug }}" class="post-title" itemprop="name" title="{{ $top10->name }}" style="color:white;">
+														{{ $top10->name }}
+													</a>
+												@endif
+											</strong>
+										</p>
+										@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+											<p class="blogHeadingSml text-right">
+												<strong style="color:white;">													
+													Top 10's											
+												</strong>
+											</p>										
+										@endunless
+									</div>
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
 										<div class="offer offer-radius offer-danger">
 											<div class="shape">
@@ -252,23 +274,6 @@
 											<img src="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
 										</a>	
 									@endif											
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-12">
-									<p class="blogHeading">
-										<strong>
-											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-												<a href="#" class="post-title disabled" itemprop="name" title="Login for access">													
-													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
-												</a>
-											@else
-												 <a href="/top10s/{{ $top10->slug }}" class="post-title" title="{{ $top10->name }}">
-													{!! str_limit($top10->name, 20) !!}
-												</a>
-											@endif
-										</strong>
-									</p>
 								</div>
 							</div>
 							<div class="row">
