@@ -26,17 +26,15 @@
 			      </div>
 			    </div>
 			    <div class="row">
-			    	@foreach($types as $type)
+			    	@foreach($types as $type)						
 						<div class="col-sm-3 col-xs-12 text-center">
-							<div class="thumbnail img-shadow">
+							<div class="thumbnail img-shadow" style="position: relative;">
+								<div style="position: absolute;right: 5px;bottom: 15px;">
+									<p class="blogHeading text-right"><strong><a href="/games/{{ $type->slug }}" class="post-title" itemprop="name" title="{{ $type->name }}" style="color:white;">{!! str_limit($type->name, 16) !!}</a></strong></p>
+								</div>
 								<a href="/games/{{ $type->slug }}?page=1&sort=name-asc">
 									<img alt="{!! $type->name !!}" src="https://img.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $type->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive img-shadow" />
 								</a>
-								<div class="caption text-center">
-									<a href="/games/{{ $type->slug }}" title="{!! $type->name !!}">											
-										<p class="text-center" style="font-size: 14px;"><strong>{!! str_limit($type->name, 14) !!}</strong></p>
-									</a>
-								</div>
 							</div>
 						</div>			
 					@endforeach
