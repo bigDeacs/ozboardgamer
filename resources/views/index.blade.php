@@ -123,6 +123,21 @@
 					@foreach($reviews as $review)
 						<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
 							<div>
+								<div class="col-sm-12">
+									<p class="blogHeading">
+										<strong>														
+											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+												<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
+													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
+												</a>
+											@else
+												<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name" title="{{ $review->name }}" style="color:white;">
+													{{ $review->name, 20 }}
+												</a>
+											@endif
+										</strong>
+									</p>			
+								</div>
 								<div style="overflow: hidden;height: 175px;">
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 										<div class="offer offer-radius offer-danger">
@@ -140,23 +155,6 @@
 											<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
 										</a>																										
 									@endif
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-12">
-									<p class="blogHeading">
-										<strong>														
-											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-												<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
-													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
-												</a>
-											@else
-												<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name">
-													{!! str_limit($review->name, 20) !!}
-												</a>
-											@endif
-										</strong>
-									</p>			
 								</div>
 							</div>							
 							<div class="row">
@@ -258,7 +256,7 @@
 													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
 												</a>
 											@else
-												 <a href="/top10s/{{ $top10->slug }}" class="post-title">
+												 <a href="/top10s/{{ $top10->slug }}" class="post-title" title="{{ $top10->name }}">
 													{!! str_limit($top10->name, 20) !!}
 												</a>
 											@endif
@@ -372,7 +370,7 @@
 													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
 												</a>
 											@else
-												 <a href="/blogs/{{ $blog->slug }}" class="post-title">
+												 <a href="/blogs/{{ $blog->slug }}" class="post-title" title="{{ $blog->name }}">
 													{!! str_limit($blog->name, 20) !!}
 												</a>
 											@endif
