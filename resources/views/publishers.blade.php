@@ -29,17 +29,15 @@
 			    <div class="row">
 			    	@foreach($publishers as $publisher)
 						<div class="col-sm-3 col-xs-12 text-center">
-							<div class="thumbnail img-shadow">
+							<div class="thumbnail img-shadow" style="position: relative;">
+								<div style="position: absolute;right: 4px;bottom: 15px;">
+									<p class="blogHeading text-right"><strong><a href="/publishers/{{ $publisher->slug }}" class="post-title" itemprop="name" title="{{ $publisher->name }}" style="color:white;">{!! str_limit($publisher->name, 14) !!}</a></strong></p>
+								</div>
 								<a href="/publishers/{{ $publisher->slug }}">
 									<img alt="{!! $publisher->name !!}" src="https://img.ozboardgamer.com{{ $publisher->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $publisher->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $publisher->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive img-shadow" />
 								</a>
-								<div class="caption text-center">
-									<a href="/publishers/{{ $publisher->slug }}" title="{!! $publisher->name !!}">											
-										<p class="text-center" style="font-size: 14px;"><strong>{!! str_limit($publisher->name, 14) !!}</strong></p>
-									</a>
-								</div>
 							</div>
-						</div>	
+						</div>
 					@endforeach
 				</div>
 				<hr />

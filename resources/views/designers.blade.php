@@ -29,17 +29,15 @@
 			    <div class="row">
 			    	@foreach($designers as $designer)				
 						<div class="col-sm-3 col-xs-12 text-center">
-							<div class="thumbnail img-shadow">
+							<div class="thumbnail img-shadow" style="position: relative;">
+								<div style="position: absolute;right: 4px;bottom: 15px;">
+									<p class="blogHeading text-right"><strong><a href="/designers/{{ $designer->slug }}" class="post-title" itemprop="name" title="{{ $designer->name }}" style="color:white;">{!! str_limit($designer->name, 14) !!}</a></strong></p>
+								</div>
 								<a href="/designers/{{ $designer->slug }}">
 									<img src="https://img.ozboardgamer.com{{ $designer->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $designer->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $designer->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive img-shadow" />
 								</a>
-								<div class="caption text-center">
-									<a href="/designers/{{ $designer->slug }}" title="{!! $designer->name !!}">											
-										<p class="text-center" style="font-size: 14px;"><strong>{!! str_limit($designer->name, 14) !!}</strong></p>
-									</a>
-								</div>
 							</div>
-						</div>	
+						</div>		
 					@endforeach
 				</div>
 				<hr />
