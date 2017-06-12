@@ -124,7 +124,7 @@
 						<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
 							<div class="row">
 								<div class="col-xs-12" style="overflow: hidden;height: 175px;">
-									<div style="position: absolute;right: 15px;">
+									<div style="position: absolute;right: 15px;bottom: 0;">
 										<p class="blogHeading text-right">
 											<strong>														
 												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
@@ -171,7 +171,7 @@
 									</span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span>
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 									@else
-										 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a>
+										<span class="hidden-sm"> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a></span>
 									@endif                                                											
 								</div>
 							</div>
@@ -236,7 +236,7 @@
 						<div class="col-xs-12 col-sm-4 post" style="margin-bottom: 15px;">				
 							<div class="row">
 								<div class="col-xs-12" style="overflow: hidden;height: 175px;">
-									<div style="position: absolute;right: 15px;">
+									<div style="position: absolute;right: 15px;bottom: 0;">
 										<p class="blogHeading text-right">
 											<strong>														
 												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
@@ -282,7 +282,7 @@
 									</span>{!! date('F d, Y', strtotime($top10->published_at)) !!}
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
 									@else
-										 | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread"></a>
+										<span class="hidden-sm"> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread"></a></span>
 									@endif   																									
 								</div>		
 							</div>							
@@ -353,8 +353,30 @@
 					<h3>Latest Board Game Blogs</h3>					
 					@foreach($blogs as $blog)
 						<div class="col-xs-12 col-sm-4 post" style="margin-bottom: 15px;">				
-							<div>
-								<div style="overflow: hidden;height: 175px;">
+							<div class="row">
+								<div class="col-xs-12" style="overflow: hidden;height: 175px;">
+									<div style="position: absolute;right: 15px;bottom: 0;">
+										<p class="blogHeading text-right">
+											<strong>														
+												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
+													<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
+														<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
+													</a>
+												@else
+													<a href="/blogs/{{ $blog->slug }}" class="post-title" itemprop="name" title="{{ $blog->name }}" style="color:white;">
+														{{ $blog->name }}
+													</a>
+												@endif
+											</strong>
+										</p>
+										@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
+											<p class="blogHeadingSml text-right">
+												<strong style="color:white;">													
+													Blog											
+												</strong>
+											</p>										
+										@endunless
+									</div>
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
 										<div class="offer offer-radius offer-danger">
 											<div class="shape">
@@ -370,7 +392,7 @@
 										<a href="/blogs/{{ $blog->slug }}" title="{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->name }}">
 											<img src="https://img.ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
 										</a>	
-									@endif											
+									@endif		
 								</div>
 							</div>
 							<div class="row">
