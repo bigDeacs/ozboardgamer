@@ -124,8 +124,8 @@
 						<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
 							<div class="row">
 								<div style="overflow: hidden;height: 175px;">
-									<div style="position: absolute;">
-										<p class="blogHeading">
+									<div style="position: absolute;right: 15px;">
+										<p class="blogHeading text-right">
 											<strong>														
 												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 													<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
@@ -133,11 +133,18 @@
 													</a>
 												@else
 													<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name" title="{{ $review->name }}" style="color:white;">
-														{{ $review->name, 20 }}
+														{{ $review->name }}
 													</a>
 												@endif
 											</strong>
-										</p>			
+										</p>
+										@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+											<p class="blogHeadingSml text-right">
+												<strong style="color:white;">													
+													Review											
+												</strong>
+											</p>										
+										@endunless
 									</div>
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 										<div class="offer offer-radius offer-danger">
