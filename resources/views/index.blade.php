@@ -94,15 +94,13 @@
 							<ul>
 								@foreach($games as $game)
 									<li itemscope itemtype="http://schema.org/Game">
-										<div class="thumbnail img-shadow">
+										<div class="thumbnail img-shadow" style="position: relative;">
+											<div style="position: absolute;right: 5px;bottom: 20px;">
+												<p class="blogHeading text-right"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" class="post-title" itemprop="name" title="{{ $game->name }}" style="color:white;">{!! str_limit($game->name, 20) !!}</a></strong></p>
+											</div>
 											<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
 												<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" />
 											</a>
-											<div class="caption text-center">
-												<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">											
-													<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit($game->name, 14) !!}</strong></p>
-												</a>
-											</div>
 										</div>
 									</li>								
 								@endforeach
