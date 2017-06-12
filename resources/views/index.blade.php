@@ -122,23 +122,23 @@
 					<h3>Latest Board Game Reviews</h3>
 					@foreach($reviews as $review)
 						<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
-							<div>
-								<div class="col-sm-12" style="position: absolute;">
-									<p class="blogHeading">
-										<strong>														
-											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-												<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
-													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
-												</a>
-											@else
-												<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name" title="{{ $review->name }}" style="color:white;">
-													{{ $review->name, 20 }}
-												</a>
-											@endif
-										</strong>
-									</p>			
-								</div>
+							<div class="row">
 								<div style="overflow: hidden;height: 175px;">
+									<div style="position: absolute;">
+										<p class="blogHeading">
+											<strong>														
+												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+													<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
+														<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
+													</a>
+												@else
+													<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name" title="{{ $review->name }}" style="color:white;">
+														{{ $review->name, 20 }}
+													</a>
+												@endif
+											</strong>
+										</p>			
+									</div>
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 										<div class="offer offer-radius offer-danger">
 											<div class="shape">
