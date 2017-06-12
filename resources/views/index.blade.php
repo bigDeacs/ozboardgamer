@@ -321,7 +321,7 @@
 												<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" alt="{{ $product->name }}" class="img-responsive" width="300" height="auto" />
 											</a>
 											<div class="caption text-center">
-												<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->priceDisplay !!}</strong></p>
+												<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->saleDisplay !!}</strong></p>
 											</div>
 										</div>
 									</li>

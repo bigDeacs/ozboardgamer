@@ -103,7 +103,11 @@
 															<a href="/shop/{{ $item->slug }}" title="{{ $item->name }}">											
 																<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit($item->name, 12) !!}</strong></p>
 															</a>
-															<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $item->priceDisplay !!}</strong></p>
+															@if($item->sale > 0)
+																<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $item->saleDisplay !!}</strong></p>
+															@else
+																<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $item->priceDisplay !!}</strong></p>
+															@endif
 														</div>
 													</div>
 												</li>
