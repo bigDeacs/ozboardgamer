@@ -97,6 +97,7 @@
 										<div class="thumbnail img-shadow" style="position: relative;">
 											<div style="position: absolute;right: 4px;bottom: 15px;">
 												<p class="blogHeading text-right"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" class="post-title" itemprop="name" title="{{ $game->name }}" style="color:white;">{!! str_limit($game->name, 14) !!}</a></strong></p>
+												<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $game->types()->first()->name }}</strong></p>	
 											</div>
 											<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" title="{{ $game->name }}">
 												<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $game->name }}" class="img-responsive" itemprop="image" />
@@ -211,6 +212,7 @@
 										<div class="thumbnail img-shadow" style="position: relative;">
 											<div style="position: absolute;right: 4px;bottom: 15px;">
 												<p class="blogHeading text-right"><strong><a href="/stores/{{ $store->slug }}" class="post-title" itemprop="name" title="{{ $store->name }}" style="color:white;">{!! str_limit($store->name, 14) !!}</a></strong></p>
+												<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $store->state }}</strong></p>	
 											</div>
 											<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
 												<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" />
@@ -324,6 +326,7 @@
 										<div class="thumbnail img-shadow" style="position: relative;">
 											<div style="position: absolute;right: 4px;bottom: 60px;">
 												<p class="blogHeading text-right"><strong><a href="/shop/{{ $product->slug }}" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 14) !!}</a></strong></p>
+												<p class="blogHeadingSml text-right"><strong style="color:white;">Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</strong></p>	
 											</div>
 											<a href="/shop/{{ $product->slug }}" title="{{ $product->name }}">
 												<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" alt="{{ $product->name }}" class="img-responsive" width="300" height="auto" />
