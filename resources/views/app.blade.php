@@ -51,7 +51,7 @@
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-    <link href="https://css.ozboardgamer.com/css/style.min.css?v=90" rel="stylesheet">
+    <link href="https://css.ozboardgamer.com/css/style.min.css?v=91" rel="stylesheet">
 	<!--<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>-->
 	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">
@@ -218,7 +218,7 @@
 
 		<a id="back-to-top" href="#" class="btn btn-ocean text-uppercase btn-lg back-to-top" role="button" title="Click to return on the top page" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
 		<a href="https://www.patreon.com/ozboardgamer" class="btn btn-ocean text-uppercase btn-lg patreon-btn" role="button" title="Support us on Patreon" target="_blank" style="z-index: 100;">
-			<img src="https://img.ozboardgamer.com/img/patreonlogoorange.png" class="img-responsive" height="95" width="auto" alt="Patreon Logo" />
+			<img src="https://img.ozboardgamer.com/img/patreonlogoorange.png" class="img-responsive" style="width:200px;" height="95" width="auto" alt="Patreon Logo" />
 		</a>
 
 		<!-- Footer -->
