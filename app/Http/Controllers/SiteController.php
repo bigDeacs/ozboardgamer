@@ -655,7 +655,7 @@ class SiteController extends Controller {
 			   foreach ($posts as $post)
 			   {
 				   // set item's title, author, url, pubdate, description, content, enclosure (optional)*
-				   $enclosure = ['url'=> 'https://img.ozboardgamer.com/'.$post->image, 'type'=>'image/jpeg'];
+				   $enclosure = ['url'=> 'https://img.ozboardgamer.com'.$post->image, 'type'=>'image/jpeg'];
 				   $feed->add($post->name, $post->user->name, "https://ozboardgamer.com/".$post->category->slug."/".$post->slug, date('F d, Y', strtotime($post->published_at)), str_limit(strip_tags($post->description), $limit = 250, $end = '...'), $post->description, $enclosure);
 			   }
 

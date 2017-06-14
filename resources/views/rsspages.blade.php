@@ -35,15 +35,10 @@
 							  <body>
 								<article>		
 									<header>
-									  <!-- The header image shown inside your article --> 
 									  <figure>
 										<img src="{!! $item['enclosure']['url'] !!}" />
 									  </figure>
-									  
-									  <!-- The title shown in your article -->
 									  <h1>{!! $item['title'] !!}</h1>
-
-									  <!-- The author of your article -->
 									  <address>
 										<a>{!! $item['author'] !!}</a>
 									  </address>
