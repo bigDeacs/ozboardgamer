@@ -271,7 +271,7 @@
 						</div>
 					</div>
 					<div class="col-sm-6 col-md-4 col-xs-12 hidden-xs">
-						<a href="https://www.patreon.com/ozboardgamer" title="Support us on Patreon">
+						<a href="https://www.patreon.com/ozboardgamer" title="Support us on Patreon" target="_blank">
 							<img src="https://img.ozboardgamer.com/img/patreonlogoorange.png" class="img-responsive" height="95" width="auto" alt="Patreon Logo" />
 						</a>
 						<ul class="text-center" style="padding-left: 0;">
