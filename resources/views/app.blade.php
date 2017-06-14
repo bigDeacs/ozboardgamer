@@ -51,7 +51,7 @@
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-    <link href="https://css.ozboardgamer.com/css/style.min.css?v=89" rel="stylesheet">
+    <link href="https://css.ozboardgamer.com/css/style.min.css?v=90" rel="stylesheet">
 	<!--<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>-->
 	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">
@@ -217,6 +217,9 @@
 		@yield('content')
 
 		<a id="back-to-top" href="#" class="btn btn-ocean text-uppercase btn-lg back-to-top" role="button" title="Click to return on the top page" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
+		<a href="https://www.patreon.com/ozboardgamer" class="btn btn-ocean text-uppercase btn-lg patreon-btn" role="button" title="Support us on Patreon" target="_blank" style="z-index: 100;">
+			<img src="https://img.ozboardgamer.com/img/patreonlogoorange.png" class="img-responsive" height="95" width="auto" alt="Patreon Logo" />
+		</a>
 
 		<!-- Footer -->
 		<footer class="navbar-inverse navbar-footer">
@@ -270,10 +273,7 @@
 							<a href="https://t.cfjump.com/33917/b/31466" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="https://img.ozboardgamer.com/img/845b6d7d-2206-43a4-8302-6b925caa11ee.jpg" /></a>             
 						</div>
 					</div>
-					<div class="col-sm-6 col-md-4 col-xs-12 hidden-xs">
-						<a href="https://www.patreon.com/ozboardgamer" title="Support us on Patreon" target="_blank">
-							<img src="https://img.ozboardgamer.com/img/patreonlogoorange.png" class="img-responsive" height="95" width="auto" alt="Patreon Logo" />
-						</a>
+					<div class="col-sm-6 col-md-4 col-xs-12 hidden-xs">						
 						<ul class="text-center" style="padding-left: 0;">
 							<li>
 								<a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
