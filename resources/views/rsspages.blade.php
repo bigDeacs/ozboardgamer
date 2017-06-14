@@ -33,7 +33,21 @@
 								<meta property="op:markup_version" content="v1.0">
 							  </head>
 							  <body>
-								<article>									
+								<article>		
+									<header>
+									  <!-- The header image shown inside your article --> 
+									  <figure>
+										<img src="{!! $item['enclosure']['url'] !!}" />
+									  </figure>
+									  
+									  <!-- The title shown in your article -->
+									  <h1>{!! $item['title'] !!}</h1>
+
+									  <!-- The author of your article -->
+									  <address>
+										<a>{!! $item['author'] !!}</a>
+									  </address>
+									</header>
 									{!! $repeat !!}
 								</article>
 							  </body>
