@@ -34,7 +34,8 @@ class AdminController extends Controller {
 		$latestpost = Post::orderBy('published_at', 'desc')->where('published_at', '<=', date('Y-m-d'))->first();
 		$toptengames = Game::has('parent', '<', '1')->orderBy('rating', 'desc')->take(10)->get();
 		$toptenstores = Store::orderBy('rating', 'desc')->take(10)->get();
-        return view('home', compact('latestpost', 'toptengames', 'toptenstores'));
+		$toptenproducts = Product::where('price', '>', '0')->where('savings', '>', '0')->orderByRaw("RAND()")->take(10)->get();
+        return view('home', compact('latestpost', 'toptengames', 'toptenstores', 'toptenproducts'));
 	}
 
 }

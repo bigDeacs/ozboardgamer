@@ -31,7 +31,7 @@
 									{{ Carbon\Carbon::createFromTimestamp(strtotime($latestpost->published_at))->diff(Carbon\Carbon::now())->days }}
 								</span> Days Since Last Post</h3><br />
 							<a href="/admin/posts/create" class="pull-right btn btn-primary">Create Post <i class="fa fa-plus-square"></i></a>
-						</div>
+						</div>						
 						<div class="col-xs-12">
 							<h3>Top 10 Games</h3><br />
 						    <div class="jcarousel-wrapper">
@@ -45,6 +45,26 @@
 			                                    <h5 class="text-center"><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" itemprop="name">{{ $game->name }}</a></h5>
 			                                </li>
 			                            @endforeach
+			                        </ul>
+			                    </div>
+
+			                    <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+			                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+			                </div>
+						</div>
+						<div class="col-xs-12">
+							<h3>Top 10 Products</h3><br />
+						    <div class="jcarousel-wrapper">
+			                    <div class="jcarousel">
+			                        <ul>
+			                            @foreach($toptenproducts as $product)
+			                                <li>
+			                                    <a href="/shop/{{ $product->slug }}" target="_blank">
+			                                        <img src="{{ $product->thumb1x }}" alt="{{ $product->name }}" class="img-responsive" width="300" height="auto" style="margin: auto;" />
+			                                    </a>
+			                                    <h5 class="text-center"><a href="/shop/{{ $product->slug }}" itemprop="name">{{ $product->name }}</a></h5>
+			                                </li>
+			                            @endforeach										
 			                        </ul>
 			                    </div>
 
