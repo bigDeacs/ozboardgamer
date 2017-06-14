@@ -217,7 +217,7 @@
 		@yield('content')
 
 		<a id="back-to-top" href="#" class="btn btn-ocean text-uppercase btn-lg back-to-top" role="button" title="Click to return on the top page" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
-		<a id="patreon-btn" href="https://www.patreon.com/ozboardgamer" class="btn btn-ocean text-uppercase btn-lg patreon-btn" role="button" title="Support us on Patreon" target="_blank" style="z-index: 100;">
+		<a id="patreon-btn" href="https://www.patreon.com/ozbg" class="btn btn-ocean text-uppercase btn-lg patreon-btn" role="button" title="Support us on Patreon" target="_blank" style="z-index: 100;">
 			<img src="https://img.ozboardgamer.com/img/patreonlogoorange.png" class="img-responsive" style="width:150px;" height="auto" alt="Patreon Logo" />
 		</a>
 
