@@ -27,8 +27,10 @@
 			@endforeach		
 			@if($featured->isEmpty())
 				<li data-target="#bs-carousel" data-slide-to="1" class="active"></li>
+				<li data-target="#bs-carousel" data-slide-to="2" class="active"></li>
 			@else
 				<li data-target="#bs-carousel" data-slide-to="5" class="active"></li>
+				<li data-target="#bs-carousel" data-slide-to="6" class="active"></li>
 			@endif
 		</ol>
 	  @endunless
@@ -79,6 +81,18 @@
 					<p class="smallText">Choose from thousands of Games and Accessories</p>
 				</hgroup>
 				<a href="/shop" class="btn btn-hero btn-lg">Start Shopping</a>
+			  </div>
+			</div>
+			<div class="item slides">
+			  <!-- Overlay -->
+			  <div class="overlay"></div>
+			  <div class="slide-{{ ($featured->isEmpty()) ? '3' : '7' }}" style="background-image:url('https://img.ozboardgamer.com/img/support-us.jpg');"></div>
+			  <div class="hero" width="100%;">
+				<hgroup>
+					<p class="bigText">Support Us</p>        
+					<p class="smallText">Become a Patron today!</p>
+				</hgroup>
+				<a href="https://www.patreon.com/ozboardgamer" class="btn btn-hero btn-lg" target="_blank">Support Us</a>
 			  </div>
 			</div>
 	  </div> 
