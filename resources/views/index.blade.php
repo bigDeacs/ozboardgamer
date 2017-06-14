@@ -26,11 +26,11 @@
 				<li data-target="#bs-carousel" data-slide-to="{{ ($key+1) }}"></li>
 			@endforeach		
 			@if($featured->isEmpty())
-				<li data-target="#bs-carousel" data-slide-to="1" class="active"></li>
-				<li data-target="#bs-carousel" data-slide-to="2" class="active"></li>
+				<li data-target="#bs-carousel" data-slide-to="1"></li>
+				<li data-target="#bs-carousel" data-slide-to="2"></li>
 			@else
-				<li data-target="#bs-carousel" data-slide-to="5" class="active"></li>
-				<li data-target="#bs-carousel" data-slide-to="6" class="active"></li>
+				<li data-target="#bs-carousel" data-slide-to="5"></li>
+				<li data-target="#bs-carousel" data-slide-to="6"></li>
 			@endif
 		</ol>
 	  @endunless
