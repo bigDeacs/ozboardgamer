@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\Game;
 use App\Store;
+use App\Product;
 
 class AdminController extends Controller {
 
