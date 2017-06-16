@@ -92,7 +92,7 @@
 					<p class="bigText">Support Us</p>        
 					<p class="smallText">Become a Patron today!</p>
 				</hgroup>
-				<a href="https://www.patreon.com/ozboardgamer" class="btn btn-hero btn-lg" target="_blank">Support Us</a>
+				<a href="https://www.patreon.com/ozbg" class="btn btn-hero btn-lg" target="_blank">Support Us</a>
 			  </div>
 			</div>
 	  </div> 
