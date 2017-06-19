@@ -222,24 +222,24 @@
 		</a>
 
 		<!-- Footer -->
-		<footer class="navbar-inverse navbar-footer">
+		<footer class="navbar-inverse navbar-footer" style="padding: 10px;">
 			<div class="container">
 				<div class="row">                                
 					<div class="col-sm-8 col-md-8 col-xs-12">
-						<p class="copyright text-muted text-center small">Copyright &copy; OzBoardGamer 2017. <br />All Rights Reserved</p>                   
+						<p class="copyright text-muted text-left">Copyright &copy; OzBoardGamer 2017. <br />All Rights Reserved</p>                   
 					</div>                
-					<div class="col-sm-4 col-md-4 col-xs-12">
+					<div class="col-sm-4 col-md-4 col-xs-12 text-right">
 						<a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
-							<i class="fa fa-facebook-official fa-fw"></i>
+							<i class="fa fa-facebook-official fa-fw fa-3x"></i>
 						</a>
 						<a href="https://twitter.com/OzBoardGamer" target="_blank" title="Follow us on Twitter">
-							<i class="fa fa-twitter fa-fw"></i>
+							<i class="fa fa-twitter fa-fw fa-3x"></i>
 						</a>
 						<a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" target="_blank" title="Follow us on Google+">
-							<i class="fa fa-google-plus-official fa-fw"></i>
+							<i class="fa fa-google-plus-official fa-fw fa-3x"></i>
 						</a>
 						<a href="https://www.instagram.com/ozboardgamer/" target="_blank" title="Follow us on Instagram">
-							<i class="fa fa-instagram fa-fw"></i>
+							<i class="fa fa-instagram fa-fw fa-3x"></i>
 						</a>
 					</div>
 				</div>
