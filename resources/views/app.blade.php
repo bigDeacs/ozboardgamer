@@ -217,7 +217,7 @@
 		@yield('content')
 
 		<!--<a id="back-to-top" href="#" class="btn btn-ocean text-uppercase btn-lg back-to-top" role="button" title="Click to return on the top page" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>-->
-		<a id="patreon-btn" href="https://www.patreon.com/ozbg" class="btn btn-ocean text-uppercase btn-md patreon-btn" role="button" title="Support us on Patreon" target="_blank" style="z-index: 100;">
+		<a id="patreon-btn" href="https://www.patreon.com/ozbg" class="btn btn-ocean text-uppercase btn-md patreon-btn hidden-xs" role="button" title="Support us on Patreon" target="_blank" style="z-index: 100;">
 			<img src="https://img.ozboardgamer.com/img/patreonlogoorange.png" class="img-responsive" style="width:140px;" height="auto" alt="Patreon Logo" />
 		</a>
 
@@ -225,21 +225,21 @@
 		<footer class="navbar-inverse navbar-footer" style="padding: 10px;">
 			<div class="container">
 				<div class="row">                                
-					<div class="col-sm-8 col-md-8 col-xs-12">
-						<p class="copyright text-muted text-left">Copyright &copy; OzBoardGamer 2017. <br />All Rights Reserved</p>                   
+					<div class="col-sm-6 col-md-6 col-xs-6">
+						<p class="copyright text-muted text-left">Copyright &copy; OzBoardGamer 2017. All Rights Reserved</p>                   
 					</div>                
-					<div class="col-sm-4 col-md-4 col-xs-12 text-right">
+					<div class="col-sm-3 col-md-3 col-xs-6 text-right">
 						<a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
-							<i class="fa fa-facebook-official fa-fw fa-3x"></i>
+							<i class="fa fa-facebook-official fa-fw fa-2x"></i>
 						</a>
 						<a href="https://twitter.com/OzBoardGamer" target="_blank" title="Follow us on Twitter">
-							<i class="fa fa-twitter fa-fw fa-3x"></i>
+							<i class="fa fa-twitter fa-fw fa-2x"></i>
 						</a>
 						<a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" target="_blank" title="Follow us on Google+">
-							<i class="fa fa-google-plus-official fa-fw fa-3x"></i>
+							<i class="fa fa-google-plus-official fa-fw fa-2x"></i>
 						</a>
 						<a href="https://www.instagram.com/ozboardgamer/" target="_blank" title="Follow us on Instagram">
-							<i class="fa fa-instagram fa-fw fa-3x"></i>
+							<i class="fa fa-instagram fa-fw fa-2x"></i>
 						</a>
 					</div>
 				</div>
