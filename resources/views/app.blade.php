@@ -225,86 +225,22 @@
 		<footer class="navbar-inverse navbar-footer">
 			<div class="container">
 				<div class="row">                                
-					<div class="col-sm-6 col-md-4 col-xs-12">
-						<div class="row">
-							<div class="col-xs-6">
-								<ul class="nav navbar-nav" style="padding-left: 0;">
-									<li style="width:100%;">
-										<a href="/">Home</a>
-									</li>
-									<li style="width:100%;">
-										<a href="/games">Games</a>
-									</li>
-									<li style="width:100%;">
-										<a href="/news">News</a>
-									</li>
-									<li style="width:100%;">
-										<a href="/reviews">Reviews</a>
-									</li>
-									<li style="width:100%;">
-										<a href="/howtos">How To's</a>
-									</li>
-								</ul>
-							</div>
-							<div class="col-xs-6">
-								<ul class="nav navbar-nav" style="padding-left: 0;">                    
-									<li style="width:100%;">
-										<a href="/top10s">Top 10's</a>
-									</li>
-									<li style="width:100%;">
-										<a href="/blogs">Blogs</a>
-									</li>
-									<li style="width:100%;">
-										<a href="/stores">Stores</a>
-									</li>
-									<li style="width:100%;">
-										<a href="/quizzes">Quizzes</a>
-									</li>
-									<li style="width:100%;">
-										<a href="/shop">Shop</a>
-									</li>
-								</ul>
-							</div>
-						</div>                    
+					<div class="col-sm-8 col-md-8 col-xs-12">
+						<p class="copyright text-muted text-center small">Copyright &copy; OzBoardGamer 2017. <br />All Rights Reserved</p>                   
 					</div>                
-					<div class="col-md-4 col-xs-12 hidden-sm hidden-xs">
-						<!-- Above Footer Ad -->
-						<div class="text-center">
-							<a href="https://t.cfjump.com/33917/b/31466" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="" src="https://img.ozboardgamer.com/img/845b6d7d-2206-43a4-8302-6b925caa11ee.jpg" /></a>             
-						</div>
-					</div>
-					<div class="col-sm-6 col-md-4 col-xs-12 hidden-xs">						
-						<ul class="text-center" style="padding-left: 0;">
-							<li>
-								<a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
-									<i class="fa fa-facebook-official fa-fw"></i> Like Us On Facebook
-								</a>
-							</li>
-							<br />
-							<li>
-								<a href="https://twitter.com/OzBoardGamer" target="_blank" title="Follow us on Twitter">
-									<i class="fa fa-twitter fa-fw"></i> Follow Us On Twitter
-								</a>
-							</li>
-							<br />
-							<!--<li>
-								<a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" class="btn btn-hot text-uppercase btn-lg" target="_blank" title="Subscribe to our Youtube channel">
-									<i class="fa fa-youtube fa-fw"></i>
-								</a>
-							</li>-->
-							<li>
-								<a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" target="_blank" title="Follow us on Google+">
-									<i class="fa fa-google-plus-official fa-fw"></i> Follow Us On Google+
-								</a>
-							</li> 
-							<br />
-							<li>
-								<a href="https://www.instagram.com/ozboardgamer/" target="_blank" title="Follow us on Instagram">
-									<i class="fa fa-instagram fa-fw"></i> Follow Us On Instagram
-								</a>
-							</li>
-						</ul>    
-						<p class="copyright text-muted text-center small">Copyright &copy; OzBoardGamer 2017. <br />All Rights Reserved</p>
+					<div class="col-sm-4 col-md-4 col-xs-12">
+						<a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
+							<i class="fa fa-facebook-official fa-fw"></i>
+						</a>
+						<a href="https://twitter.com/OzBoardGamer" target="_blank" title="Follow us on Twitter">
+							<i class="fa fa-twitter fa-fw"></i>
+						</a>
+						<a href="https://plus.google.com/b/113009055075693721367/113009055075693721367?hl=en" target="_blank" title="Follow us on Google+">
+							<i class="fa fa-google-plus-official fa-fw"></i>
+						</a>
+						<a href="https://www.instagram.com/ozboardgamer/" target="_blank" title="Follow us on Instagram">
+							<i class="fa fa-instagram fa-fw"></i>
+						</a>
 					</div>
 				</div>
 			</div>

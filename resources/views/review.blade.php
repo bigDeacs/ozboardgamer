@@ -82,18 +82,7 @@
 				<div class="col-sm-12">
 					@unless($post->image == null)
 						<div class="row">
-						  <div class="col-sm-12 hidden-xs">
-							<div class="profile-header-container" style="position: absolute;bottom: 35px;left: 35px;">   
-								<div class="profile-header-img">
-									<a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">
-										<img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" data-toggle="tooltip" data-placement="right" title="{{ strip_tags($post->user->description) }}">
-									</a>
-									<!-- badge -->
-									<div class="rank-label-container">
-										<span class="label label-default rank-label"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></span>
-									</div>
-								</div>
-							</div> 
+						  <div class="col-sm-12 hidden-xs">						
 							<div class="img-container">
 								<div class="fill" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');" itemprop="image"></div>
 							</div>
@@ -110,8 +99,7 @@
 							<h1 itemprop="name">{{ $post->name }}</h1>
 							<div class="row">
 								<div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
-									<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}" itemprop="author">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
-										</span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
+									<span class="glyphicon glyphicon-calendar"></span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
 								</div>
 								<div class="col-sm-6 col-md-5 col-lg-4 col-xs-12" style="display: flex;padding-left: 30px;">
 									<div style="margin: 0 10px;">
@@ -132,33 +120,36 @@
 							@endunless
 							<p itemprop="reviewBody">{!! $post->description !!}</p>
 							<div class="row">
-								<div class="col-xs-4">
-									<div class="profile-header-container pull-left">   
+								<div class="col-xs-12" style="background: #333333;color: #9d9d9d;">
+									<div class="profile-header-container pull-left" style="padding: 10px 0;margin-right: 15px;">
 										<div class="profile-header-img">
 											<a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">
 												<img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" title="{{ strip_tags($post->user->description) }}">
 											</a>
 										</div>
-									</div> 
-								</div> 
-								<div class="col-xs-8">
-									<h4>{{ $post->user->name }}</h4>
-									<p>{{ $post->user->description }}</p>
-								</div> 
-							</div> 
+									</div>
+									<div style="padding: 8px 0;">
+										<h4 style="margin-bottom: 5px;">{{ $post->user->name }}</h4>
+										<p>{!! $post->user->description !!}</p>
+									</div>
+								</div>
+							</div>
 						</div>
 					  </div>
 					  @unless($games->isEmpty())
 						<div class="col-sm-3 hidden-xs text-center" itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
-							<p><strong>Games mentioned:</strong></p>
+							<br />
 							<div id="child" class="scrollBox">
 								@foreach($games as $game)
 									<div class="row">
 										<div class="col-xs-12">
+											<div style="position: absolute;right: 4px;bottom: 15px;">
+												<p class="blogHeading text-right"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" class="post-title" itemprop="name" title="{{ $game->name }}" style="color:white;">{!! str_limit($game->name, 14) !!}</a></strong></p>
+												<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $game->types()->first()->name }}</strong></p>	
+											</div>
 											<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
 												<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive img-shadow" itemprop="image" />
 											</a>
-											<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}"><strong><span itemprop="name">{{ $game->name }}</span></strong></a></p>
 										</div>
 									</div>
 								@endforeach
@@ -217,7 +208,7 @@
 	{!! $post->scripts !!}
 	<script>
     $(document).ready(function() {
-            $("#child").css("height",$("#parent").height() - 50);
+            $("#child").css("max-height",$("#parent").height() - 50);
      });
   </script>
   <script>

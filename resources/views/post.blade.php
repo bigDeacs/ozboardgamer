@@ -146,19 +146,22 @@
 					  </div>
 					  @unless($games->isEmpty())
 						<div class="col-sm-3 hidden-xs text-center">
-							<p><strong>Games mentioned:</strong></p>
-							 <div id="child" class="scrollBox">
-										@foreach($games as $game)
-											<div class="row">
-												<div class="col-xs-12">
-													<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
-														<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive img-shadow" itemprop="image" />
-													</a>
-													<p><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}"><strong>{{ $game->name }}</strong></a></p>
-												</div>
+							<br />
+							<div id="child" class="scrollBox">
+								@foreach($games as $game)
+									<div class="row">
+										<div class="col-xs-12">
+											<div style="position: absolute;right: 4px;bottom: 15px;">
+												<p class="blogHeading text-right"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" class="post-title" itemprop="name" title="{{ $game->name }}" style="color:white;">{!! str_limit($game->name, 14) !!}</a></strong></p>
+												<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $game->types()->first()->name }}</strong></p>	
 											</div>
-										@endforeach
-							  </div>
+											<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
+												<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive img-shadow" itemprop="image" />
+											</a>
+										</div>
+									</div>
+								@endforeach
+							</div>
 						</div>
 					  @endunless
 					</div>
@@ -213,7 +216,7 @@
 	{!! $post->scripts !!}
   <script>
     $(document).ready(function() {
-            $("#child").css("height",$("#parent").height() - 50);
+            $("#child").css("max-height",$("#parent").height() - 50);
 			$(function () {
 			  $('[data-toggle="tooltip"]').tooltip()
 			});
