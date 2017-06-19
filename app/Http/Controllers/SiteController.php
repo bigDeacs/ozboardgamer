@@ -927,7 +927,7 @@ class SiteController extends Controller {
 				$q->where('name', '=', $post->name);
 			})->orderByRaw("RAND()")->get();
 			$posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->orderBy('published_at', 'desc')->take(10);
-			return view('review', compact('post', 'games'));
+			return view('review', compact('post', 'games', 'posts'));
 		}
 
 	}
