@@ -203,6 +203,44 @@
 						</div>
 					  </div>
 					@endif
+					<div class="row hidden-xs">
+						<div class="col-xs-12">
+							<h4>You might also like...</h4>
+							<div class="jcarousel-wrapper">
+								<div class="jcarousel">
+									<ul>
+										@foreach($posts as $item)
+											<?php 
+												$game = $item->games()->orderBy(DB::raw('RAND()'))->first(); 
+											?>		
+											<li>
+												<div class="thumbnail img-shadow" style="position: relative;">
+													<div style="position: absolute;right: 4px;bottom: 60px;">
+														<p class="blogHeading text-right"><strong>
+															<a href="/{{ $item->category->slug }}/{{ $item->slug }}" class="post-title" itemprop="name" title="{{ str_limit($item->name, 14) }}" style="color:white;">
+																{{ $item->name }}
+															</a>
+														</strong></p>
+														<p class="blogHeadingSml text-right">
+															<strong style="color:white;">													
+																{{ $item->category->name }}										
+															</strong>
+														</p>
+													</div>
+													<a href="/{{ $item->category->slug }}/{{ $item->slug }}" title="{{ $item->name }}">
+														<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{{ $item->name }}" class="img-responsive" width="300" height="auto" />
+													</a>
+												</div>
+											</li>
+										@endforeach
+									</ul>
+								</div>
+
+								<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+								<a href="#" class="jcarousel-control-next">&rsaquo;</a>
+							</div>
+						</div>
+					</div>
 				</div>	
 			@endif
 		</div>
@@ -218,6 +256,11 @@
 			  $('[data-toggle="tooltip"]').tooltip()
 			});
      });
+	 $(function() {
+		$('.jcarousel').jcarousel({
+			// Configuration goes here
+		});
+	});
   </script>
   <script>
 	fbq('track', 'ViewContent');

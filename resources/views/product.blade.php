@@ -95,19 +95,16 @@
 										<ul>
 											@foreach($products as $item)
 												<li>
-													<div class="thumbnail img-shadow">
+													<div class="thumbnail img-shadow" style="position: relative;">
+														<div style="position: absolute;right: 4px;bottom: 60px;">
+															<p class="blogHeading text-right"><strong><a href="/shop/{{ $item->slug }}" class="post-title" itemprop="name" title="{{ $item->name }}" style="color:white;">{!! str_limit($item->name, 14) !!}</a></strong></p>
+															<p class="blogHeadingSml text-right"><strong style="color:white;">Save ${!! number_format($item->price - $item->sale, 2, '.', '') !!}</strong></p>	
+														</div>
 														<a href="/shop/{{ $item->slug }}" title="{{ $item->name }}">
-															<img src="{{ $item->thumb1x }}" srcset="{{ $item->thumb1x }} 1x, {{ $item->thumb2x }} 2x" class="img-responsive" width="300" height="auto" />
+															<img src="{{ $item->thumb1x }}" srcset="{{ $item->thumb1x }} 1x, {{ $item->thumb2x }} 2x" alt="{{ $item->name }}" class="img-responsive" width="300" height="auto" />
 														</a>
 														<div class="caption text-center">
-															<a href="/shop/{{ $item->slug }}" title="{{ $item->name }}">											
-																<p class="text-center" style="font-size: 15px;"><strong>{!! str_limit($item->name, 12) !!}</strong></p>
-															</a>
-															@if($item->sale > 0)
-																<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $item->saleDisplay !!}</strong></p>
-															@else
-																<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $item->priceDisplay !!}</strong></p>
-															@endif
+															<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $item->saleDisplay !!}</strong></p>
 														</div>
 													</div>
 												</li>
