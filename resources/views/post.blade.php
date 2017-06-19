@@ -40,18 +40,7 @@
 				<div class="col-sm-12">
 					@unless($post->image == null)
 						<div class="row">
-						  <div class="col-sm-12 hidden-xs">
-							<div class="profile-header-container" style="position: absolute;bottom: 35px;left: 35px;">   
-								<div class="profile-header-img">
-									<a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">
-										<img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" data-toggle="tooltip" data-placement="right" title="{{ strip_tags($post->user->description) }}">
-									</a>
-									<!-- badge -->
-									<div class="rank-label-container">
-										<span class="label label-default rank-label"><i class="fa fa-pencil fa-2x" aria-hidden="true"></i></span>
-									</div>
-								</div>
-							</div> 						
+						  <div class="col-sm-12 hidden-xs">					
 							<h1>{{ $post->name }}</h1>
 							<div class="img-container">
 								<div class="fill" style="background-image:url('https://img.ozboardgamer.com/{{ $post->image }}');" itemprop="image"></div>
@@ -142,6 +131,21 @@
 								</div>
 							@endunless
 							<p>{!! $post->description !!}</p>
+							<div class="row">
+								<div class="col-xs-12" style="background: #333333;color: #9d9d9d;">
+									<div class="profile-header-container pull-left" style="padding: 10px 0;margin-right: 15px;">
+										<div class="profile-header-img">
+											<a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">
+												<img src="{{ $post->user->image }}" alt="{{ $post->user->name }}" class="img-circle img-shadow" width="100px" height="auto" title="{{ strip_tags($post->user->description) }}">
+											</a>
+										</div>
+									</div>
+									<div style="padding: 8px 0;">
+										<h4 style="margin-bottom: 5px;">{{ $post->user->name }}</h4>
+										<p>{!! $post->user->description !!}</p>
+									</div>
+								</div>
+							</div>
 						</div>
 					  </div>
 					  @unless($games->isEmpty())

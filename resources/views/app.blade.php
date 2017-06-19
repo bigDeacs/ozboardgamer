@@ -51,7 +51,7 @@
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-    <link href="https://css.ozboardgamer.com/css/style.min.css?v=92" rel="stylesheet">
+    <link href="https://css.ozboardgamer.com/css/style.min.css?v=93" rel="stylesheet">
 	<!--<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>-->
 	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">
@@ -216,7 +216,7 @@
 
 		@yield('content')
 
-		<a id="back-to-top" href="#" class="btn btn-ocean text-uppercase btn-lg back-to-top" role="button" title="Click to return on the top page" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>
+		<!--<a id="back-to-top" href="#" class="btn btn-ocean text-uppercase btn-lg back-to-top" role="button" title="Click to return on the top page" style="z-index: 100;"><span class="glyphicon glyphicon-chevron-up"></span></a>-->
 		<a id="patreon-btn" href="https://www.patreon.com/ozbg" class="btn btn-ocean text-uppercase btn-md patreon-btn" role="button" title="Support us on Patreon" target="_blank" style="z-index: 100;">
 			<img src="https://img.ozboardgamer.com/img/patreonlogoorange.png" class="img-responsive" style="width:140px;" height="auto" alt="Patreon Logo" />
 		</a>
