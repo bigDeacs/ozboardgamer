@@ -200,15 +200,17 @@
 								<div class="col-xs-12">
 									<p itemprop="description" class="textbox-height">
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-											Login to gain early access to this post!
+											This is a members only post, for early access to this post login or signup today!
 										@else
 											{!! str_limit(strip_tags($review->description), $limit = 250, $end = '...') !!}
 										@endif    													                                                    
 									</p>
-									<p>												
-										@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+									<p>			
+										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-bottom: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>													
+										@else
 											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/reviews/{{ $review->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
-										@endunless   													
+										@endif    
 									</p>
 								</div>
 							</div>
@@ -273,9 +275,9 @@
 									<div style="position: absolute;right: 15px;bottom: 0;">
 										<p class="blogHeading text-right">
 											<strong>														
-												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-													<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
-														<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
+												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))												
+													<a href="#" class="post-title disabled" itemprop="name"title="Login for access" style="color:white;">
+														{{ $top10->name }}
 													</a>
 												@else
 													<a href="/top10s/{{ $top10->slug }}" class="post-title" itemprop="name" title="{{ $top10->name }}" style="color:white;">
@@ -284,13 +286,19 @@
 												@endif
 											</strong>
 										</p>
-										@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))												
 											<p class="blogHeadingSml text-right">
 												<strong style="color:white;">													
-													Top 10's											
+													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>											
 												</strong>
-											</p>										
-										@endunless
+											</p>
+										@else
+											<p class="blogHeadingSml text-right">
+												<strong style="color:white;">													
+													Top 10's												
+												</strong>
+											</p>
+										@endif										
 									</div>
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
 										<div class="offer offer-radius offer-danger">
@@ -324,15 +332,17 @@
 								<div class="col-xs-12">
 									<p itemprop="description" class="textbox-height">
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-											Login to gain early access to this post!
+											This is a members only post, for early access to this post login or signup today!
 										@else
 											{!! str_limit(strip_tags($top10->description), $limit = 250, $end = '...') !!}
 										@endif    													                                                    
 									</p>                                                
-									<p>
-										@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))																										
-											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/top10s/{{ $top10->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>
-										@endunless                                                     
+									<p>      
+										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
+											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-bottom: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>													
+										@else
+											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/top10s/{{ $top10->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
+										@endif  										
 									</p>
 								</div>
 							</div>
@@ -387,24 +397,30 @@
 									<div style="position: absolute;right: 15px;bottom: 0;">
 										<p class="blogHeading text-right">
 											<strong>														
-												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
-													<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
-														<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>
+												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))												
+													<a href="#" class="post-title disabled" itemprop="name"title="Login for access" style="color:white;">
+														{{ $blog->name }}
 													</a>
 												@else
 													<a href="/blogs/{{ $blog->slug }}" class="post-title" itemprop="name" title="{{ $blog->name }}" style="color:white;">
-														{!! str_limit($blog->name, 16) !!}
+														{{ $blog->name }}
 													</a>
 												@endif
 											</strong>
 										</p>
-										@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
+										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))												
+											<p class="blogHeadingSml text-right">
+												<strong style="color:white;">													
+													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>											
+												</strong>
+											</p>
+										@else
 											<p class="blogHeadingSml text-right">
 												<strong style="color:white;">													
 													Blog											
 												</strong>
-											</p>										
-										@endunless
+											</p>
+										@endif										
 									</div>
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
 										<div class="offer offer-radius offer-danger">
@@ -438,15 +454,17 @@
 								<div class="col-xs-12">
 									<p itemprop="description" class="textbox-height">
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
-											Login to gain early access to this post!
+											This is a members only post, for early access to this post login or signup today!
 										@else
 											{!! str_limit(strip_tags($blog->description), $limit = 250, $end = '...') !!}
 										@endif    													                                                    
 									</p>                                                
 									<p>
-										@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))																										
-											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/blogs/{{ $blog->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>
-										@endunless                                                     
+										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
+											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-bottom: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>																							
+										@else
+											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/blogs/{{ $blog->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
+										@endif  											
 									</p>
 								</div>
 							</div>

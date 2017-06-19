@@ -58,7 +58,7 @@
 							@endif
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <p style="font-size: 18px;">
+                                        <p style="font-size: 18px;margin-top: 15px;">
                                             <strong>
 												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 													<a href="#" class="post-title disabled" itemprop="name" title="Login for access">
@@ -98,15 +98,17 @@
                                     <div class="col-xs-12">
 										<p itemprop="description">
 											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
-												Login to gain early access to this post!
+												This is a members only post, for early access to this post login or signup today!
 											@else
 												{!! str_limit(strip_tags($post->description), $limit = 250, $end = '...') !!}
 											@endif    													                                                    
 										</p>
-										<p>												
-											@unless(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
+										<p>					
+											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
+												<a class="btn btn-hot text-uppercase pull-right" href="/login"><i class="fa fa-sign-in"></i> Login/Signup</a>													
+											@else
 												<a class="btn btn-hot text-uppercase pull-right" href="/{{ $category->slug }}/{{ $post->slug }}"><span class="fa fa-arrow-circle-right"></span> Read more</a>
-											@endunless   													
+											@endif 										
 										</p>							
                                     </div>
                                 </div>
