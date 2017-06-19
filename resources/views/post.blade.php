@@ -164,6 +164,7 @@
 											</a>
 										</div>
 									</div>
+									<br />
 								@endforeach
 							</div>
 						</div>
