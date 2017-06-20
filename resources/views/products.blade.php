@@ -81,7 +81,11 @@
 				<div class="thumbnail img-shadow" style="position: relative;">
 					<div style="position: absolute;right: 4px;bottom: 135px;">
 						<p class="blogHeading text-right"><strong><a href="/shop/{{ $product->slug }}" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 16) !!}</a></strong></p>
-						<p class="blogHeadingSml text-right"><strong style="color:white;">Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</strong></p>	
+						@if($product->sale > 0)
+							<p class="blogHeadingSml text-right"><strong style="color:white;">Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</strong></p>	
+						@else
+							<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $product->brand }}</strong></p>	
+						@endif						
 					</div>
 					<a href="/shop/{!! $product->slug !!}">
 						<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
