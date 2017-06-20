@@ -225,10 +225,10 @@
 		<footer class="navbar-inverse navbar-footer" style="padding: 10px;">
 			<div class="container">
 				<div class="row">                                
-					<div class="col-sm-6 col-md-6 col-xs-6">
+					<div class="col-sm-6 col-md-6 col-xs-5">
 						<p class="copyright text-muted text-left">Copyright &copy; OzBoardGamer 2017. All Rights Reserved</p>                   
 					</div>                
-					<div class="col-sm-3 col-md-3 col-xs-6 text-right">
+					<div class="col-sm-3 col-md-3 col-xs-7 text-right">
 						<a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
 							<i class="fa fa-facebook-official fa-fw fa-2x"></i>
 						</a>

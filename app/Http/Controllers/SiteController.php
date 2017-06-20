@@ -692,16 +692,7 @@ class SiteController extends Controller {
 		{
 		    $q->where('slug', '=', 'blogs');
 		})->orderBy('published_at', 'desc')->take(6)->get();
-		$news = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
-		{
-		    $q->where('slug', '=', 'news');
-		})->orderBy('published_at', 'desc')->take(10)->get();
-		$howtos = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
-		{
-		    $q->where('slug', '=', 'howtos');
-		})->orderBy('published_at', 'desc')->take(10)->get();		
 		$games = Game::where('status', '=', '1')->has('parent', '<', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
-		$stores = Store::where('status', '=', '1')->orderBy('rating', 'desc')->take(10)->get();
 		$products = Product::where('price', '>', '0')->where('savings', '>', '0')->orderByRaw("RAND()")->take(10)->get();
 		return view('index', compact('featured', 'reviews', 'howtos', 'top10s', 'news', 'blogs', 'games', 'stores', 'products'));
 	}

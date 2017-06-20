@@ -208,48 +208,6 @@
 				</div>
 			</div>
 		@endunless			
-		@unless($products->isEmpty())
-			<div class="row hidden-xs">
-				<div class="col-xs-12">
-					<h3>Featured Products</h3>
-					<div class="jcarousel-wrapper">
-						<div class="jcarousel">
-							<ul>
-								@foreach($products as $product)
-									<li>
-										<div class="thumbnail img-shadow" style="position: relative;">
-											<div style="position: absolute;right: 4px;bottom: 60px;">
-												<p class="blogHeading text-right"><strong><a href="/shop/{{ $product->slug }}" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 14) !!}</a></strong></p>
-												<p class="blogHeadingSml text-right"><strong style="color:white;">Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</strong></p>	
-											</div>
-											<a href="/shop/{{ $product->slug }}" title="{{ $product->name }}">
-												<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" alt="{{ $product->name }}" class="img-responsive" width="300" height="auto" />
-											</a>
-											<div class="caption text-center">
-												<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->saleDisplay !!}</strong></p>
-											</div>
-										</div>
-									</li>
-								@endforeach
-							</ul>
-						</div>
-
-						<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
-					</div>
-					<div class="row hidden-xs" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;margin-bottom: 15px;">
-						<div class="col-xs-12 text-center">
-							<p><strong>New Deals In:</strong></p>
-							<br />
-							<div class="clock" style="margin: 0 auto;width:625px;"></div>
-						</div>
-					</div>
-					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
-						<a href="/shop" class="btn btn-sm btn-fresh"><span class="fa fa-arrow-circle-right"></span> View More Products</a>
-					</p>
-				</div>
-			</div>
-        @endunless		
 		@unless($top10s->isEmpty())
 			<div class="row">
 				<div class="col-xs-12">    
@@ -339,39 +297,7 @@
 					</p>
 				</div>
 			</div>
-		@endunless			
-		@unless($stores->isEmpty())
-			<div class="row hidden-xs">
-				<div class="col-xs-12">
-					<h3>Top Rated Stores</h3>
-					<div class="jcarousel-wrapper">
-						<div class="jcarousel">
-							<ul>
-								@foreach($stores as $store)
-									<li>
-										<div class="thumbnail img-shadow" style="position: relative;">
-											<div style="position: absolute;right: 4px;bottom: 15px;">
-												<p class="blogHeading text-right"><strong><a href="/stores/{{ $store->slug }}" class="post-title" itemprop="name" title="{{ $store->name }}" style="color:white;">{!! str_limit($store->name, 14) !!}</a></strong></p>
-												<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $store->state }}</strong></p>	
-											</div>
-											<a href="/stores/{{ $store->slug }}" title="{{ $store->name }}">
-												<img src="https://img.ozboardgamer.com{{ $store->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $store->thumb1x }} 1x, https://img.ozboardgamer.com{{ $store->thumb2x }} 2x" alt="{{ $store->name }}" class="img-responsive" width="300" height="auto" />
-											</a>										
-										</div>
-									</li>
-								@endforeach
-							</ul>
-						</div>
-
-						<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
-					</div>
-					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;border-top: 1px solid #DDD;padding-top: 10px;">
-						<a href="/stores" class="btn btn-sm btn-fresh"><span class="fa fa-arrow-circle-right"></span> View More Board Game Stores</a>
-					</p>
-				</div>
-			</div>
-        @endunless				
+		@endunless	
 		@unless($blogs->isEmpty())
 			<div class="row">
 				<div class="col-xs-12">    
@@ -462,6 +388,48 @@
 				</div>
 			</div>
 		@endunless	
+		@unless($products->isEmpty())
+			<div class="row hidden-xs">
+				<div class="col-xs-12">
+					<h3>Featured Products</h3>
+					<div class="jcarousel-wrapper">
+						<div class="jcarousel">
+							<ul>
+								@foreach($products as $product)
+									<li>
+										<div class="thumbnail img-shadow" style="position: relative;">
+											<div style="position: absolute;right: 4px;bottom: 60px;">
+												<p class="blogHeading text-right"><strong><a href="/shop/{{ $product->slug }}" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 14) !!}</a></strong></p>
+												<p class="blogHeadingSml text-right"><strong style="color:white;">Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</strong></p>	
+											</div>
+											<a href="/shop/{{ $product->slug }}" title="{{ $product->name }}">
+												<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" alt="{{ $product->name }}" class="img-responsive" width="300" height="auto" />
+											</a>
+											<div class="caption text-center">
+												<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->saleDisplay !!}</strong></p>
+											</div>
+										</div>
+									</li>
+								@endforeach
+							</ul>
+						</div>
+
+						<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
+					</div>
+					<div class="row hidden-xs" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;margin-bottom: 15px;">
+						<div class="col-xs-12 text-center">
+							<p><strong>New Deals In:</strong></p>
+							<br />
+							<div class="clock" style="margin: 0 auto;width:625px;"></div>
+						</div>
+					</div>
+					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
+						<a href="/shop" class="btn btn-sm btn-fresh"><span class="fa fa-arrow-circle-right"></span> View More Products</a>
+					</p>
+				</div>
+			</div>
+        @endunless				
     </div>
 
     </div>
