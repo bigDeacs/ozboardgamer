@@ -118,7 +118,7 @@
 						</div>
 					 @else
 						<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8">
-							<div class="panel panel-default" style="margin-top: 25px;">
+							<div class="panel panel-default" style="margin: 75px 0;">
 								<div class="panel-heading"></div>
 								<div class="panel-body">									
 									<h1 class="text-center">Login Using:</h1>		
@@ -164,7 +164,14 @@
 											 <li>{{$errors->first()}}</li>
 										 </ul>
 									   </div>
-									 @endif										   
+									 @endif	
+									<br />
+									<div class="row text-center">
+										<div class="col-xs-5"><hr></div>
+										<div class="col-xs-2"><h4>OR</h4></div>
+										<div class="col-xs-5"><hr></div>
+									</div>		
+									<p class="text-center">Not a member? <a href="/signup">Signup Here</a></p>									 
 								</div>
 							</div>							
 						</div>
