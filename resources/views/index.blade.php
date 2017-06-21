@@ -447,7 +447,7 @@
 	<script src="/js/flipclock.min.js"></script>
 	<script type="text/javascript">		
 		$(document).ready(function() {
-			var clock = $('.clock').FlipClock({{ strtotime('Next Thursday noon') - time() }}, {
+			var clock = $('.clock').FlipClock({{ strtotime('Next Thursday') - time() }}, {
 				clockFace: 'DailyCounter',
 				countdown: true
 			});
