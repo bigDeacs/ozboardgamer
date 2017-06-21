@@ -419,21 +419,21 @@ outline-offset: none;
 
 .btn-ocean {
 color: #fff;
-background-color: #337ab7;
-border-bottom:2px solid #2e6da4;
+background-color: #008751;
+border-bottom: 2px solid #00633b;
 }
 
 .btn-ocean:hover,.btn-ocean.active:focus, .btn-ocean:focus, .open>.dropdown-toggle.btn-ocean {
 color: #fff;
-background-color: #4092d8;
-border-bottom:2px solid #3e84c1;
+background-color: #009e5f;
+    border-bottom: 2px solid #008751;
 outline: none;
 }
 
 .btn-ocean:active, .btn-ocean.active {
 color: #fff;
-background-color: #286090;
-border-top:2px solid #204d74;
+    background-color: #00633b;
+    border-top: 2px solid #004c2d;
 outline-offset: none;
 }
 
