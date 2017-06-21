@@ -432,8 +432,8 @@ outline: none;
 
 .btn-ocean:active, .btn-ocean.active {
 color: #fff;
-    background-color: #00633b;
-    border-top: 2px solid #004c2d;
+background-color: #00633b;
+border-top: 2px solid #004c2d;
 outline-offset: none;
 }
 
