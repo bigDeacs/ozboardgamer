@@ -58,7 +58,7 @@
     @yield('meta')
     @yield('head')
     <script type="text/javascript">if(window.location.hash == '#_=_' || window.location.hash == '#') { window.location.hash = ''; history.pushState('', document.title, window.location.pathname); }</script>
-    <link href="https://css.ozboardgamer.com/css/style.min.css?v=96" rel="stylesheet">
+    <link href="https://css.ozboardgamer.com/css/style.min.css?v=97" rel="stylesheet">
 	<!--<link href="https://ozboardgamer.com/css/fonts.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>-->
 	<link rel="stylesheet" href="https://ozboardgamer.com/css/font-awesome.min.css">
@@ -185,7 +185,7 @@
 
 		@yield('content')
 
-		<a id="back-to-top" href="#" class="btn btn-ocean text-uppercase btn-lg back-to-top" role="button" title="Click to return on the top page" style="z-index: 100;font-size: 15px;"><span class="glyphicon glyphicon-chevron-up"></span></a>
+		<a id="back-to-top" href="#" class="btn btn-top text-uppercase btn-lg back-to-top" role="button" title="Click to return on the top page" style="z-index: 100;font-size: 15px;"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
 		<!-- Footer -->
 		<footer class="navbar-inverse navbar-footer" style="padding: 10px;">
