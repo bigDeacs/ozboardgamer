@@ -191,10 +191,10 @@
 		<footer class="navbar-inverse navbar-footer" style="padding: 10px;">
 			<div class="container">
 				<div class="row">                                
-					<div class="col-sm-offset-3 col-sm-4 col-lg-offset-3 col-lg-4 col-md-offset-2 col-md-5 col-xs-5">
+					<div class="col-sm-offset-3 col-sm-4 col-lg-offset-3 col-lg-4 col-md-offset-2 col-md-5 col-xs-12">
 						<p class="copyright text-muted text-left">Copyright &copy; OzBoardGamer 2017. All Rights Reserved</p>                   
 					</div>                
-					<div class="col-sm-3 col-md-3 col-lg-2 col-xs-7">
+					<div class="col-sm-3 col-md-3 col-lg-2 col-xs-12">
 						<a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
 							<i class="fa fa-facebook-official fa-fw fa-2x"></i>
 						</a>

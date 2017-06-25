@@ -192,9 +192,9 @@
 						<div class="col-xs-12">
 							<h4>Login/Signup Using:</h4>
 							<div class="row text-center">
-								<div class="col-xs-4"><a href="/facebook" class="btn btn-ocean text-uppercase btn-block" title="Login/Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
-								<div class="col-xs-4"><a href="/google" class="btn btn-hot text-uppercase btn-block" title="Login/Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
-								<div class="col-xs-4"><a href="/twitter" class="btn btn-sky text-uppercase btn-block" title="Login/Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
+								<div class="col-sm-4 col-xs-12"><a href="/facebook" class="btn btn-ocean text-uppercase btn-block" title="Login/Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
+								<div class="col-sm-4 col-xs-12"><a href="/google" class="btn btn-hot text-uppercase btn-block" title="Login/Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+								<div class="col-sm-4 col-xs-12"><a href="/twitter" class="btn btn-sky text-uppercase btn-block" title="Login/Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
 						   </div>
 							<h6>to add comments</h6>
 						</div>

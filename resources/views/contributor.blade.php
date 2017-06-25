@@ -24,10 +24,10 @@
 				<div class="row">
 			      <div class="col-sm-9 col-xs-12">
 			      	<div class="row">
-						<div class="col-xs-2">
+						<div class="col-sm-3 hidden-xs">
 							<img src="{{ $user->image }}" alt="{{ $user->name }}" class="img-circle img-shadow" width="100px" height="auto">
 						</div>
-						<div class="col-xs-10">
+						<div class="col-sm-9 col-xs-12">
 							<h1>{{ $user->name }}</h1>
 							@if($user->description != '')
 								<p>{!! $user->description !!}</p>							
