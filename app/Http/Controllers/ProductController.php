@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-define('STDIN',fopen("php://stdin","r"));
-
 use Illuminate\Http\Request;
 
 use App\Http\Requests\ProductRequest;
@@ -59,7 +57,7 @@ class ProductController extends Controller
                 $file->move(storage_path() . '/uploads/', 'products.csv');
             }
         }		
-        Artisan::call('db:seed');
+        //Artisan::call('db:seed');
 
         return redirect('/admin/products');
     }
