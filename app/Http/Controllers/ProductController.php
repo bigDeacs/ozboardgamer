@@ -1,5 +1,7 @@
 <?php
 
+define('STDIN',fopen("php://stdin","r"));
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
