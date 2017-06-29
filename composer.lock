@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "63fb4fd30105c892461abb8030f0293a",
+    "content-hash": "427620e1ef5944e3e0e472654df2c7de",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -322,16 +322,16 @@
         },
         {
             "name": "flynsarmy/csv-seeder",
-            "version": "v1.0.6",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Flynsarmy/laravel-csv-seeder.git",
-                "reference": "9b6b261082bf7ff245eeb355261e1038cbd89262"
+                "reference": "6ee1358058de44fbadea04566eb6793046c4e421"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Flynsarmy/laravel-csv-seeder/zipball/9b6b261082bf7ff245eeb355261e1038cbd89262",
-                "reference": "9b6b261082bf7ff245eeb355261e1038cbd89262",
+                "url": "https://api.github.com/repos/Flynsarmy/laravel-csv-seeder/zipball/6ee1358058de44fbadea04566eb6793046c4e421",
+                "reference": "6ee1358058de44fbadea04566eb6793046c4e421",
                 "shasum": ""
             },
             "require": {
@@ -362,7 +362,7 @@
                 "seeding",
                 "seeds"
             ],
-            "time": "2015-09-04T04:13:30+00:00"
+            "time": "2015-06-20T14:10:43+00:00"
         },
         {
             "name": "graham-campbell/manager",
