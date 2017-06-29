@@ -8,7 +8,6 @@ use App\Http\Requests\ProductRequest;
 use App\Product;
 use Storage;
 use Artisan;
-use ProductSeeder;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
