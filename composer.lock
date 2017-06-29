@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6fb216bab032421d69ca5457f2329f41",
+    "content-hash": "63fb4fd30105c892461abb8030f0293a",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -322,16 +322,16 @@
         },
         {
             "name": "flynsarmy/csv-seeder",
-            "version": "v1.0.4",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Flynsarmy/laravel-csv-seeder.git",
-                "reference": "c38863534b61b58abcd9a1b535dee71fb2b1122e"
+                "reference": "9b6b261082bf7ff245eeb355261e1038cbd89262"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Flynsarmy/laravel-csv-seeder/zipball/c38863534b61b58abcd9a1b535dee71fb2b1122e",
-                "reference": "c38863534b61b58abcd9a1b535dee71fb2b1122e",
+                "url": "https://api.github.com/repos/Flynsarmy/laravel-csv-seeder/zipball/9b6b261082bf7ff245eeb355261e1038cbd89262",
+                "reference": "9b6b261082bf7ff245eeb355261e1038cbd89262",
                 "shasum": ""
             },
             "require": {
@@ -362,7 +362,7 @@
                 "seeding",
                 "seeds"
             ],
-            "time": "2015-05-28T06:08:15+00:00"
+            "time": "2015-09-04T04:13:30+00:00"
         },
         {
             "name": "graham-campbell/manager",

@@ -57,6 +57,8 @@ class ProductController extends Controller
                 $file->move(storage_path() . '/uploads/', 'products.csv');
             }
         }		
+		$seeder = new ProductSeeder();
+		$seeder->run();
         //Artisan::call('db:seed');
 
         return redirect('/admin/products');
