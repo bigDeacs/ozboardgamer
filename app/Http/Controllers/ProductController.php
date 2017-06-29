@@ -10,7 +10,6 @@ use Storage;
 use Artisan;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Database\Seeds\ProductSeeder;
 
 class ProductController extends Controller
 {
@@ -58,9 +57,7 @@ class ProductController extends Controller
                 $file->move(storage_path() . '/uploads/', 'products.csv');
             }
         }		
-		$seeder = new ProductSeeder();
-		$seeder->run();
-        //Artisan::call('db:seed');
+        Artisan::call('db:seed');
 
         return redirect('/admin/products');
     }
