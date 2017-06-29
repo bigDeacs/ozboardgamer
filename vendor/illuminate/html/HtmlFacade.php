@@ -1,9 +1,9 @@
-<?php namespace Collective\Html;
+<?php namespace Illuminate\Html;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Collective\Html\HtmlBuilder
+ * @see \Illuminate\Html\HtmlBuilder
  */
 class HtmlFacade extends Facade {
 

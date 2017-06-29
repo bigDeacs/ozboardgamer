@@ -1,6 +1,5 @@
-<?php namespace Collective\Html;
+<?php namespace Illuminate\Html;
 
-use DateTime;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Session\Store as Session;
 use Illuminate\Support\Traits\Macroable;
@@ -12,7 +11,7 @@ class FormBuilder {
 	/**
 	 * The HTML builder instance.
 	 *
-	 * @var \Collective\Html\HtmlBuilder
+	 * @var \Illuminate\Html\HtmlBuilder
 	 */
 	protected $html;
 
@@ -76,7 +75,7 @@ class FormBuilder {
 	 * Create a new form builder instance.
 	 *
 	 * @param  \Illuminate\Routing\UrlGenerator  $url
-	 * @param  \Collective\Html\HtmlBuilder  $html
+	 * @param  \Illuminate\Html\HtmlBuilder  $html
 	 * @param  string  $csrfToken
 	 * @return void
 	 */
@@ -297,37 +296,6 @@ class FormBuilder {
 	public function email($name, $value = null, $options = array())
 	{
 		return $this->input('email', $name, $value, $options);
-	}
-
-	/**
-	 * Create a number input field.
-	 *
-	 * @param  string  $name
-	 * @param  string  $value
-	 * @param  array   $options
-	 * @return string
-	 */
-	public function number($name, $value = null, $options = array())
-	{
-		return $this->input('number', $name, $value, $options);
-	}
-
-	/**
-	 * Create a date input field.
-	 *
-	 * @param  string  $name
-	 * @param  string  $value
-	 * @param  array   $options
-	 * @return string
-	 */
-	public function date($name, $value = null, $options = array())
-	{
-		if ($value instanceof DateTime)
-		{
-			$value = $value->format('Y-m-d');
-		}
-
-		return $this->input('date', $name, $value, $options);
 	}
 
 	/**
@@ -575,7 +543,7 @@ class FormBuilder {
 	 *
 	 * @param  string  $value
 	 * @param  string  $selected
-	 * @return string|null
+	 * @return string
 	 */
 	protected function getSelectedValue($value, $selected)
 	{
@@ -908,7 +876,7 @@ class FormBuilder {
 	 *
 	 * @param  string  $name
 	 * @param  string  $value
-	 * @return mixed
+	 * @return string
 	 */
 	public function getValueAttribute($name, $value = null)
 	{
@@ -931,7 +899,7 @@ class FormBuilder {
 	 * Get the model value that should be assigned to the field.
 	 *
 	 * @param  string  $name
-	 * @return mixed
+	 * @return string
 	 */
 	protected function getModelValueAttribute($name)
 	{
@@ -949,7 +917,7 @@ class FormBuilder {
 	 * Get a value from the session's old input.
 	 *
 	 * @param  string  $name
-	 * @return mixed
+	 * @return string
 	 */
 	public function old($name)
 	{
