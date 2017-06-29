@@ -1,4 +1,4 @@
-<?php namespace Illuminate\Html;
+<?php namespace Collective\Html;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -22,8 +22,8 @@ class HtmlServiceProvider extends ServiceProvider {
 
 		$this->registerFormBuilder();
 
-		$this->app->alias('html', 'Illuminate\Html\HtmlBuilder');
-		$this->app->alias('form', 'Illuminate\Html\FormBuilder');
+		$this->app->alias('html', 'Collective\Html\HtmlBuilder');
+		$this->app->alias('form', 'Collective\Html\FormBuilder');
 	}
 
 	/**
@@ -61,7 +61,7 @@ class HtmlServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array('html', 'form');
+		return array('html', 'form', 'Collective\Html\HtmlBuilder', 'Collective\Html\FormBuilder');
 	}
 
 }
