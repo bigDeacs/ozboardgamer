@@ -10,6 +10,7 @@ use Storage;
 use Artisan;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Database\Seeds\ProductSeeder;
 
 class ProductController extends Controller
 {
