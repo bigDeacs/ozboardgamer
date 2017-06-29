@@ -57,7 +57,7 @@ class ProductController extends Controller
                 $file->move(storage_path() . '/uploads/', 'products.csv');
             }
         }		
-        Artisan::call('db:seed');
+		Artisan::call('db:seed', array('--force'=> true));
 
         return redirect('/admin/products');
     }
