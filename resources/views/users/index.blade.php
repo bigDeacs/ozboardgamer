@@ -23,15 +23,17 @@
 						<div class="table-responsive">
 						  <table class="table dataTable table-striped table-hover">
 						  	<col width="20%">
-  							<col width="15%">
+  							<col width="10%">
 							<col width="5%">
-  							<col width="40%">
+							<col width="10%">
+  							<col width="35%">
 							<col width="20%">
 						    <thead>
 						    	<tr>
 						    		<th>Name</th>
 						    		<th>User Type</th>
 						    		<th></th>
+									<th>Joined</th>
 									<th></th>
 									<th></th>
 						    	</tr>
@@ -60,6 +62,7 @@
 										$count++;
 									?>
 									<td><span class="badge" style="background-color: #d9534f;">{{ $countOwned }}</span></td>
+									<td>{{ $user->created_at }}</td>
 						    		<td>
 						    			<a href="/admin/users/{{ $user->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
 						    			<a href="/users/{{ $user->slug }}?page=1" target="_blank" class="btn btn-primary">View <i class="fa fa-arrow-circle-o-right"></i></a>
