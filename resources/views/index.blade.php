@@ -189,14 +189,12 @@
 											This is a members only post, for early access to this post login or signup today!
 										@else
 											{!! str_limit(strip_tags($review->description), $limit = 250, $end = '...') !!}
-										@endif    													                                                    
-									</p>
-									<p>			
+										@endif    		
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-bottom: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>													
+											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-top: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>													
 										@else
 											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/reviews/{{ $review->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
-										@endif    
+										@endif  
 									</p>
 								</div>
 							</div>
@@ -279,11 +277,9 @@
 											This is a members only post, for early access to this post login or signup today!
 										@else
 											{!! str_limit(strip_tags($top10->description), $limit = 250, $end = '...') !!}
-										@endif    													                                                    
-									</p>                                                
-									<p>      
+										@endif    													                                                        
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-bottom: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>													
+											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-top: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>													
 										@else
 											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/top10s/{{ $top10->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
 										@endif  										
@@ -370,10 +366,8 @@
 										@else
 											{!! str_limit(strip_tags($blog->description), $limit = 250, $end = '...') !!}
 										@endif    													                                                    
-									</p>                                                
-									<p>
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
-											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-bottom: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>																							
+											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-top: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>																							
 										@else
 											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/blogs/{{ $blog->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
 										@endif  											
