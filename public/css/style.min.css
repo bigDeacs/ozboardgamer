@@ -91,13 +91,13 @@ a.disabled:active, .btn.disabled:active {
 
 @media (min-width: 678px) {
   .textbox-height {
-		min-height: 200px;
+		min-height: 250px;
 	}
 }
 
 @media (min-width: 992px) {
   .textbox-height {
-		min-height: 150px!important;
+		min-height: 200px!important;
 	}
 }
 
