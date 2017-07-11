@@ -209,7 +209,7 @@
 		@unless($top10s->isEmpty())
 			<div class="row">
 				<div class="col-xs-12">    
-					<h4>Latest Board Game Top 10's</h4>
+					<h3>Latest Board Game Top 10's</h3>
 					@foreach($top10s as $top10)
 						<div class="col-xs-12 col-sm-4 post" style="margin-bottom: 15px;">				
 							<div class="row">
@@ -297,7 +297,7 @@
 		@unless($blogs->isEmpty())
 			<div class="row">
 				<div class="col-xs-12">    
-					<h5>Latest Board Game Blogs</h5>					
+					<h3>Latest Board Game Blogs</h3>					
 					@foreach($blogs as $blog)
 						<div class="col-xs-12 col-sm-4 post" style="margin-bottom: 15px;">				
 							<div class="row">
@@ -385,7 +385,7 @@
 		@unless($products->isEmpty())
 			<div class="row hidden-xs">
 				<div class="col-xs-12">
-					<h6>Featured Products</h6>
+					<h3>Featured Products</h3>
 					<div class="jcarousel-wrapper">
 						<div class="jcarousel">
 							<ul>
