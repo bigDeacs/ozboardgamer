@@ -10,10 +10,11 @@ ErrorDocument 403 /error/403.php
     RewriteRule ^(emails)($|/) - [L]
     RewriteCond %{REQUEST_URI} !^/sitemap\.xml
     RewriteRule ^(.*)$ /public/$1 [L]
+	RewriteCond %{HTTPS} on
     RewriteCond %{HTTP_HOST} ^www\.ozboardgamer\.com$
-    RewriteRule ^/?$ "http\:\/\/ozboardgamer\.com\/" [R=301,L]
+    RewriteRule ^/?$ "https\:\/\/ozboardgamer\.com\/" [R=301,L]
     RewriteCond %{HTTP_HOST} ^128\.199\.183\.184
-    RewriteRule (.*) http://www.ozboardgamer.com/$1 [R=301,L]
+    RewriteRule (.*) https://www.ozboardgamer.com/$1 [R=301,L]
 </IfModule>
 
 ## EXPIRES CACHING ##
