@@ -239,7 +239,7 @@
 				</div>
 				<!-- / modal-header -->
 				<div class='modal-body'>
-					<img src="/img/signup-header.jpg" class="img-responsive" alt="Signup" style="margin-bottom: 15px;"/>
+					<img src="https://img.ozboardgamer.com/img/signup-header.jpg" class="img-responsive" alt="Signup" style="margin-bottom: 15px;"/>
 					@if (count($errors) > 0)
 					   <div class="col-xs-12 col-sm-10 col-sm-offset-1 alert alert-danger">
 						 <strong>Whoops!</strong> There were some problems with your input.<br><br>
