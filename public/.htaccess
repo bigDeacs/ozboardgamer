@@ -12,6 +12,12 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+	
+	RewriteCond %{HTTPS} on
+    RewriteCond %{HTTP_HOST} ^www\.ozboardgamer\.com$
+    RewriteRule ^/?$ "https\:\/\/ozboardgamer\.com\/" [R=301,L]
+    RewriteCond %{HTTP_HOST} ^128\.199\.183\.184
+    RewriteRule (.*) https://www.ozboardgamer.com/$1 [R=301,L]
 </IfModule>
 
 ## EXPIRES CACHING ##
