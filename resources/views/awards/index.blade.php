@@ -15,7 +15,7 @@
 			    <h1 class="panel-title"><strong>Awards</strong></h1>
 			  </div>
 			  <div class="panel-body">
-			  	<div class="pull-right"><a href="/admin/awards/create" class="btn btn-primary">Create Post <i class="fa fa-plus-square"></i></a></div>
+			  	<div class="pull-right"><a href="/admin/awards/create" class="btn btn-primary">Create Award <i class="fa fa-plus-square"></i></a></div>
 			  	<div style="clear:both;"></div>
 			  	<div class="row">
 					<div class="col-sm-12">
@@ -43,8 +43,8 @@
 						    		<td scope="row">{{ $award->name }}</td>
 						    		<td scope="row"><img src="{{ $award->thumb }}" class="img-responsive" /></td>
 						    		<td>
-						    			<a href="/admin/awards/{{ $post->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
-						    			@if($post->status == 0)
+						    			<a href="/admin/awards/{{ $award->id }}/edit" class="btn btn-warning">Edit <i class="fa fa-pencil-square-o"></i></a>
+						    			@if($award->status == 0)
 											<a href="/admin/awards/{{ $award->id }}/activate" class="btn btn-success">Activate <i class="fa fa-check"></i></a>
 										@else
 											<a href="/admin/awards/{{ $award->id }}/deactivate" class="btn btn-danger">Deactivate <i class="fa fa-times"></i></a>
