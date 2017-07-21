@@ -39,10 +39,22 @@
 			<div class="col-md-9 col-sm-8 col-xs-12">
 				<h1 itemprop="name">{{ $game->name }}</h1>
 				<div class="row">					
-					<div class="col-md-4 col-xs-5 text-center">
+					<div class="col-md-5 col-xs-5 text-center">
+						<div>
+							<p><i class="fa fa-users fa-3x" aria-hidden="true"></i></p>
+							<p style="font-size: 20px;"><strong itemprop="numberOfPlayers">{{ $game->players }}</strong></p>
+						</div>
+							<p><i class="fa fa-birthday-cake fa-3x" aria-hidden="true"></i></p>
+							<p style="font-size: 20px;"><strong itemprop="typicalAgeRange">{{ $game->age }}</strong></p>
+						<div>
+						</div>
+						<div>
+							<p><i class="fa fa-clock-o fa-3x" aria-hidden="true"></i></p>
+							<p style="font-size: 20px;"><strong itemprop="timeRequired">{{ $game->time }}</strong></p>
+						</div>
 						<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" itemprop="image" />
 					</div>
-					<div class="col-md-8 col-xs-7">						
+					<div class="col-md-7 col-xs-7">						
 						@unless($game->publishers->isEmpty())
 							<div style="margin-bottom: 10px;">
 								<small>
@@ -78,26 +90,15 @@
 								</div>
 							</div>
 						@endunless							
-						<div class="row text-center">
-							<div class="col-md-3 col-sm-4 col-xs-4">
-								<div class="text-center" style="margin-bottom: 5px;">
-									<p><i class="fa fa-users fa-3x" aria-hidden="true"></i></p>
-									<p style="font-size: 20px;"><strong itemprop="numberOfPlayers">{{ $game->players }}</strong></p>
+						@unless($game->awards->isEmpty())
+							<div class="row hidden-xs" style="margin-bottom: 10px;">
+								<div class="col-xs-12">
+									@foreach($game->awards as $award)
+										<a href="{{ $award->slug }}"><img src="https://img.ozboardgamer.com{{ $award->thumb }}" class="img-responsive" /></a>
+									@endforeach
 								</div>
 							</div>
-							<div class="col-md-3 col-sm-4 col-xs-4">								
-								<div class="text-center" style="margin-bottom: 5px;">
-									<p><i class="fa fa-birthday-cake fa-3x" aria-hidden="true"></i></p>
-									<p style="font-size: 20px;"><strong itemprop="typicalAgeRange">{{ $game->age }}</strong></p>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-4 col-xs-4">								
-								<div class="text-center" style="margin-bottom: 5px;">
-									<p><i class="fa fa-clock-o fa-3x" aria-hidden="true"></i></p>
-									<p style="font-size: 20px;"><strong itemprop="timeRequired">{{ $game->time }}</strong></p>
-								</div>
-							</div>
-						</div>  
+						@endunless
 						<div class="row hidden-xs">
 						  @if(Session::has('name'))
 							<strong>Rate This Game</strong>
