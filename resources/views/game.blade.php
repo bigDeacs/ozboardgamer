@@ -39,19 +39,21 @@
 			<div class="col-md-9 col-sm-8 col-xs-12">
 				<h1 itemprop="name">{{ $game->name }}</h1>
 				<div class="row">					
-					<div class="col-md-5 col-xs-12 text-center">						
-						<div style="position: absolute;top: 15px;left: 70px;z-index: 100;">
-							<p><i class="fa fa-users fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="numberOfPlayers">{{ $game->players }}</strong></p>
-						</div>
-						<div style="position: absolute;top: 75px;left: 70px;z-index: 100;">
-							<p><i class="fa fa-birthday-cake fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="typicalAgeRange">{{ $game->age }}</strong></p>
-						</div>
-						<div style="position: absolute;top: 125px;left: 70px;z-index: 100;">
-							<p><i class="fa fa-clock-o fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="timeRequired">{{ $game->time }}</strong></p>
-						</div>
+					<div class="col-md-4 col-xs-12 text-center">												
 						<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" itemprop="image" />						
+						<div class="row">
+							<div class="col-xs-4">
+								<i class="fa fa-users fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
+							</div>
+							<div class="col-xs-4">
+								<i class="fa fa-birthday-cake fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
+							</div>
+							<div class="col-xs-4">
+								<i class="fa fa-clock-o fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="timeRequired">{{ $game->time }}</strong>
+							</div>
+						</div>
 					</div>
-					<div class="col-md-7 col-xs-12">						
+					<div class="col-md-8 col-xs-12">						
 						@unless($game->publishers->isEmpty())
 							<div style="margin-bottom: 10px;">
 								<small>
@@ -89,9 +91,9 @@
 						@endunless							
 						@unless($game->awards->isEmpty())
 							<div class="row hidden-xs" style="margin-bottom: 10px;">
-								<div class="col-xs-12">
+								<div class="col-xs-2">
 									@foreach($game->awards as $award)
-										<a href="{{ $award->slug }}"><img src="https://img.ozboardgamer.com{{ $award->thumb }}" class="img-responsive" /></a>
+										<a href="{{ $award->slug }}" title="{{ $award->name }}"><img src="https://img.ozboardgamer.com{{ $award->thumb }}" class="img-responsive" /></a>
 									@endforeach
 								</div>
 							</div>
