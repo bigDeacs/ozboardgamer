@@ -61,12 +61,7 @@ class Game extends Model {
     public function family()
     {
         return $this->belongsTo('App\Family');
-    }
-	
-	public function awards()
-    {
-        return $this->belongsToMany('App\Award');
-    }
+    }	
 
     public function posts()
     {
@@ -136,6 +131,16 @@ class Game extends Model {
     public function getDesignerListAttribute()
     {
         return $this->designers->lists('id');
+    }
+	
+	 public function awards()
+    {
+        return $this->belongsToMany('App\Award');
+    }
+
+    public function getAwardListAttribute()
+    {
+        return $this->awards->lists('id');
     }
 
     public function users()
