@@ -142,7 +142,7 @@
 <div class="form-group row">
       <div class="col-xs-12">
             <label for="award_list">Awards</label>
-            {!! Form::select('award_list[]', $publishers, null, ['id' => 'award_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
+            {!! Form::select('award_list[]', $awards, null, ['id' => 'award_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
       </div>
 
 </div>
