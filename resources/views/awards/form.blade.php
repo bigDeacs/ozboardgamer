@@ -25,7 +25,7 @@
       </div>
       <div class="col-sm-3 col-xs-12">            
             <label for="image">Featured Image</label>
-            @if(isset($post))
+            @if(isset($award))
                   <img src="{{ secure_url('/') }}{!! $award->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />
             @else
                   <img id="imageUpload" class="img-responsive" style="margin-bottom:10px;" />
