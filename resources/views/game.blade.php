@@ -90,12 +90,12 @@
 							</div>
 						@endunless							
 						@unless($game->awards->isEmpty())
-							<div class="row hidden-xs" style="margin-bottom: 10px;">
-								<div class="col-xs-2">
-									@foreach($game->awards as $award)
+							<div class="row hidden-xs" style="margin-bottom: 10px;">								
+								@foreach($game->awards as $award)
+									<div class="col-xs-2">
 										<a href="{{ $award->slug }}" title="{{ $award->name }}"><img src="https://img.ozboardgamer.com{{ $award->thumb }}" class="img-responsive" /></a>
-									@endforeach
-								</div>
+									</div>
+								@endforeach								
 							</div>
 						@endunless
 						<div class="row hidden-xs">
