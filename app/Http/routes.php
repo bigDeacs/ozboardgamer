@@ -62,6 +62,9 @@ Route::group(['prefix' => 'admin'], function()
 	Route::resource('types', 'TypeController');
 	Route::get('types/{types}/activate', ['as' => 'types.activate', 'uses' => 'TypeController@activate']);
 	Route::get('types/{types}/deactivate', ['as' => 'types.deactivate', 'uses' => 'TypeController@deactivate']);
+	Route::resource('awards', 'AwardController');
+	Route::get('awards/{awards}/activate', ['as' => 'awards.activate', 'uses' => 'AwardController@activate']);
+	Route::get('awards/{awards}/deactivate', ['as' => 'awards.deactivate', 'uses' => 'AwardController@deactivate']);
 	Route::resource('posts', 'PostController');
 	Route::get('posts/{posts}/activate', ['as' => 'posts.activate', 'uses' => 'PostController@activate']);
 	Route::get('posts/{posts}/deactivate', ['as' => 'posts.deactivate', 'uses' => 'PostController@deactivate']);

@@ -62,6 +62,11 @@ class Game extends Model {
     {
         return $this->belongsTo('App\Family');
     }
+	
+	public function awards()
+    {
+        return $this->belongsToMany('App\Award');
+    }
 
     public function posts()
     {

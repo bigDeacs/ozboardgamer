@@ -133,8 +133,16 @@
 
 <div class="form-group row">
       <div class="col-xs-12">
-            <label for="publisher_list">Publisher</label>
+            <label for="publisher_list">Publishers</label>
             {!! Form::select('publisher_list[]', $publishers, null, ['id' => 'publisher_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
+      </div>
+
+</div>
+
+<div class="form-group row">
+      <div class="col-xs-12">
+            <label for="award_list">Awards</label>
+            {!! Form::select('award_list[]', $publishers, null, ['id' => 'award_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
       </div>
 
 </div>
@@ -205,6 +213,10 @@
             });
             $('#designer_list').select2({
                   placeholder: 'Choose a Designer',
+                  tags: true
+            });
+			$('#award_list').select2({
+                  placeholder: 'Choose an Award',
                   tags: true
             });
             $(document).ready(function() {

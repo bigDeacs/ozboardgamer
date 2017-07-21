@@ -12,6 +12,7 @@ use App\Type;
 use App\Designer;
 use App\Publisher;
 use App\Family;
+use App\Award;
 use Storage;
 use Image;
 use App\Http\Controllers\Controller;
@@ -140,8 +141,9 @@ class GameController extends Controller
         $designers = Designer::where('status', '=', '1')->lists('name', 'id');
         $publishers = Publisher::where('status', '=', '1')->lists('name', 'id');
         $families = Family::where('status', '=', '1')->lists('name', 'id');
+		$awards = Award::where('status', '=', '1')->lists('name', 'id');
         $games = Game::where('status', '=', '1')->lists('name', 'id');
-        return view('games.create', compact('themes', 'mechanics', 'types', 'families', 'publishers', 'games', 'designers'));
+        return view('games.create', compact('themes', 'mechanics', 'types', 'families', 'publishers', 'games', 'designers', 'awards'));
     }
 
     /**
@@ -255,6 +257,21 @@ class GameController extends Controller
             $currentDesigners = [];
         }
         $game->designers()->sync($currentDesigners);
+		
+		if(is_array($request->input('award_list'))) {
+            $currentAwards = array_filter($request->input('award_list'), 'is_numeric');
+            $newAwards = array_diff($request->input('award_list'), $currentAwards);
+            foreach($newAwards as $newAward)
+            {
+                if($award = Award::create(['name' => $newAward, 'slug' => str_slug($newAward, "-"), 'status' => 1]))
+                {
+                    $currentAwards[] = "$award->id";
+                }
+            }
+        } else {
+            $currentAwards = [];
+        }
+        $game->awards()->sync($currentAwards);
 
         return redirect('/admin/games');
     }
@@ -285,9 +302,10 @@ class GameController extends Controller
         $designers = Designer::where('status', '=', '1')->lists('name', 'id');
         $publishers = Publisher::where('status', '=', '1')->lists('name', 'id');
         $families = Family::where('status', '=', '1')->lists('name', 'id');
+		$awards = Award::where('status', '=', '1')->lists('name', 'id');
         $games = Game::where('status', '=', '1')->lists('name', 'id');
         $game = Game::where('id', '=', $id)->firstOrFail();
-        return view('games.edit', compact('game', 'themes', 'mechanics', 'types', 'families', 'publishers', 'games', 'designers'));
+        return view('games.edit', compact('game', 'themes', 'mechanics', 'types', 'families', 'publishers', 'games', 'designers', 'awards'));
     }
 
     /**
@@ -402,6 +420,21 @@ class GameController extends Controller
             $currentDesigners = [];
         }
         $game->designers()->sync($currentDesigners);
+		
+		if(is_array($request->input('award_list'))) {
+            $currentAwards = array_filter($request->input('award_list'), 'is_numeric');
+            $newAwards = array_diff($request->input('award_list'), $currentAwards);
+            foreach($newAwards as $newAward)
+            {
+                if($award = Award::create(['name' => $newAward, 'slug' => str_slug($newAward, "-"), 'status' => 1]))
+                {
+                    $currentAwards[] = "$award->id";
+                }
+            }
+        } else {
+            $currentAwards = [];
+        }
+        $game->awards()->sync($currentAwards);
 
         return redirect('/admin/games');
     }
