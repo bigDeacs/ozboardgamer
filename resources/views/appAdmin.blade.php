@@ -53,6 +53,7 @@
 								<li><a href="{{ url('/admin/mechanics') }}">Game Mechanics</a></li>
 								<li><a href="{{ url('/admin/themes') }}">Game Themes</a></li>
 								<li><a href="{{ url('/admin/types') }}">Game Types</a></li>
+								<li><a href="{{ url('/admin/awards') }}">Game Awards</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
