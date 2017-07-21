@@ -39,22 +39,19 @@
 			<div class="col-md-9 col-sm-8 col-xs-12">
 				<h1 itemprop="name">{{ $game->name }}</h1>
 				<div class="row">					
-					<div class="col-md-5 col-xs-5 text-center">						
-						<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" itemprop="image" />
-						<div>
-							<p><i class="fa fa-users fa-3x" aria-hidden="true"></i></p>
-							<p style="font-size: 20px;"><strong itemprop="numberOfPlayers">{{ $game->players }}</strong></p>
+					<div class="col-md-5 col-xs-12 text-center">						
+						<div style="position: absolute;top: 15px;left: 70px;z-index: 100;">
+							<p><i class="fa fa-users fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="numberOfPlayers">{{ $game->players }}</strong></p>
 						</div>
-						<div>
-							<p><i class="fa fa-birthday-cake fa-3x" aria-hidden="true"></i></p>
-							<p style="font-size: 20px;"><strong itemprop="typicalAgeRange">{{ $game->age }}</strong></p>
+						<div style="position: absolute;top: 75px;left: 70px;z-index: 100;">
+							<p><i class="fa fa-birthday-cake fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="typicalAgeRange">{{ $game->age }}</strong></p>
 						</div>
-						<div>
-							<p><i class="fa fa-clock-o fa-3x" aria-hidden="true"></i></p>
-							<p style="font-size: 20px;"><strong itemprop="timeRequired">{{ $game->time }}</strong></p>
+						<div style="position: absolute;top: 125px;left: 70px;z-index: 100;">
+							<p><i class="fa fa-clock-o fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="timeRequired">{{ $game->time }}</strong></p>
 						</div>
+						<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" itemprop="image" />						
 					</div>
-					<div class="col-md-7 col-xs-7">						
+					<div class="col-md-7 col-xs-12">						
 						@unless($game->publishers->isEmpty())
 							<div style="margin-bottom: 10px;">
 								<small>
