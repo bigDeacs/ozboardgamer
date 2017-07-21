@@ -43,13 +43,13 @@
 						<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" style="margin-bottom: 10px;" itemprop="image" />						
 						<div class="row">
 							<div class="col-xs-4 text-center">
-								<i class="fa fa-users fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
+								<i class="fa fa-users fa-2x" aria-hidden="true"></i><br /><strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
 							</div>
 							<div class="col-xs-4 text-center">
-								<i class="fa fa-birthday-cake fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
+								<i class="fa fa-birthday-cake fa-2x" aria-hidden="true"></i><br /><strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
 							</div>
 							<div class="col-xs-4 text-center">
-								<i class="fa fa-clock-o fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="timeRequired">{{ $game->time }}</strong>
+								<i class="fa fa-clock-o fa-2x" aria-hidden="true"></i><br /><strong itemprop="timeRequired">{{ $game->time }}</strong>
 							</div>
 						</div>
 					</div>
