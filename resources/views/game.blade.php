@@ -40,15 +40,15 @@
 				<h1 itemprop="name">{{ $game->name }}</h1>
 				<div class="row">					
 					<div class="col-md-4 col-xs-12 text-center">												
-						<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" itemprop="image" />						
+						<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" style="margin-bottom: 10px;" itemprop="image" />						
 						<div class="row">
-							<div class="col-xs-4">
+							<div class="col-xs-4 text-center">
 								<i class="fa fa-users fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
 							</div>
-							<div class="col-xs-4">
+							<div class="col-xs-4 text-center">
 								<i class="fa fa-birthday-cake fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
 							</div>
-							<div class="col-xs-4">
+							<div class="col-xs-4 text-center">
 								<i class="fa fa-clock-o fa-2x" aria-hidden="true" style="margin-right: 5px;"></i><strong itemprop="timeRequired">{{ $game->time }}</strong>
 							</div>
 						</div>
