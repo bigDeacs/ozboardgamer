@@ -31,7 +31,7 @@
 						<div class="col-md-3 col-sm-4 col-xs-12 text-center">
 							<div class="thumbnail img-shadow" style="position: relative;">
 								<div style="position: absolute;right: 4px;bottom: 15px;">
-									<p class="blogHeading text-right"><strong><a href="/awards/{{ $award->slug }}" class="post-title" itemprop="name" title="{{ $award->name }}" style="color:white;">{!! str_limit($designer->name, 14) !!}</a></strong></p>
+									<p class="blogHeading text-right"><strong><a href="/awards/{{ $award->slug }}" class="post-title" itemprop="name" title="{{ $award->name }}" style="color:white;">{!! str_limit($award->name, 14) !!}</a></strong></p>
 								</div>
 								<a href="/awards/{{ $award->slug }}">
 									<img src="https://img.ozboardgamer.com{{ $award->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $award->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $award->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" class="img-responsive img-shadow" />
