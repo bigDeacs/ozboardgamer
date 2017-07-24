@@ -118,6 +118,7 @@ Route::get('/publishers/{slug?}', 'SiteController@publisher');
 Route::get('/mechanics/{slug?}', 'SiteController@mechanic');
 Route::get('/themes/{slug?}', 'SiteController@theme');
 Route::get('/designers/{slug?}', 'SiteController@designer');
+Route::get('/awards/{slug?}', 'SiteController@award');
 Route::get('/users/{slug?}', 'SiteController@user');
 Route::get('/stores/{slug?}', 'SiteController@store');
 Route::get('/quizzes/{slug?}', 'SiteController@quiz');

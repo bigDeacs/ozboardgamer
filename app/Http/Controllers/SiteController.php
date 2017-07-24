@@ -19,6 +19,7 @@ use App\Answer;
 use App\Result;
 use App\Offer;
 use App\Product;
+use App\Award;
 use App\Http\Requests\SearchRequest;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\SignupRequest;
@@ -794,6 +795,36 @@ class SiteController extends Controller {
 			    $q->where('slug', '=', $slug);
 			})->orderBy($sort, $direction)->paginate(10);
 			return view('designer', compact('designer', 'games'));
+		}
+	}
+	
+	
+	/**
+	 * Show the application welcome screen to the user.
+	 *
+	 * @return Response
+	 */
+	public function award($slug = null)
+	{
+		if($slug == null) {
+			$awards = Award::where('status', '=', '1')->has('games')->with('games')->paginate(12);
+			return view('awards', compact('awards'));
+		} else {
+			if(Request::has('sort'))
+			{
+			    $pieces = explode("-", Request::input('sort'));
+			    $sort = $pieces[0];
+			    $direction = $pieces[1];
+			} else {
+				$sort = 'rating';
+				$direction = 'desc';
+			}
+			$award = Award::where('status', '=', '1')->where('slug', '=', $slug)->firstOrFail();
+			$games = Game::where('status', '=', '1')->whereHas('awards', function($q) use($slug)
+			{
+			    $q->where('slug', '=', $slug);
+			})->orderBy($sort, $direction)->paginate(10);
+			return view('award', compact('award', 'games'));
 		}
 	}
 
