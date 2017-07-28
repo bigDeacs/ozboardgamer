@@ -77,7 +77,7 @@
                                     <div class="col-sm-12 post-header-line">
 										<meta itemprop="author" content ="{!! $post->user->name !!}">
                                         <span class="glyphicon glyphicon-calendar">
-                                        </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $post->slug }}#disqus_thread"></a>
+                                        </span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $post->slug }}#disqus_thread" data-disqus-identifier="{{ camel_case($post->name) }}"></a>
 										 @unless($post->games->isEmpty())
 											<span class="hidden-xs">
 												 | <span class="fa fa-trophy"></span>

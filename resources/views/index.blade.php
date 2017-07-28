@@ -174,7 +174,7 @@
 							<div class="row">
 								<div class="col-sm-12 post-header-line">
 									<meta itemprop="author" content ="{!! $review->user->name !!}">
-									<span class="glyphicon glyphicon-calendar"></span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread"></a>                               											
+									<span class="glyphicon glyphicon-calendar"></span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread" data-disqus-identifier="{{ camel_case($review->name) }}"></a>                               											
 								</div>
 							</div>
 							<div class="row post-content">
@@ -257,7 +257,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-12 post-header-line">						
-									<span class="glyphicon glyphicon-calendar"></span>{!! date('F d, Y', strtotime($top10->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread"></a>																								
+									<span class="glyphicon glyphicon-calendar"></span>{!! date('F d, Y', strtotime($top10->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread" data-disqus-identifier="{{ camel_case($top10->name) }}"></a>																								
 								</div>		
 							</div>							
 							<div class="row post-content">
@@ -340,7 +340,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-12 post-header-line">						
-									<span class="glyphicon glyphicon-calendar"></span>{!! date('F d, Y', strtotime($blog->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/blogs/{{ $blog->slug }}#disqus_thread"></a>																									
+									<span class="glyphicon glyphicon-calendar"></span>{!! date('F d, Y', strtotime($blog->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/blogs/{{ $blog->slug }}#disqus_thread" data-disqus-identifier="{{ camel_case($blog->name) }}"></a>																									
 								</div>		
 							</div>							
 							<div class="row post-content">
