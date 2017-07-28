@@ -387,6 +387,6 @@
 		</script>
 	@endif
     @yield('scripts')
-	<script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>
+	<script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js"></script>
   </body>
 </html>
