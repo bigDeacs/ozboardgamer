@@ -314,7 +314,6 @@
     <script src="https://js.ozboardgamer.com/js/scripts.js?ver=13"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="https://js.ozboardgamer.com/js/ie10-viewport-bug-workaround.js"></script>
-    <script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>	
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script>
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
@@ -388,5 +387,6 @@
 		</script>
 	@endif
     @yield('scripts')
+	<script id="dsq-count-scr" src="//ozboardgamer.disqus.com/count.js" async></script>
   </body>
 </html>
