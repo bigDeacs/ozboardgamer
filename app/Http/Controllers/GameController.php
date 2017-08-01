@@ -318,9 +318,6 @@ class GameController extends Controller
     public function update(GameRequest $request, $id)
     {
         $game = Game::where('id', '=', $id)->firstOrFail();
-		$currentImage = $game->image;
-		$currentThumb1 = $game->thumb1x;
-		$currentThumb2 = $game->thumb2x;
         $game->update($request->all());
         $game->rating = $this->rating($game->id, $game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning, $game->theming, $game->scaling);
         $game->save();
@@ -345,8 +342,6 @@ class GameController extends Controller
                 $game->thumb2x = ('/uploads/' . $thumb2xName);   
                 $game->image = ('/uploads/' . $imageName);
                 $game->save();
-				
-				
             }
         }
 
