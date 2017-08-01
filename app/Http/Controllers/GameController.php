@@ -340,17 +340,17 @@ class GameController extends Controller
                 $twoX->save(storage_path() . '/mnt/volume-sgp1-01/uploads/' . $thumb2xName = time() . '-@2x-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/mnt/volume-sgp1-01/uploads/', $imageName = time() . '-' . $file->getClientOriginalName());
-				
-				if($game->image !== '' || $game->image !== null) {
-					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$currentImage);
-					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$currentThumb1);
-					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$currentThumb2);
-				}
 
                 $game->thumb1x = ('/uploads/' . $thumb1xName);   
                 $game->thumb2x = ('/uploads/' . $thumb2xName);   
                 $game->image = ('/uploads/' . $imageName);
                 $game->save();
+				
+				if($currentImage !== '' || $currentImage !== null) {
+					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$currentImage);
+					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$currentThumb1);
+					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$currentThumb2);
+				}
             }
         }
 
