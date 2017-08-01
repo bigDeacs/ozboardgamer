@@ -59,9 +59,9 @@ class QuestionController extends Controller
                 $img = Image::make($file);
                 $img->fit(400, 148);
                 $img->interlace();
-                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+                $img->save(storage_path() . '/mnt/volume-sgp1-01/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
-                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $file->move(storage_path() . '/mnt/volume-sgp1-01/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $question->image = ('/uploads/' . $filename);
                 $question->thumb = ('/uploads/' . $thumbname);
                 $question->save();
@@ -118,9 +118,9 @@ class QuestionController extends Controller
                 $img = Image::make($file);
                 $img->fit(400, 148);
                 $img->interlace();
-                $img->save(storage_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+                $img->save(storage_path() . '/mnt/volume-sgp1-01/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
-                $file->move(storage_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $file->move(storage_path() . '/mnt/volume-sgp1-01/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $question->image = ('/uploads/' . $filename);
                 $question->thumb = ('/uploads/' . $thumbname);
                 $question->save();
