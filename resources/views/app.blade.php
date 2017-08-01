@@ -207,6 +207,9 @@
 						<a href="https://www.instagram.com/ozboardgamer/" target="_blank" title="Follow us on Instagram">
 							<i class="fa fa-instagram fa-fw fa-2x"></i>
 						</a>
+						<a href="https://www.youtube.com/channel/UCWlXZAmZ21awymg9OqbCf2Q" target="_blank" title="Subscribe to our Youtube Channel">
+							<i class="fa fa-youtube fa-fw fa-2x"></i>
+						</a>
 					</div>
 				</div>
 			</div>
