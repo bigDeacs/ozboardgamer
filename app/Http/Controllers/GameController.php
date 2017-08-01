@@ -337,6 +337,10 @@ class GameController extends Controller
                 $twoX->save(storage_path() . '/mnt/volume-sgp1-01/uploads/' . $thumb2xName = time() . '-@2x-' . $file->getClientOriginalName());
 
                 $file->move(storage_path() . '/mnt/volume-sgp1-01/uploads/', $imageName = time() . '-' . $file->getClientOriginalName());
+				
+				if($game->image !== '' || $game->image !== null) {
+					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/uploads/'.$game->image);
+				}
 
                 $game->thumb1x = ('/uploads/' . $thumb1xName);   
                 $game->thumb2x = ('/uploads/' . $thumb2xName);   
