@@ -346,11 +346,7 @@ class GameController extends Controller
                 $game->image = ('/uploads/' . $imageName);
                 $game->save();
 				
-				if($currentImage !== '' || $currentImage !== null) {
-					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$currentImage);
-					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$currentThumb1);
-					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$currentThumb2);
-				}
+				
             }
         }
 
