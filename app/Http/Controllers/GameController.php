@@ -318,6 +318,9 @@ class GameController extends Controller
     public function update(GameRequest $request, $id)
     {
         $game = Game::where('id', '=', $id)->firstOrFail();
+		$currentImage = $game->image;
+		$currentThumb1 = $game->thumb1x;
+		$currentThumb2 = $game->thumb2x;
         $game->update($request->all());
         $game->rating = $this->rating($game->id, $game->luck, $game->strategy, $game->complexity, $game->replay, $game->components, $game->learning, $game->theming, $game->scaling);
         $game->save();
@@ -339,7 +342,9 @@ class GameController extends Controller
                 $file->move(storage_path() . '/mnt/volume-sgp1-01/uploads/', $imageName = time() . '-' . $file->getClientOriginalName());
 				
 				if($game->image !== '' || $game->image !== null) {
-					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$game->image);
+					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$currentImage);
+					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$currentThumb1);
+					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$currentThumb2);
 				}
 
                 $game->thumb1x = ('/uploads/' . $thumb1xName);   
