@@ -339,7 +339,7 @@ class GameController extends Controller
                 $file->move(storage_path() . '/mnt/volume-sgp1-01/uploads/', $imageName = time() . '-' . $file->getClientOriginalName());
 				
 				if($game->image !== '' || $game->image !== null) {
-					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/uploads/'.$game->image);
+					Storage::delete(storage_path() . '/mnt/volume-sgp1-01/'.$game->image);
 				}
 
                 $game->thumb1x = ('/uploads/' . $thumb1xName);   
