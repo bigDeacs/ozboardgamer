@@ -227,83 +227,6 @@
 	 </div>
 </div>
 
-@unless(Session::has('name'))
-	<div class='modal fade' id='loginWrapper'>
-		<div class='modal-dialog'>
-			<div class='modal-content'>
-				<div class='modal-header'>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-					<h4 class='modal-title'>
-					  <strong>Signup today for amazing extras</strong>
-					</h4>
-				</div>
-				<!-- / modal-header -->
-				<div class='modal-body'>
-					<img src="https://img.ozboardgamer.com/img/signup-header.jpg" class="img-responsive" alt="Signup" style="margin-bottom: 15px;"/>
-					@if (count($errors) > 0)
-					   <div class="col-xs-12 col-sm-10 col-sm-offset-1 alert alert-danger">
-						 <strong>Whoops!</strong> There were some problems with your input.<br><br>
-						 <ul>
-						   @foreach ($errors->all() as $error)
-							 <li>{{ $error }}</li>
-						   @endforeach
-						 </ul>
-					   </div>
-					 @endif
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/signup') }}">
-						 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-						 <div class="form-group">
-						   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-							 <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name">
-						   </div>
-						 </div>
-
-						 <div class="form-group">
-						   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-							 <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-Mail Address">
-						   </div>
-						 </div>
-
-						 <div class="form-group">
-						   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-							 <input type="password" class="form-control" name="password" placeholder="Password">
-						   </div>
-						 </div>
-
-						 <div class="form-group">
-						   <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-							 <button type="submit" class="btn btn-ocean text-uppercase btn-block" onclick="completeRegistration()">
-							   Signup
-							 </button>
-						   </div>
-						 </div>
-					</form>
-					<hr />
-					<div class="row text-center">
-						<a href="/facebook" class="btn btn-ocean text-uppercase"><i class="fa fa-facebook-official" aria-hidden="true"></i> Signup with Facebook</a>
-						<a href="/google" class="btn btn-hot text-uppercase"><i class="fa fa-google" aria-hidden="true"></i> Signup with Google</a>
-					</div>
-					<hr />
-				</div>
-				<!-- / modal-body -->
-			   <div class='modal-footer'>
-				   <div class="checkbox pull-right">
-						<label>
-						  <input class='modal-check' name='modal-check' type="checkbox"> Don't Show This Popup Again.
-						</label>
-					</div>
-					<!--/ checkbox -->
-			  </div>
-			  <!--/ modal-footer -->
-			</div>
-			<!-- / modal-content -->
-	  </div>
-	  <!--/ modal-dialog -->
-	</div>
-	<!-- / modal -->
-@endunless
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Scripts -->
@@ -366,23 +289,6 @@
 				$('#searchWrapper').on('shown.bs.modal', function() {
 				  $(this).find('input:first').focus();
 				});				
-				// Cookie Set
-				var my_cookie = $.cookie($('.modal-check').attr('name'));
-				if (my_cookie && my_cookie == "true") {
-					$(this).prop('checked', my_cookie);
-					console.log('checked checkbox');
-				}
-				else{
-					$('#loginWrapper').modal('show');
-					console.log('uncheck checkbox');
-				}
-
-				$(".modal-check").change(function() {
-					$.cookie($(this).attr("name"), $(this).prop('checked'), {
-						path: '/',
-						expires: 30
-					});
-				});
 			});
 		</script>
 	@endif
