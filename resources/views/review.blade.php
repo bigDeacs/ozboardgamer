@@ -143,7 +143,7 @@
 								@foreach($games as $game)
 									<div class="row">
 										<div class="col-xs-12">
-											<div style="position: absolute;right: 4px;bottom: 15px;">
+											<div style="position: absolute;right: 14px;bottom: 15px;">
 												<p class="blogHeading text-right"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" class="post-title" itemprop="name" title="{{ $game->name }}" style="color:white;">{!! str_limit($game->name, 14) !!}</a></strong></p>
 												<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $game->types()->first()->name }}</strong></p>	
 											</div>
