@@ -87,7 +87,7 @@
 							<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $product->brand }}</strong></p>	
 						@endif						
 					</div>
-					<a href="/shop/{!! $product->slug !!}">
+					<a href="/shop/{!! $product->slug !!}" rel="nofollow">
 						<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
 					</a>
 					<div class="caption text-center" style="min-height: 125px;">
@@ -99,7 +99,7 @@
 							<p style="margin: 0;">&nbsp;</p>
 						@endif
 						<p class="text-center">
-							<a class="btn btn-hot text-uppercase" href="/shop/{!! $product->slug !!}"><span class="fa fa-arrow-circle-right"></span> Read more</a>
+							<a class="btn btn-hot text-uppercase" href="/shop/{!! $product->slug !!}" rel="nofollow"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 						</p>
 					</div>													
 				</div>

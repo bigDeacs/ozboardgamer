@@ -82,7 +82,7 @@
 									<article>{{ $product->description }}</article>
 									<br />
 									<p class="text-center">
-										<a class="btn btn-hot text-uppercase btn-block btn-lg" href="{!! $product->externalURL !!}" target="_blank"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy now</a>
+										<a class="btn btn-hot text-uppercase btn-block btn-lg" href="{!! $product->externalURL !!}" target="_blank" rel="nofollow"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy now</a>
 									</p>
 								</div>
 							</div>		
@@ -97,10 +97,10 @@
 												<li>
 													<div class="thumbnail img-shadow" style="position: relative;">
 														<div style="position: absolute;right: 4px;bottom: 60px;">
-															<p class="blogHeading text-right"><strong><a href="/shop/{{ $item->slug }}" class="post-title" itemprop="name" title="{{ $item->name }}" style="color:white;">{!! str_limit($item->name, 14) !!}</a></strong></p>
+															<p class="blogHeading text-right"><strong><a href="/shop/{{ $item->slug }}" class="post-title" itemprop="name" title="{{ $item->name }}" style="color:white;" rel="nofollow">{!! str_limit($item->name, 14) !!}</a></strong></p>
 															<p class="blogHeadingSml text-right"><strong style="color:white;">Save ${!! number_format($item->price - $item->sale, 2, '.', '') !!}</strong></p>	
 														</div>
-														<a href="/shop/{{ $item->slug }}" title="{{ $item->name }}">
+														<a href="/shop/{{ $item->slug }}" title="{{ $item->name }}" rel="nofollow">
 															<img src="{{ $item->thumb1x }}" srcset="{{ $item->thumb1x }} 1x, {{ $item->thumb2x }} 2x" alt="{{ $item->name }}" class="img-responsive" width="300" height="auto" />
 														</a>
 														<div class="caption text-center">
