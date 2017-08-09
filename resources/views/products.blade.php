@@ -90,7 +90,7 @@
 					<a href="/shop/{!! $product->slug !!}">
 						<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
 					</a>
-					<div class="caption text-center">
+					<div class="caption text-center" style="min-height: 125px;">
 						@if($product->sale > 0)
 							<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->saleDisplay !!}</strong></p>
 							<p style="margin: 0;"><s><small>${!! $product->priceDisplay !!}</small></s></p>
