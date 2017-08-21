@@ -262,12 +262,7 @@
 										</div>
 										<div class="row post-content">
 											<div class="col-xs-12">
-												<p itemprop="description" class="textbox-height">
-													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
-														This is a members only post, for early access to this post login or signup today!
-													@else
-														{!! str_limit(strip_tags($review->description), $limit = 250, $end = '...') !!}
-													@endif    		
+												<p itemprop="description">
 													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
 														<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-top: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>													
 													@else
@@ -278,9 +273,6 @@
 										</div>
 									</div>
 								@endforeach
-								<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
-									<a href="/reviews" class="btn btn-sm btn-fresh"><span class="fa fa-arrow-circle-right"></span> View More Board Game Reviews</a>
-								</p>
 							</div>
 						</div>
 					@endunless	

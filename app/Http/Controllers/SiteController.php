@@ -1055,7 +1055,11 @@ class SiteController extends Controller {
 			{
 				$q->where('name', '=', $post->name);
 			})->orderByRaw("RAND()")->get();
-			return view('post', compact('post', 'games'));
+			$posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
+			{
+			    $q->where('slug', '=', $category);
+			})->orderByRaw("RAND()")->take(3)->get();
+			return view('post', compact('post', 'games', 'posts'));
 		}
 
 	}
