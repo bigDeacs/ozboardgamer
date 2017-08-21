@@ -155,6 +155,9 @@
 									<br />
 								@endforeach
 							</div>
+							<a href="https://t.cfjump.com/33917/b/26455" rel="noindex,nofollow" target="_blank">
+								<img style="border: none; vertical-align: middle;" alt="" src="https://t.cfjump.com/33917/a/26455" class="img-responsive" />
+							</a>
 						</div>
 					  @endunless
 					</div>
