@@ -199,6 +199,91 @@
 						</div>
 					  </div>
 					@endif
+					<hr />
+					@unless($posts->isEmpty())
+						<div class="row">
+							<div class="col-xs-12">    
+								<h3>You might also like:</h3>
+								@foreach($posts as $review)
+									<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
+										<div class="row">
+											<div class="col-xs-12" style="overflow: hidden;height: 175px;">
+												<div style="position: absolute;right: 15px;bottom: 0;">
+													<p class="blogHeading text-right">
+														<strong>														
+															@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))												
+																<a href="#" class="post-title disabled" itemprop="name"title="Login for access" style="color:white;">
+																	{{ $review->name }}
+																</a>
+															@else
+																<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name" title="{{ $review->name }}" style="color:white;">
+																	{{ $review->name }}
+																</a>
+															@endif
+														</strong>
+													</p>
+													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))												
+														<p class="blogHeadingSml text-right">
+															<strong style="color:white;">													
+																<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>											
+															</strong>
+														</p>
+													@else
+														<p class="blogHeadingSml text-right">
+															<strong style="color:white;">													
+																Review											
+															</strong>
+														</p>
+													@endif										
+												</div>
+												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+													<div class="offer offer-radius offer-danger">
+														<div class="shape">
+															<div class="shape-text">
+																<a href="#" class="disabled" title="Login for access" style="color: #ffffff;"><i class="fa fa-lock" aria-hidden="true"></i></a>
+															</div>
+														</div>
+														<div class="offer-content">
+															<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;opacity: 0.5;" width="100%" />																						
+														</div>													
+													</div>	
+												@else
+													<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
+														<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
+													</a>																										
+												@endif
+											</div>
+										</div>							
+										<div class="row">
+											<div class="col-sm-12 post-header-line">
+												<meta itemprop="author" content ="{!! $review->user->name !!}">
+												<span class="glyphicon glyphicon-calendar"></span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread" data-disqus-identifier="{{ camel_case($review->name) }}"></a>                               											
+											</div>
+										</div>
+										<div class="row post-content">
+											<div class="col-xs-12">
+												<p itemprop="description" class="textbox-height">
+													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+														This is a members only post, for early access to this post login or signup today!
+													@else
+														{!! str_limit(strip_tags($review->description), $limit = 250, $end = '...') !!}
+													@endif    		
+													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))
+														<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-top: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>													
+													@else
+														<a class="btn btn-hot text-uppercase pull-right btn-block" href="/reviews/{{ $review->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
+													@endif  
+												</p>
+											</div>
+										</div>
+									</div>
+								@endforeach
+								<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
+									<a href="/reviews" class="btn btn-sm btn-fresh"><span class="fa fa-arrow-circle-right"></span> View More Board Game Reviews</a>
+								</p>
+							</div>
+						</div>
+					@endunless	
 				</div>	
 			@endif
 		</div>
