@@ -51,5 +51,10 @@ class Post extends Model {
     {
         return $this->games->lists('id');
     }
+	
+	public function hasGames()
+	{
+		return (bool) $this->games()->first();
+	}
 
 }
