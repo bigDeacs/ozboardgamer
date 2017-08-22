@@ -219,7 +219,7 @@
 													</p>
 														<p class="blogHeadingSml text-right">
 															<strong style="color:white;">													
-																Blog											
+																{{ $blog->category->name }}									
 															</strong>
 														</p>								
 												</div>
