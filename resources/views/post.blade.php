@@ -224,7 +224,7 @@
 														</p>								
 												</div>
 												<a href="/{{ $blog->category->slug }}/{{ $blog->slug }}" title="{{ $blog->name  }}">
-													@if(empty($blog->games()))
+													@if(empty($blog->games()->get()))
 														<img src="https://img.ozboardgamer.com/{{ $blog->image }}" alt="{{ $blog->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
 													@else
 														<img src="https://img.ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
