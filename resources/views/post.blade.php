@@ -257,7 +257,7 @@
 										</div>
 										<div class="row">
 											<div class="col-sm-12 post-header-line">						
-												<span class="glyphicon glyphicon-calendar"></span>{!! date('F d, Y', strtotime($blog->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/blogs/{{ $blog->slug }}#disqus_thread" data-disqus-identifier="{{ camel_case($blog->name) }}"></a>																									
+												<span class="glyphicon glyphicon-calendar"></span>{!! date('F d, Y', strtotime($blog->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/{{ $blog->category->slug }}/{{ $blog->slug }}#disqus_thread" data-disqus-identifier="{{ camel_case($blog->name) }}"></a>																									
 											</div>		
 										</div>							
 										<div class="row post-content">
