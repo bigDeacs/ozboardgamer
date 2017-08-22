@@ -217,7 +217,7 @@
 																	{{ $blog->name }}
 																</a>
 															@else
-																<a href="/blogs/{{ $blog->slug }}" class="post-title" itemprop="name" title="{{ $blog->name }}" style="color:white;">
+																<a href="/{{ $blog->category->slug }}/{{ $blog->slug }}" class="post-title" itemprop="name" title="{{ $blog->name }}" style="color:white;">
 																	{{ $blog->name }}
 																</a>
 															@endif
@@ -249,7 +249,7 @@
 														</div>
 													</div>	
 												@else
-													<a href="/blogs/{{ $blog->slug }}" title="{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->name }}">
+													<a href="/{{ $blog->category->slug }}/{{ $blog->slug }}" title="{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->name }}">
 														<img src="https://img.ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
 													</a>	
 												@endif		
@@ -266,7 +266,7 @@
 													@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
 														<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-top: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>																							
 													@else
-														<a class="btn btn-hot text-uppercase pull-right btn-block" href="/blogs/{{ $blog->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
+														<a class="btn btn-hot text-uppercase pull-right btn-block" href="/{{ $blog->category->slug }}/{{ $blog->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
 													@endif  											
 												</p>
 											</div>
