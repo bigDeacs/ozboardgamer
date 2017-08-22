@@ -212,7 +212,7 @@
 												<div style="position: absolute;right: 15px;bottom: 0;">
 													<p class="blogHeading text-right">
 														<strong>														
-																<a href="/{{ $blog->category->slug }}/{{ $blog->slug }}" class="post-title" itemprop="name" title="{{ $blog->name }}" style="color:white;">
+																<a href="/{{ $post->category->slug }}/{{ $blog->slug }}" class="post-title" itemprop="name" title="{{ $blog->name }}" style="color:white;">
 																	{{ $blog->name }}
 																</a>
 														</strong>
@@ -223,20 +223,20 @@
 															</strong>
 														</p>								
 												</div>
-												<a href="/{{ $blog->category->slug }}/{{ $blog->slug }}" title="{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->name }}">
+												<a href="/{{ $post->category->slug }}/{{ $blog->slug }}" title="{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->name }}">
 													<img src="https://img.ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
 												</a>		
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-sm-12 post-header-line">						
-												<span class="glyphicon glyphicon-calendar"></span>{!! date('F d, Y', strtotime($blog->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/{{ $blog->category->slug }}/{{ $blog->slug }}#disqus_thread" data-disqus-identifier="{{ camel_case($blog->name) }}"></a>																									
+												<span class="glyphicon glyphicon-calendar"></span>{!! date('F d, Y', strtotime($blog->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/{{ $post->category->slug }}/{{ $blog->slug }}#disqus_thread" data-disqus-identifier="{{ camel_case($blog->name) }}"></a>																									
 											</div>		
 										</div>							
 										<div class="row post-content">
 											<div class="col-xs-12">
 												<p itemprop="description">													                                                    
-														<a class="btn btn-hot text-uppercase pull-right btn-block" href="/{{ $blog->category->slug }}/{{ $blog->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>																						
+														<a class="btn btn-hot text-uppercase pull-right btn-block" href="/{{ $post->category->slug }}/{{ $blog->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>																						
 												</p>
 											</div>
 										</div>
