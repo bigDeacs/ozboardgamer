@@ -24,12 +24,7 @@
 			<li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
 			@foreach($featured as $key => $post)
 				<li data-target="#bs-carousel" data-slide-to="{{ ($key+1) }}"></li>
-			@endforeach		
-			@if($featured->isEmpty())
-				<li data-target="#bs-carousel" data-slide-to="1"></li>
-			@else
-				<li data-target="#bs-carousel" data-slide-to="5"></li>
-			@endif
+			@endforeach					
 		</ol>
 	  @endunless
 	  
@@ -38,12 +33,13 @@
 			<div class="item slides active">
 			  <!-- Overlay -->
 			  <div class="overlay"></div>
-			  <div class="slide-1" style="background-image:url('https://img.ozboardgamer.com/img/welcome.jpg');"></div>
+			  <div class="slide-{{ ($featured->isEmpty()) ? '2' : '6' }}" style="background-image:url('https://img.ozboardgamer.com/img/buy-online.jpg');"></div>
 			  <div class="hero" width="100%;">
 				<hgroup>
-					<h1 class="bigText">Oz Board Gamer</h1>        
-					<p class="smallText">Helping you find your next favourite game!</p>
+					<p class="bigText">Buy Games</p>        
+					<p class="smallText">Choose from thousands of Games and Accessories</p>
 				</hgroup>
+				<a href="/shop" class="btn btn-hero btn-lg">Start Shopping</a>
 			  </div>
 			</div>
 			@unless($featured->isEmpty())
@@ -68,27 +64,21 @@
 					  </div>
 					</div>
                 @endforeach
-            @endunless
-			<div class="item slides">
-			  <!-- Overlay -->
-			  <div class="overlay"></div>
-			  <div class="slide-{{ ($featured->isEmpty()) ? '2' : '6' }}" style="background-image:url('https://img.ozboardgamer.com/img/buy-online.jpg');"></div>
-			  <div class="hero" width="100%;">
-				<hgroup>
-					<p class="bigText">Buy Games</p>        
-					<p class="smallText">Choose from thousands of Games and Accessories</p>
-				</hgroup>
-				<a href="/shop" class="btn btn-hero btn-lg">Start Shopping</a>
-			  </div>
-			</div>
+            @endunless			
 	  </div> 
 	</div>		
     <!-- Page Content -->
     <div class="container">
+		<div class="row hidden-xs" style="border-bottom: 1px solid #DDD;">
+			<div class="col-xs-12">
+				<h1 style="margin-top: 10px;">Oz Board Gamer - Board Games News, Reviews, Top 10s and More</h1>		
+				<h2>Helping you find your next favourite game!<h2>
+			</div>
+		</div>   
         @unless($games->isEmpty())
 			<div class="row hidden-xs" style="border-bottom: 1px solid #DDD;">
 				<div class="col-xs-12">
-					<h2 style="margin-top: 10px;">Top Rated Board Games</h2>
+					<h3 style="margin-top: 10px;">Top Rated Board Games</h3>
 					<div class="jcarousel-wrapper">
 						<div class="jcarousel">
 							<ul>
@@ -120,7 +110,7 @@
 		@unless($reviews->isEmpty())
 			<div class="row">
 				<div class="col-xs-12">    
-					<h3>Latest Board Game Reviews</h3>
+					<h4>Latest Board Game Reviews</h4>
 					@foreach($reviews as $review)
 						<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
 							<div class="row">
@@ -204,7 +194,7 @@
 		@unless($top10s->isEmpty())
 			<div class="row">
 				<div class="col-xs-12">    
-					<h3>Latest Board Game Top 10's</h3>
+					<h4>Latest Board Game Top 10's</h4>
 					@foreach($top10s as $top10)
 						<div class="col-xs-12 col-sm-4 post" style="margin-bottom: 15px;">				
 							<div class="row">
@@ -287,7 +277,7 @@
 		@unless($blogs->isEmpty())
 			<div class="row">
 				<div class="col-xs-12">    
-					<h3>Latest Board Game Blogs</h3>					
+					<h4>Latest Board Game Blogs</h4>					
 					@foreach($blogs as $blog)
 						<div class="col-xs-12 col-sm-4 post" style="margin-bottom: 15px;">				
 							<div class="row">
@@ -378,7 +368,7 @@
 		@unless($products->isEmpty())
 			<div class="row hidden-xs">
 				<div class="col-xs-12">
-					<h3>Featured Products</h3>
+					<h4>Featured Products</h4>
 					<div class="jcarousel-wrapper">
 						<div class="jcarousel">
 							<ul>
