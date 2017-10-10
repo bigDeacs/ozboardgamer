@@ -70,8 +70,8 @@
     <!-- Page Content -->
     <div class="container">
 		<div class="row hidden-xs" style="border-bottom: 1px solid #DDD;">
-			<div class="col-xs-12">
-				<h1 style="margin-top: 10px;">Oz Board Gamer - Board Games News, Reviews, Top 10s and More</h1>		
+			<div class="col-xs-12 text-center">
+				<h1 style="margin-top: 10px;">Board Games News, Reviews, Top 10s and More</h1>		
 				<h2>Helping you find your next favourite game!<h2>
 			</div>
 		</div>   
