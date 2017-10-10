@@ -80,7 +80,7 @@
 						@foreach($categories as $category)			
 								<h2><a href="/{{ $category->slug }}">{!! $category->name !!}</a></h2>
 								<ul>
-									@foreach($category->posts() as $post)		
+									@foreach($category->posts()->get() as $post)		
 										<li><a href="/{{ $category->slug }}/{{ $post->slug }}">{!! $post->name !!}</a></li>
 									@endforeach
 								</ul>
