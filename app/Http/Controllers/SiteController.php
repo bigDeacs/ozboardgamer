@@ -533,6 +533,7 @@ class SiteController extends Controller {
 
 	public function userSitemap()
 	{
+		$posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->get();
 		$categories = Category::where('status', '=', '1')->get();
 		$types = Type::where('status', '=', '1')->get();
 		$mechanics = Mechanic::where('status', '=', '1')->get();

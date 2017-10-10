@@ -77,12 +77,14 @@
 								<li><a href="/quizzes/{{ $quiz->slug }}">{!! $quiz->name !!}</a></li>
 							@endforeach
 						</ul>
-						<h2><a href="/categories">Article Categories</a></h2>
-						<ul>
-							@foreach($categories as $category)			
-								<li><a href="/categories/{{ $category->slug }}">{!! $category->name !!}</a></li>
-							@endforeach
-						</ul>
+						@foreach($categories as $category)			
+								<h2><a href="/{{ $category->slug }}">{!! $category->name !!}</a></h2>
+								<ul>
+									@foreach($category->posts() as $post)		
+										<li><a href="/{{ $category->slug }}/{{ $post->slug }}">{!! $post->name !!}</a></li>
+									@endforeach
+								</ul>
+						@endforeach
 					</div>					
 				</div>
 			</div>
