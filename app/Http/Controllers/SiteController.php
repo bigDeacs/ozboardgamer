@@ -531,6 +531,21 @@ class SiteController extends Controller {
         $store->save();
     }
 
+	public function userSitemap()
+	{
+		$categories = Category::where('status', '=', '1')->get();
+		$types = Type::where('status', '=', '1')->get();
+		$mechanics = Mechanic::where('status', '=', '1')->get();
+		$themes = Theme::where('status', '=', '1')->get();
+		$designers = Designer::where('status', '=', '1')->get();
+		$publishers = Publisher::where('status', '=', '1')->get();
+		$families = Family::where('status', '=', '1')->get();
+		$stores = Store::where('status', '=', '1')->get();
+		$quizzes = Quiz::where('status', '=', '1')->get();
+
+		return view('userSitemap', compact('posts', 'categories', 'games', 'types', 'mechanics', 'themes', 'designers', 'publishers', 'families', 'stores', 'quizzes'));
+	}
+	
 		public function sitemap()
 		{
 			// create new sitemap object
@@ -548,17 +563,18 @@ class SiteController extends Controller {
          $sitemap->add(secure_url('/'), date("Y/m/d"), '1.0', 'daily');
 
          // get dynamic data from db
-				 $posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->get();
-				 $categories = Category::where('status', '=', '1')->get();
-		 		 $games = Game::where('status', '=', '1')->get();
-				 $types = Type::where('status', '=', '1')->get();
-				 $mechanics = Mechanic::where('status', '=', '1')->get();
-				 $themes = Theme::where('status', '=', '1')->get();
-				 $designers = Designer::where('status', '=', '1')->get();
-				 $publishers = Publisher::where('status', '=', '1')->get();
-				 $families = Family::where('status', '=', '1')->get();
-		 		 $stores = Store::where('status', '=', '1')->get();
-				 $quizzes = Quiz::where('status', '=', '1')->get();
+		 $posts = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->get();
+		 $categories = Category::where('status', '=', '1')->get();
+		 $games = Game::where('status', '=', '1')->get();
+		 $types = Type::where('status', '=', '1')->get();
+		 $mechanics = Mechanic::where('status', '=', '1')->get();
+		 $themes = Theme::where('status', '=', '1')->get();
+		 $designers = Designer::where('status', '=', '1')->get();
+		 $publishers = Publisher::where('status', '=', '1')->get();
+		 $families = Family::where('status', '=', '1')->get();
+		 $stores = Store::where('status', '=', '1')->get();
+		 $quizzes = Quiz::where('status', '=', '1')->get();
+		 $quizzes = Quiz::where('status', '=', '1')->get();
 
          // add every post to the sitemap
 

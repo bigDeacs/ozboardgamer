@@ -138,7 +138,7 @@ Route::get('users/{users}/updateStoreRating/{store}/rating/{rating}', ['as' => '
 
 Route::get('/reviews/{slug?}', 'SiteController@review');
 
-Route::get('sitemap', 'SiteController@sitemap');
+Route::get('sitemap', 'SiteController@userSitemap');
 Route::get('sitemap.xml', 'SiteController@sitemap');
 
 Route::get('feed', 'SiteController@feed');
