@@ -190,6 +190,11 @@
 		<!-- Footer -->
 		<footer class="navbar-inverse navbar-footer" style="padding: 10px;">
 			<div class="container">
+				<div class="row">                                					
+					<div class="col-xs-12 text-center">
+						<a href="/contact">Contact Us</a> | <a href="/terms">Terms and Conditions</a> | <a href="/privacy">Privacy Policy</a> | <a href="/sitemap">Sitemap</a>
+					</div>
+				</div>
 				<div class="row">                                
 					<div class="col-sm-offset-3 col-sm-4 col-lg-offset-3 col-lg-4 col-md-offset-2 col-md-5 col-xs-12">
 						<p class="copyright text-muted text-left">Copyright &copy; OzBoardGamer 2017. All Rights Reserved</p>                   
