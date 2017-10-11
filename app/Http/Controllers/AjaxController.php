@@ -27,7 +27,7 @@ class AjaxController extends Controller
    
     public function games()
     {
-        return $games = Game::all();
+        return ['Lavavel', 'View', 'PHP', 'Javascript'];
     }
 
 }
