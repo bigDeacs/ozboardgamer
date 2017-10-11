@@ -97,6 +97,8 @@
 	<script src="/js/bootstrap-datepicker.js"></script>
 	<script src="/tinymce/tinymce.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="/js/admin.js"></script>
 	<script>
       $(document).ready(function() {
         $('.dataTable').DataTable( {
