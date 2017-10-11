@@ -130,8 +130,11 @@ Route::get('users/{users}/removeFromOwned/{game}', ['as' => 'users.removeFromOwn
 Route::get('users/{users}/addToWanted/{game}', ['as' => 'users.addToWanted', 'uses' => 'SiteController@addToWanted']);
 Route::get('users/{users}/removeFromWanted/{game}', ['as' => 'users.removeFromWanted', 'uses' => 'SiteController@removeFromWanted']);
 
-Route::get('users/{users}/addGameRating/{game}/rating/{rating}', ['as' => 'users.addGameRating', 'uses' => 'SiteController@addGameRating']);
-Route::get('users/{users}/updateGameRating/{game}/rating/{rating}', ['as' => 'users.updateGameRating', 'uses' => 'SiteController@updateGameRating']);
+//Route::get('users/{users}/addGameRating/{game}/rating/{rating}', ['as' => 'users.addGameRating', 'uses' => 'SiteController@addGameRating']);
+Route::post( '/users/{users}/addGameRating', array('as' => 'users.addGameRating', 'uses' => 'SiteController@addGameRating'));
+//Route::get('users/{users}/updateGameRating/{game}/rating/{rating}', ['as' => 'users.updateGameRating', 'uses' => 'SiteController@updateGameRating']);
+Route::post( '/users/{users}/updateGameRating', array('as' => 'users.updateGameRating', 'uses' => 'SiteController@updateGameRating'));
+ 
 
 Route::get('users/{users}/addStoreRating/{store}/rating/{rating}', ['as' => 'users.addStoreRating', 'uses' => 'SiteController@addStoreRating']);
 Route::get('users/{users}/updateStoreRating/{store}/rating/{rating}', ['as' => 'users.updateStoreRating', 'uses' => 'SiteController@updateStoreRating']);

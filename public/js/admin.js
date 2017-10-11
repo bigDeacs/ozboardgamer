@@ -1,11 +1,10 @@
-Vue.component('games', {
-	template: '#games-template',
-	props: ['list'],
-	created() {
-		this.list = JSON.parse(this.list);
-	}
-});
-
 new Vue({
-	
+		
+		el: '#root',
+		
+		mounted() {
+			// Make an ajax request to our server - /admin/games
+			axios.get('/admin/games').then(response => console.log(response));
+		}
+		
 });
