@@ -146,7 +146,9 @@ Route::get('sitemap.xml', 'SiteController@sitemap');
 
 Route::get('feed', 'SiteController@feed');
 
-Route::get('testGames', 'AjaxController@games');
+Route::get('testGames', function() {
+	return ['Lavavel', 'View', 'PHP', 'Javascript'];
+});
 
 // Dynamic Routes
 Route::get('/{category}/{slug?}', 'SiteController@post');
