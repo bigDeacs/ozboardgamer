@@ -31,7 +31,7 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
-		$items = Product::latest()->paginate(10);
+		$items = Product::all();
 
         $response = [
             'pagination' => [
