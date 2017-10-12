@@ -1,14 +1,11 @@
-@extends('appAdmin')
-
-@section('meta')
-    <title>Products</title>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Laravel Vue JS Item CRUD</title>
 	<meta id="token" name="token" value="{{ csrf_token() }}">
-@endsection
-
-@section('head')
-@endsection
-
-@section('content')
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
+</head>
+<body>
 	<div class="container" id="manage-vue">
 
 		<div class="row">
@@ -122,9 +119,7 @@
 		</div>
 
 	</div>
-@endsection
-
-@section('scripts')
+	
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js"></script>
 
@@ -135,4 +130,6 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/vue.resource/0.9.3/vue-resource.min.js"></script>
 
 	<script type="text/javascript" src="/js/item.js"></script>
-@endsection
+
+</body>
+</html>
