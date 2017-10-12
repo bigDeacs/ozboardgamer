@@ -18,37 +18,15 @@ class ProductController extends Controller
         $this->middleware('auth');
     }
    
-   
-	 public function manage()
-    {
-        return view('products.manage');
-    }
-	
-   /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-		$items = Product::all();
-
-        $response = [
-            'pagination' => [
-                'total' => $items->total(),
-                'per_page' => $items->perPage(),
-                'current_page' => $items->currentPage(),
-                'last_page' => $items->lastPage(),
-                'from' => $items->firstItem(),
-                'to' => $items->lastItem()
-            ],
-            'data' => $items
-        ];
-
-        return response()->json($response);
-		
-        //$products = Product::all();
-        //return view('products.index', compact('products'));
+        $products = Product::all();
+        return view('products.index', compact('products'));
     }
 
     /**
