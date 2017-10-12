@@ -77,15 +77,9 @@
 		      		<form method="POST" enctype="multipart/form-data" v-on:submit.prevent="createItem">
 
 		      			<div class="form-group">
-						<label for="title">Title:</label>
-						<input type="text" name="title" class="form-control" v-model="newItem.title" />
-						<span v-if="formErrors['title']" class="error text-danger">@{{ formErrors['title'] }}</span>
-					</div>
-
-					<div class="form-group">
-						<label for="title">Description:</label>
-						<textarea name="description" class="form-control" v-model="newItem.description"></textarea>
-						<span v-if="formErrors['description']" class="error text-danger">@{{ formErrors['description'] }}</span>
+						<label for="title">Name:</label>
+						<input type="text" name="name" class="form-control" v-model="newItem.name" />
+						<span v-if="formErrors['name']" class="error text-danger">@{{ formErrors['name'] }}</span>
 					</div>
 
 					<div class="form-group">

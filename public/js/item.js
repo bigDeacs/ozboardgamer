@@ -16,8 +16,8 @@ new Vue({
     offset: 4,
     formErrors:{},
     formErrorsUpdate:{},
-    newItem : {'title':'','description':''},
-    fillItem : {'title':'','description':'','id':''}
+    newItem : {'name':''},
+    fillItem : {'name':'','id':''}
   },
 
   computed: {
@@ -62,7 +62,7 @@ new Vue({
 		  var input = this.newItem;
 		  this.$http.post('/vueitems',input).then((response) => {
 		    this.changePage(this.pagination.current_page);
-			this.newItem = {'title':'','description':''};
+			this.newItem = {'name':''};
 			$("#create-item").modal('hide');
 			toastr.success('Item Created Successfully.', 'Success Alert', {timeOut: 5000});
 		  }, (response) => {
@@ -78,9 +78,8 @@ new Vue({
       },
 
       editItem: function(item){
-          this.fillItem.title = item.title;
+          this.fillItem.name = item.name;
           this.fillItem.id = item.id;
-          this.fillItem.description = item.description;
           $("#edit-item").modal('show');
       },
 
@@ -88,7 +87,7 @@ new Vue({
         var input = this.fillItem;
         this.$http.put('/vueitems/'+id,input).then((response) => {
             this.changePage(this.pagination.current_page);
-            this.fillItem = {'title':'','description':'','id':''};
+            this.fillItem = {'name':'','id':''};
             $("#edit-item").modal('hide');
             toastr.success('Item Updated Successfully.', 'Success Alert', {timeOut: 5000});
           }, (response) => {
