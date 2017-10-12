@@ -27,13 +27,11 @@
 		<!-- Item Listing -->
 		<table class="table table-bordered">
 			<tr>
-				<th>Title</th>
-				<th>Description</th>
+				<th>Name</th>
 				<th width="200px">Action</th>
 			</tr>
 			<tr v-for="item in items">
-				<td>@{{ item.title }}</td>
-				<td>@{{ item.description }}</td>
+				<td>@{{ item.name }}</td>
 				<td>	
 			      <button class="btn btn-primary" @click.prevent="editItem(item)">Edit</button>
 			      <button class="btn btn-danger" @click.prevent="deleteItem(item)">Delete</button>
@@ -107,16 +105,10 @@
 		      		<form method="POST" enctype="multipart/form-data" v-on:submit.prevent="updateItem(fillItem.id)">
 
 		      			<div class="form-group">
-						<label for="title">Title:</label>
-						<input type="text" name="title" class="form-control" v-model="fillItem.title" />
-						<span v-if="formErrorsUpdate['title']" class="error text-danger">@{{ formErrorsUpdate['title'] }}</span>
-					</div>
-
-					<div class="form-group">
-						<label for="title">Description:</label>
-						<textarea name="description" class="form-control" v-model="fillItem.description"></textarea>
-						<span v-if="formErrorsUpdate['description']" class="error text-danger">@{{ formErrorsUpdate['description'] }}</span>
-					</div>
+						<label for="title">Name:</label>
+						<input type="text" name="name" class="form-control" v-model="fillItem.name" />
+						<span v-if="formErrorsUpdate['name']" class="error text-danger">@{{ formErrorsUpdate['name'] }}</span>
+					</div>				
 
 					<div class="form-group">
 						<button type="submit" class="btn btn-success">Submit</button>
