@@ -711,7 +711,7 @@ class SiteController extends Controller {
 		    $q->where('slug', '=', 'blogs');
 		})->orderBy('published_at', 'desc')->take(6)->get();
 		$games = Game::where('status', '=', '1')->has('parent', '<', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
-		$products = Product::where('price', '>', '0')->where('savings', '>', '0')->orderByRaw("RAND()")->take(10)->get();
+		$products = Product::orderBy('price', 'desc')->take(10)->get();
 		return view('index', compact('featured', 'reviews', 'top10s', 'blogs', 'games', 'products'));
 	}
 
