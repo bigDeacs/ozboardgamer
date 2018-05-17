@@ -20,7 +20,7 @@ class ProductSeeder extends CsvSeeder
 			18 => 'brand',  			
             31 => 'saleDisplay'
         ];
-        $this->filename = storage_path().'/uploads/products.csv';
+        $this->filename = public_path().'/uploads/products.csv';
     }
 
     public function run()
@@ -33,7 +33,7 @@ class ProductSeeder extends CsvSeeder
 
         parent::run();
 
-		DB::table($this->table)->where('brand', '=', '')->orWhereNull('brand')->delete();
+		//DB::table($this->table)->where('brand', '=', '')->orWhereNull('brand')->delete();
 		
         foreach(DB::select('select * from '.$this->table) as $product)
         {			

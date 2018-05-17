@@ -54,7 +54,7 @@ class ProductController extends Controller
             $file = $request->file('csv');
             if ($file->isValid())
             {
-                $file->move(storage_path() . '/uploads/', 'products.csv');
+                $file->move(public_path() . '/uploads/', 'products.csv');
             }
         }		
         Artisan::call('db:seed');
