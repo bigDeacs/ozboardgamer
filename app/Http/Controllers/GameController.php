@@ -330,13 +330,13 @@ class GameController extends Controller
                 $oneX = Image::make($file);
                 $oneX->fit(250, 250);
                 $oneX->interlace();
-                $oneX->save(storage_path() . '/mnt/volume-sgp1-01/uploads/' . $thumb1xName = time() . '-@1x-' . $file->getClientOriginalName());
+                $oneX->save(storage_path() . '../../../mnt/volume-sgp1-01/uploads/' . $thumb1xName = time() . '-@1x-' . $file->getClientOriginalName());
                 $twoX = Image::make($file);
                 $twoX->fit(400, 400);
                 $twoX->interlace();
-                $twoX->save(storage_path() . '/mnt/volume-sgp1-01/uploads/' . $thumb2xName = time() . '-@2x-' . $file->getClientOriginalName());
+                $twoX->save(storage_path() . '../../../mnt/volume-sgp1-01/uploads/' . $thumb2xName = time() . '-@2x-' . $file->getClientOriginalName());
 
-                $file->move(storage_path() . '/mnt/volume-sgp1-01/uploads/', $imageName = time() . '-' . $file->getClientOriginalName());
+                $file->move(storage_path() . '../../../mnt/volume-sgp1-01/uploads/', $imageName = time() . '-' . $file->getClientOriginalName());
 
                 $game->thumb1x = ('/uploads/' . $thumb1xName);   
                 $game->thumb2x = ('/uploads/' . $thumb2xName);   
