@@ -61,9 +61,9 @@ class ResultController extends Controller
                 $img = Image::make($file);
                 $img->fit(400, 148);
                 $img->interlace();
-                $img->save(storage_path() . '/mnt/volume-sgp1-01/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+                $img->save(public_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
-                $file->move(storage_path() . '/mnt/volume-sgp1-01/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $file->move(public_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $result->image = ('/uploads/' . $filename);
                 $result->thumb = ('/uploads/' . $thumbname);
                 $result->save();
@@ -134,9 +134,9 @@ class ResultController extends Controller
                 $img = Image::make($file);
                 $img->fit(400, 148);
                 $img->interlace();
-                $img->save(storage_path() . '/mnt/volume-sgp1-01/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+                $img->save(public_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
 
-                $file->move(storage_path() . '/mnt/volume-sgp1-01/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $file->move(public_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $result->image = ('/uploads/' . $filename);
                 $result->thumb = ('/uploads/' . $thumbname);
                 $result->save();
