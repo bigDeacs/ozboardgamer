@@ -113,8 +113,8 @@
 					<h4>Latest Board Game Reviews</h4>
 					@foreach($reviews as $review)
 						<div itemscope itemtype="http://schema.org/Game">
-							<meta itemprop="worstRating" content = "{{ $review->games()->first()->name }}">
-							<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
+							<meta itemprop="name" content = "{{ $review->games()->first()->name }}">
+							<div class="col-xs-12 col-sm-4 post" itemprop="review" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
 							<div class="row">
 								<div class="col-xs-12" style="overflow: hidden;height: 175px;">
 									<div style="position: absolute;right: 15px;bottom: 0;">
