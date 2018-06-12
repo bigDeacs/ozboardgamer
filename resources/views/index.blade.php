@@ -112,19 +112,21 @@
 				<div class="col-xs-12">    
 					<h4>Latest Board Game Reviews</h4>
 					@foreach($reviews as $review)
-						<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
+						<div itemscope itemtype="http://schema.org/Game">
+							<meta itemprop="worstRating" content = "{{ $review->games()->first()->name }}">
+							<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
 							<div class="row">
 								<div class="col-xs-12" style="overflow: hidden;height: 175px;">
 									<div style="position: absolute;right: 15px;bottom: 0;">
 										<p class="blogHeading text-right">
 											<strong>														
 												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($review->published_at)))												
-													<a href="#" class="post-title disabled" itemprop="name"title="Login for access" style="color:white;">
-														{{ $review->name }}
+													<a href="#" class="post-title disabled" title="Login for access" style="color:white;">
+														<span itemprop="name">{{ $review->name }}</span>
 													</a>
 												@else
-													<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name" title="{{ $review->name }}" style="color:white;">
-														{{ $review->name }}
+													<a href="/reviews/{{ $review->slug }}" class="post-title" title="{{ $review->name }}" style="color:white;">
+														<span itemprop="name">{{ $review->name }}</span>
 													</a>
 												@endif
 											</strong>
@@ -183,6 +185,7 @@
 									</p>
 								</div>
 							</div>
+						</div>
 						</div>
 					@endforeach
 					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
