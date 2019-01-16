@@ -19,35 +19,35 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="row">
-	      	<div class="col-sm-5 col-xs-12">
-	      		<h1>Buy Online</h1>
-	      	</div>
-            <div class="col-sm-3 col-xs-12">
-              	<span>Sort by: </span>
-		      	<form id="sortForm">
-		      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
-		      		<select class="form-control" onchange="sortProducts()" name="sort" id="sort">
-							<option value="savings-desc" {{ (Request::input('sort') == 'savings-desc') ? 'selected' : "" }}>Promotions</option>
-					  		<option value="name-asc" {{ (Request::input('sort') == 'name-asc') ? 'selected' : "" }}>Name ASC</option>
-					  		<option value="name-desc" {{ (Request::input('sort') == 'name-desc') ? 'selected' : "" }}>Name DESC</option>
-						  	<option value="price-asc" {{ (Request::input('sort') == 'price-asc') ? 'selected' : "" }}>Price ASC</option>
-						  	<option value="price-desc" {{ (Request::input('sort') == 'price-desc') ? 'selected' : "" }}>Price DESC</option>						  	
-					</select>
-				</form>
-				<script>
-					function sortProducts() {
-				        document.getElementById("sortForm").submit();
-				    }
-				</script>
-      		</div>		
-      		<div class="col-sm-4 col-xs-12">
-				<span>Search for product: </span>
-				  <form id="search" action="#" method="post" style="width: 100%;margin: 5px 0;" onsubmit="return false;">
-					  <input type="text" name="search-products" id="search-products" class="form-control" placeholder="Find products..." style="top: -5px;">
-				  </form>      
-            </div>			      
-    	</div>
+		{{--<div class="row">--}}
+	      	{{--<div class="col-sm-5 col-xs-12">--}}
+	      		{{--<h1>Buy Online</h1>--}}
+	      	{{--</div>--}}
+            {{--<div class="col-sm-3 col-xs-12">--}}
+              	{{--<span>Sort by: </span>--}}
+		      	{{--<form id="sortForm">--}}
+		      		{{--<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">--}}
+		      		{{--<select class="form-control" onchange="sortProducts()" name="sort" id="sort">--}}
+							{{--<option value="savings-desc" {{ (Request::input('sort') == 'savings-desc') ? 'selected' : "" }}>Promotions</option>--}}
+					  		{{--<option value="name-asc" {{ (Request::input('sort') == 'name-asc') ? 'selected' : "" }}>Name ASC</option>--}}
+					  		{{--<option value="name-desc" {{ (Request::input('sort') == 'name-desc') ? 'selected' : "" }}>Name DESC</option>--}}
+						  	{{--<option value="price-asc" {{ (Request::input('sort') == 'price-asc') ? 'selected' : "" }}>Price ASC</option>--}}
+						  	{{--<option value="price-desc" {{ (Request::input('sort') == 'price-desc') ? 'selected' : "" }}>Price DESC</option>						  	--}}
+					{{--</select>--}}
+				{{--</form>--}}
+				{{--<script>--}}
+					{{--function sortProducts() {--}}
+				        {{--document.getElementById("sortForm").submit();--}}
+				    {{--}--}}
+				{{--</script>--}}
+      		{{--</div>		--}}
+      		{{--<div class="col-sm-4 col-xs-12">--}}
+				{{--<span>Search for product: </span>--}}
+				  {{--<form id="search" action="#" method="post" style="width: 100%;margin: 5px 0;" onsubmit="return false;">--}}
+					  {{--<input type="text" name="search-products" id="search-products" class="form-control" placeholder="Find products..." style="top: -5px;">--}}
+				  {{--</form>      --}}
+            {{--</div>			      --}}
+    	{{--</div>--}}
 		@if(Session::has('name'))
 			@if(!empty($data['offers']))
 				<div class="row hidden-xs">

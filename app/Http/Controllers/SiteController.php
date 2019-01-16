@@ -1208,17 +1208,17 @@ class SiteController extends Controller {
 		public function shop($slug = null)
 		{				
 			if($slug == null) {
-				if(Request::has('sort'))
-				{
-					$pieces = explode("-", Request::input('sort'));
-					$sort = $pieces[0];
-					$direction = $pieces[1];
-				} else {
-					$sort = 'savings';
-					$direction = 'desc';
-				}
+//				if(Request::has('sort'))
+//				{
+//					$pieces = explode("-", Request::input('sort'));
+//					$sort = $pieces[0];
+//					$direction = $pieces[1];
+//				} else {
+//					$sort = 'savings';
+//					$direction = 'desc';
+//				}
 //				$products = Product::where('price', '>', '0')->orderBy($sort, $direction)->paginate(12);
-                $products = Game::where('status', '=', '1')->where('link', '!=', '')->orderBy($sort, $direction)->paginate(12);
+                $products = Game::where('status', '=', '1')->where('link', '!=', '')->orderByRaw("RAND()")->paginate(12);
 				return view('products', compact('products'));
 			} else {
 //				$product = Product::where('slug', '=', $slug)->firstOrFail();
