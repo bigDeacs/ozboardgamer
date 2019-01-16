@@ -277,7 +277,7 @@ class SiteController extends Controller {
 
 			$fname = $facebook['first_name'];
 			$lname = $facebook['last_name'];
-			$gender = $facebook['gender'];
+			#$gender = $facebook['gender'];
 
 			$user = User::firstOrNew(['email' => $email]);
 			if($user->exists == false)
