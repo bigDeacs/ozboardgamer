@@ -1217,11 +1217,14 @@ class SiteController extends Controller {
 					$sort = 'savings';
 					$direction = 'desc';
 				}
-				$products = Product::where('price', '>', '0')->orderBy($sort, $direction)->paginate(12);		
+//				$products = Product::where('price', '>', '0')->orderBy($sort, $direction)->paginate(12);
+                $products = Game::where('status', '=', '1')->where('link', '!=', '')->orderBy($sort, $direction)->paginate(12);
 				return view('products', compact('products'));
 			} else {
-				$product = Product::where('slug', '=', $slug)->firstOrFail();		
-				$products = Product::where('sale', '>', '0')->where('slug', '!=', $slug)->orderByRaw("RAND()")->get();
+//				$product = Product::where('slug', '=', $slug)->firstOrFail();
+//				$products = Product::where('sale', '>', '0')->where('slug', '!=', $slug)->orderByRaw("RAND()")->get();
+                $product = Game::where('slug', '=', $slug)->firstOrFail();
+                $products = Game::where('status', '=', '1')->where('slug', '!=', $slug)->where('link', '!=', '')->orderByRaw("RAND()")->get();
 				return view('product', compact('product', 'products'));
 			}
 		}
