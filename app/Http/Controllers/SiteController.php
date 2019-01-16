@@ -1218,7 +1218,7 @@ class SiteController extends Controller {
 //					$direction = 'desc';
 //				}
 //				$products = Product::where('price', '>', '0')->orderBy($sort, $direction)->paginate(12);
-                $products = Game::where('status', '=', '1')->where('link', '!=', '')->orderByRaw("RAND()")->paginate(12);
+                $products = Game::where('status', '=', '1')->where('link', '!=', '')->paginate(12);
 				return view('products', compact('products'));
 			} else {
 //				$product = Product::where('slug', '=', $slug)->firstOrFail();
