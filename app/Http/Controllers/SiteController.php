@@ -203,7 +203,7 @@ class SiteController extends Controller {
 				$lastname = array_pop($parts);
 				$firstname = implode(" ", $parts);
 
-				$this->syncMailchimp($user->email, $firstname, $lastname, null);
+				#$this->syncMailchimp($user->email, $firstname, $lastname, null);
 
 				Session::put('id', $user->id);
 				Session::put('name', $user->name);
@@ -294,7 +294,7 @@ class SiteController extends Controller {
 				$lastname = array_pop($parts);
 				$firstname = implode(" ", $parts);
 
-				$this->syncMailchimp($user->email, $firstname, $lastname, null);
+				#$this->syncMailchimp($user->email, $firstname, $lastname, null);
 			}
 
 			Session::put('id', $user->id);
@@ -347,7 +347,7 @@ class SiteController extends Controller {
 				$lastname = array_pop($parts);
 				$firstname = implode(" ", $parts);
 
-				$this->syncMailchimp($user->email, $firstname, $lastname, null);
+				#$this->syncMailchimp($user->email, $firstname, $lastname, null);
 			}
 
 			Session::put('id', $user->id);
@@ -397,7 +397,7 @@ class SiteController extends Controller {
 				$lastname = array_pop($parts);
 				$firstname = implode(" ", $parts);
 
-				$this->syncMailchimp($user->email, $firstname, $lastname, null);
+				#$this->syncMailchimp($user->email, $firstname, $lastname, null);
 			}
 
 			Session::put('id', $user->id);
