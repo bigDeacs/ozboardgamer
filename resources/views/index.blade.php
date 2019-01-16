@@ -379,26 +379,26 @@
 									<li>										
 										<div class="thumbnail img-shadow" style="position: relative;">
 											<div style="position: absolute;right: 4px;bottom: 135px;">
-												<p class="blogHeading text-right"><strong><a href="/shop/{{ $product->slug }}" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 16) !!}</a></strong></p>
-												@if($product->sale > 0)
-													<p class="blogHeadingSml text-right"><strong style="color:white;">Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</strong></p>	
-												@else
-													<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $product->brand }}</strong></p>	
-												@endif						
+												<p class="blogHeading text-right"><strong><a href="{{ $product->link }}" target="_blank" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 16) !!}</a></strong></p>
+												{{--@if($product->sale > 0)--}}
+													{{--<p class="blogHeadingSml text-right"><strong style="color:white;">Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</strong></p>	--}}
+												{{--@else--}}
+													{{--<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $product->brand }}</strong></p>	--}}
+												{{--@endif						--}}
 											</div>
-											<a href="/shop/{!! $product->slug !!}" rel="nofollow">
+											<a href="{!! $product->link !!}" target="_blank" rel="nofollow">
 												<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
 											</a>
 											<div class="caption text-center" style="min-height: 125px;">
-												@if($product->sale > 0)
-													<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->saleDisplay !!}</strong></p>
-													<p style="margin: 0;"><s><small>${!! $product->priceDisplay !!}</small></s></p>
-												@else
-													<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->priceDisplay !!}</strong></p>
-													<p style="margin: 0;">&nbsp;</p>
-												@endif
+												{{--@if($product->sale > 0)--}}
+													{{--<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->saleDisplay !!}</strong></p>--}}
+													{{--<p style="margin: 0;"><s><small>${!! $product->priceDisplay !!}</small></s></p>--}}
+												{{--@else--}}
+													{{--<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->priceDisplay !!}</strong></p>--}}
+													{{--<p style="margin: 0;">&nbsp;</p>--}}
+												{{--@endif--}}
 												<p class="text-center">
-													<a class="btn btn-hot text-uppercase" href="/shop/{!! $product->slug !!}" rel="nofollow"><span class="fa fa-arrow-circle-right"></span> Read more</a>
+													<a class="btn btn-hot text-uppercase" href="{!! $product->link !!}" target="_blank" rel="nofollow"><span class="fa fa-arrow-circle-right"></span> Buy Now</a>
 												</p>
 											</div>													
 										</div>										
@@ -410,13 +410,13 @@
 						<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
 						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 					</div>
-					<div class="row hidden-xs" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;margin-bottom: 15px;">
-						<div class="col-xs-12 text-center">
-							<p><strong>New Deals In:</strong></p>
-							<br />
-							<div class="clock" style="margin: 0 auto;width:625px;"></div>
-						</div>
-					</div>
+					{{--<div class="row hidden-xs" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;margin-bottom: 15px;">--}}
+						{{--<div class="col-xs-12 text-center">--}}
+							{{--<p><strong>New Deals In:</strong></p>--}}
+							{{--<br />--}}
+							{{--<div class="clock" style="margin: 0 auto;width:625px;"></div>--}}
+						{{--</div>--}}
+					{{--</div>--}}
 					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
 						<a href="/shop" class="btn btn-sm btn-fresh"><span class="fa fa-arrow-circle-right"></span> View More Products</a>
 					</p>
@@ -437,13 +437,13 @@
             });
         });
     </script>
-	<script src="/js/flipclock.min.js"></script>
-	<script type="text/javascript">		
-		$(document).ready(function() {
-			var clock = $('.clock').FlipClock({{ strtotime('Next Thursday') - time() }}, {
-				clockFace: 'DailyCounter',
-				countdown: true
-			});
-		});
-	</script>	
+	{{--<script src="/js/flipclock.min.js"></script>--}}
+	{{--<script type="text/javascript">		--}}
+		{{--$(document).ready(function() {--}}
+			{{--var clock = $('.clock').FlipClock({{ strtotime('Next Thursday') - time() }}, {--}}
+				{{--clockFace: 'DailyCounter',--}}
+				{{--countdown: true--}}
+			{{--});--}}
+		{{--});--}}
+	{{--</script>	--}}
 @endsection
