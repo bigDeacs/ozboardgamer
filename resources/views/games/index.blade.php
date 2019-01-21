@@ -24,15 +24,17 @@
 						  <table class="table dataTable table-striped table-hover">
 						  	<col width="20%">
   							<col width="20%">
-  							<col width="15%">
-  							<col width="15%">
+  							<col width="10%">
+						  	<col width="10%">
+  							<col width="10%">
 							<col width="30%">
 						    <thead>
 						    	<tr>
 						    		<th>Name</th>
 						    		<th>Type</th>
-                    <th>Published</th>
-                    <th>Rating</th>
+									<th>Published</th>
+									<th>Amazon Link</th>
+									<th>Rating</th>
 						    		<th></th>
 						    	</tr>
 						    </thead>
@@ -45,7 +47,12 @@
 								@endif
 						    		<td scope="row">{{ $game->name }}</td>
 						    		<td scope="row">{{ $game->types()->first()->name }}</td>
-                    <td scope="row">{{ $game->published }}</td>
+                    				<td scope="row">{{ $game->published }}</td>
+									@if($game->link != '')
+										<td scope="row"><i class="fa fa-check" aria-hidden="true"></i></td>
+									@else
+										<td scope="row"><i class="fa fa-times" aria-hidden="true"></i></td>
+									@endif
 						    		<td scope="row">{{ number_format((float)$game->rating, 1, '.', '') }}/10</td>
 						    		<td>
 										<div class="btn-group" role="group">
