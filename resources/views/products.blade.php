@@ -99,9 +99,11 @@
 							{{--<p style="margin: 0;">&nbsp;</p>--}}
 						{{--@endif--}}
 						<div class="row">
-							<div class="col-xs-12 col-md-6">
-								<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->price !!}</strong></p>
-							</div>
+							@if($product->price !== '' || $product->price !== null)
+								<div class="col-xs-12 col-md-6">
+									<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->price !!}</strong></p>
+								</div>
+							@endif
 							<div class="col-xs-12 col-md-6">
 								<a class="btn btn-hot text-uppercase" href="{!! $product->link !!}" target="_blank" rel="nofollow"><span class="fa fa-arrow-circle-right"></span> Buy now</a>
 							</div>
