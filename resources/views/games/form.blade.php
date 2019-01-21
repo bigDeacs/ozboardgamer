@@ -33,7 +33,7 @@
                   </div>
                   <div class="col-sm-6 col-xs-12">
                         <label for="link">Purchase Price</label>
-                        <input type="text" name="price" id="price" class="form-control" value="{{ isset($game) ? $game->link : old('price') }}" placeholder="$0.00">
+                        <input type="text" name="price" id="price" class="form-control" value="{{ isset($game) ? $game->price: old('price') }}" placeholder="$0.00">
                   </div>
             </div>
             <div class="row">

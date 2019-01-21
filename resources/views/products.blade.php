@@ -100,8 +100,9 @@
 						{{--@endif--}}
 						<div class="row">
 							@if($product->price !== '' || $product->price !== null)
-								<div class="col-xs-12 col-md-6">
+								<div class="col-xs-12 col-md-6 text-left">
 									<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->price !!}</strong></p>
+									<p style="margin: 0;">&nbsp;</p>
 								</div>
 							@endif
 							<div class="col-xs-12 col-md-6">
