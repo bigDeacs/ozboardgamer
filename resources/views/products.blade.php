@@ -98,6 +98,8 @@
 							{{--<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->priceDisplay !!}</strong></p>--}}
 							{{--<p style="margin: 0;">&nbsp;</p>--}}
 						{{--@endif--}}
+						<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->price !!}</strong></p>
+						<p style="margin: 0;">&nbsp;</p>
 						<p class="text-center">
 							<a class="btn btn-hot text-uppercase" href="{!! $product->link !!}" target="_blank" rel="nofollow"><span class="fa fa-arrow-circle-right"></span> Buy now</a>
 						</p>
