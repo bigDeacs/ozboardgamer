@@ -34,6 +34,7 @@
 						    		<th>Type</th>
 									<th>Published</th>
 									<th>Amazon Link</th>
+									<th>Amazon Price</th>
 									<th>Rating</th>
 						    		<th></th>
 						    	</tr>
@@ -53,6 +54,7 @@
 									@else
 										<td scope="row"><i class="fa fa-times" aria-hidden="true"></i></td>
 									@endif
+									<td scope="row">${{ $game->price }}</td>
 						    		<td scope="row">{{ number_format((float)$game->rating, 1, '.', '') }}/10</td>
 						    		<td>
 										<div class="btn-group" role="group">
