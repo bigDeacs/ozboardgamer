@@ -32,7 +32,6 @@ use Hash;
 use App;
 use View;
 use Mail;
-use App\Exports\ProductExport;
 use Maatwebsite\Excel\Facades\Excel;
 
 use Socialite;
@@ -694,32 +693,29 @@ class SiteController extends Controller {
 
         public function productfeed()
         {
-                return Excel::download(new ProductExport, 'products.xlsx');
-//                $products = Game::where('status', '=', '1')->where('link', '!=', '')->orderBy('rating', 'desc')->take(50)->get();
-//                foreach ($products as $post)
-//                {
-//                    // set item's id, title, description, availability, condition, price, link, image_link, brand, pubdate, description, content, enclosure (optional)*
-//                    $feed->add(
-//                        $post->id,
-//                        $post->name,
-//                        $post->description,
-//                        "in stock", "new",
-//                        $post->price,
-//                        $post->link,
-//                        $post->thumb1x,
-//                        $post->publishers()->first()
-//                    );
-//                }
+                Excel::create('products', function($excel) {
+                    $excel->sheet('products', function($sheet) {
+                        $products = Game::where('status', '=', '1')->where('link', '!=', '')->orderBy('rating', 'desc')->take(50)->get();
+                        foreach ($products as $post)
+                        {
+                            $sheetData[] = array(
+                                $post->id,
+                                $post->name,
+                                $post->description,
+                                "in stock",
+                                "new",
+                                $post->price,
+                                $post->link,
+                                $post->thumb1x,
+                                $post->publishers()->first()
+                            );
+                        }
+                        $sheet->fromArray(array(
+                            $sheetData
+                        ));
+                    });
 
-
-            // first param is the feed format
-            // optional: second param is cache duration (value of 0 turns off caching)
-            // optional: you can set custom cache key with 3rd param as string
-            // return $feed->render('csv');
-
-
-            // to return your feed as a string set second param to -1
-            // $xml = $feed->render('atom', -1);
+                })->download('csv');
         }
 
 	/**
