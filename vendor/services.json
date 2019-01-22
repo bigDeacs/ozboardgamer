@@ -32,7 +32,8 @@
         "AlgoliaSearch\\Laravel\\AlgoliaServiceProvider",
         "Laravel\\Socialite\\SocialiteServiceProvider",
         "Roumen\\Sitemap\\SitemapServiceProvider",
-        "Roumen\\Feed\\FeedServiceProvider"
+        "Roumen\\Feed\\FeedServiceProvider",
+        "Maatwebsite\\Excel\\ExcelServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -53,7 +54,8 @@
         "App\\Providers\\RouteServiceProvider",
         "Intervention\\Image\\ImageServiceProvider",
         "AlgoliaSearch\\Laravel\\AlgoliaServiceProvider",
-        "Roumen\\Feed\\FeedServiceProvider"
+        "Roumen\\Feed\\FeedServiceProvider",
+        "Maatwebsite\\Excel\\ExcelServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

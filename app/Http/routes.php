@@ -144,7 +144,7 @@ Route::get('sitemap.xml', 'SiteController@sitemap');
 
 Route::get('feed', 'SiteController@feed');
 
-Route::get('product/feed', 'SiteController@productfeed');
+Route::get('', 'SiteController@productfeed');
 
 // Dynamic Routes
 Route::get('/{category}/{slug?}', 'SiteController@post');

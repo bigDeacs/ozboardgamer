@@ -32,6 +32,8 @@ use Hash;
 use App;
 use View;
 use Mail;
+use App\Exports\ProductExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 use Socialite;
 use App\Http\Requests\GameUpdateRequest;
@@ -692,54 +694,28 @@ class SiteController extends Controller {
 
         public function productfeed()
         {
-            // create new feed
-            $feed = App::make("feed");
-
-            // multiple feeds are supported
-            // if you are using caching you should set different cache keys for your feeds
-            // check if there is cached sitemap and build new only if is not
-
-            // cache the feed for 60 minutes (second parameter is optional)
-            $feed->setCache(5, 'laravelFeedKey');
-
-            // check if there is cached feed and build new only if is not
-            if (!$feed->isCached())
-            {
-                // creating rss feed with our most recent 20 posts
-                $products = Game::where('status', '=', '1')->where('link', '!=', '')->orderBy('rating', 'desc')->take(50)->get();
-
-                // set your feed's title, description, link, pubdate and language
-                $feed->title = 'OzBoardGamer Products';
-                $feed->description = 'Feed of our latest products';
-                $feed->logo = 'https://img.ozboardgamer.com/img/logo.png';
-                $feed->setDateFormat('datetime'); // 'datetime', 'timestamp' or 'carbon'
-                $feed->pubdate = $products[0]->created_at;
-                $feed->lang = 'en';
-                $feed->setShortening(true); // true or false
-                $feed->setTextLimit(100); // maximum length of description text
-                $feed->setView('rsspages');
-
-                foreach ($products as $post)
-                {
-                    // set item's id, title, description, availability, condition, price, link, image_link, brand, pubdate, description, content, enclosure (optional)*
-                    $feed->add(
-                        $post->id,
-                        $post->name,
-                        $post->description,
-                        "in stock", "new",
-                        $post->price,
-                        $post->link,
-                        $post->thumb1x,
-                        $post->publishers()->first()
-                    );
-                }
-            }
+                return Excel::download(new ProductExport, 'products.xlsx');
+//                $products = Game::where('status', '=', '1')->where('link', '!=', '')->orderBy('rating', 'desc')->take(50)->get();
+//                foreach ($products as $post)
+//                {
+//                    // set item's id, title, description, availability, condition, price, link, image_link, brand, pubdate, description, content, enclosure (optional)*
+//                    $feed->add(
+//                        $post->id,
+//                        $post->name,
+//                        $post->description,
+//                        "in stock", "new",
+//                        $post->price,
+//                        $post->link,
+//                        $post->thumb1x,
+//                        $post->publishers()->first()
+//                    );
+//                }
 
 
             // first param is the feed format
             // optional: second param is cache duration (value of 0 turns off caching)
             // optional: you can set custom cache key with 3rd param as string
-            return $feed->render('csv');
+            // return $feed->render('csv');
 
 
             // to return your feed as a string set second param to -1
