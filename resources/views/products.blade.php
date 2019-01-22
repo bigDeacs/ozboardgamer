@@ -75,44 +75,46 @@
 				<br />
 			@endif
 		@endif										
-  		<div class="row">
-      	@foreach($products as $key => $product)
-			<div class="col-md-3 col-sm-4 col-xs-12 text-center">
-				<div class="thumbnail img-shadow" style="position: relative;">
-					<div style="position: absolute;right: 4px;bottom: 135px;">
-						<p class="blogHeading text-right"><strong><a href="{{ $product->link }}" target="_blank" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 16) !!}</a></strong></p>
-						{{--@if($product->sale > 0)--}}
-							{{--<p class="blogHeadingSml text-right"><strong style="color:white;">Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</strong></p>	--}}
-						{{--@else--}}
-							{{--<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $product->brand }}</strong></p>	--}}
-						{{--@endif						--}}
-					</div>
-					<a href="{!! $product->link !!}" target="_blank" rel="nofollow">
-						<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
-					</a>
-					<div class="caption text-center">
-						{{--@if($product->sale > 0)--}}
-							{{--<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->saleDisplay !!}</strong></p>--}}
-							{{--<p style="margin: 0;"><s><small>${!! $product->priceDisplay !!}</small></s></p>--}}
-						{{--@else--}}
-							{{--<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->priceDisplay !!}</strong></p>--}}
-							{{--<p style="margin: 0;">&nbsp;</p>--}}
-						{{--@endif--}}
-						<div class="row">
-							@if($product->price !== '' || $product->price !== null)
-								<div class="col-xs-12 col-md-6 text-left">
-									<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->price !!}</strong></p>
-									<p style="margin: 0;">&nbsp;</p>
+  		<div class="row" itemscope itemtype="http://schema.org/ItemList">
+			<meta itemprop="url" content = "https://ozboardgamer.com/shop">
+			<meta itemprop="numberOfItems" content = "<?php echo count($products); ?>">
+			@foreach($products as $key => $product)
+				<div class="col-md-3 col-sm-4 col-xs-12 text-center" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+					<div class="thumbnail img-shadow" style="position: relative;">
+						<div style="position: absolute;right: 4px;bottom: 135px;">
+							<p class="blogHeading text-right"><strong><a href="{{ $product->link }}" target="_blank" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 16) !!}</a></strong></p>
+							{{--@if($product->sale > 0)--}}
+								{{--<p class="blogHeadingSml text-right"><strong style="color:white;">Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</strong></p>	--}}
+							{{--@else--}}
+								{{--<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $product->brand }}</strong></p>	--}}
+							{{--@endif						--}}
+						</div>
+						<a href="{!! $product->link !!}" target="_blank" rel="nofollow">
+							<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" itemprop="image" class="img-responsive" />
+						</a>
+						<div class="caption text-center">
+							{{--@if($product->sale > 0)--}}
+								{{--<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->saleDisplay !!}</strong></p>--}}
+								{{--<p style="margin: 0;"><s><small>${!! $product->priceDisplay !!}</small></s></p>--}}
+							{{--@else--}}
+								{{--<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->priceDisplay !!}</strong></p>--}}
+								{{--<p style="margin: 0;">&nbsp;</p>--}}
+							{{--@endif--}}
+							<div class="row" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+								@if($product->price !== '' || $product->price !== null)
+									<div class="col-xs-12 col-md-6 text-left">
+										<p style="margin: 0;font-size: 20px;color: #db5566;" itemprop="price"><strong>${!! $product->price !!}</strong></p>
+										<p style="margin: 0;">&nbsp;</p>
+									</div>
+								@endif
+								<div class="col-xs-12 col-md-6">
+									<a class="btn btn-hot text-uppercase" href="{!! $product->link !!}" target="_blank" rel="nofollow" itemprop="url"><span class="fa fa-arrow-circle-right"></span> Buy now</a>
 								</div>
-							@endif
-							<div class="col-xs-12 col-md-6">
-								<a class="btn btn-hot text-uppercase" href="{!! $product->link !!}" target="_blank" rel="nofollow"><span class="fa fa-arrow-circle-right"></span> Buy now</a>
 							</div>
 						</div>
-					</div>													
+					</div>
 				</div>
-			</div>
-		@endforeach
+			@endforeach
 		</div>
 		{{--<div class="row hidden-xs">--}}
 			{{--<div class="col-xs-12 text-center">--}}
