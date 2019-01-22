@@ -456,6 +456,4 @@ class GameController extends Controller
 
         return redirect('/admin/games');
     }
-
-
 }

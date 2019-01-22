@@ -7,19 +7,21 @@ namespace Composer\Autoload;
 class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
 {
     public static $files = array (
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'fe1bcd0336136e435eaf197895daf81a' => __DIR__ . '/..' . '/nikic/php-parser/lib/bootstrap.php',
-        '9f7f3f9b1f82484e76bcd07b985a2d2f' => __DIR__ . '/..' . '/symfony/var-dumper/Symfony/Component/VarDumper/Resources/functions/dump.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        'e40631d46120a9c38ea139981f8dab26' => __DIR__ . '/..' . '/ircmaxell/password-compat/lib/password.php',
+        '9f7f3f9b1f82484e76bcd07b985a2d2f' => __DIR__ . '/..' . '/symfony/var-dumper/Symfony/Component/VarDumper/Resources/functions/dump.php',
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
+        'e40631d46120a9c38ea139981f8dab26' => __DIR__ . '/..' . '/ircmaxell/password-compat/lib/password.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
-        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
+        '752af1c2bdb339e8474c3c31b22b7d54' => __DIR__ . '/..' . '/illuminate/html/helpers.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '752af1c2bdb339e8474c3c31b22b7d54' => __DIR__ . '/..' . '/illuminate/html/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -43,6 +45,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         array (
             'Symfony\\Polyfill\\Util\\' => 22,
             'Symfony\\Polyfill\\Php56\\' => 23,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
@@ -68,6 +71,10 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
             'League\\Flysystem\\' => 17,
             'Laravel\\Socialite\\' => 18,
         ),
+        'J' => 
+        array (
+            'JakubOnderka\\PhpConsoleColor\\' => 29,
+        ),
         'I' => 
         array (
             'Intervention\\Image\\' => 19,
@@ -85,12 +92,12 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Inflector\\' => 26,
         ),
         'C' => 
         array (
             'Cron\\' => 5,
             'ClassPreloader\\' => 15,
-            'Carbon\\' => 7,
         ),
         'A' => 
         array (
@@ -103,8 +110,8 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -125,6 +132,10 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'Symfony\\Polyfill\\Php56\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php56',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
         'Symfony\\Component\\Yaml\\' => 
         array (
@@ -174,6 +185,10 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         array (
             0 => __DIR__ . '/..' . '/laravel/socialite/src',
         ),
+        'JakubOnderka\\PhpConsoleColor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
+        ),
         'Intervention\\Image\\' => 
         array (
             0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
@@ -210,6 +225,10 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Common\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
         'Cron\\' => 
         array (
             0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron',
@@ -217,10 +236,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'ClassPreloader\\' => 
         array (
             0 => __DIR__ . '/..' . '/classpreloader/classpreloader/src',
-        ),
-        'Carbon\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
         'App\\' => 
         array (
@@ -230,6 +245,10 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         array (
             0 => __DIR__ . '/..' . '/algolia/algoliasearch-laravel/src',
         ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/..' . '/nesbot/carbon/src',
     );
 
     public static $prefixesPsr0 = array (
@@ -308,10 +327,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
             array (
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src',
             ),
-            'JakubOnderka\\PhpConsoleColor' => 
-            array (
-                0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
-            ),
         ),
         'G' => 
         array (
@@ -337,10 +352,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
             array (
                 0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
             ),
-            'Doctrine\\Common\\Inflector\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
-            ),
             'Diff' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/php-diff/lib',
@@ -348,10 +359,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         ),
         'A' => 
         array (
-            'AlgoliaSearch\\Tests' => 
-            array (
-                0 => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/tests',
-            ),
             'AlgoliaSearch' => 
             array (
                 0 => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src',
@@ -903,6 +910,7 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitfd79ba062a0d8486d4e386102ea89232::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitfd79ba062a0d8486d4e386102ea89232::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInitfd79ba062a0d8486d4e386102ea89232::$fallbackDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitfd79ba062a0d8486d4e386102ea89232::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitfd79ba062a0d8486d4e386102ea89232::$classMap;
 

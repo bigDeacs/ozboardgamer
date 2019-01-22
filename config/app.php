@@ -204,8 +204,7 @@ return [
         'Html'      => 'Illuminate\Html\HtmlFacade',
         'Image'	 	=> 'Intervention\Image\Facades\Image',
         'Socialite' => 'Laravel\Socialite\Facades\Socialite',
-		'Feed'	   => 'Roumen\Feed\Feed',
-
+		'Feed'	    => 'Roumen\Feed\Feed',
 	],
 
 ];
