@@ -76,7 +76,6 @@
 			@endif
 		@endif										
   		<div class="row" itemscope itemtype="http://schema.org/ItemList">
-			<meta itemprop="url" content = "https://ozboardgamer.com/shop">
 			<meta itemprop="numberOfItems" content = "<?php echo count($products); ?>">
 			@foreach($products as $key => $product)
 				<div class="col-md-3 col-sm-4 col-xs-12 text-center" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
@@ -89,7 +88,6 @@
 								{{--<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $product->brand }}</strong></p>	--}}
 							{{--@endif						--}}
 						</div>
-						<meta itemprop="position" content="{{ $key }}">
 						<a href="{!! $product->link !!}" target="_blank" rel="nofollow" itemprop="url">
 							<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" itemprop="image" class="img-responsive" />
 						</a>
@@ -101,8 +99,10 @@
 								{{--<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->priceDisplay !!}</strong></p>--}}
 								{{--<p style="margin: 0;">&nbsp;</p>--}}
 							{{--@endif--}}
+							<p itemprop="description">{!! str_limit(strip_tags($product->description), $limit = 250, $end = '...') !!}</p>
 							<div class="row" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 								@if($product->price !== '' || $product->price !== null)
+									<meta itemprop="priceCurrency" content="AUD">
 									<div class="col-xs-12 col-md-6 text-left">
 										<p style="margin: 0;font-size: 20px;color: #db5566;" itemprop="price"><strong>${!! $product->price !!}</strong></p>
 										<p style="margin: 0;">&nbsp;</p>

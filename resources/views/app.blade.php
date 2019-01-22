@@ -41,7 +41,7 @@
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
-		"@type": "Website",
+		"@type": "WebSite",
 		"publisher": {
 			"@type": "Organization",
 			"name": "OzBoardGamer",
