@@ -80,7 +80,7 @@
 			@foreach($products as $key => $product)
 				<div class="col-md-3 col-sm-4 col-xs-12 text-center" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
 					<div class="thumbnail img-shadow" style="position: relative;">
-						<div style="position: absolute;right: 4px;bottom: 135px;">
+						<div style="position: absolute;right: 4px;top: 135px;">
 							<p class="blogHeading text-right"><strong><a href="{{ $product->link }}" target="_blank" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;" itemprop="name">{!! str_limit($product->name, 16) !!}</a></strong></p>
 							{{--@if($product->sale > 0)--}}
 								{{--<p class="blogHeadingSml text-right"><strong style="color:white;">Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</strong></p>	--}}
