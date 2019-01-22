@@ -82,14 +82,15 @@
 				<div class="col-md-3 col-sm-4 col-xs-12 text-center" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
 					<div class="thumbnail img-shadow" style="position: relative;">
 						<div style="position: absolute;right: 4px;bottom: 135px;">
-							<p class="blogHeading text-right"><strong><a href="{{ $product->link }}" target="_blank" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;">{!! str_limit($product->name, 16) !!}</a></strong></p>
+							<p class="blogHeading text-right"><strong><a href="{{ $product->link }}" target="_blank" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;" itemprop="name">{!! str_limit($product->name, 16) !!}</a></strong></p>
 							{{--@if($product->sale > 0)--}}
 								{{--<p class="blogHeadingSml text-right"><strong style="color:white;">Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</strong></p>	--}}
 							{{--@else--}}
 								{{--<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $product->brand }}</strong></p>	--}}
 							{{--@endif						--}}
 						</div>
-						<a href="{!! $product->link !!}" target="_blank" rel="nofollow">
+						<meta itemprop="position" content="{{ $key }}">
+						<a href="{!! $product->link !!}" target="_blank" rel="nofollow" itemprop="url">
 							<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" itemprop="image" class="img-responsive" />
 						</a>
 						<div class="caption text-center">
@@ -108,7 +109,7 @@
 									</div>
 								@endif
 								<div class="col-xs-12 col-md-6">
-									<a class="btn btn-hot text-uppercase" href="{!! $product->link !!}" target="_blank" rel="nofollow" itemprop="url"><span class="fa fa-arrow-circle-right"></span> Buy now</a>
+									<a class="btn btn-hot text-uppercase" href="{!! $product->link !!}" target="_blank" rel="nofollow"><span class="fa fa-arrow-circle-right"></span> Buy now</a>
 								</div>
 							</div>
 						</div>
