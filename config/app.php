@@ -151,7 +151,6 @@ return [
 		'Laravel\Socialite\SocialiteServiceProvider',
 		'Roumen\Sitemap\SitemapServiceProvider',
 		'Roumen\Feed\FeedServiceProvider',
-        'Maatwebsite\Excel\ExcelServiceProvider',
 
 	],
 
@@ -206,7 +205,6 @@ return [
         'Image'	 	=> 'Intervention\Image\Facades\Image',
         'Socialite' => 'Laravel\Socialite\Facades\Socialite',
 		'Feed'	    => 'Roumen\Feed\Feed',
-        'Excel'     => 'Maatwebsite\Excel\Facades\Excel',
 	],
 
 ];

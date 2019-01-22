@@ -13,9 +13,9 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         '9f7f3f9b1f82484e76bcd07b985a2d2f' => __DIR__ . '/..' . '/symfony/var-dumper/Symfony/Component/VarDumper/Resources/functions/dump.php',
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         'e40631d46120a9c38ea139981f8dab26' => __DIR__ . '/..' . '/ircmaxell/password-compat/lib/password.php',
-        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '65fec9ebcfbb3cbb4fd0d519687aea01' => __DIR__ . '/..' . '/danielstjules/stringy/src/Create.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
@@ -41,10 +41,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         array (
             'Vinkla\\Algolia\\' => 15,
         ),
-        'T' => 
-        array (
-            'TijsVerkoyen\\CssToInlineStyles\\' => 31,
-        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Util\\' => 22,
@@ -53,7 +49,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
-            'Symfony\\Component\\CssSelector\\' => 30,
             'SuperClosure\\' => 13,
             'Stringy\\' => 8,
         ),
@@ -130,10 +125,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         array (
             0 => __DIR__ . '/..' . '/vinkla/algolia/src',
         ),
-        'TijsVerkoyen\\CssToInlineStyles\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src',
-        ),
         'Symfony\\Polyfill\\Util\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-util',
@@ -157,10 +148,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'Symfony\\Component\\EventDispatcher\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
-        ),
-        'Symfony\\Component\\CssSelector\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/css-selector',
         ),
         'SuperClosure\\' => 
         array (
@@ -333,17 +320,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
             array (
                 0 => __DIR__ . '/..' . '/phpspec/phpspec/src',
             ),
-            'PHPExcel' => 
-            array (
-                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
-            ),
-        ),
-        'M' => 
-        array (
-            'Maatwebsite\\Excel\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/maatwebsite/excel/src',
-            ),
         ),
         'J' => 
         array (
@@ -481,34 +457,6 @@ class ComposerStaticInitfd79ba062a0d8486d4e386102ea89232
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
         'FixWidgetToStores' => __DIR__ . '/../..' . '/database/migrations/2016_11_18_150511_fix_widget_to_stores.php',
         'IlluminateQueueClosure' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
-        'Maatwebsite\\Excel\\Classes\\Cache' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/Cache.php',
-        'Maatwebsite\\Excel\\Classes\\FormatIdentifier' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/FormatIdentifier.php',
-        'Maatwebsite\\Excel\\Classes\\LaravelExcelWorksheet' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/LaravelExcelWorksheet.php',
-        'Maatwebsite\\Excel\\Classes\\PHPExcel' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Classes/PHPExcel.php',
-        'Maatwebsite\\Excel\\Collections\\CellCollection' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Collections/CellCollection.php',
-        'Maatwebsite\\Excel\\Collections\\ExcelCollection' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Collections/ExcelCollection.php',
-        'Maatwebsite\\Excel\\Collections\\RowCollection' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Collections/RowCollection.php',
-        'Maatwebsite\\Excel\\Collections\\SheetCollection' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Collections/SheetCollection.php',
-        'Maatwebsite\\Excel\\Excel' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Excel.php',
-        'Maatwebsite\\Excel\\ExcelServiceProvider' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/ExcelServiceProvider.php',
-        'Maatwebsite\\Excel\\Exceptions\\LaravelExcelException' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Exceptions/LaravelExcelException.php',
-        'Maatwebsite\\Excel\\Facades\\Excel' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Facades/Excel.php',
-        'Maatwebsite\\Excel\\Files\\ExcelFile' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/ExcelFile.php',
-        'Maatwebsite\\Excel\\Files\\ExportHandler' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/ExportHandler.php',
-        'Maatwebsite\\Excel\\Files\\File' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/File.php',
-        'Maatwebsite\\Excel\\Files\\ImportHandler' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/ImportHandler.php',
-        'Maatwebsite\\Excel\\Files\\NewExcelFile' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Files/NewExcelFile.php',
-        'Maatwebsite\\Excel\\Filters\\ChunkReadFilter' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Filters/ChunkReadFilter.php',
-        'Maatwebsite\\Excel\\Parsers\\CssParser' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Parsers/CssParser.php',
-        'Maatwebsite\\Excel\\Parsers\\ExcelParser' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Parsers/ExcelParser.php',
-        'Maatwebsite\\Excel\\Parsers\\ViewParser' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Parsers/ViewParser.php',
-        'Maatwebsite\\Excel\\Readers\\Batch' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/Batch.php',
-        'Maatwebsite\\Excel\\Readers\\ChunkedReadJob' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/ChunkedReadJob.php',
-        'Maatwebsite\\Excel\\Readers\\ConfigReader' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/ConfigReader.php',
-        'Maatwebsite\\Excel\\Readers\\Html' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/HtmlReader.php',
-        'Maatwebsite\\Excel\\Readers\\LaravelExcelReader' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Readers/LaravelExcelReader.php',
-        'Maatwebsite\\Excel\\Writers\\CellWriter' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Writers/CellWriter.php',
-        'Maatwebsite\\Excel\\Writers\\LaravelExcelWriter' => __DIR__ . '/..' . '/maatwebsite/excel/src/Maatwebsite/Excel/Writers/LaravelExcelWriter.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
         'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',

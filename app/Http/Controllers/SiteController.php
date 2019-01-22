@@ -693,29 +693,21 @@ class SiteController extends Controller {
 
         public function productfeed()
         {
-                Excel::create('products', function($excel) {
-                    $excel->sheet('products', function($sheet) {
-                        $products = Game::where('status', '=', '1')->where('link', '!=', '')->orderBy('rating', 'desc')->take(50)->get();
-                        foreach ($products as $post)
-                        {
-                            $sheetData[] = array(
-                                $post->id,
-                                $post->name,
-                                $post->description,
-                                "in stock",
-                                "new",
-                                $post->price,
-                                $post->link,
-                                $post->thumb1x,
-                                $post->publishers()->first()
-                            );
-                        }
-                        $sheet->fromArray(array(
-                            $sheetData
-                        ));
-                    });
-
-                })->download('csv');
+//                        $products = Game::where('status', '=', '1')->where('link', '!=', '')->orderBy('rating', 'desc')->take(50)->get();
+//                        foreach ($products as $post)
+//                        {
+//                            $sheetData[] = array(
+//                                $post->id,
+//                                $post->name,
+//                                $post->description,
+//                                "in stock",
+//                                "new",
+//                                $post->price,
+//                                $post->link,
+//                                $post->thumb1x,
+//                                $post->publishers()->first()
+//                            );
+//                        }
         }
 
 	/**
