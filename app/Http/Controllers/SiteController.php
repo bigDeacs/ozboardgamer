@@ -690,26 +690,6 @@ class SiteController extends Controller {
 			// to return your feed as a string set second param to -1
 			// $xml = $feed->render('atom', -1);
 		}
-
-        public function productfeed()
-        {
-//                        $products = Game::where('status', '=', '1')->where('link', '!=', '')->orderBy('rating', 'desc')->take(50)->get();
-//                        foreach ($products as $post)
-//                        {
-//                            $sheetData[] = array(
-//                                $post->id,
-//                                $post->name,
-//                                $post->description,
-//                                "in stock",
-//                                "new",
-//                                $post->price,
-//                                $post->link,
-//                                $post->thumb1x,
-//                                $post->publishers()->first()
-//                            );
-//                        }
-        }
-
 	/**
 	 * Show the application welcome screen to the user.
 	 *
