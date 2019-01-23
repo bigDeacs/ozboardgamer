@@ -1210,13 +1210,9 @@ class SiteController extends Controller {
 			if($slug == null) {
 				if(Request::has('sort'))
 				{
-                    $pieces = explode("-", Request::input('sort'));
-				    if(Request::input('sort') == 'price') {
-                        $sort = int($pieces[0]);
-                    } else {
-                        $sort = $pieces[0];
-                    }
-                    $direction = $pieces[1];
+					$pieces = explode("-", Request::input('sort'));
+					$sort = $pieces[0];
+					$direction = $pieces[1];
 				} else {
 					$sort = 'rating';
 					$direction = 'desc';
