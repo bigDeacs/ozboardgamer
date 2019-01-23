@@ -28,8 +28,8 @@
 		      	<form id="sortForm">
 		      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
 		      		<select class="form-control" onchange="sortProducts()" name="sort" id="sort">
-							<option value="rating-desc" {{ (Request::input('sort') == 'savings-desc') ? 'selected' : "" }}>Rating Desc</option>
-							<option value="rating-asc" {{ (Request::input('sort') == 'name-asc') ? 'selected' : "" }}>Rating ASC</option>
+							<option value="rating-desc" {{ (Request::input('sort') == 'rating-desc') ? 'selected' : "" }}>Rating Desc</option>
+							<option value="rating-asc" {{ (Request::input('sort') == 'rating-asc') ? 'selected' : "" }}>Rating ASC</option>
 							<option value="name-asc" {{ (Request::input('sort') == 'name-desc') ? 'selected' : "" }}>Name ASC</option>
 					  		<option value="name-desc" {{ (Request::input('sort') == 'name-desc') ? 'selected' : "" }}>Name DESC</option>
 						  	<option value="price-asc" {{ (Request::input('sort') == 'price-asc') ? 'selected' : "" }}>Price ASC</option>
@@ -42,12 +42,6 @@
 				    }
 				</script>
       		</div>
-      		<div class="col-sm-4 col-xs-12">
-				<span>Search for product: </span>
-				  <form id="search" action="#" method="post" style="width: 100%;margin: 5px 0;" onsubmit="return false;">
-					  <input type="text" name="search-products" id="search-products" class="form-control" placeholder="Find products..." style="top: -5px;">
-				  </form>
-            </div>
     	</div>
 		@if(Session::has('name'))
 			@if(!empty($data['offers']))
