@@ -378,6 +378,7 @@
 						<div class="text-center lead" itemscope itemtype="http://schema.org/Rating">
 							<meta itemprop="worstRating" content = "0">
 							<strong><span itemprop="ratingValue">{{ number_format((float)$game->rating, 1, '.', '') }}</span>/<span itemprop="bestRating">10</span></strong>
+							<small>Based on {{ $votes }} votes.</small>
 						</div>
 						<hr />						
 					</div>

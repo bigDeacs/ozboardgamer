@@ -744,6 +744,13 @@ class SiteController extends Controller {
 			return view('type', compact('type','games'));
 		} else {
 			$game = Game::where('status', '=', '1')->with('mechanics')->where('slug', '=', $slug)->firstOrFail();
+            $users = $game->users()->wherePivot('type', 'rating')->get();
+            $votes = 0;
+            foreach($users as $user) {
+                if($user->pivot->rating !== null) {
+                    $votes++;
+                }
+            }
 			$posts = Post::where('status', '=', '1')->where('video', '!=', '')->whereHas('games', function($q) use($slug)
 			{
 			    $q->where('slug', '=', $slug);
@@ -754,7 +761,7 @@ class SiteController extends Controller {
 					$q->orWhere('name', '=', $mechanic->name);
 			    }
 			})->orderByRaw("RAND()")->take(4)->get();
-			return view('game', compact('game', 'posts', 'related'));
+			return view('game', compact('game', 'posts', 'related', 'votes'));
 		}
 	}
 
