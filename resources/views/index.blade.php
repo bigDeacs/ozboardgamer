@@ -72,7 +72,7 @@
 		<div class="row hidden-xs" style="border-bottom: 1px solid #DDD;">
 			<div class="col-xs-12 text-center">
 				<h1 style="margin-top: 10px;">Board Games News, Reviews, Top 10s and More</h1>		
-				<h2>Helping you find your next favourite game!<h2>
+				<h2>Helping gamers find their next favourite game!<h2>
 			</div>
 		</div>   
         @unless($games->isEmpty())
@@ -111,6 +111,7 @@
 			<div class="row">
 				<div class="col-xs-12">    
 					<h4>Latest Board Game Reviews</h4>
+					<p>Take a look at our collection reviews of new and old games!</p>
 					@foreach($reviews as $review)
 						<div itemscope itemtype="http://schema.org/Game">
 							<meta itemprop="name" content = "{{ $review->games()->first()->name }}">
@@ -198,6 +199,7 @@
 			<div class="row">
 				<div class="col-xs-12">    
 					<h4>Latest Board Game Top 10's</h4>
+					<p>Everyone loves a good top 10, check out our favourite lists!</p>
 					@foreach($top10s as $top10)
 						<div class="col-xs-12 col-sm-4 post" style="margin-bottom: 15px;">				
 							<div class="row">
@@ -280,7 +282,8 @@
 		@unless($blogs->isEmpty())
 			<div class="row">
 				<div class="col-xs-12">    
-					<h4>Latest Board Game Blogs</h4>					
+					<h4>Latest Board Game Blogs &amp; News</h4>
+					<p>We are always adding the latest news &amp; blogs from accross the web.</p>
 					@foreach($blogs as $blog)
 						<div class="col-xs-12 col-sm-4 post" style="margin-bottom: 15px;">				
 							<div class="row">
