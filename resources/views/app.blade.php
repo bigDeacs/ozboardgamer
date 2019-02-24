@@ -83,6 +83,14 @@
 	})(window,document.documentElement,'async-hide','dataLayer',4000,
 	{'GTM-THQLSV':true});</script>
 	<!-- End Hiding Script -->
+
+	  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	  <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-5206537313688631",
+              enable_page_level_ads: true
+          });
+	  </script>
   </head>
   <body>	
 	<div id="wrap">
