@@ -122,11 +122,9 @@
 								<div class="col-12 col-lg-6 px-3">
 									<div class="row no-gutters">
 							@endif
-								@if($key == 1 || $key = 2)
+								@unless($key == 0)
 									<div class="col-6 pb-4 px-4">
-								@elseif($key == 3 || $key = 4)
-									<div class="col-6 pt-4 px-4">
-								@endif
+								@endunless
 										<div class="card border-0 rounded-0 text-white overflow zoom" itemscope itemtype="http://schema.org/Game">
 											<!--thumbnail-->
 											<div class="position-relative">
