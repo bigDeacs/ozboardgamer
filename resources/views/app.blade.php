@@ -97,13 +97,14 @@
 	<div id="wrap">
 		<!-- Navigation -->
 		<nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
-			<a class="navbar-brand" href="/" title="Click to go to home page">
-				<img src="https://img.ozboardgamer.com/img/logo.png" class="img-fluid" height="95" width="auto" alt="OzBoardGamer Logo" />
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarCollapse">
+			<div class="container">
+				<a class="navbar-brand" href="/" title="Click to go to home page">
+					<img src="https://img.ozboardgamer.com/img/logo.png" class="img-fluid" height="95" width="auto" alt="OzBoardGamer Logo" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
@@ -174,6 +175,7 @@
 					</li>
 					<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
 				</ul>
+			</div>
 			</div>
 		</nav>
 		
