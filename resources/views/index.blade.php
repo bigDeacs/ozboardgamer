@@ -117,13 +117,13 @@
 						@foreach($reviews as $key => $review)
 							<meta itemprop="name" content = "{{ $review->games()->first()->name }}">
 							@if ($key == 0)
-								<div class="col-12 col-lg-6">
+								<div class="col-12 col-lg-6 px-3">
 							@elseif ($key == 1)
-								<div class="col-12 col-lg-6">
+								<div class="col-12 col-lg-6 px-3">
 									<div class="row no-gutters">
 							@endif
 								@unless($key == 0)
-									<div class="col-6 pb-1 pt-0 pr-1">
+									<div class="col-6 pb-3 px-2">
 								@endunless
 										<div class="card border-0 rounded-0 text-white overflow zoom" itemscope itemtype="http://schema.org/Game">
 											<!--thumbnail-->
