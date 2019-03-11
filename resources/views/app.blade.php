@@ -96,7 +96,88 @@
   <body>	
 	<div id="wrap">
 		<!-- Navigation -->
-		<nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation">
+		<nav class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
+			<a class="navbar-brand" href="/" title="Click to go to home page">
+				<img src="https://img.ozboardgamer.com/img/logo.png" class="img-fluid" height="95" width="auto" alt="OzBoardGamer Logo" />
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+
+							<li class="text-center"><a href="/games">Games Types</a></li>
+							<li class="text-center"><a href="/mechanics">Game Mechanics</a></li>
+							<li class="text-center"><a href="/publishers">Game Publishers</a></li>
+							<li class="text-center"><a href="/designers">Game Designers</a></li>
+							<li class="text-center"><a href="/themes">Game Themes</a></li>
+							<li class="text-center"><a href="/families">Game Families</a></li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Game Articles <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class="text-center"><a href="/reviews">Reviews</a></li>
+							<li class="text-center"><a href="/top10s">Top 10's</a></li>
+							<li class="text-center"><a href="/howtos">How To's</a></li>
+							<li class="text-center"><a href="/news">News</a></li>
+							<li class="text-center"><a href="/blogs">Blog</a></li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown hidden-sm">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Buy Games <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li class="text-center"><a href="/shop">Buy Online</a></li>
+							<li class="text-center"><a href="/stores">Find a Store</a></i></li>
+						</ul>
+					</li>
+					<li class="text-center hidden-sm"><a href="/quizzes">Quizzes</a></li>
+					<li class="nav-item dropdown">
+						@if(Session::has('name'))
+							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<div class="row" style="min-width: 300px;">
+									<div class="hidden-xs col-sm-4 text-center">
+										<img src="{!! Session::get('thumb') !!}" class="img-responsive" style="margin: 5px 10px;"/>
+									</div>
+									<div class="col-xs-12 col-sm-8 text-center">
+										<span class="hidden-xs">{{ Session::get('name') }}</span>
+										<p class="hidden-xs"><small>{{ Session::get('email') }}</small></p>
+										<a href="/users/{{ Session::get('slug') }}?page=1" class="btn btn-ocean text-uppercase"><i class="fa fa-user"></i> View Profile</a></li>
+									</div>
+								</div>
+								<div class="row" style="background: #222222;color: #9d9d9d;margin: 10px auto 0;">
+									<div class="col-xs-6 hidden-xs text-center">
+										<a href="/contact" class="btn btn-sunny text-uppercase" style="margin: 10px;"><i class="fa fa-question-circle" aria-hidden="true"></i> Trouble?</a></li>
+									</div>
+									<div class="col-xs-12 col-sm-6 text-center">
+										<a href="/logout" class="btn btn-hot text-uppercase" style="margin: 10px;"><i class="fa fa-sign-out"></i> Logout</a></li>
+									</div>
+								</div>
+							</ul>
+						@else
+							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Signup <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li class="text-center"><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
+								<li class="text-center"><a href="/signup"><i class="fa fa-user-plus"></i> Signup</a></li>
+								<div class="row" style="background: #222222;color: #9d9d9d;margin: 10px auto 0;padding: 5px 0;">
+									<li class="text-center col-xs-12">Login Using:</li>
+									<li class="text-center col-xs-4"><a href="/facebook" title="Login/Signup using Facebook"><i class="fa fa-facebook-official fa-2x"></i></a></li>
+									<li class="text-center col-xs-4"><a href="/google" title="Login/Signup using Google"><i class="fa fa-google-plus-official fa-2x"></i></a></li>
+									<li class="text-center col-xs-4"><a href="/twitter" title="Login/Signup using Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
+								</div>
+							</ul>
+						@endif
+					</li>
+					<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
+				</ul>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-inverse navbar-fixed-top topnav" role="navigation" style="display: none;">
 			<div class="container topnav">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
@@ -118,7 +199,7 @@
 								<li class="dropdown">
 								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games <span class="caret"></span></a>
 								  <ul class="dropdown-menu">
-									
+
 									<li class="text-center"><a href="/games">Games Types</a></li>
 									<li class="text-center"><a href="/mechanics">Game Mechanics</a></li>
 									<li class="text-center"><a href="/publishers">Game Publishers</a></li>
@@ -136,7 +217,7 @@
 									<li class="text-center"><a href="/news">News</a></li>
 									<li class="text-center"><a href="/blogs">Blog</a></li>
 								  </ul>
-								</li>								
+								</li>
 								<li class="dropdown hidden-sm">
 								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Buy Games <span class="caret"></span></a>
 								  <ul class="dropdown-menu">
@@ -150,25 +231,25 @@
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											 <div class="row" style="min-width: 300px;">
-												<div class="hidden-xs col-sm-4 text-center">												
+												<div class="hidden-xs col-sm-4 text-center">
 													<img src="{!! Session::get('thumb') !!}" class="img-responsive" style="margin: 5px 10px;"/>
 												</div>
 												<div class="col-xs-12 col-sm-8 text-center">
 													<span class="hidden-xs">{{ Session::get('name') }}</span>
 													<p class="hidden-xs"><small>{{ Session::get('email') }}</small></p>
-													<a href="/users/{{ Session::get('slug') }}?page=1" class="btn btn-ocean text-uppercase"><i class="fa fa-user"></i> View Profile</a></li>												
+													<a href="/users/{{ Session::get('slug') }}?page=1" class="btn btn-ocean text-uppercase"><i class="fa fa-user"></i> View Profile</a></li>
 												</div>
 											 </div>
 											<div class="row" style="background: #222222;color: #9d9d9d;margin: 10px auto 0;">
 												<div class="col-xs-6 hidden-xs text-center">
-													<a href="/contact" class="btn btn-sunny text-uppercase" style="margin: 10px;"><i class="fa fa-question-circle" aria-hidden="true"></i> Trouble?</a></li>    
+													<a href="/contact" class="btn btn-sunny text-uppercase" style="margin: 10px;"><i class="fa fa-question-circle" aria-hidden="true"></i> Trouble?</a></li>
 												</div>
 												<div class="col-xs-12 col-sm-6 text-center">
-													<a href="/logout" class="btn btn-hot text-uppercase" style="margin: 10px;"><i class="fa fa-sign-out"></i> Logout</a></li>    
+													<a href="/logout" class="btn btn-hot text-uppercase" style="margin: 10px;"><i class="fa fa-sign-out"></i> Logout</a></li>
 												</div>
 											</div>
 										</ul>
-									@else									
+									@else
 										 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login/Signup <span class="caret"></span></a>
 										 <ul class="dropdown-menu">
 											<li class="text-center"><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
@@ -179,9 +260,9 @@
 												<li class="text-center col-xs-4"><a href="/google" title="Login/Signup using Google"><i class="fa fa-google-plus-official fa-2x"></i></a></li>
 												<li class="text-center col-xs-4"><a href="/twitter" title="Login/Signup using Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
 											</div>
-										 </ul>									
+										 </ul>
 									@endif
-								</li> 
+								</li>
 								<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
 							</ul>
 						</div>
