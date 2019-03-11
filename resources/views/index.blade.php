@@ -141,7 +141,7 @@
 												<!--title-->
 												<div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
 													<!-- category -->
-													<a class="p-1 badge badge-primary rounded-0" href="/reviews">Review</a>
+													<a class="p-2 badge badge-success rounded-0" href="/reviews">Review</a>
 
 													<!--title and description-->
 													<a href="/reviews/{{ $review->slug }}">
