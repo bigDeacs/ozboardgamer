@@ -131,10 +131,16 @@
 												<!--thumbnail img-->
 												<div class="ratio_right-cover-2 image-wrapper">
 													<a href="/reviews/{{ $review->slug }}" title="{{ $review->name }}">
-														<img src="https://ozboardgamer.com{{ $review->games()->first()->image }}"
-															 srcset="https://ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://ozboardgamer.com{{ $review->games()->first()->thumb2x }} 1.5x, https://ozboardgamer.com{{ $review->games()->first()->image }} 2x"
-															 alt="{{ $review->games()->first()->name }}"
-															 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+														@if ($key == 0)
+															<img src="https://ozboardgamer.com{{ $review->games()->first()->image }}"
+																 alt="{{ $review->games()->first()->name }}"
+																 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+														@else
+															<img src="https://ozboardgamer.com{{ $review->games()->first()->image }}"
+																 srcset="https://ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://ozboardgamer.com{{ $review->games()->first()->thumb2x }} 1.5x, https://ozboardgamer.com{{ $review->games()->first()->image }} 2x"
+																 alt="{{ $review->games()->first()->name }}"
+																 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+														@endif
 													</a>
 												</div>
 
