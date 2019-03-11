@@ -112,15 +112,15 @@
 				<div class="col-12">
 					<h4>Latest Board Game Reviews</h4>
 					<p>Take a look at our collection reviews of new and old games!</p>
-					@foreach($reviews as $review)
+					@foreach($reviews as $key => $review)
 						<div class="row">
-							@if ($loop->first || $loop->index == 1)
+							@if ($key == 0)
 								<div class="col-12 col-lg-6">
-							@elseif ($loop->index == 1)
+							@elseif ($key == 1)
 								<div class="col-12 col-lg-6">
 									<div class="row">
 							@endif
-								@unless($loop->first)
+								@unless($key == 0)
 									<div class="col-6 pb-1 pt-0 pr-1">
 								@endunless
 										<div class="card border-0 rounded-0 text-white overflow zoom" itemscope itemtype="http://schema.org/Game">
@@ -147,12 +147,12 @@
 											</div>
 											<!--end thumbnail-->
 										</div>
-								@unless($loop->first)
+								@unless($key == 0)
 									</div>
 								@endunless
-							@if ($loop->first)
+							@if ($key == 0)
 								</div>
-							@elseif ($loop->index == 1)
+							@elseif ($key == 1)
 									</div>
 								</div>
 							@endif
