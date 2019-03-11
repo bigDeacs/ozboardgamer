@@ -105,7 +105,7 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
-				<ul class="navbar-nav mr-auto">
+				<ul class="navbar-nav mr-auto float-right">
 					<li class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games</a>
 						<ul class="dropdown-menu">
@@ -132,10 +132,9 @@
 						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Buy Games</a>
 						<ul class="dropdown-menu">
 							<li class="text-center"><a href="/shop">Buy Online</a></li>
-							<li class="text-center"><a href="/stores">Find a Store</a></i></li>
+							<li class="text-center"><a href="/stores">Find a Store</a></li>
 						</ul>
 					</li>
-					<li class="text-center hidden-sm"><a href="/quizzes">Quizzes</a></li>
 					<li class="nav-item dropdown">
 						@if(Session::has('name'))
 							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
@@ -173,7 +172,7 @@
 							</ul>
 						@endif
 					</li>
-					<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
+					<li><a type="button" data-toggle="modal" data-target="#searchWrapper" style="-webkit-appearance: none;padding: 10px 10px;cursor: pointer;" title="Search Games"><i class="fa fa-search" aria-hidden="true" style="color: #008751;font-size: 20px;"></i></a></li>
 				</ul>
 			</div>
 			</div>
