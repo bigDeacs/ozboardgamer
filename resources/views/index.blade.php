@@ -163,8 +163,8 @@
 							@endif
 						@endforeach
 					</div>
-					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
-						<a href="/reviews" class="btn btn-sm btn-outline-success"><span class="fa fa-arrow-circle-right"></span> View More Board Game Reviews</a>
+					<p class="text-center my-4" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
+						<a href="/reviews" class="btn btn-outline-success"><span class="fa fa-arrow-circle-right"></span> View More Board Game Reviews</a>
 					</p>
 				</div>
 			</div>
