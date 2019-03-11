@@ -164,7 +164,7 @@
 						@endforeach
 					</div>
 					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
-						<a href="/reviews" class="btn btn-sm btn-fresh"><span class="fa fa-arrow-circle-right"></span> View More Board Game Reviews</a>
+						<a href="/reviews" class="btn btn-sm btn-outline-success"><span class="fa fa-arrow-circle-right"></span> View More Board Game Reviews</a>
 					</p>
 				</div>
 			</div>
