@@ -112,7 +112,7 @@
 				<div class="col-12">
 					<h4>Latest Board Game Reviews</h4>
 					<p>Take a look at our collection reviews of new and old games!</p>
-					<div class="row">
+					<div class="row no-gutters">
 						<?php $count = count($reviews); ?>
 						@foreach($reviews as $key => $review)
 							<meta itemprop="name" content = "{{ $review->games()->first()->name }}">
@@ -120,7 +120,7 @@
 								<div class="col-12 col-lg-6">
 							@elseif ($key == 1)
 								<div class="col-12 col-lg-6">
-									<div class="row">
+									<div class="row no-gutters">
 							@endif
 								@unless($key == 0)
 									<div class="col-6 pb-1 pt-0 pr-1">
