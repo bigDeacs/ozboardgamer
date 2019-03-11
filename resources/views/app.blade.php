@@ -245,7 +245,7 @@
         $('.navbar [data-toggle="dropdown"]').bootstrapDropdownHover({
           // see next for specifications
         });
-    </script>    
+    </script>
 	@if(Session::has('name') || Request::is('login') || Request::is('signup'))
 		<script>
 			$(document).ready(function(){
