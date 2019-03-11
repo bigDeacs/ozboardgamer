@@ -113,19 +113,18 @@
 					<h4>Latest Board Game Reviews</h4>
 					<p>Take a look at our collection reviews of new and old games!</p>
 					<div class="row no-gutters">
+						<?php $count = count($reviews); ?>
 						@foreach($reviews as $key => $review)
 							<meta itemprop="name" content = "{{ $review->games()->first()->name }}">
 							@if ($key == 0)
-								<div class="col-12 col-lg-6 px-2 pr-4">
+								<div class="col-12 col-lg-6 p-0">
 							@elseif ($key == 1)
-								<div class="col-12 col-lg-6 px-3">
+								<div class="col-12 col-lg-6 px-4">
 									<div class="row no-gutters">
 							@endif
-								@if ($key == 1 || $key == 2)
-									<div class="col-6 pb-4 px-4">
-								@elseif ($key == 3 || $key == 4)
-									<div class="col-6 pt-4 px-4">
-								@endif
+								@unless($key == 0)
+									<div class="col-6 pb-4 p-0">
+								@endunless
 										<div class="card border-0 rounded-0 text-white overflow zoom" itemscope itemtype="http://schema.org/Game">
 											<!--thumbnail-->
 											<div class="position-relative">
@@ -153,12 +152,12 @@
 											</div>
 											<!--end thumbnail-->
 										</div>
-								@if($key == 1 || $key == 2 || $key == 3 || $key == 4)
+								@unless($key == 0)
 									</div>
-								@endif
+								@endunless
 							@if ($key == 0)
 								</div>
-							@elseif ($key == 4)
+							@elseif ($key == $count-1)
 									</div>
 								</div>
 							@endif
