@@ -202,14 +202,26 @@
 																<div class="ratio_right-cover-2 image-wrapper">
 																	<a href="/top10s/{{ $top10->slug }}" title="{{ $top10->name }}">
 																		@if ($key == 0)
-																			<img src="https://ozboardgamer.com{{ $top10->games()->first()->image }}"
-																				 alt="{{ $top10->games()->first()->name }}"
-																				 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@if($top10->hasGames())
+																				<img src="https://ozboardgamer.com{{ $top10->games()->first()->image }}"
+																					 alt="{{ $top10->games()->first()->name }}"
+																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@else
+																				<img src="https://ozboardgamer.com{{ $top10->image }}"
+																					 alt="{{ $top10->name }}"
+																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@endif
 																		@else
-																			<img src="https://ozboardgamer.com{{ $top10->games()->first()->image }}"
-																				 srcset="https://ozboardgamer.com{{ $top10->games()->first()->thumb1x }} 1x, https://ozboardgamer.com{{ $top10->games()->first()->thumb2x }} 1.5x, https://ozboardgamer.com{{ $top10->games()->first()->image }} 2x"
-																				 alt="{{ $top10->games()->first()->name }}"
-																				 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@if($top10->hasGames())
+																				<img src="https://ozboardgamer.com{{ $top10->games()->first()->image }}"
+																					 srcset="https://ozboardgamer.com{{ $top10->games()->first()->thumb1x }} 1x, https://ozboardgamer.com{{ $top10->games()->first()->thumb2x }} 1.5x, https://ozboardgamer.com{{ $top10->games()->first()->image }} 2x"
+																					 alt="{{ $top10->games()->first()->name }}"
+																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@else
+																				<img src="https://ozboardgamer.com{{ $top10->image }}"
+																					 alt="{{ $top10->name }}"
+																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@endif
 																		@endif
 																	</a>
 																</div>
