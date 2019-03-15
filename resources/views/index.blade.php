@@ -107,7 +107,6 @@
 				</div>
 			</div>        
         @endunless
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- Banner Ads -->
 		<ins class="adsbygoogle"
 			 style="display:inline-block;width:970px;height:90px"
@@ -337,7 +336,15 @@
 					</p>
 				</div>
 			</div>
-		@endunless	
+		@endunless
+		<!-- Banner Ads -->
+		<ins class="adsbygoogle"
+			 style="display:inline-block;width:970px;height:90px"
+			 data-ad-client="ca-pub-5206537313688631"
+			 data-ad-slot="2666536845"></ins>
+		<script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
 		@unless($products->isEmpty())
 			<div class="row hidden-xs">
 				<div class="col-xs-12">

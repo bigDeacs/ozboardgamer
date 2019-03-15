@@ -96,7 +96,9 @@
 						<div class="col-sm-9 col-xs-12">
 					  @endif					
 						<div class="panel panel-success" style="padding: 0 10px;" id="parent">
-							<h1 itemprop="name">{{ $post->name }}</h1>
+							<meta itemprop="name" content ="{!! $post->name !!} Review">
+							<meta itemprop="author" content ="{!! $post->user->name !!}">
+							<h1>{{ $post->name }}</h1>
 							<div class="row">
 								<div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
 									<span class="glyphicon glyphicon-calendar"></span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
@@ -209,38 +211,41 @@
 								<h3>You might also like:</h3>
 								@foreach($posts as $review)
 									<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
-										<div class="row">
-											<div class="col-xs-12" style="overflow: hidden;height: 175px;">
-												<div style="position: absolute;right: 15px;bottom: 0;">
-													<p class="blogHeading text-right">
-														<strong>														
-																<a href="/reviews/{{ $review->slug }}" class="post-title" itemprop="name" title="{{ $review->name }}" style="color:white;">
-																	{{ $review->name }}
-																</a>
-														</strong>
-													</p>
-														<p class="blogHeadingSml text-right">
-															<strong style="color:white;">													
-																Review											
+										<meta itemprop="name" content ="{!! $review->name !!} Review">
+										<div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
+											<div class="row">
+												<div class="col-xs-12" style="overflow: hidden;height: 175px;">
+													<div style="position: absolute;right: 15px;bottom: 0;">
+														<p class="blogHeading text-right">
+															<strong>
+																	<a href="/reviews/{{ $review->slug }}" class="post-title" title="{{ $review->name }}" style="color:white;">
+																		<span itemprop="name">{{ $review->name }}</span>
+																	</a>
 															</strong>
-														</p>									
+														</p>
+															<p class="blogHeadingSml text-right">
+																<strong style="color:white;">
+																	Review
+																</strong>
+															</p>
+													</div>
+														<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
+															<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
+														</a>
 												</div>
-													<a href="/reviews/{{ $review->slug }}" title="{{ $review->games()->first()->name }}">
-														<img src="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $review->games()->first()->thumb1x }} 1x, https://img.ozboardgamer.com{{ $review->games()->first()->thumb2x }} 2x" alt="{{ $review->games()->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
-													</a>																										
 											</div>
-										</div>							
-										<div class="row">
-											<div class="col-sm-12 post-header-line">
-												<meta itemprop="author" content ="{!! $review->user->name !!}">
-												<span class="glyphicon glyphicon-calendar"></span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread" data-disqus-identifier="{{ camel_case($review->name) }}"></a>                               											
+											<div class="row">
+												<div class="col-sm-12 post-header-line">
+													<meta itemprop="author" content ="{!! $review->user->name !!}">
+													<span class="glyphicon glyphicon-calendar"></span><span itemprop="datePublished">{!! date('F d, Y', strtotime($review->published_at)) !!}</span> | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/reviews/{{ $review->slug }}#disqus_thread" data-disqus-identifier="{{ camel_case($review->name) }}"></a>
+												</div>
 											</div>
-										</div>
-										<div class="row post-content">
-											<div class="col-xs-12">
-												<p itemprop="description">
-														<a class="btn btn-hot text-uppercase pull-right btn-block" href="/reviews/{{ $review->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
-												</p>
+											<div class="row post-content">
+												<div class="col-xs-12">
+													<p itemprop="description">
+															<a class="btn btn-hot text-uppercase pull-right btn-block" href="/reviews/{{ $review->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>
+													</p>
+												</div>
 											</div>
 										</div>
 									</div>
