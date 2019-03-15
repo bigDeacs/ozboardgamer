@@ -246,7 +246,7 @@
 					</p>
 				</div>
 			</div>
-		@endunless	
+		@endunless
 		@unless($blogs->isEmpty())
 			<div class="row">
 				<div class="col-12">
@@ -255,7 +255,7 @@
 					<div class="row no-gutters">
                         <?php $count = count($blogs); ?>
 						@foreach($blogs as $key => $blog)
-							<meta itemprop="name" content = "{{ $blogs->name }}">
+							<meta itemprop="name" content = "{{ $blog->name }}">
 							@if ($key == 0)
 								<div class="col-12 col-lg-6 p-0">
 									@elseif ($key == 1)
