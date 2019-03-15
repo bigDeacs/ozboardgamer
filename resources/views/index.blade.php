@@ -277,7 +277,7 @@
 																					 alt="{{ $blog->games()->first()->name }}"
 																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
 																			@else
-																				<img src="https://ozboardgamer.com{{ $blog->image }}"
+																				<img src="https://ozboardgamer.com{{ $blog->thumb }}"
 																					 alt="{{ $blog->name }}"
 																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
 																			@endif
@@ -288,7 +288,7 @@
 																					 alt="{{ $blog->games()->first()->name }}"
 																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
 																			@else
-																				<img src="https://ozboardgamer.com{{ $blog->image }}"
+																				<img src="https://ozboardgamer.com{{ $blog->thumb }}"
 																					 alt="{{ $blog->name }}"
 																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
 																			@endif
