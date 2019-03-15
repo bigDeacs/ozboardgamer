@@ -246,89 +246,6 @@
 					</p>
 				</div>
 			</div>
-
-			<div class="row" style="display: none;">
-				<div class="col-xs-12">    
-					<h4>Latest Board Game Top 10's</h4>
-					<p>Everyone loves a good top 10, check out our favourite lists!</p>
-					@foreach($top10s as $top10)
-						<div class="col-xs-12 col-sm-4 post" style="margin-bottom: 15px;">				
-							<div class="row">
-								<div class="col-xs-12" style="overflow: hidden;height: 175px;">
-									<div style="position: absolute;right: 15px;bottom: 0;">
-										<p class="blogHeading text-right">
-											<strong>														
-												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))												
-													<a href="#" class="post-title disabled" itemprop="name"title="Login for access" style="color:white;">
-														{{ $top10->name }}
-													</a>
-												@else
-													<a href="/top10s/{{ $top10->slug }}" class="post-title" itemprop="name" title="{{ $top10->name }}" style="color:white;">
-														{{ $top10->name }}
-													</a>
-												@endif
-											</strong>
-										</p>
-										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))												
-											<p class="blogHeadingSml text-right">
-												<strong style="color:white;">													
-													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>											
-												</strong>
-											</p>
-										@else
-											<p class="blogHeadingSml text-right">
-												<strong style="color:white;">													
-													Top 10's												
-												</strong>
-											</p>
-										@endif										
-									</div>
-									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-										<div class="offer offer-radius offer-danger">
-											<div class="shape">
-												<div class="shape-text">
-													<a href="#" class="disabled" title="Login for access" style="color: #ffffff;"><i class="fa fa-lock" aria-hidden="true"></i></a>
-												</div>
-											</div>
-											<div class="offer-content">
-												<img src="https://ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;opacity: 0.5;" width="100%" />
-											</div>
-										</div>	
-									@else
-										<a href="/top10s/{{ $top10->slug }}" title="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}">
-											<img src="https://ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://ozboardgamer.com{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $top10->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
-										</a>	
-									@endif											
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-12 post-header-line">						
-									<span class="glyphicon glyphicon-calendar"></span>{!! date('F d, Y', strtotime($top10->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/top10s/{{ $top10->slug }}#disqus_thread" data-disqus-identifier="{{ camel_case($top10->name) }}"></a>																								
-								</div>		
-							</div>							
-							<div class="row post-content">
-								<div class="col-xs-12">
-									<p itemprop="description" class="textbox-height">
-										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-											This is a members only post, for early access to this post login or signup today!
-										@else
-											{!! str_limit(strip_tags($top10->description), $limit = 250, $end = '...') !!}
-										@endif    													                                                        
-										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($top10->published_at)))
-											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-top: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>													
-										@else
-											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/top10s/{{ $top10->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
-										@endif  										
-									</p>
-								</div>
-							</div>
-						</div>
-					@endforeach
-					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
-						<a href="/top10s" class="btn btn-sm btn-fresh"><span class="fa fa-arrow-circle-right"></span> View More Top 10 Lists</a>
-					</p>
-				</div>
-			</div>
 		@endunless	
 		@unless($blogs->isEmpty())
 			<div class="row">
@@ -338,7 +255,7 @@
 					<div class="row no-gutters">
                         <?php $count = count($blogs); ?>
 						@foreach($blogs as $key => $blog)
-							<meta itemprop="name" content = "{{ $blogs->games()->first()->name }}">
+							<meta itemprop="name" content = "{{ $blogs->name }}">
 							@if ($key == 0)
 								<div class="col-12 col-lg-6 p-0">
 									@elseif ($key == 1)
@@ -408,97 +325,6 @@
 					</div>
 					<p class="text-center my-4" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
 						<a href="/blogs" class="btn btn-outline-success"><span class="fa fa-arrow-circle-right"></span> View More Board Game Blogs</a>
-					</p>
-				</div>
-			</div>
-			
-			<div class="row" style="display: none;">
-				<div class="col-xs-12">    
-					<h4>Latest Board Game Blogs &amp; News</h4>
-					<p>We are always adding the latest news &amp; blogs from accross the web.</p>
-					@foreach($blogs as $blog)
-						<div class="col-xs-12 col-sm-4 post" style="margin-bottom: 15px;">				
-							<div class="row">
-								<div class="col-xs-12" style="overflow: hidden;height: 175px;">
-									<div style="position: absolute;right: 15px;bottom: 0;">
-										<p class="blogHeading text-right">
-											<strong>														
-												@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))												
-													<a href="#" class="post-title disabled" itemprop="name"title="Login for access" style="color:white;">
-														{{ $blog->name }}
-													</a>
-												@else
-													<a href="/blogs/{{ $blog->slug }}" class="post-title" itemprop="name" title="{{ $blog->name }}" style="color:white;">
-														{{ $blog->name }}
-													</a>
-												@endif
-											</strong>
-										</p>
-										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))												
-											<p class="blogHeadingSml text-right">
-												<strong style="color:white;">													
-													<i class="fa fa-lock" aria-hidden="true"></i> Members only post <i class="fa fa-lock" aria-hidden="true"></i>											
-												</strong>
-											</p>
-										@else
-											<p class="blogHeadingSml text-right">
-												<strong style="color:white;">													
-													Blog											
-												</strong>
-											</p>
-										@endif										
-									</div>
-									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
-										<div class="offer offer-radius offer-danger">
-											<div class="shape">
-												<div class="shape-text">
-													<a href="#" class="disabled" title="Login for access" style="color: #ffffff;"><i class="fa fa-lock" aria-hidden="true"></i></a>
-												</div>
-											</div>
-											<div class="offer-content">
-												@if($blog->hasGames())
-													<img src="https://ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;opacity: 0.5;" width="100%" />
-												@else
-													<img src="https://ozboardgamer.com/{{ $blog->image }}" alt="{{ $blog->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
-												@endif												
-											</div>
-										</div>	
-									@else
-										<a href="/blogs/{{ $blog->slug }}" title="{{ $blog->name }}">
-											@if($blog->hasGames())
-												<img src="https://ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }}" srcset="https://ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb1x }} 1x, https://ozboardgamer.com{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->thumb2x }} 2x" alt="{{ $blog->games()->orderBy(DB::raw('RAND()'))->first()->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
-											@else
-												<img src="https://ozboardgamer.com/{{ $blog->image }}" alt="{{ $blog->name }}" class="img-responsive img-shadow" itemprop="image" style="margin: auto;" width="100%" />
-											@endif													
-										</a>	
-									@endif		
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-12 post-header-line">						
-									<span class="glyphicon glyphicon-calendar"></span>{!! date('F d, Y', strtotime($blog->published_at)) !!} | <span class="glyphicon glyphicon-comment"></span><a href="{{ secure_url('/') }}/blogs/{{ $blog->slug }}#disqus_thread" data-disqus-identifier="{{ camel_case($blog->name) }}"></a>																									
-								</div>		
-							</div>							
-							<div class="row post-content">
-								<div class="col-xs-12">
-									<p itemprop="description" class="textbox-height">
-										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
-											This is a members only post, for early access to this post login or signup today!
-										@else
-											{!! str_limit(strip_tags($blog->description), $limit = 250, $end = '...') !!}
-										@endif    													                                                    
-										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($blog->published_at)))
-											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/login" style="margin-top: 15px!important;"><i class="fa fa-sign-in"></i> Login/Signup</a>																							
-										@else
-											<a class="btn btn-hot text-uppercase pull-right btn-block" href="/blogs/{{ $blog->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>													
-										@endif  											
-									</p>
-								</div>
-							</div>
-						</div>
-					@endforeach
-					<p class="text-center" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
-						<a href="/blogs" class="btn btn-sm btn-fresh"><span class="fa fa-arrow-circle-right"></span> View More Board Game Blogs</a>
 					</p>
 				</div>
 			</div>
