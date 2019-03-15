@@ -142,7 +142,7 @@ class PostController extends Controller
         $post = Post::where('id', '=', $id)->firstOrFail();
         $post->update($request->all());
         $post->save();
-
+        dd($request);
         if($request->hasFile('image'))
         {
             $file = $request->file('image');
