@@ -67,7 +67,21 @@ class PostController extends Controller
 
                 $file->move(public_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $post->image = ('/uploads/' . $filename);
-                $post->thumb = ('/uploads/' . $thumbname);
+                $post->save();
+            }
+        }
+        if($request->hasFile('thumb'))
+        {
+            $file2 = $request->file('thumb');
+            if ($file2->isValid())
+            {
+                $thumb = Image::make($file2);
+                $thumb->fit(600, 600);
+                $thumb->interlace();
+                $thumb->save(public_path() . '/uploads/' . $thumbname2 = time() . '-thumb-' . $file2->getClientOriginalName());
+
+                $file2->move(public_path() . '/uploads/', ($filename2 = time() . '-' . $file2->getClientOriginalName()));
+                $post->thumb = ('/uploads/' . $thumbname2);
                 $post->save();
             }
         }
@@ -141,7 +155,21 @@ class PostController extends Controller
 
                 $file->move(public_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
                 $post->image = ('/uploads/' . $filename);
-                $post->thumb = ('/uploads/' . $thumbname);
+                $post->save();
+            }
+        }
+        if($request->hasFile('thumb'))
+        {
+            $file2 = $request->file('thumb');
+            if ($file2->isValid())
+            {
+                $thumb = Image::make($file2);
+                $thumb->fit(600, 600);
+                $thumb->interlace();
+                $thumb->save(public_path() . '/uploads/' . $thumbname2 = time() . '-thumb-' . $file2->getClientOriginalName());
+
+                $file->move(public_path() . '/uploads/', ($filename2 = time() . '-' . $file2->getClientOriginalName()));
+                $post->thumb = ('/uploads/' . $thumbname2);
                 $post->save();
             }
         }

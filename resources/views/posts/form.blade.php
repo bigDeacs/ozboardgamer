@@ -55,6 +55,16 @@
             Browse:
             <input type="file" name="image" accept="image/*" onchange="loadImage(event)">
             <small>851px X 315px</small>
+            <br />
+            <label for="thumb">Featured Thumbnail</label>
+            @if(isset($post))
+                  <img src="{{ secure_url('/') }}{!! $post->thumb !!}" class="img-responsive" id="thumbUpload" style="margin-bottom:10px;" />
+            @else
+                  <img id="thumbUpload" class="img-responsive" style="margin-bottom:10px;" />
+            @endif
+            Browse:
+            <input type="file" name="thumb" accept="image/*" onchange="loadThumb(event)">
+            <small>600px X 600px</small>
       </div>
 </div>
 
@@ -94,6 +104,10 @@
         var loadImage = function(event) {
           var imageUpload = document.getElementById('imageUpload');
           imageUpload.src = URL.createObjectURL(event.target.files[0]);
+        };
+        var loadThumb = function(event) {
+            var thumbUpload = document.getElementById('thumbUpload');
+            thumbUpload.src = URL.createObjectURL(event.target.files[0]);
         };
       </script>
 @endsection
