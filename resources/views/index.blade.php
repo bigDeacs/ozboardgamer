@@ -272,14 +272,26 @@
 																<div class="ratio_right-cover-2 image-wrapper">
 																	<a href="/blogs/{{ $blog->slug }}" title="{{ $blog->name }}">
 																		@if ($key == 0)
-																			<img src="https://ozboardgamer.com{{ $blog->games()->first()->image }}"
-																				 alt="{{ $blog->games()->first()->name }}"
-																				 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@if($blog->hasGames())
+																				<img src="https://ozboardgamer.com{{ $blog->games()->first()->image }}"
+																					 alt="{{ $blog->games()->first()->name }}"
+																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@else
+																				<img src="https://ozboardgamer.com{{ $blog->image }}"
+																					 alt="{{ $blog->name }}"
+																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@endif
 																		@else
-																			<img src="https://ozboardgamer.com{{ $blog->games()->first()->image }}"
-																				 srcset="https://ozboardgamer.com{{ $blog->games()->first()->thumb1x }} 1x, https://ozboardgamer.com{{ $blog->games()->first()->thumb2x }} 1.5x, https://ozboardgamer.com{{ $blog->games()->first()->image }} 2x"
-																				 alt="{{ $blog->games()->first()->name }}"
-																				 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@if($blog->hasGames())
+																				<img src="https://ozboardgamer.com{{ $blog->games()->first()->image }}"
+																					 srcset="https://ozboardgamer.com{{ $blog->games()->first()->thumb1x }} 1x, https://ozboardgamer.com{{ $blog->games()->first()->thumb2x }} 1.5x, https://ozboardgamer.com{{ $blog->games()->first()->image }} 2x"
+																					 alt="{{ $blog->games()->first()->name }}"
+																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@else
+																				<img src="https://ozboardgamer.com{{ $blog->image }}"
+																					 alt="{{ $blog->name }}"
+																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@endif
 																		@endif
 																	</a>
 																</div>
