@@ -179,6 +179,75 @@
 		@endunless			
 		@unless($top10s->isEmpty())
 			<div class="row">
+				<div class="col-12">
+					<h4>Latest Board Game Top 10's</h4>
+					<p>Everyone loves a good top 10, check out our favourite lists!</p>
+					<div class="row no-gutters">
+                        <?php $count = count($top10s); ?>
+						@foreach($top10s as $key => $top10)
+							<meta itemprop="name" content = "{{ $top10->games()->first()->name }}">
+							@if ($key == 0)
+								<div class="col-12 col-lg-6 p-0">
+									@elseif ($key == 1)
+										<div class="col-12 col-lg-6 px-4">
+											<div class="row no-gutters">
+												@endif
+												@unless($key == 0)
+													<div class="col-6 p-0">
+														@endunless
+														<div class="card border-0 rounded-0 text-white overflow zoom" itemscope itemtype="http://schema.org/Game">
+															<!--thumbnail-->
+															<div class="position-relative">
+																<!--thumbnail img-->
+																<div class="ratio_right-cover-2 image-wrapper">
+																	<a href="/top10s/{{ $top10->slug }}" title="{{ $top10->name }}">
+																		@if ($key == 0)
+																			<img src="https://ozboardgamer.com{{ $top10->games()->first()->image }}"
+																				 alt="{{ $top10->games()->first()->name }}"
+																				 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																		@else
+																			<img src="https://ozboardgamer.com{{ $top10->games()->first()->image }}"
+																				 srcset="https://ozboardgamer.com{{ $top10->games()->first()->thumb1x }} 1x, https://ozboardgamer.com{{ $top10->games()->first()->thumb2x }} 1.5x, https://ozboardgamer.com{{ $top10->games()->first()->image }} 2x"
+																				 alt="{{ $top10->games()->first()->name }}"
+																				 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																		@endif
+																	</a>
+																</div>
+
+																<!--title-->
+																<div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+																	<!-- category -->
+																	<a class="p-2 badge badge-success rounded-0" href="/top10s">Top 10</a>
+
+																	<!--title and description-->
+																	<a href="/top10s/{{ $top10->slug }}">
+																		<h2 class="h5 text-white my-1">
+																			<span itemprop="name">{{ $top10->name }}</span>
+																		</h2>
+																	</a>
+																</div>
+																<!--end title-->
+															</div>
+															<!--end thumbnail-->
+														</div>
+														@unless($key == 0)
+													</div>
+												@endunless
+												@if ($key == 0)
+											</div>
+											@elseif ($key == $count-1)
+										</div>
+								</div>
+							@endif
+						@endforeach
+					</div>
+					<p class="text-center my-4" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
+						<a href="/top10s" class="btn btn-outline-success"><span class="fa fa-arrow-circle-right"></span> View More Top 10 Lists</a>
+					</p>
+				</div>
+			</div>
+			
+			<div class="row" style="display: none;">
 				<div class="col-xs-12">    
 					<h4>Latest Board Game Top 10's</h4>
 					<p>Everyone loves a good top 10, check out our favourite lists!</p>
