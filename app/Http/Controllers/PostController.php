@@ -57,34 +57,34 @@ class PostController extends Controller
 
         if($request->hasFile('image'))
         {
-            $file = $request->file('image');
-            if ($file->isValid())
+            $imageUpload = $request->file('image');
+            if ($imageUpload->isValid())
             {
-                $img = Image::make($file);
+                $img = Image::make($imageUpload);
                 $img->fit(400, 148);
                 $img->interlace();
-                $img->save(public_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+                $img->save(public_path() . '/uploads/' . $filename = time() . '-' . $imageUpload->getClientOriginalName());
 
-                $file->move(public_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $imageUpload->move(public_path() . '/uploads/', ($filename = time() . '-' . $imageUpload->getClientOriginalName()));
                 $post->image = ('/uploads/' . $filename);
                 $post->save();
             }
         }
         if($request->hasFile('thumb'))
         {
-            $file2 = $request->file('thumb');
-            if ($file2->isValid())
+            $thumbUpload = $request->file('thumb');
+            if ($thumbUpload->isValid())
             {
-                $thumb = Image::make($file2);
+                $thumb = Image::make($thumbUpload);
                 $thumb->fit(600, 600);
                 $thumb->interlace();
-                $thumb->save(public_path() . '/uploads/' . $thumbname2 = time() . '-thumb-' . $file2->getClientOriginalName());
+                $thumb->save(public_path() . '/uploads/' . $thumbname = time() . '-' . $thumbUpload->getClientOriginalName());
 
-                $file2->move(public_path() . '/uploads/', ($filename2 = time() . '-' . $file2->getClientOriginalName()));
-                $post->thumb = ('/uploads/' . $thumbname2);
+                $thumbUpload->move(public_path() . '/uploads/', ($thumbname = time() . '-' . $thumbUpload->getClientOriginalName()));
                 $post->save();
             }
         }
+
         if(is_array($request->input('game_list'))) {
             $currentGames = array_filter($request->input('game_list'), 'is_numeric');
             $newGames = array_diff($request->input('game_list'), $currentGames);
@@ -142,34 +142,34 @@ class PostController extends Controller
         $post = Post::where('id', '=', $id)->firstOrFail();
         $post->update($request->all());
         $post->save();
-        dd($request);
+
         if($request->hasFile('image'))
         {
-            $file = $request->file('image');
-            if ($file->isValid())
+            $imageUpload = $request->file('image');
+            if ($imageUpload->isValid())
             {
-                $img = Image::make($file);
+                $img = Image::make($imageUpload);
                 $img->fit(400, 148);
                 $img->interlace();
-                $img->save(public_path() . '/uploads/' . $thumbname = time() . '-thumb-' . $file->getClientOriginalName());
+                $img->save(public_path() . '/uploads/' . $filename = time() . '-' . $imageUpload->getClientOriginalName());
 
-                $file->move(public_path() . '/uploads/', ($filename = time() . '-' . $file->getClientOriginalName()));
+                $imageUpload->move(public_path() . '/uploads/', ($filename = time() . '-' . $imageUpload->getClientOriginalName()));
                 $post->image = ('/uploads/' . $filename);
                 $post->save();
             }
         }
         if($request->hasFile('thumb'))
         {
-            $file2 = $request->file('thumb');
-            if ($file2->isValid())
+            $thumbUpload = $request->file('thumb');
+            if ($thumbUpload->isValid())
             {
-                $thumb = Image::make($file2);
+                $thumb = Image::make($thumbUpload);
                 $thumb->fit(600, 600);
                 $thumb->interlace();
-                $thumb->save(public_path() . '/uploads/' . $thumbname2 = time() . '-thumb-' . $file2->getClientOriginalName());
+                $thumb->save(public_path() . '/uploads/' . $thumbname = time() . '-' . $thumbUpload->getClientOriginalName());
 
-                $file->move(public_path() . '/uploads/', ($filename2 = time() . '-' . $file2->getClientOriginalName()));
-                $post->thumb = ('/uploads/' . $thumbname2);
+                $thumbUpload->move(public_path() . '/uploads/', ($thumbname = time() . '-' . $thumbUpload->getClientOriginalName()));
+                $post->thumb = ('/uploads/' . $thumbname);
                 $post->save();
             }
         }
