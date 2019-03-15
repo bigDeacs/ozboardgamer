@@ -212,6 +212,7 @@
 								@foreach($posts as $review)
 									<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
 										<meta itemprop="name" content ="{!! $review->name !!} Review">
+										<meta itemprop="author" content ="{!! $review->user->name !!}">
 										<div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
 											<div class="row">
 												<div class="col-xs-12" style="overflow: hidden;height: 175px;">

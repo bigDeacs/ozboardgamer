@@ -192,7 +192,7 @@
 				</div>
 				<div class="row">                                
 					<div class="col-sm-offset-3 col-sm-4 col-lg-offset-3 col-lg-4 col-md-offset-2 col-md-5 col-xs-12">
-						<p class="copyright text-muted text-left">Copyright &copy; OzBoardGamer 2017. All Rights Reserved</p>                   
+						<p class="copyright text-muted text-left">Copyright &copy; OzBoardGamer {{ date('Y') }}. All Rights Reserved</p>
 					</div>                
 					<div class="col-sm-3 col-md-3 col-lg-2 col-xs-12">
 						<a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
