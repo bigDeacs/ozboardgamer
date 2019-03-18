@@ -131,7 +131,7 @@
 									<div class="row no-gutters">
 							@endif
 								@unless($key == 0)
-									<div class="col-6 p-0">
+									<div class="col-12 col-md-6 p-0">
 								@endunless
 										<div class="card border-0 rounded-0 text-white overflow zoom" itemscope itemtype="http://schema.org/Game">
 											<!--thumbnail-->
@@ -201,7 +201,7 @@
 											<div class="row no-gutters">
 												@endif
 												@unless($key == 0)
-													<div class="col-6 p-0">
+													<div class="col-12 col-md-6 p-0">
 														@endunless
 														<div class="card border-0 rounded-0 text-white overflow zoom" itemscope itemtype="http://schema.org/Game">
 															<!--thumbnail-->
@@ -271,7 +271,7 @@
 											<div class="row no-gutters">
 												@endif
 												@unless($key == 0)
-													<div class="col-6 p-0">
+													<div class="col-12 col-md-6 p-0">
 														@endunless
 														<div class="card border-0 rounded-0 text-white overflow zoom" itemscope itemtype="http://schema.org/Game">
 															<!--thumbnail-->
