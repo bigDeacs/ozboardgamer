@@ -278,7 +278,7 @@
 															<div class="position-relative">
 																<!--thumbnail img-->
 																<div class="ratio_right-cover-2 image-wrapper">
-																	<a href="/blogs/{{ $blog->slug }}" title="{{ $blog->name }}">
+																	<a href="/{{ $blog->category()->slug }}/{{ $blog->slug }}" title="{{ $blog->name }}">
 																		@if ($key == 0)
 																			@if($blog->hasGames())
 																				<img src="https://ozboardgamer.com{{ $blog->games()->first()->image }}"
@@ -307,10 +307,10 @@
 																<!--title-->
 																<div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
 																	<!-- category -->
-																	<a class="p-2 badge badge-success rounded-0" href="/blogs">Blog</a>
+																	<a class="p-2 badge badge-success rounded-0" href="/{{ $blog->category()->slug }}">{{ $blog->category()->Name }}</a>
 
 																	<!--title and description-->
-																	<a href="/blogs/{{ $blog->slug }}">
+																	<a href="/{{ $blog->category()->slug }}/{{ $blog->slug }}">
 																		<h2 class="h5 text-white my-1">
 																			<span itemprop="name">{{ $blog->name }}</span>
 																		</h2>
