@@ -98,12 +98,12 @@
 							<div class="row" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 								@if($product->price !== '' || $product->price !== null)
 									<meta itemprop="priceCurrency" content="AUD">
-									<div class="col-12 col-md-6 text-left">
+									<div class="col-12 col-md-5 text-left">
 										<p style="margin: 0;font-size: 20px;color: #db5566;" itemprop="price"><strong>${!! $product->price !!}</strong></p>
 										<p style="margin: 0;">&nbsp;</p>
 									</div>
 								@endif
-								<div class="col-12 col-md-6">
+								<div class="col-12 col-md-7">
 									<a class="btn btn-hot text-uppercase" href="{!! $product->link !!}" target="_blank" rel="nofollow"><span class="fa fa-arrow-circle-right"></span> Buy now</a>
 								</div>
 							</div>

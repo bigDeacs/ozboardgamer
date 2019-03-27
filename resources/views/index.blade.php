@@ -368,13 +368,13 @@
 											</a>
 											<div class="row">
 												@if($product->price !== '' || $product->price !== null)
-													<div class="col-12 col-md-6 text-left">
+													<div class="col-12 col-md-5 text-left">
 														<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->price !!}</strong></p>
 														<p style="margin: 0;">&nbsp;</p>
 													</div>
 												@endif
-												<div class="col-12 col-md-6">
-													<a class="btn btn-hot text-uppercase" href="{!! $product->link !!}" target="_blank" rel="nofollow"><span class="fa fa-arrow-circle-right"></span> Buy now</a>
+												<div class="col-12 col-md-7">
+													<a class="btn btn-hot btn-sm text-uppercase" href="{!! $product->link !!}" target="_blank" rel="nofollow"><span class="fa fa-arrow-circle-right"></span> Buy now</a>
 												</div>
 											</div>
 										</div>										
