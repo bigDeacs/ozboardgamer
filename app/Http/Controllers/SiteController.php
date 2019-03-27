@@ -709,12 +709,15 @@ class SiteController extends Controller {
 		$blogs = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'blogs');
-            $q->orWhere('slug', '=', 'howtos');
 		})->orderBy('published_at', 'desc')->take(5)->get();
+        $howtos = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
+        {
+            $q->where('slug', '=', 'howtos');
+        })->orderBy('published_at', 'desc')->take(5)->get();
 		$games = Game::where('status', '=', '1')->has('parent', '<', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
 //		$products = Product::orderBy('price', 'desc')->take(10)->get();
         $products = Game::where('status', '=', '1')->where('link', '!=', '')->orderBy('rating', 'desc')->take(10)->get();
-		return view('index', compact('featured', 'reviews', 'top10s', 'blogs', 'games', 'products'));
+		return view('index', compact('featured', 'reviews', 'top10s', 'blogs', 'howtos', 'games', 'products'));
 	}
 
 	/**

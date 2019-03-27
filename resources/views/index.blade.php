@@ -337,6 +337,87 @@
 				</div>
 			</div>
 		@endunless
+		@unless($howtos->isEmpty())
+			<div class="row">
+				<div class="col-12">
+					<h4>Latest Board Game How To Videos</h4>
+					<p>We love the guys over at Watch It Played and are always sharing there amazing videos!</p>
+					<div class="row no-gutters">
+                        <?php $count = count($howtos); ?>
+						@foreach($howtos as $key => $howto)
+							<meta itemprop="name" content = "{{ $howto->name }}">
+							@if ($key == 0)
+								<div class="col-12 col-lg-6 p-0">
+									@elseif ($key == 1)
+										<div class="col-12 col-lg-6 px-4">
+											<div class="row no-gutters">
+												@endif
+												@unless($key == 0)
+													<div class="col-12 col-md-6 p-0">
+														@endunless
+														<div class="card border-0 rounded-0 text-white overflow zoom" itemscope itemtype="http://schema.org/Game">
+															<!--thumbnail-->
+															<div class="position-relative">
+																<!--thumbnail img-->
+																<div class="ratio_right-cover-2 image-wrapper">
+																	<a href="/howtos/{{ $howto->slug }}" title="{{ $howto->name }}">
+																		@if ($key == 0)
+																			@if($howto->hasGames())
+																				<img src="https://ozboardgamer.com{{ $howto->games()->first()->image }}"
+																					 alt="{{ $howto->games()->first()->name }}"
+																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@else
+																				<img src="https://ozboardgamer.com{{ $howto->thumb }}"
+																					 alt="{{ $howto->name }}"
+																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@endif
+																		@else
+																			@if($howto->hasGames())
+																				<img src="https://ozboardgamer.com{{ $howto->games()->first()->image }}"
+																					 srcset="https://ozboardgamer.com{{ $howto->games()->first()->thumb1x }} 1x, https://ozboardgamer.com{{ $howto->games()->first()->thumb2x }} 1.5x, https://ozboardgamer.com{{ $howto->games()->first()->image }} 2x"
+																					 alt="{{ $blog->games()->first()->name }}"
+																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@else
+																				<img src="https://ozboardgamer.com{{ $howto->thumb }}"
+																					 alt="{{ $howto->name }}"
+																					 class="img-fluid" itemprop="image" style="margin: auto;" width="100%" />
+																			@endif
+																		@endif
+																	</a>
+																</div>
+
+																<!--title-->
+																<div class="position-absolute p-2 p-lg-3 b-0 w-100 bg-shadow">
+																	<!-- category -->
+																	<a class="p-2 badge badge-success rounded-0" href="/howtos">How To's</a>
+																	<!--title and description-->
+																	<a href="/howtos/{{ $howto->slug }}">
+																		<h2 class="h5 text-white my-1">
+																			<span itemprop="name">{{ $howto->name }}</span>
+																		</h2>
+																	</a>
+																</div>
+																<!--end title-->
+															</div>
+															<!--end thumbnail-->
+														</div>
+														@unless($key == 0)
+													</div>
+												@endunless
+												@if ($key == 0)
+											</div>
+											@elseif ($key == $count-1)
+										</div>
+								</div>
+							@endif
+						@endforeach
+					</div>
+					<p class="text-center my-4" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;">
+						<a href="/howtos" class="btn btn-outline-success"><span class="fa fa-arrow-circle-right"></span> View More How To Videos</a>
+					</p>
+				</div>
+			</div>
+		@endunless
 		<!-- Banner Ads -->
 		<ins class="adsbygoogle"
 			 style="display:inline-block;width:970px;height:90px"
