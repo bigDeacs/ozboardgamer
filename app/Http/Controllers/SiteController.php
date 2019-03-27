@@ -709,6 +709,7 @@ class SiteController extends Controller {
 		$blogs = Post::where('status', '=', '1')->where('published_at', '<=', date('Y-m-d'))->whereHas('category', function($q)
 		{
 		    $q->where('slug', '=', 'blogs');
+            $q->orWhere('slug', '=', 'howtos');
 		})->orderBy('published_at', 'desc')->take(5)->get();
 		$games = Game::where('status', '=', '1')->has('parent', '<', '1')->has('types')->orderBy('rating', 'desc')->take(10)->get();
 //		$products = Product::orderBy('price', 'desc')->take(10)->get();
