@@ -45,9 +45,9 @@
 			    </div>
 				<div class="row">
           @if($result->games->isEmpty())
-				  	<div class="col-sm-12 col-xs-12">
+				  	<div class="col-sm-12 col-12">
 				  @else
-			      	<div class="col-sm-9 col-xs-12">
+			      	<div class="col-sm-9 col-12">
 		      @endif
             <div class="pull-right hidden-xs" style="margin-top: 10px;">
               <div class="fb-share-button" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u&amp;src=sdkpreparse">Share</a></div>
@@ -56,11 +56,11 @@
             <p>{!! $result->description !!}</p>
           </div>
           @unless($games->isEmpty())
-				  	<div class="col-sm-3 col-xs-12 text-center lead">
+				  	<div class="col-sm-3 col-12 text-center lead">
 				  		<p><strong>Games mentioned:</strong></p>
 				    	@foreach($games as $game)
 							<div class="row">
-								<div class="col-xs-12">
+								<div class="col-12">
 						    		<a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
 						    			<img src="{{ secure_url('/') }}{{ $game->thumb }}" class="img-responsive" />
 						    		</a>

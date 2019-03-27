@@ -23,10 +23,10 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-			      <div class="col-sm-9 col-xs-12">
+			      <div class="col-sm-9 col-12">
 			      	<h1>{{ $type->name }}</h1>
 			      </div>
-			      <div class="col-sm-3 col-xs-12">
+			      <div class="col-sm-3 col-12">
 			      	<span>Sort by: </span>
 			      	<form id="sortForm">
 			      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
@@ -48,7 +48,7 @@
 			    </div>
           @if($type->description != '')
             <div class="row">
-              <div class="col-xs-12">
+              <div class="col-12">
                 <p>{!! $type->description !!}</p>
               </div>
             </div>
@@ -57,12 +57,12 @@
 					<div class="row" itemscope itemtype="http://schema.org/Game">
 		                <div class="col-md-12 post">
 		                    <div class="row post-content">
-		                        <div class="col-md-2 col-sm-3 col-xs-7">
+		                        <div class="col-md-2 col-sm-3 col-7">
 		                            <a href="/games/{{ $type->slug }}/{{ $game->slug }}">
 		                                <img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive img-shadow" itemprop="image" />
 		                            </a>
 		                        </div>
-		                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">
+		                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-5">
 									@if($game->rating < 1)
   										<img src="https://img.ozboardgamer.com/img/1.png" class="img-responsive" />
   									@elseif($game->rating < 2)
@@ -88,7 +88,7 @@
 										<strong>{{ number_format((float)$game->rating, 1, '.', '') }}/10</strong>
 									</div>
 		                        </div>
-		                        <div class="col-md-8 col-md-pull-2 col-sm-7 col-sm-pull-2 col-xs-12">
+		                        <div class="col-md-8 col-md-pull-2 col-sm-7 col-sm-pull-2 col-12">
 		                            <h4 itemprop="name">
 		                                <strong><a href="/games/{{ $type->slug }}/{{ $game->slug }}" class="post-title">{!! $game->name !!}</a></strong></h4>
 		                            <p itemprop="description">
@@ -104,7 +104,7 @@
 		            </div>
 				@endforeach
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-12">
 						<div class="text-center">
 							@if(isset($_GET['sort']))
 								{!! $games->appends(['sort' => $_GET['sort']])->render() !!}
@@ -115,7 +115,7 @@
 					</div>
 				</div>
 				<div class="row">
-		            <div class="col-xs-12">
+		            <div class="col-12">
 		                <!-- Horizon Ad -->
 						<div class="text-center">
 							<a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy amazing Board Games from Oz Game Shop" src="https://img.ozboardgamer.com/img/d2b546c6-bf54-41c4-bdc9-d5f64bd45508.gif" /></a>

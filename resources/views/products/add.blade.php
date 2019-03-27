@@ -30,7 +30,7 @@
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<div class="form-group row">
 					      
-					      <div class="col-sm-3 col-xs-12">
+					      <div class="col-sm-3 col-12">
 					            <label for="csv">Upload CSV</label>                  
 					            Browse:
 					            <input type="file" name="csv" accept=".csv, text/csv">

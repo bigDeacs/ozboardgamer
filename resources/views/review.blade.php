@@ -48,7 +48,7 @@
 						</div>
 					@endunless
 					<div class="row">						
-						<div class="col-sm-12 col-xs-12">						
+						<div class="col-sm-12 col-12">
 							<div class="panel panel-success" style="padding: 0 10px;" id="parent">
 								<h1 itemprop="name"><i class="fa fa-lock" aria-hidden="true"></i> Uh oh!</h1>
 								<span class="glyphicon glyphicon-user"></span> <a href="/users/{{ $post->user->slug }}" itemprop="author">{!! $post->user->name !!}</a> | <span class="glyphicon glyphicon-calendar">
@@ -63,12 +63,12 @@
 									It's easy, you can even Login with your Facebook or Google account with just a click of a button!
 									<hr />
 					  <div class="row text-center">
-						<div class="col-xs-12">
+						<div class="col-12">
 							<h4>Login/Signup Using:</h4>
 							<div class="row text-center">
-								<div class="col-xs-4"><a href="/facebook" class="btn btn-ocean text-uppercase btn-block" title="Login/Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
-								<div class="col-xs-4"><a href="/google" class="btn btn-hot text-uppercase btn-block" title="Login/Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
-								<div class="col-xs-4"><a href="/twitter" class="btn btn-sky text-uppercase btn-block" title="Login/Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
+								<div class="col-4"><a href="/facebook" class="btn btn-ocean text-uppercase btn-block" title="Login/Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
+								<div class="col-4"><a href="/google" class="btn btn-hot text-uppercase btn-block" title="Login/Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+								<div class="col-4"><a href="/twitter" class="btn btn-sky text-uppercase btn-block" title="Login/Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
 						   </div>
 							<h6>to add comments</h6>
 						</div>
@@ -91,19 +91,19 @@
 					@endunless
 					<div class="row">
 					  @if($post->games->isEmpty())
-						<div class="col-sm-12 col-xs-12">
+						<div class="col-sm-12 col-12">
 					  @else
-						<div class="col-sm-9 col-xs-12">
+						<div class="col-sm-9 col-12">
 					  @endif					
 						<div class="panel panel-success" style="padding: 0 10px;" id="parent">
 							<meta itemprop="name" content ="{!! $post->name !!} Review">
 							<meta itemprop="author" content ="{!! $post->user->name !!}">
 							<h1>{{ $post->name }}</h1>
 							<div class="row">
-								<div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
+								<div class="col-12 col-sm-6 col-md-7 col-lg-8">
 									<span class="glyphicon glyphicon-calendar"></span><span itemprop="datePublished">{!! date('F d, Y', strtotime($post->published_at)) !!}</span>
 								</div>
-								<div class="col-sm-6 col-md-5 col-lg-4 col-xs-12" style="display: flex;padding-left: 30px;">
+								<div class="col-sm-6 col-md-5 col-lg-4 col-12" style="display: flex;padding-left: 30px;">
 									<div style="margin: 0 10px;">
 										<div class="fb-share-button" data-href="https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/{{ $post->category->slug }}/{{ $post->slug }}">Share</a></div>
 									</div>
@@ -122,7 +122,7 @@
 							@endunless
 							<p itemprop="reviewBody">{!! $post->description !!}</p>
 							<div class="row">
-								<div class="col-xs-12" style="background: #333333;color: #9d9d9d;">
+								<div class="col-12" style="background: #333333;color: #9d9d9d;">
 									<div class="profile-header-container pull-left" style="padding: 10px 0;margin-right: 15px;">
 										<div class="profile-header-img">
 											<a href="/users/{{ $post->user->slug }}?page=1&amp;sort=published_at-desc">
@@ -144,7 +144,7 @@
 							<div id="child" class="scrollBox">
 								@foreach($games as $game)
 									<div class="row">
-										<div class="col-xs-12">
+										<div class="col-12">
 											<div style="position: absolute;right: 14px;bottom: 15px;">
 												<p class="blogHeading text-right"><strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" class="post-title" itemprop="name" title="{{ $game->name }}" style="color:white;">{!! str_limit($game->name, 14) !!}</a></strong></p>
 												<p class="blogHeadingSml text-right"><strong style="color:white;">{{ $game->types()->first()->name }}</strong></p>	
@@ -167,7 +167,7 @@
 					@if(Session::has('name'))
 					  <hr />
 					  <div class="row">        
-						<div class="col-xs-12">		  
+						<div class="col-12">
 							<script>
 
 							/**
@@ -187,18 +187,18 @@
 							})();
 							</script>
 							<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-							<div class="col-xs-12" id="disqus_thread"></div>
+							<div class="col-12" id="disqus_thread"></div>
 						</div>
 					  </div>
 					@else
 					  <hr />
 					  <div class="row text-center">
-						<div class="col-xs-12">
+						<div class="col-12">
 							<h4>Login/Signup Using:</h4>
 							<div class="row text-center">
-								<div class="col-sm-4 col-xs-12"><a href="/facebook" class="btn btn-ocean text-uppercase btn-block" title="Login/Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
-								<div class="col-sm-4 col-xs-12"><a href="/google" class="btn btn-hot text-uppercase btn-block" title="Login/Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
-								<div class="col-sm-4 col-xs-12"><a href="/twitter" class="btn btn-sky text-uppercase btn-block" title="Login/Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
+								<div class="col-sm-4 col-12"><a href="/facebook" class="btn btn-ocean text-uppercase btn-block" title="Login/Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
+								<div class="col-sm-4 col-12"><a href="/google" class="btn btn-hot text-uppercase btn-block" title="Login/Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+								<div class="col-sm-4 col-12"><a href="/twitter" class="btn btn-sky text-uppercase btn-block" title="Login/Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
 						   </div>
 							<h6>to add comments</h6>
 						</div>
@@ -207,15 +207,15 @@
 					<hr />
 					@unless($posts->isEmpty())
 						<div class="row">
-							<div class="col-xs-12">    
+							<div class="col-12">
 								<h3>You might also like:</h3>
 								@foreach($posts as $review)
-									<div class="col-xs-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
+									<div class="col-12 col-sm-4 post" itemscope itemtype="http://schema.org/Review" style="margin-bottom: 15px;">
 										<meta itemprop="name" content ="{!! $review->name !!} Review">
 										<meta itemprop="author" content ="{!! $review->user->name !!}">
 										<div itemprop="itemReviewed" itemscope itemtype="http://schema.org/Game">
 											<div class="row">
-												<div class="col-xs-12" style="overflow: hidden;height: 175px;">
+												<div class="col-12" style="overflow: hidden;height: 175px;">
 													<div style="position: absolute;right: 15px;bottom: 0;">
 														<p class="blogHeading text-right">
 															<strong>
@@ -242,7 +242,7 @@
 												</div>
 											</div>
 											<div class="row post-content">
-												<div class="col-xs-12">
+												<div class="col-12">
 													<p itemprop="description">
 															<a class="btn btn-hot text-uppercase pull-right btn-block" href="/reviews/{{ $review->slug }}" style="margin-bottom: 15px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>
 													</p>

@@ -36,24 +36,24 @@
 	</div>
 	<div class="container" itemscope itemtype="http://schema.org/Game">
 		<div class="row">
-			<div class="col-md-9 col-sm-8 col-xs-12">
+			<div class="col-md-9 col-sm-8 col-12">
 				<h1 itemprop="name">{{ $game->name }}</h1>
 				<div class="row">					
-					<div class="col-md-4 col-xs-12 text-center">												
+					<div class="col-md-4 col-12 text-center">
 						<img src="https://img.ozboardgamer.com{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" class="img-responsive" style="margin-bottom: 10px;" itemprop="image" />						
 						<div class="row">
-							<div class="col-xs-4 text-center">
+							<div class="col-4 text-center">
 								<i class="fa fa-users fa-2x" aria-hidden="true"></i><br /><strong itemprop="numberOfPlayers">{{ $game->players }}</strong>
 							</div>
-							<div class="col-xs-4 text-center">
+							<div class="col-4 text-center">
 								<i class="fa fa-birthday-cake fa-2x" aria-hidden="true"></i><br /><strong itemprop="typicalAgeRange">{{ $game->age }}</strong>
 							</div>
-							<div class="col-xs-4 text-center">
+							<div class="col-4 text-center">
 								<i class="fa fa-clock-o fa-2x" aria-hidden="true"></i><br /><strong itemprop="timeRequired">{{ $game->time }}</strong>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-8 col-xs-12">						
+					<div class="col-md-8 col-12">
 						@unless($game->publishers->isEmpty())
 							<div style="margin-bottom: 10px;">
 								<small>
@@ -70,7 +70,7 @@
 						@endunless
 						@unless($game->children->isEmpty())
 							<div class="row hidden-xs" style="margin-bottom: 10px;">
-								<div class="col-xs-12">
+								<div class="col-12">
 									<div class="label label-warning">HAS EXPANSIONS</div>
 									@foreach($game->children as $key => $child)
 										@if($key == (count($game->children) -1))
@@ -84,7 +84,7 @@
 						@endunless
 						@unless($game->parent == null)	
 							<div class="row hidden-xs" style="margin-bottom: 10px;">				
-								<div class="col-xs-12">							
+								<div class="col-12">
 									<div class="label label-warning">EXPANSION FOR</div> <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->parent->slug }}">{{ $game->parent->name }}</a>								
 								</div>
 							</div>
@@ -92,7 +92,7 @@
 						@unless($game->awards->isEmpty())
 							<div class="row hidden-xs" style="margin-bottom: 10px;">								
 								@foreach($game->awards as $award)
-									<div class="col-xs-2">
+									<div class="col-2">
 										<a href="/awards/{{ $award->slug }}" title="{{ $award->name }}"><img src="https://img.ozboardgamer.com{{ $award->thumb }}" class="img-responsive" /></a>
 									</div>
 								@endforeach								
@@ -102,7 +102,7 @@
 						  @if(Session::has('name'))
 							<strong>Rate This Game</strong>
 							<div style="clear:both;"></div>
-							<div class="col-xs-1" style="padding:0;">
+							<div class="col-1" style="padding:0;">
 							  <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addGameRating/'.$game->id.'/rating/1' : '/users/'.str_slug(Session::get('slug')).'/updateGameRating/'.$game->id.'/rating/1' }}"
 								 data-toggle="tooltip"
 								 data-placement="bottom"
@@ -113,7 +113,7 @@
 									   class="img-responsive" />
 							  </a>
 							</div>
-							<div class="col-xs-1" style="padding:0;">
+							<div class="col-1" style="padding:0;">
 							  <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addGameRating/'.$game->id.'/rating/2' : '/users/'.str_slug(Session::get('slug')).'/updateGameRating/'.$game->id.'/rating/2' }}"
 								 data-toggle="tooltip"
 								 data-placement="bottom"
@@ -124,7 +124,7 @@
 									   class="img-responsive" />
 							  </a>
 							</div>
-							<div class="col-xs-1" style="padding:0;">
+							<div class="col-1" style="padding:0;">
 							  <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addGameRating/'.$game->id.'/rating/3' : '/users/'.str_slug(Session::get('slug')).'/updateGameRating/'.$game->id.'/rating/3' }}"
 								 data-toggle="tooltip"
 								 data-placement="bottom"
@@ -135,7 +135,7 @@
 									   class="img-responsive" />
 							  </a>
 							</div>
-							<div class="col-xs-1" style="padding:0;">
+							<div class="col-1" style="padding:0;">
 							  <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addGameRating/'.$game->id.'/rating/4' : '/users/'.str_slug(Session::get('slug')).'/updateGameRating/'.$game->id.'/rating/4' }}"
 								 data-toggle="tooltip"
 								 data-placement="bottom"
@@ -146,7 +146,7 @@
 									   class="img-responsive" />
 							  </a>
 							</div>
-							<div class="col-xs-1" style="padding:0;">
+							<div class="col-1" style="padding:0;">
 							  <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addGameRating/'.$game->id.'/rating/5' : '/users/'.str_slug(Session::get('slug')).'/updateGameRating/'.$game->id.'/rating/5' }}"
 								 data-toggle="tooltip"
 								 data-placement="bottom"
@@ -157,7 +157,7 @@
 									   class="img-responsive" />
 							  </a>
 							</div>
-							<div class="col-xs-1" style="padding:0;">
+							<div class="col-1" style="padding:0;">
 							  <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addGameRating/'.$game->id.'/rating/6' : '/users/'.str_slug(Session::get('slug')).'/updateGameRating/'.$game->id.'/rating/6' }}"
 								 data-toggle="tooltip"
 								 data-placement="bottom"
@@ -168,7 +168,7 @@
 									   class="img-responsive" />
 							  </a>
 							</div>
-							<div class="col-xs-1" style="padding:0;">
+							<div class="col-1" style="padding:0;">
 							  <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addGameRating/'.$game->id.'/rating/7' : '/users/'.str_slug(Session::get('slug')).'/updateGameRating/'.$game->id.'/rating/7' }}"
 								 data-toggle="tooltip"
 								 data-placement="bottom"
@@ -179,7 +179,7 @@
 									   class="img-responsive" />
 							  </a>
 							</div>
-							<div class="col-xs-1" style="padding:0;">
+							<div class="col-1" style="padding:0;">
 							  <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addGameRating/'.$game->id.'/rating/8' : '/users/'.str_slug(Session::get('slug')).'/updateGameRating/'.$game->id.'/rating/8' }}"
 								 data-toggle="tooltip"
 								 data-placement="bottom"
@@ -190,7 +190,7 @@
 									   class="img-responsive" />
 							  </a>
 							</div>
-							<div class="col-xs-1" style="padding:0;">
+							<div class="col-1" style="padding:0;">
 							  <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addGameRating/'.$game->id.'/rating/9' : '/users/'.str_slug(Session::get('slug')).'/updateGameRating/'.$game->id.'/rating/9' }}"
 								 data-toggle="tooltip"
 								 data-placement="bottom"
@@ -201,7 +201,7 @@
 									   class="img-responsive" />
 							  </a>
 							</div>
-							<div class="col-xs-1" style="padding:0;">
+							<div class="col-1" style="padding:0;">
 							  <a rel="nofollow" href="{{ $game->users()->wherePivot('type', 'rating')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty() ? '/users/'.str_slug(Session::get('slug')).'/addGameRating/'.$game->id.'/rating/10' : '/users/'.str_slug(Session::get('slug')).'/updateGameRating/'.$game->id.'/rating/10' }}"
 								 data-toggle="tooltip"
 								 data-placement="bottom"
@@ -216,7 +216,7 @@
 							<strong>Login for more features!</strong>
 							<div style="clear:both;"></div>
 							@for ($i = 1; $i < 11; $i++)
-							  <div class="col-xs-1" style="padding:0;">
+							  <div class="col-1" style="padding:0;">
 								<img style="opacity: 0.5;filter: alpha(opacity=50);" src="/img/{{ $i }}.png" class="img-responsive" />
 								</div>
 							@endfor
@@ -226,7 +226,7 @@
 				</div>			
           <br />
           <div class="row">
-            <div class="btn-group btn-group-justified col-xs-12" role="group">
+            <div class="btn-group btn-group-justified col-12" role="group">
 				@if(Session::has('name'))
 					@if($game->users()->wherePivot('type', 'owned')->where('slug', str_slug(Session::get('slug')))->get()->isEmpty())
 						<a rel="nofollow" href="/users/{{ str_slug(Session::get('slug')) }}/addToOwned/{!! $game->id !!}" class="btn btn-fresh text-uppercase" style="font-size:13px;" rel="nofollow"><i class="fa fa-plus" aria-hidden="true"></i> Add<span class="hidden-xs hidden-sm"> to Owned</span></a>
@@ -262,18 +262,18 @@
 					<!-- Tab panes -->
 					<div class="tab-content">
 						<div role="tabpanel" class="tab-pane active" id="description">
-							<div class="col-xs-12 panel panel-success game-panel" itemprop="description">
+							<div class="col-12 panel panel-success game-panel" itemprop="description">
 								{!! $game->description !!}
 							</div>
 						</div>
 						<div role="tabpanel" class="tab-pane" id="contents">
-							<div class="col-xs-12 panel panel-success game-panel">
+							<div class="col-12 panel panel-success game-panel">
 								{!! $game->contents !!}
 							</div>
 						</div>
 						@unless($posts->isEmpty())
 							<div role="tabpanel" class="tab-pane" id="videos">
-								<div class="col-xs-12 panel panel-success game-panel">
+								<div class="col-12 panel panel-success game-panel">
 									<div class="row">
 								    	@foreach($posts as $post)
 								    		<div class="col-md-6 col-sm-12">
@@ -294,18 +294,18 @@
 							</div>
 						@endunless
 						<div role="tabpanel" class="tab-pane" id="related">
-							<div class="col-xs-12 panel panel-success game-panel">
+							<div class="col-12 panel panel-success game-panel">
 								<div class="row">
 							    	@foreach($related as $rel)
 							    		<div class="row" itemscope itemtype="http://schema.org/Game" style="margin: 0 25px;">
 							                <div class="col-md-12 post">
 							                    <div class="row post-content">
-							                        <div class="col-md-2 col-sm-3 col-xs-7">
+							                        <div class="col-md-2 col-sm-3 col-7">
 							                            <a href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}">
 							                                <img src="https://img.ozboardgamer.com{{ $rel->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $rel->thumb1x }} 1x, https://img.ozboardgamer.com{{ $rel->thumb2x }} 2x" alt="{!! $rel->name !!}" class="img-responsive" itemprop="image" />
 							                            </a>
 							                        </div>
-							                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">
+							                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-5">
 														@if($rel->rating < 1)
 															<img src="https://img.ozboardgamer.com/img/1.png" class="img-responsive" />
 														@elseif($rel->rating < 2)
@@ -331,7 +331,7 @@
 															<strong>{{ number_format((float)$rel->rating, 1, '.', '') }}/10</strong>
 														</div>
 							                        </div>
-							                        <div class="col-md-8 col-md-pull-2 col-sm-7 col-sm-pull-2 col-xs-12">
+							                        <div class="col-md-8 col-md-pull-2 col-sm-7 col-sm-pull-2 col-12">
 							                            <h4 itemprop="name">
 							                                <strong><a href="/games/{{ $rel->types()->first()->slug }}/{{ $rel->slug }}" class="post-title">{!! $rel->name !!}</a></strong></h4>
 							                            <p itemprop="description">
@@ -351,9 +351,9 @@
 					</div>
 			    </div>
 	      </div>
-			<div class="col-md-3 col-sm-4 col-xs-12">
+			<div class="col-md-3 col-sm-4 col-12">
 				<div class="row text-center">			
-					<div class="col-sm-12 col-xs-5">
+					<div class="col-sm-12 col-5">
 						@if($game->rating < 1)
 							<img src="https://img.ozboardgamer.com/img/1.png" class="img-responsive" />
 						@elseif($game->rating < 2)
@@ -382,7 +382,7 @@
 						</div>
 						<hr />						
 					</div>
-					<div class="col-sm-12 col-xs-7 pull-right">				
+					<div class="col-sm-12 col-7 pull-right">
 						<div class="text-center">
 						@unless($game->luck == 0)
 							<strong><i class="icon-luck"></i> Luck <span class="glyphicon glyphicon-question-sign" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="How much luck is a part of gameplay"></span></strong>
@@ -418,7 +418,7 @@
 						@endunless
 						</div>
 					</div>
-					<div class="col-xs-5 col-sm-12">
+					<div class="col-5 col-sm-12">
 						<hr class="hidden-xs" />
 						@unless($game->family == null)
 							<strong>Family</strong>
@@ -511,17 +511,17 @@
           })();
           </script>
           <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-          <div class="col-xs-12" id="disqus_thread"></div>
+          <div class="col-12" id="disqus_thread"></div>
         </div>
       @else
         <hr />
 		  <div class="row text-center">
-			<div class="col-xs-12">
+			<div class="col-12">
 				<h4>Login/Signup Using:</h4>
 				<div class="row text-center">
-					<div class="col-xs-4"><a href="/facebook" class="btn btn-ocean text-uppercase btn-block" title="Login/Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
-					<div class="col-xs-4"><a href="/google" class="btn btn-hot text-uppercase btn-block" title="Login/Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
-					<div class="col-xs-4"><a href="/twitter" class="btn btn-sky text-uppercase btn-block" title="Login/Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
+					<div class="col-4"><a href="/facebook" class="btn btn-ocean text-uppercase btn-block" title="Login/Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
+					<div class="col-4"><a href="/google" class="btn btn-hot text-uppercase btn-block" title="Login/Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+					<div class="col-4"><a href="/twitter" class="btn btn-sky text-uppercase btn-block" title="Login/Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
 			   </div>
 				<h6>to add comments</h6>
 			</div>

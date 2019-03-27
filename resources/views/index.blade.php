@@ -70,14 +70,14 @@
     <!-- Page Content -->
     <div class="container">
 		<div class="row hidden-xs" style="border-bottom: 1px solid #DDD;">
-			<div class="col-xs-12 text-center">
+			<div class="col-12 text-center">
 				<h1 style="margin-top: 10px;">Board Games News, Reviews, Top 10s and More</h1>		
 				<h2>Helping gamers find their next favourite game!<h2>
 			</div>
 		</div>   
         @unless($games->isEmpty())
 			<div class="row hidden-xs" style="border-bottom: 1px solid #DDD;">
-				<div class="col-xs-12">
+				<div class="col-12">
 					<h3 style="margin-top: 10px;">Top Rated Board Games</h3>
 					<div class="jcarousel-wrapper">
 						<div class="jcarousel">
@@ -347,7 +347,7 @@
 		</script>
 		@unless($products->isEmpty())
 			<div class="row hidden-xs">
-				<div class="col-xs-12">
+				<div class="col-12">
 					<h4>Featured Products</h4>
 					<div class="jcarousel-wrapper">
 						<div class="jcarousel">
@@ -366,18 +366,17 @@
 											<a href="{!! $product->link !!}" target="_blank" rel="nofollow">
 												<img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" />
 											</a>
-											<div class="caption text-center">
-												{{--@if($product->sale > 0)--}}
-													{{--<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->saleDisplay !!}</strong></p>--}}
-													{{--<p style="margin: 0;"><s><small>${!! $product->priceDisplay !!}</small></s></p>--}}
-												{{--@else--}}
-													{{--<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->priceDisplay !!}</strong></p>--}}
-													{{--<p style="margin: 0;">&nbsp;</p>--}}
-												{{--@endif--}}
-												<p class="text-center">
-													<a class="btn btn-hot text-uppercase" href="{!! $product->link !!}" target="_blank" rel="nofollow"><span class="fa fa-arrow-circle-right"></span> Buy Now</a>
-												</p>
-											</div>													
+											<div class="row">
+												@if($product->price !== '' || $product->price !== null)
+													<div class="col-12 col-md-6 text-left">
+														<p style="margin: 0;font-size: 20px;color: #db5566;"><strong>${!! $product->price !!}</strong></p>
+														<p style="margin: 0;">&nbsp;</p>
+													</div>
+												@endif
+												<div class="col-12 col-md-6">
+													<a class="btn btn-hot text-uppercase" href="{!! $product->link !!}" target="_blank" rel="nofollow"><span class="fa fa-arrow-circle-right"></span> Buy now</a>
+												</div>
+											</div>
 										</div>										
 									</li>
 								@endforeach
@@ -388,7 +387,7 @@
 						<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 					</div>
 					{{--<div class="row hidden-xs" style="border-bottom: 1px solid #DDD;padding-bottom: 15px;margin-bottom: 15px;">--}}
-						{{--<div class="col-xs-12 text-center">--}}
+						{{--<div class="col-12 text-center">--}}
 							{{--<p><strong>New Deals In:</strong></p>--}}
 							{{--<br />--}}
 							{{--<div class="clock" style="margin: 0 auto;width:625px;"></div>--}}

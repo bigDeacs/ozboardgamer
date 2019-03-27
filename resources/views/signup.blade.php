@@ -14,7 +14,7 @@
 			<div class="col-sm-12">
 				<div class="row">
 					@if(Session::has('name'))
-						<div class="col-xs-12">
+						<div class="col-12">
 							<h1>Welcome {{ Session::get('name') }}!</h1>
 							We are so happy you stopped by, while you're here, why don't you check out our latests gaming articles, search our database of games, check out our online store and dont forget to follow us on  <a href="https://www.facebook.com/ozboardgamer/" target="_blank">Facebook</a>, <a href="https://twitter.com/OzBoardGamer" target="_blank">Twitter</a>, <a href="https://www.instagram.com/ozboardgamer/" target="_blank">Instagram</a> and <a href="https://plus.google.com/b/113009055075693721367/+Ozboardgamer?hl=en" target="_blank">Google+</a>!
 							<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="5000" id="bs-carousel" style="margin-top: 20px;">
@@ -63,7 +63,7 @@
 							 
 							   @unless($games->isEmpty())
 								<div class="row hidden-xs">
-									<div class="col-xs-12">
+									<div class="col-12">
 										<h1 style="margin-top: 10px;">Top Rated Board Games</h1>
 										<div class="jcarousel-wrapper">
 											<div class="jcarousel">
@@ -84,7 +84,7 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-xs-12">
+									<div class="col-12">
 										<!-- Home Page Horizon Ad -->
 										<div class="text-center">
 											<a href="https://t.cfjump.com/33917/b/26467" rel="noindex,nofollow" target="_blank"><img style="border: none; vertical-align: middle;" class="img-responsive" alt="Buy amazing Board Games from Oz Game Shop" src="https://img.ozboardgamer.com/img/d2b546c6-bf54-41c4-bdc9-d5f64bd45508.gif" /></a>
@@ -94,7 +94,7 @@
 								@endunless
 							   @unless($stores->isEmpty())
 									<div class="row hidden-xs">
-										<div class="col-xs-12">
+										<div class="col-12">
 											<h3>Top Rated Stores</h3>
 											<div class="jcarousel-wrapper">
 												<div class="jcarousel">
@@ -117,27 +117,27 @@
 								@endunless
 						</div>
 					 @else
-						<div class="col-xs-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8">							
+						<div class="col-12 col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8">
 							<div class="panel panel-default" style="margin: 75px 0;">
 								<div class="panel-heading"></div>
 								<div class="panel-body">									
 									<h1 class="text-center">Signup Using:</h1>		
 									<div class="row text-center">
-										<div class="col-xs-4"><a href="/facebook" class="btn btn-ocean text-uppercase btn-block" title="Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
-										<div class="col-xs-4"><a href="/google" class="btn btn-hot text-uppercase btn-block" title="Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
-										<div class="col-xs-4"><a href="/twitter" class="btn btn-sky text-uppercase btn-block" title="Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
+										<div class="col-4"><a href="/facebook" class="btn btn-ocean text-uppercase btn-block" title="Signup using Facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></div>
+										<div class="col-4"><a href="/google" class="btn btn-hot text-uppercase btn-block" title="Signup using Google"><i class="fa fa-google" aria-hidden="true"></i> Google</a></div>
+										<div class="col-4"><a href="/twitter" class="btn btn-sky text-uppercase btn-block" title="Signup using Twitter"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></div>
 								   </div>
 								   <br />
 									<div class="row text-center">
-										<div class="col-xs-5"><hr></div>
-										<div class="col-xs-2"><h4>OR</h4></div>
-										<div class="col-xs-5"><hr></div>
+										<div class="col-5"><hr></div>
+										<div class="col-2"><h4>OR</h4></div>
+										<div class="col-5"><hr></div>
 									</div>
 									<form class="form-horizontal" role="form" method="POST" action="{{ url('/signup') }}">
 										 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 										 <div class="form-group">
-										   <div class="col-xs-12">											 
+										   <div class="col-12">
 												 <div class="input-group">
 													<span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
 													<input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Name">
@@ -146,7 +146,7 @@
 										 </div>
 
 										 <div class="form-group">
-										   <div class="col-xs-12">											 
+										   <div class="col-12">
 												<div class="input-group">
 													<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
 													<input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-Mail Address">
@@ -155,7 +155,7 @@
 										 </div>
 
 										 <div class="form-group">
-										   <div class="col-xs-12">
+										   <div class="col-12">
 												<div class="input-group">
 													<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
 													<input type="password" class="form-control" name="password" placeholder="Password">
@@ -164,7 +164,7 @@
 										 </div>
 
 										 <div class="form-group">
-										   <div class="col-xs-12">
+										   <div class="col-12">
 											 <button type="submit" class="btn btn-ocean text-uppercase btn-block" onclick="completeRegistration()">
 											   Signup
 											 </button>
@@ -172,7 +172,7 @@
 										 </div>
 									   </form>
 								   @if($errors->any())
-									   <div class="col-xs-12 alert alert-danger">
+									   <div class="col-12 alert alert-danger">
 										 <strong>Whoops!</strong> There were some problems with your input.<br><br>
 										 <ul>
 											 <li>{{$errors->first()}}</li>
@@ -181,9 +181,9 @@
 									 @endif	
 									<br />
 									<div class="row text-center">
-										<div class="col-xs-5"><hr></div>
-										<div class="col-xs-2"><h4>OR</h4></div>
-										<div class="col-xs-5"><hr></div>
+										<div class="col-5"><hr></div>
+										<div class="col-2"><h4>OR</h4></div>
+										<div class="col-5"><hr></div>
 									</div>		
 									<p class="text-center">Already a member? <a href="/login">Login Here</a></p>
 								</div>

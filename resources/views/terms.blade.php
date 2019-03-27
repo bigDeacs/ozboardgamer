@@ -20,12 +20,12 @@
             <div class="row">
                   <div class="col-sm-12">
                         <div class="row">
-                        <div class="col-sm-9 col-xs-12">
+                        <div class="col-sm-9 col-12">
                               <h1>Terms and Conditions</h1>
             </div>
                       </div>
                         <div class="row">
-                          <div class="col-xs-12">
+                          <div class="col-12">
 							<div class='innerText'>
 								<h3>1. Terms</h3>
 
@@ -97,7 +97,7 @@
                         </div>    
                             
                         <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-12">
                             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <!-- Footer Ad -->
                             <ins class="adsbygoogle"

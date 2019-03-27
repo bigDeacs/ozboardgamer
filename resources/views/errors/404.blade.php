@@ -12,13 +12,13 @@
 	<!-- Page Content -->
 	<div class="container">
 	    <div class="row">
-            <div class="col-xs-12">
+            <div class="col-12">
                 <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-12">
                         <h3>Uh Oh!</h3>
                        	Seems like you found a crack in our wall! We couldn't find what you were looking for, why don't you take a look at other parts of our site!
                        	<div class="row">
-                       		<div class="col-xs-12 text-center">
+                       		<div class="col-12 text-center">
 		                       	<img src="/img/code.png" class="img-responsive" />
 		                    </div>
 		                </div>

@@ -1,40 +1,40 @@
 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 <div class="form-group row">
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-6 col-12">
             <label for="name">Name</label>
 	      <input type="text" name="name" id="name" class="form-control" value="{{ isset($user) ? $user->name : old('name') }}" placeholder="" required>
       </div>
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-6 col-12">
             <label for="slug">Slug</label>
             <input type="text" name="slug" id="slug" class="form-control" value="{{ isset($user) ? $user->slug : old('slug') }}" placeholder="" required>
       </div>
 </div>
 
 <div class="form-group row">
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-6 col-12">
             <label for="email">Email</label>
             <input type="text" name="email" id="email" class="form-control" value="{{ isset($user) ? $user->email : old('email') }}" placeholder="" required>
       </div>
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-6 col-12">
             <label for="email">Password</label>
             <input type="text" name="password" id="password" class="form-control" value="{{ isset($user) ? $user->password : old('password') }}"  disabled>
       </div>
 </div>
 
 <div class="form-group row">
-      <div class="col-xs-12">
+      <div class="col-12">
             <label for="game_list">Games</label>
             {!! Form::select('game_list[]', $games, null, ['id' => 'game_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
       </div>
 </div>
 
 <div class="form-group row">
-      <div class="col-sm-9 col-xs-12">
+      <div class="col-sm-9 col-12">
             <label for="description">Description</label>
             {!! Form::textarea('description', null, ['class' => 'form-control textarea', 'id' => 'description', 'rows' => '25']) !!}
       </div>
-      <div class="col-sm-3 col-xs-12">
+      <div class="col-sm-3 col-12">
             <label for="image">Image</label>
             @if(isset($user))
                   <img src="{!! $user->image !!}" class="img-responsive" id="imageUpload" style="margin-bottom:10px;" />

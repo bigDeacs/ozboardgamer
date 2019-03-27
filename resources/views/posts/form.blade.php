@@ -2,36 +2,36 @@
 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
 
 <div class="form-group row">
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-6 col-12">
             <label for="name">Name</label>
 	      <input type="text" name="name" id="name" class="form-control" value="{{ isset($post) ? $post->name : old('name') }}" placeholder="" required>
       </div>
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-6 col-12">
             <label for="slug">Slug</label>
             <input type="text" name="slug" id="slug" class="form-control" value="{{ isset($post) ? $post->slug : old('slug') }}" placeholder="" required>
       </div>
 </div>
 
 <div class="form-group row">
-      <div class="col-xs-12">
+      <div class="col-12">
             <label for="video">Video Link</label>
             <input type="text" name="video" id="video" class="form-control" value="{{ isset($post) ? $post->video : old('video') }}" placeholder="">
       </div>
 </div>
 
 <div class="form-group row">
-      <div class="col-xs-12">
+      <div class="col-12">
             <label for="game_list">Games</label>
             {!! Form::select('game_list[]', $games, null, ['id' => 'game_list', 'class' => 'form-control', 'multiple', 'style' => 'width: 100%']) !!}
       </div>
 </div>
 
 <div class="form-group row">
-      <div class="col-sm-9 col-xs-12">
+      <div class="col-sm-9 col-12">
             <label for="description">Description</label>
             {!! Form::textarea('description', null, ['class' => 'form-control textarea', 'id' => 'description', 'rows' => '25']) !!}
       </div>
-      <div class="col-sm-3 col-xs-12">
+      <div class="col-sm-3 col-12">
             <label for="user_id">Author</label>
             {!! Form::select('user_id', $users, Input::old('user'), ['class' => 'form-control']) !!}
             <br />
@@ -69,19 +69,19 @@
 </div>
 
 <div class="form-group row">
-      <div class="col-xs-12">
+      <div class="col-12">
             <label for="meta">Meta Tags</label>
             {!! Form::textarea('meta', null, ['class' => 'form-control', 'id' => 'meta']) !!}
       </div>
 </div>
 <div class="form-group row">
-      <div class="col-xs-12">
+      <div class="col-12">
             <label for="head">Head Tags</label>
             {!! Form::textarea('head', null, ['class' => 'form-control', 'id' => 'head']) !!}
       </div>
 </div>
 <div class="form-group row">
-      <div class="col-xs-12">
+      <div class="col-12">
             <label for="scripts">Script Tags</label>
             {!! Form::textarea('scripts', null, ['class' => 'form-control', 'id' => 'scripts']) !!}
       </div>

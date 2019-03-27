@@ -30,12 +30,12 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-12">
 						<div class="row">
-							<div class="col-sm-8 col-xs-12">
+							<div class="col-sm-8 col-12">
 								<h1 itemprop="name">{{ $product->name }}</h1>								
 							</div>
-							<div class="col-sm-4 col-xs-12">
+							<div class="col-sm-4 col-12">
 								<span>Search for product: </span>
 								<form id="search" action="#" method="post" style="width: 100%;margin: 5px 0;" onsubmit="return false;">
 									<input type="text" name="search-products" id="search-products" class="form-control" placeholder="Find products..." style="top: -5px;">
@@ -44,12 +44,12 @@
 						</div>
 						<div class="post" style="padding-bottom: 10px;margin-bottom: 10px;">
 							<div class="row">
-								<div class="col-md-3 col-sm-4 col-xs-12">
+								<div class="col-md-3 col-sm-4 col-12">
 									<div class="row">
-										<div class="col-sm-12 col-xs-6">
+										<div class="col-sm-12 col-6">
 											<p class="text-center"><img src="{{ $product->thumb1x }}" srcset="{{ $product->thumb1x }} 1x, {{ $product->thumb2x }} 2x" class="img-responsive" /></p>
 										</div>
-										<div class="col-sm-12 col-xs-6">
+										<div class="col-sm-12 col-6">
 											@if($product->sale > 0)
 												<p class="text-center"><small style="font-size: 15px;"><s>Was ${!! $product->price !!}</s></small></p>
 												<p class="text-center"><small style="font-size: 15px;">Save ${!! number_format($product->price - $product->sale, 2, '.', '') !!}</small></p>
@@ -60,12 +60,12 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-md-9 col-sm-8 col-xs-12">		
+								<div class="col-md-9 col-sm-8 col-12">
 									<div class="row">
-										<div class="col-xs-12 col-sm-6 col-md-7 col-lg-8">
+										<div class="col-12 col-sm-6 col-md-7 col-lg-8">
 											<p><strong>Published by:</strong> {{ $product->brand }}</p>	
 										</div>
-										<div class="col-sm-6 col-md-5 col-lg-4 col-xs-12" style="display: flex;padding-left: 30px;">					
+										<div class="col-sm-6 col-md-5 col-lg-4 col-12" style="display: flex;padding-left: 30px;">
 											<div style="margin: 0 10px;">
 												<div class="fb-share-button" data-href="https://ozboardgamer.com/shop/{{ $product->slug }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://ozboardgamer.com/shop/{{ $product->slug }}">Share</a></div>
 											</div>
@@ -88,7 +88,7 @@
 							</div>		
 						</div>		
 						<div class="row hidden-xs">
-							<div class="col-xs-12">
+							<div class="col-12">
 								<h4>More Amazing Products</h4>
 								<div class="jcarousel-wrapper">
 									<div class="jcarousel">
@@ -119,7 +119,7 @@
 						</div>	
 						<hr />
 						<div class="row hidden-xs">
-							<div class="col-xs-12 text-center">
+							<div class="col-12 text-center">
 								<p><strong>New Deals In:</strong></p>
 								<br />
 								<div class="clock" style="margin: 0 auto;width:625px;"></div>

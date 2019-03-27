@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row post">
-			      <div class="col-sm-9 col-xs-12">
+			      <div class="col-sm-9 col-12">
 			      	<h1>{{ $category->name }}</h1>
 			      	@foreach($posts as $post)
 						<div class="row" itemscope itemtype="http://schema.org/Review">
@@ -32,7 +32,7 @@
 								<?php 
 									$game = $post->games()->orderBy(DB::raw('RAND()'))->first(); 
 								?>								
-								<div class="col-sm-3 col-xs-12" style="padding: 15px;">
+								<div class="col-sm-3 col-12" style="padding: 15px;">
 									<div style="overflow: hidden;height: 175px;">
 										@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 											<a href="#" class="disabled" title="Login for access">
@@ -54,7 +54,7 @@
 										@endif													
 									</div>
 								</div>
-								<div class="col-sm-9 col-xs-12">
+								<div class="col-sm-9 col-12">
 							@endif
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -91,7 +91,7 @@
                                     </div>
                                 </div>
                                 <div class="row post-content">
-                                    <div class="col-xs-12">
+                                    <div class="col-12">
 										<p itemprop="description">
 											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 												This is a members only post, for early access to this post login or signup today!
@@ -112,7 +112,7 @@
                         </div>
 					@endforeach
 			      </div>
-			      <div class="col-sm-3 col-xs-12">
+			      <div class="col-sm-3 col-12">
 			      	<span>Sort by: </span>
 			      	<form id="sortForm">
 			      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
@@ -139,7 +139,7 @@
 			      </div>
 			    </div>
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-12">
 						<div class="text-center">
 							@if(isset($_GET['sort']))
 								{!! $posts->appends(['sort' => $_GET['sort']])->render() !!}

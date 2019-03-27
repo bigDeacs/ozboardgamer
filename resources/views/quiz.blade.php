@@ -31,7 +31,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-		      <div class="col-xs-12">
+		      <div class="col-12">
 		      	<h1>{!! $quiz->name !!}</h1>
 		      </div>
 		    </div>
@@ -55,7 +55,7 @@
               <input type="hidden" name="quiz_id" value="{{ $quiz->id }}">
               @foreach($questions as $key => $question)
                 <div class="row setup-content" id="step-{{ $key+1 }}">
-                    <div class="col-xs-12">
+                    <div class="col-12">
                         <div class="col-md-12">
                             <h3>Question {{ $key+1 }}</h3>
                             <p>{!! $question->name !!}</p>
@@ -85,14 +85,14 @@
 				</div>
 				<hr />
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-12">
 						<div class="text-center">
 
 						</div>
 					</div>
 				</div>
 				<div class="row">
-		            <div class="col-xs-12">
+		            <div class="col-12">
 		                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		                <!-- Footer Ad -->
 		                <ins class="adsbygoogle"

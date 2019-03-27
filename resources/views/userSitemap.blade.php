@@ -21,12 +21,12 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-			      <div class="col-xs-12">
+			      <div class="col-12">
 			      	<h1>Sitemap</h1>
 			      </div>
 			    </div>
 			    <div class="row">
-					<div class="col-xs-12 col-sm-6">
+					<div class="col-12 col-sm-6">
 						<h2><a href="/games">Game Types</a></h2>
 						<ul>
 							@foreach($types as $type)			
@@ -64,7 +64,7 @@
 							@endforeach
 						</ul>
 					</div>
-					<div class="col-xs-12 col-sm-6">
+					<div class="col-12 col-sm-6">
 						<h2><a href="/stores">Game Stores</a></h2>
 						<ul>
 							@foreach($stores as $store)			

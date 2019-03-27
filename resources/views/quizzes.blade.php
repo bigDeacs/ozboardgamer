@@ -21,7 +21,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-			      <div class="col-xs-12">
+			      <div class="col-12">
 			      	<h1>Quizzes</h1>
 			      </div>
 			    </div>
@@ -56,14 +56,14 @@
 				</div>
 				<hr />
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-12">
 						<div class="text-center">
 							{!! $quizzes->render() !!}
 						</div>
 					</div>
 				</div>
 				<div class="row">
-		            <div class="col-xs-12">
+		            <div class="col-12">
 		                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		                <!-- Footer Ad -->
 		                <ins class="adsbygoogle"

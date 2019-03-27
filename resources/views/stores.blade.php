@@ -21,10 +21,10 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-			      <div class="col-sm-5 col-xs-12">
+			      <div class="col-sm-5 col-12">
 			      	<h1>Stores</h1>
 			      </div>
-            <div class="col-sm-3 col-xs-12">
+            <div class="col-sm-3 col-12">
               <span>Sort by: </span>
 			      	<form id="sortForm">
 			      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
@@ -41,7 +41,7 @@
     					    }
     					</script>
 			      </div>
-			      <div class="col-sm-4 col-xs-12">
+			      <div class="col-sm-4 col-12">
 						<span>Search for store: </span>
 						<form id="search" action="#" method="post" style="width: 100%;margin: 5px 0;" onsubmit="return false;">
 							<input type="text" name="search-stores" id="search-stores" class="form-control" placeholder="Find your local store..." style="top: -5px;">
@@ -50,7 +50,7 @@
 			    </div>
 			    <div class="row">
 			    	@foreach($stores as $key => $store)			
-						<div class="col-md-3 col-sm-4 col-xs-12 text-center">
+						<div class="col-md-3 col-sm-4 col-12 text-center">
 							<div class="thumbnail img-shadow" style="position: relative;">
 								<div style="position: absolute;right: 4px;bottom: 15px;">
 									<p class="blogHeading text-right"><strong><a href="/stores/{{ $store->slug }}" class="post-title" itemprop="name" title="{{ $store->name }}" style="color:white;">{!! str_limit($store->name, 14) !!}</a></strong></p>
@@ -64,7 +64,7 @@
 				</div>
 				<hr />
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-12">
 						<div class="text-center">
 							@if(isset($_GET['sort']))
 								{!! $stores->appends(['sort' => $_GET['sort']])->render() !!}

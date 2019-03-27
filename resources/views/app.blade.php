@@ -143,17 +143,17 @@
 									<div class="hidden-xs col-sm-4 text-center">
 										<img src="{!! Session::get('thumb') !!}" class="img-responsive" style="margin: 5px 10px;"/>
 									</div>
-									<div class="col-xs-12 col-sm-8 text-center">
+									<div class="col-12 col-sm-8 text-center">
 										<span class="hidden-xs">{{ Session::get('name') }}</span>
 										<p class="hidden-xs"><small>{{ Session::get('email') }}</small></p>
 										<a href="/users/{{ Session::get('slug') }}?page=1" class="btn btn-ocean text-uppercase"><i class="fa fa-user"></i> View Profile</a></li>
 									</div>
 								</div>
 								<div class="row" style="background: #222222;color: #9d9d9d;margin: 10px auto 0;">
-									<div class="col-xs-6 hidden-xs text-center">
+									<div class="col-6 hidden-xs text-center">
 										<a href="/contact" class="btn btn-sunny text-uppercase" style="margin: 10px;"><i class="fa fa-question-circle" aria-hidden="true"></i> Trouble?</a></li>
 									</div>
-									<div class="col-xs-12 col-sm-6 text-center">
+									<div class="col-12 col-sm-6 text-center">
 										<a href="/logout" class="btn btn-hot text-uppercase" style="margin: 10px;"><i class="fa fa-sign-out"></i> Logout</a></li>
 									</div>
 								</div>
@@ -164,10 +164,10 @@
 								<li class="text-center"><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
 								<li class="text-center"><a href="/signup"><i class="fa fa-user-plus"></i> Signup</a></li>
 								<div class="row" style="background: #222222;color: #9d9d9d;margin: 10px auto 0;padding: 5px 0;">
-									<li class="text-center col-xs-12">Login Using:</li>
-									<li class="text-center col-xs-4"><a href="/facebook" title="Login/Signup using Facebook"><i class="fa fa-facebook-official fa-2x"></i></a></li>
-									<li class="text-center col-xs-4"><a href="/google" title="Login/Signup using Google"><i class="fa fa-google-plus-official fa-2x"></i></a></li>
-									<li class="text-center col-xs-4"><a href="/twitter" title="Login/Signup using Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
+									<li class="text-center col-12">Login Using:</li>
+									<li class="text-center col-4"><a href="/facebook" title="Login/Signup using Facebook"><i class="fa fa-facebook-official fa-2x"></i></a></li>
+									<li class="text-center col-4"><a href="/google" title="Login/Signup using Google"><i class="fa fa-google-plus-official fa-2x"></i></a></li>
+									<li class="text-center col-4"><a href="/twitter" title="Login/Signup using Twitter"><i class="fa fa-twitter fa-2x"></i></a></li>
 								</div>
 							</ul>
 						@endif
@@ -186,15 +186,15 @@
 		<footer class="navbar-inverse navbar-footer" style="padding: 10px;">
 			<div class="container">
 				<div class="row">                                					
-					<div class="col-xs-12 text-center">
+					<div class="col-12 text-center">
 						<a href="/contact">Contact Us</a> | <a href="/terms">Terms and Conditions</a> | <a href="/privacy">Privacy Policy</a> | <a href="/sitemap">Sitemap</a>
 					</div>
 				</div>
 				<div class="row">                                
-					<div class="col-sm-offset-3 col-sm-4 col-lg-offset-3 col-lg-4 col-md-offset-2 col-md-5 col-xs-12">
+					<div class="col-sm-offset-3 col-sm-4 col-lg-offset-3 col-lg-4 col-md-offset-2 col-md-5 col-12">
 						<p class="copyright text-muted text-left">Copyright &copy; OzBoardGamer {{ date('Y') }}. All Rights Reserved</p>
 					</div>                
-					<div class="col-sm-3 col-md-3 col-lg-2 col-xs-12">
+					<div class="col-sm-3 col-md-3 col-lg-2 col-12">
 						<a href="https://www.facebook.com/ozboardgamer/" target="_blank" title="Like us on Facebook">
 							<i class="fa fa-facebook-official fa-fw fa-2x"></i>
 						</a>
@@ -216,7 +216,7 @@
 <div class="modal fade" id="searchWrapper" tabindex="-1" role="dialog" aria-labelledby="searchWrapperLabel" aria-hidden="true">
 	 <div class="container modal-dialog modal-lg">
 		<div class="row">
-			<div class="col-sm-8 col-sm-offset-2 col-xs-12 text-center">
+			<div class="col-sm-8 col-sm-offset-2 col-12 text-center">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>
 				<br><br>
 				<form id="search" action="#" method="post" style="width: 100%;" onsubmit="return false;">

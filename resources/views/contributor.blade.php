@@ -22,12 +22,12 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-			      <div class="col-sm-9 col-xs-12">
+			      <div class="col-sm-9 col-12">
 			      	<div class="row">
 						<div class="col-sm-3 hidden-xs">
 							<img src="{{ $user->image }}" alt="{{ $user->name }}" class="img-circle img-shadow" width="100px" height="auto">
 						</div>
-						<div class="col-sm-9 col-xs-12">
+						<div class="col-sm-9 col-12">
 							<h1>{{ $user->name }}</h1>
 							@if($user->description != '')
 								<p>{!! $user->description !!}</p>							
@@ -42,7 +42,7 @@
 								<?php 
 									$game = $post->games()->orderBy(DB::raw('RAND()'))->first(); 
 								?>
-								<div class="col-sm-3 col-xs-12" style="padding: 15px;overflow: hidden;height: 175px;">
+								<div class="col-sm-3 col-12" style="padding: 15px;overflow: hidden;height: 175px;">
 									@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 										<a href="" class="disabled" title="Login for access">
 											<div class="offer offer-radius offer-danger">
@@ -62,7 +62,7 @@
 										</a>														
 									@endif	
 								</div>
-								<div class="col-sm-9 col-xs-12">
+								<div class="col-sm-9 col-12">
 							@endif
                                 <div class="row">
                                     <div class="col-sm-12">
@@ -103,7 +103,7 @@
                                     </div>
                                 </div>
                                 <div class="row post-content">
-                                    <div class="col-xs-12">
+                                    <div class="col-12">
 										<p itemprop="description">
 											@if(Session::has('name') == false && date('F d, Y', strtotime("now")) == date('F d, Y', strtotime($post->published_at)))
 												Login to gain early access to this post!
@@ -122,7 +122,7 @@
                         </div>
 					@endforeach
 			      </div>
-			      <div class="col-sm-3 col-xs-12">
+			      <div class="col-sm-3 col-12">
 			      	<span>Sort by: </span>
 			      	<form id="sortForm">
 			      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
@@ -149,7 +149,7 @@
 			    </div>
 				<hr />
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-12">
 						<div class="text-center">
 							@if(isset($_GET['sort']))
 								{!! $posts->appends(['sort' => $_GET['sort']])->render() !!}

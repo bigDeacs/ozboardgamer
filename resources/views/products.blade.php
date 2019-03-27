@@ -20,10 +20,10 @@
 	</div>
 	<div class="container">
 		<div class="row">
-	      	<div class="col-sm-9 col-xs-12">
+	      	<div class="col-sm-9 col-12">
 	      		<h1>Buy Online</h1>
 	      	</div>
-            <div class="col-sm-3 col-xs-12">
+            <div class="col-sm-3 col-12">
               	<span>Sort by: </span>
 		      	<form id="sortForm">
 		      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
@@ -49,7 +49,7 @@
 					<div class="col-sm-12 text-center">
 					   <div id="offerCarousel" class="vertical-slider carousel vertical slide row" data-ride="carousel" style="{{ (Request::url() == 'https://ozboardgamer.com') ? 'padding-bottom: 10px;margin-bottom: -10px;' : 'margin-bottom: -10px;' }}">
 						  <!-- Carousel items -->
-						  <div class="carousel-inner col-xs-12">
+						  <div class="carousel-inner col-12">
 							<div class="item notice notice-lg notice-danger active">							
 								<strong>New Amazing Deals</strong> Every Thursday!
 								<a class="btn btn-hot text-uppercase" href="https://t.cfjump.com/33917/b/31466" target="_blank" style="margin-left: 25px!important;"><span class="fa fa-arrow-circle-right"></span> Read more</a>
@@ -73,7 +73,7 @@
   		<div class="row" itemscope itemtype="http://schema.org/ItemList">
 			<meta itemprop="numberOfItems" content = "<?php echo count($products); ?>">
 			@foreach($products as $key => $product)
-				<div class="col-md-3 col-sm-4 col-xs-12 text-center" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+				<div class="col-md-3 col-sm-4 col-12 text-center" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
 					<div class="thumbnail img-shadow" style="position: relative;">
 						<div style="position: absolute;right: 4px;top: 135px;">
 							<p class="blogHeading text-right"><strong><a href="{{ $product->link }}" target="_blank" class="post-title" itemprop="name" title="{{ $product->name }}" style="color:white;" itemprop="name">{!! str_limit($product->name, 16) !!}</a></strong></p>
@@ -98,12 +98,12 @@
 							<div class="row" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 								@if($product->price !== '' || $product->price !== null)
 									<meta itemprop="priceCurrency" content="AUD">
-									<div class="col-xs-12 col-md-6 text-left">
+									<div class="col-12 col-md-6 text-left">
 										<p style="margin: 0;font-size: 20px;color: #db5566;" itemprop="price"><strong>${!! $product->price !!}</strong></p>
 										<p style="margin: 0;">&nbsp;</p>
 									</div>
 								@endif
-								<div class="col-xs-12 col-md-6">
+								<div class="col-12 col-md-6">
 									<a class="btn btn-hot text-uppercase" href="{!! $product->link !!}" target="_blank" rel="nofollow"><span class="fa fa-arrow-circle-right"></span> Buy now</a>
 								</div>
 							</div>
@@ -113,7 +113,7 @@
 			@endforeach
 		</div>
 		{{--<div class="row hidden-xs">--}}
-			{{--<div class="col-xs-12 text-center">--}}
+			{{--<div class="col-12 text-center">--}}
 				{{--<p><strong>New Deals In:</strong></p>--}}
 				{{--<br />--}}
 				{{--<div class="clock" style="margin: 0 auto;width:625px;"></div>--}}
@@ -121,7 +121,7 @@
 		{{--</div>--}}
 		<hr />
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-12">
 				<div class="text-center">
       				@if(isset($_GET['sort']))
 						{!! $products->appends(['sort' => $_GET['sort']])->render() !!}

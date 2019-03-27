@@ -18,53 +18,53 @@
 			  	<div class="pull-right"><a href="/admin/{{ (Auth::check()) ? 'games' : '' }}" class="btn btn-primary"><i class="fa fa-arrow-circle-o-left"></i> Back</a></div>			  	
 			  	<div style="clear:both;"></div>
 				<div class="row">
-			      <div class="col-sm-4 col-xs-12">
+			      <div class="col-sm-4 col-12">
 			      	<img src="{{ $game->image }}" class="img-responsive" />
 			      </div>
-			      <div class="col-sm-6 col-xs-12">
+			      <div class="col-sm-6 col-12">
 			      	<h1>{{ $game->name }}</h1>
 			      </div>
-			      <div class="col-sm-2 col-xs-12">
+			      <div class="col-sm-2 col-12">
 					{{ $game->rating }}/10
 			      </div>
 			    </div>
 				<div class="row">
-			      <div class="col-sm-4 col-xs-12">
+			      <div class="col-sm-4 col-12">
 			      	{{ $game->time }}
 			      </div>
-			      <div class="col-sm-4 col-xs-12">
+			      <div class="col-sm-4 col-12">
 			      	{{ $game->players }}
 			      </div>
-			      <div class="col-sm-4 col-xs-12">
+			      <div class="col-sm-4 col-12">
 			      	{{ $game->age }}
 			      </div>
 			    </div>
 			
 				<div class="row">
-			      <div class="col-sm-4 col-xs-12">
+			      <div class="col-sm-4 col-12">
 			            <label for="luck">Luck</label>
 			            <input id="luck" name="luck" value="{{ $game->luck }}" class="rating-loading">
 			      </div>
-			      <div class="col-sm-4 col-xs-12">
+			      <div class="col-sm-4 col-12">
 			            <label for="strategy">Strategy</label>
 			            <input id="strategy" name="strategy" value="{{ $game->strategy }}" class="rating-loading">
 			      </div>
-			      <div class="col-sm-4 col-xs-12">
+			      <div class="col-sm-4 col-12">
 			            <label for="complexity">Complexity</label>
 			            <input id="complexity" name="complexity" value="{{ $game->complexity }}" class="rating-loading">
 			      </div>
 			</div>
 
 			<div class="row">
-			      <div class="col-sm-4 col-xs-12">
+			      <div class="col-sm-4 col-12">
 			            <label for="replay">Replay</label>
 			            <input id="replay" name="replay" value="{{ $game->replay }}" class="rating-loading">
 			      </div>
-			      <div class="col-sm-4 col-xs-12">
+			      <div class="col-sm-4 col-12">
 			            <label for="components">Components</label>
 			            <input id="components" name="components" value="{{ $game->components }}" class="rating-loading">
 			      </div>
-			      <div class="col-sm-4 col-xs-12">
+			      <div class="col-sm-4 col-12">
 			            <label for="learning">Learning</label>
 			            <input id="learning" name="learning" value="{{ $game->learning }}" class="rating-loading">
 			      </div>

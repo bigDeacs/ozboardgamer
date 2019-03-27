@@ -27,10 +27,10 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
-			      <div class="col-sm-9 col-xs-12">
+			      <div class="col-sm-9 col-12">
 			      	<h1>{{ $user->name }}</h1>
 			      </div>
-			      <div class="col-sm-3 col-xs-12">
+			      <div class="col-sm-3 col-12">
 			      	<span>Sort by: </span>
 			      	<form id="sortForm">
 			      		<input type="hidden" name="page" value="{{ isset($_GET['page']) ? htmlspecialchars($_GET['page']) : 1 }}">
@@ -52,24 +52,24 @@
 			    </div>
           @if($user->description != '')
             <div class="row">
-              <div class="col-xs-12">
+              <div class="col-12">
                 <p>{!! $user->description !!}</p>
               </div>
             </div>
           @endif
 			    <div class="row">
-			      <div class="col-sm-8 col-xs-12" id="parent">
+			      <div class="col-sm-8 col-12" id="parent">
               Games {{ $user->name }} Owns <span class="badge" style="background-color: #d9534f;">{{ $countOwned }}</span>
 			      	@foreach($owned as $game)
 						<div class="row" itemscope itemtype="http://schema.org/Game">
 			                <div class="col-md-12 post">
 			                    <div class="row post-content">
-			                        <div class="col-md-2 col-sm-3 col-xs-7">
+			                        <div class="col-md-2 col-sm-3 col-7">
 			                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
 			                                <img src="https://img.ozboardgamer.com/{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
 			                            </a>
 			                        </div>
-			                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-xs-5">
+			                        <div class="col-md-2 col-md-push-8 col-sm-2 col-sm-push-7 col-5">
 										@if($game->rating < 1)
 											<img src="{{ secure_url('/', $parameters = ['img']) }}/1.png" class="img-responsive" />
 										@elseif($game->rating < 2)
@@ -95,7 +95,7 @@
 											<strong>{{ number_format((float)$game->rating, 1, '.', '') }}/10</strong>
 										</div>
 			                        </div>
-			                        <div class="col-md-8 col-md-pull-2 col-sm-7 col-sm-pull-2 col-xs-12">
+			                        <div class="col-md-8 col-md-pull-2 col-sm-7 col-sm-pull-2 col-12">
 			                            <h4 itemprop="name">
 			                                <strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" class="post-title">{!! $game->name !!}</a></strong></h4>
 			                            <p itemprop="description">
@@ -112,7 +112,7 @@
 					@endforeach
 					<hr />
 					<div class="row">
-						<div class="col-xs-12">
+						<div class="col-12">
 							<div class="text-center">
 								@if(isset($_GET['sort']))
 									{!! $owned->appends(['sort' => $_GET['sort']])->render() !!}
@@ -130,12 +130,12 @@
 							<div class="row" itemscope itemtype="http://schema.org/Game">
 				                <div class="col-md-12 post">
 				                    <div class="row post-content">
-				                        <div class="col-xs-7">
+				                        <div class="col-7">
 				                            <a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}">
 				                                <img src="https://img.ozboardgamer.com/{{ $game->thumb1x }}" srcset="https://img.ozboardgamer.com{{ $game->thumb1x }} 1x, https://img.ozboardgamer.com{{ $game->thumb2x }} 2x" alt="{!! $game->name !!}" class="img-responsive" itemprop="image" />
 				                            </a>
 				                        </div>
-				                        <div class="col-xs-5">
+				                        <div class="col-5">
 											@if($game->rating < 1)
 												<img src="https://img.ozboardgamer.com/img/1.png" class="img-responsive" />
 											@elseif($game->rating < 2)
@@ -161,7 +161,7 @@
 												<strong>{{ number_format((float)$game->rating, 1, '.', '') }}/10</strong>
 											</div>
 				                        </div>
-				                        <div class="col-xs-12">
+				                        <div class="col-12">
 				                            <h4 itemprop="name">
 				                                <strong><a href="/games/{{ $game->types()->first()->slug }}/{{ $game->slug }}" class="post-title">{!! $game->name !!}</a></strong></h4>
 				                            <p itemprop="description">

@@ -14,12 +14,12 @@
 
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-xs-12 col-sm-8">
+						<div class="col-12 col-sm-8">
 							<h3><a href="/{{ $latestpost->category->slug }}/{{ $latestpost->slug }}" target="_blank">{{ $latestpost->name }}</a></h3>
 							<p><a href="/users/{{ $latestpost->user->slug }}?page=1&sort=published_at-desc" target="_blank">{{ $latestpost->user->name }}</a></p>
 							<small>{!! date('F d, Y', strtotime($latestpost->published_at)) !!}</small>
 						</div>
-						<div class="col-xs-12 col-sm-4">
+						<div class="col-12 col-sm-4">
 							<h3 class="text-right">
 								@if(Carbon\Carbon::createFromTimestamp(strtotime($latestpost->published_at))->diff(Carbon\Carbon::now())->days > 7)
 									<span class="badge label-danger">
@@ -32,7 +32,7 @@
 								</span> Days Since Last Post</h3><br />
 							<a href="/admin/posts/create" class="pull-right btn btn-primary">Create Post <i class="fa fa-plus-square"></i></a>
 						</div>						
-						<div class="col-xs-12">
+						<div class="col-12">
 							<h3>Top 10 Games</h3><br />
 						    <div class="jcarousel-wrapper">
 			                    <div class="jcarousel">
@@ -52,7 +52,7 @@
 			                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
 			                </div>
 						</div>
-						<div class="col-xs-12">
+						<div class="col-12">
 							<h3>Top 10 Products</h3><br />
 						    <div class="jcarousel-wrapper">
 			                    <div class="jcarousel">
@@ -72,7 +72,7 @@
 			                    <a href="#" class="jcarousel-control-next">&rsaquo;</a>
 			                </div>
 						</div>
-						<div class="col-xs-12">
+						<div class="col-12">
 							<h3>Top 10 Stores</h3><br />
 						    <div class="jcarousel-wrapper">
 			                    <div class="jcarousel">
@@ -95,25 +95,25 @@
 					</div>
 					<div class="row">
 						<header>
-						  	<div class="col-xs-12 col-sm-8">
+						  	<div class="col-12 col-sm-8">
 								<div id="embed-api-auth-container"></div>
 							  	<div id="view-selector-container" class="hidden-lg hidden-md hidden-sm hidden-xs"></div>
 							  	<div id="view-name" class="hidden-lg hidden-md hidden-sm hidden-xs"></div>
 							</div>
-							<div class="col-xs-12 col-sm-4">
+							<div class="col-12 col-sm-4">
 								<div id="active-users-container"></div>
 							</div>
 						</header>
 					</div>
 					<div class="row">
-						<div class="col-xs-12 col-sm-6">
+						<div class="col-12 col-sm-6">
 							<div class="Chartjs">
 						  		<h3>This Week vs Last Week (by sessions)</h3>
 					  			<figure class="Chartjs-figure" id="chart-1-container"></figure>
 						  		<ol class="Chartjs-legend" id="legend-1-container"></ol>
 							</div>
 						</div>					
-						<div class="col-xs-12 col-sm-6">
+						<div class="col-12 col-sm-6">
 							<div class="Chartjs">
 							  <h3>This Year vs Last Year (by users)</h3>
 							  <figure class="Chartjs-figure" id="chart-2-container"></figure>
@@ -122,14 +122,14 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-12 col-sm-6">
+						<div class="col-12 col-sm-6">
 							<div class="Chartjs">
 							  <h3>Top Browsers (by pageview)</h3>
 							  <figure class="Chartjs-figure" id="chart-3-container"></figure>
 							  <ol class="Chartjs-legend" id="legend-3-container"></ol>
 							</div>
 						</div>
-						<div class="col-xs-12 col-sm-6">
+						<div class="col-12 col-sm-6">
 							<div class="Chartjs">
 							  <h3>Traffic Sources</h3>
 							  <figure class="Chartjs-figure" id="chart-4-container"></figure>
@@ -138,14 +138,14 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-12 col-sm-6">
+						<div class="col-12 col-sm-6">
 							<div class="Chartjs">
 							  <h3>Device Categories</h3>
 							  <figure class="Chartjs-figure" id="chart-5-container"></figure>
 							  <ol class="Chartjs-legend" id="legend-5-container"></ol>
 							</div>
 						</div>
-						<div class="col-xs-12 col-sm-6">
+						<div class="col-12 col-sm-6">
 							<div class="Chartjs">
 							  <h3>Social Network</h3>
 							  <figure class="Chartjs-figure" id="chart-6-container"></figure>
